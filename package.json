@@ -1,0 +1,21 @@
+{
+  "name": "wzsearch-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static, build-free browser for Praga-Południe planning decisions (WZ / ULICP / wszczęte postępowania) and building permits (GUNB RWDZ).",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test 'tests/js/*.test.mjs'",
+    "e2e": "node tests/e2e/smoke.mjs",
+    "e2e:real": "node tests/e2e/smoke.mjs --data=site",
+    "serve": "node tests/e2e/server.mjs --port=8000",
+    "og": "node tests/e2e/og-image.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.0"
+  }
+}

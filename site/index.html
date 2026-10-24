@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>wzSearch – decyzje WZ, celu publicznego i pozwolenia na budowę, Praga-Południe</title>
+  <meta name="description" content="Nieoficjalna wyszukiwarka decyzji o warunkach zabudowy, decyzji o lokalizacji inwestycji celu publicznego, wszczętych postępowań i pozwoleń na budowę z Pragi-Południe (Warszawa). Filtry, mapa, eksport CSV i link do źródła przy każdym wpisie.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231b1d22'/%3E%3Cpath d='M8 8h7v7H8zM17 8h7v7h-7zM8 17h7v7H8z' fill='none' stroke='%23f6f4ef' stroke-width='1.7'/%3E%3Crect x='17' y='17' width='7' height='7' rx='1.2' fill='%23e0457b'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="wzSearch">
+  <meta property="og:title" content="wzSearch – co się planuje na Pradze-Południe?">
+  <meta property="og:description" content="Wszystkie decyzje o warunkach zabudowy, lokalizacji celu publicznego, wszczęte postępowania i pozwolenia na budowę z Pragi-Południe – z wyszukiwarką, mapą i linkiem do źródła. Serwis nieoficjalny.">
+  <meta property="og:image" content="img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="wzSearch – mapa decyzji planistycznych i pozwoleń na budowę Pragi-Południe">
+  <meta property="og:locale" content="pl_PL">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" type="application/atom+xml" title="wzSearch – nowe wpisy (Praga-Południe)" href="feed.xml">
+  <script>
+    /* Start the two data downloads now, in parallel with the CSS and the module graph; data.js takes each response
+       once (a retry fetches again). Unlike <link rel=preload as=fetch> this keeps cache:'no-cache' (no stale data
+       for minutes after a deploy) and is reused by every engine (WebKit downloaded preloaded files twice). */
+    if (location.protocol !== 'file:' && window.fetch) {
+      try {
+        window.__wzEarly = {};
+        ['data/records.json', 'data/sources.json'].forEach(function (u) {
+          var p = fetch(u, { cache: 'no-cache' });
+          p.catch(function () {}); /* handled by data.js; no "unhandled rejection" before it loads */
+          window.__wzEarly[u] = p;
+        });
+      } catch (e) { window.__wzEarly = null; }
+    }
+  </script>
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="vendor/markercluster/MarkerCluster.css">
+  <link rel="stylesheet" href="css/app.css">
+  <!-- Flatten the ES-module waterfall (no bundler): every module is requested in parallel with main.js. -->
+  <link rel="modulepreload" href="js/main.js">
+  <link rel="modulepreload" href="js/store.js">
+  <link rel="modulepreload" href="js/data.js">
+  <link rel="modulepreload" href="js/url.js">
+  <link rel="modulepreload" href="js/filters.js">
+  <link rel="modulepreload" href="js/dom.js">
+  <link rel="modulepreload" href="js/icons.js">
+  <link rel="modulepreload" href="js/format.js">
+  <link rel="modulepreload" href="js/search.js">
+  <link rel="modulepreload" href="js/active.js">
+  <link rel="modulepreload" href="js/csv.js">
+  <link rel="modulepreload" href="js/copy.js">
+  <link rel="modulepreload" href="js/kinds.js">
+  <link rel="modulepreload" href="js/lazy.js">
+  <link rel="modulepreload" href="js/config.js">
+  <link rel="modulepreload" href="js/views/explore.js">
+  <link rel="modulepreload" href="js/views/filters-panel.js">
+  <link rel="modulepreload" href="js/views/detail.js">
+  <link rel="modulepreload" href="js/views/sources.js">
+  <link rel="modulepreload" href="js/views/about.js">
+  <link rel="modulepreload" href="js/components/card.js">
+  <link rel="modulepreload" href="js/components/map.js">
+  <link rel="modulepreload" href="js/components/timeline.js">
+  <link rel="modulepreload" href="js/components/combobox.js">
+  <link rel="modulepreload" href="js/components/toast.js">
+</head>
+<body class="is-loading">
+  <script>
+    /* Native ES modules and fetch() do not work from file:// — explain how to start a local server. */
+    if (location.protocol === 'file:') {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.body.className = 'is-file';
+        document.body.innerHTML =
+          '<main class="page page--file"><div class="error-state">' +
+          '<h1 class="page__title">Uruchom stronę przez serwer WWW</h1>' +
+          '<p class="lead">Ta strona wczytuje dane z plików JSON, czego przeglądarki nie pozwalają robić dla plików otwartych bezpośrednio z dysku (<code>file://</code>).</p>' +
+          '<p>W katalogu projektu uruchom jedno z poleceń, a potem otwórz <a href="http://localhost:8000/">http://localhost:8000/</a>:</p>' +
+          '<pre><code>python3 -m http.server -d site 8000</code></pre>' +
+          '<pre><code>npm run serve</code></pre>' +
+          '<p class="muted small">Na GitHub Pages i każdym innym hostingu statycznym strona działa bez żadnej konfiguracji.</p>' +
+          '</div></main>';
+      });
+    }
+    /* A module that fails to load (flaky connection, a local server dropping a request) would leave the loading
+       skeleton forever: show a message with a reload button instead (onerror of the main module script). */
+    window.__wzBootFail = function () {
+      if (document.body.classList.contains('has-error') || document.body.dataset.ready) return;
+      document.body.classList.remove('is-loading');
+      document.body.classList.add('has-error');
+      var view = document.getElementById('view-explore');
+      if (!view) return;
+      view.hidden = false;
+      view.innerHTML = '<div class="page page--error"><div class="error-state" role="alert">' +
+        '<h1 class="page__title">Nie udało się wczytać strony</h1>' +
+        '<p class="lead">Część plików strony nie dotarła – sprawdź połączenie i odśwież stronę.</p>' +
+        '<div class="error-state__actions"><button type="button" class="btn btn--primary" onclick="location.reload()">Odśwież</button></div>' +
+        '</div></div>';
+    };
+  </script>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+  <header class="topbar">
+    <a class="brand" href="#/" aria-label="wzSearch Praga-Południe – strona główna">
+      <svg class="brand__logo" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false">
+        <rect width="32" height="32" rx="8" class="brand__bg"/>
+        <path d="M8 8h7v7H8zM17 8h7v7h-7zM8 17h7v7H8z" fill="none" class="brand__fg" stroke-width="1.7"/>
+        <rect x="17" y="17" width="7" height="7" rx="1.2" class="brand__accent"/>
+      </svg>
+      <span class="brand__text"><span class="brand__name">wzSearch</span> <span class="brand__sub">Praga-Południe</span></span>
+    </a>
+    <nav class="topnav" aria-label="Główna nawigacja">
+      <a href="#/" data-nav="explore" aria-current="page"><span>Przeglądaj</span></a>
+      <a href="#/zrodla" data-nav="sources"><span class="long">Źródła danych</span><span class="short">Źródła</span></a>
+      <a href="#/o-projekcie" data-nav="about"><span>O projekcie</span></a>
+    </nav>
+    <p class="topbar__note" title="Serwis nieoficjalny – dane z publikacji Urzędu Dzielnicy Praga-Południe, Urzędu m.st. Warszawy i GUNB">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.01"/></svg>
+      <span class="topbar__note-long">Serwis nieoficjalny – dane z publikacji urzędów i rejestru GUNB</span>
+      <span class="topbar__note-short">Serwis nieoficjalny</span>
+    </p>
+  </header>
+  <div id="banner" hidden></div>
+  <main id="main" tabindex="-1">
+    <section id="view-explore" class="view view--explore" aria-label="Przeglądaj wpisy">
+      <!-- Skeleton (replaced once data loads); mirrors the real layout to avoid layout shift. -->
+      <div class="explore explore--skeleton" aria-busy="true" aria-label="Wczytywanie danych">
+        <div class="pane pane--filters">
+          <div class="filters__inner">
+            <div class="filters__head"><div class="sk sk--line sk--w40"></div></div>
+            <div class="filters__body">
+              <div class="fgroup"><div class="sk sk--line sk--w30"></div><div class="sk sk--line sk--w90"></div><div class="sk sk--line sk--w80"></div><div class="sk sk--line sk--w70"></div></div>
+              <div class="fgroup"><div class="sk sk--line sk--w30"></div><div class="sk sk--block"></div></div>
+              <div class="fgroup"><div class="sk sk--line sk--w40"></div><div class="sk sk--line sk--w80"></div><div class="sk sk--line sk--w60"></div></div>
+            </div>
+          </div>
+        </div>
+        <section class="pane pane--results">
+          <div class="results-head">
+            <div class="search search--skeleton"><div class="sk sk--line sk--w50"></div></div>
+            <div class="timeline timeline--skeleton"><div class="sk sk--chart"></div></div>
+            <div class="results-bar"><p class="results-count">Wczytywanie danych…</p></div>
+          </div>
+          <ol class="cards">
+            <li class="card card--skeleton"><div class="sk sk--line sk--w30"></div><div class="sk sk--title sk--w60"></div><div class="sk sk--line sk--w90"></div><div class="sk sk--line sk--w70"></div></li>
+            <li class="card card--skeleton"><div class="sk sk--line sk--w30"></div><div class="sk sk--title sk--w50"></div><div class="sk sk--line sk--w80"></div><div class="sk sk--line sk--w60"></div></li>
+            <li class="card card--skeleton"><div class="sk sk--line sk--w30"></div><div class="sk sk--title sk--w70"></div><div class="sk sk--line sk--w90"></div><div class="sk sk--line sk--w50"></div></li>
+            <li class="card card--skeleton"><div class="sk sk--line sk--w30"></div><div class="sk sk--title sk--w40"></div><div class="sk sk--line sk--w80"></div><div class="sk sk--line sk--w70"></div></li>
+          </ol>
+        </section>
+        <section class="pane pane--map"><div class="map map--skeleton"></div></section>
+      </div>
+    </section>
+    <section id="view-sources" class="view view--page" aria-label="Źródła danych" hidden></section>
+    <section id="view-about" class="view view--page" aria-label="O projekcie" hidden></section>
+  </main>
+  <noscript>
+    <div class="page"><h1 class="page__title">Włącz JavaScript</h1><p class="lead">Wyszukiwarka działa w przeglądarce i wymaga JavaScriptu. Oryginalne pliki znajdziesz na <a href="https://pragapld.um.warszawa.pl/informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych">stronie Urzędu Dzielnicy Praga-Południe</a>.</p></div>
+  </noscript>
+  <script defer src="vendor/leaflet/leaflet.js"></script>
+  <script defer src="vendor/markercluster/leaflet.markercluster.js"></script>
+  <script type="module" src="js/main.js" onerror="window.__wzBootFail && window.__wzBootFail()"></script>
+</body>
+</html>

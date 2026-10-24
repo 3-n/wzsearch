@@ -1,0 +1,21 @@
+[project]
+name = "wzsearch"
+version = "0.1.0"
+description = "Scraper + static browser for Praga-Południe planning decisions (WZ / ULICP) published as Excel files"
+requires-python = ">=3.11"
+dependencies = [
+    "openpyxl>=3.1.5",
+    "requests>=2.32",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+filterwarnings = ["ignore::UserWarning:openpyxl.*"]

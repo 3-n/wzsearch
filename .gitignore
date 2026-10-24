@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+tests/e2e/output/
+.DS_Store
+data/cache/rwdz/
+# ad-hoc QA screenshots (e2e screenshots go to tests/e2e/output/)
+shots/

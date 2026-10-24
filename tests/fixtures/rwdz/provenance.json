@@ -1,0 +1,47 @@
+{
+"note": "Real GUNB RWDZ records (CC0 1.0), copied byte for byte: [archive, first physical line in the original CSV, physical lines]. Taken from the 2026-10-22 snapshots (ETags in data/cache/rwdz.json).",
+"wnioski.csv": [
+  ["wynik_mazowieckie.zip", 2, 1],
+  ["wynik_mazowieckie.zip", 3, 1],
+  ["wynik_mazowieckie.zip", 338664, 1],
+  ["wynik_mazowieckie.zip", 113689, 1],
+  ["wynik_mazowieckie.zip", 113690, 1],
+  ["wynik_mazowieckie.zip", 113691, 1],
+  ["wynik_mazowieckie.zip", 113692, 1],
+  ["wynik_mazowieckie.zip", 673375, 1],
+  ["wynik_mazowieckie.zip", 673376, 1],
+  ["wynik_mazowieckie.zip", 673377, 1],
+  ["wynik_mazowieckie.zip", 673384, 1],
+  ["wynik_mazowieckie.zip", 267382, 1],
+  ["wynik_mazowieckie.zip", 267383, 1],
+  ["wynik_mazowieckie.zip", 355845, 1],
+  ["wynik_mazowieckie.zip", 466773, 1],
+  ["wynik_mazowieckie.zip", 85702, 1],
+  ["wynik_mazowieckie.zip", 337073, 1],
+  ["wynik_mazowieckie.zip", 21240, 1],
+  ["wynik_mazowieckie.zip", 333724, 1],
+  ["wynik_mazowieckie.zip", 166296, 1],
+  ["wynik_mazowieckie.zip", 166297, 1],
+  ["wynik_mazowieckie.zip", 421020, 1],
+  ["wynik_mazowieckie.zip", 587201, 1],
+  ["wynik_mazowieckie.zip", 587202, 1],
+  ["wynik_mazowieckie.zip", 13200, 1]
+],
+"zgloszenia_2016_2021.csv": [
+  ["wynik_zgloszenia_2016_2021.zip", 2, 1],
+  ["wynik_zgloszenia_2016_2021.zip", 23, 2],
+  ["wynik_zgloszenia_2016_2021.zip", 566261, 1],
+  ["wynik_zgloszenia_2016_2021.zip", 566262, 1]
+],
+"zgloszenia_2022.csv": [
+  ["wynik_zgloszenia_2022_up.zip", 423602, 1],
+  ["wynik_zgloszenia_2022_up.zip", 423603, 1],
+  ["wynik_zgloszenia_2022_up.zip", 423604, 1],
+  ["wynik_zgloszenia_2022_up.zip", 423605, 1],
+  ["wynik_zgloszenia_2022_up.zip", 620930, 2],
+  ["wynik_zgloszenia_2022_up.zip", 981743, 1],
+  ["wynik_zgloszenia_2022_up.zip", 981744, 1],
+  ["wynik_zgloszenia_2022_up.zip", 981745, 1],
+  ["wynik_zgloszenia_2022_up.zip", 981746, 1]
+]
+}

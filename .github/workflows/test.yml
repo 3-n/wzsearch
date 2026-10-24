@@ -1,0 +1,54 @@
+# Tests for every push and pull request: the Python pipeline (pytest, offline) and the
+# frontend's pure modules (node --test, no dependencies).
+
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+          enable-cache: true
+
+      - name: pytest
+        run: uv run pytest
+
+      - name: Committed site data matches the pipeline (offline rebuild)
+        # The build is deterministic and the caches + RWDZ extracts are committed, so an offline rebuild
+        # must reproduce the committed JSON exactly. CSV, feed and report embed SITE_URL, so they are not
+        # compared; generated_at depends on the JSON only (a SITE_URL change never re-stamps it), and without
+        # SITE_URL the build reuses the base URL of the committed feed. If this fails, run
+        # `make data-offline` and commit.
+        run: |
+          uv run python -m pipeline.build --offline -q
+          git diff --stat --exit-code -- site/data/records.json site/data/permits.json site/data/sources.json \
+            site/data/parcels.geojson site/data/parcels-permits.geojson site/sources data/raw data/cache
+
+  javascript:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: node --test
+        run: node --test 'tests/js/*.test.mjs'
