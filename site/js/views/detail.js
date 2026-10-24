@@ -18,7 +18,8 @@ import {
   KIND_EXPLAINERS, KIND_STEP, KIND_PLURAL, DATE_LABEL, NUMBER_LABEL, APPLICANT_LABELS, PRECISION, DEMOLITION_STEP,
   OUTCOME_EMPHASIS, LICENCE_URLS, OUTCOME_STEP, OUTCOME_PLURAL, PROCEDURE_ACC, KIND_LIST_LABEL,
 } from '../copy.js';
-import { GEOPORTAL_PARCEL_URL, ISSUES_URL } from '../config.js';
+import { GEOPORTAL_PARCEL_URL, ISSUES_URL, INFO_REQUEST } from '../config.js';
+import { infoRequest, mailtoHref } from '../request.js';
 
 const PARCELS_COLLAPSED = 12;
 /** What a refusal means for residents, per kind (outcome "refusal", docs/DATA_MODEL.md). */
@@ -419,6 +420,55 @@ function permitFacts(entry, index) {
   ];
 }
 
+/** What the request gets you, per kind (the list only has a summary; the office has the full file). */
+const ASK_LEAD = {
+  wz: 'Zestawienie podaje tylko streszczenie decyzji. Pełną treść – z załącznikiem graficznym i analizą urbanistyczną, która uzasadnia parametry zabudowy – urząd udostępnia na wniosek.',
+  cp: 'Zestawienie podaje tylko streszczenie decyzji. Pełną treść – z załącznikiem graficznym – urząd udostępnia na wniosek.',
+  ws: 'Sprawa jest w toku. Możesz poprosić o kopię wniosku, mapę terenu inwestycji i informację, na jakim etapie jest postępowanie.',
+  pb: 'Rejestr GUNB podaje tylko podstawowe dane. Decyzję i rysunki z projektu (zagospodarowanie działki, elewacje) urząd udostępnia na wniosek.',
+  zg: 'Rejestr GUNB podaje tylko podstawowe dane. Treść zgłoszenia i informację, czy urząd wniósł sprzeciw, możesz uzyskać na wniosek.',
+};
+
+/** "Zapytaj urząd": a prefilled request for public information, sent from the user's own mail program. */
+function askSection(entry, kd) {
+  const req = infoRequest(entry.kind, entry.rec, { kindLabel: kd.label });
+  const text = h('textarea', {
+    class: 'ask__text', id: 'ask-text', rows: '16', spellcheck: 'false', 'aria-label': 'Treść wniosku (możesz ją zmienić)',
+  });
+  text.value = req.body;
+  const mail = h('a', { class: 'btn btn--primary btn--sm', href: mailtoHref(req) },
+    icon('inbox', { size: 15 }), h('span', null, 'Wyślij e-mailem'));
+  // Edits in the textarea (e.g. the signature) go into the e-mail too.
+  text.addEventListener('input', () => { mail.href = mailtoHref({ ...req, body: text.value }); });
+  const copyBtn = h('button', {
+    type: 'button', class: 'btn btn--secondary btn--sm',
+    onClick: async () => {
+      const ok = await copyText(text.value);
+      toast(ok ? 'Skopiowano treść wniosku.' : 'Nie udało się skopiować treści.', { kind: ok ? 'success' : 'error' });
+    },
+  }, icon('copy', { size: 15 }), h('span', null, 'Kopiuj treść'));
+  return section('Zapytaj urząd o dokumenty', [
+    h('p', { class: 'dsec__lead' }, ASK_LEAD[entry.kind] || 'Pełne dokumenty tej sprawy urząd udostępnia na wniosek.',
+      ' Każdy może o nie poprosić, bez podawania powodu. Odpowiedź przychodzi w ciągu 14 dni (w uzasadnionych przypadkach do 2 miesięcy), zwykle bezpłatnie.'),
+    entry.kind === 'ws' ? h('p', { class: 'muted small ask__party' },
+      'Jeśli jesteś właścicielem lub użytkownikiem wieczystym sąsiedniej działki, możesz być stroną postępowania – wtedy masz prawo przeglądać całe akta sprawy i składać uwagi (art. 73 Kodeksu postępowania administracyjnego).') : null,
+    req.note ? h('p', { class: 'notice notice--quiet', role: 'note' }, icon('info', { size: 15 }), h('span', null, req.note)) : null,
+    h('details', { class: 'ask__details' },
+      h('summary', null, 'Pokaż i edytuj treść wniosku'),
+      h('p', { class: 'muted small' }, 'Przed wysłaniem wpisz na końcu swoje imię i nazwisko. Możesz dopisać, o co jeszcze chcesz zapytać.'),
+      text),
+    h('div', { class: 'prov__actions' }, mail, copyBtn),
+    h('p', { class: 'muted small ask__how' },
+      req.to ? ['Adresat: ', h('span', { class: 'mono' }, req.to), req.inbox ? ` (${req.inbox})` : null, '. '] : null,
+      req.fallback ? ['Możesz też wysłać wniosek na ogólny adres Urzędu m.st. Warszawy: ', h('span', { class: 'mono' }, req.fallback), '. '] : null,
+      'Strona niczego nie wysyła – wiadomość otwiera się w Twoim programie pocztowym. ',
+      req.edelivery ? ['Wolisz ePUAP? Wklej treść jako „Pismo ogólne do podmiotu publicznego” albo wyślij przez e-Doręczenia na adres ',
+        h('span', { class: 'mono' }, req.edelivery), '. '] : null,
+      INFO_REQUEST.guideUrl ? h('a', { class: 'link', href: INFO_REQUEST.guideUrl, target: '_blank', rel: 'noopener noreferrer' },
+        'Jak działa dostęp do informacji publicznej (warszawa19115.pl)', h('span', { class: 'sr-only' }, ' (otwiera się w nowej karcie)')) : null),
+  ], { id: 'd-ask', iconName: 'inbox' });
+}
+
 /**
  * Render the detail panel.
  * @param {HTMLElement} host
@@ -492,13 +542,15 @@ export function renderDetail(host, entry, ctx) {
   const refusal = entry.outcome && OUTCOME_EMPHASIS[entry.outcome] === 'bad';
   // The WZ → permit story at a glance: permits on the same parcel/address dated after this decision.
   const laterPermits = isPermit ? 0 : relatedChain(index, entry).filter((e) => e.kind === 'pb' && e.ts > entry.ts).length;
-  const toRelated = () => {
-    const t = host.querySelector('#d-related');
+  const scrollToSection = (sel) => {
+    const t = host.querySelector(sel);
     if (!t) return;
     t.setAttribute('tabindex', '-1');
     t.scrollIntoView({ block: 'start', behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
     t.focus({ preventScroll: true });
   };
+  const toRelated = () => scrollToSection('#d-related');
+  const toAsk = () => { host.querySelector('.ask__details')?.setAttribute('open', ''); scrollToSection('#d-ask'); };
   const listLabel = KIND_LIST_LABEL[entry.kind] || 'wpisy tego rodzaju';
   const leadByDataset = {
     district: 'Wpis pochodzi z pliku Excel opublikowanego przez Urząd Dzielnicy. W razie wątpliwości rozstrzyga oryginał.',
@@ -519,6 +571,9 @@ export function renderDetail(host, entry, ctx) {
       laterPermits ? h('p', { class: 'detail__later' }, icon('crane', { size: 15 }),
         h('button', { type: 'button', class: 'link-btn', onClick: toRelated },
           `Później na tej samej działce lub pod tym adresem: ${plural(laterPermits, POZWOLENIE_NA_BUDOWE)} – zobacz „Powiązane wpisy”`)) : null,
+      entry.kind === 'ws' ? h('p', { class: 'detail__later' }, icon('inbox', { size: 15 }),
+        h('button', { type: 'button', class: 'link-btn', onClick: toAsk },
+          'Sprawa w toku – zapytaj urząd o wniosek i mapę terenu inwestycji')) : null,
       // Opened from a link or the related records while its kind is switched off: say so, one click switches it on.
       ctx.hiddenKind ? h('p', { class: 'notice notice--quiet detail__hidden', role: 'note' }, icon('info', { size: 15 }),
         h('span', null, `${cap(listLabel)} są teraz ukryte na liście wyników. `,
@@ -544,6 +599,7 @@ export function renderDetail(host, entry, ctx) {
     warnings.length ? section('Uwagi do danych', h('ul', { class: 'notes' }, warnings.map((w) => h('li', null, icon('info', { size: 15 }), h('span', null, w)))),
       { id: 'd-warn' }) : null,
     relatedSection(entry, index, ctx),
+    askSection(entry, kd),
     section('Źródło', [
       h('p', { class: 'dsec__lead' }, leadByDataset[entry.dataset] || leadByDataset.district),
       provenance(entry, index),
@@ -566,7 +622,9 @@ export function renderDetail(host, entry, ctx) {
         const ok = await copyText(window.location.href);
         toast(ok ? 'Skopiowano link do wpisu.' : 'Nie udało się skopiować linku.', { kind: ok ? 'success' : 'error' });
       },
-    }, icon('link', { size: 15 }), h('span', { class: 'btn__label' }, 'Kopiuj link'))]);
+    }, icon('link', { size: 15 }), h('span', { class: 'btn__label' }, 'Kopiuj link')),
+    h('button', { type: 'button', class: 'btn btn--secondary btn--sm', title: 'Poproś urząd o pełne dokumenty tej sprawy', onClick: toAsk },
+      icon('inbox', { size: 15 }), h('span', { class: 'btn__label' }, 'Zapytaj urząd'))]);
 
   replaceChildren(host, h('div', { class: `detail detail--${/^[a-z]+$/.test(entry.kind) ? entry.kind : 'other'}` }, bar, body));
   host.setAttribute('aria-labelledby', 'detail-title');

@@ -56,6 +56,21 @@ Presentation
   both is the Prezydent m.st. Warszawy. Shown in the CSV column `organ` and the issuer facet.
 - 🔴 **Two new investment tags for permit texts**: "Instalacje w budynku" (431 permits, previously counted as
   "Sieci") and "Remont, docieplenie" (406). Labels and usefulness to review.
+- 🔴 **"Zapytaj urząd" (request for public information) on every record** (`site/js/request.js`, detail panel section +
+  top-bar button + a call to action on initiated cases). A prefilled letter per kind (WZ/CP: decision + map
+  attachment + urban analysis + application; initiated case: application + stage + draft; PnB: decision + site plan
+  and elevations, inspection as fallback; zgłoszenie: notification + objection status), sent via `mailto:` or copied
+  into ePUAP. Nothing goes through the site. **To review:**
+  - Recipient = the issuing office's own inbox (`site/js/config.js → INFO_REQUEST`): district cases →
+    `pragapoludnie.urzad@um.warszawa.pl`, BAiPP cases → `sekretariat.BAiPP@um.warszawa.pl` (the owner's working
+    addresses). The issuer is always known for Warsaw cases: every "city" record/permit has an `AM…` (BAiPP) sign.
+    The city's general `kancelaria@um.warszawa.pl` and e-Doręczenia `AE:PL-79408-50689-FDSVF-21` (19115 page,
+    2026-10-25) are shown as alternatives.
+  - Legal wording (UDIP art. 2 ust. 1 + ooś art. 8) should be checked once by a lawyer / Sieć Obywatelska Watchdog,
+    especially the PnB project request (offices sometimes refuse copies of projects on copyright grounds).
+  - Voivode-issued permits (12) go to `info@mazowieckie.pl`, found only in a 2022 MUW recruitment notice – verify.
+    The one `other` permit (organ "Praga Pn.", likely a register error) gets no prefilled address.
+  - `mailto:` links are ~2,100 characters; very old mail clients may truncate them ("Kopiuj treść" is the fallback).
 
 Geography
 - 🔴 **Related records = same parcel or same street + house number, across all datasets.** With permits included
@@ -200,6 +215,8 @@ Frontend
 - 🟠 `hyphens: auto` depends on the browser's Polish dictionary; long words always break safely anyway.
 - 🟠 The e2e browser test (162 checks incl. a WebKit group) is not run in CI (needs browsers); `npm run e2e`
   (fixture) overwrites the real-data screenshots in `tests/e2e/output`. The OG image shows only planning kinds.
+- 🟠 "Zapytaj urząd" follow-ups: one request for all cases on a parcel/address; a short "how to request public
+  information" section on the About page; a way to share received documents back (needs moderation and a backend).
 
 ## 4. Handled during the build (🟢)
 

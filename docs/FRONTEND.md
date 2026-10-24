@@ -60,6 +60,7 @@ site/
   js/format.js          PURE  Polish plurals, dates ("9 lipca 2026"), months, bytes, distances
   js/csv.js             PURE  CSV export for Polish Excel
   js/copy.js            PURE  UI copy not coming from data (kind explanations, labels, promo wording)
+  js/request.js         PURE  "Zapytaj urząd": prefilled request for public information per record (addressee, mailto)
   js/dom.js, icons.js   tiny DOM helpers (text-only insertion of data), focus trap, inline SVG icons
   js/views/explore.js   search, timeline, results, chips, empty state, CSV, map wiring, mobile modes
   js/views/filters-panel.js  facet panel built once from the dictionaries, patched in place (focus-safe)

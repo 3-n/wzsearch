@@ -1038,6 +1038,19 @@ a.chain__body:hover { background: var(--surface-sunken); }
 .prov__raw summary::after { content: "›"; margin-left: auto; color: var(--text-3); transition: transform var(--dur) var(--ease); font-size: 18px; line-height: 1; }
 .prov__raw[open] summary::after { transform: rotate(90deg); }
 .prov__raw summary .muted { font-weight: 450; }
+/* "Zapytaj urząd": prefilled request for public information */
+.ask__party { margin: -4px 0 12px; line-height: 1.5; }
+.ask__details { margin-top: 4px; }
+.ask__details summary { cursor: pointer; font-size: 13.5px; font-weight: 650; padding: 4px 0; }
+.ask__details > p { margin: 6px 0; }
+.ask__text {
+  display: block; width: 100%; min-height: 220px; resize: vertical; padding: 10px 12px;
+  font-family: var(--mono); font-size: 12.5px; line-height: 1.5;
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r);
+}
+.ask__text:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ask__how { margin-top: 10px; line-height: 1.55; }
+.ask__how .mono { font-size: 12.5px; overflow-wrap: anywhere; }
 .detail__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-top: 20px; border-top: 1px solid var(--border); }
 
 .table { width: 100%; border-collapse: collapse; font-size: 13px; }

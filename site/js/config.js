@@ -26,6 +26,29 @@ export const SOURCE_INDEX_URL = 'https://pragapld.um.warszawa.pl/informacja-o-ws
 /** The city architecture office's lists (BAiPP; fallback when records.json → datasets.baipp has no url). */
 export const BAIPP_URL = 'https://architektura.um.warszawa.pl/postepowania-i-decyzje';
 
+/**
+ * Where "Zapytaj urząd" sends requests for public information (site/js/request.js), per issuer code.
+ * The precise office inbox is the default (the issuer is always known: district → WAB Praga-Południe,
+ * city → BAiPP – every "city" case sign starts with "AM"); `fallback` is the city office's general inbox, shown as
+ * an alternative for district and BAiPP cases. Sources (checked 2026-10-25):
+ * - district, city: the addresses the project owner uses in practice; pragapoludnie.urzad@ also in the district's
+ *   accessibility report;
+ * - fallback + e-Doręczenia: https://warszawa19115.pl/-/udostepnianie-informacji-publicznej-na-wniosek
+ *   ("e-mail w sprawie postępowań prowadzonych w Urzędzie");
+ * - voivode: the general inbox of the Mazowiecki Urząd Wojewódzki from a 2022 recruitment notice – to verify.
+ * Empty string → no prefilled recipient.
+ */
+export const INFO_REQUEST = {
+  emails: {
+    district: 'pragapoludnie.urzad@um.warszawa.pl',
+    city: 'sekretariat.BAiPP@um.warszawa.pl',
+    voivode: 'info@mazowieckie.pl',
+  },
+  fallback: 'kancelaria@um.warszawa.pl',
+  edelivery: 'AE:PL-79408-50689-FDSVF-21',
+  guideUrl: 'https://warszawa19115.pl/-/udostepnianie-informacji-publicznej-na-wniosek',
+};
+
 /** Number of result cards rendered per batch. */
 export const PAGE_SIZE = 50;
 
