@@ -146,10 +146,15 @@ CI commits and deploys only on exit code 0.
 2. *Settings → Pages → Build and deployment → Source:* **GitHub Actions**.
 3. Optionally set `REPO_URL` / `ISSUES_URL` in [`site/js/config.js`](site/js/config.js) (shown on the „O projekcie”
    page and, for `ISSUES_URL`, as a „Zgłoś błąd w danych” button under every record).
-4. Run the **Update data & deploy** workflow once (*Actions → Update data & deploy → Run workflow*).
+4. Push to `main`: [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) publishes `site/` as committed
+   (on every push that touches `site/`, or by hand).
 
-[`.github/workflows/update.yml`](.github/workflows/update.yml) then runs daily at 06:00 UTC on the 9th–16th of
-each month (the office publishes around the 10th) and weekly otherwise. It crawls, checks GUNB (no secrets needed;
+**Refreshing data:** run `make data` locally around the 10th of each month (the office publishes the previous
+month's lists then), commit and push. The district site blocks GitHub-hosted runners (HTTP 403 for cloud IP ranges,
+checked 2026-10-26), so the scheduled refresh is switched off. Set the Pages URL once with
+`SITE_URL=https://<user>.github.io/<repo>/ make data-offline`; later local builds keep it.
+
+[`.github/workflows/update.yml`](.github/workflows/update.yml) (manual; its schedule is commented out) crawls, checks GUNB (no secrets needed;
 the ZIPs are downloaded to the runner and never committed – only the small extracts and `data/cache/rwdz.json` are),
 rebuilds, runs the tests, commits changed data back to the repository and deploys `site/`. Permalinks in the CSV
 and the feed use the Pages URL (`SITE_URL`). If the build or the tests fail, nothing is committed or deployed and the

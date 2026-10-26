@@ -1,4 +1,9 @@
-# Scheduled data refresh + GitHub Pages deployment.
+# Data refresh + GitHub Pages deployment – manual only (Actions → Update data & deploy → Run workflow).
+#
+# The schedule is off: pragapld.um.warszawa.pl answers GitHub-hosted runners with 403 Forbidden (cloud IP ranges
+# are blocked; a home connection gets 200), so a run here falls back to the previous district data and stops with
+# exit code 3. Refresh locally instead (`make data`, commit, push – deploy.yml publishes site/). To restore the
+# schedule (e.g. on a self-hosted runner or once the block is lifted), uncomment the `schedule` block below.
 #
 # 1. crawls the district's monthly pages and the BAiPP (city architecture bureau) lists and downloads
 #    new/changed Excel files (polite, cached),
@@ -20,11 +25,11 @@
 name: Update data & deploy
 
 on:
-  schedule:
-    # The office publishes the previous month's lists around the 10th: check daily at 06:00 UTC
-    # on the 9th–16th, and weekly (Mondays) the rest of the month.
-    - cron: "0 6 9-16 * *"
-    - cron: "0 6 * * 1"
+  # schedule:
+  #   # The office publishes the previous month's lists around the 10th: check daily at 06:00 UTC
+  #   # on the 9th–16th, and weekly (Mondays) the rest of the month.
+  #   - cron: "0 6 9-16 * *"
+  #   - cron: "0 6 * * 1"
   workflow_dispatch:
     inputs:
       refresh:
