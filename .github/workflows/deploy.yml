@@ -1,0 +1,50 @@
+# Deploys site/ as committed (no crawl) to GitHub Pages: on every push to main that touches the site, or by hand.
+#
+# Why separate from "Update data & deploy": the district site (pragapld.um.warszawa.pl) answers GitHub-hosted
+# runners with 403 Forbidden (cloud IP ranges are blocked; the same request from a home connection gets 200), so
+# the scheduled crawl cannot refresh district data in CI. Data can be rebuilt locally (`make data`) and pushed;
+# this workflow then publishes it. Pushes made by the update workflow (GITHUB_TOKEN) do not trigger this one.
+
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+    paths: ["site/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update-and-deploy
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
