@@ -219,6 +219,19 @@ def test_attachments_page_keeps_the_districts_lists_only():
     assert page["skipped_attachments"] == {"excluded": 1, "pdf": 1}
 
 
+def test_attachments_before_2020_are_left_out():
+    # Białołęka links its PDF registers back to 2009; the 1129/2020 lists start in IX 2020
+    html = """<html><body><div class="journal-content-article" data-analytics-asset-title="Warunki zabudowy - decyzje">
+        <a href="/documents/40771/1/Decyzje+WZ+%283%29.pdf/00000000-0000-0000-0000-000000000001?t=1">Warunki zabudowy decyzje 2026 (143 KB, PDF)</a>
+        <a href="/documents/40771/2/Decyzje+WZ+2020.pdf/00000000-0000-0000-0000-000000000002?t=2">Warunki zabudowy decyzje 2020 (90 KB, PDF)</a>
+        <a href="/documents/40771/3/Decyzje+WZ+2019.pdf/00000000-0000-0000-0000-000000000003?t=3">Warunki zabudowy decyzje 2019 (90 KB, PDF)</a>
+      </div></body></html>"""
+    page = crawl.parse_attachments_page(html, "https://bialoleka.um.warszawa.pl/warunki-zabudowy-decyzje",
+                                        districts.get("bialoleka"))
+    assert [b["period"] for b in page["blocks"]] == ["2026", "2020"]
+    assert page["skipped_attachments"] == {"before 2020": 1}
+
+
 # =========================================================================== ZIP archives
 
 
@@ -249,3 +262,27 @@ def test_district_paths(tmp_path):
     assert wola.mirror_url == "sources/d/wola"
     assert wola.cache == tmp_path / "data/cache/districts/wola"
     assert wola.rwdz_cache == tmp_path / "data/cache"
+
+
+# =========================================================================== Wawer's oddities
+
+
+def test_three_digit_precincts_use_the_register_codes():
+    # Wawer's 3-12-100 and 3-12-101 are "2100"/"2101" in the land register (GUGiK's county package)
+    with districts.use(districts.get("wawer")):
+        assert [p["id"] for p in normalize.parse_parcels("dz. ew. nr 83, obręb 3-12-101")[0]] == ["146514_8.2101.83"]
+        assert normalize.parse_parcels("obręb 3-12-100, dz.ew.nr 119/2")[0][0]["id"] == "146514_8.2100.119/2"
+    assert districts.unit_for_precinct("3-12-101", "146514_8") == "146514_8"
+
+
+def test_street_from_the_parcels_cell_and_filing_date():
+    row = {"cells": {"number": "2/2020\nOdmowa", "date": "03.01.2020", "applicant": "osoba fizyczna",
+                     "investment": "Zmiana sposobu użytkowania", "address": None,
+                     "parcels": "Marsa 56, dz. Ew .nr. 14/4 obręb 3-07-15", "filed": "2019-11-04"},
+           "row": 3, "sheet": "styczeń-grudzień 2020", "raw": []}
+    with districts.use(districts.get("wawer")):
+        rec = normalize.normalize_row(row, "wz", {"file_id": "f1", "period": "2020"})
+    assert (rec["id"], rec["outcome"], rec["date"], rec["filed_date"]) == ("wz-waw-2020-2", "refusal", "2020-01-03",
+                                                                          "2019-11-04")
+    assert (rec["address"]["street"], rec["address"]["number"]) == ("Marsa", "56")
+    assert [p["id"] for p in rec["parcels"]] == ["146514_8.0715.14/4"]

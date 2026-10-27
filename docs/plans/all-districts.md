@@ -272,7 +272,13 @@ Built and working end to end on real data (phases 1 and most of 2):
   (phase 3) next. Geocoding needs ~60,000 unique parcels city-wide (≈ 8–10 h at 2 ULDK requests/s, once);
   Wawer alone has 11,200 and Białołęka 9,500.
 
-Not done in the draft (next steps, in order): run the first geocoding (ULDK) district by district; OSM areas per
+Update, evening of 27 X 2026 (second commit): the six PDF districts are read (`pipeline/pdftable.py`, phase 4) and
+the first geocoding takes its parcels from GUGiK's county package (`pipeline/egib.py`, §3.5) – every district's
+parcels in seconds, addresses via UUG at ~2/s. The city's file CDN refused most downloads of Białołęka, Bielany,
+Włochy, Wesoła and Ursus that day (403 even at one request per 10 s for uncached files), so those districts hold
+only what was fetched; the next crawls retry. Ursus's own xlsx layout (phase 5) waits for its files.
+
+Not done in the draft (next steps, in order): OSM areas per
 district (Overpass was overloaded on 27 Oct); a per-attachment size cap in the crawler (Wola links a 135 MB ZIP of
 decision PDFs on a list page – excluded by configuration now); on phones ≤ 390 px the district icon makes "O projekcie" wrap in the top bar (needs a shorter label or a menu – a copy/layout decision); phase 3 (slim index, city mode); phase 4 (PDF
 parsers); e2e checks for the district picker; in-place district switch instead of a reload.
@@ -292,6 +298,9 @@ parsers); e2e checks for the district picker; in-place district switch instead o
 4. Commit inputs only and build in CI (changes the deploy model and `test.yml`).
 5. Per-district failure policy (§3.6).
 6. Pre-2020 registers (Białołęka from 2009, Mokotów 2018–19, Żoliborz 2015–20): out of scope at first, as for PP.
-7. Writing to the six PDF-only offices (and Ursus, Żoliborz) to ask for xlsx: cheaper than maintaining two PDF
-   parsers.
+7. Writing to the six PDF-only offices (and Ursus, Żoliborz) to ask for xlsx: the PDF reader works, but it
+   depends on print layouts (Mokotów changed its six times since 2021) and loses clipped cell text (Ochota).
 8. Branding: "wzSearch Praga-Południe" → "wzSearch Warszawa", with the district in the switcher.
+9. Two new runtime dependencies: poppler's `pdftotext` (a system package; CI installs `poppler-utils`) and GUGiK's
+   county parcel package (a 107 MB download, not committed, refreshed when a run has ≥ 300 unknown parcels).
+10. Asking the city how to download its documents in bulk (the file CDN refuses crawlers; §5a).

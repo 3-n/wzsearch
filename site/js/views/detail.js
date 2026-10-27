@@ -102,9 +102,27 @@ function fileMeta(file) {
     file?.sha256 ? h('span', { title: `SHA-256: ${file.sha256}` }, 'SHA-256 ', h('code', null, `${String(file.sha256).slice(0, 12)}…`)) : null);
 }
 
-/** Spreadsheet provenance (district monthly lists and BAiPP yearly lists): page(s) + file + sheet/row + raw cells. */
+/** The kind of a source file: "xlsx", "pdf" (the districts that publish only PDFs) or "zip" (Wawer's yearly packs). */
+function fileType(file) {
+  return String(file?.ext || String(file?.filename || '').split('.').pop() || 'xlsx').toLowerCase();
+}
+
+const FILE_LABEL = { pdf: 'Plik PDF (oryginał)', zip: 'Archiwum ZIP (oryginał)' };
+
+/** Where a row sits in its file: a sheet and row of a workbook, or a page and position of a PDF list. */
+function sourcePlace(s, type) {
+  if (type === 'pdf') {
+    const page = String(s.sheet || '').replace(/^strona\s*/i, '');
+    return `${page ? `Strona ${page}` : 'Strona nieznana'}${s.row != null ? `, pozycja ${s.row} w pliku` : ''}`;
+  }
+  const sheet = s.sheet && String(s.sheet).trim() ? `Arkusz „${String(s.sheet).trim()}”` : (s.sheet != null ? 'Arkusz bez nazwy' : 'Arkusz nieznany');
+  return `${sheet}${s.row != null ? `, wiersz ${s.row}` : ''}`;
+}
+
+/** Provenance of a list row (district lists and BAiPP yearly lists): page(s) + file + sheet/row + raw cells. */
 function sheetSource(s, index, { dataset, compact = false } = {}) {
   const file = index.filesById.get(s.file_id);
+  const type = fileType(file);
   // Every page that links this file (a file may be re-linked in a later month).
   const pageIds = [...s.page_ids, ...((file?.page_ids || []).filter((p) => !s.page_ids.includes(p)))];
   const pages = pageIds.map((p) => index.pagesById.get(p) || { page_id: p });
@@ -116,8 +134,7 @@ function sheetSource(s, index, { dataset, compact = false } = {}) {
       h('div', { class: 'prov__file' },
         h('p', { class: 'prov__name' }, fname),
         h('p', { class: 'prov__loc' },
-          s.sheet && String(s.sheet).trim() ? `Arkusz „${String(s.sheet).trim()}”` : (s.sheet != null ? 'Arkusz bez nazwy' : 'Arkusz nieznany'),
-          s.row != null ? `, wiersz ${s.row}` : '',
+          sourcePlace(s, type),
           file?.size ? h('span', { class: 'muted' }, ` · ${formatBytes(file.size)}`) : null))),
     cityWide ? h('p', { class: 'prov__context' }, icon('info', { size: 14 }),
       h('span', null, `Plik ogólnomiejski: ${plural(file.rows_total, WIERSZ)}, dla ${D().genitive}: ${formatNumber(file.parsed_count ?? 0)}. `,
@@ -128,7 +145,7 @@ function sheetSource(s, index, { dataset, compact = false } = {}) {
         p.published_at ? ` · ${formatDateTime(p.published_at, { time: false })}` : '')))),
     h('div', { class: 'prov__actions' },
       compact ? null : pages.map((p, pi) => extLink(p.url, pages.length > 1 ? `Strona źródłowa (${p.title || pi + 1})` : 'Strona źródłowa', 'external')),
-      extLink(file?.url, 'Plik XLSX (oryginał)', 'download'),
+      extLink(file?.url, FILE_LABEL[type] || 'Plik XLSX (oryginał)', 'download'),
       file?.archive_path ? extLink(file.archive_path, 'Kopia archiwalna', 'archive') : null),
     (file?.warnings || []).length && compact ? h('p', { class: 'prov__meta' }, file.warnings.map((w) => h('span', null, String(w)))) : null,
     fileMeta(file),
@@ -605,7 +622,9 @@ export function renderDetail(host, entry, ctx) {
     relatedSection(entry, index, ctx),
     askSection(entry, kd),
     section('Źródło', [
-      h('p', { class: 'dsec__lead' }, leadByDataset[entry.dataset] || leadByDataset.district),
+      h('p', { class: 'dsec__lead' }, entry.dataset === 'district' && fileType(index.filesById.get(r.sources?.[0]?.file_id)) === 'pdf'
+        ? 'Wpis pochodzi z wykazu opublikowanego przez Urząd Dzielnicy jako plik PDF – odczytaliśmy go z układu tekstu na stronie. W razie wątpliwości rozstrzyga oryginał.'
+        : leadByDataset[entry.dataset] || leadByDataset.district),
       provenance(entry, index),
     ], { id: 'd-src', iconName: 'sheet' }),
     h('footer', { class: 'detail__foot' },

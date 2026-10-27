@@ -331,10 +331,12 @@ def unit_for_precinct(precinct: str, prefer: str | None = None) -> str | None:
     ``prefer`` (the record's own district unit) wins when it has the precinct or when nobody owns it
     but the zone is the district's. None when the precinct cannot be placed in any unit.
     """
-    m = re.fullmatch(r"(\d)-(\d{2})-(\d{2})", precinct or "")
+    m = re.fullmatch(r"(\d)-(\d{2})-(\d{2,3})", precinct or "")
     if not m:
         return None
     zone, code = m.group(1), m.group(2) + m.group(3)
+    if len(m.group(3)) == 3:            # Wawer's 3-12-100 / 3-12-101 (normalize.THREE_DIGIT_PRECINCTS)
+        code = m.group(2)[-1] + m.group(3)
     table = _table()
     if prefer and code in table.units.get(prefer, ()):
         d = _BY_UNIT.get(prefer)

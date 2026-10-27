@@ -281,7 +281,7 @@ export function createSources(host, index) {
         ext(indexUrl, 'Wykaz na stronie urzędu', 'external', 'link')),
       statList([
         [D().slug === DEFAULT_SLUG ? 'Strony miesięczne' : 'Strony z listami', formatNumber(pages.length)],
-        ['Pliki Excel', formatNumber(files.length)],
+        [D().slug === DEFAULT_SLUG ? 'Pliki Excel' : 'Pliki', formatNumber(files.length)],
         ['Wpisy w wyszukiwarce', formatNumber(entries)],
         ['Niezgodne liczby pozycji', formatNumber(mismatches), mismatches > 0],
       ]),

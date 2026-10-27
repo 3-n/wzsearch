@@ -283,3 +283,46 @@ def test_every_raw_workbook_parses_and_keeps_every_row():
         for row in pf["rows"]:
             assert row["raw"], (path.name, row["row"])
     assert total >= 450
+
+
+# ------------------------------------------------------------------ other districts' layouts (Wawer 2020–21)
+
+
+WAWER_2020 = ["Nr decyzji i data jej wydania", "Inwestor", "Rodzaj inwestycji", "Streszczenie ustaleń decyzji",
+              "Oznaczenie nieruchomości", "Data złożenia wniosku"]
+
+
+def test_header_without_lp_number_and_date_in_one_cell(tmp_path):
+    # Wawer's yearly 2020 register: no Lp column, "1/2020⏎02.01.2020" in one cell, the outcome in "Streszczenie…"
+    rows = [WAWER_2020,
+            ["1/2020\n02.01.2020", "osoba fizyczna", "Zmiana sposobu użytkowania", "Umorzenie",
+             "Bronisława Czecha, dz. Ew .nr. 39 obręb 3-11-04", "2019-04-01"],
+            ["50/2020 10.02.2020", "osoba fizyczna", "Budowa budynku", "Ustalenie warunków zabudowy dla budowy domu",
+             "Marsa 56, dz. Ew .nr. 14/4 obręb 3-07-15", "złożony 28.05.2018"]]
+    pf = parse_workbook(_save(tmp_path, rows))
+    first, second = (r["cells"] for r in pf["rows"])
+    assert (first["number"], first["date"], first["investment"]) == ("1/2020\nUmorzenie", "02.01.2020",
+                                                                     "Zmiana sposobu użytkowania")
+    assert (second["number"], second["date"]) == ("50/2020", "10.02.2020")    # a description is no outcome
+    assert first["filed"] == "2019-04-01"                # the application's date, not the decision's
+    assert [w for w in pf["warnings"] if "brak kolumn" in w] == ["arkusz „Arkusz1”: brak kolumn: lp, address"]
+
+
+def test_case_sign_next_to_a_decision_number_is_no_applications_list(tmp_path):
+    rows = [["Informacja o wydanych decyzjach w sprawie warunków zabudowy"],
+            ["Lp.", "Nr decyzji i data jej wydania", "rodzaj inwestycji", "oznaczenie nieruchomości",
+             "Znak sprawy", "Data złożenia wniosku"],
+            [13, "144/2021\n17.05.2021", "Budowa budynku", "Wał Miedzeszyński, dz. ew. nr 74/1\nobręb 3-12-101",
+             "6730.40.2018.RPO", "2021-05-06"]]
+    pf = parse_workbook(_save(tmp_path, rows))
+    assert pf["kind"] == "wz"
+    assert pf["rows"][0]["cells"]["number"] == "144/2021"
+
+
+def test_applications_list_keeps_its_filing_date_as_the_date(tmp_path):
+    rows = [["Znak sprawy", "Data złożenia wniosku", "Inwestor", "Nazwa", "Adres", "Lokalizacja"],
+            ["6730.9.2021.AKO", "2021-01-12", "osoba fizyczna", "budowa 3 bud. mieszkalnych", "Krokusów",
+             "obręb 3-12-100, dz.ew.nr 119/2"]]
+    cells = parse_workbook(_save(tmp_path, rows))["rows"][0]["cells"]
+    assert (cells["date"], cells["investment"], cells["parcels"]) == ("2021-01-12", "budowa 3 bud. mieszkalnych",
+                                                                       "obręb 3-12-100, dz.ew.nr 119/2")

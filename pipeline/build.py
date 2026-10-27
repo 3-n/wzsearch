@@ -169,6 +169,8 @@ def district_datasets() -> dict[str, dict[str, str]]:
                 "description": f"Zestawienia urzędu dzielnicy {d.name}: wszczęte postępowania oraz wydane decyzje WZ i "
                                "CP (lokalizacja inwestycji celu publicznego) w sprawach prowadzonych przez urząd "
                                "dzielnicy (zarządzenie nr 1129/2020 Prezydenta m.st. Warszawy)."
+                               + (" Urząd publikuje je jako pliki PDF – odczytujemy je z układu tekstu na stronie, "
+                                  "bez rozpoznawania obrazu (OCR)." if "pdf" in d.extensions else "")
                                + (f" Uwaga: {d.note}." if d.note else ""),
             },
             "baipp": {**DATASETS["baipp"],

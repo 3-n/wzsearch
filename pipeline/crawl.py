@@ -67,6 +67,9 @@ SOURCES = ("district", "baipp")
 #: Minimum gap between two requests to the same host: at most 2 requests per second.
 DEFAULT_DELAY = 0.5
 MAX_DENIALS = 3   # consecutive 403s after which a host is not asked again in this run
+# Lists published under Zarządzenie 1129/2020 start in IX 2020; older registers (Białołęka's go back to 2009) are out
+# of scope for now, as they are for Praga-Południe (docs/plans/all-districts.md §7.6).
+FIRST_YEAR = 2020
 
 __all__ = [
     "BAIPP_URL",
@@ -1726,13 +1729,17 @@ def parse_attachments_page(html: str, url: str, district) -> dict:
             if district.exclude_re and re.search(district.exclude_re, fold(f"{text} {filename}")):
                 skipped["excluded"] += 1
                 continue
+            period = guess_period(f"{text} {filename}")
+            if period and int(period[:4]) < FIRST_YEAR:
+                skipped[f"before {FIRST_YEAR}"] += 1
+                continue
             seen.add(file_id)
             page["blocks"].append({
                 "text": text or filename,
                 "category": detect_attachment_category(text) or detect_attachment_category(filename),
                 "declared_count": None,
                 "file_ids": [file_id],
-                "period": guess_period(f"{text} {filename}"),
+                "period": period,
             })
             page["links"].append({"block": len(page["blocks"]) - 1, "file_id": file_id,
                                   "url": urljoin(url, href.strip()), "document_path": doc_path,
@@ -1805,8 +1812,9 @@ def crawl_attachments(
         if prev.get("file_id") in linked:
             continue
         if prev.get("ext") not in district.extensions or (
-                district.exclude_re and re.search(district.exclude_re, fold(prev.get("filename") or ""))):
-            continue   # left out by the district's configuration, not by the source: no snapshot to keep
+                district.exclude_re and re.search(district.exclude_re, fold(prev.get("filename") or ""))) or (
+                prev.get("period") and int(prev["period"][:4]) < FIRST_YEAR):
+            continue   # left out by the configuration, not by the source: no snapshot to keep
         entry = json.loads(json.dumps(prev))
         if not stale:
             entry.setdefault("removed_from_source_at", today)

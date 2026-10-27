@@ -621,7 +621,10 @@ def canonical_street(street: str | None) -> str | None:
 
 _OBREB_RE = re.compile(r"(?<![\d/])(?P<a>30|3)\s*-\s*(?P<b>\d{1,2})\s*-\s*(?P<c>0?\d{2})(?![\d/])")
 # BAiPP lists cover the whole city: obręby of every Warsaw zone (1-…8-, e.g. Praga-Północ "4-15-08").
-_OBREB_ANY_RE = re.compile(r"(?<![\d/])(?P<a>30|[1-8])\s*-\s*(?P<b>\d{1,2})\s*-\s*(?P<c>0?\d{2})(?![\d/])")
+_OBREB_ANY_RE = re.compile(r"(?<![\d/])(?P<a>30|[1-8])\s*-\s*(?P<b>\d{1,2})\s*-\s*(?P<c>0?\d{2}|10[01])(?![\d/])")
+#: The only precincts with a 3-digit number (Wawer's 3-12-100 and 3-12-101): the land register codes them "2100" and
+#: "2101" (GUGiK's county package, 27 X 2026), not "12100".
+THREE_DIGIT_PRECINCTS = {"3-12-100": "2100", "3-12-101": "2101"}
 # "3-05-2;" – an obręb with its last part cut short; its parcels cannot be placed.
 _OBREB_CUT_RE = re.compile(r"(?<![\d/])(?:30|3)\s*-\s*\d{2}\s*-\s*\d(?![\d/])")
 _OBREB_CUT_ANY_RE = re.compile(r"(?<![\d/])(?:30|[1-8])\s*-\s*\d{2}\s*-\s*\d(?![\d/])")
@@ -647,7 +650,7 @@ def parcel_id(obreb: str, number: str) -> str:
     """
     d = districts.current()
     unit = TERYT_PRAGA_POLUDNIE if d.legacy else (districts.unit_for_precinct(obreb, d.unit) or d.unit)
-    return f"{unit}.{obreb[2:].replace('-', '')}.{number}"
+    return f"{unit}.{THREE_DIGIT_PRECINCTS.get(obreb) or obreb[2:].replace('-', '')}.{number}"
 
 
 #: "07-07 dz. 6/25" – a precinct without its zone digit (Wesoła); only read for districts that write so.
@@ -729,7 +732,7 @@ def parse_parcels(raw: Any, street_hint: str | None = None, *,
         a, b, c = m.group("a"), m.group("b"), m.group("c")
         zone = "3" if a == "30" else a
         norm = f"{zone}-{int(b):02d}-{int(c):02d}"
-        if a == "30" or len(c) != 2 or len(b) != 2:
+        if a == "30" or (len(c) != 2 and norm not in THREE_DIGIT_PRECINCTS) or len(b) != 2:
             warnings.append(f"poprawiono zapis obrębu „{text[m.start():m.end()]}” na {norm}")
         obreby.append((m.start(), m.end(), norm))
     for m in (_OBREB_CUT_ANY_RE if any_obreb else _OBREB_CUT_RE).finditer(work):
@@ -974,11 +977,18 @@ def normalize_row(row: dict[str, Any], kind: str | None, file_meta: dict[str, An
         warnings.append("brak opisu inwestycji")
 
     address_cell = cells.get("address")
+    parcels_text = cell_to_str(cells.get("parcels")) if cells.get("parcels") is not None else ""
+    if address_cell is None and city_like and not city:
+        # "Marsa 56, dz. Ew .nr. 14/4 obręb 3-07-15": no address column, the street leads the parcels (Wawer 2020);
+        # its house number is no parcel
+        m = re.match(r"^\s*([^,;\d][^,;]*?(?:\s\d+\w?)?)\s*,\s*(?=dz|obr)", parcels_text, re.I)
+        if m:
+            address_cell, parcels_text = m.group(1), parcels_text[m.end():]
     address = parse_address(baipp.strip_district(address_cell) if city else address_cell, warnings)
     if city:
         address["raw"] = cell_to_str(address_cell) if address_cell is not None else ""
     parcels_raw = cell_to_str(cells.get("parcels")) if cells.get("parcels") is not None else ""
-    parcels, w = parse_parcels(parcels_raw, address.get("street"), any_obreb=city)
+    parcels, w = parse_parcels(parcels_text, address.get("street"), any_obreb=city)
     warnings += w
 
     tags = classify(investment)
@@ -996,7 +1006,7 @@ def normalize_row(row: dict[str, Any], kind: str | None, file_meta: dict[str, An
         "number": number,
         "date": date_iso,
         "date_raw": date_raw,
-        "filed_date": None,
+        "filed_date": parse_date(cells["filed"])[0] if cells.get("filed") else None,
         "period": period,
         "applicant": applicant,
         "applicant_type": applicant_type(applicant),

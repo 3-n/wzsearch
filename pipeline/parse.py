@@ -59,12 +59,15 @@ _MAX_HEADER_SCAN = 40  # header must be within the first N rows of a sheet
 # mislabelled) maps to the summary, not to the address.
 _HEADER_RULES: list[tuple[str, re.Pattern[str]]] = [
     ("lp", re.compile(r"^l\.?\s*p\.?$")),
-    ("investment", re.compile(r"streszczeni|nazwa inwestycji|rodzaj inwestycji|opis inwestycji")),
+    ("investment", re.compile(r"streszczeni|nazwa inwestycji|rodzaj inwestycji|opis inwestycji|^nazwa$")),
     ("applicant", re.compile(r"wnioskodawc|inwestor")),
-    ("number", re.compile(r"znak sprawy|numer decyzji|^nr decyzji$|^nr\.?$|^numer$|sygnatur")),
+    ("number", re.compile(r"znak sprawy|numer decyzji|^nr decyzji$|^nr decyzji i data|^nr\.?$|^numer$|sygnatur")),
+    # the application's date in a list of decisions (Wawer 2021 "Data złożenia wniosku"); a list without another
+    # date column uses it as its date (see _build_layout)
+    ("filed", re.compile(r"^data (?:zlozenia|wplywu)")),
     ("date", re.compile(r"^data\b|data wydania|data wszczecia|data decyzji")),
     ("address", re.compile(r"adres|^ulica|ulica, dzielnica")),
-    ("parcels", re.compile(r"dzialk|\bdz\.|obreb|oznaczenie nieruchomosci|nieruchomosc")),
+    ("parcels", re.compile(r"dzialk|\bdz\.|obreb|oznaczenie nieruchomosci|nieruchomosc|^lokalizacja$")),
 ]
 
 # Sub-header cells look like these (old 2020–2024 layout, row 5).
@@ -170,13 +173,20 @@ def _merged_parent_map(ws) -> dict[tuple[int, int], tuple[int, int]]:
     return out
 
 
-def _find_header(rows: list[tuple[Any, ...]]) -> int | None:
-    """Index (0-based) of the first row having an ``Lp`` cell and at least two more text cells."""
+def _find_header(rows: list[tuple[Any, ...]], *, lp_only: bool = False) -> int | None:
+    """Index (0-based) of the first row having an ``Lp`` cell and at least two more text cells; without one
+    (Wawer 2020–21) of the first row whose cells name at least three different fields, a number among them."""
     for i, row in enumerate(rows[:_MAX_HEADER_SCAN]):
         if any(isinstance(v, str) and _LP_RE.match(v) for v in row):
             texts = [v for v in row if isinstance(v, str) and v.strip()]
             if len(texts) >= 3:
                 return i
+    if lp_only:
+        return None
+    for i, row in enumerate(rows[:_MAX_HEADER_SCAN]):
+        named = {classify_header(v) for v in row if isinstance(v, str) and v.strip() and len(v) < 120} - {None}
+        if len(named) >= 3 and "number" in named:
+            return i
     return None
 
 
@@ -220,6 +230,7 @@ class _SheetLayout:
     data_start: int             # 0-based row index of the first data row
     has_subheader: bool
     warnings: list[str]
+    number_date: int | None = None   # col holding "number ⏎ date" ("Nr decyzji i data jej wydania" without sub-header)
 
 
 def _build_layout(ws, rows: list[tuple[Any, ...]], h: int, sheet: str) -> _SheetLayout:
@@ -281,13 +292,18 @@ def _build_layout(ws, rows: list[tuple[Any, ...]], h: int, sheet: str) -> _Sheet
         taken[field] = j
         fields[j] = field
 
-    missing = [f for f in FIELDS if f not in taken]
+    number_date = next((j for j, f in fields.items() if f == "number" and specific[j] == labels[j]
+                        and re.search(r"nr decyzji i data", collapse_ws(fold(labels[j])))), None)
+    if "filed" in taken and "date" not in taken and number_date is None:
+        fields[taken.pop("filed")] = "date"     # an applications list: its filing date is the list's date
+        taken["date"] = next(j for j, f in fields.items() if f == "date")
+    missing = [f for f in FIELDS if f not in taken and not (f == "date" and number_date is not None)]
     if missing:
         warnings.append(f"arkusz „{sheet}”: brak kolumn: {', '.join(missing)}")
 
     if nxt < len(rows) and _is_numbering_row(rows[nxt]):
         nxt += 1
-    return _SheetLayout(labels, fields, nxt, sub is not None, warnings)
+    return _SheetLayout(labels, fields, nxt, sub is not None, warnings, number_date)
 
 
 def is_baipp_title(title_texts: Iterable[str]) -> bool:
@@ -369,7 +385,9 @@ def parse_workbook(path: str | Path | IO[bytes]) -> dict[str, Any]:
             title_texts = [collapse_ws(v) for r in rows[:h] for v in r if isinstance(v, str) and v.strip()]
             header_texts = [collapse_ws(v) for v in rows[h] if isinstance(v, str)]
             kind = detect_kind(*title_texts) or detect_kind(sheet) or detect_kind(*header_texts)
-            header_kind = "ws" if detect_kind(*header_texts) == "ws" else None
+            # "Znak sprawy" makes a list of initiated proceedings – unless it sits next to a decision number (Wawer)
+            decision_col = any(re.search(r"\bnr decyzji|numer decyzji", collapse_ws(fold(t))) for t in header_texts)
+            header_kind = "ws" if detect_kind(*header_texts) == "ws" and not decision_col else None
             if kind and header_kind and kind != header_kind:
                 result["warnings"].append(
                     f"arkusz „{sheet}”: tytuł wskazuje „{kind}”, a nagłówki kolumn „{header_kind}” – przyjęto nagłówki")
@@ -399,7 +417,7 @@ def parse_workbook(path: str | Path | IO[bytes]) -> dict[str, Any]:
                 if all(is_blank(v) for v in r):
                     continue
                 # A repeated header (second table on the same sheet) re-maps the columns.
-                if _find_header([r]) == 0:
+                if _find_header([r], lp_only=True) == 0:
                     current = _build_layout(ws, rows, i, sheet)
                     result["warnings"].extend(current.warnings)
                     result["warnings"].append(f"arkusz „{sheet}”: kolejny nagłówek tabeli w wierszu {i + 1}")
@@ -494,6 +512,7 @@ def _make_row(sheet: str, i: int, values: tuple[Any, ...], layout: _SheetLayout)
     raw: list[list[Any]] = []
     row_warnings: list[str] = []
     content = False
+    outcome: str | None = None
     width = max(len(values), max(layout.labels, default=-1) + 1)
     for j in range(width):
         v = values[j] if j < len(values) else None
@@ -508,9 +527,27 @@ def _make_row(sheet: str, i: int, values: tuple[Any, ...], layout: _SheetLayout)
             content = True
             if label is None:
                 label = f"(kolumna {get_column_letter(j + 1)})"
-            row_warnings.append(f"wartość w kolumnie bez rozpoznanego pola: „{label}”")
+            if (_OUTCOME_COLUMN_RE.search(fold(label)) and isinstance(v, str)
+                    and _OUTCOME_VALUE_RE.match(collapse_ws(fold(v)))):
+                outcome = collapse_ws(v)        # Wawer 2020: "Streszczenie ustaleń decyzji" = "Umorzenie" / "Odmowa"
+            else:
+                row_warnings.append(f"wartość w kolumnie bez rozpoznanego pola: „{label}”")
         if label is not None:
             raw.append([label, None if blank else cell_to_json(v)])
     if not content:
         return None
+    if outcome and isinstance(cells.get("number"), str):
+        cells["number"] = f"{cells['number']}\n{outcome}"     # read with the number, like BAiPP's outcome lines
+    if layout.number_date is not None and isinstance(cells.get("number"), str) and cells.get("date") is None:
+        m = _DATE_TOKEN_RE.search(cells["number"])      # "1/2020⏎02.01.2020", "50/2020 10.02.2020"
+        if m:
+            cells["date"] = m.group(1)
+            cells["number"] = "\n".join(ln.strip() for ln in (cells["number"][:m.start()] + cells["number"][m.end():])
+                                        .splitlines() if ln.strip())
     return {"sheet": sheet, "row": i + 1, "cells": cells, "raw": raw, "warnings": row_warnings}
+
+
+_OUTCOME_COLUMN_RE = re.compile(r"streszczeni|rozstrzygni|wynik")
+_OUTCOME_VALUE_RE = re.compile(r"^(?:umorzenie|odmowa|ustalenie|przeniesienie|wygasniecie|uchylenie|pozytywna|odmowna)\b"
+                               r".{0,30}$")
+_DATE_TOKEN_RE = re.compile(r"(?<![\d./-])(\d{1,2}\.\d{1,2}\.\d{4}|\d{4}-\d{2}-\d{2})(?:\s*r\.)?(?![\d./-])")

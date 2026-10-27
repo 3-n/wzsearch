@@ -55,7 +55,8 @@ Totals: 11 districts publish **xlsx** that follow the template (Bemowo, Praga-P�
 Ursynów, Wawer, Wesoła, Wilanów, Wola, Żoliborz, plus Praga-Południe), 1 publishes xlsx in its **own register layout**
 (Ursus), and **6 publish only PDF** for recent years (Białołęka, Bielany, Mokotów, Ochota, Targówek, Włochy). The
 PDFs are text PDFs exported from Excel or from the case system (`pdftotext -layout` gives clean text, no OCR needed),
-but tables are only recoverable from word positions.
+but tables are only recoverable from word positions – done by `pipeline/pdftable.py` since 27 X 2026 (draft branch):
+Mokotów's 210 PDFs (six layouts since 2021), Targówek's 18 and Ochota's 3 parse without warnings.
 
 ## Expected data volume (for the plan)
 
@@ -253,6 +254,14 @@ Already ingested; see `docs/research/building-permits.md` and BACKLOG.
   1129/2020 template, so different formats.
 
 ## 📮 Source problems worth raising (new, beyond BACKLOG §2)
+
+Found while reading the PDFs (27 X 2026):
+* Ochota's PDFs print only the middle lines of cells taller than their row (Excel clips wrapped text): some
+  applicants read "S.A." or "Sp z o.o.". The xlsx behind `LICP_zal3.14.09.2026.xlsx.pdf` would not lose them.
+* Ochota's Lp numbering skips numbers between years (8 and 15 in the CP list); Włochy's VII 2026 list has no Lp
+  for its last four rows; Mokotów's monthly application reports leave "Znak sprawy" empty for most rows (81 %).
+* The city's file CDN (`cdn.um.warszawa.pl`) answers bulk downloads with 403, also at one request per 10 s for
+  files it has not cached – Białołęka, Bielany, Włochy, Wesoła and Ursus could not be downloaded in full.
 
 * Six districts publish the 1129/2020 information only as PDF (Białołęka, Bielany, Mokotów, Ochota, Targówek, Włochy),
   although the template is an Excel file and BAiPP/most districts publish xlsx. The zarządzenie's appendix is a

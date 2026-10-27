@@ -220,6 +220,9 @@ def _map_columns(labels: list[str], specifics: list[str], col_of) -> _Columns:
             continue
         taken[fld] = j
         fields[j] = fld
+    if "filed" in taken and "date" not in taken and "number" not in composite.values():
+        fields[taken["filed"]] = "date"      # an applications list ("Data złożenia"): the filing date is its date
+        taken["date"] = taken.pop("filed")
     missing = [f for f in parse.FIELDS if f not in taken and f != "lp"
                and not (f == "address" and "place" in composite.values())
                and not (f == "date" and "number" in composite.values())]
