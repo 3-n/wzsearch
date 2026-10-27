@@ -61,15 +61,15 @@ _OUTCOME_LABELS = {"refusal": "odmowa", "discontinued": "umorzenie", "transfer":
 # Outcome words of the second line ("odmowa", "umorzenie licp", "wygaśnięcie decyzji w części", …);
 # the first one in the text wins ("odmowa przeniesienia decyzji" is a refusal).
 _OUTCOME_WORDS = [
-    ("refusal", re.compile(r"\bodmow")),
-    ("discontinued", re.compile(r"\bumorz|\bumarzaj")),       # "Umarzająca" in the districts' PDF reports
+    ("refusal", re.compile(r"\bodmow|\bodmawiam\b")),
+    ("discontinued", re.compile(r"\bumorz|\bumarzaj|\bumarzam\b")),   # "Umarzająca" (PDF reports), "umarzam" (Ursus)
     ("transfer", re.compile(r"\bprzeniesien")),
     ("expiry", re.compile(r"\bwyga(?:s|sz)")),
 ]
 _GRANTED_RE = re.compile(r"^(?:(?:wz|licp|ulicp)\b\s*)+$")
 # The districts' PDF reports state the result of every decision; "Pozytywna" is the result of a transfer (/P) or
 # an expiry (/W) too, so the letter says more.
-_POSITIVE_RE = re.compile(r"^pozytywn\w*$")
+_POSITIVE_RE = re.compile(r"^(?:pozytywn\w*|ustalam|ustalenie)$")   # "ustalam": Ursus; "Ustalenie": Wawer 2020
 
 #: Warsaw's cadastral units (TERYT) – Praga-Południe is ``146507_8``.
 WARSAW_UNITS = {

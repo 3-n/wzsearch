@@ -232,7 +232,7 @@ in place (cumulative yearly files are the norm outside Praga-Południe), "remove
 | **1. Foundations** *(in the draft)* | district registry; precinct table; `district` field; id namespaces; BAiPP + GUNB for all districts; per-district shards + `districts.json`; `--districts`; district switcher + `dz` param; legacy links keep working | every district shows GUNB permits + BAiPP cases |
 | **2. Template-xlsx districts** *(in the draft, partly)* | `attachments`/`hub` crawlers; parser additions (separator rows, `brak`, zip, duplicated headers); per-district sources tab | 11 districts with full planning lists |
 | 3. Slim index | `sources[].raw` → buckets; `idx` buckets for cross-shard related; `warszawa/records.json`; city mode | city-wide search of planning records |
-| 4. PDF districts *(in the draft)* | `pdftable.py` (2 layouts, poppler), fixtures; ask the 6 offices for xlsx in parallel (📮) | 17 of 18 districts |
+| 4. PDF districts *(in the draft)* | `pdftable.py` (2 layouts, poppler), fixtures; ask the 6 offices for xlsx in parallel (📮) | all 18 districts |
 | 5. Ursus + extras | Ursus positional parser; Wola decision-text links; stated outcomes from PDF reports | richer records |
 | 6. Deploy model | inputs-only commits, build-in-CI deploy, per-district failure policy, per-district feeds | sustainable monthly refresh |
 
@@ -276,7 +276,8 @@ Update, evening of 27 X 2026 (second commit): the six PDF districts are read (`p
 the first geocoding takes its parcels from GUGiK's county package (`pipeline/egib.py`, §3.5) – every district's
 parcels in seconds, addresses via UUG at ~2/s. The city's file CDN refused most downloads of Białołęka, Bielany,
 Włochy, Wesoła and Ursus that day (403 even at one request per 10 s for uncached files), so those districts hold
-only what was fetched; the next crawls retry. Ursus's own xlsx layout (phase 5) waits for its files.
+only what was fetched; the next crawls retry (the CDN serves files it has cached and refuses the rest). Ursus's
+own registers (phase 5) are read as well: its 2026 files came through, 2021–25 were refused.
 
 Not done in the draft (next steps, in order): OSM areas per
 district (Overpass was overloaded on 27 Oct); a per-attachment size cap in the crawler (Wola links a 135 MB ZIP of

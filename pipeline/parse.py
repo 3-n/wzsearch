@@ -70,6 +70,10 @@ _HEADER_RULES: list[tuple[str, re.Pattern[str]]] = [
     ("parcels", re.compile(r"dzialk|\bdz\.|obreb|oznaczenie nieruchomosci|nieruchomosc|^lokalizacja$")),
 ]
 
+# Columns that carry no canonical field and need no warning: the issuing office (Ursus's CP register) and Excel's
+# placeholder names of unnamed columns ("Kolumna6" – Ursus writes its outcome there, see _OUTCOME_COLUMN_RE).
+_KNOWN_EXTRA_RE = re.compile(r"^nazwa organu|^kolumna ?\d+$")
+
 # Sub-header cells look like these (old 2020–2024 layout, row 5).
 _SUBHEADER_RE = re.compile(r"^(nr\b|data\b|ulica|dzielnica|nr dz|dz\.|obreb)")
 
@@ -104,9 +108,9 @@ def detect_kind(*texts: str) -> str | None:
     folded = collapse_ws(fold(" ".join(t for t in texts if t)))
     if not folded:
         return None
-    if re.search(r"wszcz[eę]t|wszczeci|znak sprawy", folded):
+    if re.search(r"wszcz[eę]t|wszczeci|znak sprawy|rejestr wniosk|wnioski o\b|wnioskow o\b", folded):
         return "ws"
-    if re.search(r"cel\w* publiczn|lokalizacji inwestycji|ulicp", folded):
+    if re.search(r"cel\w* publiczn|lokalizacji inwestycji|ulicp|\blcp\b", folded):
         return "cp"
     if re.search(r"warunk\w* zabudow|\bwz\b", folded):
         return "wz"
@@ -131,8 +135,8 @@ def _is_numbering_row(values: Sequence[Any]) -> bool:
             return False
         if isinstance(v, (int, float)) and float(v).is_integer():
             nums.append(int(v))
-        elif isinstance(v, str) and v.strip().isdigit():
-            nums.append(int(v.strip()))
+        elif isinstance(v, str) and re.fullmatch(r"(?:kolumna\s*)?\d+", v.strip(), re.I):
+            nums.append(int(re.sub(r"\D", "", v)))
         else:
             return False
     return (len(nums) >= 4 and nums == sorted(nums) and len(set(nums)) == len(nums) and nums[0] in (0, 1, 2)
@@ -282,8 +286,9 @@ def _build_layout(ws, rows: list[tuple[Any, ...]], h: int, sheet: str) -> _Sheet
         if field is None and specific[j] != labels[j]:
             field = classify_header(labels[j])
         if field is None:
-            warnings.append(f"arkusz „{sheet}”: kolumna {get_column_letter(j + 1)} "
-                            f"(„{labels[j]}”) nie została rozpoznana – zachowano ją tylko w danych źródłowych")
+            if not _KNOWN_EXTRA_RE.search(collapse_ws(fold(labels[j]))):
+                warnings.append(f"arkusz „{sheet}”: kolumna {get_column_letter(j + 1)} "
+                                f"(„{labels[j]}”) nie została rozpoznana – zachowano ją tylko w danych źródłowych")
             continue
         if field in taken:
             warnings.append(f"arkusz „{sheet}”: kolumny {get_column_letter(taken[field] + 1)} i "
@@ -294,6 +299,18 @@ def _build_layout(ws, rows: list[tuple[Any, ...]], h: int, sheet: str) -> _Sheet
 
     number_date = next((j for j, f in fields.items() if f == "number" and specific[j] == labels[j]
                         and re.search(r"nr decyzji i data", collapse_ws(fold(labels[j])))), None)
+    if "number" not in taken:
+        # Ursus heads its "1/URS/WZ/2026 z dnia 08.01.2026" column "Data wpływu wniosku": the cells decide
+        sample = rows[nxt:nxt + 12]
+        for j, f in list(fields.items()):
+            values = [str(r[j]) for r in sample if j < len(r) and isinstance(r[j], str) and r[j].strip()]
+            if f in ("date", "filed") and values and sum(bool(_DECISION_CELL_RE.match(v)) for v in values) > len(values) / 2:
+                fields[j], number_date = "number", j
+                taken.pop(f, None)
+                taken["number"] = j
+                warnings.append(f"arkusz „{sheet}”: kolumna {get_column_letter(j + 1)} („{labels[j]}”) zawiera numery "
+                                f"i daty decyzji – odczytano je jako takie")
+                break
     if "filed" in taken and "date" not in taken and number_date is None:
         fields[taken.pop("filed")] = "date"     # an applications list: its filing date is the list's date
         taken["date"] = next(j for j, f in fields.items() if f == "date")
@@ -317,6 +334,15 @@ def _layout_id(kind: str | None, title_texts: list[str], has_subheader: bool, lp
         return f"baipp-{kind or 'unknown'}" + ("-2020" if has_subheader or annex else "")
     old = has_subheader or annex or (lp_col or 0) > 0
     return f"{'old' if old else 'new'}-{kind or 'unknown'}"
+
+
+def list_procedure(kind: str | None, *texts: str) -> str | None:
+    """``wz``/``cp`` of an applications list that names one procedure only ("Rejestr wniosków o warunki zabudowy");
+    None for a list of both or another kind (the case signs decide per row)."""
+    folded = collapse_ws(fold(" ".join(t for t in texts if t)))
+    wz = bool(re.search(r"warunk\w* zabudow|\bwz\b", folded))
+    cp = bool(re.search(r"cel\w* publiczn|\b(?:u?licp|lcp|cp)\b", folded))
+    return ("wz" if wz else "cp") if kind == "ws" and wz != cp else None
 
 
 def cp_series(*texts: str) -> str | None:
@@ -351,6 +377,7 @@ def parse_workbook(path: str | Path | IO[bytes]) -> dict[str, Any]:
         "period_label": None,
         "layout": None,
         "series": None,
+        "procedure": None,
         "sheets": [],
         "rows": [],
         "skipped": [],
@@ -410,6 +437,9 @@ def parse_workbook(path: str | Path | IO[bytes]) -> dict[str, Any]:
                 result["layout"] = sheet_info["layout"]
             if kind == "cp" and result["series"] is None:
                 result["series"] = cp_series(*title_texts)
+            sheet_info["procedure"] = list_procedure(kind, *title_texts, sheet)
+            if result.get("procedure") is None:
+                result["procedure"] = sheet_info["procedure"]
 
             current = layout
             for i in range(layout.data_start, len(rows)):
@@ -542,12 +572,13 @@ def _make_row(sheet: str, i: int, values: tuple[Any, ...], layout: _SheetLayout)
         m = _DATE_TOKEN_RE.search(cells["number"])      # "1/2020⏎02.01.2020", "50/2020 10.02.2020"
         if m:
             cells["date"] = m.group(1)
-            cells["number"] = "\n".join(ln.strip() for ln in (cells["number"][:m.start()] + cells["number"][m.end():])
-                                        .splitlines() if ln.strip())
+            rest = re.sub(r"\s*\bz(?:\s+dnia)?\s*$", "", cells["number"][:m.start()]) + cells["number"][m.end():]
+            cells["number"] = "\n".join(ln.strip() for ln in rest.splitlines() if ln.strip())
     return {"sheet": sheet, "row": i + 1, "cells": cells, "raw": raw, "warnings": row_warnings}
 
 
-_OUTCOME_COLUMN_RE = re.compile(r"streszczeni|rozstrzygni|wynik")
-_OUTCOME_VALUE_RE = re.compile(r"^(?:umorzenie|odmowa|ustalenie|przeniesienie|wygasniecie|uchylenie|pozytywna|odmowna)\b"
-                               r".{0,30}$")
+_OUTCOME_COLUMN_RE = re.compile(r"streszczeni|rozstrzygni|wynik|^kolumna ?\d+$")
+_OUTCOME_VALUE_RE = re.compile(r"^(?:umorzenie|odmowa|ustalenie|przeniesienie|wygasniecie|uchylenie|pozytywna|odmowna|"
+                               r"ustalam|odmawiam|umarzam)\b.{0,30}$")
+_DECISION_CELL_RE = re.compile(r"^\s*\d{1,5}\s*/\s*[A-ZŁŚ]{1,4}\s*/\s*(?:WZ|CP|LCP)\b", re.I)
 _DATE_TOKEN_RE = re.compile(r"(?<![\d./-])(\d{1,2}\.\d{1,2}\.\d{4}|\d{4}-\d{2}-\d{2})(?:\s*r\.)?(?![\d./-])")

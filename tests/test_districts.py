@@ -286,3 +286,17 @@ def test_street_from_the_parcels_cell_and_filing_date():
                                                                           "2019-11-04")
     assert (rec["address"]["street"], rec["address"]["number"]) == ("Marsa", "56")
     assert [p["id"] for p in rec["parcels"]] == ["146514_8.0715.14/4"]
+
+
+def test_ursus_register_with_misleading_headers():
+    # Ursus's own register (27 X 2026): "Data wpływu wniosku" holds "1/URS/WZ/2026 z dnia 08.01.2026" and the outcome
+    # is a verb in an unnamed column ("Kolumna6": ustalam / odmawiam / umarzam)
+    pf = parse_source(FIX / "ursus-wz-2026.xlsx")
+    assert pf["kind"] == "wz"
+    first = pf["rows"][0]["cells"]
+    assert (first["number"], first["date"], first["address"]) == ("1/URS/WZ/2026\nustalam", "08.01.2026", "Górna Droga")
+    with districts.use(districts.get("ursus")):
+        recs = [normalize.normalize_row(row, "wz", {"file_id": "u1", "period": None}) for row in pf["rows"]]
+    assert recs[0]["id"] == "wz-urs-2026-1" and recs[0]["outcome"] == "granted"
+    assert recs[1]["outcome"] == "refusal"                      # "2/URS/WZ/2026/O" + "odmawiam"
+    assert sum(bool(r["parcels"]) for r in recs) == len(recs)

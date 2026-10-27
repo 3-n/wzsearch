@@ -116,8 +116,10 @@ City-wide draft (branch `feature/all-districts`, 2026-10-27 – plan: `docs/plan
 - 🔴 **The six PDF-only districts are read from their PDFs** (`pipeline/pdftable.py`, poppler's `pdftotext`, no
   OCR): Białołęka, Bielany, Mokotów (case-system report), Ochota, Targówek, Włochy (the template printed from
   Excel). Rows keep page + ordinal as their source position and the printed cells as `raw`; composite cells
-  (number / date / "Pozytywna", "precinct ¬ parcels ¬ street") are split. CI installs `poppler-utils`. **Ursus**
-  (own layout) stays `pending`: its shard holds GUNB permits and BAiPP cases only.
+  (number / date / "Pozytywna", "precinct ¬ parcels ¬ street") are split. CI installs `poppler-utils`. **Ursus**'s
+  own registers are read too: its "Data wpływu wniosku" column holding "1/URS/WZ/2026 z dnia 08.01.2026" is
+  recognised by its contents, the outcome verbs (ustalam / odmawiam / umarzam) of its unnamed column are read;
+  its applications registers have no case numbers, so their ids come from the row (stable while rows are appended).
 - 🔴 **Parcels come from GUGiK's county package for first runs** (`pipeline/egib.py`): one 107 MB download
   (`opendata.geoportal.gov.pl/…/eziudp_wfs/GPKG/1465.gpkg.zip`, 288k Warsaw parcels, rebuilt daily), read with
   `sqlite3`, used when ≥ 300 parcels are unknown; monthly runs ask ULDK for their few new parcels as before. Same

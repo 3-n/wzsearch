@@ -196,10 +196,13 @@ DISTRICTS: dict[str, District] = {d.slug: d for d in (
              pages=("https://targowek.um.warszawa.pl/-/warunki-zabudowy-postepowania-decyzje",), extensions=_PDF_LISTS),
     District("ursus", "Ursus", "Ursusa", "w Ursusie", "Ursusem", "146512_8", "urs", ("2",),
              r"\bursus(?:a|ie|em)?\b", r"warszaw\w*\W+ursus\b",
-             "https://ursus.um.warszawa.pl/decyzje-architektoniczne", "own-layout", status="pending",
-             note="dzielnica publikuje własne rejestry (inny układ kolumn niż wzór z zarządzenia 1129/2020) – "
-                  "ich odczyt jest w przygotowaniu; pozwolenia na budowę (GUNB) i sprawy Biura Architektury "
-                  "są już dostępne"),
+             "https://ursus.um.warszawa.pl/decyzje-architektoniczne", "attachments",
+             pages=tuple(f"https://ursus.um.warszawa.pl/{'waw/ursus/' if year == 2026 else ''}wykazy-za-rok-{year}"
+                         for year in range(2026, 2019, -1)),
+             extensions=("xlsx", "pdf"),
+             # its own registers: WZ/CP applications and decisions; building permits, notifications, ZRID and
+             # land-use contracts are left out (GUNB has the permits)
+             exclude_re=r"pozw|zglosz|zrid|umow"),
     District("ursynow", "Ursynów", "Ursynowa", "na Ursynowie", "Ursynowem", "146513_8", "urn", ("1",),
              r"\bursynow(?:a|ie|em)?\b", r"warszaw\w*\W+ursynow\b",
              "https://ursynow.um.warszawa.pl/-/rejestr-wnioskow-decyzji", "attachments",
