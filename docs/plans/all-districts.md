@@ -192,8 +192,8 @@ in place (cumulative yearly files are the norm outside Praga-Południe), "remove
   these packages) – a week of lookups. The geocoder's session now keeps those limits (it ran at 4/s before).
 * ULDK cache sharded per unit (`data/cache/uldk/<unit>.json`), so a monthly run rewrites a few small files instead
   of one 25 MB file. Monthly runs (~1–3k new parcels city-wide) can use the package too; small runs ask ULDK.
-* Addresses (records without parcels, and the address-vs-parcel cross-check) still go to UUG, ~0.3 requests per
-  record at ~2/s: the first city-wide run is ~1–2 h, later runs minutes. PRG address points (also downloadable per
+* Addresses (records without parcels, and the address-vs-parcel cross-check) still go to UUG, ~0.2 requests per
+  record at ~2/s: the first city-wide run took just under 2 h (12,800 requests), later runs take minutes. PRG address points (also downloadable per
   county) could replace most of it – not needed yet.
 * Neighbourhoods: one Overpass query for all MSI areas (admin_level 10) inside Warsaw's 18 districts.
 
@@ -278,6 +278,35 @@ parcels in seconds, addresses via UUG at ~2/s. The city's file CDN refused most 
 Włochy, Wesoła and Ursus that day (403 even at one request per 10 s for uncached files), so those districts hold
 only what was fetched; the next crawls retry (the CDN serves files it has cached and refuses the rest). Ursus's
 own registers (phase 5) are read as well: its 2026 files came through, 2021–25 were refused.
+
+All 18 districts after the first full geocoding (27 X 2026, evening; "located" = a point on the map, by parcel, address
+or street; sizes gzipped):
+
+  | District | lists | planning | of which district lists | located | permits + notif. (located) | gz records / permits |
+  |---|---|---:|---:|---:|---:|---:|
+  | Bemowo | xlsx | 1,236 | 1,125 | 100% | 1,326 (98%) | 306 / 444 kB |
+  | Białołęka | PDF | 917 | 750 | 100% | 5,953 (90%) | 161 / 1585 kB |
+  | Bielany | PDF | 210 | 81 | 98% | 1,816 (99%) | 58 / 559 kB |
+  | Mokotów | PDF | 1,726 | 1,634 | 98% | 4,254 (99%) | 412 / 1413 kB |
+  | Ochota | PDF | 231 | 196 | 99% | 1,133 (99%) | 55 / 363 kB |
+  | Praga-Południe | xlsx | 578 | 474 | 100% | 2,591 (100%) | 144 / 798 kB |
+  | Praga-Północ | xlsx | 632 | 603 | 99% | 1,567 (97%) | 132 / 455 kB |
+  | Rembertów | xlsx | 620 | 601 | 96% | 879 (99%) | 131 / 225 kB |
+  | Śródmieście | xlsx | 1,665 | 1,363 | 100% | 4,563 (100%) | 431 / 1572 kB |
+  | Targówek | PDF | 420 | 393 | 88% | 1,877 (98%) | 93 / 635 kB |
+  | Ursus | own xlsx | 306 | 188 | 98% | 1,176 (97%) | 70 / 376 kB |
+  | Ursynów | xlsx | 1,613 | 1,519 | 99% | 2,181 (99%) | 349 / 709 kB |
+  | Wawer | xlsx | 5,705 | 5,655 | 99% | 6,344 (97%) | 1112 / 1678 kB |
+  | Wesoła | xlsx | 15 | 15 | 100% | 1,584 (93%) | 8 / 372 kB |
+  | Wilanów | xlsx | 1,449 | 1,442 | 99% | 2,429 (98%) | 271 / 743 kB |
+  | Włochy | PDF | 155 | 14 | 99% | 1,020 (98%) | 43 / 298 kB |
+  | Wola | xlsx | 754 | 558 | 100% | 2,119 (99%) | 183 / 719 kB |
+  | Żoliborz | xlsx | 16 | 12 | 100% | 752 (99%) | 10 / 240 kB |
+  | **All 18** | | **18,248** | 16,623 | 99% | **43,564** (97%) | |
+
+  The first geocoding of all districts: parcels from the county package (seconds per district), ~12,800 UUG address
+  requests at ~2/s (just under 2 h, once). Wawer's planning layer (1.1 MB gz) and the permit layers of Białołęka,
+  Śródmieście, Wawer and Mokotów (1.4–1.7 MB gz) exceed the §2.1 budget – phase 3 (slim index) is the next step.
 
 Not done in the draft (next steps, in order): OSM areas per
 district (Overpass was overloaded on 27 Oct); a per-attachment size cap in the crawler (Wola links a 135 MB ZIP of

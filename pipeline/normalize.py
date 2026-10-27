@@ -950,7 +950,7 @@ def normalize_row(row: dict[str, Any], kind: str | None, file_meta: dict[str, An
         # a register number instead of a case sign ("k2/54/26", "25/WZ/MOK/2025"): it names the application in every
         # monthly version of a cumulative list, the position in the file does not
         rid = f"ws-n-{slug}"
-        w = [x.replace("identyfikator nadany z pozycji w pliku", "identyfikator nadany z numeru wniosku") for x in w]
+        w = [x for x in w if "identyfikator nadany z pozycji w pliku" not in x]   # a register number is no error
     warnings += w
     if city:
         rid, w = baipp.namespace_id(rid, kind, number, file_meta.get("series"))

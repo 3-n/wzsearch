@@ -461,6 +461,9 @@ def parse_workbook(path: str | Path | IO[bytes]) -> dict[str, Any]:
                 if _is_brak_row(r):
                     result["skipped"].append({"sheet": sheet, "row": i + 1, "reason": "wiersz „brak” (brak pozycji)"})
                     continue
+                if _is_numbering_row(r):     # "1 2 3 4 5 6 7" not right under the header (Ursynów 2021)
+                    result["skipped"].append({"sheet": sheet, "row": i + 1, "reason": "numeracja kolumn"})
+                    continue
                 row = _make_row(sheet, i, r, current)
                 if row is None:
                     result["skipped"].append({"sheet": sheet, "row": i + 1, "reason": "tylko numer Lp"})

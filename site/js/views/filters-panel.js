@@ -58,7 +58,10 @@ function group(title, body, { id, hidden = false, extra = null } = {}) {
 const LIST_FACETS = [
   // Shown as a permanent note (not a toggletip): the filter sees only the records that state an outcome at all.
   { key: 'outcomes', field: 'outcome', title: 'Rozstrzygnięcie', dict: 'outcomes', min: 1,
-    note: 'Podają je tylko zestawienia Biura Architektury (BAiPP) – Urząd Dzielnicy i rejestr GUNB rozstrzygnięcia nie podają, więc ich decyzji ten filtr nie obejmuje.' },
+    // Praga-Południe's own lists state no outcome; the other districts' lists do (a letter in the number or a word)
+    note: () => (currentDistrict().code
+      ? 'Podają je listy urzędu dzielnicy (np. litera /O w numerze decyzji albo słowo „Odmowna”) i zestawienia Biura Architektury (BAiPP). Rejestr GUNB rozstrzygnięć nie podaje, więc pozwoleń ten filtr nie obejmuje.'
+      : 'Podają je tylko zestawienia Biura Architektury (BAiPP) – Urząd Dzielnicy i rejestr GUNB rozstrzygnięcia nie podają, więc ich decyzji ten filtr nie obejmuje.') },
   { key: 'scopes', field: 'scope', title: 'Zakres robót', dict: 'scopes', min: 1, permitsOnly: true },
   { key: 'categories', field: 'category', title: 'Kategoria obiektu', dict: 'categories', min: 1, permitsOnly: true, visible: CATEGORIES_VISIBLE, byCount: true,
     info: 'Kategoria obiektu budowlanego z załącznika do ustawy Prawo budowlane, np. XIII – budynki wielorodzinne.' },
@@ -263,7 +266,8 @@ export function createFiltersPanel(ctx) {
       onClick: () => { state.expanded = !state.expanded; patchListGroup(state); },
     }) : null;
     const tip = lf.info ? infoTip(lf.info, lf.title) : null;
-    const note = lf.note ? h('p', { class: 'fgroup__note fgroup__note--lead' }, lf.note) : null;
+    const noteText = typeof lf.note === 'function' ? lf.note() : lf.note;
+    const note = noteText ? h('p', { class: 'fgroup__note fgroup__note--lead' }, noteText) : null;
     state.el = group(lf.title, [note, list, state.more, tip ? tip.bubble : null], { hidden: true, extra: tip ? tip.btn : null });
     listGroups.set(lf.key, state);
   }
