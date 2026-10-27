@@ -7,16 +7,17 @@ import { permitsNeeded, idlePrefetchAllowed, shouldFetchPermits, IDLE_PREFETCH_D
 import { OPT_IN_ID, OPT_IN_KINDS, effectiveKinds, withOptIn } from './kinds.js';
 import { buildHash, setHashDistrict } from './url.js';
 import {
-  currentDistrict, dataBase, districtFromHash, feedPath, isCity, rememberDistrict, resolveDistrict, setDistrict, storedDistrict,
+  cityEntry, currentDistrict, dataBase, districtFromHash, districtOf, feedPath, isCity, isCityMode, rememberDistrict,
+  resolveDistrict, setDistrict, storedDistrict,
 } from './district.js';
 import { mountDistrictPicker } from './components/district-picker.js';
-import { defaultFilters, sanitizeFilters } from './filters.js';
+import { carryFilters, defaultFilters, sanitizeFilters } from './filters.js';
 import { h, replaceChildren, isMobile, trapFocus, isTyping } from './dom.js';
 import { icon } from './icons.js';
 import { formatNumber } from './format.js';
 import { createExplore } from './views/explore.js';
 import { renderDetail, renderDetailNotFound, renderDetailLoading } from './views/detail.js';
-import { createSources } from './views/sources.js';
+import { createSources, createCitySources } from './views/sources.js';
 import { renderAbout, setAreasAttribution, slashShortcutEnabled } from './views/about.js';
 import { toast, initToasts } from './components/toast.js';
 import { BAIPP_URL } from './config.js';
@@ -63,8 +64,10 @@ function showError(err) {
       icon('alert', { size: 40, class: 'error-state__icon' }),
       h('h1', { class: 'page__title' }, 'Nie udało się wczytać danych'),
       h('p', { class: 'lead' }, 'Nie udało się wczytać danych wyszukiwarki. Spróbuj ponownie za chwilę.'),
-      h('p', null, 'Do tego czasu oryginalne listy znajdziesz na stronie ', ext(currentDistrict().entry_url, `Urzędu Dzielnicy ${currentDistrict().name}`),
-        ' i ', ext(BAIPP_URL, 'Biura Architektury'), '.'),
+      isCityMode()
+        ? h('p', null, 'Do tego czasu oryginalne listy znajdziesz na stronach urzędów dzielnic i ', ext(BAIPP_URL, 'Biura Architektury'), '.')
+        : h('p', null, 'Do tego czasu oryginalne listy znajdziesz na stronie ', ext(currentDistrict().entry_url, `Urzędu Dzielnicy ${currentDistrict().name}`),
+          ' i ', ext(BAIPP_URL, 'Biura Architektury'), '.'),
       h('div', { class: 'error-state__actions' },
         h('button', { type: 'button', class: 'btn btn--primary', onClick: () => window.location.reload() }, icon('refresh', { size: 16 }), 'Spróbuj ponownie')),
       h('details', { class: 'error-state__details' }, h('summary', null, 'Szczegóły techniczne'),
@@ -214,8 +217,24 @@ function closeRecord() {
   }
 }
 
+/**
+ * Hash of a record in its own district, for "Cała Warszawa" (the city index holds a lighter copy; sources and related
+ * records are in the district's data). Null outside city mode or for a record of no known district.
+ */
+function cityRecordHash(id) {
+  if (!isCityMode()) return null;
+  const d = districtOf(index.byId.get(id)?.rec);
+  const s = getState();
+  return d ? buildHash({ route: 'record', recordId: id, filters: carryFilters(s.filters), mode: s.mode, district: d.slug }) : null;
+}
+
 function openRecord(id) {
   const s = getState();
+  const elsewhere = cityRecordHash(id);
+  if (elsewhere) {   // a new history entry; the hashchange listener loads the district (Back returns to the city)
+    window.location.hash = elsewhere;
+    return;
+  }
   openedFromList = s.route === 'explore';
   navigate({ route: 'record', recordId: id }, { replace: s.route === 'record' });
 }
@@ -297,6 +316,17 @@ function onState(state, prev, meta = {}) {
       return;
     }
   }
+  // "Cała Warszawa" shows no record: it opens in its district (the hashchange listener of chooseDistrict reloads).
+  if (isCityMode() && state.route === 'record') {
+    const elsewhere = cityRecordHash(state.recordId);
+    if (elsewhere) {
+      if (window.location.hash !== elsewhere) window.location.replace(elsewhere);
+    } else {
+      toast('Nie znaleziono tego wpisu – pokazujemy listę.');
+      navigate({ route: 'explore', recordId: null }, { replace: true });
+    }
+    return;
+  }
   const route = state.route;
   const prevRoute = prev?.route;
   // Browser Back (or a link) while the filters drawer is open: close it, or the inert top bar and the focus trap
@@ -316,7 +346,7 @@ function onState(state, prev, meta = {}) {
   } else {
     closeDetailPanel();
     if (route === 'sources') {
-      if (!sourcesView) sourcesView = createSources(els.sources, index);
+      if (!sourcesView) sourcesView = (isCityMode() ? createCitySources : createSources)(els.sources, index);
       sourcesView.show(state.tab);
       setTitle('Źródła danych');
     } else if (route === 'about') {
@@ -392,15 +422,20 @@ function renderBanner() {
  * a link brings a hash of another district (the page holds one district's data). No-op for a single district.
  */
 async function chooseDistrict() {
-  const list = await loadDistricts();
-  if (!list || list.length < 2) return;   // a single-district site lists only itself
-  const d = resolveDistrict(list, { hash: window.location.hash, stored: storedDistrict() });
-  setDistrict(d, list);
+  const doc = await loadDistricts();
+  if (!doc || doc.list.length < 2) return;   // a single-district site lists only itself
+  const { list, city } = doc;
+  const d = resolveDistrict(list, { hash: window.location.hash, stored: storedDistrict(), cityItem: city });
+  setDistrict(d, list, city);
   setHashDistrict(d.slug);
   rememberDistrict(d.slug);
   window.addEventListener('hashchange', () => {
     const dz = districtFromHash(window.location.hash);
-    if (dz && dz !== currentDistrict().slug && list.some((x) => x.slug === dz)) window.location.reload();
+    const known = list.some((x) => x.slug === dz) || dz === city?.slug;
+    // …and a record link inside the city scope (typed or old): the record opens in its district (district.js)
+    if ((dz && dz !== currentDistrict().slug && known) || (isCityMode() && /^#\/wpis\//.test(window.location.hash))) {
+      window.location.reload();
+    }
   });
 }
 
@@ -411,19 +446,19 @@ function renderDistrictChrome() {
   document.querySelector('.brand')?.setAttribute('aria-label', `wzSearch ${d.name} – strona główna`);
   document.title = baseTitle();
   const feed = document.querySelector('link[rel="alternate"][type="application/atom+xml"]');
-  if (feed && isCity()) {
+  if (feed && isCity() && !feedPath()) feed.remove();   // the city has no feed yet
+  else if (feed && isCity()) {
     feed.setAttribute('href', feedPath());
     feed.setAttribute('title', `wzSearch – nowe wpisy (${d.name})`);
   }
   if (!isCity()) return;
   document.body.dataset.district = d.slug;
   mountDistrictPicker(document.getElementById('district-switch'), {
+    city: cityEntry(),
     hrefFor: (slug) => {
       const s = getState();
-      // Filters tied to one district's geography do not carry over to another one.
-      const filters = { ...s.filters, streets: [], areas: [], bbox: null, near: null, file: null };
       const route = s.route === 'sources' || s.route === 'about' ? s.route : 'explore';
-      return buildHash({ route, filters, mode: s.mode, district: slug });
+      return buildHash({ route, filters: carryFilters(s.filters), mode: s.mode, district: slug });
     },
   });
 }
@@ -476,7 +511,8 @@ async function boot() {
     explore.setAreas(geo);
     if (aboutRendered) setAreasAttribution(els.about, geo);
   });
-  loadGeo('parcels.geojson', dataBase()).then((geo) => { if (geo) explore.addParcels(geo); });
+  // Parcel outlines are per district (the city map has points only – plan §1.3).
+  if (!isCityMode()) loadGeo('parcels.geojson', dataBase()).then((geo) => { if (geo) explore.addParcels(geo); });
   document.body.dataset.ready = 'true';
   try { performance.mark('wz:ready'); } catch { /* old browsers */ }
   schedulePrefetch();

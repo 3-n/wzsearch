@@ -10,7 +10,7 @@ import { formatNumber, formatMonth, formatMonthShort, formatDistance, monthRange
 import { NEAR_RADII, resolvePeriod, hasActiveFilters, availableOptions, sameSplit } from '../filters.js';
 import { fold } from '../search.js';
 import { KIND_EXPLAINERS, APPLICANT_LABELS, unofficial, TAG_GROUP_LABELS } from '../copy.js';
-import { currentDistrict } from '../district.js';
+import { areaWords, currentDistrict } from '../district.js';
 import { DEFAULT_KINDS, OPT_IN_KINDS, effectiveKinds, sameKinds, toggleKind } from '../kinds.js';
 import { createCombobox } from '../components/combobox.js';
 
@@ -422,12 +422,12 @@ export function createFiltersPanel(ctx) {
       lg('scopes'),
       lg('categories'),
       group('Wnioskodawca', applicantRows),
-      areaKeys.length ? group('Obszar', areaRows) : null,
+      areaKeys.length ? group(areaWords().facet, areaRows) : null,
       index.streets.size ? group('Ulica', [combo.el, streetList]) : null,
       lg('datasets'),
       lg('issuers'),
       group('Lokalizacja', [geoRow, bboxRow, nearGroup]),
-      h('p', { class: 'filters__note' }, icon('info', { size: 14 }), unofficial(currentDistrict().name))),
+      h('p', { class: 'filters__note' }, icon('info', { size: 14 }), unofficial(currentDistrict()))),
     h('div', { class: 'filters__foot' }, showBtn));
 
   function patchRow(ref, checked, count, { estimate = false } = {}) {

@@ -13,6 +13,13 @@ test('fold removes Polish diacritics, lowercases and collapses whitespace', () =
   assert.equal(fold(null), '');
 });
 
+test('fold (whole-string) and foldWithMap (per character, for highlights) give the same text', () => {
+  // checked on every string of the real data (2.7 million); these are the edge cases
+  for (const t of ['Żółć – „Ząbki” — x‑y', 'a\u00a0\u00a0b \t c ', 'e\u0301 İstanbul ẞ ß æ ø đ', '12. WZ grudzieΣ 2022.xlsx', 'ΑΣ Σίσυφος', '']) {
+    assert.equal(fold(t), foldWithMap(t).folded, t);
+  }
+});
+
 test('foldWithMap maps folded offsets back to the original string', () => {
   const s = 'Ż  ółw';
   const { folded, map } = foldWithMap(s);

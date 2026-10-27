@@ -20,7 +20,8 @@ import {
 } from '../copy.js';
 import { GEOPORTAL_PARCEL_URL, ISSUES_URL, INFO_REQUEST } from '../config.js';
 import { infoRequest, mailtoHref } from '../request.js';
-import { currentDistrict, isCity } from '../district.js';
+import { currentDistrict, dataBase, isCity } from '../district.js';
+import { loadCells } from '../cells.js';
 
 /** The district this page shows (district.js; Praga-Południe in a single-district deployment). */
 const D = () => currentDistrict();
@@ -64,12 +65,15 @@ function extLink(href, label, iconName = 'external', cls = 'btn btn--secondary b
   }, icon(iconName, { size: 15 }), h('span', null, label), external ? h('span', { class: 'sr-only' }, ' (otwiera się w nowej karcie)') : null);
 }
 
-/** Collapse sources that point at the same file row (one file linked from several monthly pages). */
-function groupSources(sources) {
+/**
+ * Collapse sources that point at the same file row (one file linked from several monthly pages). Each group keeps
+ * the position of its first source (`idx`) and where the record's cells are (`cells`, see cellsRef).
+ */
+function groupSources(sources, cells = null) {
   const groups = new Map();
-  for (const s of sources) {
+  for (const [idx, s] of sources.entries()) {
     const key = `${s.file_id}|${s.sheet}|${s.row}`;
-    if (!groups.has(key)) groups.set(key, { ...s, page_ids: [] });
+    if (!groups.has(key)) groups.set(key, { ...s, page_ids: [], idx, cells });
     const g = groups.get(key);
     if (s.page_id && !g.page_ids.includes(s.page_id)) g.page_ids.push(s.page_id);
   }
@@ -90,9 +94,40 @@ function rawTable(raw) {
     })));
 }
 
-const rawDetails = (raw, hint = ' – dokładnie tak, jak w pliku') => h('details', { class: 'prov__raw' },
-  h('summary', null, icon('table', { size: 15 }), 'Dane w źródle', h('span', { class: 'muted' }, hint)),
-  rawTable(raw));
+/** Where a record's source cells are when its sources leave out `raw`: a bucket file (cells.js), else null. */
+function cellsRef(entry, index) {
+  const set = OPT_IN_KINDS.includes(entry.kind) ? index.cells?.permits : index.cells?.records;
+  return set ? { base: dataBase(), set, id: entry.id } : null;
+}
+
+/**
+ * "Dane w źródle": the row's cells. Data that carries them inline renders at once; otherwise the bucket is fetched
+ * the first time the panel is opened (a failed request offers a retry).
+ */
+function rawDetails(s, hint = ' – dokładnie tak, jak w pliku') {
+  const summary = h('summary', null, icon('table', { size: 15 }), 'Dane w źródle', h('span', { class: 'muted' }, hint));
+  if (Array.isArray(s.raw) || !s.cells) return h('details', { class: 'prov__raw' }, summary, rawTable(s.raw));
+  const pending = () => h('p', { class: 'muted', role: 'status' }, 'Wczytywanie danych źródłowych…');
+  const body = h('div', { class: 'prov__raw-body' }, pending());
+  const details = h('details', { class: 'prov__raw' }, summary, body);
+  let state = 'idle';   // idle | loading | done
+  const load = () => {
+    if (!details.open || state !== 'idle') return;
+    state = 'loading';
+    loadCells(s.cells.base, s.cells.set, s.cells.id).then((raws) => {
+      state = 'done';
+      replaceChildren(body, rawTable(raws ? raws[s.idx] : null));
+    }).catch(() => {
+      state = 'idle';
+      replaceChildren(body, h('p', { class: 'notice notice--warn' }, icon('alert', { size: 15 }),
+        h('span', null, 'Nie udało się wczytać danych źródłowych. '),
+        h('button', { type: 'button', class: 'btn btn--ghost btn--sm', onClick: () => { replaceChildren(body, pending()); load(); } },
+          'Spróbuj ponownie')));
+    });
+  };
+  details.addEventListener('toggle', load);
+  return details;
+}
 
 function fileMeta(file) {
   if (!file?.last_modified && !file?.sha256 && !(file?.history || []).length) return null;
@@ -149,7 +184,7 @@ function sheetSource(s, index, { dataset, compact = false } = {}) {
       file?.archive_path ? extLink(file.archive_path, 'Kopia archiwalna', 'archive') : null),
     (file?.warnings || []).length && compact ? h('p', { class: 'prov__meta' }, file.warnings.map((w) => h('span', null, String(w)))) : null,
     fileMeta(file),
-    rawDetails(s.raw));
+    rawDetails(s));
 }
 
 /**
@@ -222,7 +257,7 @@ function registerSource(s, index, datasetDict) {
       file?.sha256 ? h('span', { title: `SHA-256 wyciągu: ${file.sha256}` }, 'SHA-256 wyciągu ', h('code', null, `${String(file.sha256).slice(0, 12)}…`)) : null,
       file?.sha256_zip ? h('span', { title: `SHA-256 archiwum ZIP: ${file.sha256_zip}` }, 'ZIP ', h('code', null, `${String(file.sha256_zip).slice(0, 12)}…`)) : null,
       file?.etag ? h('span', null, 'ETag ', h('code', null, String(file.etag))) : null) : null,
-    rawDetails(s.raw, ' – kolumny rejestru (bez danych projektantów)'));
+    rawDetails(s, ' – kolumny rejestru (bez danych projektantów)'));
 }
 
 /** When the data was last built (= when the register was last checked): permits.json, else records.json. */
@@ -231,7 +266,7 @@ function checkedAt(index) {
 }
 
 function provenance(entry, index) {
-  const groups = groupSources(Array.isArray(entry.rec.sources) ? entry.rec.sources : []);
+  const groups = groupSources(Array.isArray(entry.rec.sources) ? entry.rec.sources : [], cellsRef(entry, index));
   if (!groups.length) {
     return h('p', { class: 'notice notice--warn' }, icon('alert', { size: 16 }), 'Brak informacji o źródle tego wpisu.');
   }

@@ -60,7 +60,7 @@ from typing import Any
 import requests
 
 from . import areas as areas_mod
-from . import baipp, districts, export
+from . import baipp, cells, districts, export
 from . import crawl as crawl_mod
 from . import rwdz as rwdz_mod
 from .classify import TAGS
@@ -175,7 +175,11 @@ def district_datasets() -> dict[str, dict[str, str]]:
             },
             "baipp": {**DATASETS["baipp"],
                       "description": DATASETS["baipp"]["description"].replace(
-                          "adres wskazuje Pragę-Południe", f"adres wskazuje dzielnicę {d.name}")}}
+                          "adres wskazuje Pragę-Południe", f"adres wskazuje dzielnicę {d.name}")},
+            "rwdz": {**DATASETS["rwdz"],
+                     "description": DATASETS["rwdz"]["description"].replace(
+                         "na Pradze-Południe (jednostka ewidencyjna 146507_8)", f"{d.locative} (jednostka ewidencyjna "
+                         f"{d.unit})")}}
 
 
 def district_issuers() -> dict[str, dict[str, str]]:
@@ -634,7 +638,7 @@ def parse_sources(manifest: Mapping[str, Any], root: Path) -> tuple[list[dict], 
         sheet_procedures = {s["name"]: s.get("procedure") for s in parsed.get("sheets", []) if s.get("procedure")}
         page_ids = f.get("page_ids") or []
         meta = {"file_id": fid, "page_id": page_ids[0] if page_ids else None, "period": f.get("period"),
-                "procedure": parsed.get("procedure")}
+                "procedure": parsed.get("procedure"), "published_at": f.get("last_modified") or f.get("downloaded_at")}
         rows = parsed["rows"]
         if f.get("source") == "baipp":
             meta.update(dataset="baipp", series=f.get("series") or parsed.get("series"))
@@ -1733,6 +1737,9 @@ def run_build(
             r["district"] = paths.district_slug
     records = [order_record(r) for r in records]
     permits = [order_record(r) for r in permits]
+    # the source cells go to bucket files fetched by the detail's "Dane w źródle" panel (pipeline/cells.py)
+    records_cells, record_cell_files = cells.bucket_files(cells.split_cells(records), paths.site_data, "records")
+    permits_cells, permit_cell_files = cells.bucket_files(cells.split_cells(permits), paths.site_data, "permits")
 
     # 6. mirror originals, then render every output
     mirrored = mirror_sources(manifest, paths)
@@ -1772,9 +1779,10 @@ def run_build(
             "permit_scopes": PERMIT_SCOPES if stage.enabled else {},
             "permit_categories": PERMIT_CATEGORIES if stage.enabled else {},
             "counts_by_kind": counts_by_kind,
+            "cells": records_cells,
             "records": records,
         }
-        permits_doc = {"generated_at": generated_at, "count": len(permits), "records": permits}
+        permits_doc = {"generated_at": generated_at, "count": len(permits), "cells": permits_cells, "records": permits}
         ctx = dict(kinds=kinds, tags=tags, areas=area_labels, files_by_id=files_by_id, pages_by_id=pages_by_id,
                    site_url=site_url)
         csv_dicts = {"datasets": datasets, "issuers": issuers, "outcomes": OUTCOMES, "categories": PERMIT_CATEGORIES}
@@ -1784,6 +1792,8 @@ def run_build(
             paths.sources_json: dumps_json(sources_doc, ("pages", "files")),
             paths.parcels_geojson: dumps_json(parcels_doc, ("features",)),
             paths.parcels_permits_geojson: dumps_json(permit_parcels_doc, ("features",)),
+            **record_cell_files,
+            **permit_cell_files,
             paths.records_csv: export.records_to_csv(records, **ctx, **csv_dicts).encode("utf-8"),
             paths.permits_csv: export.records_to_csv(permits, **ctx, **csv_dicts).encode("utf-8"),
             paths.feed: export.atom_feed(records, generated_at=generated_at, datasets=datasets, outcomes=OUTCOMES,
@@ -1801,7 +1811,7 @@ def run_build(
     # SITE_URL (CI's Pages URL vs a local "./") re-renders those with the kept timestamp and leaves the
     # JSON alone (test.yml compares the committed JSON with an offline rebuild).
     data_paths = (paths.records_json, paths.permits_json, paths.sources_json, paths.parcels_geojson,
-                  paths.parcels_permits_geojson)
+                  paths.parcels_permits_geojson, *record_cell_files, *permit_cell_files)
     previous_at = _read_generated_at(paths.records_json)
     outputs = sources_doc = None
     generated_at = previous_at
@@ -1813,14 +1823,22 @@ def run_build(
         generated_at = now()
         outputs, sources_doc = render(generated_at)
     written = [p for p, data in outputs.items() if write_atomic(p, data)]
+    for p in cells.stale_buckets(paths.site_data, outputs):
+        p.unlink()
+        written.append(p)
     # A single-district site answers the frontend's request for the district list (a city build writes all 18).
     index_path = paths.root / "site" / "data" / "districts.json"
     if paths.district_slug is None and paths.site_data == paths.root / "site" / "data" and not index_path.exists():
         from .district_index import districts_index   # noqa: PLC0415 – district_index imports this module
         if write_atomic(index_path, dumps_json(districts_index(paths.root, [districts.LEGACY_SLUG]), ("districts",))):
             written.append(index_path)
+    rel = lambda p: p.relative_to(paths.root) if p.is_relative_to(paths.root) else p   # noqa: E731
+    cell_dir = paths.site_data / "cells"
     for p in written:
-        log.info("wrote %s", p.relative_to(paths.root) if p.is_relative_to(paths.root) else p)
+        if p.parent != cell_dir:
+            log.info("wrote %s", rel(p))
+    if n_cells := sum(p.parent == cell_dir for p in written):
+        log.info("wrote %d cell buckets in %s", n_cells, rel(cell_dir))
     if not written:
         log.info("no changes – outputs are up to date (generated_at %s)", generated_at)
 

@@ -149,7 +149,7 @@ export function recordsToCSV(records, { dicts = {}, filesById = new Map(), pages
 /** "YYYY-MM-DD" in Warsaw time (like every date in the UI): a download at 00:30 is not named after yesterday. */
 const WARSAW_DAY = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Warsaw', year: 'numeric', month: '2-digit', day: '2-digit' });
 
-/** File name like "wzsearch-praga-poludnie-2026-10-23.csv". */
-export function csvFileName(date = new Date()) {
-  return `wzsearch-praga-poludnie-${WARSAW_DAY.format(date)}.csv`;
+/** File name like "wzsearch-praga-poludnie-2026-10-23.csv" (the district – or "warszawa" – the page shows). */
+export function csvFileName(date = new Date(), slug = 'praga-poludnie') {
+  return `wzsearch-${slug}-${WARSAW_DAY.format(date)}.csv`;
 }

@@ -10,11 +10,11 @@ import { h, replaceChildren, debounce, isMobile, isDesktopWide, trapFocus, downl
 import { icon } from '../icons.js';
 import { tokenize } from '../search.js';
 import {
-  evaluate, sortResults, effectiveSort, hasActiveFilters, defaultFilters, periodSpans, outcomeCoverage,
+  carryFilters, evaluate, sortResults, effectiveSort, hasActiveFilters, defaultFilters, periodSpans, outcomeCoverage,
 } from '../filters.js';
 import { buildHash, NEAR_DECIMALS } from '../url.js';
 import { monthBounds, nearestAddressPoint } from '../data.js';
-import { plural, formatNumber, formatDateTime, formatMonthRange, WPIS, WYNIK } from '../format.js';
+import { plural, pluralForm, formatNumber, formatDateTime, formatMonthRange, WPIS, WYNIK } from '../format.js';
 import { unofficial, promoText } from '../copy.js';
 import { OPT_IN_KINDS, DEFAULT_KINDS, effectiveKinds, isOptInKind, orderKinds, withOptIn } from '../kinds.js';
 import { describeActive } from '../active.js';
@@ -25,7 +25,7 @@ import { createTimeline } from '../components/timeline.js';
 import { renderCard, skeletonCard } from '../components/card.js';
 import { createMap } from '../components/map.js';
 import { toast } from '../components/toast.js';
-import { currentDistrict } from '../district.js';
+import { currentDistrict, districtOf, isCityMode } from '../district.js';
 
 /** The district this page shows (district.js; Praga-Południe in a single-district deployment). */
 const D = () => currentDistrict();
@@ -192,7 +192,7 @@ export function createExplore(section, ctx) {
       h('span', { 'aria-hidden': 'true' }, '·'), h('a', { class: 'link', href: '#/zrodla' }, 'Źródła danych'),
       h('span', { 'aria-hidden': 'true' }, '·'), h('a', { class: 'link', href: '#/o-projekcie' }, 'Jak czytać dane'),
       h('span', { 'aria-hidden': 'true' }, '·'), h('a', { class: 'link', href: '#/o-projekcie', title: 'Kanał nowych wpisów – adres do czytnika RSS w sekcji „Pobierz dane”' }, 'Nowe wpisy (RSS)')),
-    h('p', { class: 'results-foot__note' }, `${unofficial(D().name)}. Wiążące są wyłącznie dokumenty urzędowe.`));
+    h('p', { class: 'results-foot__note' }, `${unofficial(D())}. Wiążące są wyłącznie dokumenty urzędowe.`));
 
   const resultsPane = h('section', { class: 'pane pane--results', 'aria-label': 'Wyniki' },
     h('div', { class: 'results-head' },
@@ -553,13 +553,16 @@ export function createExplore(section, ctx) {
     if (!recs.length) { toast('Brak wyników do pobrania.', { kind: 'error' }); return; }
     const baseUrl = `${window.location.origin}${window.location.pathname}`;
     const csv = recordsToCSV(recs, { dicts, filesById: index.filesById, pagesById: index.pagesById, baseUrl });
-    downloadText(csv, csvFileName());
+    downloadText(csv, csvFileName(new Date(), D().slug));
     toast(`Pobrano ${plural(recs.length, WPIS)} (CSV, separator „;”).`, { kind: 'success' });
   }
 
   // --- rendering ---------------------------------------------------------------------------------
   function recordHref(id) {
-    return buildHash({ route: 'record', recordId: id, filters, mode: state.mode });
+    // "Cała Warszawa": a record opens in its district (its sources and related records are there)
+    const d = isCityMode() ? districtOf(index.byId.get(id)?.rec) : null;
+    return d ? buildHash({ route: 'record', recordId: id, filters: carryFilters(filters), mode: state.mode, district: d.slug })
+      : buildHash({ route: 'record', recordId: id, filters, mode: state.mode });
   }
 
   function onCardOpen(e, entry) {
@@ -616,7 +619,7 @@ export function createExplore(section, ctx) {
     const total = facets?.scopeTotal ?? index.entries.length;
     const active = hasActiveFilters(filters) && n !== total;
     replaceChildren(countEl,
-      n ? [h('strong', null, formatNumber(n)), ` ${plural(n, WPIS).replace(/^\S+\s/, '')}`] : h('strong', null, 'Brak wyników'),
+      n ? [h('strong', null, formatNumber(n)), ` ${pluralForm(n, WPIS)}`] : h('strong', null, 'Brak wyników'),
       active && n ? h('span', { class: 'muted' }, ` z ${formatNumber(total)}`) : null);
   }
   const announce = debounce(() => {

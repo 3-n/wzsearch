@@ -6,6 +6,7 @@ import { formatMonthRange, formatDistance } from './format.js';
 import { resolvePeriod } from './filters.js';
 import { APPLICANT_LABELS } from './copy.js';
 import { DEFAULT_KINDS, effectiveKinds, isDefaultKinds, toggleKind } from './kinds.js';
+import { areaWords } from './district.js';
 
 /** Chip groups for list filters whose values are dictionary keys: filters key → [group, label, dictionary]. */
 const LIST_CHIPS = [
@@ -67,7 +68,7 @@ export function describeActive(f, ctx = {}) {
     });
   }
   for (const a of f.areas) {
-    out.push({ group: 'area', groupLabel: 'Obszar', label: dicts.areas?.[a]?.label || a, remove: { areas: f.areas.filter((x) => x !== a) } });
+    out.push({ group: 'area', groupLabel: areaWords().facet, label: dicts.areas?.[a]?.label || a, remove: { areas: f.areas.filter((x) => x !== a) } });
   }
   for (const [key, group, groupLabel, dict] of LIST_CHIPS) {
     for (const v of f[key] || []) {

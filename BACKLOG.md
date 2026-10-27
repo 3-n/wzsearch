@@ -266,7 +266,14 @@ City-wide draft
   a day per IP (and 40/min after 18:00; uldk.gugik.gov.pl/opis.html), so it would have taken a week, and the
   geocoder's default rate (4/s) exceeded the per-minute limits. Now: the county package for first runs, and
   `PoliteSession` keeps ULDK's published limits (200/min by day, 40/min at night, stop at 9,500 a day).
-- 🟠 Cross-district `related` links and a city-wide view need the slim index (plan §2.2, phase 3).
+- 🟢 ~~A city-wide view needs the slim index (plan §2.2, phase 3)~~ – built (27 X): source cells in per-shard
+  buckets fetched by "Dane w źródle"; "Cała Warszawa" (`dz=warszawa`, planning kinds, 1.9 MB gzip) with records
+  opening in their district; whole-string `fold()` and a sliced first index build (city ready in 0.7 s desktop /
+  3.1 s on a 4×-slowed phone). Numbers and trade-offs: plan §5a.
+- 🟠 City-wide permits are not offered (9.8 MB gzip without cells – over the 5 MB desktop budget); cross-district
+  `related` links are not computed (only records with parcels in two districts could have them).
+- 🟠 City scope → record → Back reloads the page twice (switching scope is a reload in the draft); the city has no
+  feed; e2e has no two-district fixture yet (city mode was checked by a script on the real data).
 - 🟢 ~~OSM neighbourhoods per district need Overpass (often overloaded)~~ – fetched for all 17 districts during
   the first full geocoding (27 X); kept in each shard's `areas.geojson`.
 - 🟢 Targówek elides house numbers ("ul. Oliwska …") – the street is now kept and located street-level: 88% → 98%

@@ -1,5 +1,5 @@
 {
-"generated_at":"2026-10-24T21:00:09Z",
+"generated_at":"2026-10-27T22:13:13Z",
 "index_url":"https://pragapld.um.warszawa.pl/informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych",
 "pages":[
 {"page_id":"informacje-o-wszczetych-postepowaniach-09-2026","url":"https://pragapld.um.warszawa.pl/-/informacje-o-wszczetych-postepowaniach-09-2026","title":"Wrzesień 2026","period":"2026-09","published_at":"2026-10-09T12:50:00Z","summary":"Wydane decyzje o warunkach zabudowy: 0 pozycji Wydane decyzje w sprawie lokalizacji CP: 2 pozycje Informacje o wszczętych postępowaniach: 1 pozycja","index_page":1,"source":"district","blocks":[{"text":"Wydane decyzje o warunkach zabudowy: 0 pozycji","category":"wz","declared_count":0,"file_ids":[],"parsed_count":0,"count_mismatch":false},{"text":"Wydane decyzje w sprawie lokalizacji CP: 2 pozycje","category":"cp","declared_count":2,"file_ids":["69314f7376"],"parsed_count":2,"count_mismatch":false},{"text":"Informacje o wszczętych postępowaniach: 1 pozycja","category":"ws","declared_count":1,"file_ids":["b3fa405341"],"parsed_count":1,"count_mismatch":false}],"warnings":[]},

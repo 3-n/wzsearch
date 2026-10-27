@@ -32,6 +32,8 @@
         var dz = (/[?&]dz=([a-z-]{2,32})(?:&|$)/.exec(location.hash) || [])[1];
         try { dz = dz || localStorage.getItem('wzsearch:district'); } catch (e) { /* storage unavailable */ }
         var shard = dz && dz !== 'praga-poludnie' && /^[a-z-]{2,32}$/.test(dz) ? 'data/d/' + dz + '/' : null;
+        /* "Cała Warszawa" has its own index (a record link opens in the record's district instead) */
+        if (dz === 'warszawa') shard = /^#\/wpis\//.test(location.hash) ? null : 'data/warszawa/';
         var start = function (u) {
           var p = fetch(u, { cache: 'no-cache' });
           p.catch(function () {}); /* handled by data.js; no "unhandled rejection" before it loads */
@@ -63,6 +65,7 @@
   <link rel="modulepreload" href="js/copy.js">
   <link rel="modulepreload" href="js/kinds.js">
   <link rel="modulepreload" href="js/district.js">
+  <link rel="modulepreload" href="js/cells.js">
   <link rel="modulepreload" href="js/lazy.js">
   <link rel="modulepreload" href="js/config.js">
   <link rel="modulepreload" href="js/views/explore.js">

@@ -24,7 +24,7 @@ import pytest
 import requests
 from requests.structures import CaseInsensitiveDict
 
-from pipeline import build, export, geo
+from pipeline import build, cells, export, geo
 from pipeline import crawl as crawl_mod
 from pipeline import geocode as gc
 from pipeline import rwdz as rwdz_mod
@@ -707,7 +707,7 @@ class TestRunBuild:
 
         # permits.json – GUNB RWDZ, built offline from the committed extracts
         permits_doc = json.loads(project.permits_json.read_text(encoding="utf-8"))
-        assert list(permits_doc) == ["generated_at", "count", "records"] and permits_doc["generated_at"] == NOW
+        assert list(permits_doc) == ["generated_at", "count", "cells", "records"] and permits_doc["generated_at"] == NOW
         permits = {r["id"]: r for r in permits_doc["records"]}
         assert permits_doc["count"] == len(permits) == 16
         assert list(permits)[:3] == ["pb-st-mz-pa-2026-29594", "zg-st-mz-pa-2026-6161", "pb-st-mz-pa-2024-10219"]
@@ -721,6 +721,14 @@ class TestRunBuild:
         assert pb["sources"][0]["file_id"] == "rwdz-wnioski" and pb["sources"][0]["page_id"] == "rwdz"
         assert permits["pb-st-mz-pa-2020-12384"]["geo"]["parcels_found"] == ["146507_8.0406.137"]
         assert not set(permits) & set(by_id)
+
+        # the source cells sit in bucket files (pipeline/cells.py), not in the record files
+        assert not any("raw" in src for r in (*records_doc["records"], *permits.values()) for src in r["sources"])
+        for doc, rec in ((records_doc, r15), (permits_doc, pb)):
+            meta = doc["cells"]
+            bucket = project.site_data / f"{meta['prefix']}{cells.bucket_of(rec['id'], meta['buckets']):02x}.json"
+            raws = json.loads(bucket.read_text(encoding="utf-8"))[rec["id"]]
+            assert len(raws) == len(rec["sources"]) and all(isinstance(raw, list) and raw for raw in raws)
 
         # sources.json
         files = {f["file_id"]: f for f in sources_doc["files"]}

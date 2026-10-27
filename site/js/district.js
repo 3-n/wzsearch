@@ -5,11 +5,15 @@
  * choice, or Praga-Południe. Switching district reloads the page (draft). Without data/districts.json (the
  * single-district deployment) everything stays as before: Praga-Południe, data/.
  *
+ * "Cała Warszawa" (`dz=warszawa`, districts.json's `city` entry) is one more scope: the planning records of every
+ * district in a lighter shape (data/warszawa/, pipeline/city_index.py), no permits; a record opens in its district.
+ *
  * Pure helpers plus one module-level "current district" that the views read for their copy.
  */
 import { MAP_CENTER, MAP_ZOOM } from './config.js';
 
 export const DEFAULT_SLUG = 'praga-poludnie';
+export const CITY_SLUG = 'warszawa';
 export const STORAGE_KEY = 'wzsearch:district';
 const SLUG = /^[a-z-]{2,32}$/;
 
@@ -32,6 +36,7 @@ export const LEGACY = Object.freeze({
 
 let current = LEGACY;
 let all = [];
+let city = null;
 
 /** The district shown by this page. */
 export function currentDistrict() {
@@ -46,6 +51,22 @@ export function allDistricts() {
 /** True when the deployment has several districts (data/districts.json lists more than one). */
 export function isCity() {
   return all.length > 1;
+}
+
+/** The "Cała Warszawa" entry of districts.json (null without a city index). */
+export function cityEntry() {
+  return city;
+}
+
+/** True when the page shows the whole city ("Cała Warszawa") rather than one district. */
+export function isCityMode() {
+  return current.city === true;
+}
+
+/** The district a record belongs to (city mode: where its detail opens), by slug; null when unknown. */
+export function districtOf(rec) {
+  const slug = rec?.district;
+  return all.find((d) => d.slug === slug) || null;
 }
 
 /** `dz` value of a location hash ("#/?q=x&dz=wola" → "wola"), or null. */
@@ -74,16 +95,18 @@ export function recordIdFromHash(hash) {
 /**
  * Pick the district to show. Pure.
  * @param {object[]} districts entries of data/districts.json
- * @param {{hash?: string, stored?: string|null}} where
+ * @param {{hash?: string, stored?: string|null, cityItem?: object|null}} where `cityItem`: districts.json's `city`
  * @returns {object} the district entry
  */
-export function resolveDistrict(districts, { hash = '', stored = null } = {}) {
+export function resolveDistrict(districts, { hash = '', stored = null, cityItem = null } = {}) {
   const list = Array.isArray(districts) ? districts.filter((d) => d && SLUG.test(d.slug || '')) : [];
   const bySlug = new Map(list.map((d) => [d.slug, d]));
-  const fromHash = bySlug.get(districtFromHash(hash));
-  if (fromHash) return fromHash;
-  // wz-bem-2026-1, ws-wol-6730-2026-12, wz-am-bie-2025-33: the code after the kind (and "am") names the district
+  if (cityItem?.slug === CITY_SLUG) bySlug.set(CITY_SLUG, cityItem);
   const id = recordIdFromHash(hash);
+  const fromHash = bySlug.get(districtFromHash(hash));
+  // A record never opens in the city scope: its full data (sources, related records) is in its district.
+  if (fromHash && !(fromHash.city && id)) return fromHash;
+  // wz-bem-2026-1, ws-wol-6730-2026-12, wz-am-bie-2025-33: the code after the kind (and "am") names the district
   if (id) {
     const parts = id.split('-');
     const code = parts[1] === 'am' ? parts[2] : parts[1];
@@ -94,20 +117,31 @@ export function resolveDistrict(districts, { hash = '', stored = null } = {}) {
   return bySlug.get(stored) || bySlug.get(DEFAULT_SLUG) || list[0] || LEGACY;
 }
 
-/** Make `district` (an entry of data/districts.json) the current one; `list` = all districts. */
-export function setDistrict(district, list = all) {
+/** Make `district` (an entry of data/districts.json) the current one; `list` = all districts, `cityItem` = its city. */
+export function setDistrict(district, list = all, cityItem = null) {
   current = { ...LEGACY, ...(district || {}) };
   all = Array.isArray(list) ? list : [];
+  city = cityItem?.slug === CITY_SLUG ? cityItem : null;
 }
 
 /** Base URL of the current district's data files (Praga-Południe's shard is the single-district data/). */
 export function dataBase() {
+  if (isCityMode()) return `data/${CITY_SLUG}/`;
   return isCity() && current.slug !== DEFAULT_SLUG ? `data/d/${current.slug}/` : 'data/';
 }
 
-/** The Atom feed of the current district (Praga-Południe's – like a single-district site's – is feed.xml). */
+/** The Atom feed of the current district (Praga-Południe's – like a single-district site's – is feed.xml); the city
+ * has none yet (null). */
 export function feedPath() {
+  if (isCityMode()) return null;
   return dataBase() === 'data/' ? 'feed.xml' : `${dataBase()}feed.xml`;
+}
+
+/** The page's "areas": a district's neighbourhoods (OSM), or – for the whole city – its districts. */
+export function areaWords() {
+  return isCityMode()
+    ? { facet: 'Dzielnica', layer: 'Granice dzielnic', legend: 'granice dzielnic' }
+    : { facet: 'Obszar', layer: 'Granice osiedli', legend: 'granice osiedli' };
 }
 
 /** Initial map view: the district's bounding box centre (city deployments), else the configured centre. */
@@ -115,7 +149,7 @@ export function mapStart() {
   const b = current.bbox;
   if (Array.isArray(b) && b.length === 4 && b.every(Number.isFinite)) {
     const span = Math.max(b[2] - b[0], (b[3] - b[1]) * 1.6);
-    const zoom = span > 0.16 ? 12 : span > 0.08 ? 13 : 14;
+    const zoom = span > 0.32 ? 11 : span > 0.16 ? 12 : span > 0.08 ? 13 : 14;
     return { center: [(b[1] + b[3]) / 2, (b[0] + b[2]) / 2], zoom, bounds: [[b[1], b[0]], [b[3], b[2]]] };
   }
   const c = current.center;   // approximate centre, before the district has been geocoded

@@ -368,6 +368,9 @@ body[data-district] .brand__sub { display: none; }
 .district-list__name { font-weight: 650; }
 .district-list__meta { font-size: 12.5px; color: var(--text-3); }
 .district-list__note { font-size: 12px; color: var(--warn); }
+/* "Cała Warszawa": the whole width under the districts, set apart by a rule */
+.district-list__item--city { grid-column: 1 / -1; margin-top: 6px; padding-top: 8px; border-top: 1px solid var(--border); }
+.district-list__item--city .district-list__note { color: var(--text-3); }
 .topnav { display: flex; gap: 2px; }
 .topnav a {
   display: inline-flex; align-items: center; height: 34px; padding: 0 12px;

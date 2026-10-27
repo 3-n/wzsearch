@@ -230,6 +230,7 @@ użytkowania X na Y" from the target Y. `rozbiorka` has no records yet (UI shoul
   "kinds": { "wz": {"label": "Decyzja o warunkach zabudowy", "short": "WZ", "description": "…"}, "cp": {…}, "ws": {…} },
   "tags":  { "jednorodzinny": {"label": "Dom jednorodzinny", "description": "…", "group": "funkcja"}, … },  // = classify.TAGS, in order
   "areas": { "goclaw": {"label": "Gocław"}, … },                           // from areas.json/areas.geojson, sorted by slug; may be empty
+  "cells": {"prefix": "cells/r-", "buckets": 16},                         // v3: where the sources' raw cells are (below)
   "records": [Record]                                                       // newest first (date, period, id desc)
 }
 ```
@@ -270,7 +271,8 @@ użytkowania X na Y" from the target Y. `rozbiorka` has no records yet (UI shoul
   "sources": [{                               // every source row listing this decision, oldest file first
     "file_id": "a1b2c3d4e5", "page_id": "informacje-o-wszczetych-postepowaniach-07-2026",   // page_id = file's first linking page
     "sheet": "Decyzje o warunkach zabudowy", "row": 6,
-    "raw": [["Lp", "1"], ["Numer decyzji", "15/PPD/WZ/2026"], …]   // stringified cells as in the file (tidied, privacy-redacted)
+    "raw": [["Lp", "1"], ["Numer decyzji", "15/PPD/WZ/2026"], …]   // stringified cells as in the file (tidied, privacy-redacted);
+                                              // v3: NOT in records.json/permits.json – moved to cells/ (see below)
   }],
   "related": ["ws-6730-2026-11"],             // other records sharing a parcel id or the same street_key + house number,
                                               // chronological (date, then id); symmetric; never the record itself
@@ -894,5 +896,32 @@ not on `main`.** Everything below is additive; a single-district build (`make da
   `removed_from_source_at`; the BAiPP pages/files of the legacy manifest are appended at build time.
 * **ZIP sources** – `parse.parse_source`: every `.xlsx` member is parsed; `sheet` = `"<member> › <sheet>"`.
 * Not committed in the draft (`.gitignore`): `data/districts/`, `data/cache/districts/`, `site/data/d/`,
-  `site/sources/d/`, `site/data/districts.json` – build them with `make city` (see the plan, §4).
+  `site/sources/d/`, `site/data/districts.json`, `site/data/warszawa/` – build them with `make city` (see the plan,
+  §4).
+
+### Phase 3: source cells out of the record files, the city index (2026-10-27)
+
+* **`<shard>/cells/r-<bb>.json`, `cells/p-<bb>.json`** (`pipeline/cells.py`, every shard incl. Praga-Południe's
+  `site/data/`): each source's `raw` is removed from `records.json`/`permits.json` (25–40 % of their bytes) and
+  stored in bucket files – `{"<record id>": [raw of sources[0], raw of sources[1] | null, …], …}`, one record per
+  line, every bucket written (also empty ones `{}`). `<bb>` = FNV-1a (32-bit, over the id's UTF-8 bytes) modulo
+  `buckets`, two lowercase hex digits; `buckets` is the smallest power of two (≤ 256) that keeps the average bucket
+  under 48 kB of JSON. The record file says which set it uses: `"cells": {"prefix": "cells/r-", "buckets": 16}`
+  (`permits.json`: `cells/p-`). The page (`site/js/cells.js`) fetches one bucket when "Dane w źródle" is opened.
+  Rebuilding the records with their cells gives exactly the former files.
+* **`site/data/warszawa/`** (`pipeline/city_index.py`, run by `make city` after the districts, or alone with
+  `python -m pipeline.city_index`) – assembled from the shards on disk, `generated_at` = the newest shard's:
+  * `records.json` – the planning records (wz, cp, ws) of all districts (18,248; 1.9 MB gzip) in a lighter shape:
+    no `sources`, `related`, `warnings`, `date_raw`, null fields; `geo` without `parcels_found`/`bbox`, coordinates
+    to 5 decimals; `address` without `raw` (and without `parts` when it only repeats `street`/`number`);
+    `parcels[].partial` only when true; `parcels_raw` only when no parcel was recognised; `area` = `district` =
+    the district's slug; `"city": true`; `kinds`/`counts_by_kind` of the planning kinds only; `areas` = the 18
+    districts; `datasets` = `district` (generic) + `baipp`; no `cells`.
+  * `sources.json` – `{generated_at, city: true, districts: [{slug, name, generated_at, count, entry_url}], pages:
+    [], files: []}`.
+  * `areas.geojson` – each district's OSM outline (`_district` feature of its shard) with `slug`/`label` of the
+    district.
+* **`districts.json → city`** – `{slug: "warszawa", name: "Cała Warszawa", genitive, locative, instrumental,
+  city: true, code: "", status, available, generated_at, counts_by_kind, bbox, center}`, present when the city
+  index exists. `dz=warszawa` shows it; a record opens in its own district (`district` field).
 

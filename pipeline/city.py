@@ -14,8 +14,9 @@ runs with :class:`pipeline.build.DistrictPaths` and the district set as current:
   per district into ``data/districts/<slug>/rwdz``);
 * geocoding with the shared ULDK/UUG caches and the district's own OSM outline and MSI areas.
 
-Outputs go to ``site/data/d/<slug>/`` (records.json, permits.json, sources.json, GeoJSON, CSV, feed.xml) and
-``site/sources/d/<slug>/``; finally ``site/data/districts.json`` lists all 18 districts for the district switcher.
+Outputs go to ``site/data/d/<slug>/`` (records.json, permits.json, sources.json, cells/, GeoJSON, CSV, feed.xml) and
+``site/sources/d/<slug>/``; then the city-wide planning index ``site/data/warszawa/`` is re-assembled from the shards
+(:mod:`pipeline.city_index`) and ``site/data/districts.json`` lists all 18 districts and the city for the switcher.
 The legacy single-district outputs (``site/data/records.json`` …, ``make data``) are not touched.
 
 Exit code: the worst of the district builds (0 ok, 3 a live source failed somewhere, 1 nothing could be built).
@@ -45,6 +46,7 @@ from .build import (
     run_build,
     write_atomic,
 )
+from .city_index import write_city_index
 from .district_index import DISTRICTS_INDEX, districts_index
 from .geocode import PoliteSession as GeoSession
 from .http import make_session
@@ -97,6 +99,7 @@ def run_city_build(root: Path, slugs: list[str], *, crawl: bool = True, online: 
         gunb_checked = gunb_checked or crawl
         log.info("%s: %d records, %d permits, exit %d", d.name, len(result.records), len(result.permits),
                  result.exit_code)
+    write_city_index(root)
     index_path = root / DISTRICTS_INDEX
     if write_atomic(index_path, dumps_json(districts_index(root), ("districts",))):
         log.info("wrote %s", index_path.relative_to(root))

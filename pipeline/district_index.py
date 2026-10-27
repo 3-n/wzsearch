@@ -2,7 +2,8 @@
 
 Written by the city-wide build (:mod:`pipeline.city`, every district) and – when missing – by the single-district
 build (Praga-Południe alone, so that a single-district site answers the page's request for the list instead of
-logging a 404). The frontend treats a list with one district as a single-district site.
+logging a 404). The frontend treats a list with one district as a single-district site. ``city`` – when the city
+index exists – describes "Cała Warszawa" like a district.
 """
 
 from __future__ import annotations
@@ -14,6 +15,7 @@ from typing import Any
 
 from . import districts
 from .build import DistrictPaths
+from .city_index import city_entry
 
 DISTRICTS_INDEX = Path("site") / "data" / "districts.json"
 
@@ -69,7 +71,10 @@ def districts_index(root: Path, slugs: Iterable[str] | None = None) -> dict:
         if item["generated_at"]:
             stamps.append(item["generated_at"])
         items.append(item)
-    return {"generated_at": max(stamps) if stamps else None, "default": districts.LEGACY_SLUG, "districts": items}
+    out = {"generated_at": max(stamps) if stamps else None, "default": districts.LEGACY_SLUG, "districts": items}
+    if slugs is None and (city := city_entry(root)):   # "Cała Warszawa" (pipeline/city_index.py)
+        out["city"] = city
+    return out
 
 
 

@@ -311,6 +311,14 @@ export function outcomeCoverage(entries, f, ctx = {}) {
 }
 
 /**
+ * Filters that carry over to another district (or between a district and "Cała Warszawa"): the ones tied to one
+ * district's geography – street, area, map area, "near me", file – do not.
+ */
+export function carryFilters(f) {
+  return { ...f, streets: [], areas: [], bbox: null, near: null, file: null };
+}
+
+/**
  * Drop filter values the data does not know (a stale or hand-edited link: a renamed tag, a replaced file, a typo),
  * so the page degrades to the remaining filters instead of showing "no results" with a raw-slug chip. Only
  * dictionaries that exist are checked (old data without e.g. `outcomes` keeps what the URL says). Street keys are

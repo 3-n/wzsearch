@@ -8,6 +8,7 @@
 import { fold, buildSearchDoc } from './search.js';
 import { KIND_ORDER } from './kinds.js';
 import { pluralForm } from './format.js';
+import { cellsSet } from './cells.js';
 
 /**
  * Strip honorific/type prefixes so "gen. Fieldorfa" sorts under F, "al. Stanów…" under S. An abbreviation needs its
@@ -158,17 +159,10 @@ function rebuildStreets(index) {
   }
 }
 
-/**
- * Turn records.json + sources.json into an index the UI can query instantly.
- * Robust to missing/null fields everywhere.
- * @param {object} recordsDoc parsed records.json
- * @param {object} sourcesDoc parsed sources.json
- */
-export function buildIndex(recordsDoc, sourcesDoc) {
-  const records = Array.isArray(recordsDoc?.records) ? recordsDoc.records.filter((r) => r && r.id) : [];
-  const kinds = obj(recordsDoc?.kinds);
-  const dicts = {
-    kinds,
+/** The dictionaries of records.json (kinds, tags, areas …) as the index keeps them. */
+export function dictsOf(recordsDoc) {
+  return {
+    kinds: obj(recordsDoc?.kinds),
     tags: obj(recordsDoc?.tags),
     areas: obj(recordsDoc?.areas),
     datasets: obj(recordsDoc?.datasets),
@@ -177,6 +171,19 @@ export function buildIndex(recordsDoc, sourcesDoc) {
     scopes: obj(recordsDoc?.permit_scopes),
     categories: obj(recordsDoc?.permit_categories),
   };
+}
+
+/**
+ * Turn records.json + sources.json into an index the UI can query instantly.
+ * Robust to missing/null fields everywhere.
+ * @param {object} recordsDoc parsed records.json
+ * @param {object} sourcesDoc parsed sources.json
+ * @param {Map<string, object>} [prepared] entries made beforehand by prepareEntries() (by record id)
+ */
+export function buildIndex(recordsDoc, sourcesDoc, prepared = null) {
+  const records = Array.isArray(recordsDoc?.records) ? recordsDoc.records.filter((r) => r && r.id) : [];
+  const dicts = dictsOf(recordsDoc);
+  const { kinds } = dicts;
   const countsByKind = {};
   for (const [k, n] of Object.entries(obj(recordsDoc?.counts_by_kind))) if (Number.isFinite(n)) countsByKind[k] = n;
 
@@ -206,12 +213,16 @@ export function buildIndex(recordsDoc, sourcesDoc) {
     baseKinds: [],
     permitsLoaded: false,
     permitsMeta: null,
+    // Source cells kept outside the record files (cells.js): the bucket set of records.json and of permits.json.
+    cells: { records: cellsSet(recordsDoc?.cells), permits: null },
     pages,
     files,
     pagesById,
     filesById,
+    // "Cała Warszawa" (pipeline/city_index.py): which districts the city index was assembled from
+    sources: { districts: Array.isArray(sourcesDoc?.districts) ? sourcesDoc.districts.filter((d) => d && d.slug) : [] },
   };
-  addEntries(index, records);
+  addEntries(index, records, prepared);
   index.meta.count = index.entries.length;
   index.baseKinds = Object.keys(index.kindMonths);
   // Kinds: every kind of the dictionary (incl. opt-in kinds known only from counts_by_kind) plus any in the data.
@@ -269,6 +280,7 @@ export function addPermits(index, permitsDoc, prepared = null) {
   index.kindCodes = orderedKinds([...index.kindCodes, ...added.map((e) => e.kind).filter(Boolean)]);
   index.permitsLoaded = true;
   index.permitsMeta = { generatedAt: permitsDoc?.generated_at || null, count: records.length };
+  index.cells.permits = cellsSet(permitsDoc?.cells);
   return added;
 }
 
@@ -420,23 +432,28 @@ async function fetchJson(url, { optional = false } = {}) {
 }
 
 /**
- * The district list of a city-wide deployment (data/districts.json, see district.js); null for a single-district
- * deployment (no file) or an unreadable one.
- * @returns {Promise<object[]|null>}
+ * The district list of a city-wide deployment (data/districts.json, see district.js) and its "Cała Warszawa" entry
+ * (null when the city index is not built); null for a single-district deployment (no file) or an unreadable one.
+ * @returns {Promise<{list: object[], city: object|null}|null>}
  */
 export async function loadDistricts(base = 'data/') {
   const doc = await fetchJson(`${base}districts.json`, { optional: true });
   const list = Array.isArray(doc?.districts) ? doc.districts.filter((d) => d && typeof d.slug === 'string') : [];
-  return list.length ? list : null;
+  const city = doc?.city && typeof doc.city === 'object' && doc.city.city === true ? doc.city : null;
+  return list.length ? { list, city } : null;
 }
 
-/** Load the required data files and build the index. */
+/**
+ * Load the required data files and build the index. The search documents are made in slices first (prepareEntries),
+ * so that a big shard – Wawer's 5,700 records, the city's 18,000 – never blocks the page in one long task.
+ */
 export async function loadIndex(base = 'data/') {
   const [recordsDoc, sourcesDoc] = await Promise.all([
     fetchJson(`${base}records.json`),
     fetchJson(`${base}sources.json`),
   ]);
-  return buildIndex(recordsDoc, sourcesDoc);
+  const prepared = await prepareEntries(recordsDoc?.records, dictsOf(recordsDoc));
+  return buildIndex(recordsDoc, sourcesDoc, prepared);
 }
 
 /** Optional GeoJSON layers; resolve to null when absent/empty/invalid. */

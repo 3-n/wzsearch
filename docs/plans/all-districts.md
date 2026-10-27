@@ -231,7 +231,7 @@ in place (cumulative yearly files are the norm outside Praga-Południe), "remove
 |---|---|---|
 | **1. Foundations** *(in the draft)* | district registry; precinct table; `district` field; id namespaces; BAiPP + GUNB for all districts; per-district shards + `districts.json`; `--districts`; district switcher + `dz` param; legacy links keep working | every district shows GUNB permits + BAiPP cases |
 | **2. Template-xlsx districts** *(in the draft, partly)* | `attachments`/`hub` crawlers; parser additions (separator rows, `brak`, zip, duplicated headers); per-district sources tab | 11 districts with full planning lists |
-| 3. Slim index | `sources[].raw` → buckets; `idx` buckets for cross-shard related; `warszawa/records.json`; city mode | city-wide search of planning records |
+| 3. Slim index *(in the draft, see §5a)* | `sources[].raw` → buckets; `idx` buckets for cross-shard related; `warszawa/records.json`; city mode | city-wide search of planning records |
 | 4. PDF districts *(in the draft)* | `pdftable.py` (2 layouts, poppler), fixtures; ask the 6 offices for xlsx in parallel (📮) | all 18 districts |
 | 5. Ursus + extras | Ursus positional parser; Wola decision-text links; stated outcomes from PDF reports | richer records |
 | 6. Deploy model | inputs-only commits, build-in-CI deploy, per-district failure policy, per-district feeds | sustainable monthly refresh |
@@ -308,12 +308,45 @@ or street; sizes gzipped):
   requests at ~2/s (just under 2 h, once). Wawer's planning layer (1.1 MB gz) and the permit layers of Białołęka,
   Śródmieście, Wawer and Mokotów (1.4–1.7 MB gz) exceed the §2.1 budget – phase 3 (slim index) is the next step.
 
-Not done in the draft (next steps, in order): phase 3 (slim index, city mode); the files the city's CDN refused
+**Phase 3 in the draft (27 Oct evening).** What the plan asked for, what was built, and what was left out:
+
+* *Source cells out of the record files* – done, per shard rather than in one global set (`<shard>/cells/r-<bb>.json`,
+  `p-<bb>.json`; `pipeline/cells.py`, `site/js/cells.js`): a single-district rebuild never rewrites other districts'
+  files, and the record id plus the page's district give the URL. 1,608 buckets, 4 kB gzip median, 9 kB max; "Dane w
+  źródle" fetches one when opened. Gzip sizes after (before): Wawer planning 915 kB (1,112), permits of Białołęka
+  1,175 (1,585), Śródmieście 1,203 (1,572), Wawer 1,239 (1,678), Mokotów 1,061 (1,413), Praga-Południe 118 / 591
+  (144 / 798). Every district is now within §2.1 (largest district ≤ 1.2 MB planning, ≤ 2.5 MB permits).
+* *City index + "Cała Warszawa"* – done for the planning kinds (`pipeline/city_index.py`, `site/data/warszawa/`, 18,248
+  records, 1.9 MB gzip): the last row of the district switcher; the neighbourhood facet lists districts, cards show
+  the district, the map draws district outlines and no parcels; the Sources page lists the districts; About and the
+  disclaimers name "urzędy dzielnic". A record opens **in its district** (its sources, related records and permits
+  are there) – Back returns to the city list. Permits city-wide (§1.3) are not built: 9.8 MB gzip even without the
+  cells, far over the 5 MB desktop budget.
+* *Cross-shard `related` via `idx` buckets* – not built: a parcel id belongs to one cadastral unit, so a relation can
+  cross districts only through records whose parcels lie in two districts – rare (border roads); `compute_related`
+  stays per district. Revisit with a city-wide pass if it matters.
+* *Speed* – the index build was the cost, not filtering: `fold()` now works on whole strings (identical output,
+  checked on all 2.7 M strings of the data; ~4× faster) and the first index is built in slices (`prepareEntries`).
+  Measured on real data (Chrome, desktop / phone = 390 px with 4× CPU slowdown; ready = `wz:ready` mark):
+
+  | page | ready | longest task | phone: ready | phone: longest task |
+  |---|---:|---:|---:|---:|
+  | Praga-Południe | 204 ms | 68 ms | 595 ms | 164 ms |
+  | Wawer (largest) | 312 ms | 114 ms | 1.3 s | 249 ms |
+  | Cała Warszawa | 724 ms | 265 ms | 3.1 s | 446 ms |
+
+  City search: 11–40 ms per query (`evaluate()` over 18k entries, ≤ 50 ms budget); the longest task in the city
+  (265 ms vs the 200 ms desktop budget) is mostly the browser's own layout/parse work – a Worker (§2.3) would move
+  the 13 MB JSON parse off the main thread if it matters on phones.
+* Fixed on the way: the GUNB dataset description named Praga-Południe in every district; About's title was "Co się
+  planuje na Pradze-Południe?" everywhere; CSV downloads were always named `wzsearch-praga-poludnie-…`.
+
+Not done in the draft (next steps, in order): the files the city's CDN refused
 (Wesoła, Włochy, Ursus 2021–25, Białołęka and Bielany before 2026 – retried on 27 Oct evening, still 403); a
 per-attachment size cap in the crawler (Wola links a 135 MB ZIP of decision PDFs on a list page – excluded by
 configuration now); on phones ≤ 390 px the district icon makes "O projekcie" wrap in the top bar (needs a shorter
-label or a menu – a copy/layout decision); e2e checks for the district picker; in-place district switch instead of
-a reload.
+label or a menu – a copy/layout decision); e2e checks for the district picker and the city scope (a two-district
+fixture); in-place district switch instead of a reload (city → record → back now reloads twice); a city feed.
 
 ## 6. Testing
 * Each new layout: real fixture + oracle test (as for PP's six layouts). Each district: a reconciliation test

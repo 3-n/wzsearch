@@ -124,9 +124,15 @@ export const PRECISION = {
 
 export const UNOFFICIAL = 'Serwis nieoficjalny – dane z publikacji Urzędu Dzielnicy Praga-Południe, Urzędu m.st. Warszawy i GUNB';
 
-/** The unofficial notice naming the district office the page shows (district.js; UNOFFICIAL for Praga-Południe). */
-export function unofficial(districtName = 'Praga-Południe') {
-  return UNOFFICIAL.replace('Praga-Południe', districtName);
+/**
+ * The unofficial notice naming the district office the page shows (district.js; UNOFFICIAL for Praga-Południe).
+ * @param {string|{name: string, city?: boolean}} district a district name or entry; the city entry names every office
+ */
+export function unofficial(district = 'Praga-Południe') {
+  if (district && typeof district === 'object' && district.city) {
+    return UNOFFICIAL.replace('Urzędu Dzielnicy Praga-Południe', 'urzędów dzielnic');
+  }
+  return UNOFFICIAL.replace('Praga-Południe', typeof district === 'object' ? district?.name || 'Praga-Południe' : district);
 }
 
 /** Licence names (as in the data) → licence page. */

@@ -199,6 +199,14 @@ def _period_bounds(period: str | None) -> tuple[_dt.date, _dt.date] | None:
     return _dt.date(y, mo, 1), _dt.date(y, mo, calendar.monthrange(y, mo)[1])
 
 
+def _next_day(iso: str) -> str:
+    """``YYYY-MM-DD`` + 1 day (a file stamped in UTC may list a decision of the next Warsaw day)."""
+    try:
+        return (_dt.date.fromisoformat(iso) + _dt.timedelta(days=1)).isoformat()
+    except ValueError:
+        return iso
+
+
 def parse_date(value: Any, period: str | None = None) -> tuple[str | None, str, list[str]]:
     """Parse a decision/initiation date → ``(iso | None, date_raw, warnings)``.
 
@@ -903,8 +911,9 @@ def normalize_row(row: dict[str, Any], kind: str | None, file_meta: dict[str, An
 
     ``kind`` is the file's detected kind (``wz``/``cp``/``ws``); when ``None`` it is inferred
     from the number/sign of the row.  ``file_meta`` needs ``file_id``, ``page_id``, ``period``;
-    optional ``dataset`` (``district`` – default – or ``baipp``) and, for BAiPP ULICP files,
-    ``series`` (``c1``/``c2``).
+    optional ``dataset`` (``district`` – default – or ``baipp``), for BAiPP ULICP files
+    ``series`` (``c1``/``c2``), and ``published_at`` (the file's Last-Modified, else when it was downloaded): outside
+    Praga-Południe a date after it is a typo in the source ("24.11.2201") and is dropped, with a warning.
 
     BAiPP rows (``dataset="baipp"``, already filtered to Praga-Południe by the caller) differ in:
     the number cell also holds the outcome (→ ``outcome``), ids are namespaced (``wz-am-2026-95``),
@@ -937,6 +946,10 @@ def normalize_row(row: dict[str, Any], kind: str | None, file_meta: dict[str, An
 
     date_iso, date_raw, w = parse_date(cells.get("date"), None if city_like else period)
     warnings += w
+    published = str(file_meta.get("published_at") or "")[:10]
+    if date_iso and published and not district.legacy and date_iso > _next_day(published):
+        warnings.append(f"data „{date_raw}” jest późniejsza niż publikacja pliku ({published}) – pominięto ją")
+        date_iso = None
     if city:
         file_year = (period or "")[:4]
         if date_iso and file_year.isdigit() and date_iso[:4] != file_year:

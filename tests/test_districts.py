@@ -309,3 +309,27 @@ def test_ursus_register_with_misleading_headers():
     assert recs[0]["id"] == "wz-urs-2026-1" and recs[0]["outcome"] == "granted"
     assert recs[1]["outcome"] == "refusal"                      # "2/URS/WZ/2026/O" + "odmawiam"
     assert sum(bool(r["parcels"]) for r in recs) == len(recs)
+
+
+def test_dataset_descriptions_name_the_district():
+    from pipeline.build import DATASETS, district_datasets   # noqa: PLC0415
+    with districts.use("wola"):
+        ds = district_datasets()
+    assert "na Woli (jednostka ewidencyjna 146518_8)" in ds["rwdz"]["description"]
+    assert "Pradze" not in ds["rwdz"]["description"] and "Pragę" not in ds["baipp"]["description"]
+    with districts.use("praga-poludnie"):
+        assert district_datasets() is DATASETS
+
+
+def test_a_date_after_the_files_publication_is_a_typo_and_dropped():
+    row = {"sheet": "S", "row": 4, "cells": {"number": "108/WZ/MOK/2021", "date": "24.11.2201", "address": "Lipowa 5"},
+           "raw": []}
+    meta = {"file_id": "f", "page_id": "p", "period": "2026-09", "published_at": "2026-10-05T06:55:01Z"}
+    with districts.use("mokotow"):
+        rec = normalize.normalize_row(row, "ws", meta)
+        assert rec["date"] is None and rec["date_raw"] == "24.11.2201" and rec["period"] == "2026-09"
+        assert any("późniejsza niż publikacja pliku (2026-10-05)" in w for w in rec["warnings"])
+        ok = normalize.normalize_row({**row, "cells": {**row["cells"], "date": "06.10.2026"}}, "ws", meta)
+        assert ok["date"] == "2026-10-06"   # the next day still counts (a UTC stamp, a Warsaw date)
+    with districts.use("praga-poludnie"):   # the legacy district keeps its own rule (a warning, the date kept)
+        assert normalize.normalize_row(row, "ws", meta)["date"] == "2201-11-24"

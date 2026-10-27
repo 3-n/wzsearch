@@ -230,7 +230,9 @@ async function desktopSuite(scheme) {
     assert(/^https:\/\/(pragapld|architektura)\.um\.warszawa\.pl\/(-\/|postepowania-i-decyzje)/.test(await pageLink.getAttribute('href')), 'bad page link');
     const arch = page.locator('#detail a', { hasText: 'Kopia archiwalna' }).first();
     assert(/^sources\/[0-9a-f]{10}\.xlsx$/.test(await arch.getAttribute('href')), 'bad archive link');
+    // the cells come from a bucket file fetched when the panel opens (site/js/cells.js)
     await page.locator('#detail .prov__raw summary').first().click();
+    await page.locator('#detail .table--raw tbody tr').first().waitFor({ timeout: 5000 });
     assert(await page.locator('#detail .table--raw tbody tr').count() > 2, 'raw table empty');
   });
   await shot(page, `${currentGroup}-detail`);
@@ -632,6 +634,7 @@ async function permitChecks(page, url, scheme) {
     const lines = (await d.locator('.prov__facts').innerText()).replace(/\s/g, '');
     assert(lines.includes(String(permit.sources[0].rows[0])), 'original line number missing');
     await d.locator('.prov__raw summary').first().click();
+    await d.locator('.table--raw tbody tr').first().waitFor({ timeout: 5000 });
     assert(await d.locator('.table--raw tbody tr').count() > 5, 'raw table empty');
     assert(!/projektant/i.test(await d.locator('.table--raw').innerText()), 'designer columns shown');
     // the selected permit's parcels are highlighted on the map

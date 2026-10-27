@@ -8,7 +8,7 @@
 import { h, mq, prefersReducedMotion, replaceChildren } from '../dom.js';
 import { icon, kindGlyph, shapeOf } from '../icons.js';
 import { BASEMAP, WMS } from '../config.js';
-import { mapStart } from '../district.js';
+import { areaWords, mapStart } from '../district.js';
 import { formatDate, formatMonth, plural, WPIS } from '../format.js';
 
 const KIND_CLASS = (k) => (/^[a-z]+$/.test(k || '') ? k : 'other');
@@ -152,7 +152,7 @@ export function createMap(el, cfg) {
       h('li', null, kindGlyph('any', { approx: true }), 'lokalizacja przybliżona'),
       h('li', null, h('span', { class: 'legend-cluster', 'aria-hidden': 'true' }), 'grupa – pierścień pokazuje rodzaje'),
       h('li', null, h('span', { class: 'legend-swatch legend-swatch--parcel', 'aria-hidden': 'true' }), 'działka zaznaczonego wpisu'),
-      h('li', { class: 'legend-areas', hidden: true }, h('span', { class: 'legend-swatch legend-swatch--area', 'aria-hidden': 'true' }), 'granice osiedli')));
+      h('li', { class: 'legend-areas', hidden: true }, h('span', { class: 'legend-swatch legend-swatch--area', 'aria-hidden': 'true' }), areaWords().legend)));
   function setLegendKinds(kinds) {
     ringKinds = [...kinds];
     replaceChildren(legendGlyphs, kinds.map((k) => kindGlyph(k)));
@@ -483,7 +483,7 @@ export function createMap(el, cfg) {
     }
     legend.querySelector('.legend-areas').hidden = !hasAreas;
     if (hasAreas && !areasOverlayAdded) {
-      layersControl.addOverlay(areasLayer, 'Granice osiedli');
+      layersControl.addOverlay(areasLayer, areaWords().layer);
       areasOverlayAdded = true;
     }
   }
@@ -581,7 +581,7 @@ export function createMap(el, cfg) {
       // Boundaries from OpenStreetMap are already covered by the base map's OSM credit (ODbL);
       // any other source gets its own attribution.
       const attr = typeof geojson?.attribution === 'string' ? geojson.attribution : '';
-      if (attr && !/openstreetmap/i.test(attr)) map.attributionControl.addAttribution(`granice osiedli ${escapeHtml(attr)}`);
+      if (attr && !/openstreetmap/i.test(attr)) map.attributionControl.addAttribution(`${areaWords().legend} ${escapeHtml(attr)}`);
     },
     /** Outline the neighbourhoods selected in the "Obszar" filter. */
     setActiveAreas(slugs) {

@@ -1,6 +1,6 @@
 # wzSearch – data-quality report
 
-Generated `2026-10-24T21:00:09Z` by `pipeline/build.py` from the district's [source index](https://pragapld.um.warszawa.pl/informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych), the [BAiPP lists](https://architektura.um.warszawa.pl/postepowania-i-decyzje) and GUNB's [RWDZ register](https://wyszukiwarka.gunb.gov.pl/pobranie.html). Regenerated on every build; do not edit.
+Generated `2026-10-27T22:13:13Z` by `pipeline/build.py` from the district's [source index](https://pragapld.um.warszawa.pl/informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych), the [BAiPP lists](https://architektura.um.warszawa.pl/postepowania-i-decyzje) and GUNB's [RWDZ register](https://wyszukiwarka.gunb.gov.pl/pobranie.html). Regenerated on every build; do not edit.
 
 ## Totals
 

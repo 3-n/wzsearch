@@ -1,9 +1,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  DEFAULT_SLUG, LEGACY, currentDistrict, dataBase, districtFromHash, districtTotals, feedPath, isCity, mapStart,
-  recordIdFromHash, resolveDistrict, setDistrict,
+  CITY_SLUG, DEFAULT_SLUG, LEGACY, areaWords, cityEntry, currentDistrict, dataBase, districtFromHash, districtOf,
+  districtTotals, feedPath, isCity, isCityMode, mapStart, recordIdFromHash, resolveDistrict, setDistrict,
 } from '../../site/js/district.js';
+import { carryFilters } from '../../site/js/filters.js';
+import { unofficial } from '../../site/js/copy.js';
+import { csvFileName } from '../../site/js/csv.js';
 import { buildHash, parseHash, setHashDistrict } from '../../site/js/url.js';
 import { defaultFilters } from '../../site/js/filters.js';
 import { ADDRESSEES } from '../../site/js/request.js';
@@ -84,4 +87,44 @@ test('district totals and the request addressee of the district shown', () => {
   assert.match(ADDRESSEES.district.lines[2], /Dzielnicy Wola$/);
   assert.equal(ADDRESSEES.district.fallback, '', 'the general inbox is the address itself, not an alternative');
   setDistrict(LEGACY, []);
+});
+
+const CITY = { slug: 'warszawa', name: 'Cała Warszawa', genitive: 'Warszawy', locative: 'w Warszawie', city: true, code: '',
+  counts_by_kind: { wz: 5, cp: 1, ws: 4 }, bbox: [20.85, 52.09, 21.26, 52.37] };
+
+test('"Cała Warszawa" is a scope of its own; a record never opens in it', () => {
+  assert.equal(resolveDistrict(LIST, { hash: '#/?dz=warszawa', cityItem: CITY }).slug, CITY_SLUG);
+  assert.equal(resolveDistrict(LIST, { stored: 'warszawa', cityItem: CITY }).slug, CITY_SLUG);
+  assert.equal(resolveDistrict(LIST, { hash: '#/?dz=warszawa' }).slug, DEFAULT_SLUG, 'no city index: not a scope');
+  // a record link into the city scope (typed, or from an old tab) opens in the record's district
+  assert.equal(resolveDistrict(LIST, { hash: '#/wpis/wz-bem-2026-1?dz=warszawa', cityItem: CITY }).slug, 'bemowo');
+  assert.equal(resolveDistrict(LIST, { hash: '#/wpis/wz-2026-15?dz=warszawa', stored: 'warszawa', cityItem: CITY }).slug, DEFAULT_SLUG);
+});
+
+test('the city scope: its own data base, no feed, districts as areas', () => {
+  setDistrict(CITY, LIST, CITY);
+  assert.equal(isCityMode(), true);
+  assert.equal(cityEntry().slug, CITY_SLUG);
+  assert.equal(dataBase(), 'data/warszawa/');
+  assert.equal(feedPath(), null);
+  assert.equal(mapStart().zoom, 11);
+  assert.equal(areaWords().facet, 'Dzielnica');
+  assert.equal(districtOf({ district: 'wola' }).name, 'Wola');
+  assert.equal(districtOf({ district: 'nieznana' }), null);
+  assert.equal(unofficial(currentDistrict()), 'Serwis nieoficjalny – dane z publikacji urzędów dzielnic, Urzędu m.st. Warszawy i GUNB');
+  setDistrict(LIST[2], LIST, CITY);
+  assert.equal(isCityMode(), false);
+  assert.equal(areaWords().facet, 'Obszar');
+  assert.match(unofficial(currentDistrict()), /Urzędu Dzielnicy Wola,/);
+  assert.match(unofficial('Bemowo'), /Urzędu Dzielnicy Bemowo,/);
+  setDistrict(LEGACY, []);
+  assert.equal(cityEntry(), null);
+});
+
+test('filters tied to one district do not carry over; CSV files are named after the scope', () => {
+  const f = { ...defaultFilters(), q: 'szkoła', streets: ['grochowska'], areas: ['gocław'], bbox: [1, 2, 3, 4], near: { lat: 1, lon: 2, r: 500 }, file: 'abc' };
+  assert.deepEqual(carryFilters(f), { ...f, streets: [], areas: [], bbox: null, near: null, file: null });
+  const day = new Date('2026-10-23T12:00:00Z');
+  assert.equal(csvFileName(day), 'wzsearch-praga-poludnie-2026-10-23.csv');
+  assert.equal(csvFileName(day, 'warszawa'), 'wzsearch-warszawa-2026-10-23.csv');
 });

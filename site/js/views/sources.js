@@ -19,7 +19,7 @@ import { datasetOf } from '../data.js';
 import { isOptInKind } from '../kinds.js';
 import { SOURCE_INDEX_URL } from '../config.js';
 import { unofficial, LICENCE_URLS } from '../copy.js';
-import { currentDistrict, DEFAULT_SLUG } from '../district.js';
+import { allDistricts, currentDistrict, DEFAULT_SLUG } from '../district.js';
 
 /** The district this page shows (district.js; Praga-Południe in a single-district deployment). */
 const D = () => currentDistrict();
@@ -455,7 +455,7 @@ export function createSources(host, index) {
       'Poniżej jest pełna lista stron i plików – z liczbami, które podaje źródło, i liczbą wierszy, które odczytaliśmy.'),
       h('p', { class: 'updated' }, icon('clock', { size: 15 }),
         h('span', null, generated ? `Dane z dnia ${generated}` : 'Data aktualizacji nieznana')),
-      h('p', { class: 'muted small' }, `${unofficial(D().name)}.`)),
+      h('p', { class: 'muted small' }, `${unofficial(D())}.`)),
     datasetKeys.length > 1 ? tabsEl : null,
     panelHost,
     index.meta.fixture ? h('p', { class: 'notice notice--warn' }, icon('alert', { size: 16 }), 'To są dane przykładowe (fixture) – liczba wpisów jest ograniczona.') : null));
@@ -515,3 +515,38 @@ export function createSources(host, index) {
     },
   };
 }
+
+/**
+ * "Cała Warszawa": the sources are per district (their pages, files and the rows of the city-wide lists that concern
+ * them), so this page lists the districts – what the city index took from each, as of when – and links to each
+ * district's own sources page.
+ * @param {HTMLElement} host
+ * @param {object} index the city index (sources.json lists the districts)
+ */
+export function createCitySources(host, index) {
+  const counts = new Map();
+  for (const e of index.entries) counts.set(e.area, (counts.get(e.area) || 0) + 1);
+  const known = new Map(allDistricts().map((d) => [d.slug, d]));
+  const rows = (index.sources?.districts || []).filter((d) => known.has(d.slug));
+  const generated = index.meta.generatedAt ? formatDateTime(index.meta.generatedAt) : null;
+  replaceChildren(host, h('div', { class: 'page page--sources' },
+    h('header', { class: 'page__head' },
+      h('p', { class: 'eyebrow' }, 'Źródła danych'),
+      h('h1', { class: 'page__title', tabindex: '-1' }, 'Każdy wpis ma swoje źródło'),
+      h('p', { class: 'lead' }, 'W widoku całej Warszawy są decyzje i wszczęcia ze wszystkich dzielnic: z zestawień ich urzędów i z ogólnomiejskich zestawień Biura Architektury. ',
+        'Strony i pliki, z których pochodzą, opisujemy przy każdej dzielnicy – wybierz ją poniżej. Pozwolenia na budowę (GUNB) są tylko w widokach dzielnic.'),
+      h('p', { class: 'updated' }, icon('clock', { size: 15 }), h('span', null, generated ? `Dane z dnia ${generated}` : 'Data aktualizacji nieznana')),
+      h('p', { class: 'muted small' }, `${unofficial(D())}.`)),
+    h('ul', { class: 'src-districts' }, rows.map((d) => h('li', { class: 'src-file' },
+      h('span', { class: 'src-file__icon' }, icon('pin', { size: 18 })),
+      h('div', { class: 'src-file__main' },
+        h('p', { class: 'src-file__name' }, d.name),
+        h('p', { class: 'src-file__meta' }, plural(counts.get(d.slug) || 0, WPIS),
+          d.generated_at ? ` · dane z dnia ${formatDateTime(d.generated_at, { time: false })}` : '')),
+      h('div', { class: 'src-file__actions' },
+        h('a', { class: 'btn btn--secondary btn--xs', href: buildHash({ route: 'sources', district: d.slug }) },
+          h('span', null, 'Źródła dzielnicy'), icon('arrowRight', { size: 14 })),
+        ext(d.entry_url, 'Strona urzędu', 'external')))))));
+  return { show() {}, dataChanged() {} };
+}
+
