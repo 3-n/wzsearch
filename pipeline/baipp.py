@@ -28,7 +28,7 @@ from collections.abc import Callable
 from dataclasses import dataclass, field
 from typing import Any
 
-from . import geocode
+from . import districts, geocode
 from .textutil import cell_to_str, collapse_ws, fold, tidy_cell
 
 __all__ = [
@@ -122,7 +122,12 @@ def in_district(address: Any) -> bool:
     ("Spółdzielnia Spożywców Praga Południe").
     """
     line = district_line(address)
-    return bool(line and DISTRICT_RE.search(line))
+    if not line:
+        return False
+    d = districts.current()
+    if d.legacy:
+        return bool(DISTRICT_RE.search(line))
+    return bool(d.pattern.search(fold(line)))
 
 
 def strip_district(address: Any) -> str:
@@ -132,8 +137,15 @@ def strip_district(address: Any) -> str:
     ``"Wał Miedzeszyński 646 Praga Południe"`` → ``"Wał Miedzeszyński 646"``.
     """
     lines = _lines(address)
-    if lines and DISTRICT_RE.search(lines[-1]):
+    d = districts.current()
+    if lines and d.legacy and DISTRICT_RE.search(lines[-1]):
         rest = DISTRICT_RE.sub(" ", lines[-1]).strip(" ,;-–")
+        lines = lines[:-1] + ([rest] if rest else [])
+    elif lines and not d.legacy and (spans := [m.span() for m in d.pattern.finditer(fold(lines[-1]))]):
+        last = list(lines[-1])
+        for a, b in spans:
+            last[a:b] = " " * (b - a)
+        rest = "".join(last).strip(" ,;-–")
         lines = lines[:-1] + ([rest] if rest else [])
     return "\n".join(lines)
 
@@ -281,6 +293,22 @@ def namespace_id(base_id: str, kind: str | None, number: str, file_series: str |
     """
     warnings: list[str] = []
     head, _, tail = base_id.partition("-")
+    district = districts.current()
+    if not district.legacy:
+        # city-wide numbering repeats across districts (33/AM/BIE/WZ/2025 and 33/AM/PPD/WZ/2025): name the district
+        head = f"{head}-am-{district.code}"
+        if tail.startswith("f") and re.fullmatch(r"f[0-9a-z]+-r\d+", tail):
+            return f"{head}-{tail}", warnings
+        if kind == "cp":
+            series = number_series(number) or file_series
+            if series:
+                return f"{head}-{tail.split('-', 1)[0]}-{series}-{tail.split('-', 1)[1]}", warnings
+            warnings.append("nie ustalono serii decyzji ULICP (C1/C2)")
+        if kind == "ws":
+            m = re.match(r"AM-([A-Z]+(?:-[A-Z]+)*)\.", number)
+            if m:
+                return f"{head}-{m.group(1).lower()}-{tail}", warnings
+        return f"{head}-{tail}", warnings
     if tail.startswith("f") and re.fullmatch(r"f[0-9a-z]+-r\d+", tail):
         return f"{head}-am-{tail}", warnings
     if kind == "cp":
@@ -333,6 +361,8 @@ def check_out_of_district(
     Lookups (hits and misses) go through :func:`pipeline.geocode.lookup_parcels` and its cache file
     ``<cache_dir>/uldk.json``; offline, only cached answers are used.
     """
+    if not districts.current().legacy:
+        return set()   # other districts: parcel units come from the precinct table, the map check does the rest
     candidates = [r for r in records if r.get("dataset") == "baipp" and r.get("parcels")]
     if not candidates:
         return set()
@@ -444,6 +474,8 @@ def check_out_of_district_permits(
         unit, _, rest = (p.get("id") or "").partition(".")
         return unit == PRAGA_POLUDNIE and not is_pp_obreb(rest.split(".", 1)[0])
 
+    if not districts.current().legacy:
+        return set()
     candidates = [r for r in records if r.get("dataset") == "rwdz" and not (r.get("geo") or {}).get("method")
                   and any(bad(p) for p in r.get("parcels") or [])]
     if not candidates:

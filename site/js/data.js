@@ -419,6 +419,17 @@ async function fetchJson(url, { optional = false } = {}) {
   return doc;
 }
 
+/**
+ * The district list of a city-wide deployment (data/districts.json, see district.js); null for a single-district
+ * deployment (no file) or an unreadable one.
+ * @returns {Promise<object[]|null>}
+ */
+export async function loadDistricts(base = 'data/') {
+  const doc = await fetchJson(`${base}districts.json`, { optional: true });
+  const list = Array.isArray(doc?.districts) ? doc.districts.filter((d) => d && typeof d.slug === 'string') : [];
+  return list.length ? list : null;
+}
+
 /** Load the required data files and build the index. */
 export async function loadIndex(base = 'data/') {
   const [recordsDoc, sourcesDoc] = await Promise.all([

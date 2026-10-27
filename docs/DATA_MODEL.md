@@ -863,3 +863,36 @@ All optional (absent = as before); the frontend reads `geo.conflict` and `geo.un
   another district (RWDZ); `address.street`/`parts[].street` in the canonical spelling; note and warning wording
   ("na Pradze-Południe", "ewidencja gruntów (ULDK)"); the CP wording of the dataset/kind descriptions and the feed
   title ("decyzje celu publicznego (CP)").
+
+## v3 draft: all 18 districts (branch `feature/all-districts`, 2026-10-27)
+
+Plan and reasons: `docs/plans/all-districts.md`; source inventory: `docs/research/warsaw-districts.md`. **Draft –
+not on `main`.** Everything below is additive; a single-district build (`make data`) is byte-identical to before.
+
+* **District registry** – `pipeline/districts.py` (`DISTRICTS`, 18 entries: slug, names in four cases, TERYT unit,
+  id code, precinct zones, address/GUNB-office patterns, crawl strategy + list pages, status). The pipeline builds
+  one district at a time; `districts.use(d)` makes `d` current, modules ask `districts.current()` instead of the
+  former Praga-Południe constants. Default (no `use`): Praga-Południe, the *legacy* district.
+* **Record ids** – Praga-Południe unchanged (`wz-2026-15`, `wz-am-2026-95`). Other districts insert their code:
+  `wz-bem-2026-1`, `ws-bem-6730-2025-82`, BAiPP `wz-am-bie-2025-33`, `cp-am-bie-2022-c2-1`,
+  `ws-am-bie-zp-n-6730-2025-5` (the planning unit of the case sign is always included). GUNB ids unchanged.
+* **Record field `district`** (slug) on records of non-legacy shards (redundant inside a shard; kept for merged
+  city-wide data later). Outcome letters (`/O /U /P /W`) are read for every district's decision numbers;
+  `period` of other districts' rows is the month of the record's date (their files are often cumulative).
+* **Parcels** – `<unit>.<SSOO>.<number>` with the unit from `pipeline/data/warsaw_obreby.json` (unit → precinct →
+  GUNB row count, `scripts/warsaw_obreby.py`; a precinct belongs to the unit with a 3:1 majority, else to the
+  record's own district if its zone fits). Wesoła's zone-less `07-07` and precinct-first notation are read.
+* **Layout** – inputs `data/districts/<slug>/` (`manifest.json`, `raw/`, `rwdz/` extracts, `rwdz.json`,
+  `rwdz-local.json`, `report.md`), caches `data/cache/districts/<slug>/` (ULDK, UUG, OSM areas), outputs
+  `site/data/d/<slug>/` (same files as `site/data/`), mirror `site/sources/d/<slug>/`. GUNB ZIPs stay shared in
+  `data/cache/rwdz/`. Praga-Południe keeps every legacy location: its shard *is* `site/data/`.
+* **`site/data/districts.json`** – `{generated_at, default, districts: [{slug, name, genitive, locative,
+  instrumental, code, unit, status, note, strategy, entry_url, office, available, generated_at, counts_by_kind,
+  bbox}]}` (`pipeline/city.py`). Its presence switches the frontend into the city-wide mode.
+* **Manifests of other districts** – `crawl.crawl_attachments`: one block per attachment (`category` hint,
+  `period` guess); pages: `page_id` = `<code>-<slug>`; files no longer linked are kept with
+  `removed_from_source_at`; the BAiPP pages/files of the legacy manifest are appended at build time.
+* **ZIP sources** – `parse.parse_source`: every `.xlsx` member is parsed; `sheet` = `"<member> › <sheet>"`.
+* Not committed in the draft (`.gitignore`): `data/districts/`, `data/cache/districts/`, `site/data/d/`,
+  `site/sources/d/`, `site/data/districts.json` – build them with `make city` (see the plan, §4).
+

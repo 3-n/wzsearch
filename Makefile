@@ -5,13 +5,16 @@
 
 PORT ?= 8000
 
-.PHONY: help install data data-offline rwdz test test-py test-js serve e2e report
+.PHONY: help install data data-offline city city-offline rwdz test test-py test-js serve e2e report
 
 help:
 	@echo "make install       install Python deps (uv sync) and the e2e test dependency (npm)"
 	@echo "make data          full live build: crawl the district + BAiPP lists, check GUNB RWDZ (permits),"
 	@echo "                   parse, geocode, write site/data"
 	@echo "make data-offline  rebuild site/data from data/manifest.json, the RWDZ extracts + caches, no network"
+	@echo "make city          (draft) every Warsaw district into site/data/d/<slug>/ + site/data/districts.json;"
+	@echo "                   DISTRICTS=bemowo,wola limits it (default: all)"
+	@echo "make city-offline  (draft) the same from the manifests, extracts and caches, no network"
 	@echo "make rwdz          only refresh the GUNB RWDZ extracts (data/raw/rwdz) and print their statistics"
 	@echo "make test          Python tests (pytest) + frontend unit tests (node --test)"
 	@echo "make serve         serve site/ on http://127.0.0.1:$(PORT) (Node dev server; python3 http.server without Node)"
@@ -28,6 +31,14 @@ data:
 
 data-offline:
 	uv run python -m pipeline.build --offline
+
+DISTRICTS ?= all
+
+city:
+	uv run python -m pipeline.city --districts $(DISTRICTS)
+
+city-offline:
+	uv run python -m pipeline.city --offline --districts $(DISTRICTS)
 
 rwdz:
 	uv run python -m pipeline.rwdz

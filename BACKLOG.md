@@ -105,6 +105,20 @@ Operations
   Actions to push (data commits), fill `REPO_URL` / `ISSUES_URL` in `site/js/config.js` (enables "Zgłoś błąd"
   buttons), make `og:image` absolute.
 
+City-wide draft (branch `feature/all-districts`, 2026-10-27 – plan: `docs/plans/all-districts.md`)
+- 🔴 **District = scope, not a facet.** A header button opens a district picker; the page loads one district's
+  shard; `dz=<slug>` rides on every hash; switching reloads the page. Links without `dz` (all links shared so far)
+  open Praga-Południe, a permalink's district code (`wz-bem-…`), or the visitor's last choice.
+- 🔴 **Ids of other districts** carry a three-letter code (`wz-bem-2026-1`, `wz-am-bie-2025-33`); Praga-Południe's
+  ids, data paths (`site/data/`), feed and mirror stay exactly as they are (its shard *is* the current site).
+- 🔴 **Other districts' lists are read like BAiPP's**: newest snapshot wins, period = month of the decision date,
+  outcome letters `/O /U /P /W` read from district numbers too (Praga-Południe's numbers have none).
+- 🔴 **Six PDF-only districts and Ursus are `pending`**: their shards hold GUNB permits and BAiPP cases only, the
+  picker says "Listy urzędu dzielnicy w przygotowaniu".
+- 🔴 **Not committed in the draft**: other districts' downloads, caches and outputs (`.gitignore`); build them
+  with `make city` (crawl) and `uv run python -m pipeline.city --skip-crawl --districts …` (geocoding).
+- 🔴 "Zapytaj urząd" for other districts goes to `kancelaria@um.warszawa.pl` until their inboxes are collected.
+
 ## 2. Source-data issues worth raising with the office (📮)
 
 District office (Urząd Dzielnicy Praga-Południe)
@@ -153,6 +167,12 @@ GUNB (RWDZ register)
 General
 - 📮 Nobody in Warsaw publishes these lists as open data (CSV on dane.gov.pl), unlike e.g. Gliwice or Zabrze.
   Worth a formal request.
+
+Other Warsaw districts (details per district: `docs/research/warsaw-districts.md`)
+- 📮 Six districts publish the 1129/2020 lists only as PDF (Białołęka, Bielany, Mokotów, Ochota, Targówek, Włochy);
+  Ursus uses its own register layout with mislabelled headers; Żoliborz has published nothing since VI 2024;
+  Praga-Północ starts in V 2021; Targówek lags ~5 months. Mislinked files: Bemowo (2026 WZ → 2024 file),
+  Włochy (CP 2020 → WZ 2026), Mokotów (Sep 2025 wz/cp swapped), Wesoła (kinds mixed between pages).
 
 ## 3. Known limitations / follow-ups (🟠)
 
@@ -220,6 +240,16 @@ Frontend
   (fixture) overwrites the real-data screenshots in `tests/e2e/output`. The OG image shows only planning kinds.
 - 🟠 "Zapytaj urząd" follow-ups: one request for all cases on a parcel/address; a short "how to request public
   information" section on the About page; a way to share received documents back (needs moderation and a backend).
+
+City-wide draft
+- 🟠 `cdn.um.warszawa.pl` answered the crawler with 403 for ~10 minutes (146 Praga-Północ files) and served them
+  normally on the next run. Not worked around: failed downloads keep the previous copy and are retried by the
+  next crawl. If it recurs, slow the crawler for that host or ask the city.
+- 🟠 First geocoding of the other districts: ~60,000 ULDK lookups at the polite 2 req/s ≈ 8–10 h. Run once,
+  district by district; afterwards only new parcels are looked up.
+- 🟠 Cross-district `related` links and a city-wide view need the slim index (plan §2.2, phase 3).
+- 🟠 OSM neighbourhoods per district need Overpass (often overloaded); until fetched, the map starts on an
+  approximate district centre and points are not checked against the district outline.
 
 ## 4. Handled during the build (🟢)
 

@@ -7,8 +7,12 @@ import { icon, kindGlyph } from '../icons.js';
 import { exists, datasetOf } from '../data.js';
 import { formatDateTime, formatNumber } from '../format.js';
 import { REPO_URL, ISSUES_URL, CONTACT_EMAIL, SOURCE_INDEX_URL, BAIPP_URL } from '../config.js';
-import { UNOFFICIAL, LICENCE_URLS } from '../copy.js';
+import { unofficial, LICENCE_URLS } from '../copy.js';
 import { toast } from '../components/toast.js';
+import { currentDistrict, dataBase, feedPath } from '../district.js';
+
+/** The district this page shows (district.js; Praga-Południe in a single-district deployment). */
+const D = () => currentDistrict();
 
 /** The "/" → search shortcut can be switched off here (WCAG 2.1.4); per-viewer setting, localStorage best effort. */
 const SLASH_KEY = 'wz:slash';
@@ -25,19 +29,24 @@ function ext(href, label) {
   return h('a', { class: 'link', href: url, target: '_blank', rel: 'noopener noreferrer' }, label, h('span', { class: 'sr-only' }, ' (nowa karta)'));
 }
 
-const DOWNLOADS = [
-  { path: 'data/records.json', label: 'Decyzje WZ, CP i wszczęcia (JSON)', desc: 'Pełne dane z dzielnicy i z BAiPP: pola znormalizowane, lokalizacja, powiązania i surowe wiersze źródłowe.', iconName: 'code' },
-  { path: 'data/records.csv', label: 'Decyzje WZ, CP i wszczęcia (CSV)', desc: 'Tabela do Excela / arkusza: UTF-8, separator średnik.', iconName: 'table' },
-  { path: 'data/permits.json', label: 'Pozwolenia na budowę i zgłoszenia (JSON)', desc: 'Sprawy z rejestru GUNB RWDZ dla Pragi-Południe (od 2016 r.), w tym samym formacie co pozostałe wpisy.', iconName: 'code' },
-  { path: 'data/permits.csv', label: 'Pozwolenia na budowę i zgłoszenia (CSV)', desc: 'Te same kolumny co tabela decyzji; licencja danych źródłowych CC0 1.0.', iconName: 'table' },
-  { path: 'data/sources.json', label: 'Wykaz źródeł (JSON)', desc: 'Strony, pliki i wersje plików, liczby pozycji, sumy kontrolne – dla wszystkich trzech źródeł.', iconName: 'sheet' },
-  { path: 'data/parcels.geojson', label: 'Geometrie działek (GeoJSON)', desc: 'Obrysy działek z ewidencji (GUGiK ULDK), EPSG:4326.', iconName: 'map' },
-  { path: 'data/parcels-permits.geojson', label: 'Geometrie działek z pozwoleń (GeoJSON)', desc: 'Działki występujące tylko w pozwoleniach i zgłoszeniach.', iconName: 'map' },
+/** Files to download for the district shown (under its data directory; a single-district deployment keeps the
+ * feed at the site root). */
+function downloads() {
+  const base = dataBase();
+  return [
+  { path: `${base}records.json`, label: 'Decyzje WZ, CP i wszczęcia (JSON)', desc: 'Pełne dane z dzielnicy i z BAiPP: pola znormalizowane, lokalizacja, powiązania i surowe wiersze źródłowe.', iconName: 'code' },
+  { path: `${base}records.csv`, label: 'Decyzje WZ, CP i wszczęcia (CSV)', desc: 'Tabela do Excela / arkusza: UTF-8, separator średnik.', iconName: 'table' },
+  { path: `${base}permits.json`, label: 'Pozwolenia na budowę i zgłoszenia (JSON)', desc: `Sprawy z rejestru GUNB RWDZ dla ${D().genitive} (od 2016 r.), w tym samym formacie co pozostałe wpisy.`, iconName: 'code' },
+  { path: `${base}permits.csv`, label: 'Pozwolenia na budowę i zgłoszenia (CSV)', desc: 'Te same kolumny co tabela decyzji; licencja danych źródłowych CC0 1.0.', iconName: 'table' },
+  { path: `${base}sources.json`, label: 'Wykaz źródeł (JSON)', desc: 'Strony, pliki i wersje plików, liczby pozycji, sumy kontrolne – dla wszystkich trzech źródeł.', iconName: 'sheet' },
+  { path: `${base}parcels.geojson`, label: 'Geometrie działek (GeoJSON)', desc: 'Obrysy działek z ewidencji (GUGiK ULDK), EPSG:4326.', iconName: 'map' },
+  { path: `${base}parcels-permits.geojson`, label: 'Geometrie działek z pozwoleń (GeoJSON)', desc: 'Działki występujące tylko w pozwoleniach i zgłoszeniach.', iconName: 'map' },
   {
-    path: 'feed.xml', label: 'Kanał nowych wpisów (RSS/Atom)', iconName: 'inbox', feed: true,
+    path: feedPath(), label: 'Kanał nowych wpisów (RSS/Atom)', iconName: 'inbox', feed: true,
     desc: 'Wklej ten adres do czytnika RSS (np. Feedly, Inoreader, Thunderbird), aby dostawać nowe decyzje WZ, CP i wszczęcia z całej dzielnicy (bez pozwoleń na budowę).',
   },
 ];
+}
 
 function licenceLink(name) {
   const url = name ? LICENCE_URLS[name] : null;
@@ -49,9 +58,10 @@ function licenceLink(name) {
  * @param {object} index
  */
 export function renderAbout(host, index) {
+  const list = downloads();
   const kinds = index.dicts.kinds || {};
   const k = (code) => kinds[code]?.label || code;
-  const dlList = h('ul', { class: 'downloads' }, DOWNLOADS.map((d) => h('li', { class: 'download is-checking', 'data-path': d.path },
+  const dlList = h('ul', { class: 'downloads' }, list.map((d) => h('li', { class: 'download is-checking', 'data-path': d.path },
     h('span', { class: 'download__icon' }, icon(d.iconName, { size: 20 })),
     h('div', { class: 'download__main' }, h('p', { class: 'download__label' }, d.label), h('p', { class: 'download__desc' }, d.desc)),
     h('span', { class: 'download__action' }, h('span', { class: 'muted small' }, 'sprawdzanie…')))));
@@ -63,7 +73,7 @@ export function renderAbout(host, index) {
       li.classList.remove('is-checking');
       const action = li.querySelector('.download__action');
       if (ok) {
-        const d = DOWNLOADS.find((x) => x.path === path);
+        const d = list.find((x) => x.path === path);
         // The feed is for a reader, not for the browser tab (raw XML): copy its address; preview in a new tab.
         replaceChildren(action, d?.feed
           ? [h('button', {
@@ -127,8 +137,8 @@ export function renderAbout(host, index) {
     {
       term: [icon('scale', { size: 16 }), 'Kto wydaje decyzje?'],
       body: [
-        h('p', null, h('strong', null, 'Urząd Dzielnicy Praga-Południe'), ' (Wydział Architektury i Budownictwa) wydaje większość decyzji WZ, decyzji celu publicznego i pozwoleń na budowę z terenu dzielnicy.'),
-        h('p', null, h('strong', null, 'Biuro Architektury i Planowania Przestrzennego'), ' Urzędu m.st. Warszawy prowadzi część spraw centralnie i publikuje je w osobnych, ogólnomiejskich zestawieniach – bierzemy z nich tylko wiersze z Pragi-Południe. Tylko te zestawienia podają rozstrzygnięcie (np. odmowę).'),
+        h('p', null, h('strong', null, `Urząd Dzielnicy ${D().name}`), ' (Wydział Architektury i Budownictwa) wydaje większość decyzji WZ, decyzji celu publicznego i pozwoleń na budowę z terenu dzielnicy.'),
+        h('p', null, h('strong', null, 'Biuro Architektury i Planowania Przestrzennego'), ` Urzędu m.st. Warszawy prowadzi część spraw centralnie i publikuje je w osobnych, ogólnomiejskich zestawieniach – bierzemy z nich tylko wiersze z ${D().genitive}. Tylko te zestawienia podają rozstrzygnięcie (np. odmowę).`),
         h('p', null, h('strong', null, 'Wojewoda Mazowiecki'), ' wydaje pozwolenia m.in. dla sieci, linii kolejowych i dróg wyższej kategorii – na Pradze-Południe to pojedyncze sprawy.'),
       ],
     },
@@ -142,10 +152,10 @@ export function renderAbout(host, index) {
     h('header', { class: 'page__head' },
       h('p', { class: 'eyebrow' }, 'O projekcie'),
       h('h1', { class: 'page__title', tabindex: '-1' }, 'Co się planuje na Pradze\u2011Południe?'),
-      h('p', { class: 'lead' }, 'wzSearch zbiera w jednym miejscu wszystkie decyzje o warunkach zabudowy, decyzje o lokalizacji inwestycji celu publicznego i informacje o wszczętych postępowaniach z Pragi-Południe – z comiesięcznych zestawień Urzędu Dzielnicy i z ogólnomiejskich zestawień Biura Architektury – a na życzenie także pozwolenia na budowę i zgłoszenia z rejestru GUNB. ',
+      h('p', { class: 'lead' }, `wzSearch zbiera w jednym miejscu wszystkie decyzje o warunkach zabudowy, decyzje o lokalizacji inwestycji celu publicznego i informacje o wszczętych postępowaniach z ${D().genitive} – z comiesięcznych zestawień Urzędu Dzielnicy i z ogólnomiejskich zestawień Biura Architektury – a na życzenie także pozwolenia na budowę i zgłoszenia z rejestru GUNB. `,
         'Możesz je przeszukiwać, filtrować, oglądać na mapie i pobierać – a przy każdym wpisie jest link do oryginalnego pliku.'),
       h('p', { class: 'notice notice--unofficial' }, icon('info', { size: 18 }),
-        h('span', null, h('strong', null, `${UNOFFICIAL}. `), 'Projekt obywatelski, niezwiązany z Urzędem m.st. Warszawy. Wiążące są wyłącznie dokumenty urzędowe – ',
+        h('span', null, h('strong', null, `${unofficial(D().name)}. `), 'Projekt obywatelski, niezwiązany z Urzędem m.st. Warszawy. Wiążące są wyłącznie dokumenty urzędowe – ',
           ext(index.meta.sourceIndexUrl || SOURCE_INDEX_URL, 'oryginalny wykaz na stronie urzędu'), '.'))),
 
     h('nav', { class: 'toc', 'aria-label': 'Spis treści' }, h('ul', null,
@@ -165,7 +175,7 @@ export function renderAbout(host, index) {
     h('section', { class: 'prose', id: 'about-how', 'aria-labelledby': 'h-how' },
       h('h2', { id: 'h-how' }, 'Skąd są dane i jak powstają'),
       h('ol', { class: 'steps' },
-        h('li', null, h('span', { class: 'steps__no' }, '1'), h('div', null, h('h3', null, 'Pobranie'), h('p', null, 'Automat odwiedza wykazy Urzędu Dzielnicy i Biura Architektury, pobiera wszystkie podlinkowane pliki Excel oraz paczki rejestru GUNB. Kopia każdego pliku (a z rejestru GUNB – wyciąg dla Pragi-Południe) jest archiwizowana.'))),
+        h('li', null, h('span', { class: 'steps__no' }, '1'), h('div', null, h('h3', null, 'Pobranie'), h('p', null, `Automat odwiedza wykazy Urzędu Dzielnicy i Biura Architektury, pobiera wszystkie podlinkowane pliki Excel oraz paczki rejestru GUNB. Kopia każdego pliku (a z rejestru GUNB – wyciąg dla ${D().genitive}) jest archiwizowana.`))),
         h('li', null, h('span', { class: 'steps__no' }, '2'), h('div', null, h('h3', null, 'Odczyt'), h('p', null, 'Pliki mają kilka różnych układów kolumn (zmieniały się w latach 2020–2026). Kolumny rozpoznajemy po nagłówkach, a każdy wiersz zachowujemy także w postaci surowej – zobaczysz go w szczegółach wpisu jako „Dane w źródle”.'))),
         h('li', null, h('span', { class: 'steps__no' }, '3'), h('div', null, h('h3', null, 'Lokalizacja'), h('p', null, 'Numery działek i obręby wyszukujemy w usłudze ULDK (GUGiK). Gdy działki nie ma, próbujemy adresu (usługa UUG GUGiK), a w ostateczności samej ulicy – wtedy punkt na mapie jest przybliżony i oznaczony pustym znacznikiem.'))),
         h('li', null, h('span', { class: 'steps__no' }, '4'), h('div', null, h('h3', null, 'Publikacja'), h('p', null, 'Wynik to zwykła strona internetowa – bez własnego serwera, ciasteczek i analityki. ',
@@ -183,11 +193,11 @@ export function renderAbout(host, index) {
         h('li', null, h('strong', null, 'Typy inwestycji są nadawane automatycznie '), 'na podstawie słów w opisie – traktuj je jako pomoc w filtrowaniu, nie klasyfikację urzędową.'),
         h('li', null, h('strong', null, 'Rejestr pozwoleń GUNB ma swoje luki. '), 'Zawiera sprawy od 2016 r., tylko decyzje pierwszej instancji i tylko sprawy zakończone decyzją; nie mówi, czy decyzja była pozytywna. Zgłoszenia obejmują jedynie część rodzajów robót. Brak w nim inwestycji na terenach zamkniętych (np. kolejowych, wojskowych).'),
         h('li', null, h('strong', null, 'Powiązanie WZ z pozwoleniem jest przybliżone. '), 'Łączymy wpisy, które dotyczą tej samej działki lub adresu. Na dużych działkach (np. spółdzielczych) bywa wiele niezależnych spraw – sprawdź opis i numer sprawy.'),
-        h('li', null, h('strong', null, 'Nie ma tu decyzji z innych dzielnic. '), 'Z ogólnomiejskich zestawień Biura Architektury bierzemy tylko wiersze opisane jako Praga-Południe; nieliczne błędy opisu w źródle oznaczamy uwagą przy wpisie.'))),
+        h('li', null, h('strong', null, 'Nie ma tu decyzji z innych dzielnic. '), `Z ogólnomiejskich zestawień Biura Architektury bierzemy tylko wiersze opisane jako ${D().name}; nieliczne błędy opisu w źródle oznaczamy uwagą przy wpisie.`))),
 
     h('section', { class: 'prose', id: 'about-download', 'aria-labelledby': 'h-download' },
       h('h2', { id: 'h-download' }, 'Pobierz dane'),
-      h('p', null, 'Dane możesz swobodnie wykorzystywać – podaj źródło (Urząd Dzielnicy Praga-Południe, Urząd m.st. Warszawy, GUNB) i pamiętaj o ograniczeniach opisanych wyżej. ',
+      h('p', null, `Dane możesz swobodnie wykorzystywać – podaj źródło (Urząd Dzielnicy ${D().name}, Urząd m.st. Warszawy, GUNB) i pamiętaj o ograniczeniach opisanych wyżej. `,
         'Bieżące wyniki wyszukiwania pobierzesz przyciskiem „CSV” na stronie ', h('a', { class: 'link', href: '#/' }, 'Przeglądaj'), '.'),
       dlList,
       h('p', { class: 'muted small' }, 'Pliki CSV: kodowanie UTF-8 ze znacznikiem BOM, separator „;” (średnik), przecinek dziesiętny we współrzędnych, wiele wartości w jednej komórce rozdzielone „ | ”. Excel w polskiej wersji otwiera je poprawnie dwuklikiem.')),
@@ -195,7 +205,7 @@ export function renderAbout(host, index) {
     h('section', { class: 'prose', id: 'about-licences', 'aria-labelledby': 'h-lic' },
       h('h2', { id: 'h-lic' }, 'Licencje i atrybucja'),
       h('ul', { class: 'credits' },
-        h('li', null, h('strong', null, 'Dane źródłowe: '), 'Urząd Dzielnicy Praga-Południe m.st. Warszawy – informacja publiczna, ', ext(index.meta.sourceIndexUrl || SOURCE_INDEX_URL, 'wykaz publikacji'), '.'),
+        h('li', null, h('strong', null, 'Dane źródłowe: '), `Urząd Dzielnicy ${D().name} m.st. Warszawy – informacja publiczna, `, ext(index.meta.sourceIndexUrl || SOURCE_INDEX_URL, 'wykaz publikacji'), '.'),
         h('li', null, h('strong', null, 'Zestawienia Biura Architektury i Planowania Przestrzennego: '), 'Urząd m.st. Warszawy – informacja publiczna, ', ext(index.dicts.datasets?.baipp?.url || BAIPP_URL, 'architektura.um.warszawa.pl'), '.'),
         h('li', null, h('strong', null, 'Rejestr wniosków, decyzji i zgłoszeń (RWDZ): '), 'Główny Urząd Nadzoru Budowlanego, licencja ', licenceLink(index.dicts.datasets?.rwdz?.licence || 'CC0 1.0'),
           ' (', ext('https://dane.gov.pl/pl/dataset/3467', 'dane.gov.pl'), ').'),
@@ -247,7 +257,7 @@ function sourceItems(index) {
   const ds = index.dicts.datasets || {};
   const keys = Object.keys(ds);
   if (!keys.length) {
-    return [h('li', null, h('strong', null, 'Urząd Dzielnicy Praga-Południe: '), 'comiesięczne zestawienia w plikach Excel – ', ext(index.meta.sourceIndexUrl || SOURCE_INDEX_URL, 'wykaz publikacji'), '.')];
+    return [h('li', null, h('strong', null, `Urząd Dzielnicy ${D().name}: `), 'comiesięczne zestawienia w plikach Excel – ', ext(index.meta.sourceIndexUrl || SOURCE_INDEX_URL, 'wykaz publikacji'), '.')];
   }
   return keys.map((key) => {
     const d = ds[key] || {};

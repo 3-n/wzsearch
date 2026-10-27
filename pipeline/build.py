@@ -60,14 +60,14 @@ from typing import Any
 import requests
 
 from . import areas as areas_mod
-from . import baipp, export
+from . import baipp, districts, export
 from . import crawl as crawl_mod
 from . import rwdz as rwdz_mod
 from .classify import TAGS
 from .geocode import PoliteSession as GeoSession
 from .geocode import locate_records
 from .normalize import STREET_CANONICAL, is_pp_obreb, merge_duplicates, normalize_row, street_key
-from .parse import parse_workbook
+from .parse import parse_source
 
 log = logging.getLogger("wzsearch.build")
 
@@ -153,6 +153,36 @@ OUTCOMES: dict[str, dict[str, str]] = {
 PERMIT_SCOPES: dict[str, dict[str, str]] = {slug: {"label": v["label"]} for slug, v in rwdz_mod.PERMIT_SCOPES.items()}
 #: Object categories I–XXX of Prawo budowlane: short UI ``label`` + the official ``description``.
 PERMIT_CATEGORIES: dict[str, dict[str, str]] = {k: dict(v) for k, v in rwdz_mod.PERMIT_CATEGORIES.items()}
+
+
+def district_datasets() -> dict[str, dict[str, str]]:
+    """:data:`DATASETS` for the district being built (the legacy dictionary for Praga-Południe)."""
+    d = districts.current()
+    if d.legacy:
+        return DATASETS
+    return {**DATASETS,
+            "district": {
+                "label": f"Urząd Dzielnicy {d.name}",
+                "short": "Dzielnica",
+                "publisher": d.office,
+                "url": d.entry_url,
+                "description": f"Zestawienia urzędu dzielnicy {d.name}: wszczęte postępowania oraz wydane decyzje WZ i "
+                               "CP (lokalizacja inwestycji celu publicznego) w sprawach prowadzonych przez urząd "
+                               "dzielnicy (zarządzenie nr 1129/2020 Prezydenta m.st. Warszawy)."
+                               + (f" Uwaga: {d.note}." if d.note else ""),
+            },
+            "baipp": {**DATASETS["baipp"],
+                      "description": DATASETS["baipp"]["description"].replace(
+                          "adres wskazuje Pragę-Południe", f"adres wskazuje dzielnicę {d.name}")}}
+
+
+def district_issuers() -> dict[str, dict[str, str]]:
+    """:data:`ISSUERS` for the district being built."""
+    d = districts.current()
+    if d.legacy:
+        return ISSUERS
+    return {**ISSUERS, "district": {"label": f"Urząd Dzielnicy {d.name} (Wydział Architektury i Budownictwa)"}}
+
 
 #: Top-level field order of a Record in ``records.json`` (DATA_MODEL.md); unknown keys follow.
 RECORD_FIELDS = (
@@ -255,6 +285,101 @@ class Paths:
     def rwdz_mirror(self) -> Path:
         return self.site / rwdz_mod.ARCHIVE_DIR
 
+    @property
+    def mirror_url(self) -> str:
+        """Site-relative URL of :attr:`mirror` (``sources``)."""
+        return "sources"
+
+    @property
+    def rwdz_state(self) -> Path | None:
+        """Where the RWDZ stage keeps its state when the GUNB ZIPs are shared (city build); None = ``cache``."""
+        return None
+
+    @property
+    def rwdz_cache(self) -> Path:
+        """The cache directory holding the GUNB ZIPs (``<rwdz_cache>/rwdz/``)."""
+        return self.cache
+
+    @property
+    def district_slug(self) -> str | None:
+        """The district this build is for (city build); None = the legacy single-district layout."""
+        return None
+
+
+@dataclass(frozen=True)
+class DistrictPaths(Paths):
+    """Locations of one district's build in the city-wide layout (docs/plans/all-districts.md §2.2, §3.6).
+
+    Inputs live in ``data/districts/<slug>/``, outputs in ``site/data/d/<slug>/``, the mirrored originals in
+    ``site/sources/d/<slug>/`` and the geocoding caches in ``data/cache/districts/<slug>/``; the GUNB ZIPs in
+    ``data/cache/rwdz`` are shared. Praga-Południe – the legacy district – keeps every legacy location, so its
+    shard *is* the single-district site (``site/data/``) and the city build writes it byte for byte like
+    ``make data``.
+    """
+
+    slug: str = districts.LEGACY_SLUG
+
+    @property
+    def district(self) -> districts.District:
+        return districts.get(self.slug)
+
+    @property
+    def district_slug(self) -> str | None:
+        return self.slug
+
+    @property
+    def inputs(self) -> Path:
+        return self.root / "data" / "districts" / self.slug
+
+    @property
+    def cache(self) -> Path:
+        """Geocoding caches per district (``data/cache/districts/<slug>/``); Praga-Południe keeps ``data/cache``."""
+        return super().cache if self.district.legacy else self.root / "data" / "cache" / "districts" / self.slug
+
+    @property
+    def rwdz_cache(self) -> Path:
+        return self.root / "data" / "cache"
+
+    @property
+    def manifest(self) -> Path:
+        return super().manifest if self.district.legacy else self.inputs / "manifest.json"
+
+    @property
+    def raw(self) -> Path:
+        return super().raw if self.district.legacy else self.inputs / "raw"
+
+    @property
+    def report(self) -> Path:
+        return super().report if self.district.legacy else self.inputs / "report.md"
+
+    @property
+    def site_data(self) -> Path:
+        return super().site_data if self.district.legacy else self.site / "data" / "d" / self.slug
+
+    @property
+    def feed(self) -> Path:
+        return super().feed if self.district.legacy else self.site_data / "feed.xml"
+
+    @property
+    def mirror(self) -> Path:
+        return super().mirror if self.district.legacy else self.site / "sources" / "d" / self.slug
+
+    @property
+    def mirror_url(self) -> str:
+        return "sources" if self.district.legacy else f"sources/d/{self.slug}"
+
+    @property
+    def rwdz_raw(self) -> Path:
+        return super().rwdz_raw if self.district.legacy else self.inputs / "rwdz"
+
+    @property
+    def rwdz_mirror(self) -> Path:
+        return super().rwdz_mirror if self.district.legacy else self.mirror / "rwdz"
+
+    @property
+    def rwdz_state(self) -> Path | None:
+        return None if self.district.legacy else self.inputs
+
 
 # =============================================================================
 # Small helpers
@@ -347,6 +472,8 @@ def obtain_manifest(paths: Paths, *, crawl: bool, refresh: bool = False,
     both make the build exit with code 3. A crawl that finds nothing new keeps the previous manifest's
     ``generated_at`` so the file does not change.
     """
+    if paths.district_slug and not districts.get(paths.district_slug).legacy:
+        return obtain_district_manifest(paths, crawl=crawl, refresh=refresh, session=session)
     previous = crawl_mod.load_manifest(paths.manifest)
     error = None
     manifest = previous
@@ -368,6 +495,45 @@ def obtain_manifest(paths: Paths, *, crawl: bool, refresh: bool = False,
     if manifest is None:
         raise BuildError(f"no manifest at {paths.manifest}" + (f" and the crawl failed ({error})" if error else
                                                                " – run without --skip-crawl/--offline first"))
+    return manifest, error
+
+
+def obtain_district_manifest(paths: Paths, *, crawl: bool, refresh: bool = False,
+                             session: requests.Session | None = None) -> tuple[dict, str | None]:
+    """Manifest of a district other than Praga-Południe: its own lists (crawled when ``crawl`` and its strategy is
+    implemented) plus the BAiPP pages and files of the legacy manifest (``data/manifest.json``, crawled with
+    Praga-Południe – the files are city-wide; :func:`pipeline.baipp.in_district` picks the district's rows).
+    A failed crawl falls back to the district's previous manifest (exit code 3), as for Praga-Południe.
+    """
+    d = districts.get(paths.district_slug)
+    legacy = crawl_mod.load_manifest(Paths(paths.root).manifest) or {}
+    error = None
+    own = crawl_mod.load_manifest(paths.manifest)
+    if crawl and d.enabled and d.strategy == "attachments":
+        try:
+            own = crawl_mod.crawl_attachments(d, paths.manifest, paths.raw, refresh=refresh, session=session)
+        except (requests.RequestException, RuntimeError, OSError) as exc:
+            error = f"{type(exc).__name__}: {exc}"
+            log.error("%s: crawl failed (%s); using the previous manifest", d.name, error)
+        else:
+            if own.get("stale_pages"):
+                error = f"{d.name}: pages without their file list (kept from the previous crawl): " + \
+                        ", ".join(own["stale_pages"])
+            missing = [f["file_id"] for f in own.get("files", []) if f.get("error") and not f.get("sha256")]
+            if missing:
+                error = (error + "; " if error else "") + \
+                    f"{d.name}: {len(missing)} file(s) could not be downloaded (see the manifest's errors)"
+    if own is None:
+        own = {"generated_at": legacy.get("generated_at"), "index_url": d.entry_url, "pages": [], "files": []}
+        if d.enabled:
+            log.warning("%s: no manifest yet at %s – only BAiPP and GUNB data (build without --skip-crawl/--offline "
+                        "once)", d.name, paths.manifest)
+    manifest = {
+        **own,
+        "index_url": d.entry_url,
+        "pages": [*own.get("pages", []), *(p for p in legacy.get("pages", []) if p.get("source") == "baipp")],
+        "files": [*own.get("files", []), *(f for f in legacy.get("files", []) if f.get("source") == "baipp")],
+    }
     return manifest, error
 
 
@@ -404,7 +570,8 @@ def _file_chrono_key(f: Mapping[str, Any]) -> tuple:
     BAiPP snapshots of one year share the period (``2026``): they are ordered by their version time
     (``last_modified``), so the newest snapshot comes last and its values win (see merge_duplicates).
     """
-    version = (f.get("last_modified") or "") if f.get("source") == "baipp" else ""
+    cumulative = f.get("source") == "baipp" or (f.get("source") == "district" and not districts.current().legacy)
+    version = (f.get("last_modified") or "") if cumulative else ""
     return (f.get("period") or "9999-99", version, f.get("filename") or "", f.get("file_id") or "")
 
 
@@ -445,7 +612,7 @@ def parse_sources(manifest: Mapping[str, Any], root: Path) -> tuple[list[dict], 
             log.warning("%s (%s): no local copy, skipped", fid, f.get("filename"))
             continue
         try:
-            parsed = parse_workbook(path)
+            parsed = parse_source(path)
         except Exception as exc:  # noqa: BLE001 – one unreadable file must not stop the build
             res.warnings.append(f"Nie udało się odczytać pliku ({type(exc).__name__}) – pozycje nieodczytane.")
             log.error("%s (%s): cannot parse: %s", fid, f.get("filename"), exc)
@@ -525,7 +692,8 @@ def obtain_permits(paths: Paths, *, enabled: bool | None, online: bool, refresh:
     falls back to the committed extracts and reports it (exit code 3); an edited committed extract
     is fatal (:class:`BuildError`).
     """
-    if enabled is None and not (online or paths.rwdz_raw.is_dir()):
+    if enabled is None and not (online or paths.rwdz_raw.is_dir()
+                                or (paths.rwdz_cache != paths.cache and (paths.rwdz_cache / "rwdz").is_dir())):
         log.warning("RWDZ: no committed extracts in %s and building offline – permits are left out",
                     paths.rwdz_raw.relative_to(paths.root) if paths.rwdz_raw.is_relative_to(paths.root)
                     else paths.rwdz_raw)
@@ -533,7 +701,8 @@ def obtain_permits(paths: Paths, *, enabled: bool | None, online: bool, refresh:
     if enabled is False:
         log.info("RWDZ: left out of this build")
         return PermitStage(enabled=False)
-    kw: dict[str, Any] = {"cache_dir": paths.cache, "raw_dir": paths.rwdz_raw, "log": log.info}
+    kw: dict[str, Any] = {"cache_dir": paths.rwdz_cache, "raw_dir": paths.rwdz_raw, "log": log.info,
+                          "state_dir": paths.rwdz_state}
     error = None
     try:
         result = rwdz_mod.run_rwdz(online=online, refresh=refresh, session=session, **kw)
@@ -668,7 +837,7 @@ def build_sources_doc(manifest: Mapping[str, Any], results: Mapping[str, FileRes
         for h in f.get("history") or []:
             h = dict(h)
             name = Path(h["archived_path"]).name if h.get("archived_path") else None
-            h["archive_path"] = f"sources/history/{name}" if name and f"history/{name}" in mirrored else None
+            h["archive_path"] = mirrored.get(f"history/{name}") if name else None
             history.append(h)
         files.append({
             **f,
@@ -714,13 +883,13 @@ def mirror_sources(manifest: Mapping[str, Any], paths: Paths) -> dict[str, str]:
         if f.get("local_path") and src.is_file():
             name = f"{f['file_id']}.{f.get('ext') or 'bin'}"
             _copy_if_changed(src, paths.mirror / name, f.get("sha256"))
-            out[f["file_id"]] = f"sources/{name}"
+            out[f["file_id"]] = f"{paths.mirror_url}/{name}"
             wanted.add(name)
         for h in f.get("history") or []:
             if h.get("archived_path") and (paths.root / h["archived_path"]).is_file():
                 name = Path(h["archived_path"]).name
                 _copy_if_changed(paths.root / h["archived_path"], paths.mirror / "history" / name, h.get("sha256"))
-                out[f"history/{name}"] = f"sources/history/{name}"
+                out[f"history/{name}"] = f"{paths.mirror_url}/history/{name}"
                 wanted_history.add(name)
     for directory, keep, pattern in ((paths.mirror, wanted, _MIRROR_NAME_RE),
                                      (paths.mirror / "history", wanted_history, _HISTORY_NAME_RE)):
@@ -757,11 +926,12 @@ def mirror_rwdz(files: Sequence[Mapping[str, Any]], paths: Paths) -> dict[str, d
         meta = src.with_name(src.name.removesuffix(".csv") + ".meta.json")
         _copy_if_changed(src, paths.rwdz_mirror / src.name, f.get("sha256"))
         keep.add(src.name)
-        entry = {"archive_path": f"{rwdz_mod.ARCHIVE_DIR}/{src.name}"}
+        rwdz_url = rwdz_mod.ARCHIVE_DIR if paths.mirror_url == "sources" else f"{paths.mirror_url}/rwdz"
+        entry = {"archive_path": f"{rwdz_url}/{src.name}"}
         if meta.is_file():
             _copy_if_changed(meta, paths.rwdz_mirror / meta.name, None)
             keep.add(meta.name)
-            entry["archive_meta_path"] = f"{rwdz_mod.ARCHIVE_DIR}/{meta.name}"
+            entry["archive_meta_path"] = f"{rwdz_url}/{meta.name}"
         out[f["file_id"]] = entry
     if paths.rwdz_mirror.is_dir():
         for p in paths.rwdz_mirror.iterdir():
@@ -1476,6 +1646,8 @@ def run_build(
     geo_session: Any = None,
     rwdz: bool | None = None,
     now: Callable[[], str] = _now_iso,
+    geocode: bool = True,
+    rwdz_online: bool | None = None,
 ) -> BuildResult:
     """Run the whole pipeline and write every output (see module docstring).
 
@@ -1504,7 +1676,8 @@ def run_build(
     log.info("%d records after merging duplicates", len(records))
 
     # 3b. building permits and notifications (GUNB RWDZ): downloaded with the crawl, else the committed extracts
-    stage = obtain_permits(paths, enabled=rwdz, online=crawl and online, refresh=refresh, session=session)
+    stage = obtain_permits(paths, enabled=rwdz, online=(crawl and online) if rwdz_online is None else rwdz_online,
+                           refresh=refresh, session=session)
     permits = stage.records
     _check_unique_ids(records, permits)
     log.info("%d permit records (RWDZ)", len(permits))
@@ -1512,23 +1685,24 @@ def run_build(
     # 4. geolocation (fills geo + area in place) – one pass over every dataset, sharing the caches. BAiPP
     #    rows labelled "Praga Południe" whose parcels ULDK places in another district keep their data but
     #    are not put on the district map.
-    if online and geo_session is None:
+    geo_online = online and geocode   # geocode=False: cached answers only (a first city-wide run without ULDK)
+    if geo_online and geo_session is None:
         geo_session = GeoSession()
-    outside = baipp.check_out_of_district(records, cache_dir=str(paths.cache), online=online, session=geo_session,
+    outside = baipp.check_out_of_district(records, cache_dir=str(paths.cache), online=geo_online, session=geo_session,
                                           refresh_misses=refresh_misses, log=log.info)
     for r in records:
         if r["id"] in outside:
             r["geo"], r["area"] = baipp.unplaced_geo(), None
     area_index = areas_mod.load_areas(str(paths.cache), str(paths.areas_geojson))
     geo = locate_records([r for r in records if r["id"] not in outside] + permits, cache_dir=str(paths.cache),
-                         online=online, log=log.info, session=geo_session, area_index=area_index,
+                         online=geo_online, log=log.info, session=geo_session, area_index=area_index,
                          areas_out=str(paths.areas_geojson), refresh_misses=refresh_misses)
     if area_index is None:
         area_index = areas_mod.load_areas(str(paths.cache), str(paths.areas_geojson))
     # 4b. GUNB cases with the Praga-Południe unit id but a precinct the district does not have, which could not
     #     be placed in the district: probed under the other Warsaw units like the BAiPP rows above
     moved_out = baipp.check_out_of_district_permits(permits, is_pp_obreb=is_pp_obreb, cache_dir=str(paths.cache),
-                                                    online=online, session=geo_session,
+                                                    online=geo_online, session=geo_session,
                                                     refresh_misses=refresh_misses, log=log.info)
     for r in permits:
         if r["id"] in moved_out:
@@ -1536,6 +1710,9 @@ def run_build(
 
     # 5. relations – across all datasets (a WZ decision ↔ the building permit on the same parcel)
     compute_related([*records, *permits])
+    if paths.district_slug and not districts.get(paths.district_slug).legacy:   # city build: name the shard
+        for r in (*records, *permits):
+            r["district"] = paths.district_slug
     records = [order_record(r) for r in records]
     permits = [order_record(r) for r in permits]
 
@@ -1545,7 +1722,8 @@ def run_build(
     area_labels = {slug: {"label": label} for slug, label in sorted((area_index.labels if area_index else {}).items())}
     tags = {slug: dict(t) for slug, t in TAGS.items()}
     kinds = {k: KINDS[k] for k in (ALL_KINDS if stage.enabled else KIND_ORDER)}
-    datasets = {k: v for k, v in DATASETS.items() if stage.enabled or k != "rwdz"}
+    datasets = {k: v for k, v in district_datasets().items() if stage.enabled or k != "rwdz"}
+    issuers = district_issuers()
     by_kind = Counter(r["kind"] for r in (*records, *permits) if r.get("kind"))
     counts_by_kind = {k: by_kind.get(k, 0) for k in (*kinds, *sorted(set(by_kind) - set(kinds)))}
     planning_parcels, permit_parcels = split_parcels(geo["parcels_geojson"]["features"], {r["id"] for r in records})
@@ -1568,7 +1746,7 @@ def run_build(
             "tags": tags,
             "areas": area_labels,
             "datasets": datasets,
-            "issuers": ISSUERS,
+            "issuers": issuers,
             "outcomes": OUTCOMES,
             "permit_scopes": PERMIT_SCOPES if stage.enabled else {},
             "permit_categories": PERMIT_CATEGORIES if stage.enabled else {},
@@ -1578,7 +1756,7 @@ def run_build(
         permits_doc = {"generated_at": generated_at, "count": len(permits), "records": permits}
         ctx = dict(kinds=kinds, tags=tags, areas=area_labels, files_by_id=files_by_id, pages_by_id=pages_by_id,
                    site_url=site_url)
-        csv_dicts = {"datasets": datasets, "issuers": ISSUERS, "outcomes": OUTCOMES, "categories": PERMIT_CATEGORIES}
+        csv_dicts = {"datasets": datasets, "issuers": issuers, "outcomes": OUTCOMES, "categories": PERMIT_CATEGORIES}
         outputs = {   # the data documents first (see data_paths below), then the ones that embed site_url
             paths.records_json: dumps_json(records_doc, ("records",)),
             paths.permits_json: dumps_json(permits_doc, ("records",)),
@@ -1588,6 +1766,7 @@ def run_build(
             paths.records_csv: export.records_to_csv(records, **ctx, **csv_dicts).encode("utf-8"),
             paths.permits_csv: export.records_to_csv(permits, **ctx, **csv_dicts).encode("utf-8"),
             paths.feed: export.atom_feed(records, generated_at=generated_at, datasets=datasets, outcomes=OUTCOMES,
+                                         feed_path=paths.feed.relative_to(paths.site).as_posix(),
                                          **ctx).encode("utf-8"),
             paths.report: build_report(manifest=manifest, sources_doc=sources_doc, records=records,
                                        raw_records=raw_records, results=results, geo_stats=geo["stats"],
@@ -1613,6 +1792,12 @@ def run_build(
         generated_at = now()
         outputs, sources_doc = render(generated_at)
     written = [p for p, data in outputs.items() if write_atomic(p, data)]
+    # A single-district site answers the frontend's request for the district list (a city build writes all 18).
+    index_path = paths.root / "site" / "data" / "districts.json"
+    if paths.district_slug is None and paths.site_data == paths.root / "site" / "data" and not index_path.exists():
+        from .district_index import districts_index   # noqa: PLC0415 – district_index imports this module
+        if write_atomic(index_path, dumps_json(districts_index(paths.root, [districts.LEGACY_SLUG]), ("districts",))):
+            written.append(index_path)
     for p in written:
         log.info("wrote %s", p.relative_to(paths.root) if p.is_relative_to(paths.root) else p)
     if not written:

@@ -1,0 +1,7 @@
+{
+"generated_at":"2026-10-23T02:00:00Z",
+"default":"praga-poludnie",
+"districts":[
+{"slug":"praga-poludnie","name":"Praga-Południe","genitive":"Pragi-Południe","locative":"na Pradze-Południe","instrumental":"Pragą-Południe","code":"","unit":"146507_8","status":"enabled","note":null,"strategy":"monthly-pages","entry_url":"https://pragapld.um.warszawa.pl/informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych","office":"Urząd Dzielnicy Praga-Południe m.st. Warszawy – Wydział Architektury i Budownictwa","available":true,"generated_at":"2026-10-23T02:00:00Z","counts_by_kind":{"wz":33,"cp":17,"ws":36,"pb":54,"zg":8},"bbox":null,"center":[52.2385,21.095]}
+]
+}

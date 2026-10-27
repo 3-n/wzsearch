@@ -8,13 +8,20 @@
  */
 import { formatDate } from './format.js';
 import { INFO_REQUEST } from './config.js';
+import { currentDistrict, DEFAULT_SLUG } from './district.js';
 
 /** Who receives the request, per issuer code (docs/DATA_MODEL.md). `email` empty → the user fills in the address. */
 export const ADDRESSEES = {
-  district: {
-    lines: ['Prezydent m.st. Warszawy', 'Urząd m.st. Warszawy', 'Wydział Architektury i Budownictwa dla Dzielnicy Praga-Południe'],
-    email: INFO_REQUEST.emails.district, inbox: 'Urząd Dzielnicy Praga-Południe',
-    fallback: INFO_REQUEST.fallback, edelivery: INFO_REQUEST.edelivery,
+  /** The architecture department of the district shown (district.js). Only Praga-Południe's inbox is known so
+   * far (config.js); other districts' requests go to the city's general inbox until theirs are collected. */
+  get district() {
+    const d = currentDistrict();
+    const legacy = d.slug === DEFAULT_SLUG;
+    return {
+      lines: ['Prezydent m.st. Warszawy', 'Urząd m.st. Warszawy', `Wydział Architektury i Budownictwa dla Dzielnicy ${d.name}`],
+      email: legacy ? INFO_REQUEST.emails.district : INFO_REQUEST.fallback, inbox: `Urząd Dzielnicy ${d.name}`,
+      fallback: legacy ? INFO_REQUEST.fallback : '', edelivery: INFO_REQUEST.edelivery,
+    };
   },
   city: {
     lines: ['Prezydent m.st. Warszawy', 'Urząd m.st. Warszawy', 'Biuro Architektury i Planowania Przestrzennego'],

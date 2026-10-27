@@ -1239,6 +1239,7 @@ def download_files(
     can_download = download and session is not None
     stats: Counter[str] = Counter()
     total = len(manifest["files"])
+    refused: set[str] = set()   # hosts that answered 403: not asked again in this run (the next crawl retries)
 
     for number, entry in enumerate(manifest["files"], start=1):
         local = raw_dir / f"{entry['file_id']}.{entry['ext']}"
@@ -1283,6 +1284,15 @@ def download_files(
             stats["skipped"] += 1
             continue
 
+        host = urlsplit(entry["url"]).hostname or ""
+        if host in refused:
+            entry["error"] = f"HTTPError: {host} odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+            if exists and prev is not None and prev.get("sha256") and _sha256_file(local)[0] == prev["sha256"]:
+                entry.update({k: prev.get(k) for k in ("url", "sha256", "size", "downloaded_at", "last_modified")})
+            elif exists:
+                _describe_local(entry, local, (prev or {}).get("last_modified"))
+            stats["failed"] += 1
+            continue
         log.info("[%d/%d] downloading %s (%s)", number, total, entry["filename"], reason)
         try:
             response = fetch(session, entry["url"])
@@ -1290,6 +1300,9 @@ def download_files(
             _validate_content(content, entry["ext"], response.headers.get("Content-Type", ""))
         except (requests.RequestException, ValueError) as exc:
             log.error("[%d/%d] %s: download failed: %s", number, total, entry["filename"], exc)
+            if getattr(getattr(exc, "response", None), "status_code", None) == 403:
+                refused.add(host)
+                log.error("%s refused a download (403): no more requests to it in this run", host)
             entry["error"] = f"{type(exc).__name__}: {exc}"
             if exists and prev is not None and prev.get("sha256") and _sha256_file(local)[0] == prev["sha256"]:
                 # the copy we have is the previous version: describe it as such (its URL included), so the new
@@ -1600,6 +1613,205 @@ def _merge_stub(page: dict, stub: dict) -> None:
         )
     if page.get("period") is None:
         page["period"] = parse_period(page["title"]) or parse_period(stub.get("title"))
+
+
+# =============================================================================
+# Other districts: attachments of configured list pages (docs/plans/all-districts.md §3.3)
+# =============================================================================
+
+
+def detect_attachment_category(text: str | None) -> str | None:
+    """Kind of a district attachment from its link text or file name – only a hint: the parser reads the kind
+    from the file itself, and several districts link files under the wrong heading (Wesoła, Bemowo).
+
+    Like :func:`detect_baipp_category`, plus "wnioski" (= initiated proceedings) and "icp" (Praga-Północ,
+    Wesoła: ``maj icp 2026.xlsx``, ``3 decyzje icp``)."""
+    if not text:
+        return None
+    t = _words(text)
+    if " wniosk" in t and " decyzj" not in t:
+        return "ws"
+    category = detect_baipp_category(text)
+    if category:
+        return category
+    if re.search(r" (?:icp|lcp|licp) ", t):
+        return "cp"
+    return None
+
+
+_NUMERIC_PERIOD_RES = (   # (regex, index of the year group)
+    (re.compile(r"(?<!\d)(20\d\d)[._ -](0[1-9]|1[0-2])(?![\d.])"), 1),          # zal1_2023_12, zal1_2023_11a
+    (re.compile(r"(?<![\da-z])(0?[1-9]|1[0-2])[._ -](20\d\d)(?!\d)"), 2),       # 09.2026, _01_2026_, 09_2025
+    (re.compile(r"(?<![\da-z])(0[1-9]|1[0-2])_[a-z_]+?_(20\d\d)(?!\d)"), 2),    # 09_DECYZJE_WZ_2026
+)
+
+
+def guess_period(text: str | None) -> str | None:
+    """``YYYY-MM`` (a month name or a numeric month next to the year) or ``YYYY`` from a link text + file name.
+
+    >>> guess_period("wrzesień (plik xlsx 22 KB) 09_WSZCZETE_2026.xlsx")
+    '2026-09'
+    >>> guess_period("Informacja o wydanych decyzjach w sprawie warunków zabudowy 2024.xlsx")
+    '2024'
+    """
+    if not text:
+        return None
+    year, month = find_period(text)
+    if year and month:
+        return f"{year:04d}-{month:02d}"
+    folded = fold(text)
+    for rx, year_group in _NUMERIC_PERIOD_RES:
+        m = rx.search(folded)
+        if m:
+            year, month = int(m.group(year_group)), int(m.group(3 - year_group))
+            return f"{year:04d}-{month:02d}"
+    years = _years_in(text)
+    return f"{max(years):04d}" if years else None
+
+
+def attachments_page_id(district, url: str) -> str:
+    """``page_id`` of a district list page: the district code + the page slug (``srd-wszczete-postepowania``)."""
+    return f"{district.code or 'ppd'}-{_slug_of(url)}"
+
+
+def parse_attachments_page(html: str, url: str, district) -> dict:
+    """One list page of a district that links its lists as plain attachments (no monthly pages).
+
+    Every ``/documents/`` link in the page's articles whose extension the district takes
+    (``district.extensions``) and that is not excluded (``district.exclude_re``, e.g. Wawer's building-permit
+    lists) becomes a block of its own with a ``category`` hint and a ``period`` guess.
+    """
+    root = parse_html(html)
+    articles = list(root.find_all(cls="journal-content-article"))
+    if not any(document_path_of(a.attrs.get("href", ""), url) for art in articles for a in art.find_all("a")):
+        articles = [root]   # Bemowo: the lists sit in a tab widget outside the article
+    page: dict = {
+        "page_id": attachments_page_id(district, url),
+        "url": url,
+        "title": _page_title(root, articles[0] if articles[0] is not root else root),
+        "period": None,
+        "published_at": None,
+        "summary": None,
+        "index_page": None,
+        "source": "district",
+        "blocks": [],
+        "links": [],
+        "warnings": [],
+    }
+    seen: set[str] = set()
+    skipped: Counter[str] = Counter()
+    for article in articles:
+        for anchor in article.find_all("a"):
+            href = anchor.attrs.get("href", "")
+            doc_path = document_path_of(href, url)
+            if not doc_path:
+                continue
+            file_id = file_id_of(doc_path)
+            if file_id in seen:
+                continue
+            filename = filename_of(doc_path)
+            ext = extension_of(filename)
+            text = clean_text(anchor.text())
+            if ext not in district.extensions:
+                skipped[ext] += 1
+                continue
+            if district.exclude_re and re.search(district.exclude_re, fold(f"{text} {filename}")):
+                skipped["excluded"] += 1
+                continue
+            seen.add(file_id)
+            page["blocks"].append({
+                "text": text or filename,
+                "category": detect_attachment_category(text) or detect_attachment_category(filename),
+                "declared_count": None,
+                "file_ids": [file_id],
+                "period": guess_period(f"{text} {filename}"),
+            })
+            page["links"].append({"block": len(page["blocks"]) - 1, "file_id": file_id,
+                                  "url": urljoin(url, href.strip()), "document_path": doc_path,
+                                  "filename": filename, "ext": ext})
+    if not page["blocks"]:
+        page["warnings"].append("Na stronie nie znaleziono załączników z listami (możliwa zmiana układu strony).")
+    if skipped:
+        page["skipped_attachments"] = dict(sorted(skipped.items()))
+    return page
+
+
+def crawl_attachments(
+    district,
+    out_path: Path | str,
+    raw_dir: Path | str,
+    *,
+    refresh: bool = False,
+    download: bool = True,
+    session: requests.Session | None = None,
+) -> dict:
+    """Crawl a district of the ``attachments`` strategy, sync its files and write its manifest.
+
+    Pages that fail – or come back without any attachment (a maintenance page) – are taken from the previous
+    manifest and listed in ``stale_pages``. Files that a page no longer links (cumulative lists replaced under a
+    new name every month) stay in the manifest with ``removed_from_source_at``, like BAiPP snapshots: every
+    version we ever downloaded remains a source of its records.
+    """
+    out_path, raw_dir = Path(out_path), Path(raw_dir)
+    previous = load_manifest(out_path)
+    prev_pages = {p["page_id"]: p for p in (previous or {}).get("pages", [])}
+    prev_files = {f["file_id"]: f for f in (previous or {}).get("files", [])}
+    session = session or make_session(min_delay=DEFAULT_DELAY)
+
+    pages: list[dict] = []
+    stale: list[str] = []
+    for number, url in enumerate(district.pages, start=1):
+        page_id = attachments_page_id(district, url)
+        try:
+            page = parse_attachments_page(get_text(session, url), url, district)
+        except requests.RequestException as exc:
+            log.error("%s [%d/%d] %s: fetch failed: %s", district.name, number, len(district.pages), url, exc)
+            page = None
+            reason = f"Nie udało się pobrać strony ({type(exc).__name__}); użyto poprzedniej wersji."
+        else:
+            reason = "Strona nie zawiera listy plików (strona techniczna?); użyto poprzedniej wersji."
+            if page["blocks"] or page_id not in prev_pages:
+                pages.append(page)
+                log.info("%s [%d/%d] %s: %d attachment(s)", district.name, number, len(district.pages),
+                         page["title"], len(page["blocks"]))
+                continue
+        stale.append(page_id)
+        if page_id in prev_pages:
+            page = _page_from_previous(prev_pages[page_id], prev_files)
+            page["warnings"].append(reason)
+        elif page is None:
+            page = {"page_id": page_id, "url": url, "title": url, "period": None, "published_at": None,
+                    "summary": None, "index_page": None, "source": "district", "blocks": [], "links": [],
+                    "warnings": [reason.split(";")[0] + "."]}
+        pages.append(page)
+
+    manifest = build_manifest(pages, index_url=district.entry_url, raw_dir=raw_dir)
+    # one page lists many periods: each file takes the period guessed from its own link
+    period_of = {fid: block.get("period") for page in pages for block in page["blocks"] for fid in block["file_ids"]}
+    for f in manifest["files"]:
+        f["period"] = period_of.get(f["file_id"]) or f.get("period")
+    linked = {f["file_id"] for f in manifest["files"]}
+    today = datetime.now(UTC).strftime("%Y-%m-%d")
+    kept = []
+    for prev in (previous or {}).get("files", []):
+        if prev.get("file_id") in linked:
+            continue
+        if prev.get("ext") not in district.extensions or (
+                district.exclude_re and re.search(district.exclude_re, fold(prev.get("filename") or ""))):
+            continue   # left out by the district's configuration, not by the source: no snapshot to keep
+        entry = json.loads(json.dumps(prev))
+        if not stale:
+            entry.setdefault("removed_from_source_at", today)
+        kept.append(entry)
+    manifest["files"] = _sort_files(manifest["files"] + kept)
+    stats = download_files(session, manifest, raw_dir, refresh=refresh, previous=previous, download=download)
+    log.info("%s files: %s", district.name, ", ".join(f"{k}={v}" for k, v in sorted(stats.items())) or "none")
+    manifest["district"] = district.slug
+    if stale:
+        manifest["stale_pages"] = sorted(stale)
+    write_manifest(manifest, out_path)
+    log.info("wrote %s", _display_path(out_path))
+    return manifest
 
 
 def main(argv: list[str] | None = None) -> int:

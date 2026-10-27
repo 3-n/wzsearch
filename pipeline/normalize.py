@@ -26,7 +26,7 @@ from collections.abc import Iterable
 from pathlib import Path
 from typing import Any
 
-from . import baipp
+from . import baipp, districts
 from .classify import classify
 from .textutil import cell_to_str, collapse_ws, fold, is_blank, tidy_cell
 
@@ -307,10 +307,30 @@ def _strip_quotes(s: str) -> str:
     return _QUOTES_RE.sub(" ", s)
 
 
+def _district_spans(f: str) -> list[tuple[int, int]]:
+    """Spans of the current district's name in a folded address line.
+
+    Praga-Południe: anywhere (the historical rule). Other districts: only as a separate segment of the line
+    ("Kowieńska 4, Praga-Północ", "Czerniakowska; Śródmieście") – their names are also street-name stems
+    (Wola/Wolska, Wesoła, Wawer/Wawerska are guarded by the patterns, a "ul. Wesoła 5" by this rule).
+    """
+    d = districts.current()
+    if d.legacy:
+        return [m.span() for m in _DISTRICT_RE.finditer(f)]
+    out = []
+    for m in d.pattern.finditer(f):
+        before, after = f[:m.start()].rstrip(), f[m.end():].lstrip()
+        if (not before or before[-1] in ",;" or re.search(r"\bdzielnic\w*$", before)) and (not after or after[0] in ",;"):
+            start = m.start()
+            prefix = re.search(r"\bdzielnic\w*\s*$", f[:start])
+            out.append((prefix.start() if prefix else start, m.end()))
+    return out
+
+
 def _clean_address_line(line: str) -> str:
     """Remove district/city, fix abbreviation dots, glued numbers and hyphen spacing."""
     f = fold(line)
-    spans = [m.span() for m in _DISTRICT_RE.finditer(f)] + [m.span() for m in _CITY_RE.finditer(f)]
+    spans = _district_spans(f) + [m.span() for m in _CITY_RE.finditer(f)]
     if spans:
         chars = list(line)
         for a, b in spans:
@@ -609,19 +629,29 @@ _TOKEN_RE = re.compile(r"\d+(?:\s*/\s*\d+)?|[a-z]+\.?|[^\sa-z\d]")
 _PARTIAL_WORDS = {"cz", "cz.", "czesc", "czesc.", "czesci", "czesci."}
 _NOISE_WORDS = {
     "dz", "dz.", "dzialka", "dzialki", "dzialek", "dzialkach", "ew", "ew.", "ewid", "ewid.", "nr",
-    "nr.", "obr", "obr.", "obreb", "obrebu", "obrebie", "z", "i", "oraz", "na", "ul", "ul.", "w",
+    "nr.", "obr", "obr.", "ob", "ob.", "obreb", "obrebu", "obrebie", "z", "i", "oraz", "na", "ul", "ul.", "w",
     "nieruchomosc", "nieruchomosci", "numer", "numery",
 }
 _RESET_WORDS = {"dz", "dz.", "dzialka", "dzialki", "dzialek"}
 
 
 def parcel_id(obreb: str, number: str) -> str:
-    """ULDK id: ``146507_8.<obreb without leading '3-' and dashes>.<number>``.
+    """ULDK id: ``<unit>.<obreb without the zone digit and dashes>.<number>``.
+
+    Praga-Południe (the legacy district) always uses its own unit ``146507_8`` (precincts of other districts
+    are corrected later by :func:`pipeline.baipp.check_out_of_district`); every other district looks the unit
+    up in the Warsaw precinct table (:func:`pipeline.districts.unit_for_precinct`), falling back to its own.
 
     >>> parcel_id("3-01-24", "46/4")
     '146507_8.0124.46/4'
     """
-    return f"{TERYT_PRAGA_POLUDNIE}.{obreb[2:].replace('-', '')}.{number}"
+    d = districts.current()
+    unit = TERYT_PRAGA_POLUDNIE if d.legacy else (districts.unit_for_precinct(obreb, d.unit) or d.unit)
+    return f"{unit}.{obreb[2:].replace('-', '')}.{number}"
+
+
+#: "07-07 dz. 6/25" – a precinct without its zone digit (Wesoła); only read for districts that write so.
+_OBREB_SHORT_RE = re.compile(r"(?<![\d/-])(?P<b>\d{2})\s*-\s*(?P<c>\d{2})(?![\d/-])")
 
 
 def _blank_spans(text: str, spans: Iterable[tuple[int, int]]) -> str:
@@ -661,6 +691,8 @@ def parse_parcels(raw: Any, street_hint: str | None = None, *,
     warnings: list[str] = []
     if is_blank(raw_s):
         return [], warnings
+    district = districts.current()
+    any_obreb = any_obreb or not district.legacy
     text = collapse_ws(raw_s)
     work = fold(text)                      # same length as `text`
 
@@ -701,7 +733,14 @@ def parse_parcels(raw: Any, street_hint: str | None = None, *,
     for m in (_OBREB_CUT_ANY_RE if any_obreb else _OBREB_CUT_RE).finditer(work):
         if not any(a <= m.start() < b for a, b, _ in obreby):
             obreby.append((m.start(), m.end(), None))
+    if district.short_precinct_zone:
+        for m in _OBREB_SHORT_RE.finditer(work):
+            if not any(a < m.end() and m.start() < b for a, b, _ in obreby):
+                obreby.append((m.start(), m.end(), f"{district.short_precinct_zone}-{m.group('b')}-{m.group('c')}"))
     obreby.sort()
+    # "07-15 dz. 94/3 07-16 dz. 75/8": the precinct comes first and opens its list (other districts only)
+    precinct_first = (not district.legacy and bool(obreby) and obreby[0][2] is not None
+                      and not re.search(r"\d", work[:obreby[0][0]]))
 
     unknown: list[str] = []
     hint = street_key(street_hint) if street_hint else ""
@@ -765,6 +804,19 @@ def parse_parcels(raw: Any, street_hint: str | None = None, *,
 
     parcels: list[dict[str, Any]] = []
     prev = 0
+    if precinct_first:
+        for i, (start, end, norm) in enumerate(obreby):
+            stop = obreby[i + 1][0] if i + 1 < len(obreby) else len(work)
+            got = _scan(end, stop, norm)
+            if norm is None:
+                warnings.append(f"niepełny numer obrębu „{collapse_ws(text[start:end])}” – pominięto działki "
+                                f"zapisane po nim" + (f" ({', '.join(p['number'] for p in got)})" if got else ""))
+            elif not got:
+                warnings.append(f"obręb {norm} bez numerów działek")
+            else:
+                parcels.extend(got)
+        prev = len(work)
+        obreby = []
     for start, end, norm in obreby:
         got = _scan(prev, start, norm)
         if norm is None:
@@ -812,8 +864,15 @@ def parse_parcels(raw: Any, street_hint: str | None = None, *,
     if not out and not any("obręb" in w or "obrębu" in w for w in warnings):
         warnings.append("nie rozpoznano numerów działek")
     for obreb in dict.fromkeys(p["obreb"] for p in out):
-        if obreb.startswith("3-") and not is_pp_obreb(obreb[2:].replace("-", "")):
-            warnings.append(f"obręb {obreb} nie istnieje w ewidencji gruntów Pragi-Południe – możliwy błąd w źródle")
+        if district.legacy:
+            if obreb.startswith("3-") and not is_pp_obreb(obreb[2:].replace("-", "")):
+                warnings.append(f"obręb {obreb} nie istnieje w ewidencji gruntów Pragi-Południe – możliwy błąd w źródle")
+        elif not districts.unit_for_precinct(obreb, district.unit):
+            warnings.append(f"obręb {obreb} nie występuje wśród znanych obrębów Warszawy – możliwy błąd w źródle")
+        elif districts.unit_for_precinct(obreb, district.unit) != district.unit:
+            other = districts.by_unit(districts.unit_for_precinct(obreb, district.unit))
+            warnings.append(f"obręb {obreb} leży poza dzielnicą {district.name}"
+                            + (f" ({other.name})" if other else ""))
     return out, warnings
 
 
@@ -847,8 +906,13 @@ def normalize_row(row: dict[str, Any], kind: str | None, file_meta: dict[str, An
     period = file_meta.get("period")
     dataset = file_meta.get("dataset") or "district"
     city = dataset == "baipp"
+    district = districts.current()
+    # Other districts' lists are often cumulative (yearly, or everything since 2020) and their decision numbers
+    # carry the outcome letter like BAiPP's (``34/SRD/WZ/2026/U``): read them the BAiPP way.
+    city_like = city or not district.legacy
 
-    number_parts = baipp.split_number(cells.get("number"), kind) if city else None
+    number_parts = (baipp.split_number(cells.get("number"), kind)
+                    if city or (city_like and kind in ("wz", "cp")) else None)
     number = number_parts.number if number_parts else clean_number(cells.get("number"))
     if number_parts and number_parts.others:
         warnings.append(f"w komórce numeru podano także: {', '.join(number_parts.others)}")
@@ -859,19 +923,24 @@ def normalize_row(row: dict[str, Any], kind: str | None, file_meta: dict[str, An
         else:
             warnings.append("nie ustalono rodzaju pozycji (WZ/CP/wszczęte)")
 
-    date_iso, date_raw, w = parse_date(cells.get("date"), None if city else period)
+    date_iso, date_raw, w = parse_date(cells.get("date"), None if city_like else period)
     warnings += w
     if city:
         file_year = (period or "")[:4]
         if date_iso and file_year.isdigit() and date_iso[:4] != file_year:
             warnings.append(f"data {date_iso} spoza roku zestawienia ({file_year})")
         period = date_iso[:7] if date_iso else None
+    elif city_like:
+        period = date_iso[:7] if date_iso else (period if period and re.fullmatch(r"\d{4}-\d{2}", period) else None)
 
     rid, w = record_id(kind, number, date_iso, file_id, row.get("row", 0))
     warnings += w
     if city:
         rid, w = baipp.namespace_id(rid, kind, number, file_meta.get("series"))
         warnings += w
+    elif not district.legacy:
+        head, _, tail = rid.partition("-")
+        rid = f"{head}-{district.code}-{tail}"
 
     procedure: str | None = kind if kind in ("wz", "cp") else None
     if kind == "ws":
@@ -990,6 +1059,8 @@ def merge_duplicates(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """
     out: list[dict[str, Any]] = []
     groups: dict[str, list[dict[str, Any]]] = {}
+    # Other districts republish cumulative lists (yearly, or everything since 2020) like BAiPP does.
+    snapshot_datasets = {"baipp"} if districts.current().legacy else {"baipp", "district"}
     for r in records:
         groups.setdefault(r["id"], []).append(r)
     emitted: set[int] = set()
@@ -1001,8 +1072,8 @@ def merge_duplicates(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
         changed: dict[int, list[str]] = {}   # BAiPP variant → fields edited between snapshots
         for g in group:
             emitted.add(id(g))
-            if g.get("dataset") == "baipp":
-                snapshot = next((v for v in variants if v.get("dataset") == "baipp"
+            if g.get("dataset") in snapshot_datasets:
+                snapshot = next((v for v in variants if v.get("dataset") == g.get("dataset")
                                  and not _source_files(v) & _source_files(g)), None)
                 if snapshot is not None:
                     changed.setdefault(id(snapshot), []).extend(_adopt_newer_snapshot(snapshot, g))
@@ -1021,7 +1092,8 @@ def merge_duplicates(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
         for v in variants:
             if changed.get(id(v)):
                 fields = ", ".join(dict.fromkeys(changed[id(v)]))
-                v["warnings"].append(f"treść pozycji różni się między wersjami zestawienia BAiPP ({fields}) – "
+                which = "zestawienia BAiPP" if v.get("dataset") == "baipp" else "zestawienia dzielnicy"
+                v["warnings"].append(f"treść pozycji różni się między wersjami {which} ({fields}) – "
                                      "pokazano wersję z najnowszego pliku")
         if len(variants) > 1:
             base = variants[0]["id"]

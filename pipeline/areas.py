@@ -40,7 +40,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Callable
 
-from . import geo
+from . import districts, geo
 
 DISTRICT_RELATION_ID = 2544288
 DISTRICT_TERC = "1465078"
@@ -77,6 +77,36 @@ LICENCE_URL = "https://opendatacommons.org/licenses/odbl/1-0/"
 COPYRIGHT_URL = "https://www.openstreetmap.org/copyright"
 
 DISTRICT_SLUG = "_district"
+
+
+def overpass_query() -> str:
+    """The query for the current district: its outline and its MSI areas (Praga-Południe: by relation id,
+    as always; the other districts by their ``teryt:terc``)."""
+    d = districts.current()
+    if d.legacy:
+        return OVERPASS_QUERY
+    return f"""[out:json][timeout:120];
+rel["boundary"="administrative"]["admin_level"="9"]["teryt:terc"="{d.terc}"]->.d;
+.d map_to_area->.a;
+(
+  .d;
+  rel(area.a)["boundary"="administrative"]["admin_level"="{AREA_ADMIN_LEVEL}"];
+);
+out geom;"""
+
+
+def cache_name() -> str:
+    """``areas.json`` (Praga-Południe) or ``areas-<slug>.json``."""
+    d = districts.current()
+    return "areas.json" if d.legacy else f"areas-{d.slug}.json"
+
+
+def _is_district_relation(el: dict) -> bool:
+    d = districts.current()
+    if d.legacy:
+        return el["id"] == DISTRICT_RELATION_ID
+    tags = el.get("tags", {})
+    return tags.get("admin_level") == "9" and tags.get("teryt:terc") == d.terc
 SIMPLIFY_TOLERANCE_M = 1.5
 SITE_DECIMALS = 6
 CACHE_DECIMALS = 7
@@ -159,15 +189,15 @@ def build_features(overpass: dict, simplify_m: float = 0.0) -> tuple[dict, list[
             "admin_level": tags.get("admin_level"),
             "geometry": geometry,
         }
-        if el["id"] == DISTRICT_RELATION_ID:
-            if tags.get("teryt:terc") not in (None, DISTRICT_TERC):
+        if _is_district_relation(el):
+            if districts.current().legacy and tags.get("teryt:terc") not in (None, DISTRICT_TERC):
                 warnings.append(f"district relation has unexpected teryt:terc={tags.get('teryt:terc')}")
             item["slug"] = DISTRICT_SLUG
             district = item
         elif tags.get("admin_level") == AREA_ADMIN_LEVEL:
             areas.append(item)
     if district is None:
-        raise ValueError(f"district relation {DISTRICT_RELATION_ID} missing from Overpass response")
+        raise ValueError(f"district relation of {districts.current().name} missing from Overpass response")
 
     # Overpass's area filter also returns relations that merely touch the
     # district: keep those whose centroid lies inside it.
@@ -178,7 +208,7 @@ def build_features(overpass: dict, simplify_m: float = 0.0) -> tuple[dict, list[
             kept.append(a)
     areas = sorted(kept, key=lambda a: a["slug"])
     names = {a["label"] for a in areas}
-    if names != EXPECTED_AREAS:
+    if districts.current().legacy and names != EXPECTED_AREAS:
         warnings.append(
             "unexpected neighbourhood set: missing="
             f"{sorted(EXPECTED_AREAS - names)} extra={sorted(names - EXPECTED_AREAS)}"
@@ -272,8 +302,8 @@ def to_site_geojson(cache_doc: dict, simplify_m: float = SIMPLIFY_TOLERANCE_M) -
         "licence": LICENCE,
         "licence_url": LICENCE_URL,
         "copyright_url": COPYRIGHT_URL,
-        "source": "OpenStreetMap via Overpass API: Praga-Południe (relation "
-        f"{DISTRICT_RELATION_ID}) and its admin_level=10 MSI areas",
+        "source": f"OpenStreetMap via Overpass API: {districts.current().name} (relation "
+        f"{district['osm_id']}) and its admin_level=10 MSI areas",
         "osm_base": src.get("osm_base"),
         "fetched_at": cache_doc.get("fetched_at"),
         "features": features,
@@ -288,7 +318,7 @@ def fetch_overpass(session, endpoints=OVERPASS_ENDPOINTS, log: Callable = print)
     last_exc: Exception | None = None
     for url in endpoints:
         try:
-            resp = session.post(url, data={"data": OVERPASS_QUERY}, timeout=180)
+            resp = session.post(url, data={"data": overpass_query()}, timeout=180)
             if resp.status_code != 200:
                 raise RuntimeError(f"HTTP {resp.status_code}")
             data = resp.json()
@@ -339,7 +369,7 @@ def build_areas(
     log: Callable = print,
 ) -> dict:
     """(Re)build ``areas.json`` (if needed) and ``areas.geojson``; return the cache doc."""
-    cache_path = os.path.join(cache_dir, "areas.json")
+    cache_path = os.path.join(cache_dir, cache_name())
     doc = None
     if not refresh and os.path.exists(cache_path):
         with open(cache_path, encoding="utf-8") as fh:
@@ -428,7 +458,7 @@ class AreaIndex:
 
 def load_areas(cache_dir: str = "data/cache", site_path: str = "site/data/areas.geojson") -> AreaIndex | None:
     """Load the area index from the cache (preferred) or the site GeoJSON."""
-    cache_path = os.path.join(cache_dir, "areas.json")
+    cache_path = os.path.join(cache_dir, cache_name())
     if os.path.exists(cache_path):
         with open(cache_path, encoding="utf-8") as fh:
             return AreaIndex.from_cache_document(json.load(fh))

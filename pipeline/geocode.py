@@ -57,7 +57,7 @@ from urllib.parse import urlsplit
 import requests
 
 from . import areas as areas_mod
-from . import geo
+from . import districts, geo
 
 ULDK_URL = "https://uldk.gugik.gov.pl/"
 UUG_URL = "https://services.gugik.gov.pl/uug/"
@@ -1030,12 +1030,14 @@ def geocode_record_address(address: dict | None, cache, session, district, onlin
 
 
 def _obreb_from_id(pid: str) -> tuple[str | None, str | None]:
-    """``146507_8.0124.46/4`` → ``("3-01-24", "46/4")``."""
+    """``146507_8.0124.46/4`` → ``("3-01-24", "46/4")`` (the zone digit comes from the unit)."""
     parts = pid.split(".", 2)
     if len(parts) != 3 or len(parts[1]) != 4:
         return None, None
     o = parts[1]
-    return f"3-{o[:2]}-{o[2:]}", parts[2]
+    d = districts.by_unit(parts[0])
+    zone = d.zones[0] if d else "3"
+    return f"{zone}-{o[:2]}-{o[2:]}", parts[2]
 
 
 def _bbox_gap_m(a: list[float], b: list[float]) -> float:
@@ -1178,7 +1180,7 @@ def _parcel_geo(rid, pids, found, results, area_index, notes, stats, stand_ins=N
             stats["records_parcels_in_district_only"] = stats.get("records_parcels_in_district_only", 0) + 1
     if area_index and area_index.in_district(pt, DISTRICT_BUFFER_M) is False:
         stats["outside_district_discarded"] += 1
-        stats["warnings"].append(f"{rid}: parcel centroid {pt} outside Praga-Południe – discarded")
+        stats["warnings"].append(f"{rid}: parcel centroid {pt} outside {districts.current().name} – discarded")
         notes.append("działki poza granicami dzielnicy – pominięto")
         return None
     if moved:
@@ -1409,7 +1411,7 @@ def locate_records(
                 warnings.append(f"neighbourhood boundaries unavailable: {exc}")
     district = area_index.district if area_index else None
     if district is None:
-        warnings.append("district polygon unavailable: points are not validated against Praga-Południe")
+        warnings.append(f"district polygon unavailable: points are not validated against {districts.current().name}")
 
     # ---- parcels
     record_pids: list[list[str]] = []
@@ -1578,7 +1580,7 @@ def locate_records(
                     notes = [hint if n == NOTE_PARCELS_NOT_FOUND else n for n in notes]
             elif g["method"] == "street" and hit and hit.get("street_geometry"):
                 # A whole street is vague: the stated precinct narrows it down (the street's stretch in it).
-                ids = sorted({".".join(p.split(".")[:2]) for p in pids if p.startswith(DISTRICT_TERYT + ".")})
+                ids = sorted({".".join(p.split(".")[:2]) for p in pids if p.startswith(districts.current().unit + ".")})
                 polygons = {r: geom for r in ids if (geom := region_geometry(r, uldk_cache, session, online, **opts))}
                 names = ", ".join(_obreb_from_id(f"{r}.x")[0] for r in polygons)
                 clipped = _street_in_precincts(hit["street_geometry"], list(polygons.values())) if polygons else None

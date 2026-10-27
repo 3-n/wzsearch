@@ -72,6 +72,7 @@ from typing import IO, Any
 
 import requests
 
+from . import districts
 from .classify import TAGS, classify
 from .http import make_session
 from .normalize import (
@@ -544,12 +545,19 @@ def _osa_distance(a: str, b: str) -> int:
     return d[len(a)][len(b)]
 
 
-@functools.lru_cache(maxsize=8192)
 def is_district_office(organ: str) -> bool:
+    """The current district's architecture department (``… - Praga Płd.``, ``… - Bemowo``)."""
+    return _is_office(districts.current().organ_re, organ)
+
+
+@functools.lru_cache(maxsize=16384)
+def _is_office(pattern: str, organ: str) -> bool:
     """``Prezydent Miasta Warszawa - Praga Płd.`` (the district's architecture department).
 
     Cached: called for every one of ~2.5 million register rows, with a few thousand distinct organs."""
-    return bool(_DISTRICT_OFFICE_RE.search(fold(organ)))
+    if pattern == _DISTRICT_OFFICE_RE.pattern:
+        return bool(_DISTRICT_OFFICE_RE.search(fold(organ)))
+    return bool(re.search(pattern, fold(organ)))
 
 
 #: Praga-Południe cases whose register rows carry another unit id – register errors verified one by one with
@@ -580,15 +588,16 @@ def match_location(unit: str, organ: str, case: str | None = None) -> str | None
       genuine neighbouring parcel (the office handled some Wawer cases ``146514_8`` in 2020) → None.
     """
     u = unit.strip()
-    if u == TERYT_PRAGA_POLUDNIE:
+    district = districts.current()
+    if u == district.unit:
         return "unit"
-    if case is not None and u and UNIT_FIXES.get(case.strip()) == u:
+    if district.legacy and case is not None and u and UNIT_FIXES.get(case.strip()) == u:
         return "listed"
     if not is_district_office(organ):
         return None
     if not u:
         return "empty"
-    if _osa_distance(u, TERYT_PRAGA_POLUDNIE) <= 1:
+    if _osa_distance(u, district.unit) <= 1:
         return "typo"
     if u not in WARSAW_UNITS:
         return "invalid"
@@ -631,6 +640,7 @@ def select_cases(opener: Callable[[], contextlib.AbstractContextManager[tuple[bo
     i_case, i_unit, i_organ = layout.index(layout.case), layout.index(layout.unit), layout.index("nazwa_organu")
     i_sign, i_number = layout.index(layout.case_sign), layout.index(layout.number)
     width = len(layout.header)
+    district = districts.current()
     kept_cases: set[str] = set()
     reasons: dict[int, str] = {}
     office_out: Counter = Counter()
@@ -650,9 +660,9 @@ def select_cases(opener: Callable[[], contextlib.AbstractContextManager[tuple[bo
                 continue
             rows_total += 1
             if len(rec.fields) != width:
-                if TERYT_PRAGA_POLUDNIE in rec.text or "Praga Płd" in rec.text:
+                if district.unit in rec.text or (district.legacy and "Praga Płd" in rec.text):
                     raise RwdzFormatError(f"{where}: linia {rec.line} ma {len(rec.fields)} pól zamiast {width} "
-                                          "i może dotyczyć Pragi-Południe")
+                                          f"i może dotyczyć {district.genitive}")
                 malformed += 1
                 continue
             case = rec.fields[i_case].strip()
@@ -664,8 +674,8 @@ def select_cases(opener: Callable[[], contextlib.AbstractContextManager[tuple[bo
                 continue
             if is_district_office(rec.fields[i_organ]):
                 office_out[rec.fields[i_unit].strip()] += 1
-            if case not in signals and (_SIGNAL_SIGN_RE.match(rec.fields[i_sign].strip())
-                                        or _SIGNAL_NUMBER_RE.search(rec.fields[i_number])):
+            if district.legacy and case not in signals and (_SIGNAL_SIGN_RE.match(rec.fields[i_sign].strip())
+                                                            or _SIGNAL_NUMBER_RE.search(rec.fields[i_number])):
                 signals[case] = [case, rec.line, rec.fields[i_unit].strip()]
     if rows_total and malformed > _MAX_MALFORMED_SHARE * rows_total:
         raise RwdzFormatError(f"{where}: {malformed} z {rows_total} wierszy ma złą liczbę pól – zmiana formatu?")
@@ -764,7 +774,7 @@ def extract_csv(file: RwdzFile, zip_path: Path, raw_dir: Path, snapshot: Mapping
     sha = _sha256_bytes(data)
     if (old.get("sha256") == sha and old.get("lines") == lines and old.get("extract_version") == EXTRACT_VERSION
             and csv_path.is_file() and _sha256_file(csv_path) == sha):
-        log(f"rwdz: {file.file_id}: Praga-Południe extract unchanged ({len(sel.kept)} rows)")
+        log(f"rwdz: {file.file_id}: {districts.current().name} extract unchanged ({len(sel.kept)} rows)")
         return False, old
     sidecar = {
         "file_id": file.file_id,
@@ -785,10 +795,7 @@ def extract_csv(file: RwdzFile, zip_path: Path, raw_dir: Path, snapshot: Mapping
         "header": list(layout.header),
         "rows_total": sel.rows_total,
         "rows_malformed": sel.malformed,
-        "filter": "sprawy z co najmniej jedną działką w jednostce ewidencyjnej 146507_8 (Praga-Południe) "
-                  "– całe sprawy, ze wszystkimi wierszami; także wiersze urzędu dzielnicy Praga-Południe "
-                  "z pustym lub błędnym identyfikatorem jednostki oraz sprawy z listy błędów rejestru "
-                  "sprawdzonych w ULDK (UNIT_FIXES)",
+        "filter": _filter_text(),
         "extract_version": EXTRACT_VERSION,
         "parsed_count": len(sel.kept),
         "cases": sel.cases,
@@ -802,6 +809,15 @@ def extract_csv(file: RwdzFile, zip_path: Path, raw_dir: Path, snapshot: Mapping
     _write_atomic(meta_path, _dumps(sidecar))
     log(f"rwdz: {file.file_id}: wrote extract ({len(sel.kept)} of {sel.rows_total} rows, {sel.cases} cases)")
     return True, sidecar
+
+
+def _filter_text() -> str:
+    """How the extract was selected (sidecar ``filter``)."""
+    d = districts.current()
+    text = (f"sprawy z co najmniej jedną działką w jednostce ewidencyjnej {d.unit} ({d.name}) "
+            f"– całe sprawy, ze wszystkimi wierszami; także wiersze urzędu dzielnicy {d.name} "
+            "z pustym lub błędnym identyfikatorem jednostki")
+    return text + (" oraz sprawy z listy błędów rejestru sprawdzonych w ULDK (UNIT_FIXES)" if d.legacy else "")
 
 
 @dataclass
@@ -1094,6 +1110,17 @@ def _parcel(unit: str, obreb: str, number: str) -> dict[str, Any]:
 
 
 def _unit_note(reason: str, unit: str, has_parcel: bool) -> str:
+    d = districts.current()
+    if not d.legacy:
+        where = f" ({WARSAW_UNITS[unit]})" if unit in WARSAW_UNITS else ""
+        if reason == "empty":
+            if not has_parcel:
+                return (f"sprawa urzędu dzielnicy {d.name} bez oznaczenia działki w rejestrze – przyjęto, że dotyczy "
+                        f"{d.genitive}")
+            return (f"brak identyfikatora jednostki ewidencyjnej w rejestrze – przyjęto {d.unit} ({d.name}; sprawa "
+                    "urzędu dzielnicy)")
+        return (f"identyfikator jednostki ewidencyjnej w rejestrze „{unit}”{where} potraktowano jako {d.unit} "
+                f"({d.name}) – sprawa urzędu dzielnicy, prawdopodobna literówka")
     if reason == "listed":
         where = f" ({WARSAW_UNITS[unit]})" if unit in WARSAW_UNITS else ""
         return (f"identyfikator jednostki ewidencyjnej w rejestrze „{unit}”{where} potraktowano jako 146507_8 "
@@ -1120,6 +1147,7 @@ def _case_record(file: RwdzFile, rows: list[KeptRow]) -> dict[str, Any]:
     header = layout.header
     first = rows[0].fields
     warnings: list[str] = []
+    district = districts.current()
 
     def col(name: str) -> str:
         return first[layout.index(name)]
@@ -1171,7 +1199,7 @@ def _case_record(file: RwdzFile, rows: list[KeptRow]) -> dict[str, Any]:
     for r in rows:
         unit_raw, obreb, nr = r.fields[i_unit].strip(), r.fields[i_obreb].strip(), re.sub(r"\s+", "", r.fields[i_nr])
         raw_parcels.append(collapse_ws(f"{unit_raw} {obreb} {nr}"))
-        unit = TERYT_PRAGA_POLUDNIE if r.reason else unit_raw
+        unit = district.unit if r.reason else unit_raw
         if r.reason:
             warnings.append(_unit_note(r.reason, unit_raw, bool(obreb and nr)))
         if not (unit and obreb and nr):
@@ -1181,18 +1209,21 @@ def _case_record(file: RwdzFile, rows: list[KeptRow]) -> dict[str, Any]:
         p = _parcel(unit, obreb, nr)
         if not _PARCEL_ID_RE.match(p["id"]):
             warnings.append(f"nietypowe oznaczenie działki w rejestrze („{p['id']}”)")
-        elif unit == TERYT_PRAGA_POLUDNIE and not is_pp_obreb(p["id"].split(".")[1]):
+        elif unit == TERYT_PRAGA_POLUDNIE and district.legacy and not is_pp_obreb(p["id"].split(".")[1]):
             warnings.append(f"obręb „{obreb}” nie występuje na Pradze-Południe (nie ma go w ewidencji gruntów "
                             "dzielnicy) – możliwy błąd w rejestrze")
+        elif unit == district.unit and not district.legacy and p["id"].split(".")[1] not in districts.precinct_units(unit):
+            warnings.append(f"obręb „{obreb}” nie występuje w innych sprawach rejestru {district.locative} – "
+                            "możliwy błąd w rejestrze")
         if p["id"] in seen:
             continue
         seen.add(p["id"])
         parcels.append(p)
-        if unit != TERYT_PRAGA_POLUDNIE:
+        if unit != district.unit:
             outside[unit] += 1
     for unit, n in sorted(outside.items()):
         where = WARSAW_UNITS.get(unit, "inna jednostka")
-        warnings.append(f"sprawa obejmuje też działki spoza Pragi-Południe – jednostka ewidencyjna {unit} "
+        warnings.append(f"sprawa obejmuje też działki spoza {district.genitive} – jednostka ewidencyjna {unit} "
                         f"({where}): {n}")
 
     # --- permit attributes
@@ -1420,7 +1451,8 @@ def _snapshot_of(sidecar: Mapping[str, Any]) -> dict[str, Any]:
 
 def _ensure_extract(file: RwdzFile, zips: Path, raw_dir: Path, tracked: Mapping[str, Any], local: dict, *,
                     online: bool, refresh: bool, session: requests.Session | None,
-                    log: Callable[[str], None]) -> tuple[str, list[str], str | None]:
+                    log: Callable[[str], None], shared: Mapping[str, Any] | None = None
+                    ) -> tuple[str, list[str], str | None]:
     """Bring ``raw_dir/<file_id>.csv`` (+ sidecar) up to date; returns ``(status, file warnings, error)``.
 
     Request mode: ``refresh`` → unconditional; a known local ZIP → its validators (``local.json``);
@@ -1433,7 +1465,7 @@ def _ensure_extract(file: RwdzFile, zips: Path, raw_dir: Path, tracked: Mapping[
     sidecar = _load_json(meta_path) if meta_path.is_file() else {}
     present = bool(sidecar) and csv_path.is_file()
     current = present and sidecar.get("extract_version") == EXTRACT_VERSION
-    loc = local.get(file.file_id)
+    loc = local.get(file.file_id) or (shared or {}).get(file.file_id)
     if loc and not (zip_path.is_file() and zip_path.stat().st_size == loc.get("size")):
         loc = None
     warnings: list[str] = []
@@ -1496,7 +1528,7 @@ def _ensure_extract(file: RwdzFile, zips: Path, raw_dir: Path, tracked: Mapping[
 
 def run_rwdz(cache_dir: str | Path = "data/cache", raw_dir: str | Path = "data/raw/rwdz", online: bool = True,
              refresh: bool = False, session: requests.Session | None = None,
-             log: Callable[[str], None] = print) -> dict[str, Any]:
+             log: Callable[[str], None] = print, *, state_dir: str | Path | None = None) -> dict[str, Any]:
     """Download (conditionally), extract and normalise the three RWDZ archives.
 
     Returns ``{"records": [Record…] (newest first), "files": [files[] entries], "page": {…},
@@ -1506,13 +1538,22 @@ def run_rwdz(cache_dir: str | Path = "data/cache", raw_dir: str | Path = "data/r
     * ``cache_dir`` – ``rwdz.json`` (tracked snapshot metadata) and ``rwdz/`` (ZIPs + ``local.json``);
     * ``raw_dir`` – committed extracts ``<file_id>.csv`` + ``<file_id>.meta.json``;
     * ``online=False`` – committed extracts only (no network);
-    * ``refresh`` – unconditional downloads.
+    * ``refresh`` – unconditional downloads;
+    * ``state_dir`` – where this build keeps ``rwdz.json`` and its extract state (``rwdz-local.json``) when
+      several districts share the ZIPs in ``cache_dir/rwdz`` (city-wide build): the shared ``local.json``
+      then only lends its HTTP validators, so a ZIP is downloaded once and filtered for every district.
     """
     cache_dir, raw_dir = Path(cache_dir), Path(raw_dir)
     zips = cache_dir / "rwdz"
-    tracked_path, local_path = cache_dir / "rwdz.json", zips / "local.json"
+    shared_local_path = zips / "local.json"
+    if state_dir is None:
+        tracked_path, local_path = cache_dir / "rwdz.json", shared_local_path
+    else:
+        tracked_path, local_path = Path(state_dir) / "rwdz.json", Path(state_dir) / "rwdz-local.json"
     tracked = dict(_load_json(tracked_path).get("files", {}))
     local = dict(_load_json(local_path).get("files", {})) if local_path.is_file() else {}
+    shared = (dict(_load_json(shared_local_path).get("files", {}))
+              if state_dir is not None and shared_local_path.is_file() else {})
     if online and session is None:
         session = make_session(min_delay=1.0)
 
@@ -1521,7 +1562,7 @@ def run_rwdz(cache_dir: str | Path = "data/cache", raw_dir: str | Path = "data/r
     stats: dict[str, Any] = {"files": {}}
     for file in FILES:
         status, warnings, error = _ensure_extract(file, zips, raw_dir, tracked, local, online=online,
-                                                  refresh=refresh, session=session, log=log)
+                                                  refresh=refresh, session=session, log=log, shared=shared)
         sidecar: dict[str, Any] | None = None
         rows: list[KeptRow] = []
         if error is None:
@@ -1541,6 +1582,16 @@ def run_rwdz(cache_dir: str | Path = "data/cache", raw_dir: str | Path = "data/r
     _write_atomic(tracked_path, _dumps({"files": dict(sorted(tracked.items()))}))
     if local:
         _write_atomic(local_path, _dumps({"files": dict(sorted(local.items()))}))
+    if state_dir is not None and local:
+        # a ZIP this district downloaded is the shared copy now: lend its validators to the other districts
+        changed = False
+        for fid, state in local.items():
+            snap = {k: state.get(k) for k in _SNAPSHOT_KEYS}
+            if snap.get("size") and {k: (shared.get(fid) or {}).get(k) for k in _SNAPSHOT_KEYS} != snap:
+                shared[fid] = {**(shared.get(fid) or {}), **snap}
+                changed = True
+        if changed:
+            _write_atomic(shared_local_path, _dumps({"files": dict(sorted(shared.items()))}))
 
     renamed = resolve_collisions(records)
     records = sort_records(records)

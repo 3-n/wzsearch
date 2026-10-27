@@ -8,3 +8,10 @@ tests/e2e/output/
 data/cache/rwdz/
 # ad-hoc QA screenshots (e2e screenshots go to tests/e2e/output/)
 shots/
+# city-wide draft (feature/all-districts): inputs and outputs of the other districts are not committed yet –
+# see docs/plans/all-districts.md §4 (build with `make city`)
+data/districts/
+data/cache/districts/
+site/data/d/
+site/sources/d/
+site/data/districts.json

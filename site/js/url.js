@@ -186,14 +186,25 @@ export function roundCoord(x) {
   return String(Number(Number(x).toFixed(NEAR_DECIMALS)));
 }
 
+/** District slug every hash of this page carries (`dz=…`, city deployments – see district.js); null = none. */
+let hashDistrict = null;
+
+/** Set the district written into every hash (the page shows one district; switching it reloads the page). */
+export function setHashDistrict(slug) {
+  hashDistrict = typeof slug === 'string' && /^[a-z-]{2,32}$/.test(slug) ? slug : null;
+}
+
 /**
  * Build a full hash for a route.
- * @param {{route: string, recordId?: string|null, tab?: string|null, filters?: object, mode?: string}} s
+ * @param {{route: string, recordId?: string|null, tab?: string|null, filters?: object, mode?: string,
+ *   district?: string}} s `district` overrides the page's district (links into another district)
  */
-export function buildHash({ route = 'explore', recordId = null, tab = null, filters = null, mode = 'list' }) {
-  if (route === 'sources') return `#/${ROUTES.sources}${tab ? `/${encodeURIComponent(tab)}` : ''}`;
-  if (route === 'about') return `#/${ROUTES.about}`;
-  const qs = filters ? buildQuery(filters, mode) : (mode === 'map' ? 'tryb=mapa' : '');
+export function buildHash({ route = 'explore', recordId = null, tab = null, filters = null, mode = 'list', district = null }) {
+  const slug = district || hashDistrict;
+  const dz = slug ? `dz=${slug}` : '';
+  if (route === 'sources') return `#/${ROUTES.sources}${tab ? `/${encodeURIComponent(tab)}` : ''}${dz ? `?${dz}` : ''}`;
+  if (route === 'about') return `#/${ROUTES.about}${dz ? `?${dz}` : ''}`;
+  const qs = [filters ? buildQuery(filters, mode) : (mode === 'map' ? 'tryb=mapa' : ''), dz].filter(Boolean).join('&');
   const path = route === 'record' && recordId ? `/${ROUTES.record}/${encodeURIComponent(recordId)}` : '/';
   return `#${path}${qs ? `?${qs}` : ''}`;
 }

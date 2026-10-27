@@ -27,11 +27,20 @@
     if (location.protocol !== 'file:' && window.fetch) {
       try {
         window.__wzEarly = {};
-        ['data/records.json', 'data/sources.json'].forEach(function (u) {
+        /* City-wide deployments (data/districts.json) keep one data shard per district: start the one the hash
+           (dz=…) or the last visit names; district.js decides for good once districts.json is in. */
+        var dz = (/[?&]dz=([a-z-]{2,32})(?:&|$)/.exec(location.hash) || [])[1];
+        try { dz = dz || localStorage.getItem('wzsearch:district'); } catch (e) { /* storage unavailable */ }
+        var shard = dz && dz !== 'praga-poludnie' && /^[a-z-]{2,32}$/.test(dz) ? 'data/d/' + dz + '/' : null;
+        var start = function (u) {
           var p = fetch(u, { cache: 'no-cache' });
           p.catch(function () {}); /* handled by data.js; no "unhandled rejection" before it loads */
           window.__wzEarly[u] = p;
-        });
+        };
+        start('data/districts.json');   /* absent in a single-district deployment (a cheap 404) */
+        /* Praga-Południe (and every single-district deployment) keeps its data in data/ */
+        if (shard) { start(shard + 'records.json'); start(shard + 'sources.json'); }
+        else ['data/records.json', 'data/sources.json'].forEach(start);
       } catch (e) { window.__wzEarly = null; }
     }
   </script>
@@ -53,6 +62,7 @@
   <link rel="modulepreload" href="js/csv.js">
   <link rel="modulepreload" href="js/copy.js">
   <link rel="modulepreload" href="js/kinds.js">
+  <link rel="modulepreload" href="js/district.js">
   <link rel="modulepreload" href="js/lazy.js">
   <link rel="modulepreload" href="js/config.js">
   <link rel="modulepreload" href="js/views/explore.js">
@@ -65,6 +75,7 @@
   <link rel="modulepreload" href="js/components/timeline.js">
   <link rel="modulepreload" href="js/components/combobox.js">
   <link rel="modulepreload" href="js/components/toast.js">
+  <link rel="modulepreload" href="js/components/district-picker.js">
 </head>
 <body class="is-loading">
   <script>
@@ -109,6 +120,7 @@
       </svg>
       <span class="brand__text"><span class="brand__name">wzSearch</span> <span class="brand__sub">Praga-Południe</span></span>
     </a>
+    <div class="topbar__district" id="district-switch" hidden></div>
     <nav class="topnav" aria-label="Główna nawigacja">
       <a href="#/" data-nav="explore" aria-current="page"><span>Przeglądaj</span></a>
       <a href="#/zrodla" data-nav="sources"><span class="long">Źródła danych</span><span class="short">Źródła</span></a>

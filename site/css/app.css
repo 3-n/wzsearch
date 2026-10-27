@@ -334,6 +334,40 @@ input[type="checkbox"] { accent-color: var(--accent); width: 16px; height: 16px;
 .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand__name { font-size: 16px; font-weight: 750; letter-spacing: -0.015em; }
 .brand__sub { font-size: 12px; color: var(--text-3); font-weight: 500; }
+/* District switcher (city-wide deployments, district.js): the district is the scope of the page, next to the brand */
+.topbar__district { flex: none; margin-left: -10px; }
+body[data-district] .brand__sub { display: none; }
+.district-switch {
+  display: inline-flex; align-items: center; gap: 6px; height: 34px; max-width: 30vw; padding: 0 10px 0 8px;
+  border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text);
+  font: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; box-shadow: var(--shadow-1);
+}
+.district-switch:hover { border-color: var(--border-strong); }
+.district-switch__icon { color: var(--accent); flex: none; }
+.district-switch__name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.district-switch__caret { color: var(--text-3); font-size: 11px; flex: none; }
+.district-dialog {
+  width: min(600px, calc(100vw - 32px)); max-height: min(82vh, 760px); padding: 0;
+  border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--surface); color: var(--text);
+  box-shadow: var(--shadow-3);
+}
+.district-dialog::backdrop { background: rgba(17, 18, 20, 0.45); }
+.district-dialog__head {
+  position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 12px 4px 18px; background: var(--surface);
+}
+.district-dialog__title { margin: 0; font-size: 18px; letter-spacing: -0.01em; }
+.district-dialog__lead { margin: 0 18px 10px; }
+.district-list { list-style: none; margin: 0; padding: 0 10px 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+.district-list__link {
+  display: flex; flex-direction: column; gap: 2px; padding: 8px 10px; border-radius: var(--r);
+  color: var(--text); text-decoration: none;
+}
+.district-list__link:hover { background: var(--surface-hover); }
+.district-list__link.is-current { background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
+.district-list__name { font-weight: 650; }
+.district-list__meta { font-size: 12.5px; color: var(--text-3); }
+.district-list__note { font-size: 12px; color: var(--warn); }
 .topnav { display: flex; gap: 2px; }
 .topnav a {
   display: inline-flex; align-items: center; height: 34px; padding: 0 12px;
@@ -1466,6 +1500,13 @@ details.src-year:not([open]) { padding-bottom: 6px; border-bottom: 1px solid var
   .topnav .long { display: none; }
   .topnav .short { display: inline; }
   .topbar__note { display: none; }
+  /* Phones: the district name stays under the brand (as in a single-district site); the switch is an icon button */
+  body[data-district] .brand__sub { display: block; }
+  .topbar__district { margin-left: -4px; flex: none; }
+  .district-switch { width: 34px; height: 32px; padding: 0; justify-content: center; gap: 0; }
+  .district-switch__name, .district-switch__caret { display: none; }
+  .district-dialog { width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; margin: 0; border: 0; border-radius: 0; }
+  .district-list { grid-template-columns: 1fr; }
   .explore { display: block; height: auto; }
   .pane--results { overflow: visible; border-right: 0; padding-bottom: 96px; }
   .pane--map { display: none; }
@@ -1590,7 +1631,7 @@ details.src-year:not([open]) { padding-bottom: 6px; border-bottom: 1px solid var
 }
 @media (max-width: 389.98px) {
   .topnav a { padding: 0 7px; font-size: 13px; }
-  .brand__name, .brand__sub { display: none; }
+  .brand__name, .brand__sub, body[data-district] .brand__sub { display: none; }
 }
 /* Below 320 CSS px (e.g. 150 % zoom on a phone): nothing may push the page sideways. */
 @media (max-width: 319.98px) {

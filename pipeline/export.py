@@ -27,6 +27,7 @@ from typing import Any
 from urllib.parse import quote
 from xml.sax.saxutils import escape as _xml_escape
 
+from . import districts
 from .textutil import MONTHS_PL_GENITIVE
 
 __all__ = [
@@ -89,8 +90,10 @@ def site_link(site_url: str | None, path: str = "") -> str:
 
 
 def permalink(site_url: str | None, record_id: str) -> str:
-    """``<SITE_URL>#/wpis/<id>`` – the record's page in the browser app."""
-    return f"{site_link(site_url)}#/wpis/{quote(record_id, safe='')}"
+    """``<SITE_URL>#/wpis/<id>`` – the record's page in the browser app (``?dz=<district>`` outside Praga-Południe:
+    a permit id does not tell its district)."""
+    d = districts.current()
+    return f"{site_link(site_url)}#/wpis/{quote(record_id, safe='')}" + ("" if d.legacy else f"?dz={d.slug}")
 
 
 # =============================================================================
@@ -363,6 +366,7 @@ def atom_feed(
     limit: int = FEED_LIMIT,
     datasets: Mapping[str, Mapping[str, Any]] | None = None,
     outcomes: Mapping[str, Mapping[str, Any]] | None = None,
+    feed_path: str = "feed.xml",
 ) -> str:
     """Atom 1.0 feed of the ``limit`` newest records (by record date, then id).
 
@@ -373,20 +377,21 @@ def atom_feed(
     """
     newest = sorted(records, key=lambda r: (r.get("date") or "", _natural(r.get("id") or "")), reverse=True)[:limit]
     home = site_link(site_url)
+    d = districts.current()
     out = [
         '<?xml version="1.0" encoding="utf-8"?>',
         '<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pl">',
-        f"  <id>urn:uuid:{uuid.uuid5(_FEED_NS, 'wzsearch:praga-poludnie:feed')}</id>",
-        "  <title>wzSearch – Praga-Południe: decyzje WZ, decyzje celu publicznego (CP) i wszczęte postępowania</title>",
-        "  <subtitle>Najnowsze pozycje z list publikowanych co miesiąc przez Urząd Dzielnicy Praga-Południe "
+        f"  <id>urn:uuid:{uuid.uuid5(_FEED_NS, f'wzsearch:{d.slug}:feed')}</id>",
+        f"  <title>wzSearch – {d.name}: decyzje WZ, decyzje celu publicznego (CP) i wszczęte postępowania</title>",
+        f"  <subtitle>Najnowsze pozycje z list publikowanych co miesiąc przez Urząd Dzielnicy {d.name} "
         "m.st. Warszawy i Biuro Architektury i Planowania Przestrzennego Urzędu m.st. Warszawy "
         "(nieoficjalny serwis).</subtitle>",
         f'  <link rel="alternate" type="text/html" href="{_x(home)}"/>',
-        f'  <link rel="self" type="application/atom+xml" href="{_x(site_link(site_url, "feed.xml"))}"/>',
+        f'  <link rel="self" type="application/atom+xml" href="{_x(site_link(site_url, feed_path))}"/>',
         f"  <updated>{_x(generated_at)}</updated>",
         "  <author><name>wzSearch</name></author>",
         "  <generator>wzSearch pipeline</generator>",
-        "  <rights>Dane: Urząd Dzielnicy Praga-Południe m.st. Warszawy i Urząd m.st. Warszawy – Biuro "
+        f"  <rights>Dane: Urząd Dzielnicy {d.name} m.st. Warszawy i Urząd m.st. Warszawy – Biuro "
         "Architektury i Planowania Przestrzennego (informacja publiczna); działki: GUGiK ULDK; "
         "obszary: © OpenStreetMap contributors (ODbL).</rights>",
     ]

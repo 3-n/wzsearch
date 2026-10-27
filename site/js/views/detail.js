@@ -20,6 +20,10 @@ import {
 } from '../copy.js';
 import { GEOPORTAL_PARCEL_URL, ISSUES_URL, INFO_REQUEST } from '../config.js';
 import { infoRequest, mailtoHref } from '../request.js';
+import { currentDistrict, isCity } from '../district.js';
+
+/** The district this page shows (district.js; Praga-Południe in a single-district deployment). */
+const D = () => currentDistrict();
 
 const PARCELS_COLLAPSED = 12;
 /** What a refusal means for residents, per kind (outcome "refusal", docs/DATA_MODEL.md). */
@@ -116,7 +120,7 @@ function sheetSource(s, index, { dataset, compact = false } = {}) {
           s.row != null ? `, wiersz ${s.row}` : '',
           file?.size ? h('span', { class: 'muted' }, ` · ${formatBytes(file.size)}`) : null))),
     cityWide ? h('p', { class: 'prov__context' }, icon('info', { size: 14 }),
-      h('span', null, `Plik ogólnomiejski: ${plural(file.rows_total, WIERSZ)}, dla Pragi-Południe: ${formatNumber(file.parsed_count ?? 0)}. `,
+      h('span', null, `Plik ogólnomiejski: ${plural(file.rows_total, WIERSZ)}, dla ${D().genitive}: ${formatNumber(file.parsed_count ?? 0)}. `,
         'Pozostałe wiersze dotyczą innych dzielnic i ich nie pokazujemy.')) : null,
     compact ? null : h('ul', { class: 'prov__pages' }, pages.map((p, pi) => h('li', null,
       icon('globe', { size: 14 }),
@@ -188,7 +192,7 @@ function registerSource(s, index, datasetDict) {
       checkedAt(index) ? h('div', null, h('dt', null, 'Sprawdzono'), h('dd', null, formatDateTime(checkedAt(index)),
         h('span', { class: 'muted' }, ' – ostatnia aktualizacja danych wzSearch'))) : null),
     h('div', { class: 'prov__actions' },
-      extLink(file?.archive_path, 'Wyciąg dla Pragi-Południe (CSV)', 'download'),
+      extLink(file?.archive_path, `Wyciąg dla ${D().genitive} (CSV)`, 'download'),
       extLink(file?.url, 'Plik ZIP (GUNB)', 'archive'),
       extLink(file?.dataset_url, 'Zbiór na dane.gov.pl', 'external'),
       licenceUrl ? extLink(licenceUrl, licence, 'book', 'btn btn--ghost btn--sm') : null),
@@ -554,7 +558,7 @@ export function renderDetail(host, entry, ctx) {
   const listLabel = KIND_LIST_LABEL[entry.kind] || 'wpisy tego rodzaju';
   const leadByDataset = {
     district: 'Wpis pochodzi z pliku Excel opublikowanego przez Urząd Dzielnicy. W razie wątpliwości rozstrzyga oryginał.',
-    baipp: 'Wpis pochodzi z ogólnomiejskiego zestawienia Biura Architektury i Planowania Przestrzennego (plik Excel) – wybraliśmy z niego wiersze dotyczące Pragi-Południe. W razie wątpliwości rozstrzyga oryginał.',
+    baipp: `Wpis pochodzi z ogólnomiejskiego zestawienia Biura Architektury i Planowania Przestrzennego (plik Excel) – wybraliśmy z niego wiersze dotyczące ${D().genitive}. W razie wątpliwości rozstrzyga oryginał.`,
     rwdz: 'Wpis pochodzi z rejestru wniosków, decyzji i zgłoszeń prowadzonego przez Główny Urząd Nadzoru Budowlanego (otwarte dane). Rejestr nie podaje, czy decyzja była pozytywna, ani nie zawiera spraw w toku.',
   };
 
@@ -669,6 +673,9 @@ export function renderDetailNotFound(host, id, ctx) {
         h('h2', { class: 'empty__title', id: 'detail-title', tabindex: '-1' }, 'Nie znaleziono wpisu'),
         h('p', null, 'Wpis o identyfikatorze ', h('code', null, id), ' nie istnieje w bieżących danych. Mógł zostać poprawiony lub usunięty przy aktualizacji.'),
         h('p', null, `W bazie jest ${plural(ctx.index.entries.length, WPIS)}.`),
+        // City-wide deployments load one district: a permit id (pb-…, zg-…) does not tell which one it belongs to.
+        isCity() ? h('p', null, `Pokazujemy dane dzielnicy ${D().name}. Wpis może należeć do innej dzielnicy – `,
+          'wybierz ją przyciskiem z nazwą dzielnicy na górze strony.') : null,
         h('button', { type: 'button', class: 'btn btn--secondary', onClick: () => ctx.onClose() }, 'Wróć do listy')))));
   host.setAttribute('aria-labelledby', 'detail-title');
 }

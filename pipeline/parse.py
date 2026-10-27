@@ -31,19 +31,21 @@ nothing from the file is ever executed.
 
 from __future__ import annotations
 
+import io
 import re
 import warnings as _warnings
+import zipfile
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import IO, Any
 
 import openpyxl
 from openpyxl.utils import get_column_letter
 
 from .textutil import cell_to_json, collapse_ws, fold, is_blank, month_from_text
 
-__all__ = ["FIELDS", "classify_header", "cp_series", "detect_kind", "is_baipp_title", "parse_workbook"]
+__all__ = ["FIELDS", "classify_header", "cp_series", "detect_kind", "is_baipp_title", "parse_source", "parse_workbook"]
 
 #: Canonical field names produced in ``row["cells"]``.
 FIELDS = ("lp", "number", "date", "applicant", "investment", "address", "parcels")
@@ -149,6 +151,12 @@ def _note_text(values: Sequence[Any], layout: _SheetLayout) -> str | None:
         return None
     text = collapse_ws(text)
     return text if len(text) <= 200 and _NOTE_RE.search(fold(text)) else None
+
+
+def _is_brak_row(values: Sequence[Any]) -> bool:
+    """A row that says "brak" in every filled cell (an empty period, Żoliborz's half-yearly lists)."""
+    filled = [v for v in values if not is_blank(v)]
+    return len(filled) >= 2 and all(isinstance(v, str) and collapse_ws(fold(v)) == "brak" for v in filled)
 
 
 def _merged_parent_map(ws) -> dict[tuple[int, int], tuple[int, int]]:
@@ -308,13 +316,15 @@ def cp_series(*texts: str) -> str | None:
 # --------------------------------------------------------------------------- main entry
 
 
-def parse_workbook(path: str | Path) -> dict[str, Any]:
+def parse_workbook(path: str | Path | IO[bytes]) -> dict[str, Any]:
     """Parse one workbook into a ``ParsedFile`` dict (see module docstring / DATA_MODEL.md).
 
+    ``path`` may also be a binary file object (an xlsx member of a ZIP archive).
     Never raises on odd content; problems are reported in ``warnings``.  Unreadable files
     (not an xlsx at all) do raise – the caller decides how to report those.
     """
-    path = Path(path)
+    if not hasattr(path, "read"):
+        path = Path(path)
     with _warnings.catch_warnings():
         _warnings.simplefilter("ignore")  # openpyxl chatters about styles/extensions
         wb = openpyxl.load_workbook(path, data_only=True, read_only=False)
@@ -400,6 +410,9 @@ def parse_workbook(path: str | Path) -> dict[str, Any]:
                 if note is not None:
                     result["skipped"].append({"sheet": sheet, "row": i + 1, "reason": f"adnotacja: „{note}”"})
                     continue
+                if _is_brak_row(r):
+                    result["skipped"].append({"sheet": sheet, "row": i + 1, "reason": "wiersz „brak” (brak pozycji)"})
+                    continue
                 row = _make_row(sheet, i, r, current)
                 if row is None:
                     result["skipped"].append({"sheet": sheet, "row": i + 1, "reason": "tylko numer Lp"})
@@ -414,6 +427,61 @@ def parse_workbook(path: str | Path) -> dict[str, Any]:
         result["warnings"].append(f"arkusze w pliku mają różne rodzaje list: {', '.join(distinct)}")
     result["kind"] = kinds_seen[0] if kinds_seen else None
     return result
+
+
+#: Members of a ZIP archive read as workbooks (Wawer and Wola pack a year of monthly lists into one ZIP).
+_ZIP_MEMBER_RE = re.compile(r"\.xlsx$", re.I)
+_MAX_ZIP_MEMBERS = 60
+_MAX_ZIP_MEMBER_BYTES = 20 * 1024 * 1024
+
+
+def parse_source(path: str | Path) -> dict[str, Any]:
+    """:func:`parse_workbook` for an ``.xlsx``; for a ``.zip`` every ``.xlsx`` member is parsed and the results
+    are joined – sheet names become ``"<member> › <sheet>"`` so that a row's source names the member.
+
+    ZIPs are untrusted input: members are read in memory (never extracted to disk), at most
+    :data:`_MAX_ZIP_MEMBERS` of them and :data:`_MAX_ZIP_MEMBER_BYTES` each; other members are reported.
+    """
+    path = Path(path)
+    if path.suffix.lower() != ".zip":
+        return parse_workbook(path)
+    out: dict[str, Any] = {"kind": None, "title": None, "period_label": None, "layout": None, "series": None,
+                           "sheets": [], "rows": [], "skipped": [], "warnings": []}
+    kinds: list[str] = []
+    with zipfile.ZipFile(path) as zf:
+        members = sorted((i for i in zf.infolist() if not i.is_dir()), key=lambda i: _natural(i.filename))
+        for info in members[:_MAX_ZIP_MEMBERS]:
+            name = info.filename.rsplit("/", 1)[-1]
+            if not _ZIP_MEMBER_RE.search(name) or info.file_size > _MAX_ZIP_MEMBER_BYTES:
+                out["warnings"].append(f"plik „{name}” w archiwum ZIP pominięto (to nie arkusz .xlsx albo jest za duży)")
+                continue
+            try:
+                parsed = parse_workbook(io.BytesIO(zf.read(info)))
+            except Exception as exc:  # noqa: BLE001 – one broken member must not hide the others
+                out["warnings"].append(f"nie udało się odczytać pliku „{name}” z archiwum ({type(exc).__name__})")
+                continue
+            label = lambda sheet: f"{name} › {sheet}"  # noqa: E731
+            for sheet in parsed["sheets"]:
+                out["sheets"].append({**sheet, "name": label(sheet["name"])})
+            for row in parsed["rows"]:
+                out["rows"].append({**row, "sheet": label(row["sheet"])})
+            for skip in parsed["skipped"]:
+                out["skipped"].append({**skip, "sheet": label(skip["sheet"])})
+            out["warnings"] += [f"{name}: {w}" for w in parsed["warnings"]]
+            for key in ("title", "period_label", "layout", "series"):
+                out[key] = out[key] or parsed[key]
+            if parsed["kind"]:
+                kinds.append(parsed["kind"])
+        if len(members) > _MAX_ZIP_MEMBERS:
+            out["warnings"].append(f"archiwum ZIP ma {len(members)} plików – odczytano pierwsze {_MAX_ZIP_MEMBERS}")
+    if len(set(kinds)) > 1:
+        out["warnings"].append(f"pliki w archiwum mają różne rodzaje list: {', '.join(sorted(set(kinds)))}")
+    out["kind"] = kinds[0] if kinds else None
+    return out
+
+
+def _natural(s: str) -> list[Any]:
+    return [int(t) if t.isdigit() else t.lower() for t in re.split(r"(\d+)", s)]
 
 
 def _make_row(sheet: str, i: int, values: tuple[Any, ...], layout: _SheetLayout) -> dict[str, Any] | None:

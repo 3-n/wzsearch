@@ -15,7 +15,7 @@ import {
 import { buildHash, NEAR_DECIMALS } from '../url.js';
 import { monthBounds, nearestAddressPoint } from '../data.js';
 import { plural, formatNumber, formatDateTime, formatMonthRange, WPIS, WYNIK } from '../format.js';
-import { UNOFFICIAL, promoText } from '../copy.js';
+import { unofficial, promoText } from '../copy.js';
 import { OPT_IN_KINDS, DEFAULT_KINDS, effectiveKinds, isOptInKind, orderKinds, withOptIn } from '../kinds.js';
 import { describeActive } from '../active.js';
 import { recordsToCSV, csvFileName } from '../csv.js';
@@ -25,9 +25,15 @@ import { createTimeline } from '../components/timeline.js';
 import { renderCard, skeletonCard } from '../components/card.js';
 import { createMap } from '../components/map.js';
 import { toast } from '../components/toast.js';
+import { currentDistrict } from '../district.js';
+
+/** The district this page shows (district.js; Praga-Południe in a single-district deployment). */
+const D = () => currentDistrict();
 
 /** Approximate district bbox [w, s, e, n] used when the map is not available. */
-const DISTRICT_BBOX = [21.03, 52.205, 21.165, 52.262];
+const PP_BBOX = [21.03, 52.205, 21.165, 52.262];
+/** The district's bounding box [west, south, east, north] (districts.json; Praga-Południe's by default). */
+const districtBbox = () => (Array.isArray(D().bbox) && D().bbox.length === 4 ? D().bbox : PP_BBOX);
 
 /** Per-viewer convenience: the "show permits too" promo can be dismissed (localStorage, best effort). */
 const PROMO_KEY = 'wzsearch:promo-permits-dismissed';
@@ -106,7 +112,7 @@ export function createExplore(section, ctx) {
     }
     if (patch.kinds) patch = { ...patch, kinds: orderKinds(patch.kinds) };
     const next = { ...filters, ...patch };
-    if (next.bbox === 'VIEW') next.bbox = mapApi ? mapApi.getBbox() : (lastBbox || DISTRICT_BBOX);
+    if (next.bbox === 'VIEW') next.bbox = mapApi ? mapApi.getBbox() : (lastBbox || districtBbox());
     ctx.navigate({ filters: next }, opts);
   };
 
@@ -162,7 +168,7 @@ export function createExplore(section, ctx) {
   const introEl = stored(INTRO_KEY) ? null : h('div', { class: 'intro', role: 'note' },
     icon('info', { size: 16, class: 'intro__icon' }),
     h('p', { class: 'intro__text' },
-      'Decyzje o warunkach zabudowy (WZ), o lokalizacji celu publicznego (CP) i wszczęte sprawy z Pragi-Południe – z list urzędów, z linkiem do źródła przy każdym wpisie. ',
+      `Decyzje o warunkach zabudowy (WZ), o lokalizacji celu publicznego (CP) i wszczęte sprawy z ${D().genitive} – z list urzędów, z linkiem do źródła przy każdym wpisie. `,
       h('strong', null, 'Decyzja WZ to jeszcze nie pozwolenie na budowę.'), ' Serwis nieoficjalny. ',
       h('a', { class: 'link', href: '#/o-projekcie' }, 'Co to znaczy?\u00a0→')),
     h('button', {
@@ -186,7 +192,7 @@ export function createExplore(section, ctx) {
       h('span', { 'aria-hidden': 'true' }, '·'), h('a', { class: 'link', href: '#/zrodla' }, 'Źródła danych'),
       h('span', { 'aria-hidden': 'true' }, '·'), h('a', { class: 'link', href: '#/o-projekcie' }, 'Jak czytać dane'),
       h('span', { 'aria-hidden': 'true' }, '·'), h('a', { class: 'link', href: '#/o-projekcie', title: 'Kanał nowych wpisów – adres do czytnika RSS w sekcji „Pobierz dane”' }, 'Nowe wpisy (RSS)')),
-    h('p', { class: 'results-foot__note' }, `${UNOFFICIAL}. Wiążące są wyłącznie dokumenty urzędowe.`));
+    h('p', { class: 'results-foot__note' }, `${unofficial(D().name)}. Wiążące są wyłącznie dokumenty urzędowe.`));
 
   const resultsPane = h('section', { class: 'pane pane--results', 'aria-label': 'Wyniki' },
     h('div', { class: 'results-head' },
@@ -472,9 +478,9 @@ export function createExplore(section, ctx) {
       // Rounded to ~100 m before it reaches the URL (shared links must not pin down someone's home).
       const lat = roundNear(pos.coords.latitude);
       const lon = roundNear(pos.coords.longitude);
-      const [w, s, e, n] = DISTRICT_BBOX;
+      const [w, s, e, n] = districtBbox();
       if (lon < w - 0.02 || lon > e + 0.02 || lat < s - 0.02 || lat > n + 0.02) {
-        toast('Jesteś poza Pragą-Południe – w pobliżu może nie być żadnych wpisów.', { kind: 'info', timeout: 5000 });
+        toast(`Jesteś poza ${D().instrumental} – w pobliżu może nie być żadnych wpisów.`, { kind: 'info', timeout: 5000 });
       }
       nearFit = true;
       closeDrawer();
@@ -893,7 +899,7 @@ export function createExplore(section, ctx) {
     panel.setBounds(bounds);
     panel.setPeriodSpans(periodSpans(filters, bounds.max, latestByKind, kinds));
     // Without a visible map (phones in list mode) the "visible area" count uses the same fallback as the toggle.
-    const viewBbox = mapApi && mapVisible() ? mapApi.getBbox() : (lastBbox || DISTRICT_BBOX);
+    const viewBbox = mapApi && mapVisible() ? mapApi.getBbox() : (lastBbox || districtBbox());
     const res = evaluate(index.entries, filters, evalCtx({ viewBbox }));
     results = sortResults(res.results, effectiveSort(filters.sort, tokens.length > 0));
     facets = res.facets;

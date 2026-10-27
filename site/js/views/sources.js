@@ -18,7 +18,11 @@ import { defaultFilters } from '../filters.js';
 import { datasetOf } from '../data.js';
 import { isOptInKind } from '../kinds.js';
 import { SOURCE_INDEX_URL } from '../config.js';
-import { UNOFFICIAL, LICENCE_URLS } from '../copy.js';
+import { unofficial, LICENCE_URLS } from '../copy.js';
+import { currentDistrict, DEFAULT_SLUG } from '../district.js';
+
+/** The district this page shows (district.js; Praga-Południe in a single-district deployment). */
+const D = () => currentDistrict();
 
 function ext(href, label, iconName = 'external', cls = 'btn btn--ghost btn--xs') {
   const url = safeUrl(href);
@@ -158,7 +162,7 @@ export function createSources(host, index) {
           f?.size ? formatBytes(f.size) : null,
           f?.size && Number.isFinite(f?.parsed_count) ? ' · ' : null,
           cityWide && Number.isFinite(f?.rows_total)
-            ? h('span', { class: 'src-file__ratio' }, `plik ogólnomiejski: ${plural(f.rows_total, WIERSZ)}, dla Pragi-Południe: ${formatNumber(f.parsed_count ?? 0)}`)
+            ? h('span', { class: 'src-file__ratio' }, `plik ogólnomiejski: ${plural(f.rows_total, WIERSZ)}, dla ${D().genitive}: ${formatNumber(f.parsed_count ?? 0)}`)
             : (Number.isFinite(f?.parsed_count) ? `odczytano ${plural(f.parsed_count, POZYCJA)}` : null),
           (f?.page_ids || []).length > 1 ? h('span', { class: 'src-file__multi' }, ` · podlinkowany na ${plural(f.page_ids.length, STRONA)}`) : null),
         f?.last_modified ? h('p', { class: 'src-file__meta' }, `plik z dnia ${formatDateTime(f.last_modified, { time: false })}`,
@@ -187,7 +191,7 @@ export function createSources(host, index) {
           h('span', { class: 'src-count__sep', 'aria-hidden': 'true' }, '·'),
           h('span', null, `odczytano ${Number.isFinite(b.parsed_count) ? formatNumber(b.parsed_count) : '?'}`)) : null,
         cityWide && Number.isFinite(b.parsed_count) ? h('p', { class: 'src-count src-count--na' }, icon('pin', { size: 14 }),
-          h('span', null, `Praga-Południe: ${formatNumber(b.parsed_count)}`)) : null),
+          h('span', null, `${D().name}: ${formatNumber(b.parsed_count)}`)) : null),
       b.count_mismatch ? h('p', { class: 'src-block__help' }, icon('info', { size: 14 }), MISMATCH_HELP) : null,
       fileIds.length ? h('ul', { class: 'src-files' }, fileIds.map((fid) => fileRow(fid, { cityWide }))) : null);
   }
@@ -273,10 +277,10 @@ export function createSources(host, index) {
     const indexUrl = dicts.datasets?.[ds]?.url || index.meta.sourceIndexUrl || SOURCE_INDEX_URL;
 
     return [
-      h('p', { class: 'src-intro' }, dicts.datasets?.[ds]?.description || 'Comiesięczne zestawienia Urzędu Dzielnicy Praga-Południe (pliki Excel).', ' ',
+      h('p', { class: 'src-intro' }, dicts.datasets?.[ds]?.description || `Comiesięczne zestawienia Urzędu Dzielnicy ${D().name} (pliki Excel).`, ' ',
         ext(indexUrl, 'Wykaz na stronie urzędu', 'external', 'link')),
       statList([
-        ['Strony miesięczne', formatNumber(pages.length)],
+        [D().slug === DEFAULT_SLUG ? 'Strony miesięczne' : 'Strony z listami', formatNumber(pages.length)],
         ['Pliki Excel', formatNumber(files.length)],
         ['Wpisy w wyszukiwarce', formatNumber(entries)],
         ['Niezgodne liczby pozycji', formatNumber(mismatches), mismatches > 0],
@@ -315,19 +319,19 @@ export function createSources(host, index) {
     const entries = index.entries.filter((e) => e.dataset === ds).length;
     const d = dicts.datasets?.[ds] || {};
     return [
-      h('p', { class: 'src-intro' }, d.description || 'Ogólnomiejskie zestawienia Biura Architektury i Planowania Przestrzennego; pokazujemy tylko wiersze dotyczące Pragi-Południe.', ' ',
+      h('p', { class: 'src-intro' }, d.description || `Ogólnomiejskie zestawienia Biura Architektury i Planowania Przestrzennego; pokazujemy tylko wiersze dotyczące ${D().genitive}.`, ' ',
         ext(d.url, 'Strona Biura', 'external', 'link')),
       statList([
         ['Strony roczne', formatNumber(pages.length)],
         ['Pliki (z wersjami)', formatNumber(files.length)],
         ['Wiersze w plikach (cała Warszawa)', formatNumber(totals.rowsTotal)],
-        ['Wpisy z Pragi-Południe', formatNumber(entries)],
+        [`Wpisy z ${D().genitive}`, formatNumber(entries)],
       ]),
       h('div', { class: 'callout' }, icon('info', { size: 18 }),
         h('div', null,
           h('p', null, h('strong', null, 'Jak to czytać? '),
             `Biuro publikuje jedno zestawienie dla całej Warszawy. W ${formatNumber(files.length)} ${files.length === 1 ? 'pliku' : 'plikach'} jest łącznie ${plural(totals.rowsTotal, WIERSZ)}; `,
-            `dla Pragi-Południe (według adresu w zestawieniu) odczytaliśmy ${plural(totals.kept, WIERSZ)} → ${plural(entries, WPIS)} w wyszukiwarce`,
+            `dla ${D().genitive} (według adresu w zestawieniu) odczytaliśmy ${plural(totals.kept, WIERSZ)} → ${plural(entries, WPIS)} w wyszukiwarce`,
             totals.kept !== entries ? ' (ta sama sprawa w kolejnych wersjach pliku bieżącego roku to jeden wpis).' : '.',
             ' Strony nie podają liczby pozycji, więc nie ma czego porównać – przy każdym pliku pokazujemy obie liczby.'),
           h('p', { class: 'muted small' }, 'Plik bieżącego roku zawiera dane od stycznia i jest co miesiąc zastępowany nowym; starsze wersje znajdziesz pod każdą stroną.'))),
@@ -356,14 +360,14 @@ export function createSources(host, index) {
       statList([
         ['Pliki rejestru', formatNumber(files.length)],
         ['Wiersze w plikach GUNB', formatNumber(rowsTotal)],
-        ['Wiersze z Pragi-Południe', formatNumber(kept)],
+        [`Wiersze z ${D().genitive}`, formatNumber(kept)],
         ['Sprawy w wyszukiwarce', formatNumber(cases)],
       ]),
       h('div', { class: 'callout' }, icon('info', { size: 18 }),
         h('div', null,
           h('p', null, h('strong', null, 'Jak to czytać? '),
             `GUNB publikuje cały rejestr (województwo lub kraj) – razem ${plural(rowsTotal, WIERSZ)}. `,
-            `Wybieramy wiersze z działkami w jednostce ewidencyjnej Praga-Południe (${plural(kept, WIERSZ)}); jeden wiersz to jedna działka, więc sprawa z kilkoma działkami ma kilka wierszy → ${plural(cases, SPRAWA)}.`),
+            `Wybieramy wiersze z działkami w jednostce ewidencyjnej ${D().name} (${plural(kept, WIERSZ)}); jeden wiersz to jedna działka, więc sprawa z kilkoma działkami ma kilka wierszy → ${plural(cases, SPRAWA)}.`),
           h('ul', { class: 'src-caveats' },
             h('li', null, 'Rejestr obejmuje sprawy od 2016 r. i tylko decyzje pierwszej instancji – bez spraw w toku.'),
             h('li', null, 'Nie ma w nim informacji, czy decyzja była pozytywna (brak kolumny z rozstrzygnięciem).'),
@@ -389,7 +393,7 @@ export function createSources(host, index) {
             f.last_modified ? h('div', null, h('dt', null, 'Stan rejestru'), h('dd', null, `z ${formatDateTime(f.last_modified)}`)) : null,
             checked ? h('div', null, h('dt', null, 'Sprawdzono'), h('dd', null, checked)) : null,
             Number.isFinite(f.rows_total) ? h('div', null, h('dt', null, 'Wiersze w pliku'), h('dd', null, formatNumber(f.rows_total))) : null,
-            Number.isFinite(f.parsed_count) ? h('div', null, h('dt', null, 'Z Pragi-Południe'), h('dd', null, formatNumber(f.parsed_count))) : null,
+            Number.isFinite(f.parsed_count) ? h('div', null, h('dt', null, `Z ${D().genitive}`), h('dd', null, formatNumber(f.parsed_count))) : null,
             h('div', null, h('dt', null, 'Sprawy'), h('dd', null, formatNumber((f.record_ids || []).length))),
             f.etag ? h('div', null, h('dt', null, 'ETag'), h('dd', { class: 'mono' }, String(f.etag))) : null,
             f.sha256_zip ? h('div', null, h('dt', null, 'SHA-256 archiwum'), h('dd', { class: 'mono', title: f.sha256_zip }, `${String(f.sha256_zip).slice(0, 16)}…`)) : null),
@@ -398,7 +402,7 @@ export function createSources(host, index) {
             fileActions(f, { register: true }),
             ext(f.dataset_url, 'Zbiór na dane.gov.pl', 'external')));
       })),
-      h('p', { class: 'muted small' }, 'Wyciąg (CSV) zawiera oryginalny wiersz nagłówka i wszystkie wiersze dotyczące Pragi-Południe w niezmienionej postaci i kolejności – można go porównać z plikiem GUNB. ',
+      h('p', { class: 'muted small' }, `Wyciąg (CSV) zawiera oryginalny wiersz nagłówka i wszystkie wiersze dotyczące ${D().genitive} w niezmienionej postaci i kolejności – można go porównać z plikiem GUNB. `,
         page.url ? ext(page.url, 'Strona pobierania GUNB', 'external', 'link') : null,
         datasetUrl ? [' · ', ext(datasetUrl, 'dane.gov.pl', 'external', 'link')] : null),
     ];
@@ -447,11 +451,11 @@ export function createSources(host, index) {
       h('h1', { class: 'page__title', tabindex: '-1' }, 'Każdy wpis ma swoje źródło'),
       h('p', { class: 'lead' }, datasetKeys.length > 1
         ? `Dane pochodzą z ${datasetKeys.length === 3 ? 'trzech' : formatNumber(datasetKeys.length)} publikacji: ${datasetKeys.map(dsTitle).join('; ')}. `
-        : 'Wszystkie dane pochodzą z plików Excel publikowanych co miesiąc przez Urząd Dzielnicy Praga-Południe. ',
+        : `Wszystkie dane pochodzą z plików Excel publikowanych co miesiąc przez Urząd Dzielnicy ${D().name}. `,
       'Poniżej jest pełna lista stron i plików – z liczbami, które podaje źródło, i liczbą wierszy, które odczytaliśmy.'),
       h('p', { class: 'updated' }, icon('clock', { size: 15 }),
         h('span', null, generated ? `Dane z dnia ${generated}` : 'Data aktualizacji nieznana')),
-      h('p', { class: 'muted small' }, `${UNOFFICIAL}.`)),
+      h('p', { class: 'muted small' }, `${unofficial(D().name)}.`)),
     datasetKeys.length > 1 ? tabsEl : null,
     panelHost,
     index.meta.fixture ? h('p', { class: 'notice notice--warn' }, icon('alert', { size: 16 }), 'To są dane przykładowe (fixture) – liczba wpisów jest ograniczona.') : null));

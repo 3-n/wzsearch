@@ -2,10 +2,14 @@
  * Bootstrap + router. Loads data, mounts views and keeps them in sync with the URL state (store.js).
  */
 import { initStore, getState, subscribe, navigate, canGoBackInApp } from './store.js';
-import { loadIndex, loadGeo, loadPermits, addPermits, prepareEntries, fileDataset } from './data.js';
+import { loadIndex, loadGeo, loadPermits, addPermits, prepareEntries, fileDataset, loadDistricts } from './data.js';
 import { permitsNeeded, idlePrefetchAllowed, shouldFetchPermits, IDLE_PREFETCH_DELAY } from './lazy.js';
 import { OPT_IN_ID, OPT_IN_KINDS, effectiveKinds, withOptIn } from './kinds.js';
-import { buildHash } from './url.js';
+import { buildHash, setHashDistrict } from './url.js';
+import {
+  currentDistrict, dataBase, districtFromHash, feedPath, isCity, rememberDistrict, resolveDistrict, setDistrict, storedDistrict,
+} from './district.js';
+import { mountDistrictPicker } from './components/district-picker.js';
 import { defaultFilters, sanitizeFilters } from './filters.js';
 import { h, replaceChildren, isMobile, trapFocus, isTyping } from './dom.js';
 import { icon } from './icons.js';
@@ -15,9 +19,9 @@ import { renderDetail, renderDetailNotFound, renderDetailLoading } from './views
 import { createSources } from './views/sources.js';
 import { renderAbout, setAreasAttribution, slashShortcutEnabled } from './views/about.js';
 import { toast, initToasts } from './components/toast.js';
-import { SOURCE_INDEX_URL, BAIPP_URL } from './config.js';
+import { BAIPP_URL } from './config.js';
 
-const BASE_TITLE = 'wzSearch – decyzje WZ, celu publicznego i pozwolenia na budowę, Praga-Południe';
+const baseTitle = () => `wzSearch – decyzje WZ, celu publicznego i pozwolenia na budowę, ${currentDistrict().name}`;
 
 const els = {
   main: document.getElementById('main'),
@@ -59,7 +63,7 @@ function showError(err) {
       icon('alert', { size: 40, class: 'error-state__icon' }),
       h('h1', { class: 'page__title' }, 'Nie udało się wczytać danych'),
       h('p', { class: 'lead' }, 'Nie udało się wczytać danych wyszukiwarki. Spróbuj ponownie za chwilę.'),
-      h('p', null, 'Do tego czasu oryginalne listy znajdziesz na stronie ', ext(SOURCE_INDEX_URL, 'Urzędu Dzielnicy Praga-Południe'),
+      h('p', null, 'Do tego czasu oryginalne listy znajdziesz na stronie ', ext(currentDistrict().entry_url, `Urzędu Dzielnicy ${currentDistrict().name}`),
         ' i ', ext(BAIPP_URL, 'Biura Architektury'), '.'),
       h('div', { class: 'error-state__actions' },
         h('button', { type: 'button', class: 'btn btn--primary', onClick: () => window.location.reload() }, icon('refresh', { size: 16 }), 'Spróbuj ponownie')),
@@ -71,7 +75,7 @@ function showError(err) {
 }
 
 function setTitle(t) {
-  document.title = t ? `${t} – wzSearch` : BASE_TITLE;
+  document.title = t ? `${t} – wzSearch` : baseTitle();
 }
 
 function updateNav(route) {
@@ -227,7 +231,7 @@ function ensurePermits(reason) {
   document.body.dataset.permits = 'loading';
   explore.permitsStateChanged();
   rerenderDetail();
-  permitsPromise = loadPermits().then(async ({ doc, parcels }) => {
+  permitsPromise = loadPermits(dataBase()).then(async ({ doc, parcels }) => {
     // Search documents are built in slices (no long task), then merged in one go.
     const prepared = await prepareEntries(doc?.records, index.dicts);
     const added = addPermits(index, doc, prepared);
@@ -383,17 +387,61 @@ function renderBanner() {
   els.banner.hidden = !parts.length;
 }
 
+/**
+ * City-wide deployments: pick the district (district.js), make every hash carry it, and reload the page when Back or
+ * a link brings a hash of another district (the page holds one district's data). No-op for a single district.
+ */
+async function chooseDistrict() {
+  const list = await loadDistricts();
+  if (!list || list.length < 2) return;   // a single-district site lists only itself
+  const d = resolveDistrict(list, { hash: window.location.hash, stored: storedDistrict() });
+  setDistrict(d, list);
+  setHashDistrict(d.slug);
+  rememberDistrict(d.slug);
+  window.addEventListener('hashchange', () => {
+    const dz = districtFromHash(window.location.hash);
+    if (dz && dz !== currentDistrict().slug && list.some((x) => x.slug === dz)) window.location.reload();
+  });
+}
+
+/** Header, title and feed link of the current district (the static HTML names Praga-Południe). */
+function renderDistrictChrome() {
+  const d = currentDistrict();
+  document.querySelector('.brand__sub')?.replaceChildren(d.name);
+  document.querySelector('.brand')?.setAttribute('aria-label', `wzSearch ${d.name} – strona główna`);
+  document.title = baseTitle();
+  const feed = document.querySelector('link[rel="alternate"][type="application/atom+xml"]');
+  if (feed && isCity()) {
+    feed.setAttribute('href', feedPath());
+    feed.setAttribute('title', `wzSearch – nowe wpisy (${d.name})`);
+  }
+  if (!isCity()) return;
+  document.body.dataset.district = d.slug;
+  mountDistrictPicker(document.getElementById('district-switch'), {
+    hrefFor: (slug) => {
+      const s = getState();
+      // Filters tied to one district's geography do not carry over to another one.
+      const filters = { ...s.filters, streets: [], areas: [], bbox: null, near: null, file: null };
+      const route = s.route === 'sources' || s.route === 'about' ? s.route : 'explore';
+      return buildHash({ route, filters, mode: s.mode, district: slug });
+    },
+  });
+}
+
 async function boot() {
   initStore();
   initToasts();
   try {
-    index = await loadIndex();
+    await chooseDistrict();
+    index = await loadIndex(dataBase());
   } catch (err) {
     console.error(err);
     showError(err);
     return;
   }
   document.body.classList.remove('is-loading');
+  renderDistrictChrome();
+  if (isCity() && !getState().unknown) navigate({}, { replace: true });   // a link without dz=… gets its district
   if (!hasPermitsLayer()) {
     permitsState = 'unavailable';
     document.body.dataset.permits = 'unavailable';
@@ -422,13 +470,13 @@ async function boot() {
     else els.main.querySelector('h1')?.focus();
   });
   // Optional layers, loaded after first paint.
-  loadGeo('areas.geojson').then((geo) => {
+  loadGeo('areas.geojson', dataBase()).then((geo) => {
     if (!geo) return;
     areasGeo = geo;
     explore.setAreas(geo);
     if (aboutRendered) setAreasAttribution(els.about, geo);
   });
-  loadGeo('parcels.geojson').then((geo) => { if (geo) explore.addParcels(geo); });
+  loadGeo('parcels.geojson', dataBase()).then((geo) => { if (geo) explore.addParcels(geo); });
   document.body.dataset.ready = 'true';
   try { performance.mark('wz:ready'); } catch { /* old browsers */ }
   schedulePrefetch();

@@ -7,7 +7,8 @@
  */
 import { h, mq, prefersReducedMotion, replaceChildren } from '../dom.js';
 import { icon, kindGlyph, shapeOf } from '../icons.js';
-import { MAP_CENTER, MAP_ZOOM, BASEMAP, WMS } from '../config.js';
+import { BASEMAP, WMS } from '../config.js';
+import { mapStart } from '../district.js';
 import { formatDate, formatMonth, plural, WPIS } from '../format.js';
 
 const KIND_CLASS = (k) => (/^[a-z]+$/.test(k || '') ? k : 'other');
@@ -56,6 +57,7 @@ export function createMap(el, cfg) {
   // A focused marker is panned clear of the map controls below (Leaflet's own auto-pan pads only by the icon size,
   // leaving keyboard focus under the legend or the attribution). Applies to cluster markers as well.
   L.Marker.prototype.options.autoPanOnFocus = false;
+  const start = mapStart();
   const map = L.map(el, {
     zoomControl: false,
     minZoom: 10,
@@ -65,7 +67,7 @@ export function createMap(el, cfg) {
     fadeAnimation: !prefersReducedMotion(),
     zoomAnimation: !prefersReducedMotion(),
     markerZoomAnimation: !prefersReducedMotion(),
-  }).setView(MAP_CENTER, MAP_ZOOM);
+  }).setView(start.center, start.zoom);
   map.attributionControl.setPrefix('<a href="https://leafletjs.com" title="Biblioteka map">Leaflet</a>');
 
   const darkMq = mq('(prefers-color-scheme: dark)');
@@ -530,7 +532,8 @@ export function createMap(el, cfg) {
   function fitDistrict() {
     const d = api.districtBounds();
     if (d) map.fitBounds(d, { padding: [16, 16], animate: !prefersReducedMotion() });
-    else map.setView(MAP_CENTER, MAP_ZOOM, { animate: !prefersReducedMotion() });
+    else if (start.bounds) map.fitBounds(start.bounds, { padding: [16, 16], animate: !prefersReducedMotion() });
+    else map.setView(start.center, start.zoom, { animate: !prefersReducedMotion() });
   }
 
   const api = {
