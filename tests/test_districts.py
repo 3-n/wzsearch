@@ -124,6 +124,15 @@ def test_address_drops_the_district_only_as_a_separate_segment():
         assert normalize.parse_address(" Armii Krajowej;Wesoła ")["display"] == "Armii Krajowej"
 
 
+def test_address_with_an_elided_house_number_keeps_the_street():
+    # Targówek writes "ul. Oliwska …" / "ul. Poleska ..." – the street is still known (located street-level)
+    with districts.use("targowek"):
+        for raw in ("ul. Oliwska…; dzielnica Targówek", "ul. Poleska ...; dzielnica Targowek"):
+            a = normalize.parse_address(raw)
+            assert a["street"] in ("Oliwska", "Poleska") and a["number"] is None
+            assert a["display"].endswith(("…", "..."))
+
+
 def test_records_of_another_district_get_namespaced_ids_outcomes_and_periods():
     pf = parse_workbook(FIX / "bemowo-cp-2026.xlsx")
     assert pf["kind"] == "cp"

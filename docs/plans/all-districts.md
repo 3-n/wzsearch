@@ -293,7 +293,7 @@ or street; sizes gzipped):
   | Praga-Północ | xlsx | 632 | 603 | 99% | 1,567 (97%) | 132 / 455 kB |
   | Rembertów | xlsx | 620 | 601 | 96% | 879 (99%) | 131 / 225 kB |
   | Śródmieście | xlsx | 1,665 | 1,363 | 100% | 4,563 (100%) | 431 / 1572 kB |
-  | Targówek | PDF | 420 | 393 | 88% | 1,877 (98%) | 93 / 635 kB |
+  | Targówek | PDF | 420 | 393 | 98% | 1,877 (98%) | 93 / 635 kB |
   | Ursus | own xlsx | 306 | 188 | 98% | 1,176 (97%) | 70 / 376 kB |
   | Ursynów | xlsx | 1,613 | 1,519 | 99% | 2,181 (99%) | 349 / 709 kB |
   | Wawer | xlsx | 5,705 | 5,655 | 99% | 6,344 (97%) | 1112 / 1678 kB |
@@ -308,10 +308,12 @@ or street; sizes gzipped):
   requests at ~2/s (just under 2 h, once). Wawer's planning layer (1.1 MB gz) and the permit layers of Białołęka,
   Śródmieście, Wawer and Mokotów (1.4–1.7 MB gz) exceed the §2.1 budget – phase 3 (slim index) is the next step.
 
-Not done in the draft (next steps, in order): OSM areas per
-district (Overpass was overloaded on 27 Oct); a per-attachment size cap in the crawler (Wola links a 135 MB ZIP of
-decision PDFs on a list page – excluded by configuration now); on phones ≤ 390 px the district icon makes "O projekcie" wrap in the top bar (needs a shorter label or a menu – a copy/layout decision); phase 3 (slim index, city mode); phase 4 (PDF
-parsers); e2e checks for the district picker; in-place district switch instead of a reload.
+Not done in the draft (next steps, in order): phase 3 (slim index, city mode); the files the city's CDN refused
+(Wesoła, Włochy, Ursus 2021–25, Białołęka and Bielany before 2026 – retried on 27 Oct evening, still 403); a
+per-attachment size cap in the crawler (Wola links a 135 MB ZIP of decision PDFs on a list page – excluded by
+configuration now); on phones ≤ 390 px the district icon makes "O projekcie" wrap in the top bar (needs a shorter
+label or a menu – a copy/layout decision); e2e checks for the district picker; in-place district switch instead of
+a reload.
 
 ## 6. Testing
 * Each new layout: real fixture + oracle test (as for PP's six layouts). Each district: a reconciliation test

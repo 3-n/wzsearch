@@ -264,8 +264,10 @@ City-wide draft
   geocoder's default rate (4/s) exceeded the per-minute limits. Now: the county package for first runs, and
   `PoliteSession` keeps ULDK's published limits (200/min by day, 40/min at night, stop at 9,500 a day).
 - 🟠 Cross-district `related` links and a city-wide view need the slim index (plan §2.2, phase 3).
-- 🟠 OSM neighbourhoods per district need Overpass (often overloaded); until fetched, the map starts on an
-  approximate district centre and points are not checked against the district outline.
+- 🟢 ~~OSM neighbourhoods per district need Overpass (often overloaded)~~ – fetched for all 17 districts during
+  the first full geocoding (27 X); kept in each shard's `areas.geojson`.
+- 🟢 Targówek elides house numbers ("ul. Oliwska …") – the street is now kept and located street-level: 88% → 98%
+  of its planning records on the map. A retry of the CDN-refused files on 27 X evening: still 403 (3 requests).
 
 ## 4. Handled during the build (🟢)
 

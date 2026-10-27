@@ -476,6 +476,7 @@ def parse_address(raw: Any, warnings: list[str] | None = None) -> dict[str, Any]
     for chunk in chunks:
         chunk = re.sub(r"(?i)^dawn\w*\s+", "", chunk)
         chunk = _STREET_PREFIX_RE.sub("", chunk.strip())
+        chunk = re.sub(r"\s*(?:…|\.{2,})$", "", chunk)   # "Oliwska …": the office elided the house number (Targówek)
         m = re.match(r"^(?P<street>.*?[^\W\d_][.\-’']?)\s*(?P<nums>\d.*)?$", chunk)
         if not m:
             nums = chunk
