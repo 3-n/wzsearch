@@ -250,7 +250,7 @@ Built and working end to end on real data (phases 1 and most of 2):
 
 Not done in the draft (next steps, in order): run the first geocoding (ULDK) district by district; OSM areas per
 district (Overpass was overloaded on 27 Oct); a per-attachment size cap in the crawler (Wola links a 135 MB ZIP of
-decision PDFs on a list page – excluded by configuration now); phase 3 (slim index, city mode); phase 4 (PDF
+decision PDFs on a list page – excluded by configuration now); on phones ≤ 390 px the district icon makes "O projekcie" wrap in the top bar (needs a shorter label or a menu – a copy/layout decision); phase 3 (slim index, city mode); phase 4 (PDF
 parsers); e2e checks for the district picker; in-place district switch instead of a reload.
 
 ## 6. Testing
