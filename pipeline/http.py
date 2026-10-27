@@ -64,7 +64,14 @@ class PoliteSession(requests.Session):
         Injected for tests (default :func:`time.sleep` / :func:`time.monotonic`).
 
     Retries are reported through the ``wzsearch.http`` logger (WARNING level).
+
+    Some hosts need a longer gap than ``min_delay`` (:attr:`HOST_DELAYS`).
     """
+
+    # The city's file CDN (CloudFront in front of the district portals' documents) answers bursts with 403:
+    # on 27 X 2026 a file every 0.5 s was refused after ~150 files, one every 10 s was mostly served. The limit
+    # is not published, so the gap is conservative.
+    HOST_DELAYS = {"cdn.um.warszawa.pl": 10.0}
 
     def __init__(
         self,
@@ -93,9 +100,10 @@ class PoliteSession(requests.Session):
 
     def _throttle(self, host: str) -> None:
         last = self._last_request_end.get(host)
-        if last is None or self.min_delay <= 0:
+        gap = max(self.min_delay, self.HOST_DELAYS.get(host, 0.0)) if self.min_delay > 0 else 0.0
+        if last is None or gap <= 0:
             return
-        wait = self.min_delay - (self._clock() - last)
+        wait = gap - (self._clock() - last)
         if wait > 0:
             self._sleep(wait)
 

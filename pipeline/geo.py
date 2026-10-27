@@ -43,6 +43,8 @@ __all__ = [
     "lines_inside",
     "midpoint_along",
     "closest_approach",
+    "puwg1992_to_wgs84",
+    "wgs84_to_puwg1992",
 ]
 
 
@@ -260,6 +262,43 @@ def _projection_for(coords: Iterable[Coord]) -> _LocalProjection:
     if not lats:
         return _LocalProjection(0.0)
     return _LocalProjection((min(lats) + max(lats)) / 2)
+
+
+# EPSG:2180 (PUWG 1992), the grid of Polish cadastral data: transverse Mercator on GRS80 (central meridian 19°E,
+# scale 0.9993, false easting 500 km, false northing −5300 km). Krüger's series to n³ – sub-millimetre in Poland.
+_GRS80_A, _GRS80_F = 6_378_137.0, 1 / 298.257222101
+_N = _GRS80_F / (2 - _GRS80_F)
+_E = math.sqrt(_GRS80_F * (2 - _GRS80_F))
+_K0A = 0.9993 * _GRS80_A / (1 + _N) * (1 + _N**2 / 4 + _N**4 / 64)
+_ALPHA = (_N / 2 - 2 / 3 * _N**2 + 5 / 16 * _N**3, 13 / 48 * _N**2 - 3 / 5 * _N**3, 61 / 240 * _N**3)
+_BETA = (_N / 2 - 2 / 3 * _N**2 + 37 / 96 * _N**3, _N**2 / 48 + _N**3 / 15, 17 / 480 * _N**3)
+_DELTA = (2 * _N - 2 / 3 * _N**2 - 2 * _N**3, 7 / 3 * _N**2 - 8 / 5 * _N**3, 56 / 15 * _N**3)
+_PUWG_LON0, _PUWG_FE, _PUWG_FN = math.radians(19.0), 500_000.0, -5_300_000.0
+
+
+def puwg1992_to_wgs84(x: float, y: float) -> list[float]:
+    """EPSG:2180 easting/northing (metres) → ``[lon, lat]``."""
+    xi, eta = (y - _PUWG_FN) / _K0A, (x - _PUWG_FE) / _K0A
+    xi1, eta1 = xi, eta
+    for j, b in enumerate(_BETA, 1):
+        xi1 -= b * math.sin(2 * j * xi) * math.cosh(2 * j * eta)
+        eta1 -= b * math.cos(2 * j * xi) * math.sinh(2 * j * eta)
+    chi = math.asin(math.sin(xi1) / math.cosh(eta1))
+    lat = chi + sum(d * math.sin(2 * j * chi) for j, d in enumerate(_DELTA, 1))
+    lon = _PUWG_LON0 + math.atan2(math.sinh(eta1), math.cos(xi1))
+    return [math.degrees(lon), math.degrees(lat)]
+
+
+def wgs84_to_puwg1992(lon: float, lat: float) -> tuple[float, float]:
+    """``lon, lat`` → EPSG:2180 easting/northing (metres)."""
+    phi, lam = math.radians(lat), math.radians(lon) - _PUWG_LON0
+    t = math.sinh(math.atanh(math.sin(phi)) - _E * math.atanh(_E * math.sin(phi)))
+    xi1, eta1 = math.atan2(t, math.cos(lam)), math.atanh(math.sin(lam) / math.sqrt(1 + t * t))
+    xi, eta = xi1, eta1
+    for j, a in enumerate(_ALPHA, 1):
+        xi += a * math.sin(2 * j * xi1) * math.cosh(2 * j * eta1)
+        eta += a * math.cos(2 * j * xi1) * math.sinh(2 * j * eta1)
+    return _PUWG_FE + _K0A * eta, _PUWG_FN + _K0A * xi
 
 
 def _ring_area_centroid(ring: Ring, proj: _LocalProjection) -> tuple[float, float, float]:

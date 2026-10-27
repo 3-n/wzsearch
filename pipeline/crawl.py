@@ -66,6 +66,7 @@ BAIPP_URL = "https://architektura.um.warszawa.pl/postepowania-i-decyzje"
 SOURCES = ("district", "baipp")
 #: Minimum gap between two requests to the same host: at most 2 requests per second.
 DEFAULT_DELAY = 0.5
+MAX_DENIALS = 3   # consecutive 403s after which a host is not asked again in this run
 
 __all__ = [
     "BAIPP_URL",
@@ -1239,7 +1240,10 @@ def download_files(
     can_download = download and session is not None
     stats: Counter[str] = Counter()
     total = len(manifest["files"])
-    refused: set[str] = set()   # hosts that answered 403: not asked again in this run (the next crawl retries)
+    # A 403 can be one file the origin refuses; three in a row mean the host refuses us: it is not asked again in
+    # this run (the next crawl retries).
+    refused: set[str] = set()
+    denials: Counter[str] = Counter()   # consecutive 403s per host
 
     for number, entry in enumerate(manifest["files"], start=1):
         local = raw_dir / f"{entry['file_id']}.{entry['ext']}"
@@ -1301,8 +1305,11 @@ def download_files(
         except (requests.RequestException, ValueError) as exc:
             log.error("[%d/%d] %s: download failed: %s", number, total, entry["filename"], exc)
             if getattr(getattr(exc, "response", None), "status_code", None) == 403:
-                refused.add(host)
-                log.error("%s refused a download (403): no more requests to it in this run", host)
+                denials[host] += 1
+                if denials[host] >= MAX_DENIALS:
+                    refused.add(host)
+                    log.error("%s refused %d downloads in a row (403): no more requests to it in this run",
+                              host, denials[host])
             entry["error"] = f"{type(exc).__name__}: {exc}"
             if exists and prev is not None and prev.get("sha256") and _sha256_file(local)[0] == prev["sha256"]:
                 # the copy we have is the previous version: describe it as such (its URL included), so the new
@@ -1313,6 +1320,7 @@ def download_files(
             stats["failed"] += 1
             continue
 
+        denials[host] = 0
         new_sha = hashlib.sha256(content).hexdigest()
         record = _history_record(entry, prev, local if exists else None, new_sha, raw_dir)
         if record is not None:

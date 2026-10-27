@@ -57,7 +57,7 @@ class District:
     name_re: str              # regex over *folded* text: the district's name in an address cell
     organ_re: str             # regex over folded GUNB "nazwa_organu": the district office
     entry_url: str            # the list page linked from BAiPP's "w serwisach dzielnicowych" box
-    strategy: str             # monthly-pages | attachments | pdf | own-layout
+    strategy: str             # monthly-pages | attachments | own-layout
     pages: tuple[str, ...] = ()        # list pages crawled by the "attachments" strategy
     extensions: tuple[str, ...] = ("xlsx", "zip")   # attachments taken from those pages
     exclude_re: str | None = None      # folded link text + file name of attachments to leave out
@@ -128,8 +128,9 @@ CENTERS: dict[str, tuple[float, float]] = {
     "zoliborz": (52.268, 20.985),
 }
 
-_PDF_NOTE = ("listy dzielnicy publikowane są tylko w PDF – ich odczyt jest w przygotowaniu; "
-             "pozwolenia na budowę (GUNB) i sprawy Biura Architektury są już dostępne")
+#: Attachments of the districts that publish their lists as PDF (read by :mod:`pipeline.pdftable`; a few
+#: years are xlsx).
+_PDF_LISTS = ("pdf", "xlsx")
 
 #: The 18 districts in alphabetical order of their Polish names. Patterns work on folded text
 #: (lower case, no diacritics – :func:`pipeline.textutil.fold`); they must not match street names
@@ -141,17 +142,31 @@ DISTRICTS: dict[str, District] = {d.slug: d for d in (
              pages=("https://bemowo.um.warszawa.pl/jawnosc-procesu-inwestycyjnego",)),
     District("bialoleka", "Białołęka", "Białołęki", "na Białołęce", "Białołęką", "146503_8", "bia", ("4",),
              r"\bbialol(?:eka|eki|ece|eke)\b", r"warszaw\w*\W+bialoleka\b",
-             "https://bialoleka.um.warszawa.pl/decyzje-architektoniczne", "pdf", status="pending", note=_PDF_NOTE),
+             "https://bialoleka.um.warszawa.pl/decyzje-architektoniczne", "attachments",
+             pages=("https://bialoleka.um.warszawa.pl/warunki-zabudowy-wnioski",
+                    "https://bialoleka.um.warszawa.pl/warunki-zabudowy-decyzje",
+                    "https://bialoleka.um.warszawa.pl/inwestycje-celu-publicznego-decyzje"),
+             extensions=_PDF_LISTS),
     District("bielany", "Bielany", "Bielan", "na Bielanach", "Bielanami", "146504_8", "bie", ("7",),
              r"\bbielan(?:y|ach|ami|om)?\b", r"warszaw\w*\W+bielany\b",
-             "https://bielany.um.warszawa.pl/architektura", "pdf", status="pending", note=_PDF_NOTE),
+             "https://bielany.um.warszawa.pl/architektura", "attachments",
+             pages=("https://bielany.um.warszawa.pl/-/wszczete_postepowania",
+                    "https://bielany.um.warszawa.pl/-/warunki_zabudowy",
+                    "https://bielany.um.warszawa.pl/-/lokalizacja_inwestycji_celu_publicznego"),
+             extensions=_PDF_LISTS),
     District("mokotow", "Mokotów", "Mokotowa", "na Mokotowie", "Mokotowem", "146505_8", "mok", ("1",),
              r"\bmokotow(?:a|ie|em)?\b", r"warszaw\w*\W+mokotow\b",
-             "https://mokotow.um.warszawa.pl/wykazy-i-informacje-o-decyzjach", "pdf", status="pending",
-             note=_PDF_NOTE),
+             "https://mokotow.um.warszawa.pl/wykazy-i-informacje-o-decyzjach", "attachments",
+             pages=("https://mokotow.um.warszawa.pl/wykazy-i-informacje-o-decyzjach",
+                    "https://mokotow.um.warszawa.pl/-/archiwum-informacje-o-wnioskach-o-wydanie-decyzji-o-warunkach-"
+                    "zabudowy-i-zagospodarowania-terenu",
+                    "https://mokotow.um.warszawa.pl/-/archiwum-informacje-o-wydanych-decyzjach-o-warunkach-zabudowy-i-"
+                    "zagospodarowania-terenu"),
+             extensions=_PDF_LISTS),   # 2018–19 registers are old .xls: not read
     District("ochota", "Ochota", "Ochoty", "na Ochocie", "Ochotą", "146506_8", "och", ("2",),
              r"\boch(?:ota|oty|ocie|ote)\b", r"warszaw\w*\W+ochota\b",
-             "https://ochota.um.warszawa.pl/warunki-zabudowy", "pdf", status="pending", note=_PDF_NOTE),
+             "https://ochota.um.warszawa.pl/warunki-zabudowy", "attachments",
+             pages=("https://ochota.um.warszawa.pl/warunki-zabudowy",), extensions=_PDF_LISTS),
     District("praga-poludnie", "Praga-Południe", "Pragi-Południe", "na Pradze-Południe", "Pragą-Południe",
              "146507_8", "", ("3",),
              r"(?:\bdzielnic\w*\s+)?\bprag\w*\s*-?\s*(?:p\s*o\s*l\s*u\s*d\s*n\w*|pld\.?|pd\.?)(?![a-z])",
@@ -177,8 +192,8 @@ DISTRICTS: dict[str, District] = {d.slug: d for d in (
                     "https://srodmiescie.um.warszawa.pl/-/decyzje-cel-publiczny-kraj")),
     District("targowek", "Targówek", "Targówka", "na Targówku", "Targówkiem", "146511_8", "tar", ("4",),
              r"\btargow(?:ek|ka|ku|kiem)\b", r"warszaw\w*\W+targowek\b",
-             "https://targowek.um.warszawa.pl/-/warunki-zabudowy-postepowania-decyzje", "pdf", status="pending",
-             note=_PDF_NOTE),
+             "https://targowek.um.warszawa.pl/-/warunki-zabudowy-postepowania-decyzje", "attachments",
+             pages=("https://targowek.um.warszawa.pl/-/warunki-zabudowy-postepowania-decyzje",), extensions=_PDF_LISTS),
     District("ursus", "Ursus", "Ursusa", "w Ursusie", "Ursusem", "146512_8", "urs", ("2",),
              r"\bursus(?:a|ie|em)?\b", r"warszaw\w*\W+ursus\b",
              "https://ursus.um.warszawa.pl/decyzje-architektoniczne", "own-layout", status="pending",
@@ -208,7 +223,11 @@ DISTRICTS: dict[str, District] = {d.slug: d for d in (
              pages=("https://wilanow.um.warszawa.pl/-/informacje-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach",)),
     District("wlochy", "Włochy", "Włoch", "we Włochach", "Włochami", "146517_8", "wlo", ("2",),
              r"\bwloch(?:y|ach|ow|ami)\b", r"warszaw\w*\W+wlochy\b",
-             "https://wlochy.um.warszawa.pl/architektura", "pdf", status="pending", note=_PDF_NOTE),
+             "https://wlochy.um.warszawa.pl/architektura", "attachments",
+             pages=("https://wlochy.um.warszawa.pl/warunki-zabudowy-wnioski",
+                    "https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje",
+                    "https://wlochy.um.warszawa.pl/inwestycje-celu-publicznego-decyzje"),
+             extensions=_PDF_LISTS),
     District("wola", "Wola", "Woli", "na Woli", "Wolą", "146518_8", "wol", ("6",),
              r"\bwol(?:a|i|e)\b", r"warszaw\w*\W+wola\b",
              "https://wola.um.warszawa.pl/wykazy-i-informacje-o-decyzjach", "attachments",

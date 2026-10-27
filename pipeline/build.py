@@ -193,6 +193,11 @@ RECORD_FIELDS = (
 
 PARCELS_ATTRIBUTION = "Działki: Główny Urząd Geodezji i Kartografii – usługa ULDK (uldk.gugik.gov.pl)"
 PARCELS_SOURCE = "https://uldk.gugik.gov.pl/ (GetParcelById, EPSG:4326)"
+# Parcels looked up in GUGiK's county package (pipeline/egib.py) instead – the same land register
+PARCELS_ATTRIBUTION_PACKAGE = ("Działki: Główny Urząd Geodezji i Kartografii – ewidencja gruntów (usługa ULDK "
+                               "i pakiet powiatowy „Dane powiatowe”, opendata.geoportal.gov.pl)")
+PARCELS_SOURCE_PACKAGE = (f"{PARCELS_SOURCE}; https://opendata.geoportal.gov.pl/InneDane/latest_exports/eziudp_wfs/"
+                          "GPKG/1465.gpkg.zip (EPSG:2180 → 4326)")
 
 EXIT_OK, EXIT_FATAL, EXIT_STALE = 0, 1, 3
 
@@ -299,6 +304,11 @@ class Paths:
     def rwdz_cache(self) -> Path:
         """The cache directory holding the GUNB ZIPs (``<rwdz_cache>/rwdz/``)."""
         return self.cache
+
+    @property
+    def egib_cache(self) -> Path:
+        """GUGiK's county parcel package (``pipeline/egib.py``), shared by every district; not committed."""
+        return self.root / "data" / "cache" / "egib"
 
     @property
     def district_slug(self) -> str | None:
@@ -619,8 +629,10 @@ def parse_sources(manifest: Mapping[str, Any], root: Path) -> tuple[list[dict], 
             continue
         kind, kind_warnings = decide_kind(parsed["kind"], f.get("category"))
         sheet_kinds = {s["name"]: s.get("kind") for s in parsed.get("sheets", [])}
+        sheet_procedures = {s["name"]: s.get("procedure") for s in parsed.get("sheets", []) if s.get("procedure")}
         page_ids = f.get("page_ids") or []
-        meta = {"file_id": fid, "page_id": page_ids[0] if page_ids else None, "period": f.get("period")}
+        meta = {"file_id": fid, "page_id": page_ids[0] if page_ids else None, "period": f.get("period"),
+                "procedure": parsed.get("procedure")}
         rows = parsed["rows"]
         if f.get("source") == "baipp":
             meta.update(dataset="baipp", series=f.get("series") or parsed.get("series"))
@@ -630,7 +642,7 @@ def parse_sources(manifest: Mapping[str, Any], root: Path) -> tuple[list[dict], 
                                      f"tytułu pliku ({parsed['series'].upper()}) – przyjęto opis na stronie.")
         for row in rows:
             row_kind = sheet_kinds.get(row["sheet"]) or kind
-            rec = normalize_row(row, row_kind, meta)
+            rec = normalize_row(row, row_kind, {**meta, "procedure": sheet_procedures.get(row["sheet"], meta["procedure"])})
             if parsed["kind"] is None and row_kind and row_kind == f.get("category"):
                 rec["warnings"].append("rodzaj pozycji przyjęto z opisu na stronie (plik go nie podaje)")
             if f.get("source") == "baipp":
@@ -1424,6 +1436,9 @@ def build_report(*, manifest: Mapping[str, Any], sources_doc: Mapping[str, Any],
         add(f"* Unique parcel ids (all datasets): {gs.get('parcels_unique', 0)}; found in ULDK {gs.get('parcels_ok', 0)} "
             f"({_pct(gs.get('parcels_ok', 0), gs.get('parcels_unique', 0))}), missing {gs.get('parcels_missing', 0)}, "
             f"lookup errors {gs.get('parcels_error', 0)}.")
+        if gs.get("parcels_from_package"):
+            add(f"* Of these, looked up in GUGiK's county parcel package instead of ULDK (same land register, "
+                f"see `pipeline/egib.py`): {gs['parcels_from_package']}.")
         add(f"* Records with parcels: {gs.get('records_with_parcels', 0)} – all found "
             f"{gs.get('records_all_parcels_found', 0)}, some {gs.get('records_some_parcels_found', 0)}, "
             f"none {gs.get('records_no_parcel_found', 0)}.")
@@ -1696,7 +1711,8 @@ def run_build(
     area_index = areas_mod.load_areas(str(paths.cache), str(paths.areas_geojson))
     geo = locate_records([r for r in records if r["id"] not in outside] + permits, cache_dir=str(paths.cache),
                          online=geo_online, log=log.info, session=geo_session, area_index=area_index,
-                         areas_out=str(paths.areas_geojson), refresh_misses=refresh_misses)
+                         areas_out=str(paths.areas_geojson), refresh_misses=refresh_misses,
+                         package_dir=str(paths.egib_cache))
     if area_index is None:
         area_index = areas_mod.load_areas(str(paths.cache), str(paths.areas_geojson))
     # 4b. GUNB cases with the Praga-Południe unit id but a precinct the district does not have, which could not
@@ -1727,9 +1743,12 @@ def run_build(
     by_kind = Counter(r["kind"] for r in (*records, *permits) if r.get("kind"))
     counts_by_kind = {k: by_kind.get(k, 0) for k in (*kinds, *sorted(set(by_kind) - set(kinds)))}
     planning_parcels, permit_parcels = split_parcels(geo["parcels_geojson"]["features"], {r["id"] for r in records})
-    parcels_doc = {"type": "FeatureCollection", "attribution": PARCELS_ATTRIBUTION, "source": PARCELS_SOURCE,
+    attribution, parcels_source = ((PARCELS_ATTRIBUTION_PACKAGE, PARCELS_SOURCE_PACKAGE)
+                                   if geo["stats"].get("parcels_from_package") else
+                                   (PARCELS_ATTRIBUTION, PARCELS_SOURCE))
+    parcels_doc = {"type": "FeatureCollection", "attribution": attribution, "source": parcels_source,
                    "features": planning_parcels}
-    permit_parcels_doc = {"type": "FeatureCollection", "attribution": PARCELS_ATTRIBUTION, "source": PARCELS_SOURCE,
+    permit_parcels_doc = {"type": "FeatureCollection", "attribution": attribution, "source": parcels_source,
                           "features": permit_parcels}
 
     def render(generated_at: str) -> tuple[dict[Path, bytes], dict]:

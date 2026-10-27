@@ -113,8 +113,17 @@ City-wide draft (branch `feature/all-districts`, 2026-10-27 – plan: `docs/plan
   ids, data paths (`site/data/`), feed and mirror stay exactly as they are (its shard *is* the current site).
 - 🔴 **Other districts' lists are read like BAiPP's**: newest snapshot wins, period = month of the decision date,
   outcome letters `/O /U /P /W` read from district numbers too (Praga-Południe's numbers have none).
-- 🔴 **Six PDF-only districts and Ursus are `pending`**: their shards hold GUNB permits and BAiPP cases only, the
-  picker says "Listy urzędu dzielnicy w przygotowaniu".
+- 🔴 **The six PDF-only districts are read from their PDFs** (`pipeline/pdftable.py`, poppler's `pdftotext`, no
+  OCR): Białołęka, Bielany, Mokotów (case-system report), Ochota, Targówek, Włochy (the template printed from
+  Excel). Rows keep page + ordinal as their source position and the printed cells as `raw`; composite cells
+  (number / date / "Pozytywna", "precinct ¬ parcels ¬ street") are split. CI installs `poppler-utils`. **Ursus**
+  (own layout) stays `pending`: its shard holds GUNB permits and BAiPP cases only.
+- 🔴 **Parcels come from GUGiK's county package for first runs** (`pipeline/egib.py`): one 107 MB download
+  (`opendata.geoportal.gov.pl/…/eziudp_wfs/GPKG/1465.gpkg.zip`, 288k Warsaw parcels, rebuilt daily), read with
+  `sqlite3`, used when ≥ 300 parcels are unknown; monthly runs ask ULDK for their few new parcels as before. Same
+  register as ULDK (checked: all 6,693 found parcels match, centroids within 3 cm; none of the 1,012 missing ones is
+  in the package). Map attribution names the package when it was used; the 474 MB file is not committed
+  (`data/cache/egib/`).
 - 🔴 **Not committed in the draft**: other districts' downloads, caches and outputs (`.gitignore`); build them
   with `make city` (crawl) and `uv run python -m pipeline.city --skip-crawl --districts …` (geocoding).
 - 🔴 "Zapytaj urząd" for other districts goes to `kancelaria@um.warszawa.pl` until their inboxes are collected.
@@ -242,11 +251,16 @@ Frontend
   information" section on the About page; a way to share received documents back (needs moderation and a backend).
 
 City-wide draft
-- 🟠 `cdn.um.warszawa.pl` answered the crawler with 403 for ~10 minutes (146 Praga-Północ files) and served them
-  normally on the next run. Not worked around: failed downloads keep the previous copy and are retried by the
-  next crawl. If it recurs, slow the crawler for that host or ask the city.
-- 🟠 First geocoding of the other districts: ~60,000 ULDK lookups at the polite 2 req/s ≈ 8–10 h. Run once,
-  district by district; afterwards only new parcels are looked up.
+- 🟠 `cdn.um.warszawa.pl` (CloudFront in front of the district portals' documents; Białołęka, Bielany, Ochota,
+  Włochy, Wesoła, Praga-Północ, Wilanów) answers bursts with 403, and on 27 X kept refusing files it had to fetch
+  from the origin even at one request per 10 s, while files in its cache were served. Not worked around (no other
+  User-Agent, no other route): the crawler now waits 10 s between requests to that host, skips a single refused
+  file and stops asking the host after 3 refusals in a row; refused files are retried by the next crawl. If it
+  persists, ask the city (📮) whether bulk downloads have a sanctioned rate.
+- 🟢 ~~First geocoding: ~60,000 ULDK lookups ≈ 8–10 h~~ – the estimate was wrong twice: ULDK allows 10,000 requests
+  a day per IP (and 40/min after 18:00; uldk.gugik.gov.pl/opis.html), so it would have taken a week, and the
+  geocoder's default rate (4/s) exceeded the per-minute limits. Now: the county package for first runs, and
+  `PoliteSession` keeps ULDK's published limits (200/min by day, 40/min at night, stop at 9,500 a day).
 - 🟠 Cross-district `related` links and a city-wide view need the slim index (plan §2.2, phase 3).
 - 🟠 OSM neighbourhoods per district need Overpass (often overloaded); until fetched, the map starts on an
   approximate district centre and points are not checked against the district outline.

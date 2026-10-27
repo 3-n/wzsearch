@@ -53,11 +53,12 @@ from datetime import datetime, timedelta, timezone
 from itertools import pairwise
 from typing import Callable, Iterable
 from urllib.parse import urlsplit
+from zoneinfo import ZoneInfo
 
 import requests
 
 from . import areas as areas_mod
-from . import districts, geo
+from . import districts, egib, geo
 
 ULDK_URL = "https://uldk.gugik.gov.pl/"
 UUG_URL = "https://services.gugik.gov.pl/uug/"
@@ -67,6 +68,7 @@ USER_AGENT = (
 )
 CITY = "Warszawa"
 DISTRICT_TERYT = "146507_8"
+WARSAW = ZoneInfo("Europe/Warsaw")
 
 MISS_TTL_DAYS = 30
 DISTRICT_BUFFER_M = 50.0
@@ -101,16 +103,29 @@ __all__ = [
 # =============================================================== HTTP session
 
 
+class DailyLimitReached(requests.RequestException):
+    """A service's daily request cap is used up (not cached: the next run asks again)."""
+
+
 class PoliteSession:
     """Small ``requests`` wrapper: per-host rate limit, retries with backoff.
 
-    * at most ``max_rps`` requests per second per host (thread-safe),
+    * at most ``max_rps`` requests per second per host (thread-safe), and no more than a
+      host's published limits (:attr:`HOST_LIMITS`); past a daily cap it raises
+      :class:`DailyLimitReached` instead of asking,
     * retries on connection errors, timeouts, HTTP 429 and 5xx with exponential
       backoff (honouring ``Retry-After``), then raises,
     * identifies itself with a descriptive User-Agent.
+
+    ``parcel_package`` (an :class:`egib.ParcelPackage`, attached by :func:`locate_records`
+    when many parcels are unknown) answers the ULDK parcel questions locally.
     """
 
     RETRY_STATUS = {429, 500, 502, 503, 504}
+    # Limits per client IP published by the service (uldk.gugik.gov.pl/opis.html, checked 27 X 2026): 200 requests
+    # a minute 6:00–18:00, 40 a minute otherwise, 10,000 a day. The daily cap keeps a margin for other users of
+    # the same address.
+    HOST_LIMITS = {"uldk.gugik.gov.pl": {"day_per_min": 200, "night_per_min": 40, "per_day": 9_500}}
 
     def __init__(
         self,
@@ -129,14 +144,30 @@ class PoliteSession:
         self._session.headers["User-Agent"] = user_agent
         self._lock = threading.Lock()
         self._next_slot: dict[str, float] = {}
+        self._per_day: dict[tuple[str, str], int] = {}
         self.requests_made = 0
+        self.parcel_package = None
+
+    def _interval(self, host: str, local: datetime) -> float:
+        limits = self.HOST_LIMITS.get(host)
+        if not limits:
+            return self.min_interval
+        per_min = limits["day_per_min"] if 6 <= local.hour < 18 else limits["night_per_min"]
+        return max(self.min_interval, 60.0 / per_min)
 
     def _wait_turn(self, url: str) -> None:
         host = urlsplit(url).netloc
+        local = datetime.now(WARSAW)
         with self._lock:
+            limits = self.HOST_LIMITS.get(host)
+            if limits:
+                key = (host, local.date().isoformat())
+                if self._per_day.get(key, 0) >= limits["per_day"]:
+                    raise DailyLimitReached(f"{host}: {limits['per_day']} requests today – the rest waits for tomorrow")
+                self._per_day[key] = self._per_day.get(key, 0) + 1
             now = time.monotonic()
             slot = max(now, self._next_slot.get(host, 0.0))
-            self._next_slot[host] = slot + self.min_interval
+            self._next_slot[host] = slot + self._interval(host, local)
             self.requests_made += 1
         if slot > now:
             time.sleep(slot - now)
@@ -316,6 +347,13 @@ def _geometry_entry(geometry: dict, now: datetime) -> dict:
     }
 
 
+def _package_entry(geometry: dict | None, now: datetime) -> dict:
+    """Cache entry of a parcel looked up in GUGiK's county package (:mod:`egib`) instead of ULDK."""
+    if geometry is None:
+        return {"status": "missing", "fetched_at": _iso(now), "source": "egib"}
+    return {**_geometry_entry(geometry, now), "source": "egib"}
+
+
 def fetch_parcel(pid: str, session, now: datetime | None = None) -> dict:
     """Ask ULDK for one parcel; returns a cache entry or an ``error`` entry."""
     now = now or _now()
@@ -370,6 +408,14 @@ def lookup_parcels(
             }
         else:
             todo.append(pid)
+    package = getattr(session, "parcel_package", None) if todo else None
+    if package is not None:
+        for pid in todo:
+            out[pid] = cache[pid] = _package_entry(package.geometry(pid), now)
+        if log:
+            found = sum(out[p]["status"] == "ok" for p in todo)
+            log(f"parcel package: {found} of {len(todo)} parcels found ({len(out) - len(todo)} from cache)")
+        todo = []
     if todo:
         if log:
             log(f"ULDK: fetching {len(todo)} parcels ({len(out)} from cache)…")
@@ -435,8 +481,21 @@ def parcel_at_point(lon: float, lat: float, cache: dict, session, online: bool =
             cache[pid] = _geometry_entry(geometry, when)
         return {"status": "ok", "id": pid, "fetched_at": _iso(when)}
 
+    key = f"xy:{lon:.6f},{lat:.6f}"
+    package = getattr(session, "parcel_package", None)
+    if package is not None and online and not _is_fresh(cache.get(key), now or _now(), refresh_misses, max_age_days):
+        when = now or _now()
+        hit = package.at_point(lon, lat)
+        if hit is None:
+            cache[key] = {"status": "missing", "fetched_at": _iso(when), "source": "egib"}
+        else:
+            pid, geometry = hit
+            if pid not in cache:
+                cache[pid] = _package_entry(geometry, when)
+            cache[key] = {"status": "ok", "id": pid, "fetched_at": _iso(when), "source": "egib"}
+        return dict(cache[key])
     params = {"request": "GetParcelByXY", "xy": f"{lon:.6f},{lat:.6f},4326", "result": "id,geom_wkt", "srid": "4326"}
-    return _cached_or_fetch(f"xy:{lon:.6f},{lat:.6f}", cache, session, online, params, parse,
+    return _cached_or_fetch(key, cache, session, online, params, parse,
                             refresh_misses=refresh_misses, max_age_days=max_age_days, now=now)
 
 
@@ -453,7 +512,14 @@ def lookup_regions(ids: Iterable[str], cache: dict, session, online: bool = True
         raise ValueError(f"unexpected ULDK answer {text.strip()[:80]!r}")
 
     out: dict[str, dict] = {}
+    package = getattr(session, "parcel_package", None) if online else None
     for rid in dict.fromkeys(ids):
+        key = f"region:{rid}"
+        if package is not None and not _is_fresh(cache.get(key), now or _now(), refresh_misses, max_age_days):
+            cache[key] = {"status": "ok" if package.has_region(rid) else "missing", "fetched_at": _iso(now or _now()),
+                          "source": "egib"}
+            out[rid] = dict(cache[key])
+            continue
         params = {"request": "GetRegionById", "id": rid, "result": "id"}
         out[rid] = _cached_or_fetch(f"region:{rid}", cache, session, online, params, parse,
                                     refresh_misses=refresh_misses, max_age_days=max_age_days, now=now)
@@ -1365,6 +1431,7 @@ def locate_records(
     areas_out: str = "site/data/areas.geojson",
     refresh_misses: bool = False,
     cross_check: bool = True,
+    package_dir: str | None = None,
 ) -> dict:
     """Fill ``record["geo"]`` and ``record["area"]`` in place for every record.
 
@@ -1390,6 +1457,11 @@ def locate_records(
     record by the parcels; a match of the number before "/" only adds a hint.
     So besides ``geo``/``area`` this may change ``parcels[].id/obreb`` and append
     to ``warnings``.
+
+    With ``package_dir`` and at least ``egib.MIN_PARCELS`` parcels that are not
+    cached (a district's first run), GUGiK's county parcel package is opened
+    there (downloaded if missing or stale) and attached to the session, which
+    then answers the parcel questions above without ULDK (see :mod:`egib`).
     """
     t0 = time.monotonic()
     uldk_path = os.path.join(cache_dir, "uldk.json")
@@ -1435,6 +1507,13 @@ def locate_records(
             if pid and pid not in parcel_meta:
                 parcel_meta[pid] = (p.get("obreb"), p.get("number"))
 
+    if online and package_dir and session is not None and getattr(session, "parcel_package", None) is None:
+        now = _now()
+        unknown = sum(not _is_fresh(uldk_cache.get(p), now, refresh_misses, MISS_TTL_DAYS) for p in all_pids)
+        if unknown >= egib.MIN_PARCELS:
+            log(f"{unknown} parcels not cached: using GUGiK's county parcel package instead of ULDK")
+            session.parcel_package = egib.open_package(package_dir, session, online, log=log)
+
     results = lookup_parcels(
         all_pids, uldk_cache, session, online, refresh_misses=refresh_misses, log=log,
         checkpoint=lambda: save_cache(uldk_path, uldk_cache),
@@ -1455,6 +1534,7 @@ def locate_records(
         "parcels_ok": sum(1 for p in all_pids if results[p]["status"] == "ok"),
         "parcels_missing": sum(1 for p in all_pids if results[p]["status"] == "missing"),
         "parcels_error": sum(1 for p in all_pids if results[p]["status"] == "error"),
+        "parcels_from_package": sum(1 for p in all_pids if results[p].get("source") == "egib"),
         "records_with_parcels": sum(1 for p in record_pids if p),
         "records_all_parcels_found": 0,
         "records_some_parcels_found": 0,
@@ -1641,7 +1721,7 @@ def locate_records(
     m = stats["methods"]
     log(
         f"geocode: {len(records)} records – parcel {m['parcel']}, address {m['address']}, street {m['street']}, "
-        f"none {m['none']}; parcels {stats['parcels_ok']}/{stats['parcels_unique']} found in ULDK"
+        f"none {m['none']}; parcels {stats['parcels_ok']}/{stats['parcels_unique']} found in the land register"
     )
     return {"parcels_geojson": {"type": "FeatureCollection", "features": features}, "stats": stats}
 

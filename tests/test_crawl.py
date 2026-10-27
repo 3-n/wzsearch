@@ -647,6 +647,30 @@ def file_url(t="1") -> str:
     return f"{SITE}/documents/1/2/wz+maj.xlsx/0f0f0f0f-0000-0000-0000-000000000000?t={t}"
 
 
+def files_manifest(tmp_path, n) -> dict:
+    links = "".join(f'<a href="/documents/1/2/wz+{i}.xlsx/0f0f0f0f-0000-0000-0000-00000000000{i}?t=1">plik {i}</a> '
+                    for i in range(n))
+    page = parse_monthly_page(
+        '<div class="journal-content-article" data-analytics-asset-title="Maj 2025">'
+        f'<div class="article-description"><p>Wydane decyzje o warunkach zabudowy: {links}</p></div></div>',
+        page_url("maj-2025"),
+    )
+    return build_manifest([page], raw_dir=tmp_path, generated_at="x")
+
+
+def test_a_host_refusing_three_downloads_in_a_row_is_left_alone(tmp_path):
+    # One 403 can be one file the origin refuses (the city's CDN); three in a row mean the host refuses us.
+    manifest = files_manifest(tmp_path, 6)
+    urls = [f["url"] for f in manifest["files"]]
+    denied = FakeResponse("", 403, b"Forbidden")
+    session = FakeSession({urls[0]: denied, urls[1]: (XLSX, {}), urls[2]: denied, urls[3]: denied, urls[4]: denied,
+                           urls[5]: (XLSX, {})})
+    stats = download_files(session, manifest, tmp_path)
+    assert session.calls == urls[:5]
+    assert stats == {"downloaded": 1, "failed": 5}
+    assert "403" in manifest["files"][5]["error"]
+
+
 def test_download_missing_file(tmp_path):
     manifest = one_file_manifest(tmp_path)
     session = FakeSession({file_url(): (XLSX, {"Last-Modified": "Mon, 09 Jun 2025 12:00:00 GMT"})})
@@ -964,6 +988,14 @@ def polite(script, **kwargs):
     adapter = ScriptedAdapter(script)
     session.mount("https://", adapter)
     return session, adapter, clock
+
+
+def test_slow_hosts_get_their_own_gap():
+    session, _, clock = polite([(200, {}, b"a"), (200, {}, b"b"), (200, {}, b"c")], min_delay=0.5)
+    phttp.get_bytes(session, "https://cdn.um.warszawa.pl/documents/1")
+    phttp.get_bytes(session, "https://cdn.um.warszawa.pl/documents/2")
+    phttp.get_bytes(session, "https://a.test/x")
+    assert clock.sleeps == [phttp.PoliteSession.HOST_DELAYS["cdn.um.warszawa.pl"]]
 
 
 def test_session_defaults():

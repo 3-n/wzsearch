@@ -229,6 +229,14 @@ Already ingested; see `docs/research/building-permits.md` and BACKLOG.
 * Byte-exact extracts grow from 2 MB to ~30 MB. Split them per district so monthly diffs stay local.
 
 ### ULDK / UUG / OSM
+* **GUGiK county parcel package ("Dane powiatowe")** – the bulk equivalent of ULDK, found on 27 X 2026: every parcel
+  of Warsaw (county `1465`) in one GeoPackage, rebuilt daily from the county EGiB WFS services
+  (`https://opendata.geoportal.gov.pl/InneDane/latest_exports/eziudp_wfs/GPKG/1465.gpkg.zip`, 107 MB; tables
+  `dzialki` 287,747 rows with `id_dzialki` = the ULDK id, plus `budynki` and `transakcje`; EPSG:2180). The URL
+  pattern comes from GUGiK's own QGIS plugin (`pobierz_dane_GUGiK`). ULDK's terms (uldk.gugik.gov.pl/opis.html)
+  cap a client at 10,000 requests a day (200/min 6–18 h, 40/min otherwise) and send bulk users to these packages.
+  Checked against ULDK: same parcels, same geometry (vertices within 0.05 mm after reprojection). Used by
+  `pipeline/egib.py`. PRG address points are published per county the same way (not used yet).
 * Parcel ids: `<unit>.<SSOO>.<number>`. The 4-digit precinct code drops the zone digit, and a zone is shared by 1–3
   districts (`OBREB_ZONES` in `pipeline/baipp.py`), so the unit of a parcel needs the per-district precinct lists
   (generalise `scripts/pp_obreby.py`).

@@ -652,6 +652,8 @@ def parcel_id(obreb: str, number: str) -> str:
 
 #: "07-07 dz. 6/25" – a precinct without its zone digit (Wesoła); only read for districts that write so.
 _OBREB_SHORT_RE = re.compile(r"(?<![\d/-])(?P<b>\d{2})\s*-\s*(?P<c>\d{2})(?![\d/-])")
+# "dz.ew. nr 40/2, ob. 0514": the 4-digit code without the zone (Mokotów's lists 2021–24), only after "ob"/"obr"/"obręb"
+_OBREB_CODE_RE = re.compile(r"\bob(?:r|ręb|reb)?\.*\s*(?P<bc>\d{4})(?![\d/-])", re.I)
 
 
 def _blank_spans(text: str, spans: Iterable[tuple[int, int]]) -> str:
@@ -737,6 +739,12 @@ def parse_parcels(raw: Any, street_hint: str | None = None, *,
         for m in _OBREB_SHORT_RE.finditer(work):
             if not any(a < m.end() and m.start() < b for a, b, _ in obreby):
                 obreby.append((m.start(), m.end(), f"{district.short_precinct_zone}-{m.group('b')}-{m.group('c')}"))
+    zone = district.short_precinct_zone or (district.zones[0] if len(district.zones) == 1 else None)
+    if zone and not district.legacy:
+        for m in _OBREB_CODE_RE.finditer(work):
+            a, b, bc = m.start("bc"), m.end("bc"), m.group("bc")
+            if not any(x < b and a < y for x, y, _ in obreby):
+                obreby.append((a, b, f"{zone}-{bc[:2]}-{bc[2:]}"))
     obreby.sort()
     # "07-15 dz. 94/3 07-16 dz. 75/8": the precinct comes first and opens its list (other districts only)
     precinct_first = (not district.legacy and bool(obreby) and obreby[0][2] is not None
@@ -934,6 +942,12 @@ def normalize_row(row: dict[str, Any], kind: str | None, file_meta: dict[str, An
         period = date_iso[:7] if date_iso else (period if period and re.fullmatch(r"\d{4}-\d{2}", period) else None)
 
     rid, w = record_id(kind, number, date_iso, file_id, row.get("row", 0))
+    if (city_like and not city and kind == "ws" and number and rid.startswith("ws-f")
+            and (slug := re.sub(r"[^0-9a-z]+", "-", fold(number)).strip("-"))):
+        # a register number instead of a case sign ("k2/54/26", "25/WZ/MOK/2025"): it names the application in every
+        # monthly version of a cumulative list, the position in the file does not
+        rid = f"ws-n-{slug}"
+        w = [x.replace("identyfikator nadany z pozycji w pliku", "identyfikator nadany z numeru wniosku") for x in w]
     warnings += w
     if city:
         rid, w = baipp.namespace_id(rid, kind, number, file_meta.get("series"))
@@ -948,6 +962,9 @@ def normalize_row(row: dict[str, Any], kind: str | None, file_meta: dict[str, An
         procedure = JRWA_PROCEDURE.get(jrwa or "")
         if jrwa and procedure is None:
             warnings.append(f"nieznany symbol JRWA {jrwa} w znaku sprawy – nie ustalono rodzaju postępowania")
+        if not jrwa:
+            # a list of one procedure (Białołęka's "Wnioski o Warunki Zabudowy", case numbers like "k2/54/26")
+            procedure = file_meta.get("procedure")
     outcome, w = baipp.parse_outcome(number, number_parts.rest, kind) if number_parts else (None, [])
     warnings += w
 

@@ -39,7 +39,7 @@ function downloads() {
   { path: `${base}permits.json`, label: 'Pozwolenia na budowę i zgłoszenia (JSON)', desc: `Sprawy z rejestru GUNB RWDZ dla ${D().genitive} (od 2016 r.), w tym samym formacie co pozostałe wpisy.`, iconName: 'code' },
   { path: `${base}permits.csv`, label: 'Pozwolenia na budowę i zgłoszenia (CSV)', desc: 'Te same kolumny co tabela decyzji; licencja danych źródłowych CC0 1.0.', iconName: 'table' },
   { path: `${base}sources.json`, label: 'Wykaz źródeł (JSON)', desc: 'Strony, pliki i wersje plików, liczby pozycji, sumy kontrolne – dla wszystkich trzech źródeł.', iconName: 'sheet' },
-  { path: `${base}parcels.geojson`, label: 'Geometrie działek (GeoJSON)', desc: 'Obrysy działek z ewidencji (GUGiK ULDK), EPSG:4326.', iconName: 'map' },
+  { path: `${base}parcels.geojson`, label: 'Geometrie działek (GeoJSON)', desc: 'Obrysy działek z ewidencji gruntów (GUGiK: usługa ULDK lub pakiet działek powiatu), EPSG:4326.', iconName: 'map' },
   { path: `${base}parcels-permits.geojson`, label: 'Geometrie działek z pozwoleń (GeoJSON)', desc: 'Działki występujące tylko w pozwoleniach i zgłoszeniach.', iconName: 'map' },
   {
     path: feedPath(), label: 'Kanał nowych wpisów (RSS/Atom)', iconName: 'inbox', feed: true,
@@ -175,9 +175,9 @@ export function renderAbout(host, index) {
     h('section', { class: 'prose', id: 'about-how', 'aria-labelledby': 'h-how' },
       h('h2', { id: 'h-how' }, 'Skąd są dane i jak powstają'),
       h('ol', { class: 'steps' },
-        h('li', null, h('span', { class: 'steps__no' }, '1'), h('div', null, h('h3', null, 'Pobranie'), h('p', null, `Automat odwiedza wykazy Urzędu Dzielnicy i Biura Architektury, pobiera wszystkie podlinkowane pliki Excel oraz paczki rejestru GUNB. Kopia każdego pliku (a z rejestru GUNB – wyciąg dla ${D().genitive}) jest archiwizowana.`))),
-        h('li', null, h('span', { class: 'steps__no' }, '2'), h('div', null, h('h3', null, 'Odczyt'), h('p', null, 'Pliki mają kilka różnych układów kolumn (zmieniały się w latach 2020–2026). Kolumny rozpoznajemy po nagłówkach, a każdy wiersz zachowujemy także w postaci surowej – zobaczysz go w szczegółach wpisu jako „Dane w źródle”.'))),
-        h('li', null, h('span', { class: 'steps__no' }, '3'), h('div', null, h('h3', null, 'Lokalizacja'), h('p', null, 'Numery działek i obręby wyszukujemy w usłudze ULDK (GUGiK). Gdy działki nie ma, próbujemy adresu (usługa UUG GUGiK), a w ostateczności samej ulicy – wtedy punkt na mapie jest przybliżony i oznaczony pustym znacznikiem.'))),
+        h('li', null, h('span', { class: 'steps__no' }, '1'), h('div', null, h('h3', null, 'Pobranie'), h('p', null, `Automat odwiedza wykazy Urzędu Dzielnicy i Biura Architektury, pobiera wszystkie podlinkowane pliki Excel (w kilku dzielnicach – PDF) oraz paczki rejestru GUNB. Kopia każdego pliku (a z rejestru GUNB – wyciąg dla ${D().genitive}) jest archiwizowana.`))),
+        h('li', null, h('span', { class: 'steps__no' }, '2'), h('div', null, h('h3', null, 'Odczyt'), h('p', null, 'Pliki mają kilka różnych układów kolumn (zmieniały się w latach 2020–2026). Kolumny rozpoznajemy po nagłówkach (w plikach PDF – po położeniu tekstu na stronie, bez OCR), a każdy wiersz zachowujemy także w postaci surowej – zobaczysz go w szczegółach wpisu jako „Dane w źródle”.'))),
+        h('li', null, h('span', { class: 'steps__no' }, '3'), h('div', null, h('h3', null, 'Lokalizacja'), h('p', null, 'Numery działek i obręby wyszukujemy w ewidencji gruntów GUGiK (usługa ULDK albo – przy pierwszym wczytaniu dzielnicy – pakiet działek całej Warszawy z geoportal.gov.pl). Gdy działki nie ma, próbujemy adresu (usługa UUG GUGiK), a w ostateczności samej ulicy – wtedy punkt na mapie jest przybliżony i oznaczony pustym znacznikiem.'))),
         h('li', null, h('span', { class: 'steps__no' }, '4'), h('div', null, h('h3', null, 'Publikacja'), h('p', null, 'Wynik to zwykła strona internetowa – bez własnego serwera, ciasteczek i analityki. ',
           index.meta.generatedAt ? `Ostatnia aktualizacja danych: ${formatDateTime(index.meta.generatedAt)}. ` : '',
           // Planning records come from the Excel files; the GUNB register files are counted with the permits.

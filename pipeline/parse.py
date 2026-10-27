@@ -436,13 +436,17 @@ _MAX_ZIP_MEMBER_BYTES = 20 * 1024 * 1024
 
 
 def parse_source(path: str | Path) -> dict[str, Any]:
-    """:func:`parse_workbook` for an ``.xlsx``; for a ``.zip`` every ``.xlsx`` member is parsed and the results
+    """:func:`parse_workbook` for an ``.xlsx``; :func:`pipeline.pdftable.parse_pdf` for a ``.pdf`` (the
+    districts that publish only PDFs); for a ``.zip`` every ``.xlsx`` member is parsed and the results
     are joined – sheet names become ``"<member> › <sheet>"`` so that a row's source names the member.
 
     ZIPs are untrusted input: members are read in memory (never extracted to disk), at most
     :data:`_MAX_ZIP_MEMBERS` of them and :data:`_MAX_ZIP_MEMBER_BYTES` each; other members are reported.
     """
     path = Path(path)
+    if path.suffix.lower() == ".pdf":
+        from .pdftable import parse_pdf   # imports this module
+        return parse_pdf(path)
     if path.suffix.lower() != ".zip":
         return parse_workbook(path)
     out: dict[str, Any] = {"kind": None, "title": None, "period_label": None, "layout": None, "series": None,

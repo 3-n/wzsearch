@@ -148,14 +148,24 @@ in place (cumulative yearly files are the norm outside Praga-Południe), "remove
    `.ods` (Żoliborz 2015–20, optional), `.xls` (Mokotów 2018–19, optional; skip pre-IX-2020 in phase 1 as for PP).
 2. **Ursus registers**: a per-sheet column map keyed by sheet name. The headers lie, so this is the one positional
    parser.
-3. **PDF, template printed** (Ochota, Targówek, Włochy): `pdfplumber` words with x-positions. Column bands come from
-   the header row's word positions ("Lp.", "Nr decyzji"/"Znak sprawy", "data", …). Rows start at a new Lp/number in
-   the first bands. Output = the same `cells`/`raw` structure as xlsx, `sheet` = page number, `row` = row on page.
-4. **PDF, case-system report** (Białołęka, Bielany, Mokotów): column bands from the header. A record starts at a
-   decision number in column 1. The outcome word under the number ("Pozytywna/Odmowna/Umarzająca") fills
-   `outcome`. The `¬` separators in the property column give precinct / parcels / street.
-5. Source references for PDF rows: page + row on page, plus the extracted text of the row as `raw`. Byte-exact
-   provenance is the PDF itself (sha256).
+3. **PDF, template printed** (Ochota, Targówek, Włochy) *(in the draft: `pipeline/pdftable.py`)*: words with their
+   boxes from poppler's `pdftotext -tsv` (a system binary, no Python dependency; CI installs `poppler-utils`).
+   The header and its "1 2 3 4 5 6 7" row are printed on page 1 only. Columns = the x-ranges no word of the table
+   ever covers (Excel keeps text inside its cell), named by the numbering row – its numbers are centred in some
+   columns and left-aligned in others, so midpoints between them mis-split columns. Cells are centred vertically:
+   a row is anchored at its Lp number and each cell's block of lines goes to the anchor it is centred on (touching
+   blocks are split so that each part is centred on its anchor). Rows printed without an Lp (Włochy) show up as a
+   second date in a row and get an anchor of their own. Year separators ("ROK 2021"), "Stan na …" footers and a
+   header repeated over a later year's table are skipped.
+4. **PDF, case-system report** (Białołęka, Bielany, Mokotów) *(in the draft)*: the header is repeated on every page,
+   cells are top-aligned, rows run across page breaks. Header cells are centred in some reports, so columns are
+   where cell text starts on the rows' first lines (a word after a gap wider than a space, at the same x in several
+   rows, never crossed by a word on any line); the header only names them. The outcome word under the number
+   ("Pozytywna/Odmowna/Umarzająca") fills `outcome` (a /P or /W letter wins over "Pozytywna"). The `¬` separators in
+   the property column give precinct / parcels / street.
+5. Source references for PDF rows: `sheet` = "strona N" (the page the row starts on), `row` = the row's ordinal in
+   the file, `raw` = the cells as printed (composite ones too). Byte-exact provenance is the PDF itself (sha256).
+   Output is the xlsx parser's `ParsedFile`, so normalisation does not know the difference.
 6. Every new layout gets real fixtures under `tests/fixtures/<district>/` and a parse test against an independent
    oracle, as the PP layouts did.
 
@@ -168,9 +178,23 @@ in place (cumulative yearly files are the norm outside Praga-Południe), "remove
 * Records get `district` = the district of their parcels. If parcels are unknown: the district of the publishing
   office, or the BAiPP address line. Today's "out of district" logic (Port Praski case) becomes "published by X,
   lies in Y", shown in Y with a note.
+* **Parcels of a first run come from GUGiK's county package, not from ULDK** *(in the draft: `pipeline/egib.py`)*.
+  GUGiK publishes every county's parcels as a GeoPackage rebuilt daily (geoportal.gov.pl → Pobierz dane → "Dane
+  powiatowe", since IX 2025); Warsaw is one 107 MB ZIP (474 MB unpacked, 287,747 parcels, EPSG:2180). It is the same
+  register: on the draft's 6,693 found parcels every one is in it with the centroid within 3 cm (median; 37 m at
+  most, boundaries edited since), and none of the 1,012 parcels ULDK did not know is. Python's `sqlite3` reads it
+  (id index, R-tree for "parcel under a point", precinct existence); EPSG:2180 → 4326 is a 30-line Krüger series
+  (sub-millimetre). The geocoder downloads it when ≥ 300 parcels are unknown (a district's first run), keeps it a
+  week, and answers ULDK's three questions from it; precinct outlines still come from ULDK (a handful). A district's
+  parcels take under a second instead of hours.
+  The old estimate ("~60,000 parcels ≈ 8–10 h at 2 req/s") was wrong: ULDK's published limits are 10,000 requests a
+  day per IP, 200/min by day and 40/min after 18:00 (uldk.gugik.gov.pl/opis.html, which itself points bulk users to
+  these packages) – a week of lookups. The geocoder's session now keeps those limits (it ran at 4/s before).
 * ULDK cache sharded per unit (`data/cache/uldk/<unit>.json`), so a monthly run rewrites a few small files instead
-  of one 25 MB file. The **first run is ~60,000 unique parcels ≈ 8–10 h** at the polite 2 req/s (measured on the draft's crawl). Do it once, overnight,
-  district by district (`--districts`). After that, ~1–3k new parcels per month ≈ 15–25 min.
+  of one 25 MB file. Monthly runs (~1–3k new parcels city-wide) can use the package too; small runs ask ULDK.
+* Addresses (records without parcels, and the address-vs-parcel cross-check) still go to UUG, ~0.3 requests per
+  record at ~2/s: the first city-wide run is ~1–2 h, later runs minutes. PRG address points (also downloadable per
+  county) could replace most of it – not needed yet.
 * Neighbourhoods: one Overpass query for all MSI areas (admin_level 10) inside Warsaw's 18 districts.
 
 ### 3.6 Build orchestration and failure policy
@@ -208,7 +232,7 @@ in place (cumulative yearly files are the norm outside Praga-Południe), "remove
 | **1. Foundations** *(in the draft)* | district registry; precinct table; `district` field; id namespaces; BAiPP + GUNB for all districts; per-district shards + `districts.json`; `--districts`; district switcher + `dz` param; legacy links keep working | every district shows GUNB permits + BAiPP cases |
 | **2. Template-xlsx districts** *(in the draft, partly)* | `attachments`/`hub` crawlers; parser additions (separator rows, `brak`, zip, duplicated headers); per-district sources tab | 11 districts with full planning lists |
 | 3. Slim index | `sources[].raw` → buckets; `idx` buckets for cross-shard related; `warszawa/records.json`; city mode | city-wide search of planning records |
-| 4. PDF districts | pdfplumber parsers (2 layouts), fixtures, oracles; ask the 6 offices for xlsx in parallel (📮) | all 18 districts |
+| 4. PDF districts *(in the draft)* | `pdftable.py` (2 layouts, poppler), fixtures; ask the 6 offices for xlsx in parallel (📮) | 17 of 18 districts |
 | 5. Ursus + extras | Ursus positional parser; Wola decision-text links; stated outcomes from PDF reports | richer records |
 | 6. Deploy model | inputs-only commits, build-in-CI deploy, per-district failure policy, per-district feeds | sustainable monthly refresh |
 

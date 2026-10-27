@@ -62,11 +62,14 @@ _OUTCOME_LABELS = {"refusal": "odmowa", "discontinued": "umorzenie", "transfer":
 # the first one in the text wins ("odmowa przeniesienia decyzji" is a refusal).
 _OUTCOME_WORDS = [
     ("refusal", re.compile(r"\bodmow")),
-    ("discontinued", re.compile(r"\bumorz")),
+    ("discontinued", re.compile(r"\bumorz|\bumarzaj")),       # "Umarzająca" in the districts' PDF reports
     ("transfer", re.compile(r"\bprzeniesien")),
     ("expiry", re.compile(r"\bwyga(?:s|sz)")),
 ]
 _GRANTED_RE = re.compile(r"^(?:(?:wz|licp|ulicp)\b\s*)+$")
+# The districts' PDF reports state the result of every decision; "Pozytywna" is the result of a transfer (/P) or
+# an expiry (/W) too, so the letter says more.
+_POSITIVE_RE = re.compile(r"^pozytywn\w*$")
 
 #: Warsaw's cadastral units (TERYT) – Praga-Południe is ``146507_8``.
 WARSAW_UNITS = {
@@ -208,6 +211,8 @@ def parse_outcome(number: str, rest: str, kind: str | None) -> tuple[str | None,
     letter = m.group(1).upper() if m else None
     by_letter = OUTCOME_SUFFIXES.get(letter or "")
     words = collapse_ws(fold(rest))
+    if _POSITIVE_RE.match(words):
+        return by_letter or "granted", warnings
     hits = [(m.start(), outcome) for outcome, rx in _OUTCOME_WORDS if (m := rx.search(words))]
     by_words = min(hits)[1] if hits else None
     if by_words is None and words and _GRANTED_RE.match(words):

@@ -6,6 +6,8 @@ node_modules/
 tests/e2e/output/
 .DS_Store
 data/cache/rwdz/
+# GUGiK's county parcel package (474 MB, downloaded by the geocoder when many parcels are new)
+data/cache/egib/
 # ad-hoc QA screenshots (e2e screenshots go to tests/e2e/output/)
 shots/
 # city-wide draft (feature/all-districts): inputs and outputs of the other districts are not committed yet –
