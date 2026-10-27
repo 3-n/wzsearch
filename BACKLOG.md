@@ -261,7 +261,11 @@ City-wide draft
   persists, ask the city (📮) whether bulk downloads have a sanctioned rate.
   27 X evening: a refused file (Włochy, `REJESTR DECYZJI WZ 05 2026 r.pdf`) opens in a browser – the links are not
   broken, the CDN refuses automated clients. Letter to the city's portal editorial team (redakcja.piuw@um.warszawa.pl)
-  drafted for the owner: allow our User-Agent at a stated rate, or name a sanctioned bulk route.
+  drafted for the owner: allow our User-Agent at a stated rate, or name a sanctioned bulk route – text in
+  `docs/outreach/2026-10-27-cdn-bulk-downloads.md`, not sent.
+- 🔴 The crawler's User-Agent (`pipeline/http.py`: `wzSearch/0.1 (civic open-data project)`) names no contact. Good
+  crawler practice – and needed for the letter above – is a URL or e-mail in it; the owner picks which (repo, site,
+  address). The geocoder's UA (`pipeline/geocode.py`) still says "Praga-Poludnie".
 - 🟢 ~~First geocoding: ~60,000 ULDK lookups ≈ 8–10 h~~ – the estimate was wrong twice: ULDK allows 10,000 requests
   a day per IP (and 40/min after 18:00; uldk.gugik.gov.pl/opis.html), so it would have taken a week, and the
   geocoder's default rate (4/s) exceeded the per-minute limits. Now: the county package for first runs, and
