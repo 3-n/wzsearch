@@ -94,7 +94,9 @@ async function shot(page, name) {
   await page.waitForTimeout(900); // tiles/animations
   await page.screenshot({ path: join(OUT, `${name}.png`) });
 }
-const hashOf = (page) => page.evaluate(() => window.location.hash);
+/** The hash without `dz=` (a city-wide build – `--data=site` after `make city-offline` – writes the district into
+ * every hash; this test is about one district's page). */
+const hashOf = (page) => page.evaluate(() => window.location.hash.replace(/([?&])dz=[a-z-]+&?/, '$1').replace(/[?&]$/, ''));
 
 const kindLabel = (k) => recordsDoc.kinds?.[k]?.label || k;
 const OPT_IN = /^(pb|zg)-/;
@@ -755,14 +757,14 @@ async function permitChecks(page, url, scheme) {
     assert(await page.locator('[role="tab"]').count() === 3, 'expected 3 tabs');
     assert(await page.locator('[role="tab"][aria-selected="true"]').innerText().then((x) => x.includes(recordsDoc.datasets.district.short)), 'district tab not selected');
     await page.locator('[role="tab"]', { hasText: recordsDoc.datasets.baipp.short }).click();
-    await page.waitForFunction(() => window.location.hash === '#/zrodla/baipp');
+    await page.waitForFunction(() => window.location.hash.replace(/([?&])dz=[a-z-]+&?/, '$1').replace(/[?&]$/, '') === '#/zrodla/baipp');
     const baippPages = sourcesDoc.pages.filter((p) => p.source === 'baipp').length;
     assert(await page.locator('.src-panel--baipp .src-page').count() === baippPages, 'BAiPP pages');
     assert(/plik ogólnomiejski: \d+ wiersz/.test(await page.locator('.src-panel--baipp').innerText()), 'no city-wide counts');
     // keyboard: → moves to the next tab
     await page.locator('[role="tab"][aria-selected="true"]').focus();
     await page.keyboard.press('ArrowRight');
-    await page.waitForFunction(() => window.location.hash === '#/zrodla/rwdz');
+    await page.waitForFunction(() => window.location.hash.replace(/([?&])dz=[a-z-]+&?/, '$1').replace(/[?&]$/, '') === '#/zrodla/rwdz');
     const reg = page.locator('.src-panel--rwdz');
     await reg.waitFor();
     const files = sourcesDoc.files.filter((f) => f.source === 'rwdz');
@@ -1011,7 +1013,7 @@ async function reviewChecks(page, url) {
     await page.goto(`${url}#/?typ=nieistniejacy-typ&okres=constructor&sort=constructor`);
     await page.reload();
     await waitReady(page);
-    await page.waitForFunction(() => window.location.hash === '#/' || window.location.hash === '');
+    await page.waitForFunction(() => window.location.hash.replace(/([?&])dz=[a-z-]+&?/, '$1').replace(/[?&]$/, '') === '#/' || window.location.hash.replace(/([?&])dz=[a-z-]+&?/, '$1').replace(/[?&]$/, '') === '');
     const n = Number((await page.locator('#results-count strong').innerText()).replace(/\D/g, ''));
     assert(n === recordsDoc.records.length, `${n} results`);
   });
@@ -1441,7 +1443,7 @@ async function robustnessSuite() {
     await page.locator('.filters-toggle').click();
     await settle(page, 300);
     await page.goBack();
-    await page.waitForFunction(() => window.location.hash === '#/zrodla');
+    await page.waitForFunction(() => window.location.hash.replace(/([?&])dz=[a-z-]+&?/, '$1').replace(/[?&]$/, '') === '#/zrodla');
     await settle(page, 300);
     const st = await page.evaluate(() => ({ inert: document.querySelector('.topbar').inert, open: document.querySelector('.explore').classList.contains('is-drawer-open') }));
     assert(!st.inert && !st.open, JSON.stringify(st));
