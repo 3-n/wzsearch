@@ -54,6 +54,8 @@ async function newPage(opts = {}) {
   return page;
 }
 const ready = (page) => page.waitForFunction(() => document.querySelectorAll('.cards .card').length > 0, null, { timeout: 30000 });
+// A fresh load: a dz change in the hash makes the app reload itself, which races page.reload().
+const fresh = async (page, to) => { await page.goto('about:blank'); await page.goto(to); };
 const dz = (page) => new URL(page.url()).hash.match(/[?&]dz=([a-z-]+)/)?.[1] || null;
 
 console.log('desktop');
@@ -80,26 +82,22 @@ console.log('desktop');
     assert((await page.locator('.district-switch__name').innerText()) === 'Wola', 'switch shows Wola');
   });
   await check('a bare link after visiting Wola still opens Praga-Południe (no remembered choice)', async () => {
-    await page.goto(url);
-    await page.reload();
+    await fresh(page, url);
     await ready(page);
     assert(dz(page) === 'praga-poludnie', `dz=${dz(page)}`);
   });
   await check('a legacy permalink without dz opens in Praga-Południe', async () => {
-    await page.goto(`${url}#/wpis/${encodeURIComponent(ppRecord.id)}`);
-    await page.reload();
+    await fresh(page, `${url}#/wpis/${encodeURIComponent(ppRecord.id)}`);
     await page.waitForSelector('#detail .facts', { timeout: 20000 });
     assert(dz(page) === 'praga-poludnie', `dz=${dz(page)}`);
   });
   await check('a permalink of another district without dz opens in that district', async () => {
-    await page.goto(`${url}#/wpis/${encodeURIComponent(bemRecord.id)}`);
-    await page.reload();
+    await fresh(page, `${url}#/wpis/${encodeURIComponent(bemRecord.id)}`);
     await page.waitForSelector('#detail .facts', { timeout: 20000 });
     assert(dz(page) === 'bemowo', `dz=${dz(page)}`);
   });
   await check('"Cała Warszawa": districts as areas, a record opens in its district', async () => {
-    await page.goto(`${url}#/?dz=warszawa`);
-    await page.reload();
+    await fresh(page, `${url}#/?dz=warszawa`);
     await ready(page);
     assert((await page.locator('.district-switch__name').innerText()) === 'Cała Warszawa', 'switch');
     await page.locator('.cards .card').first().click();
@@ -109,8 +107,7 @@ console.log('desktop');
   await check('"Cała Warszawa" on desktop: permits load only when switched on, and the panel names the size', async () => {
     const requests = [];
     page.on('request', (r) => { if (/warszawa\/permits\.json/.test(r.url())) requests.push(r.url()); });
-    await page.goto(`${url}#/?dz=warszawa`);
-    await page.reload();
+    await fresh(page, `${url}#/?dz=warszawa`);
     await ready(page);
     await page.waitForTimeout(3500);   // longer than the idle prefetch delay
     assert(requests.length === 0, 'prefetched');
@@ -137,8 +134,7 @@ console.log('phone');
   await check('"Cała Warszawa" on a phone: permit kinds disabled, nothing downloaded, a way to a district', async () => {
     const requests = [];
     page.on('request', (r) => { if (/permits\.json/.test(r.url())) requests.push(r.url()); });
-    await page.goto('about:blank');   // a fresh load (a dz change in the hash makes the app reload itself)
-    await page.goto(`${url}#/?dz=warszawa`);
+    await fresh(page, `${url}#/?dz=warszawa`);
     await ready(page);
     await page.locator('button', { hasText: /Filtry/ }).first().click();
     assert(await page.locator('.kinds-optin input').first().isDisabled(), 'enabled');
