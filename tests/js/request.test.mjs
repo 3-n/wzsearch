@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { infoRequest, requestItems, mailtoHref } from '../../site/js/request.js';
+import { setDistrict, LEGACY } from '../../site/js/district.js';
 
 const wz = {
   issuer: 'city', number: '95/AM/PPD/WZ/2026/O', date: '2026-09-16', address: { display: 'Ostrobramska 73' },
@@ -67,4 +68,18 @@ test('mailto: encodes subject and body, with CRLF line breaks', () => {
   const href = mailtoHref({ to: 'kancelaria@um.warszawa.pl', subject: 'A & B', body: 'x\ny?' });
   assert.equal(href, 'mailto:kancelaria@um.warszawa.pl?subject=A%20%26%20B&body=x%0D%0Ay%3F');
   assert.ok(mailtoHref({ to: '', subject: 's', body: 'b' }).startsWith('mailto:?subject='));
+});
+
+test('other districts: the office\'s own published inbox, the city\'s general inbox as the alternative', () => {
+  setDistrict({ slug: 'wola', name: 'Wola', code: 'wol', inbox: 'wola.wom@um.warszawa.pl' }, []);
+  const req = infoRequest('pb', pb);
+  assert.equal(req.to, 'wola.wom@um.warszawa.pl');
+  assert.equal(req.fallback, 'kancelaria@um.warszawa.pl');
+  assert.match(req.body, /Wydział Architektury i Budownictwa dla Dzielnicy Wola/);
+  // no inbox known (an older districts.json): the city's general inbox, no second alternative
+  setDistrict({ slug: 'wola', name: 'Wola', code: 'wol' }, []);
+  assert.equal(infoRequest('pb', pb).to, 'kancelaria@um.warszawa.pl');
+  assert.equal(infoRequest('pb', pb).fallback, '');
+  setDistrict(LEGACY, []);
+  assert.equal(infoRequest('pb', pb).to, 'pragapoludnie.urzad@um.warszawa.pl');
 });

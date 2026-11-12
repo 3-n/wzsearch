@@ -62,6 +62,7 @@ def districts_index(root: Path, slugs: Iterable[str] | None = None) -> dict:
             "slug": d.slug, "name": d.name, "genitive": d.genitive, "locative": d.locative,
             "instrumental": d.instrumental, "code": d.code, "unit": d.unit, "status": d.status, "note": d.note,
             "strategy": d.strategy, "entry_url": d.entry_url, "office": d.office,
+            "inbox": d.inbox, "inbox_source": d.inbox_source,
             "available": doc is not None,
             "generated_at": (doc or {}).get("generated_at"),
             "counts_by_kind": (doc or {}).get("counts_by_kind") or {},

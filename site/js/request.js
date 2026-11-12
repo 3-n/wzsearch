@@ -12,15 +12,16 @@ import { currentDistrict, DEFAULT_SLUG } from './district.js';
 
 /** Who receives the request, per issuer code (docs/DATA_MODEL.md). `email` empty → the user fills in the address. */
 export const ADDRESSEES = {
-  /** The architecture department of the district shown (district.js). Only Praga-Południe's inbox is known so
-   * far (config.js); other districts' requests go to the city's general inbox until theirs are collected. */
+  /** The architecture department of the district shown (district.js): the office's own published inbox
+   * (districts.json → `inbox`, pipeline/districts.py INBOXES), Praga-Południe's from config.js; the city's general
+   * inbox is the alternative – and the address when a district's is unknown. */
   get district() {
     const d = currentDistrict();
-    const legacy = d.slug === DEFAULT_SLUG;
+    const own = d.slug === DEFAULT_SLUG ? INFO_REQUEST.emails.district : (typeof d.inbox === 'string' && /@/.test(d.inbox) ? d.inbox : '');
     return {
       lines: ['Prezydent m.st. Warszawy', 'Urząd m.st. Warszawy', `Wydział Architektury i Budownictwa dla Dzielnicy ${d.name}`],
-      email: legacy ? INFO_REQUEST.emails.district : INFO_REQUEST.fallback, inbox: `Urząd Dzielnicy ${d.name}`,
-      fallback: legacy ? INFO_REQUEST.fallback : '', edelivery: INFO_REQUEST.edelivery,
+      email: own || INFO_REQUEST.fallback, inbox: `Urząd Dzielnicy ${d.name}`,
+      fallback: own ? INFO_REQUEST.fallback : '', edelivery: INFO_REQUEST.edelivery,
     };
   },
   city: {

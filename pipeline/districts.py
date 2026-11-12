@@ -41,6 +41,31 @@ __all__ = [
 
 LEGACY_SLUG = "praga-poludnie"
 
+#: The office's general inbox as its own site publishes it, and the page that says so (checked 2026-11-12; plan §7:
+#: "Zapytaj urząd" writes to the district's office, not the city's central inbox). Most offices publish
+#: ``<district>.urzad@``; Ochota, Rembertów and Wola their residents' service (``.wom@``), Wilanów and Włochy a
+#: secretariat. Praga-Południe's is the one the project owner uses (also in its accessibility statement).
+INBOXES: dict[str, tuple[str, str | None]] = {
+    "bemowo": ("bemowo.urzad@um.warszawa.pl", "https://bemowo.um.warszawa.pl/-/kontakt"),
+    "bialoleka": ("bialoleka.urzad@um.warszawa.pl", "https://bialoleka.um.warszawa.pl/waw/bialoleka/kontakt"),
+    "bielany": ("bielany.urzad@um.warszawa.pl", "https://bielany.um.warszawa.pl/-/kontakt"),
+    "mokotow": ("mokotow.urzad@um.warszawa.pl", "https://mokotow.um.warszawa.pl/-/kontakt"),
+    "ochota": ("ochota.wom@um.warszawa.pl", "https://ochota.um.warszawa.pl/kontakt"),
+    "praga-poludnie": ("pragapoludnie.urzad@um.warszawa.pl", None),
+    "praga-polnoc": ("pragapolnoc.urzad@um.warszawa.pl", "https://pragapn.um.warszawa.pl/-/kontakt"),
+    "rembertow": ("rembertow.wom@um.warszawa.pl", "https://rembertow.um.warszawa.pl/kontakt-i-struktura-organizacyjna"),
+    "srodmiescie": ("srodmiescie.urzad@um.warszawa.pl", "https://srodmiescie.um.warszawa.pl/-/lokalizacje-urzedu-1"),
+    "targowek": ("targowek.urzad@um.warszawa.pl", "https://targowek.um.warszawa.pl/waw/targowek/kontakt"),
+    "ursus": ("ursus.urzad@um.warszawa.pl", "https://ursus.um.warszawa.pl/kontakt"),
+    "ursynow": ("ursynow.urzad@um.warszawa.pl", "https://ursynow.um.warszawa.pl/-/dane-urzedu"),
+    "wawer": ("wawer.urzad@um.warszawa.pl", "https://wawer.um.warszawa.pl/kontakt"),
+    "wesola": ("wesola.urzad@um.warszawa.pl", "https://wesola.um.warszawa.pl/kontakt"),
+    "wilanow": ("sekretariat.udwilanow@um.warszawa.pl", "https://wilanow.um.warszawa.pl/-/kontakt"),
+    "wlochy": ("sekretariat.udwlochy@um.warszawa.pl", "https://wlochy.um.warszawa.pl/-/urzad-dzielnicy"),
+    "wola": ("wola.wom@um.warszawa.pl", "https://wola.um.warszawa.pl/waw/wola/-/kontakt-5"),
+    "zoliborz": ("zoliborz.urzad@um.warszawa.pl", "https://zoliborz.um.warszawa.pl/waw/zoliborz/-/godziny-pracy-kontakt"),
+}
+
 
 @dataclass(frozen=True)
 class District:
@@ -83,6 +108,15 @@ class District:
     @property
     def office(self) -> str:
         return f"Urząd Dzielnicy {self.name} m.st. Warszawy – Wydział Architektury i Budownictwa"
+
+    @property
+    def inbox(self) -> str | None:
+        """The office's published general inbox (:data:`INBOXES`), or None."""
+        return INBOXES.get(self.slug, (None, None))[0]
+
+    @property
+    def inbox_source(self) -> str | None:
+        return INBOXES.get(self.slug, (None, None))[1]
 
     @property
     def enabled(self) -> bool:

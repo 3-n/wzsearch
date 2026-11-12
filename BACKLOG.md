@@ -130,7 +130,9 @@ always open Praga-Południe; inputs-only commits with a CI build; district inbox
   (`data/cache/egib/`).
 - 🔴 **Not committed in the draft**: other districts' downloads, caches and outputs (`.gitignore`); build them
   with `make city` (crawl) and `uv run python -m pipeline.city --skip-crawl --districts …` (geocoding).
-- 🔴 "Zapytaj urząd" for other districts goes to `kancelaria@um.warszawa.pl` until their inboxes are collected.
+- 🟢 ~~"Zapytaj urząd" for other districts goes to `kancelaria@um.warszawa.pl`~~ – every office's published inbox is
+  in `pipeline/districts.py` `INBOXES` with the page that says so (2026-11-12); `kancelaria@` is the alternative.
+  Wola also publishes an architecture department address (`wola.wab@`) – the general inbox is used everywhere for now.
 
 ## 2. Source-data issues worth raising with the office (📮)
 

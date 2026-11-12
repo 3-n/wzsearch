@@ -347,3 +347,9 @@ def test_city_failure_policy():
     assert city.city_exit_code({**ok, **{s: EXIT_STALE for s in four}}, four, None) == EXIT_STALE
     assert city.city_exit_code(ok, {}, "RWDZ columns changed") == EXIT_STALE
     assert city.city_exit_code({"wola": EXIT_FATAL}, {"wola": "no manifest"}, None) == EXIT_FATAL
+
+
+def test_every_district_has_its_offices_published_inbox():
+    for d in districts.DISTRICTS.values():
+        assert d.inbox and d.inbox.endswith("@um.warszawa.pl"), d.slug
+        assert d.legacy or (d.inbox_source or "").startswith("https://"), d.slug
