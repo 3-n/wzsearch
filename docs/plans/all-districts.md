@@ -356,16 +356,18 @@ fixture); in-place district switch instead of a reload (city → record → back
 * e2e: district switch, legacy link without `dz`, permalink to another district's record, city mode on desktop +
   the phone refusal of city-wide permits.
 
-## 7. Owner decisions (🔴)
-1. District as scope + "Cała Warszawa" mode (vs a district facet). **Recommended: scope.**
-2. Default district for links without `dz`: last choice, else Praga-Południe. Alternative: a district chooser page.
-3. City-wide permits only on desktop, opt-in.
-4. Commit inputs only and build in CI (changes the deploy model and `test.yml`).
-5. Per-district failure policy (§3.6).
-6. Pre-2020 registers (Białołęka from 2009, Mokotów 2018–19, Żoliborz 2015–20): out of scope at first, as for PP.
-7. Writing to the six PDF-only offices (and Ursus, Żoliborz) to ask for xlsx: the PDF reader works, but it
-   depends on print layouts (Mokotów changed its six times since 2021) and loses clipped cell text (Ochota).
-8. Branding: "wzSearch Praga-Południe" → "wzSearch Warszawa", with the district in the switcher.
-9. Two new runtime dependencies: poppler's `pdftotext` (a system package; CI installs `poppler-utils`) and GUGiK's
-   county parcel package (a 107 MB download, not committed, refreshed when a run has ≥ 300 unknown parcels).
-10. Asking the city how to download its documents in bulk (the file CDN refuses crawlers; §5a).
+## 7. Owner decisions (decided 2026-11-12)
+| # | Question | Decision |
+|---|---|---|
+| 1 | District as scope vs a district facet | **Scope** + "Cała Warszawa" mode, header switcher (as drafted). |
+| 2 | Links without `dz` | **Always Praga-Południe** (not the visitor's last choice – the draft's `localStorage` fallback goes). New links keep writing `dz`; record permalinks still resolve their district from the id. |
+| 3 | City-wide permits | **Desktop opt-in, slimmed**: a reduced permit index for "Cała Warszawa" behind "Wczytaj pozwolenia dla całej Warszawy" (desktop only; phones get "wybierz dzielnicę"). To build – the full set measured 9.8 MB gzip; target ≤ 5 MB. |
+| 4 | Deploy model | **Commit inputs only, build in CI** (`deploy.yml` runs the offline build; `test.yml` checks the rebuild is deterministic instead of "equals the committed output"). |
+| 5 | Failure policy | **A failed district keeps its previous data** with a visible note on its sources page; the run fails (exit 3, nothing deployed) only when **more than 3 districts** fail or GUNB's format changes. |
+| 6 | Pre-2020 registers | **Out of scope** for now (same cut-off as Praga-Południe). |
+| 7 | Ask the PDF-only offices (+ Ursus, Żoliborz) for xlsx | **Yes – letters drafted in `docs/outreach/`, sent by the owner.** The PDF reader stays. |
+| 8 | Branding | **"wzSearch Warszawa"**, district shown in the switcher. |
+| 9 | New dependencies | **Both accepted**: poppler's `pdftotext`, GUGiK's county parcel package (first runs). |
+| 10 | Ask the city about bulk downloads (CDN 403s) | **Not now** – the letter stays unsent; refused files are retried by later crawls. The crawler's User-Agent contact question waits with it. |
+| – | "Zapytaj urząd" addressee for other districts | **Collect each district office's published inbox** (official pages only, source URL kept in the registry). |
+| – | Launch | **Staged**: apply these decisions on the branch (incl. the CI build), then merge and deploy all 18 districts once tests and a local check pass, with thin districts (Wesoła, Żoliborz, Włochy) marked "niepełne dane" in the switcher. Push only on the owner's go. |

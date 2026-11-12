@@ -106,6 +106,8 @@ Operations
   buttons), make `og:image` absolute.
 
 City-wide draft (branch `feature/all-districts`, 2026-10-27 – plan: `docs/plans/all-districts.md`)
+Owner decisions taken 2026-11-12 – see plan §7 (they supersede the 🔴 notes below where they differ: bare links
+always open Praga-Południe; inputs-only commits with a CI build; district inboxes to be collected).
 - 🔴 **District = scope, not a facet.** A header button opens a district picker; the page loads one district's
   shard; `dz=<slug>` rides on every hash; switching reloads the page. Links without `dz` (all links shared so far)
   open Praga-Południe, a permalink's district code (`wz-bem-…`), or the visitor's last choice.
