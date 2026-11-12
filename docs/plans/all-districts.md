@@ -373,4 +373,4 @@ fixture); in-place district switch instead of a reload (city → record → back
 | 9 | New dependencies | **Both accepted**: poppler's `pdftotext`, GUGiK's county parcel package (first runs). |
 | 10 | Ask the city about bulk downloads (CDN 403s) | **Not now** – the letter stays unsent; refused files are retried by later crawls. The crawler's User-Agent contact question waits with it. |
 | – | "Zapytaj urząd" addressee for other districts | **Collect each district office's published inbox** (official pages only, source URL kept in the registry). |
-| – | Launch | **Staged**: apply these decisions on the branch (incl. the CI build), then merge and deploy all 18 districts once tests and a local check pass, with thin districts (Wesoła, Żoliborz, Włochy) marked "niepełne dane" in the switcher. Push only on the owner's go. |
+| – | Launch (stage 1 built 2026-11-12, see `docs/HANDOFF.md` §0) | **Staged**: apply these decisions on the branch (incl. the CI build), then merge and deploy all 18 districts once tests and a local check pass, with thin districts (Wesoła, Żoliborz, Włochy) marked "niepełne dane" in the switcher. Push only on the owner's go. |

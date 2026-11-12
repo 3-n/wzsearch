@@ -8,7 +8,13 @@ monthly data refresh. It is a map and a playbook; the details live in the docume
 
 ## 0. Branch `feature/all-districts` (2026-10-27/28) – read this first when continuing the city-wide work
 
-All 18 Warsaw districts on a local branch (not pushed, not merged, not deployed; owner review pending): every
+**Status 2026-11-12:** the owner's decisions are in the plan (§7) and stage 1 is built on the branch (bare links →
+Praga-Południe, "wzSearch Warszawa", inputs-only commits + CI build with build stamps, failure policy, city permits on
+desktop, district inboxes, "niepełne dane", letters drafted, `npm run e2e:city`). Next: a fresh `make city`, the
+owner's local look, then merge + push on the owner's go (deploy.yml builds the site; the first deploy removes nothing
+the owner has not seen – `site/` is rebuilt from `data/`).
+
+All 18 Warsaw districts on a local branch (not pushed, not merged, not deployed): every
 district's lists parsed (six PDF-only districts via poppler's `pdftotext`, Ursus's own registers) and geocoded
 (parcels from GUGiK's county package, `pipeline/egib.py`), 18,248 planning records + 43,564 GUNB cases, per-district
 data shards, source cells in bucket files, and the "Cała Warszawa" planning index (phase 3).
