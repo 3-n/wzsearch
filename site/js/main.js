@@ -7,8 +7,8 @@ import { permitsNeeded, idlePrefetchAllowed, shouldFetchPermits, IDLE_PREFETCH_D
 import { OPT_IN_ID, OPT_IN_KINDS, effectiveKinds, withOptIn } from './kinds.js';
 import { buildHash, setHashDistrict } from './url.js';
 import {
-  cityEntry, currentDistrict, dataBase, districtFromHash, districtOf, feedPath, isCity, isCityMode, rememberDistrict,
-  resolveDistrict, setDistrict, storedDistrict,
+  cityEntry, currentDistrict, dataBase, districtFromHash, districtOf, feedPath, isCity, isCityMode,
+  resolveDistrict, setDistrict,
 } from './district.js';
 import { mountDistrictPicker } from './components/district-picker.js';
 import { carryFilters, defaultFilters, sanitizeFilters } from './filters.js';
@@ -425,10 +425,9 @@ async function chooseDistrict() {
   const doc = await loadDistricts();
   if (!doc || doc.list.length < 2) return;   // a single-district site lists only itself
   const { list, city } = doc;
-  const d = resolveDistrict(list, { hash: window.location.hash, stored: storedDistrict(), cityItem: city });
+  const d = resolveDistrict(list, { hash: window.location.hash, cityItem: city });
   setDistrict(d, list, city);
   setHashDistrict(d.slug);
-  rememberDistrict(d.slug);
   window.addEventListener('hashchange', () => {
     const dz = districtFromHash(window.location.hash);
     const known = list.some((x) => x.slug === dz) || dz === city?.slug;

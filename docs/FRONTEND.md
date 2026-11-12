@@ -218,7 +218,7 @@ hash is then replaced without a history entry). Street keys are kept (a street m
 | `mapa` | `mapa=21.05,52.22,21.10,52.26` | "only the visible map area" (west,south,east,north); updated as the visitor moves the map – a shared link keeps its area until then (the fit to another screen does not rewrite it) |
 | `blisko`, `promien` | `blisko=52.255,21.076&promien=500` | near a point, **rounded to 3 decimals (≈ 100 m)** in both directions (privacy of shared links); radius 250 / 500 / 1000 m |
 | `plik` | `plik=a1b2c3d4e5` | only records from one source file (links from the Sources page) |
-| `dz` | `dz=wola` | *(city-wide deployments, draft)* the district the page shows – written into every hash, not a filter; switching it reloads the page (`district.js`). Absent: the district of a permalink id (`wz-bem-…`), else the last choice (`localStorage` `wzsearch:district`), else Praga-Południe. `dz=warszawa` = "Cała Warszawa": the city index (`data/warszawa/`, planning kinds only, the area facet lists districts); a record link opens in the record's district |
+| `dz` | `dz=wola` | *(city-wide deployments, draft)* the district the page shows – written into every hash, not a filter; switching it reloads the page (`district.js`). Absent: the district of a permalink id (`wz-bem-…`), else Praga-Południe (owner decision, plan §7 #2 – no remembered choice). `dz=warszawa` = "Cała Warszawa": the city index (`data/warszawa/`, planning kinds only, the area facet lists districts); a record link opens in the record's district |
 | `sort` | `sort=najstarsze` | `najnowsze` (default), `najstarsze`, `ulica`, `trafnosc` (default while searching) |
 | `tryb=mapa` | | mobile: show the map instead of the list |
 

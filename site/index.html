@@ -28,9 +28,8 @@
       try {
         window.__wzEarly = {};
         /* City-wide deployments (data/districts.json) keep one data shard per district: start the one the hash
-           (dz=…) or the last visit names; district.js decides for good once districts.json is in. */
+           names (dz=…; none = Praga-Południe); district.js decides for good once districts.json is in. */
         var dz = (/[?&]dz=([a-z-]{2,32})(?:&|$)/.exec(location.hash) || [])[1];
-        try { dz = dz || localStorage.getItem('wzsearch:district'); } catch (e) { /* storage unavailable */ }
         var shard = dz && dz !== 'praga-poludnie' && /^[a-z-]{2,32}$/.test(dz) ? 'data/d/' + dz + '/' : null;
         /* "Cała Warszawa" has its own index (a record link opens in the record's district instead) */
         if (dz === 'warszawa') shard = /^#\/wpis\//.test(location.hash) ? null : 'data/warszawa/';

@@ -9,7 +9,7 @@
 import { h } from '../dom.js';
 import { icon } from '../icons.js';
 import { formatNumber, plural } from '../format.js';
-import { allDistricts, currentDistrict, districtTotals, rememberDistrict } from '../district.js';
+import { allDistricts, currentDistrict, districtTotals } from '../district.js';
 
 const PLANNING = ['decyzja lub wszczęcie', 'decyzje lub wszczęcia', 'decyzji lub wszczęć'];
 
@@ -87,7 +87,6 @@ export function mountDistrictPicker(slot, { hrefFor, city = null }) {
     e.preventDefault();
     dialog.close();
     if (slug === current.slug) return;
-    rememberDistrict(slug);
     // A new history entry (Back returns to the previous district), then a fresh page for the new data shard.
     window.history.pushState(null, '', `${window.location.pathname}${window.location.search}${hrefFor(slug)}`);
     window.location.reload();

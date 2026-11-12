@@ -1,9 +1,10 @@
 /**
  * The district this page shows (docs/plans/all-districts.md §1). A deployment with data/districts.json has one
  * data shard per Warsaw district (data/d/<slug>/…); the page loads exactly one of them, chosen at boot from the
- * `dz` hash parameter, the district code of a record permalink (wz-bem-2026-1 → Bemowo), the visitor's last
- * choice, or Praga-Południe. Switching district reloads the page (draft). Without data/districts.json (the
- * single-district deployment) everything stays as before: Praga-Południe, data/.
+ * `dz` hash parameter, the district code of a record permalink (wz-bem-2026-1 → Bemowo), or Praga-Południe (a link
+ * without `dz` – every link shared before the other districts existed – always means Praga-Południe). Switching
+ * district reloads the page (draft). Without data/districts.json (the single-district deployment) everything stays
+ * as before: Praga-Południe, data/.
  *
  * "Cała Warszawa" (`dz=warszawa`, districts.json's `city` entry) is one more scope: the planning records of every
  * district in a lighter shape (data/warszawa/, pipeline/city_index.py), no permits; a record opens in its district.
@@ -14,7 +15,6 @@ import { MAP_CENTER, MAP_ZOOM } from './config.js';
 
 export const DEFAULT_SLUG = 'praga-poludnie';
 export const CITY_SLUG = 'warszawa';
-export const STORAGE_KEY = 'wzsearch:district';
 const SLUG = /^[a-z-]{2,32}$/;
 
 /** Praga-Południe, as the single-district deployment knows it (also the fallback for missing fields). */
@@ -95,10 +95,10 @@ export function recordIdFromHash(hash) {
 /**
  * Pick the district to show. Pure.
  * @param {object[]} districts entries of data/districts.json
- * @param {{hash?: string, stored?: string|null, cityItem?: object|null}} where `cityItem`: districts.json's `city`
+ * @param {{hash?: string, cityItem?: object|null}} where `cityItem`: districts.json's `city`
  * @returns {object} the district entry
  */
-export function resolveDistrict(districts, { hash = '', stored = null, cityItem = null } = {}) {
+export function resolveDistrict(districts, { hash = '', cityItem = null } = {}) {
   const list = Array.isArray(districts) ? districts.filter((d) => d && SLUG.test(d.slug || '')) : [];
   const bySlug = new Map(list.map((d) => [d.slug, d]));
   if (cityItem?.slug === CITY_SLUG) bySlug.set(CITY_SLUG, cityItem);
@@ -114,7 +114,7 @@ export function resolveDistrict(districts, { hash = '', stored = null, cityItem 
     if (byCode) return byCode;
     if (/^(?:wz|cp|ws)-(?:am-)?\d/.test(id)) return bySlug.get(DEFAULT_SLUG) || list[0];   // legacy ids: Praga-Południe
   }
-  return bySlug.get(stored) || bySlug.get(DEFAULT_SLUG) || list[0] || LEGACY;
+  return bySlug.get(DEFAULT_SLUG) || list[0] || LEGACY;
 }
 
 /** Make `district` (an entry of data/districts.json) the current one; `list` = all districts, `cityItem` = its city. */
@@ -155,16 +155,6 @@ export function mapStart() {
   const c = current.center;   // approximate centre, before the district has been geocoded
   if (Array.isArray(c) && c.length === 2 && c.every(Number.isFinite)) return { center: c, zoom: 13, bounds: null };
   return { center: MAP_CENTER, zoom: MAP_ZOOM, bounds: null };
-}
-
-/** Remember the visitor's choice (best effort; private windows may refuse). */
-export function rememberDistrict(slug) {
-  try { localStorage.setItem(STORAGE_KEY, slug); } catch { /* storage unavailable */ }
-}
-
-/** The visitor's last choice, or null. */
-export function storedDistrict() {
-  try { return localStorage.getItem(STORAGE_KEY); } catch { return null; }
 }
 
 /** Total records of a district entry (planning kinds and permits). */

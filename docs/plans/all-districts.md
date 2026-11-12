@@ -26,7 +26,7 @@ lighter mode.
   row shows a count and a short "z jakich źródeł" note (e.g. "listy PDF – wkrótce" for districts not yet ingested).
   At the bottom: **"Cała Warszawa"**.
 * URL: `dz=<slug>` (`dz=mokotow`, `dz=warszawa`). It is always written, so shared links are unambiguous. A link
-  without `dz` (every link shared so far) means the visitor's last choice from `localStorage`, else Praga-Południe.
+  without `dz` (every link shared so far) means Praga-Południe (§7 #2; the draft's remembered last choice was dropped).
   Record permalinks `#/wpis/<id>` work without `dz`: the id tells the district (§3.2).
 * Switching district keeps the other filters that still make sense (kind, period, search text, tags, applicant). It
   drops the ones that do not (street, neighbourhood, map area, "near me"), and a toast names what was dropped.

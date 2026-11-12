@@ -26,17 +26,20 @@ test('dz and record ids of a hash', () => {
   assert.equal(recordIdFromHash('#/?q=wpis'), null);
 });
 
-test('which district a page shows: dz, then the id code, then the last choice, then Praga-Południe', () => {
-  assert.equal(resolveDistrict(LIST, { hash: '#/?dz=wola', stored: 'bemowo' }).slug, 'wola');
-  assert.equal(resolveDistrict(LIST, { hash: '#/?dz=nieznana', stored: 'bemowo' }).slug, 'bemowo');
+test('which district a page shows: dz, then the id code, then Praga-Południe (no remembered choice)', () => {
+  assert.equal(resolveDistrict(LIST, { hash: '#/?dz=wola' }).slug, 'wola');
+  assert.equal(resolveDistrict(LIST, { hash: '#/?dz=nieznana' }).slug, DEFAULT_SLUG);
   assert.equal(resolveDistrict(LIST, { hash: '#/wpis/wz-bem-2026-1' }).slug, 'bemowo');
   assert.equal(resolveDistrict(LIST, { hash: '#/wpis/wz-am-wol-2026-88' }).slug, 'wola');
   assert.equal(resolveDistrict(LIST, { hash: '#/wpis/ws-wol-6730-2026-12' }).slug, 'wola');
-  // legacy permalinks (published before the other districts existed) are Praga-Południe's, whatever was stored
-  assert.equal(resolveDistrict(LIST, { hash: '#/wpis/wz-2026-15', stored: 'wola' }).slug, DEFAULT_SLUG);
-  assert.equal(resolveDistrict(LIST, { hash: '#/wpis/wz-am-2026-95', stored: 'wola' }).slug, DEFAULT_SLUG);
-  // a permit id does not tell its district: the last choice wins
-  assert.equal(resolveDistrict(LIST, { hash: '#/wpis/pb-st-mz-pa-2026-29594', stored: 'wola' }).slug, 'wola');
+  // legacy permalinks (published before the other districts existed) are Praga-Południe's
+  assert.equal(resolveDistrict(LIST, { hash: '#/wpis/wz-2026-15' }).slug, DEFAULT_SLUG);
+  assert.equal(resolveDistrict(LIST, { hash: '#/wpis/wz-am-2026-95' }).slug, DEFAULT_SLUG);
+  // a permit id does not tell its district: without dz it is Praga-Południe's (new links always carry dz)
+  assert.equal(resolveDistrict(LIST, { hash: '#/wpis/pb-st-mz-pa-2026-29594' }).slug, DEFAULT_SLUG);
+  assert.equal(resolveDistrict(LIST, { hash: '#/wpis/pb-st-mz-pa-2026-29594?dz=wola' }).slug, 'wola');
+  // a bare link opens Praga-Południe even for a visitor who picked another district before (plan §7 #2)
+  assert.equal(resolveDistrict(LIST, { hash: '#/' }).slug, DEFAULT_SLUG);
   assert.equal(resolveDistrict(LIST, {}).slug, DEFAULT_SLUG);
   assert.equal(resolveDistrict([], {}).slug, DEFAULT_SLUG);
 });
@@ -94,11 +97,11 @@ const CITY = { slug: 'warszawa', name: 'Cała Warszawa', genitive: 'Warszawy', l
 
 test('"Cała Warszawa" is a scope of its own; a record never opens in it', () => {
   assert.equal(resolveDistrict(LIST, { hash: '#/?dz=warszawa', cityItem: CITY }).slug, CITY_SLUG);
-  assert.equal(resolveDistrict(LIST, { stored: 'warszawa', cityItem: CITY }).slug, CITY_SLUG);
+  assert.equal(resolveDistrict(LIST, { cityItem: CITY }).slug, DEFAULT_SLUG, 'a bare link is never the city');
   assert.equal(resolveDistrict(LIST, { hash: '#/?dz=warszawa' }).slug, DEFAULT_SLUG, 'no city index: not a scope');
   // a record link into the city scope (typed, or from an old tab) opens in the record's district
   assert.equal(resolveDistrict(LIST, { hash: '#/wpis/wz-bem-2026-1?dz=warszawa', cityItem: CITY }).slug, 'bemowo');
-  assert.equal(resolveDistrict(LIST, { hash: '#/wpis/wz-2026-15?dz=warszawa', stored: 'warszawa', cityItem: CITY }).slug, DEFAULT_SLUG);
+  assert.equal(resolveDistrict(LIST, { hash: '#/wpis/wz-2026-15?dz=warszawa', cityItem: CITY }).slug, DEFAULT_SLUG);
 });
 
 test('the city scope: its own data base, no feed, districts as areas', () => {
