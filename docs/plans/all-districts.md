@@ -202,7 +202,8 @@ in place (cumulative yearly files are the norm outside Praga-Południe), "remove
   The default builds every district whose status is `enabled`.
 * Per-district manifests: `data/districts/<slug>/manifest.json` + `raw/`. Praga-Południe stays at `data/` until a
   later `git mv`.
-* 🔴 Failure policy: today any district-site failure = exit 3, nothing deployed. With 18 sites, one office being down
+* Failure policy *(decided §7 #5, built 2026-11-12: `pipeline/city.py` `city_exit_code`, `crawl_failed` in the
+  manifest, the notice on the sources page)*: before, any district-site failure = exit 3, nothing deployed. With 18 sites, one office being down
   should not freeze the other 17. Proposal: a failed district keeps its previous data with a visible warning on its
   sources page (like BAiPP today), and exit 3 only when more than N districts fail or GUNB's format changes.
 

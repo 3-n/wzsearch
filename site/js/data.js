@@ -197,6 +197,9 @@ export function buildIndex(recordsDoc, sourcesDoc, prepared = null) {
       generatedAt: recordsDoc?.generated_at || sourcesDoc?.generated_at || null,
       sourceIndexUrl: recordsDoc?.source_index_url || sourcesDoc?.index_url || null,
       fixture: Boolean(recordsDoc?.fixture || sourcesDoc?.fixture),
+      // the last crawl of the district's own lists failed / left pages without files (plan §7 #5; sources view)
+      crawlFailed: sourcesDoc?.crawl_failed && typeof sourcesDoc.crawl_failed === 'object' ? sourcesDoc.crawl_failed : null,
+      stalePages: Array.isArray(sourcesDoc?.stale_pages) ? sourcesDoc.stale_pages.map(String) : [],
       count: 0,
     },
     dicts,

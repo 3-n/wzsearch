@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { reconcile, splitByDataset, cityWideTotals } from '../../site/js/views/sources.js';
+import { reconcile, splitByDataset, cityWideTotals, crawlNoticeText } from '../../site/js/views/sources.js';
 
 test('reconcile separates declared blocks, blocks without a declared count and mismatches', () => {
   const pages = [
@@ -35,4 +35,14 @@ test('sources.json splits into datasets in tab order; files follow their first p
 test('city-wide totals of the BAiPP files', () => {
   assert.deepEqual(cityWideTotals([{ rows_total: 162, parsed_count: 5 }, { rows_total: 85, parsed_count: 2 }, { parsed_count: 1 }]),
     { rowsTotal: 247, kept: 8, unknown: 1 });
+});
+
+test('a failed crawl or pages without files are named on the sources page (plan §7 #5)', () => {
+  assert.equal(crawlNoticeText({ crawlFailed: null, stalePages: [] }), null);
+  assert.equal(crawlNoticeText({}), null);
+  const failed = crawlNoticeText({ crawlFailed: { at: '2026-11-10T07:05:00Z', error: 'HTTPError: 503' }, stalePages: [] });
+  assert.match(failed, /^Ostatnia próba pobrania list urzędu \(10 listopada 2026, 08:05\) nie powiodła się/);
+  assert.match(crawlNoticeText({ stalePages: ['p1'] }), /jedna strona urzędu nie zawierała listy plików – dla niej/);
+  assert.match(crawlNoticeText({ stalePages: ['p1', 'p2'] }), /2 strony urzędu nie zawierały listy plików – dla nich/);
+  assert.match(crawlNoticeText({ stalePages: ['a', 'b', 'c', 'd', 'e'] }), /5 stron urzędu nie zawierało/);
 });

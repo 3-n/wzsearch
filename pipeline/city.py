@@ -19,7 +19,10 @@ Outputs go to ``site/data/d/<slug>/`` (records.json, permits.json, sources.json,
 (:mod:`pipeline.city_index`) and ``site/data/districts.json`` lists all 18 districts and the city for the switcher.
 The legacy single-district outputs (``site/data/records.json`` …, ``make data``) are not touched.
 
-Exit code: the worst of the district builds (0 ok, 3 a live source failed somewhere, 1 nothing could be built).
+Failure policy (plan §7 #5): a district whose own lists could not be crawled (or that lost the rows of a file) keeps
+its previous data – the build uses its last manifest and the sources page says the last download failed – and the
+other districts are built as usual. Exit code 0 unless **more than** :data:`MAX_FAILED_DISTRICTS` districts failed or
+GUNB's file format changed (3: nothing should be committed or deployed), 1 when nothing could be built.
 """
 
 from __future__ import annotations
@@ -37,6 +40,7 @@ from . import districts
 from .build import (
     EXIT_FATAL,
     EXIT_OK,
+    EXIT_STALE,
     PROJECT_ROOT,
     BuildError,
     DistrictPaths,
@@ -52,6 +56,8 @@ from .geocode import PoliteSession as GeoSession
 from .http import make_session
 
 log = logging.getLogger("wzsearch.city")
+
+MAX_FAILED_DISTRICTS = 3
 
 def select(spec: str) -> list[str]:
     """``all`` | ``enabled`` | comma-separated slugs → slugs in registry order, Praga-Południe first (its crawl
@@ -82,6 +88,8 @@ def run_city_build(root: Path, slugs: list[str], *, crawl: bool = True, online: 
                  (crawl_mod.load_manifest(legacy.manifest) or {}).get("generated_at"))
     geo_session = GeoSession() if online and geocode else None
     codes: dict[str, int] = {}
+    failed: dict[str, str] = {}   # slug → why (crawl failure, pages without files, lost files, no build)
+    gunb_error: str | None = None
     gunb_checked = False   # GUNB's three ZIPs are checked once per run; the other districts filter the local copies
     for slug in slugs:
         d = districts.get(slug)
@@ -94,8 +102,12 @@ def run_city_build(root: Path, slugs: list[str], *, crawl: bool = True, online: 
             except BuildError as exc:
                 log.error("%s: %s", d.name, exc)
                 codes[slug] = EXIT_FATAL
+                failed[slug] = str(exc)
                 continue
         codes[slug] = result.exit_code
+        if result.crawl_error or result.lost_files:
+            failed[slug] = result.crawl_error or "unreadable files: " + ", ".join(result.lost_files)
+        gunb_error = gunb_error or result.rwdz_error
         gunb_checked = gunb_checked or crawl
         log.info("%s: %d records, %d permits, exit %d", d.name, len(result.records), len(result.permits),
                  result.exit_code)
@@ -103,10 +115,22 @@ def run_city_build(root: Path, slugs: list[str], *, crawl: bool = True, online: 
     index_path = root / DISTRICTS_INDEX
     if write_atomic(index_path, dumps_json(districts_index(root), ("districts",))):
         log.info("wrote %s", index_path.relative_to(root))
-    for slug, code in codes.items():
-        if code != EXIT_OK:
-            log.error("%s: exit code %d", slug, code)
-    return max(codes.values(), default=EXIT_OK) if EXIT_FATAL not in codes.values() else EXIT_FATAL
+    return city_exit_code(codes, failed, gunb_error)
+
+
+def city_exit_code(codes: dict[str, int], failed: dict[str, str], gunb_error: str | None) -> int:
+    """The failure policy of the module docstring."""
+    for slug, why in failed.items():
+        log.warning("%s kept its previous data: %s", districts.get(slug).name, why)
+    if codes and all(c == EXIT_FATAL for c in codes.values()):
+        return EXIT_FATAL
+    if gunb_error:
+        log.error("GUNB's file format changed (the previous extracts were used): %s", gunb_error)
+        return EXIT_STALE
+    if len(failed) > MAX_FAILED_DISTRICTS:
+        log.error("%d districts failed (more than %d): %s", len(failed), MAX_FAILED_DISTRICTS, ", ".join(failed))
+        return EXIT_STALE
+    return EXIT_OK
 
 
 def main(argv: list[str] | None = None) -> int:

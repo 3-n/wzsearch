@@ -11,7 +11,7 @@
 import { h, replaceChildren, safeUrl, prefersReducedMotion } from '../dom.js';
 import { icon, kindGlyph } from '../icons.js';
 import {
-  formatDateTime, formatNumber, formatBytes, formatMonth, formatMonthSpan, plural, WPIS, STRONA, POZYCJA, PLIK, WIERSZ,
+  formatDateTime, formatNumber, formatBytes, formatMonth, formatMonthSpan, plural, pluralForm, WPIS, STRONA, POZYCJA, PLIK, WIERSZ,
 } from '../format.js';
 import { buildHash } from '../url.js';
 import { defaultFilters } from '../filters.js';
@@ -108,6 +108,30 @@ const MISMATCH_HELP = 'Liczba pozycji podana na stronie urzędu różni się od 
  * @param {object} index
  * @returns {{show: (tab: string|null) => void, dataChanged: () => void}}
  */
+/**
+ * The district's last crawl failed, or some of its pages came back without their file list: the data shown is from
+ * the last successful download (plan §7 #5 – one office being down does not stop the other districts). Pure; null
+ * when the last crawl was fine.
+ */
+export function crawlNoticeText(meta) {
+  const failed = meta?.crawlFailed;
+  const stale = meta?.stalePages || [];
+  if (failed) {
+    const when = failed.at ? formatDateTime(failed.at) : '';
+    return `Ostatnia próba pobrania list urzędu${when ? ` (${when})` : ''} nie powiodła się – pokazujemy dane z ostatniego udanego pobrania. Ponowimy przy następnej aktualizacji.`;
+  }
+  if (!stale.length) return null;
+  const n = stale.length;
+  const what = n === 1 ? 'jedna strona urzędu nie zawierała'
+    : `${plural(n, ['strona', 'strony', 'stron'])} urzędu ${pluralForm(n, ['nie zawierała', 'nie zawierały', 'nie zawierało'])}`;
+  return `Przy ostatnim pobraniu ${what} listy plików – dla ${n === 1 ? 'niej' : 'nich'} pokazujemy pliki z poprzedniego pobrania.`;
+}
+
+function crawlNotice(meta) {
+  const text = crawlNoticeText(meta);
+  return text ? h('p', { class: 'notice notice--warn src-crawl-notice', role: 'status' }, icon('alert', { size: 16 }), h('span', null, text)) : null;
+}
+
 export function createSources(host, index) {
   const { dicts } = index;
   const groups = splitByDataset(index.pages, index.files, index.pagesById);
@@ -279,6 +303,7 @@ export function createSources(host, index) {
     return [
       h('p', { class: 'src-intro' }, dicts.datasets?.[ds]?.description || `Comiesięczne zestawienia Urzędu Dzielnicy ${D().name} (pliki Excel).`, ' ',
         ext(indexUrl, 'Wykaz na stronie urzędu', 'external', 'link')),
+      crawlNotice(index.meta),
       statList([
         [D().slug === DEFAULT_SLUG ? 'Strony miesięczne' : 'Strony z listami', formatNumber(pages.length)],
         [D().slug === DEFAULT_SLUG ? 'Pliki Excel' : 'Pliki', formatNumber(files.length)],

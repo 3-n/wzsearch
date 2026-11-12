@@ -903,6 +903,18 @@ class TestManifestStage:
         assert result.exit_code == build.EXIT_STALE and "ConnectionError" in result.crawl_error
         assert "live crawl failed" in project.report.read_text(encoding="utf-8")
         assert json.loads(project.records_json.read_text(encoding="utf-8"))["count"] == 6
+        # the failure is recorded in the committed manifest, so CI's offline build can show it (plan §7 #5)
+        failed = json.loads(project.manifest.read_text(encoding="utf-8"))["crawl_failed"]
+        assert "ConnectionError" in failed["error"] and failed["at"]
+        assert json.loads(project.sources_json.read_text(encoding="utf-8"))["crawl_failed"] == failed
+        offline = build.run_build(project, crawl=False, online=False, site_url="./", now=lambda: NOW)
+        assert json.loads(project.sources_json.read_text(encoding="utf-8"))["crawl_failed"] == failed
+        assert offline.exit_code == build.EXIT_OK
+
+    def test_sources_json_has_no_crawl_state_after_a_good_crawl(self, project):
+        TestRunBuild()._run(project)
+        doc = json.loads(project.sources_json.read_text(encoding="utf-8"))
+        assert "crawl_failed" not in doc and "stale_pages" not in doc
 
     def test_unchanged_crawl_keeps_manifest_timestamp(self, project, monkeypatch):
         previous = json.loads(project.manifest.read_text(encoding="utf-8"))

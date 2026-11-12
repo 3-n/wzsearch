@@ -903,6 +903,12 @@ not on `main`.** Everything below is additive; a single-district build (`make da
   (records/permits/sources JSON, parcel GeoJSON, cell buckets; path relative to the shard + bytes). A rebuild that
   renders the same digest keeps `generated_at`; `files_with_records` replaces the previous `sources.json` in the
   "lost file" check. test.yml/deploy.yml fail when a Linux rebuild does not reproduce the stamps.
+* **Failed crawls** (plan §7 #5) – a crawl that fails writes `crawl_failed: {at, error}` into the previous (kept)
+  manifest; the next successful crawl writes a fresh manifest without it. `sources.json` carries `crawl_failed` and
+  `stale_pages` (pages that came back without their file list) only when present – the district tab of the sources
+  page then says the data is from the last successful download. Files the host refused are per-file `error`s, not
+  a failed district. `pipeline.city` exits 3 only when more than 3 districts failed (crawl failure, pages without
+  files, a file that gave records is unreadable) or GUNB's format changed.
 
 ### Phase 3: source cells out of the record files, the city index (2026-10-27)
 

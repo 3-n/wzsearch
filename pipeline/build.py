@@ -494,6 +494,16 @@ def _same_except_generated_at(a: Mapping | None, b: Mapping | None) -> bool:
     return strip(a) == strip(b)
 
 
+def record_crawl_failure(manifest_path: Path, manifest: dict | None, error: str) -> None:
+    """Note a failed crawl in the (previous, committed) manifest: ``crawl_failed = {at, error}``. The site is built
+    offline in CI from the committed inputs, so the sources page can only say "the last download failed" when the
+    input says so (plan §7 #5). The next successful crawl writes a fresh manifest without it."""
+    if manifest is None:
+        return
+    manifest["crawl_failed"] = {"at": _now_iso(), "error": error}
+    crawl_mod.write_manifest(manifest, manifest_path)
+
+
 def obtain_manifest(paths: Paths, *, crawl: bool, refresh: bool = False,
                     session: requests.Session | None = None) -> tuple[dict, str | None]:
     """Crawl (if asked) and return ``(manifest, crawl_error)``.
@@ -515,6 +525,7 @@ def obtain_manifest(paths: Paths, *, crawl: bool, refresh: bool = False,
             error = f"{type(exc).__name__}: {exc}"
             log.error("crawl failed (%s); using the previous manifest", error)
             manifest = previous
+            record_crawl_failure(paths.manifest, manifest, error)
         else:
             if _same_except_generated_at(manifest, previous):
                 manifest["generated_at"] = previous["generated_at"]
@@ -534,7 +545,9 @@ def obtain_district_manifest(paths: Paths, *, crawl: bool, refresh: bool = False
     """Manifest of a district other than Praga-Południe: its own lists (crawled when ``crawl`` and its strategy is
     implemented) plus the BAiPP pages and files of the legacy manifest (``data/manifest.json``, crawled with
     Praga-Południe – the files are city-wide; :func:`pipeline.baipp.in_district` picks the district's rows).
-    A failed crawl falls back to the district's previous manifest (exit code 3), as for Praga-Południe.
+    A failed crawl falls back to the district's previous manifest (exit code 3), as for Praga-Południe. Files the
+    host refused (the city's CDN, see BACKLOG) are only a warning: their pages are read, the files are retried by the
+    next crawl and the sources page names each one, so a district with a few refused files has not failed.
     """
     d = districts.get(paths.district_slug)
     legacy = crawl_mod.load_manifest(Paths(paths.root).manifest) or {}
@@ -546,14 +559,15 @@ def obtain_district_manifest(paths: Paths, *, crawl: bool, refresh: bool = False
         except (requests.RequestException, RuntimeError, OSError) as exc:
             error = f"{type(exc).__name__}: {exc}"
             log.error("%s: crawl failed (%s); using the previous manifest", d.name, error)
+            record_crawl_failure(paths.manifest, own, error)
         else:
             if own.get("stale_pages"):
                 error = f"{d.name}: pages without their file list (kept from the previous crawl): " + \
                         ", ".join(own["stale_pages"])
             missing = [f["file_id"] for f in own.get("files", []) if f.get("error") and not f.get("sha256")]
             if missing:
-                error = (error + "; " if error else "") + \
-                    f"{d.name}: {len(missing)} file(s) could not be downloaded (see the manifest's errors)"
+                log.warning("%s: %d file(s) could not be downloaded – retried by the next crawl (manifest errors)",
+                            d.name, len(missing))
     if own is None:
         own = {"generated_at": legacy.get("generated_at"), "index_url": d.entry_url, "pages": [], "files": []}
         if d.enabled:
@@ -907,12 +921,19 @@ def build_sources_doc(manifest: Mapping[str, Any], results: Mapping[str, FileRes
             "skipped_rows": res.skipped_rows,
             "warnings": res.warnings,
         })
-    return {
+    doc = {
         "generated_at": generated_at,
         "index_url": manifest.get("index_url"),
         "pages": pages,
         "files": files,
     }
+    # the last crawl of the district's own lists failed / left pages without their file list (plan §7 #5): the
+    # sources page says so; the keys are absent when the crawl was fine
+    if manifest.get("crawl_failed"):
+        doc["crawl_failed"] = manifest["crawl_failed"]
+    if manifest.get("stale_pages"):
+        doc["stale_pages"] = list(manifest["stale_pages"])
+    return doc
 
 
 # =============================================================================

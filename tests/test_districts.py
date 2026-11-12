@@ -333,3 +333,17 @@ def test_a_date_after_the_files_publication_is_a_typo_and_dropped():
         assert ok["date"] == "2026-10-06"   # the next day still counts (a UTC stamp, a Warsaw date)
     with districts.use("praga-poludnie"):   # the legacy district keeps its own rule (a warning, the date kept)
         assert normalize.normalize_row(row, "ws", meta)["date"] == "2201-11-24"
+
+
+def test_city_failure_policy():
+    # plan §7 #5: up to three districts may keep their previous data; a fourth, or a GUNB format change, fails the run
+    from pipeline import city
+    from pipeline.build import EXIT_FATAL, EXIT_OK, EXIT_STALE
+    ok = {s: EXIT_OK for s in ("praga-poludnie", "wola", "bemowo", "ursus", "wesola")}
+    three = {"wola": "down", "bemowo": "down", "ursus": "down"}
+    assert city.city_exit_code(ok, {}, None) == EXIT_OK
+    assert city.city_exit_code({**ok, **{s: EXIT_STALE for s in three}}, three, None) == EXIT_OK
+    four = {**three, "wesola": "down"}
+    assert city.city_exit_code({**ok, **{s: EXIT_STALE for s in four}}, four, None) == EXIT_STALE
+    assert city.city_exit_code(ok, {}, "RWDZ columns changed") == EXIT_STALE
+    assert city.city_exit_code({"wola": EXIT_FATAL}, {"wola": "no manifest"}, None) == EXIT_FATAL
