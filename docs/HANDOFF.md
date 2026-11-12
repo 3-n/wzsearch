@@ -19,6 +19,7 @@ data shards, source cells in bucket files, and the "Cała Warszawa" planning ind
 | Source inventory per district | `docs/research/warsaw-districts.md` |
 | Open problems (CDN refusals, ULDK limits, UA contact …) | `BACKLOG.md` → "City-wide draft" |
 | Draft letter to the city about the CDN (not sent) | `docs/outreach/2026-10-27-cdn-bulk-downloads.md` |
+| Draft letters to the PDF-only offices, Ursus, Żoliborz (not sent) | `docs/outreach/2026-11-12-xlsx-lists-for-districts.md` |
 | Data contract additions (districts.json, cells/, warszawa/) | `docs/DATA_MODEL.md` → "v3 draft" |
 | Build everything / offline from caches | `make city` / `make city-offline` (then `uv run python -m pipeline.city_index` alone if needed) |
 | Per-district table · page speed | `uv run python scripts/city_summary.py` · `node scripts/page_speed.mjs` |
