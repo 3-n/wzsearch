@@ -24,7 +24,7 @@ Scope & sources
   is one record whose values come from the newest snapshot (with a warning naming changed fields; all sources
   listed). District records keep "first listing wins". Chosen because the bureau corrects rows between
   republications.
-- 🔴 **Data refresh is manual (local `make data` + push), the scheduled CI crawl is off** (2026-10-26). The district
+- 🔴 **Data refresh is manual (local `make city` + push of `data/`; CI builds the site), the scheduled CI crawl is off** (2026-10-26). The district
   site answers GitHub-hosted runners with 403 (same request from a home connection: 200). Deploys run from
   `deploy.yml` on push. Ways back to automation: a self-hosted runner, or asking the office to unblock it.
 - 🔴 **Feed (`feed.xml`) carries planning records only** (WZ / ULICP / initiated), not permits – ~150 permit

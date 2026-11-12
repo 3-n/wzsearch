@@ -1,0 +1,708 @@
+{
+  "generated_at": "2026-10-27T16:11:32Z",
+  "index_url": "https://wola.um.warszawa.pl/wykazy-i-informacje-o-decyzjach",
+  "pages": [
+    {
+      "page_id": "wol-decyzje-o-ustaleniu-lokalizacji-inwestycji-celu-publicznego",
+      "url": "https://wola.um.warszawa.pl/waw/wola/-/decyzje-o-ustaleniu-lokalizacji-inwestycji-celu-publicznego",
+      "title": "Wydane decyzje o ustaleniu lokalizacji inwestycji celu publicznego",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "rejestr decyzji po 11.09.2020 r.",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "33763f154b"
+          ],
+          "period": "2020-09"
+        },
+        {
+          "text": "rejestr decyzji",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "6fc0719e6e"
+          ],
+          "period": "2021"
+        },
+        {
+          "text": "rejestr decyzji",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "2e328c9f98"
+          ],
+          "period": "2022"
+        },
+        {
+          "text": "rejestr decyzji",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "0b7aa99ca0"
+          ],
+          "period": "2023"
+        },
+        {
+          "text": "rejestr decyzji",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "1878e59584"
+          ],
+          "period": "2024"
+        },
+        {
+          "text": "rejestr decyzji",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "7dc158519a"
+          ],
+          "period": "2025"
+        },
+        {
+          "text": "rejestr decyzji",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "c7f2bdc5d0"
+          ],
+          "period": "2026"
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "docx": 51,
+        "pdf": 33,
+        "xls": 2
+      }
+    },
+    {
+      "page_id": "wol-decyzje-o-warunkach-zabudowy",
+      "url": "https://wola.um.warszawa.pl/waw/wola/-/decyzje-o-warunkach-zabudowy",
+      "title": "Wydane decyzje o warunkach zabudowy",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "rejestr decyzji",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "d3c2c7a3cf"
+          ],
+          "period": "2024"
+        },
+        {
+          "text": "Rejestr decyzji – cz. 2",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "d4e8ff1d7f"
+          ],
+          "period": "2020"
+        },
+        {
+          "text": "Rejestr decyzji",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "2079fc31cc"
+          ],
+          "period": "2021"
+        },
+        {
+          "text": "rejestr decyzji",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "a765e3a480"
+          ],
+          "period": "2022"
+        },
+        {
+          "text": "rejestr decyzji",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "9519a3d880"
+          ],
+          "period": "2023"
+        },
+        {
+          "text": "rejestr decyzji",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "dc4ddc50f4"
+          ],
+          "period": "2024"
+        },
+        {
+          "text": "rejestr decyzji",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "10edc2aea4"
+          ],
+          "period": "2025"
+        },
+        {
+          "text": "rejestr decyzji",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "0e52bac41e"
+          ],
+          "period": "2026"
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "doc": 45,
+        "docx": 255,
+        "jpg": 1,
+        "pdf": 62,
+        "xls": 1,
+        "zip": 1
+      }
+    },
+    {
+      "page_id": "wol-wnioski-o-wydanie-decyzji-urbanistycznych",
+      "url": "https://wola.um.warszawa.pl/waw/wola/-/wnioski-o-wydanie-decyzji-urbanistycznych",
+      "title": "Wnioski o wydanie decyzji urbanistycznych",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Rejestr wniosków – 2020 rok",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "671ec65ca7"
+          ],
+          "period": "2020"
+        },
+        {
+          "text": "Rejestr wniosków – 2021 rok",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "8fcef81842"
+          ],
+          "period": "2021"
+        },
+        {
+          "text": "Rejestr wniosków",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "930fbeef4e"
+          ],
+          "period": "2022"
+        },
+        {
+          "text": "– 2022 rok",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "8c1d11b224"
+          ],
+          "period": "2022"
+        },
+        {
+          "text": "– 2023 rok",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "0d0f7d3d62"
+          ],
+          "period": "2023"
+        },
+        {
+          "text": "– 2024 rok",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "0d9edb0633"
+          ],
+          "period": "2024"
+        },
+        {
+          "text": "Rejestr wniosków – 2025 rok",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "6d9302c733"
+          ],
+          "period": "2025"
+        },
+        {
+          "text": "Rejestr wniosków – 2026 rok",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "5124f69f99"
+          ],
+          "period": "2026"
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "xls": 4
+      }
+    }
+  ],
+  "files": [
+    {
+      "file_id": "c7f2bdc5d0",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/151735001/17.03.26.CP+2026.xlsx/2d8bf4d1-19e3-d243-e1a4-8f775e9a6478?t=1773740484926",
+      "document_path": "/documents/43348/151735001/17.03.26.CP+2026.xlsx/2d8bf4d1-19e3-d243-e1a4-8f775e9a6478",
+      "filename": "17.03.26.CP 2026.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2026",
+      "page_ids": [
+        "wol-decyzje-o-ustaleniu-lokalizacji-inwestycji-celu-publicznego"
+      ],
+      "local_path": "data/districts/wola/raw/c7f2bdc5d0.xlsx",
+      "sha256": "ff2ece25a5171eb5a3540c5932da366d3bf7ee1c77f03f6316f98bb83a80064c",
+      "size": 12875,
+      "downloaded_at": "2026-10-27T15:53:53Z",
+      "last_modified": "2026-03-17T09:41:24Z",
+      "history": []
+    },
+    {
+      "file_id": "0e52bac41e",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/151735001/22.10.26.WZ+2026.xlsx/787cdcf4-6c8f-f4a8-13d7-08a67e83f4f7?t=1792650388334",
+      "document_path": "/documents/43348/151735001/22.10.26.WZ+2026.xlsx/787cdcf4-6c8f-f4a8-13d7-08a67e83f4f7",
+      "filename": "22.10.26.WZ 2026.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026",
+      "page_ids": [
+        "wol-decyzje-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wola/raw/0e52bac41e.xlsx",
+      "sha256": "8bbe828f8c7e00728deb5660f6602642fbbdfdd8c7256e900f8c81810c5966f6",
+      "size": 16958,
+      "downloaded_at": "2026-10-27T15:53:53Z",
+      "last_modified": "2026-10-22T06:26:28Z",
+      "history": []
+    },
+    {
+      "file_id": "5124f69f99",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/151734600/24.09.26.WZ+i+CP+2026.xlsx/62fe8b38-f346-0434-39b4-bc2152459ed6?t=1790245369302",
+      "document_path": "/documents/43348/151734600/24.09.26.WZ+i+CP+2026.xlsx/62fe8b38-f346-0434-39b4-bc2152459ed6",
+      "filename": "24.09.26.WZ i CP 2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026",
+      "page_ids": [
+        "wol-wnioski-o-wydanie-decyzji-urbanistycznych"
+      ],
+      "local_path": "data/districts/wola/raw/5124f69f99.xlsx",
+      "sha256": "33ca2f9d4e7495eccc3ecb7d57578266f5553314de922ca647a384ca2bb0dc70",
+      "size": 23126,
+      "downloaded_at": "2026-10-27T15:53:54Z",
+      "last_modified": "2026-09-24T10:22:49Z",
+      "history": []
+    },
+    {
+      "file_id": "7dc158519a",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/125709976/23.06.25.CP+2025.xlsx/455ae8e5-df55-a2f3-b55f-f1eedb562d83?t=1750669313395",
+      "document_path": "/documents/43348/125709976/23.06.25.CP+2025.xlsx/455ae8e5-df55-a2f3-b55f-f1eedb562d83",
+      "filename": "23.06.25.CP 2025.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2025",
+      "page_ids": [
+        "wol-decyzje-o-ustaleniu-lokalizacji-inwestycji-celu-publicznego"
+      ],
+      "local_path": "data/districts/wola/raw/7dc158519a.xlsx",
+      "sha256": "33cd4f99b54ed53ec1f666f1102f717152ed82212438fd227c9277f0d8d345f6",
+      "size": 12932,
+      "downloaded_at": "2026-10-27T15:53:54Z",
+      "last_modified": "2025-06-23T09:01:53Z",
+      "history": []
+    },
+    {
+      "file_id": "10edc2aea4",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/125709976/7.01.26.WZ+2025.xlsx/a76d2819-d1c5-285a-5cf3-8d4197ded70f?t=1767779562635",
+      "document_path": "/documents/43348/125709976/7.01.26.WZ+2025.xlsx/a76d2819-d1c5-285a-5cf3-8d4197ded70f",
+      "filename": "7.01.26.WZ 2025.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025",
+      "page_ids": [
+        "wol-decyzje-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wola/raw/10edc2aea4.xlsx",
+      "sha256": "55e77f4c8a18e8362cb3c13dd3463ec5bb97a8ff76dc986035da825b8261c5e9",
+      "size": 18601,
+      "downloaded_at": "2026-10-27T15:53:55Z",
+      "last_modified": "2026-01-07T09:52:42Z",
+      "history": []
+    },
+    {
+      "file_id": "6d9302c733",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/125709973/7.01.26.WZ+i+CP+2025.xlsx/0d47a2f7-a412-2b44-a0bf-0e711ed3ed3e?t=1767779407691",
+      "document_path": "/documents/43348/125709973/7.01.26.WZ+i+CP+2025.xlsx/0d47a2f7-a412-2b44-a0bf-0e711ed3ed3e",
+      "filename": "7.01.26.WZ i CP 2025.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025",
+      "page_ids": [
+        "wol-wnioski-o-wydanie-decyzji-urbanistycznych"
+      ],
+      "local_path": "data/districts/wola/raw/6d9302c733.xlsx",
+      "sha256": "57b27515259caa408dd89993701fcd8537f9cb4cdfa63aeb427b654e732ada2d",
+      "size": 25727,
+      "downloaded_at": "2026-10-27T15:53:55Z",
+      "last_modified": "2026-01-07T09:50:07Z",
+      "history": []
+    },
+    {
+      "file_id": "d3c2c7a3cf",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/95740134/17.12.24.WZ+2024.xlsx/364b4b73-1b68-ab96-d7fa-c1ce8456ce4f?t=1734434021389",
+      "document_path": "/documents/43348/95740134/17.12.24.WZ+2024.xlsx/364b4b73-1b68-ab96-d7fa-c1ce8456ce4f",
+      "filename": "17.12.24.WZ 2024.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2024",
+      "page_ids": [
+        "wol-decyzje-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wola/raw/d3c2c7a3cf.xlsx",
+      "sha256": "c4152e962c59f3777421450bb949fccde1015141f6fa03f2517b27f6a3a63aba",
+      "size": 15555,
+      "downloaded_at": "2026-10-27T15:53:56Z",
+      "last_modified": "2024-12-17T11:13:41Z",
+      "history": []
+    },
+    {
+      "file_id": "0d9edb0633",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/99831035/17.12.24.WZ+i+CP+2024.xlsx/76bb9e2e-76bf-111e-4f96-8410768c60b8?t=1734433860551",
+      "document_path": "/documents/43348/99831035/17.12.24.WZ+i+CP+2024.xlsx/76bb9e2e-76bf-111e-4f96-8410768c60b8",
+      "filename": "17.12.24.WZ i CP 2024.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2024",
+      "page_ids": [
+        "wol-wnioski-o-wydanie-decyzji-urbanistycznych"
+      ],
+      "local_path": "data/districts/wola/raw/0d9edb0633.xlsx",
+      "sha256": "08625748d9807122c7e8d966839017f5d4e7693f555a356c465f079c0ed78cb7",
+      "size": 23563,
+      "downloaded_at": "2026-10-27T15:53:57Z",
+      "last_modified": "2024-12-17T11:11:00Z",
+      "history": []
+    },
+    {
+      "file_id": "1878e59584",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/95740134/2.10.24.CP+2024.xlsx/2626f9c3-a836-eaf4-082c-4ca7b62087a4?t=1727875163834",
+      "document_path": "/documents/43348/95740134/2.10.24.CP+2024.xlsx/2626f9c3-a836-eaf4-082c-4ca7b62087a4",
+      "filename": "2.10.24.CP 2024.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2024",
+      "page_ids": [
+        "wol-decyzje-o-ustaleniu-lokalizacji-inwestycji-celu-publicznego"
+      ],
+      "local_path": "data/districts/wola/raw/1878e59584.xlsx",
+      "sha256": "3e44e616078b6fe67e4ea2c6461d109be702dca3fbb0781c65d62df8e1d15ddc",
+      "size": 13560,
+      "downloaded_at": "2026-10-27T15:53:57Z",
+      "last_modified": "2024-10-02T13:19:23Z",
+      "history": []
+    },
+    {
+      "file_id": "dc4ddc50f4",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/95740134/31.12.24.NOWY.WZ+2024.xlsx/0dc1153f-3864-045b-a95e-aedd65383882?t=1735638313541",
+      "document_path": "/documents/43348/95740134/31.12.24.NOWY.WZ+2024.xlsx/0dc1153f-3864-045b-a95e-aedd65383882",
+      "filename": "31.12.24.NOWY.WZ 2024.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2024",
+      "page_ids": [
+        "wol-decyzje-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wola/raw/dc4ddc50f4.xlsx",
+      "sha256": "da7375dadd130f2ddfe2a517710875f9d140459839d4c21984bc8377a00a159a",
+      "size": 15955,
+      "downloaded_at": "2026-10-27T15:53:58Z",
+      "last_modified": "2024-12-31T09:45:13Z",
+      "history": []
+    },
+    {
+      "file_id": "0b7aa99ca0",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/25698165/8.01.24.CP+2023.xlsx/88f387ce-4031-1b73-f78b-9edd669dcd73?t=1704707452124",
+      "document_path": "/documents/43348/25698165/8.01.24.CP+2023.xlsx/88f387ce-4031-1b73-f78b-9edd669dcd73",
+      "filename": "8.01.24.CP 2023.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2023",
+      "page_ids": [
+        "wol-decyzje-o-ustaleniu-lokalizacji-inwestycji-celu-publicznego"
+      ],
+      "local_path": "data/districts/wola/raw/0b7aa99ca0.xlsx",
+      "sha256": "679374431ed35f07202bdffd2ce5fe0f0188d4e2b65da26d684b2803e6bcbb5b",
+      "size": 12879,
+      "downloaded_at": "2026-10-27T15:53:59Z",
+      "last_modified": "2024-01-09T13:26:02Z",
+      "history": []
+    },
+    {
+      "file_id": "9519a3d880",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/25698165/8.01.24.WZ+2023.xlsx/2149f4f6-6ec3-9361-3ee9-e7bd0bec746c?t=1704707471628",
+      "document_path": "/documents/43348/25698165/8.01.24.WZ+2023.xlsx/2149f4f6-6ec3-9361-3ee9-e7bd0bec746c",
+      "filename": "8.01.24.WZ 2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023",
+      "page_ids": [
+        "wol-decyzje-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wola/raw/9519a3d880.xlsx",
+      "sha256": "28a0d8f44b3a0cb89eceac1bbfb4766f40df702073e02469ef0ee827ac4dd834",
+      "size": 13999,
+      "downloaded_at": "2026-10-27T15:53:59Z",
+      "last_modified": "2024-01-09T13:25:51Z",
+      "history": []
+    },
+    {
+      "file_id": "0d0f7d3d62",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/95741001/8.01.24.WZ+i+CP+2023.xlsx/59905985-db18-2626-e42c-51aab6747c4c?t=1704808339936",
+      "document_path": "/documents/43348/95741001/8.01.24.WZ+i+CP+2023.xlsx/59905985-db18-2626-e42c-51aab6747c4c",
+      "filename": "8.01.24.WZ i CP 2023.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2023",
+      "page_ids": [
+        "wol-wnioski-o-wydanie-decyzji-urbanistycznych"
+      ],
+      "local_path": "data/districts/wola/raw/0d0f7d3d62.xlsx",
+      "sha256": "732a236a14576a11126544cb301fe2e058bd7e8231f985e8fd89a104b3b1a24a",
+      "size": 24716,
+      "downloaded_at": "2026-10-27T15:54:00Z",
+      "last_modified": "2024-01-09T13:52:19Z",
+      "history": []
+    },
+    {
+      "file_id": "2e328c9f98",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/25698165/2.01.23.CP+2022.xlsx/e60512a2-9044-9dcd-f57f-8ba80322d65f?t=1672657030502",
+      "document_path": "/documents/43348/25698165/2.01.23.CP+2022.xlsx/e60512a2-9044-9dcd-f57f-8ba80322d65f",
+      "filename": "2.01.23.CP 2022.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2022",
+      "page_ids": [
+        "wol-decyzje-o-ustaleniu-lokalizacji-inwestycji-celu-publicznego"
+      ],
+      "local_path": "data/districts/wola/raw/2e328c9f98.xlsx",
+      "sha256": "955696c3d16a687cfb91dd15aecdc723afee9fe4f1ce97265fd58a318bb93ca0",
+      "size": 13792,
+      "downloaded_at": "2026-10-27T15:54:00Z",
+      "last_modified": "2024-01-09T13:35:34Z",
+      "history": []
+    },
+    {
+      "file_id": "a765e3a480",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/25698165/2.01.23.WZ+2022.xlsx/83ed4e52-fbfd-08ab-7eba-d8717e994c04?t=1672657056265",
+      "document_path": "/documents/43348/25698165/2.01.23.WZ+2022.xlsx/83ed4e52-fbfd-08ab-7eba-d8717e994c04",
+      "filename": "2.01.23.WZ 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022",
+      "page_ids": [
+        "wol-decyzje-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wola/raw/a765e3a480.xlsx",
+      "sha256": "e36a587ca5d5626d194bc71c3d0c4279cdebcacf69cf3d54656ed240a9438245",
+      "size": 16516,
+      "downloaded_at": "2026-10-27T15:54:01Z",
+      "last_modified": "2024-01-09T13:35:46Z",
+      "history": []
+    },
+    {
+      "file_id": "8c1d11b224",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/95742102/2.01.23.WZ+i+CP+2022.xlsx/5d6d9442-a2c6-1f7f-1184-26d922938f13?t=1704808984701",
+      "document_path": "/documents/43348/95742102/2.01.23.WZ+i+CP+2022.xlsx/5d6d9442-a2c6-1f7f-1184-26d922938f13",
+      "filename": "2.01.23.WZ i CP 2022.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2022",
+      "page_ids": [
+        "wol-wnioski-o-wydanie-decyzji-urbanistycznych"
+      ],
+      "local_path": "data/districts/wola/raw/8c1d11b224.xlsx",
+      "sha256": "a67fc0faefe7f2889e6b8b60e134151f8d68c55e8c02dbcc9d011683628b4980",
+      "size": 24328,
+      "downloaded_at": "2026-10-27T15:54:02Z",
+      "last_modified": "2024-01-09T14:03:04Z",
+      "history": []
+    },
+    {
+      "file_id": "930fbeef4e",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/25698168/29.04.22.poprawione.WZ+i+CP+2022.xlsx/177aaf6b-bd76-7bd0-b4b8-5a1f5d581163?t=1651217808939",
+      "document_path": "/documents/43348/25698168/29.04.22.poprawione.WZ+i+CP+2022.xlsx/177aaf6b-bd76-7bd0-b4b8-5a1f5d581163",
+      "filename": "29.04.22.poprawione.WZ i CP 2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022",
+      "page_ids": [
+        "wol-wnioski-o-wydanie-decyzji-urbanistycznych"
+      ],
+      "local_path": "data/districts/wola/raw/930fbeef4e.xlsx",
+      "sha256": "f4483aec7cd0dec17178e67d7cf8c8e8f3d53e5b699b0e0fb3c6a2f739ee71f7",
+      "size": 20768,
+      "downloaded_at": "2026-10-27T15:54:02Z",
+      "last_modified": "2022-05-23T13:13:31Z",
+      "history": []
+    },
+    {
+      "file_id": "6fc0719e6e",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/25698165/19.11.21.CP+2021.xlsx/6f12384c-fa00-c98c-9b56-c4d8156e0035?t=1637311954602",
+      "document_path": "/documents/43348/25698165/19.11.21.CP+2021.xlsx/6f12384c-fa00-c98c-9b56-c4d8156e0035",
+      "filename": "19.11.21.CP 2021.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2021",
+      "page_ids": [
+        "wol-decyzje-o-ustaleniu-lokalizacji-inwestycji-celu-publicznego"
+      ],
+      "local_path": "data/districts/wola/raw/6fc0719e6e.xlsx",
+      "sha256": "564f392095f3a6339a0e7660d41887c070e1b080ad79fe936d86d7a5870c5511",
+      "size": 13629,
+      "downloaded_at": "2026-10-27T15:54:03Z",
+      "last_modified": "2024-01-09T13:43:01Z",
+      "history": []
+    },
+    {
+      "file_id": "8fcef81842",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/25698168/22.12.21.WZ+i+CP+2021.xlsx/bbcc93ed-7c4a-1f94-e7f3-bc71b17f2a4e?t=1640159714991",
+      "document_path": "/documents/43348/25698168/22.12.21.WZ+i+CP+2021.xlsx/bbcc93ed-7c4a-1f94-e7f3-bc71b17f2a4e",
+      "filename": "22.12.21.WZ i CP 2021.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2021",
+      "page_ids": [
+        "wol-wnioski-o-wydanie-decyzji-urbanistycznych"
+      ],
+      "local_path": "data/districts/wola/raw/8fcef81842.xlsx",
+      "sha256": "e69eadb85401b88222e87a89701c2378f9f60fc1101e03ce33e1a0b68541d8d8",
+      "size": 26314,
+      "downloaded_at": "2026-10-27T15:54:04Z",
+      "last_modified": "2024-01-09T14:02:23Z",
+      "history": []
+    },
+    {
+      "file_id": "2079fc31cc",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/25698165/31.12.21.WZ+2021.xlsx/4c8478a6-c249-92dc-e586-d8efd2ce3c5d?t=1641894333923",
+      "document_path": "/documents/43348/25698165/31.12.21.WZ+2021.xlsx/4c8478a6-c249-92dc-e586-d8efd2ce3c5d",
+      "filename": "31.12.21.WZ 2021.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021",
+      "page_ids": [
+        "wol-decyzje-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wola/raw/2079fc31cc.xlsx",
+      "sha256": "9cb48d3703465594ce8bcc51989798d0bf87e54efb3c5e17a0738d2fe37cd310",
+      "size": 16584,
+      "downloaded_at": "2026-10-27T15:54:04Z",
+      "last_modified": "2024-01-09T13:43:20Z",
+      "history": []
+    },
+    {
+      "file_id": "33763f154b",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/5239607/CP-decyzje-nowy.xlsx/9b57aa70-7f0c-66b5-31e6-139b7afc4171?t=1619003667125",
+      "document_path": "/documents/43348/5239607/CP-decyzje-nowy.xlsx/9b57aa70-7f0c-66b5-31e6-139b7afc4171",
+      "filename": "CP-decyzje-nowy.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2020-09",
+      "page_ids": [
+        "wol-decyzje-o-ustaleniu-lokalizacji-inwestycji-celu-publicznego"
+      ],
+      "local_path": "data/districts/wola/raw/33763f154b.xlsx",
+      "sha256": "748afefae71f347b3f2283349e08d9312f7df4a3c2f52faf9790535e4e8b8ee0",
+      "size": 10914,
+      "downloaded_at": "2026-10-27T15:54:05Z",
+      "last_modified": "2021-04-21T11:14:25Z",
+      "history": []
+    },
+    {
+      "file_id": "671ec65ca7",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/26609836/CPWZ-wnioski-2.xlsx/34a7ff84-2307-8d86-d63c-379af9f13190?t=1626169770699",
+      "document_path": "/documents/43348/26609836/CPWZ-wnioski-2.xlsx/34a7ff84-2307-8d86-d63c-379af9f13190",
+      "filename": "CPWZ-wnioski-2.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2020",
+      "page_ids": [
+        "wol-wnioski-o-wydanie-decyzji-urbanistycznych"
+      ],
+      "local_path": "data/districts/wola/raw/671ec65ca7.xlsx",
+      "sha256": "e9e31d2c62a0ff7766a6f5530c759f8d6da0e811afcac9f4c0df3691facd0bf6",
+      "size": 12998,
+      "downloaded_at": "2026-10-27T15:54:05Z",
+      "last_modified": "2021-07-13T09:49:30Z",
+      "history": []
+    },
+    {
+      "file_id": "d4e8ff1d7f",
+      "source": "district",
+      "url": "https://wola.um.warszawa.pl/documents/43348/29990121/rejestr+decyzji+o+warunkach+zabudowy+2020_cz.2.xlsx/eb52b3c0-25f8-9051-781b-6df3f2d0ff2d?t=1629900073478",
+      "document_path": "/documents/43348/29990121/rejestr+decyzji+o+warunkach+zabudowy+2020_cz.2.xlsx/eb52b3c0-25f8-9051-781b-6df3f2d0ff2d",
+      "filename": "rejestr decyzji o warunkach zabudowy 2020_cz.2.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2020",
+      "page_ids": [
+        "wol-decyzje-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wola/raw/d4e8ff1d7f.xlsx",
+      "sha256": "24023cf1c8f1fd1a382bdb540ef72b1958721a2a603a67c6e0311f1ca775e61b",
+      "size": 11641,
+      "downloaded_at": "2026-10-27T15:54:26Z",
+      "last_modified": "2021-08-25T14:01:13Z",
+      "history": []
+    }
+  ],
+  "district": "wola"
+}

@@ -4,6 +4,9 @@
 # frontend unit tests (`node --test`, no dependencies) and the optional browser e2e test.
 
 PORT ?= 8000
+# Public base URL for the permalinks in CSVs, feeds and the committed reports (CI passes the Pages URL).
+SITE_URL ?= https://3-n.github.io/wzsearch/
+export SITE_URL
 
 .PHONY: help install data data-offline city city-offline rwdz test test-py test-js serve e2e report
 

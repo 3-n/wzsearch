@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-10-27T19:21:21Z",
+  "index_url": "https://ochota.um.warszawa.pl/warunki-zabudowy",
+  "pages": [
+    {
+      "page_id": "och-warunki-zabudowy",
+      "url": "https://ochota.um.warszawa.pl/warunki-zabudowy",
+      "title": "Wszczęte postępowania - warunki zabudowy oraz lokalizacja inwestycji celu publicznego",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Informacja o wszczętych postępowaniach o warunkach zabudowy - zał. 1a (PDF)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "c2a381f4b5"
+          ],
+          "period": "2026-09"
+        },
+        {
+          "text": "Wydane decyzje celu publicznego (PDF)",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "ad6c05793b"
+          ],
+          "period": "2026-09"
+        },
+        {
+          "text": "Informacja o wydanych decyzjach w sprawie warunków zabudowy - zał. 2 (PDF)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "ad3e329636"
+          ],
+          "period": "2026-09"
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "files": [
+    {
+      "file_id": "ad6c05793b",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/42113/77545760/LICP_zal3.14.09.2026.xlsx.pdf/e700c085-c641-7ccf-b715-da8d0936908b?t=1789374614187",
+      "document_path": "/documents/42113/77545760/LICP_zal3.14.09.2026.xlsx.pdf/e700c085-c641-7ccf-b715-da8d0936908b",
+      "filename": "LICP_zal3.14.09.2026.xlsx.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2026-09",
+      "page_ids": [
+        "och-warunki-zabudowy"
+      ],
+      "local_path": "data/districts/ochota/raw/ad6c05793b.pdf",
+      "sha256": "5ab204b66d61b757109d9d0c53ef9b70237251fa6a7a4649172a7321ae0269d1",
+      "size": 416097,
+      "downloaded_at": "2026-10-27T19:08:59Z",
+      "last_modified": "2026-09-14T08:30:14Z",
+      "history": []
+    },
+    {
+      "file_id": "ad3e329636",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/42113/77545760/WZ_zal2_14.09.2026a.pdf/d0c3c67f-10a8-cd3b-41b0-c7fab7716566?t=1789374614744",
+      "document_path": "/documents/42113/77545760/WZ_zal2_14.09.2026a.pdf/d0c3c67f-10a8-cd3b-41b0-c7fab7716566",
+      "filename": "WZ_zal2_14.09.2026a.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2026-09",
+      "page_ids": [
+        "och-warunki-zabudowy"
+      ],
+      "local_path": "data/districts/ochota/raw/ad3e329636.pdf",
+      "sha256": "bceebd031dbbc6806d4699cab415dafa68f936ea249dca14808d2d6a350ab27a",
+      "size": 512892,
+      "downloaded_at": "2026-10-27T19:09:09Z",
+      "last_modified": "2026-09-14T08:30:14Z",
+      "history": []
+    },
+    {
+      "file_id": "c2a381f4b5",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/42113/77545760/wnioski.zal1_14.09.2026.pdf/b5e5eb6c-15ff-964b-90ee-32e77f7f95f8?t=1789374615148",
+      "document_path": "/documents/42113/77545760/wnioski.zal1_14.09.2026.pdf/b5e5eb6c-15ff-964b-90ee-32e77f7f95f8",
+      "filename": "wnioski.zal1_14.09.2026.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2026-09",
+      "page_ids": [
+        "och-warunki-zabudowy"
+      ],
+      "local_path": "data/districts/ochota/raw/c2a381f4b5.pdf",
+      "sha256": "b3607974e395cb10d7cd8dfe912897db399feb779fcd3bc346fadf0647f39c3d",
+      "size": 461525,
+      "downloaded_at": "2026-10-27T19:09:19Z",
+      "last_modified": "2026-09-14T08:30:15Z",
+      "history": []
+    }
+  ],
+  "district": "ochota"
+}

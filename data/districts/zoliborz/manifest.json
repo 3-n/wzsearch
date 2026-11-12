@@ -1,0 +1,502 @@
+{
+  "generated_at": "2026-10-27T16:10:18Z",
+  "index_url": "https://zoliborz.um.warszawa.pl/-/informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1",
+  "pages": [
+    {
+      "page_id": "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1",
+      "url": "https://zoliborz.um.warszawa.pl/-/informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1",
+      "title": "Informacja o wszczętych postępowaniach oraz wydanych decyzjach administracyjnych",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "WZ",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "32579e52b1"
+          ],
+          "period": "2024-01"
+        },
+        {
+          "text": "WZ",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "b8228c4daa"
+          ],
+          "period": "2023-01"
+        },
+        {
+          "text": "WZ i cp wydane decyzje lipiec-grudzien 2023.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "8716843177"
+          ],
+          "period": "2023-07"
+        },
+        {
+          "text": "wz",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "cfb2549158"
+          ],
+          "period": "2023-01"
+        },
+        {
+          "text": "wz",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "51823ab2dc"
+          ],
+          "period": "2022-11"
+        },
+        {
+          "text": "WZ",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "88ecf42898"
+          ],
+          "period": "2022-11"
+        },
+        {
+          "text": "wz",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "9cd0d52d29"
+          ],
+          "period": "2022-08"
+        },
+        {
+          "text": "WZ",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "af7ecf2e02"
+          ],
+          "period": "2022-08"
+        },
+        {
+          "text": "wz",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "752f8ae12e"
+          ],
+          "period": "2022-06"
+        },
+        {
+          "text": "WZ",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "5c5424410a"
+          ],
+          "period": "2022-06"
+        },
+        {
+          "text": "wz",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "a20708aa5e"
+          ],
+          "period": "2022-04"
+        },
+        {
+          "text": "WZ",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "31ccda27be"
+          ],
+          "period": "2022-04"
+        },
+        {
+          "text": "wz",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "e29ba4c4ee"
+          ],
+          "period": "2022-02"
+        },
+        {
+          "text": "WZ",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "dfbc80b9ea"
+          ],
+          "period": "2022-02"
+        },
+        {
+          "text": "wz",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "1f89315172"
+          ],
+          "period": "2022-01"
+        },
+        {
+          "text": "WZ",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "87c5519e1e"
+          ],
+          "period": "2022-01"
+        },
+        {
+          "text": "rejestr wniosków wz i decyzji WZ – styczeń – grudzień 2021",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "75d9dcfa0e"
+          ],
+          "period": "2021-01"
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "docx": 1,
+        "ods": 32
+      }
+    }
+  ],
+  "files": [
+    {
+      "file_id": "32579e52b1",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/48738426/WZ+i+cp+wydane+decyzje+stycze%C5%84-czerwiec+2024.xlsx/ab4478d7-9c52-5816-a984-4ae7aa1e751b?t=1721052560853",
+      "document_path": "/documents/46235/48738426/WZ+i+cp+wydane+decyzje+stycze%C5%84-czerwiec+2024.xlsx/ab4478d7-9c52-5816-a984-4ae7aa1e751b",
+      "filename": "WZ i cp wydane decyzje styczeń-czerwiec 2024.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2024-01",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/32579e52b1.xlsx",
+      "sha256": "5fbb30377d4f3d8aaa3aab760a93d8d45acfdd921abe0de413bba5aa761c6f5a",
+      "size": 12794,
+      "downloaded_at": "2026-10-27T16:10:19Z",
+      "last_modified": "2024-07-15T14:09:20Z",
+      "history": []
+    },
+    {
+      "file_id": "8716843177",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/48738426/WZ+i+cp+wydane+decyzje+lipiec-grudzien+2023.xlsx/81529708-26f6-9ab5-079a-1b0f18a3f643?t=1721052574890",
+      "document_path": "/documents/46235/48738426/WZ+i+cp+wydane+decyzje+lipiec-grudzien+2023.xlsx/81529708-26f6-9ab5-079a-1b0f18a3f643",
+      "filename": "WZ i cp wydane decyzje lipiec-grudzien 2023.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2023-07",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/8716843177.xlsx",
+      "sha256": "ec70f0e0bc791b7e80d82b1be6457ee80db585b0bdb4242790e7a06b5da189e0",
+      "size": 12799,
+      "downloaded_at": "2026-10-27T16:10:19Z",
+      "last_modified": "2024-07-15T14:09:34Z",
+      "history": []
+    },
+    {
+      "file_id": "cfb2549158",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/82377301/WZ+i+CP+wszczecie+postepow.+stycze%C5%84+-+czerwiec++2023.xlsx/5e39205f-1b10-df08-f170-1c7096f8714d?t=1688622115816",
+      "document_path": "/documents/46235/82377301/WZ+i+CP+wszczecie+postepow.+stycze%C5%84+-+czerwiec++2023.xlsx/5e39205f-1b10-df08-f170-1c7096f8714d",
+      "filename": "WZ i CP wszczecie postepow. styczeń - czerwiec  2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-01",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/cfb2549158.xlsx",
+      "sha256": "4576e1950ed9817f6f1550fe2cec2e2f74330c90e12d62e429cbb4b1d58073fa",
+      "size": 19923,
+      "downloaded_at": "2026-10-27T16:10:20Z",
+      "last_modified": "2023-07-06T05:41:55Z",
+      "history": []
+    },
+    {
+      "file_id": "b8228c4daa",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/82377301/WZ+i+cp+wydane+decyzje+stycze%C5%84-czerwiec+2023.xlsx/4904ea0a-f177-5f89-7b22-5659e6b51b08?t=1688622116052",
+      "document_path": "/documents/46235/82377301/WZ+i+cp+wydane+decyzje+stycze%C5%84-czerwiec+2023.xlsx/4904ea0a-f177-5f89-7b22-5659e6b51b08",
+      "filename": "WZ i cp wydane decyzje styczeń-czerwiec 2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-01",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/b8228c4daa.xlsx",
+      "sha256": "08ff79bf7431401c386de7643005f6658160e0666238bcdf3c23b257a1b70ad7",
+      "size": 13523,
+      "downloaded_at": "2026-10-27T16:10:20Z",
+      "last_modified": "2023-07-06T05:41:56Z",
+      "history": []
+    },
+    {
+      "file_id": "51823ab2dc",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/75162133/WZ+i+CP+wszczecie+postepow.+listopad-grudzien+2022.xlsx/d925fb25-ef79-0073-e36b-e335cedbb935?t=1680154398943",
+      "document_path": "/documents/46235/75162133/WZ+i+CP+wszczecie+postepow.+listopad-grudzien+2022.xlsx/d925fb25-ef79-0073-e36b-e335cedbb935",
+      "filename": "WZ i CP wszczecie postepow. listopad-grudzien 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-11",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/51823ab2dc.xlsx",
+      "sha256": "58b693313da7d34876e4c48ede7611797f6cbfa7e37389d8d2ea66e5832f5140",
+      "size": 19925,
+      "downloaded_at": "2026-10-27T16:10:21Z",
+      "last_modified": "2023-03-30T05:33:18Z",
+      "history": []
+    },
+    {
+      "file_id": "88ecf42898",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/75162133/WZ+i+cp+wydane+decyzje+listopad-grudzien+2022.xlsx/54b14b2d-a2d9-87cc-cc26-1cc0a29ed039?t=1680154399623",
+      "document_path": "/documents/46235/75162133/WZ+i+cp+wydane+decyzje+listopad-grudzien+2022.xlsx/54b14b2d-a2d9-87cc-cc26-1cc0a29ed039",
+      "filename": "WZ i cp wydane decyzje listopad-grudzien 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-11",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/88ecf42898.xlsx",
+      "sha256": "98a2d3f4f1ee47f7e6b969139f04bf692052e67baeb72ff8d2a55b90fb7405d6",
+      "size": 12605,
+      "downloaded_at": "2026-10-27T16:10:22Z",
+      "last_modified": "2023-03-30T05:33:19Z",
+      "history": []
+    },
+    {
+      "file_id": "9cd0d52d29",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/64436866/WZ+i+CP+wszczecie+postepow.+sierpien+pazdziernik+2022.xlsx/9d464988-8207-101e-1247-d9a075f61ded?t=1667476380370",
+      "document_path": "/documents/46235/64436866/WZ+i+CP+wszczecie+postepow.+sierpien+pazdziernik+2022.xlsx/9d464988-8207-101e-1247-d9a075f61ded",
+      "filename": "WZ i CP wszczecie postepow. sierpien pazdziernik 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-08",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/9cd0d52d29.xlsx",
+      "sha256": "84387b7d8217248a255936b0a3a098c28231919b371cb885c842bdb09ccd59dc",
+      "size": 19931,
+      "downloaded_at": "2026-10-27T16:10:22Z",
+      "last_modified": "2022-11-03T11:53:00Z",
+      "history": []
+    },
+    {
+      "file_id": "af7ecf2e02",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/64436866/WZ+i+cp+wydane+decyzje+sierpie%C5%84+pa%C5%BAdziernik+2022.xlsx/da1847ac-002a-9857-8f57-48a2fd181ce3?t=1667476380682",
+      "document_path": "/documents/46235/64436866/WZ+i+cp+wydane+decyzje+sierpie%C5%84+pa%C5%BAdziernik+2022.xlsx/da1847ac-002a-9857-8f57-48a2fd181ce3",
+      "filename": "WZ i cp wydane decyzje sierpień październik 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-08",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/af7ecf2e02.xlsx",
+      "sha256": "9023033b00a99f591bf00a2d081860051392d5cbcb1e9cd85dff82d3f5267d27",
+      "size": 12677,
+      "downloaded_at": "2026-10-27T16:10:23Z",
+      "last_modified": "2022-11-03T11:53:00Z",
+      "history": []
+    },
+    {
+      "file_id": "752f8ae12e",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/58013967/WZ+i+CP+wszczecie+postepow.+czerwiec+lipiec+2022.xlsx/c274f18b-ffb2-166d-6df8-25ef515e3199?t=1660035352565",
+      "document_path": "/documents/46235/58013967/WZ+i+CP+wszczecie+postepow.+czerwiec+lipiec+2022.xlsx/c274f18b-ffb2-166d-6df8-25ef515e3199",
+      "filename": "WZ i CP wszczecie postepow. czerwiec lipiec 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-06",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/752f8ae12e.xlsx",
+      "sha256": "29e6239d964e5889f38a9b4befbca8eea1c4cffc261b53a3d186fc6ab980192b",
+      "size": 19932,
+      "downloaded_at": "2026-10-27T16:10:24Z",
+      "last_modified": "2022-08-09T08:55:52Z",
+      "history": []
+    },
+    {
+      "file_id": "5c5424410a",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/58013967/WZ+i+cp+wydane+decyzje+czerwiec+-+lipiec+2022.xlsx/a17ac59d-a099-9be1-a72c-40bf4561d4f2?t=1660035334072",
+      "document_path": "/documents/46235/58013967/WZ+i+cp+wydane+decyzje+czerwiec+-+lipiec+2022.xlsx/a17ac59d-a099-9be1-a72c-40bf4561d4f2",
+      "filename": "WZ i cp wydane decyzje czerwiec - lipiec 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-06",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/5c5424410a.xlsx",
+      "sha256": "5db85148a1696a084cfcf9d47dfeb041d3ad6a5fba87231d571cdc9618a8dc39",
+      "size": 12681,
+      "downloaded_at": "2026-10-27T16:10:24Z",
+      "last_modified": "2022-08-09T08:55:34Z",
+      "history": []
+    },
+    {
+      "file_id": "a20708aa5e",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/52795484/WZ+i+CP+wszczecie+postepow.+kwiecie%C5%84+-+maj+2022.xlsx/845bec5f-dbf1-93d2-4c4c-5018345fe055?t=1654254699215",
+      "document_path": "/documents/46235/52795484/WZ+i+CP+wszczecie+postepow.+kwiecie%C5%84+-+maj+2022.xlsx/845bec5f-dbf1-93d2-4c4c-5018345fe055",
+      "filename": "WZ i CP wszczecie postepow. kwiecień - maj 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-04",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/a20708aa5e.xlsx",
+      "sha256": "55e1bced14b5c0c4da86779de5bf3781e67343a2251f986bdee3c02925a5bc0a",
+      "size": 19932,
+      "downloaded_at": "2026-10-27T16:10:25Z",
+      "last_modified": "2022-06-03T11:11:39Z",
+      "history": []
+    },
+    {
+      "file_id": "31ccda27be",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/52795484/WZ+i+cp+wydane+decyzje+kwiecie%C5%84-maj+2022.xlsx/c543bca5-ef07-564c-021c-bfa6b4d5106f?t=1654254699009",
+      "document_path": "/documents/46235/52795484/WZ+i+cp+wydane+decyzje+kwiecie%C5%84-maj+2022.xlsx/c543bca5-ef07-564c-021c-bfa6b4d5106f",
+      "filename": "WZ i cp wydane decyzje kwiecień-maj 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-04",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/31ccda27be.xlsx",
+      "sha256": "f866cc01091ba69addad32a91725afbc14136f64d2713b2219be72722847c75e",
+      "size": 13258,
+      "downloaded_at": "2026-10-27T16:10:26Z",
+      "last_modified": "2022-06-03T11:11:39Z",
+      "history": []
+    },
+    {
+      "file_id": "e29ba4c4ee",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/48738448/WZ+i+CP+wszczecie+postepow.+luty-marzec+2022.xlsx/e43576d7-0ef8-e1d3-c456-940cdeab3a41?t=1650352562971",
+      "document_path": "/documents/46235/48738448/WZ+i+CP+wszczecie+postepow.+luty-marzec+2022.xlsx/e43576d7-0ef8-e1d3-c456-940cdeab3a41",
+      "filename": "WZ i CP wszczecie postepow. luty-marzec 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-02",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/e29ba4c4ee.xlsx",
+      "sha256": "a72071c0d1c4c38dff5fc4fc632240e6424ec356bb6c07f118d409ea62fec698",
+      "size": 20071,
+      "downloaded_at": "2026-10-27T16:10:26Z",
+      "last_modified": "2022-04-19T07:16:02Z",
+      "history": []
+    },
+    {
+      "file_id": "dfbc80b9ea",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/48738448/WZ+i+cp+wydane+decyzje+luty-marzec+2022.xlsx/dd486729-a1f0-4e49-5c7c-72fc19954622?t=1650352563353",
+      "document_path": "/documents/46235/48738448/WZ+i+cp+wydane+decyzje+luty-marzec+2022.xlsx/dd486729-a1f0-4e49-5c7c-72fc19954622",
+      "filename": "WZ i cp wydane decyzje luty-marzec 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-02",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/dfbc80b9ea.xlsx",
+      "sha256": "c5251d9c073695f7478b4f0d8ed884dc9d3bb6e7d4d4d50f5b55561354044862",
+      "size": 12702,
+      "downloaded_at": "2026-10-27T16:10:27Z",
+      "last_modified": "2022-04-19T07:16:03Z",
+      "history": []
+    },
+    {
+      "file_id": "1f89315172",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/42890754/WZ+wszczecie+postepow.+stycze%C5%84+2022.xlsx/3dd80ec2-15ef-cdd8-6d9e-2d4ccf4fdf40?t=1643718977435",
+      "document_path": "/documents/46235/42890754/WZ+wszczecie+postepow.+stycze%C5%84+2022.xlsx/3dd80ec2-15ef-cdd8-6d9e-2d4ccf4fdf40",
+      "filename": "WZ wszczecie postepow. styczeń 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-01",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/1f89315172.xlsx",
+      "sha256": "cb4152c3fc2edb4b6552be1ce42f2d1356aa1b4f519005c1394e92e7a9466e71",
+      "size": 19943,
+      "downloaded_at": "2026-10-27T16:10:28Z",
+      "last_modified": "2022-04-19T07:15:14Z",
+      "history": []
+    },
+    {
+      "file_id": "87c5519e1e",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/42890754/WZ+wydane+decyzje+stycze%C5%84+2022.xlsx/fbea6a0f-6e1b-c0a4-dc44-baff0481521a?t=1643718977782",
+      "document_path": "/documents/46235/42890754/WZ+wydane+decyzje+stycze%C5%84+2022.xlsx/fbea6a0f-6e1b-c0a4-dc44-baff0481521a",
+      "filename": "WZ wydane decyzje styczeń 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-01",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/87c5519e1e.xlsx",
+      "sha256": "5b0a162a04b132b9004f2b381f890b45eb6f4a509fd60392436a8f23814ee9d3",
+      "size": 12704,
+      "downloaded_at": "2026-10-27T16:10:28Z",
+      "last_modified": "2022-04-19T07:15:10Z",
+      "history": []
+    },
+    {
+      "file_id": "75d9dcfa0e",
+      "source": "district",
+      "url": "https://zoliborz.um.warszawa.pl/documents/46235/48738426/rejestr+dec.+WZ+i+ZT+za+2021_na+strone.xlsx/b2ce456d-5fec-55b7-53db-ce0869878084?t=1721052630347",
+      "document_path": "/documents/46235/48738426/rejestr+dec.+WZ+i+ZT+za+2021_na+strone.xlsx/b2ce456d-5fec-55b7-53db-ce0869878084",
+      "filename": "rejestr dec. WZ i ZT za 2021_na strone.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021-01",
+      "page_ids": [
+        "zol-informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych-1"
+      ],
+      "local_path": "data/districts/zoliborz/raw/75d9dcfa0e.xlsx",
+      "sha256": "89a1b86873fb01f097a489c254a9e490b5e8d64815817ad5d47ec3818e6a6649",
+      "size": 12161,
+      "downloaded_at": "2026-10-27T16:10:29Z",
+      "last_modified": "2024-07-15T14:10:30Z",
+      "history": []
+    }
+  ],
+  "district": "zoliborz"
+}

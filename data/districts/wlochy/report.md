@@ -1,0 +1,317 @@
+# wzSearch – data-quality report
+
+Generated `2026-10-27T22:21:50Z` by `pipeline/build.py` from the district's [source index](https://wlochy.um.warszawa.pl/architektura), the [BAiPP lists](https://architektura.um.warszawa.pl/postepowania-i-decyzje) and GUNB's [RWDZ register](https://wyszukiwarka.gunb.gov.pl/pobranie.html). Regenerated on every build; do not edit.
+
+## Totals
+
+* Records per dataset: Dzielnica 14, BAiPP (miasto) 141, GUNB RWDZ 1020 – `records.json` 155, `permits.json` 1020.
+* Monthly pages: **3** (– → –); source files: **30** (1 with rows, 0 empty templates, 29 unreadable/missing).
+* Workbook data rows kept (district + BAiPP): **155** → records after merging duplicates: **155** (WZ 96, CP 6, Wszczęcie 53).
+* Building permits and notifications (RWDZ): **1020** (Pozwolenie 943, Zgłoszenie 77).
+* Records listed in more than one source row: 0.
+* Procedure (WZ vs public purpose, incl. initiated proceedings): cp 9, null 1, wz 145.
+* Applicants (WZ/ULICP): natural persons 15, organisations 140, unknown 0.
+
+WZ/ULICP records per year (decision / initiation date):
+
+| Year | WZ | CP | Wszczęcie | Total |
+|---|---:|---:|---:|---:|
+| 2020 | 4 | 0 | 3 | 7 |
+| 2021 | 10 | 2 | 6 | 18 |
+| 2022 | 10 | 2 | 11 | 23 |
+| 2023 | 16 | 0 | 14 | 30 |
+| 2024 | 10 | 1 | 4 | 15 |
+| 2025 | 18 | 0 | 9 | 27 |
+| 2026 | 28 | 1 | 6 | 35 |
+| **all** | **96** | **6** | **53** | **155** |
+
+## Declared vs parsed counts
+
+Each monthly page states how many entries each list has ("3 pozycje"). `parsed` counts the data rows read from the files first published on that page (a leftover link to an earlier month's file is not counted twice).
+
+| Kind | Declared (blocks with a number) | Parsed in those blocks | Parsed in blocks without a number | Parsed rows | Duplicates merged | Records |
+|---|---:|---:|---:|---:|---:|---:|
+| WZ | 0 | 0 | 14 | 14 | 0 | 14 |
+| CP | 0 | 0 | 0 | 0 | 0 | 0 |
+| Wszczęcie | 0 | 0 | 0 | 0 | 0 | 0 |
+
+All blocks with a declared count match the parsed files.
+
+Blocks that link a file but state no count (31; parsed rows are not checked): [Decyzje w sprawie ustalenia lokalizacji inwestycji celu publicznego](https://wlochy.um.warszawa.pl/inwestycje-celu-publicznego-decyzje) CP → None; [Decyzje w sprawie ustalenia lokalizacji inwestycji celu publicznego](https://wlochy.um.warszawa.pl/inwestycje-celu-publicznego-decyzje) CP → None; [Decyzje w sprawie ustalenia lokalizacji inwestycji celu publicznego](https://wlochy.um.warszawa.pl/inwestycje-celu-publicznego-decyzje) CP → None; [Decyzje w sprawie ustalenia lokalizacji inwestycji celu publicznego](https://wlochy.um.warszawa.pl/inwestycje-celu-publicznego-decyzje) CP → None; [Decyzje w sprawie ustalenia lokalizacji inwestycji celu publicznego](https://wlochy.um.warszawa.pl/inwestycje-celu-publicznego-decyzje) CP → None; [Decyzje w sprawie ustalenia lokalizacji inwestycji celu publicznego](https://wlochy.um.warszawa.pl/inwestycje-celu-publicznego-decyzje) CP → None; [Decyzje w sprawie ustalenia lokalizacji inwestycji celu publicznego](https://wlochy.um.warszawa.pl/inwestycje-celu-publicznego-decyzje) CP → None; [Decyzje w sprawie ustalenia lokalizacji inwestycji celu publicznego](https://wlochy.um.warszawa.pl/inwestycje-celu-publicznego-decyzje) CP → None; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → 14; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → None; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → None; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → None; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → None; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → None; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → None; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → None; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → None; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → None; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → None; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → None; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → None; [Decyzje o warunkach zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje) WZ → None; [Informacje o wnioskach o wydanie warunków zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-wnioski) Wszczęcie → None; [Informacje o wnioskach o wydanie warunków zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-wnioski) Wszczęcie → None; [Informacje o wnioskach o wydanie warunków zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-wnioski) Wszczęcie → None; [Informacje o wnioskach o wydanie warunków zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-wnioski) Wszczęcie → None; [Informacje o wnioskach o wydanie warunków zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-wnioski) Wszczęcie → None; [Informacje o wnioskach o wydanie warunków zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-wnioski) Wszczęcie → None; [Informacje o wnioskach o wydanie warunków zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-wnioski) Wszczęcie → None; [Informacje o wnioskach o wydanie warunków zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-wnioski) Wszczęcie → None; [Informacje o wnioskach o wydanie warunków zabudowy](https://wlochy.um.warszawa.pl/warunki-zabudowy-wnioski) Wszczęcie → None.
+
+## Completeness: gaps in decision numbering
+
+WZ and CP decisions are numbered consecutively per year, so a number that never appears in any file is a decision that was not published in these lists (or a refusal/discontinuation the office does not list). Numbering restarts every year at 1; in the first year only numbers after the lowest one seen count, because the publication started in August 2020. (District numbering only: BAiPP numbers its decisions city-wide.)
+
+| Kind | Year | Published | Range seen | Missing | Missing numbers |
+|---|---|---:|---|---:|---|
+
+## BAiPP (city architecture bureau) lists
+
+Biuro Architektury i Planowania Przestrzennego publishes the same three lists for the whole city, one file per year and list (the current year's files are replaced every month; every snapshot we downloaded is kept). Only rows whose address names Praga-Południe on its last line become records.
+
+| Page | Year | List | File | City-wide rows | Praga-Południe rows | Records |
+|---|---|---|---|---:|---:|---:|
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | WZ | [informacja_o_wydanych_decyzjach_WZ_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wydanych_decyzjach_WZ_IX_2026+%2B.xlsx/1d75d6d6-239a-2dc1-843b-70184b23709c?t=1791798490945) | 101 | 14 | 14 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | wszczęte | [informacja_o_wszczętych_postępowaniach_o_WZ_LICP_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wszcz%C4%99tych_post%C4%99powaniach_o_WZ_LICP_IX_2026+%2B.xlsx/289a1962-288a-3179-aabf-643286f2a106?t=1791798491258) | 85 | 6 | 6 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | ULICP C2 | [informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym _i_gminnym_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym+_i_gminnym_IX_2026+%2B.xlsx/7dbca2ea-686b-0157-caa3-134d35570f6b?t=1791798490447) | 6 | 0 | 0 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | ULICP C1 | [informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_wojódzkim_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_woj%C3%B3dzkim_IX_2026+%2B.xlsx/fae00082-7a3e-6cb0-d96c-6a3104611a81?t=1791798491576) | 5 | 1 | 1 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2025 r.)](https://architektura.um.warszawa.pl/-/rejestry25) | 2025 | WZ | [informacja o wydanych decyzjach_wz_XII_25 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach_wz_XII_25+%2B.xlsx/cb763523-543a-dc26-c549-da9e662d76c8?t=1768389582758) | 125 | 18 | 18 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2025 r.)](https://architektura.um.warszawa.pl/-/rejestry25) | 2025 | wszczęte | [informacja o wszczętych postępowaniach o wz,licp_XII_25.xlsx](https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_25.xlsx/ec2f3679-1303-b07d-d372-2b59bbad3874?t=1768389583052) | 94 | 9 | 9 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2025 r.)](https://architektura.um.warszawa.pl/-/rejestry25) | 2025 | ULICP C2 | [informacja o wydanych decyzjach ws. ustalenia_licp_pow-gm_XII_25 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_25+%2B.xlsx/b7892448-d604-fd62-1991-5e616a15c926?t=1768389582390) | 10 | 0 | 0 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2025 r.)](https://architektura.um.warszawa.pl/-/rejestry25) | 2025 | ULICP C1 | [informacja o wydanych decyzjach ws. ustalenia_licp_kraj-woj_XII_25 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_25+%2B.xlsx/2da6e58f-949a-53ac-753b-1c4c5ea66ec1?t=1768389583415) | 3 | 0 | 0 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2024 r.)](https://architektura.um.warszawa.pl/-/rejestry24) | 2024 | WZ | [ok informacja o wydanych decyzjach_wz_XII_24.xlsx](https://architektura.um.warszawa.pl/documents/12025039/126236715/ok+informacja+o+wydanych+decyzjach_wz_XII_24.xlsx/15e07f89-83f4-cfca-59c1-6d57315fa265?t=1736763576457) | 139 | 10 | 10 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2024 r.)](https://architektura.um.warszawa.pl/-/rejestry24) | 2024 | wszczęte | [informacja o wszczętych postępowaniach o wz,licp_XII_24.xlsx](https://architektura.um.warszawa.pl/documents/12025039/126431210/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_24.xlsx/4a5a7f4b-0273-862c-797a-49db36efa218?t=1736871824094) | 79 | 4 | 4 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2024 r.)](https://architektura.um.warszawa.pl/-/rejestry24) | 2024 | ULICP C2 | [informacja o wydanych decyzjach ws. ustalenia_licp_pow-gm_XII_24.xlsx](https://architektura.um.warszawa.pl/documents/12025039/126431210/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_24.xlsx/fcefbea9-393b-e177-186c-d7656b49a71b?t=1736871823203) | 20 | 1 | 1 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2024 r.)](https://architektura.um.warszawa.pl/-/rejestry24) | 2024 | ULICP C1 | [informacja o wydanych decyzjach ws. ustalenia_licp_kraj-woj_XII_24.xlsx](https://architektura.um.warszawa.pl/documents/12025039/126431210/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_24.xlsx/fbe4067e-4dd1-3f6b-3609-d0761c8c2cf4?t=1736871824369) | 1 | 0 | 0 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2023 r.)](https://architektura.um.warszawa.pl/-/rejestry23) | 2023 | WZ | [informacja o wydanych decyzjach_wz_XII_23 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/96120640/informacja+o+wydanych+decyzjach_wz_XII_23+%2B.xlsx/23cbd9fa-abb7-248d-4b9e-106e78a8cf5a?t=1705311090486) | 155 | 16 | 16 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2023 r.)](https://architektura.um.warszawa.pl/-/rejestry23) | 2023 | wszczęte | [ok informacja o wszczętych postępowaniach o wz,licp_XII_23+.xlsx](https://architektura.um.warszawa.pl/documents/12025039/96120640/ok+informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_23%2B.xlsx/d4c09d57-96e8-cca9-48a1-384eab9dca3a?t=1705311090763) | 123 | 14 | 14 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2023 r.)](https://architektura.um.warszawa.pl/-/rejestry23) | 2023 | ULICP C2 | [informacja o wydanych decyzjach ws. ustalenia_licp_pow-gm_XII_23+.xlsx](https://architektura.um.warszawa.pl/documents/12025039/96120640/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_23%2B.xlsx/4a9fa06d-a879-922c-3526-ed698e82fa05?t=1705311089886) | 14 | 0 | 0 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2023 r.)](https://architektura.um.warszawa.pl/-/rejestry23) | 2023 | ULICP C1 | [informacja o wydanych decyzjach ws. ustalenia_licp_kraj-woj_XII_23+.xlsx](https://architektura.um.warszawa.pl/documents/12025039/96120640/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_23%2B.xlsx/1f343061-c89e-1e20-13e4-6292d3ed2a7a?t=1705311091046) | 1 | 0 | 0 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2022 r.)](https://architektura.um.warszawa.pl/-/rejestry2022) | 2022 | WZ | [informacja o wydanych decyzjach_wz_I-XII_22.xlsx](https://architektura.um.warszawa.pl/documents/12025039/69259400/informacja+o+wydanych+decyzjach_wz_I-XII_22.xlsx/5eb2c695-6228-1b14-4418-9dad94c8db7e?t=1673616553587) | 162 | 10 | 10 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2022 r.)](https://architektura.um.warszawa.pl/-/rejestry2022) | 2022 | wszczęte | [Informacja o wszczętych postępowaniach o wz,licp_I-XII_22.xlsx](https://architektura.um.warszawa.pl/documents/12025039/69259400/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_I-XII_22.xlsx/23b3f50f-30ef-0cf0-7614-bcb5800f6b3d?t=1673616553796) | 86 | 11 | 11 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2022 r.)](https://architektura.um.warszawa.pl/-/rejestry2022) | 2022 | ULICP C2 | [informacja o wydanych decyzjach ws. ustalenia _licp pow-gm_I-XII_22.xlsx](https://architektura.um.warszawa.pl/documents/12025039/69259400/informacja+o+wydanych+decyzjach+ws.+ustalenia+_licp+pow-gm_I-XII_22.xlsx/a2e32ee9-3456-a724-ccf5-1c28d663d01d?t=1673616554019) | 13 | 2 | 2 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2022 r.)](https://architektura.um.warszawa.pl/-/rejestry2022) | 2022 | ULICP C1 | [informacja o wydanych decyzjach ws. ustalenia_licp_kraj-woj_I-XII_22.xlsx](https://architektura.um.warszawa.pl/documents/12025039/69259400/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_I-XII_22.xlsx/4f9bfce6-cf90-180e-4f7d-8554d2bced70?t=1673616553272) | 5 | 0 | 0 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2021 r.)](https://architektura.um.warszawa.pl/-/rejestry2021) | 2021 | WZ | [informacja_decyzje_wz_I_XII_21+.xlsx](https://architektura.um.warszawa.pl/documents/12025039/41736355/informacja_decyzje_wz_I_XII_21%2B.xlsx/41a174fa-5a5b-2212-5eae-c0bc4d4b2a40?t=1642178443708) | 157 | 10 | 10 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2021 r.)](https://architektura.um.warszawa.pl/-/rejestry2021) | 2021 | wszczęte | [informacja_wnioski_wz _licp_I-XII_21.xlsx](https://architektura.um.warszawa.pl/documents/12025039/41736355/informacja_wnioski_wz+_licp_I-XII_21.xlsx/c32bf907-1784-ec79-c5c1-5a61265b8bf2?t=1642178443050) | 88 | 6 | 6 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2021 r.)](https://architektura.um.warszawa.pl/-/rejestry2021) | 2021 | ULICP C2 | [informacja_decyzje_licp_pow-gm_I-XII_21+.xlsx](https://architektura.um.warszawa.pl/documents/12025039/41736355/informacja_decyzje_licp_pow-gm_I-XII_21%2B.xlsx/c806117d-5072-c7f1-eef6-28d643a83cad?t=1642178443512) | 12 | 2 | 2 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (2021 r.)](https://architektura.um.warszawa.pl/-/rejestry2021) | 2021 | ULICP C1 | [informacje_decyzje_licp_kraj-woj_I-XII_21+.xlsx](https://architektura.um.warszawa.pl/documents/12025039/41736355/informacje_decyzje_licp_kraj-woj_I-XII_21%2B.xlsx/599f76bc-3169-c175-6511-f5f75a015c5e?t=1642178443291) | 5 | 0 | 0 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (sierpień - grudzień 2020 r.)](https://architektura.um.warszawa.pl/-/rejestry2020) | 2020 | WZ | [informacja_decyzje_wz_sierpien-grudzien_20.xlsx](https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_decyzje_wz_sierpien-grudzien_20.xlsx/d2a2aadb-492a-ceb6-4250-685e7ddfe11c?t=1634497931206) | 79 | 4 | 4 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (sierpień - grudzień 2020 r.)](https://architektura.um.warszawa.pl/-/rejestry2020) | 2020 | wszczęte | [informacja_wnioski_wz__licp__sierpien-grudzien_20.xlsx](https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_wnioski_wz__licp__sierpien-grudzien_20.xlsx/efa0401d-4ae2-aec3-d6b6-536680e2e35f?t=1634497931212) | 55 | 3 | 3 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (sierpień - grudzień 2020 r.)](https://architektura.um.warszawa.pl/-/rejestry2020) | 2020 | ULICP C2 | [informacja_dec._licp_pow_gmi_sierpien-grudzien_20.xlsx](https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_dec._licp_pow_gmi_sierpien-grudzien_20.xlsx/3f2da765-50ac-0efc-c47e-a02063a0d05c?t=1634497931200) | 6 | 0 | 0 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach (sierpień - grudzień 2020 r.)](https://architektura.um.warszawa.pl/-/rejestry2020) | 2020 | ULICP C1 | [informacja_decyzje_licp_kraj_woj_sierpien-_grudzien_20.xlsx](https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_decyzje_licp_kraj_woj_sierpien-_grudzien_20.xlsx/9fdd4da2-0828-b9a3-089e-f2c4d2dc2d37?t=1634497931193) | 6 | 0 | 0 |
+
+* Records: 141 (WZ 82, CP 6, Wszczęcie 53); decision outcomes: Ustalenie (decyzja pozytywna) 11, Odmowa 23, Umorzenie postępowania 50, Przeniesienie decyzji 4.
+* Listed in more than one snapshot / yearly file: 0.
+
+## GUNB RWDZ (building permits and notifications)
+
+GUNB publishes its register of building-permit decisions and notifications (*Rejestr wniosków, decyzji i zgłoszeń*, CC0 1.0) as three ZIP files rebuilt every night. Every case with a parcel in Praga-Południe (cadastral unit `146507_8`) is copied byte for byte into a committed extract (`data/raw/rwdz/`, mirrored to `site/sources/rwdz/`) and becomes one record in `permits.json`; the snapshot cited is the one the extract was taken from (a new GUNB file that changes nothing in the district is not adopted).
+
+| File | Kind | Snapshot (Last-Modified) | Rows in the file | Praga-Południe rows | Records | Extract |
+|---|---|---|---:|---:|---:|---|
+| [wynik_mazowieckie.zip](https://wyszukiwarka.gunb.gov.pl/pliki_pobranie/wynik_mazowieckie.zip) | Pozwolenie | 2026-10-26T22:35:07Z | 695711 | 1662 | 943 | [`sources/d/wlochy/rwdz/rwdz-wnioski.csv`](https://3-n.github.io/wzsearch/sources/d/wlochy/rwdz/rwdz-wnioski.csv) |
+| [wynik_zgloszenia_2016_2021.zip](https://wyszukiwarka.gunb.gov.pl/pliki_pobranie/wynik_zgloszenia_2016_2021.zip) | Zgłoszenie | 2026-10-26T22:36:03Z | 829354 | 63 | 17 | [`sources/d/wlochy/rwdz/rwdz-zgloszenia-2016-2021.csv`](https://3-n.github.io/wzsearch/sources/d/wlochy/rwdz/rwdz-zgloszenia-2016-2021.csv) |
+| [wynik_zgloszenia_2022_up.zip](https://wyszukiwarka.gunb.gov.pl/pliki_pobranie/wynik_zgloszenia_2022_up.zip) | Zgłoszenie | 2026-10-26T22:36:07Z | 939616 | 218 | 60 | [`sources/d/wlochy/rwdz/rwdz-zgloszenia-2022.csv`](https://3-n.github.io/wzsearch/sources/d/wlochy/rwdz/rwdz-zgloszenia-2022.csv) |
+
+Records per year (decision date for permits, filing date for notifications):
+
+| Year | Pozwolenie | Zgłoszenie | Total |
+|---|---:|---:|---:|
+| 2016 | 88 | 2 | 90 |
+| 2017 | 71 | 3 | 74 |
+| 2018 | 21 | 1 | 22 |
+| 2019 | 55 | 5 | 60 |
+| 2020 | 114 | 2 | 116 |
+| 2021 | 156 | 4 | 160 |
+| 2022 | 145 | 21 | 166 |
+| 2023 | 143 | 20 | 163 |
+| 2024 | 112 | 17 | 129 |
+| 2025 | 35 | 2 | 37 |
+| 2026 | 3 | 0 | 3 |
+| **all** | **943** | **77** | **1020** |
+
+* Issuer: Pozwolenie: Inny organ 864, Wojewoda Mazowiecki 43, Urząd m.st. Warszawy (Biuro Architektury i Planowania Przestrzennego) 33, Urząd Dzielnicy Praga-Południe (Wydział Architektury i Budownictwa) 3; Zgłoszenie: Inny organ 58, Wojewoda Mazowiecki 13, Urząd m.st. Warszawy (Biuro Architektury i Planowania Przestrzennego) 6.
+* Scope of works: Pozwolenie: Budowa nowego obiektu 486, Inne roboty budowlane (np. przebudowa, remont) 199, Rozbiórka 143, Rozbudowa 94, Nadbudowa 21; Zgłoszenie: Budowa nowego obiektu 75, Nadbudowa 1, Rozbudowa 1.
+* Object category: Pozwolenie: XIII 200, I 197, VIII 176, XXVI 75, XVI 58, XVIII 46, XVII 40, – 29, III 28, IX 20, XIV 16, XXIII 12, IV 9, XI 8, XXV 7, XXII 5, II 4, XXVII 4, X 3, XII 3, XIX 1, XX 1, XXVIII 1; Zgłoszenie: XXVI 63, XVIII 4, I 3, VIII 3, XXIII 3, IV 1.
+* Investor: Pozwolenie: organisation 552, natural person (not named by GUNB) 391; Zgłoszenie: not published 77.
+* Application → decision (permits): median 87 days, 90th percentile 242 days.
+* Cubature given: 464 of 1020 records (the placeholders 0 and 1 count as not given).
+* Cases that also cover parcels of other districts (kept whole, those parcels keep their unit): 3 ([`pb-st-mz-wa-2023-34626`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wa-2023-34626?dz=wlochy), [`pb-st-mz-wa-2020-25618`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wa-2020-25618?dz=wlochy), [`zg-st-mz-wa-2019-1521`](https://3-n.github.io/wzsearch/#/wpis/zg-st-mz-wa-2019-1521?dz=wlochy)).
+
+Register rows of the district office (*Prezydent Miasta Warszawa - Praga Płd.*) with a broken cadastral unit are kept and corrected to `146507_8` (a warning on the record), and so are the rows of the cases in `rwdz.UNIT_FIXES` (`listed`: register errors checked one by one in ULDK, any organ); a valid other Warsaw unit two or more edits away is genuine and not kept:
+
+* `rwdz-wnioski`: kept – invalid 13, typo 40; not kept – none.
+* `rwdz-zgloszenia-2016-2021`: kept – invalid 1; not kept – none.
+* `rwdz-zgloszenia-2022`: kept – none; not kept – none.
+
+## Related records across datasets
+
+`related` links records that share a cadastral parcel or a street + house number, across all three datasets. A shared parcel is not necessarily the same project (a large housing-estate parcel carries many unrelated renovations).
+
+* Dzielnica: 1 of 14 records relate to at least one permit or notification.
+* BAiPP (miasto): 79 of 141 records relate to at least one permit or notification.
+* GUNB RWDZ: 90 of 1020 permits/notifications relate to a WZ/ULICP record.
+* WZ decisions (not refused/discontinued) followed by a building permit on the same parcel: 3 of 10 (median 203 days to the first such permit).
+* CP decisions (not refused/discontinued) followed by a building permit on the same parcel: 3 of 3 (median 981 days to the first such permit).
+* Most related: [`pb-st-mz-wl-2020-37296`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2020-37296?dz=wlochy) (20), [`pb-st-mz-wl-2016-12169`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-12169?dz=wlochy) (19), [`pb-st-mz-wl-2020-37162`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2020-37162?dz=wlochy) (19), [`pb-st-mz-wl-2020-49098`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2020-49098?dz=wlochy) (19), [`pb-st-mz-wl-2021-15134`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2021-15134?dz=wlochy) (19).
+
+## Geolocation
+
+| Method | Dzielnica | BAiPP (miasto) | GUNB RWDZ |
+|---|---:|---:|---:|
+| parcel (ULDK centroid) | 14 (100.0%) | 127 (90.1%) | 875 (85.8%) |
+| address point (UUG) | 0 (0.0%) | 2 (1.4%) | 59 (5.8%) |
+| street / crossing (approximate) | 0 (0.0%) | 11 (7.8%) | 65 (6.4%) |
+| not located | 0 (0.0%) | 1 (0.7%) | 21 (2.1%) |
+| **located** | **14** (**100.0%**) | **140** (**99.3%**) | **999** (**97.9%**) |
+
+* Unique parcel ids (all datasets): 1623; found in ULDK 1366 (84.2%), missing 257, lookup errors 0.
+* Of these, looked up in GUGiK's county parcel package instead of ULDK (same land register, see `pipeline/egib.py`): 1623.
+* Records with parcels: 1175 – all found 887, some 97, none 191.
+* Precinct of the source corrected by the parcel under the exact address (ULDK GetParcelByXY; a warning on the record): 9.
+* Address vs parcel conflicts (> 300 m; parcel point kept): 3, of which the address lies on a parcel of another precinct (`geo.conflict`): 2; parcels > 1 km apart: 0; point moved onto the largest parcel (centroid on none of them): 61; point from the parcels in the district only (others lie in a neighbouring district): 0; points discarded outside the district: 1.
+* Parcel ids ULDK does not know (first 20): `146517_8.0710.18/2`, `146517_8.0702.20`, `146517_8.0503.15`, `146517_8.0604.1/3`, `146517_8.0604.2/3`, `146517_8.0604.4`, `146517_8.0601.57/2`, `146517_8.0501.79`, `146517_8.0506.76/1`, `146517_8.0506.76/2`, `146517_8.0502.91`, `146517_8.0601.2`, `146517_8.0826.57/9`, `146517_8.0502.15/2`, `146517_8.0502.17/2`, `146517_8.0502.92`, `146517_8.0502.17/1`, `146517_8.0502.48/8`, `146517_8.0501.38`, `146517_8.0501.39`.
+* Records per MSI area (Dzielnica): nowe-wlochy 1, okecie 2, opacz-wielka 6, salomea 4, stare-wlochy 1.
+* Records per MSI area (BAiPP (miasto)): (none) 1, okecie 68, opacz-wielka 5, paluch 1, rakow 49, salomea 6, stare-wlochy 11.
+* Records per MSI area (GUNB RWDZ): (none) 21, nowe-wlochy 172, okecie 226, opacz-wielka 84, paluch 24, rakow 161, salomea 60, stare-wlochy 233, zaluski 39.
+
+BAiPP (miasto) records without a location (1):
+
+| Record | Address | Parcels (as in source) | Note |
+|---|---|---|---|
+| [`wz-am-wlo-2024-4`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2024-4?dz=wlochy) | Towarowa / Kolejowa | 35, 36, 37;  6-04-09 | działki poza granicami dzielnicy – pominięto; nie udało się ustalić lokalizacji |
+
+GUNB RWDZ records without a location (21):
+
+| Record | Address | Parcels (as in source) | Note |
+|---|---|---|---|
+| [`pb-st-mz-wo-2025-7549`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wo-2025-7549?dz=wlochy) | Batalionu AK "Zośka" 7 | 146517_8 0703 170/11 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-wl-2024-17087`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2024-17087?dz=wlochy) |  | 146517_8 0501 39 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-wl-2023-28008`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-28008?dz=wlochy) |  | 146517_8 0501 39 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-wl-2024-7445`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2024-7445?dz=wlochy) |  | 146517_8 0501 38 \| 146517_8 0501 39 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-wl-2023-11075`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-11075?dz=wlochy) |  | 146517_8 0826 57/9 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-wl-2023-13445`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-13445?dz=wlochy) |  | 146517_8 0721 25/6 \| 146517_8 0721 25/5 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-wl-2022-8660`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2022-8660?dz=wlochy) |  | 146517_8 0503 58 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`zg-st-mz-wl-2022-3472`](https://3-n.github.io/wzsearch/#/wpis/zg-st-mz-wl-2022-3472?dz=wlochy) |  | 146517_8 0501 8 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`zg-st-mz-wl-2022-5845`](https://3-n.github.io/wzsearch/#/wpis/zg-st-mz-wl-2022-5845?dz=wlochy) |  | 146517_8 0501 62/2 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-wl-2021-23956`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2021-23956?dz=wlochy) |  | 146517_8 0406 158 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-wl-2021-1174`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2021-1174?dz=wlochy) |  | 146517_8 0503 57 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`zg-st-mz-wa-2019-3743`](https://3-n.github.io/wzsearch/#/wpis/zg-st-mz-wa-2019-3743?dz=wlochy) |  | 146517_8 0502 104/2 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-wa-2017-13174`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wa-2017-13174?dz=wlochy) |  | 146517_8 0502 104/2 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-pl-mz-2017-41312`](https://3-n.github.io/wzsearch/#/wpis/pb-pl-mz-2017-41312?dz=wlochy) |  | 146517_8 0607 6/6 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-pl-mz-2017-19026`](https://3-n.github.io/wzsearch/#/wpis/pb-pl-mz-2017-19026?dz=wlochy) |  | 146517_8 0607 2/29 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-pa-2016-39708`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-pa-2016-39708?dz=wlochy) | Ateńska 10 | 146517_8 0123 3/3 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-pa-2016-39705`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-pa-2016-39705?dz=wlochy) | Grochowska 331 | 146517_8 0531 6 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-wl-2016-29382`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-29382?dz=wlochy) |  | 146517_8 0705 31/1 \| 146517_8 0705 141 \| 146517_8 0705 143 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-wl-2016-29379`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-29379?dz=wlochy) |  | 146517_8 0705 31/1 \| 146517_8 0705 141 \| 146517_8 0705 143 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-wl-2016-28445`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-28445?dz=wlochy) |  | 146517_8 0705 31/1 \| 146517_8 0705 141 \| 146517_8 0705 143 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+| [`pb-st-mz-wl-2016-2007`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-2007?dz=wlochy) |  | 146517_8 0829 114/1 | działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone; nie udało się ustalić lokalizacji |
+
+Location notes:
+
+| Note | Dzielnica | BAiPP (miasto) | GUNB RWDZ | Examples |
+|---|---:|---:|---:|---|
+| działek nie znaleziono w ewidencji gruntów (ULDK) – mogły zostać podzielone lub scalone | 0 | 13 | 145 | [`wz-am-wlo-2025-85`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2025-85?dz=wlochy), [`ws-am-wlo-zp-w-6730-2023-76`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2023-76?dz=wlochy), [`wz-am-wlo-2023-132`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2023-132?dz=wlochy), [`wz-am-wlo-2023-124`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2023-124?dz=wlochy), [`wz-am-wlo-2023-118`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2023-118?dz=wlochy) |
+| w ewidencji gruntów (ULDK) znaleziono N z N działek | 2 | 27 | 67 | [`wz-wlo-2026-61`](https://3-n.github.io/wzsearch/#/wpis/wz-wlo-2026-61?dz=wlochy), [`wz-wlo-2026-60`](https://3-n.github.io/wzsearch/#/wpis/wz-wlo-2026-60?dz=wlochy), [`wz-am-wlo-2025-69`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2025-69?dz=wlochy), [`ws-am-wlo-zp-w-6730-2025-8`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2025-8?dz=wlochy), [`wz-am-wlo-2024-121`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2024-121?dz=wlochy) |
+| lokalizacja przybliżona – ulica w obrębie N | 0 | 8 | 55 | [`wz-am-wlo-2023-124`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2023-124?dz=wlochy), [`wz-am-wlo-2023-118`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2023-118?dz=wlochy), [`ws-am-wlo-zp-w-6730-2022-13`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2022-13?dz=wlochy), [`ws-am-wlo-zp-w-6730-2021-41`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2021-41?dz=wlochy), [`ws-am-wlo-zp-w-6730-2021-8`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2021-8?dz=wlochy) |
+| nie udało się ustalić lokalizacji | 0 | 1 | 21 | [`wz-am-wlo-2024-4`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2024-4?dz=wlochy), [`pb-st-mz-wo-2025-7549`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wo-2025-7549?dz=wlochy), [`pb-st-mz-wl-2024-17087`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2024-17087?dz=wlochy), [`pb-st-mz-wl-2023-28008`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-28008?dz=wlochy), [`pb-st-mz-wl-2024-7445`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2024-7445?dz=wlochy) |
+| działki N (…) nie ma już w ewidencji (…) – przyjęto jej części znane z innych wpisów: N | 0 | 5 | 15 | [`wz-am-wlo-2026-48`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2026-48?dz=wlochy), [`wz-am-wlo-2025-69`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2025-69?dz=wlochy), [`ws-am-wlo-zp-w-6730-2022-48`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2022-48?dz=wlochy), [`ws-am-wlo-zp-w-6730-2021-29`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2021-29?dz=wlochy), [`wz-am-wlo-2020-168`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2020-168?dz=wlochy) |
+| działki N (…) nie ma już w ewidencji (…) – przyjęto jej części znane z innych wpisów: N, N, N | 0 | 0 | 14 | [`zg-st-mz-wl-2023-5208`](https://3-n.github.io/wzsearch/#/wpis/zg-st-mz-wl-2023-5208?dz=wlochy), [`pb-st-mz-wl-2023-7688`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-7688?dz=wlochy), [`pb-st-mz-wl-2022-17130`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2022-17130?dz=wlochy), [`zg-st-mz-wl-2022-5844`](https://3-n.github.io/wzsearch/#/wpis/zg-st-mz-wl-2022-5844?dz=wlochy), [`zg-st-mz-wl-2022-5801`](https://3-n.github.io/wzsearch/#/wpis/zg-st-mz-wl-2022-5801?dz=wlochy) |
+| lokalizacja przybliżona – ulica | 0 | 3 | 9 | [`wz-am-wlo-2023-132`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2023-132?dz=wlochy), [`ws-am-wlo-zp-w-6730-2021-28`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2021-28?dz=wlochy), [`ws-am-wlo-zp-w-6730-2021-30`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2021-30?dz=wlochy), [`pb-st-mz-wa-2025-37615`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wa-2025-37615?dz=wlochy), [`pb-st-mz-wa-2024-6092`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wa-2024-6092?dz=wlochy) |
+| działki N (…) nie ma już w ewidencji (…) – przyjęto jej części znane z innych wpisów: N, N | 0 | 4 | 5 | [`ws-am-wlo-zp-w-6730-2023-19`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2023-19?dz=wlochy), [`wz-am-wlo-2023-36`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2023-36?dz=wlochy), [`wz-am-wlo-2022-71`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2022-71?dz=wlochy), [`ws-am-wlo-zp-w-6730-2022-10`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2022-10?dz=wlochy), [`pb-st-mz-wa-2024-2011`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wa-2024-2011?dz=wlochy) |
+| ulica nie przechodzi przez obręb z rejestru (…) | 0 | 3 | 5 | [`wz-am-wlo-2023-132`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2023-132?dz=wlochy), [`ws-am-wlo-zp-w-6730-2021-28`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2021-28?dz=wlochy), [`ws-am-wlo-zp-w-6730-2021-30`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2021-30?dz=wlochy), [`pb-st-mz-wl-2022-17156`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2022-17156?dz=wlochy), [`pb-st-mz-wl-2023-18991`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-18991?dz=wlochy) |
+| adres … leży ok. N m od wskazanych działek | 0 | 0 | 3 | [`pb-st-mz-wl-2023-11091`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-11091?dz=wlochy), [`pb-st-mz-wl-2020-36134`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2020-36134?dz=wlochy), [`pb-st-mz-wl-2016-6795`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-6795?dz=wlochy) |
+| działki N (…) nie ma już w ewidencji (…) – przyjęto jej części znane z innych wpisów: N, N, N, N, N | 0 | 0 | 2 | [`pb-st-mz-wl-2021-13977`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2021-13977?dz=wlochy), [`pb-st-mz-wl-2021-5293`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2021-5293?dz=wlochy) |
+| działki poza granicami dzielnicy – pominięto | 0 | 1 | 0 | [`wz-am-wlo-2024-4`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2024-4?dz=wlochy) |
+| lokalizacja przybliżona – budynek nr N | 0 | 0 | 1 | [`pb-st-mz-wl-2024-1455`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2024-1455?dz=wlochy) |
+| lokalizacja przybliżona – ulica w obrębie N, N | 0 | 0 | 1 | [`pb-st-mz-wl-2021-17608`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2021-17608?dz=wlochy) |
+| nazwa ulicy dopasowana w przybliżeniu (…) | 0 | 1 | 0 | [`ws-am-wlo-zp-w-6730-2023-76`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2023-76?dz=wlochy) |
+
+## Record warnings
+
+68 records carry 71 warnings (shown in the UI next to the record).
+
+| Warning type | Dzielnica | BAiPP (miasto) | GUNB RWDZ | Examples |
+|---|---:|---:|---:|---|
+| identyfikator jednostki ewidencyjnej w rejestrze „…” potraktowano jako 146517_8 (…) – sprawa urzędu dzielnicy, prawdopodobna literówka | 0 | 0 | 40 | [`pb-st-mz-wl-2025-17330`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2025-17330?dz=wlochy), [`pb-st-mz-wl-2025-22792`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2025-22792?dz=wlochy), [`pb-st-mz-wl-2024-17083`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2024-17083?dz=wlochy), [`pb-st-mz-wl-2024-25552`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2024-25552?dz=wlochy), [`pb-st-mz-wl-2024-25618`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2024-25618?dz=wlochy) |
+| pominięto niezrozumiały fragment oznaczenia działek: „…” | 0 | 5 | 0 | [`wz-am-wlo-2022-34`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2022-34?dz=wlochy), [`ws-am-wlo-zp-w-6730-2021-45`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2021-45?dz=wlochy), [`wz-am-wlo-2021-86`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2021-86?dz=wlochy), [`cp-am-wlo-2021-c2-4`](https://3-n.github.io/wzsearch/#/wpis/cp-am-wlo-2021-c2-4?dz=wlochy), [`cp-am-wlo-2021-c2-3`](https://3-n.github.io/wzsearch/#/wpis/cp-am-wlo-2021-c2-3?dz=wlochy) |
+| działka N – w źródle podano jej obecne numery: N, N | 0 | 3 | 0 | [`wz-am-wlo-2026-84`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2026-84?dz=wlochy), [`wz-am-wlo-2024-121`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2024-121?dz=wlochy), [`wz-am-wlo-2021-157`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2021-157?dz=wlochy) |
+| sprawa obejmuje też działki spoza Włoch – jednostka ewidencyjna 146512_8 (…): N | 0 | 0 | 3 | [`pb-st-mz-wa-2023-34626`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wa-2023-34626?dz=wlochy), [`pb-st-mz-wa-2020-25618`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wa-2020-25618?dz=wlochy), [`zg-st-mz-wa-2019-1521`](https://3-n.github.io/wzsearch/#/wpis/zg-st-mz-wa-2019-1521?dz=wlochy) |
+| kubatura zapisana w rejestrze w zaokrągleniu (…) | 0 | 0 | 2 | [`pb-st-mz-wl-2023-4284`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-4284?dz=wlochy), [`pb-st-mz-wa-2016-31633`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wa-2016-31633?dz=wlochy) |
+| obręb w źródle (…) prawdopodobnie błędny – działka N pod adresem Robotnicza N leży w obrębie N | 0 | 0 | 2 | [`pb-st-mz-wl-2017-43237`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2017-43237?dz=wlochy), [`pb-st-mz-wl-2017-43223`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2017-43223?dz=wlochy) |
+| działka N – w źródle podano jej obecne numery: N | 0 | 1 | 0 | [`wz-am-wlo-2020-144`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2020-144?dz=wlochy) |
+| działka N – w źródle podano jej obecne numery: N, N, N | 0 | 1 | 0 | [`wz-am-wlo-2022-34`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2022-34?dz=wlochy) |
+| działka N – w źródle podano jej obecne numery: N, N, N, N, N, N, N, N, N | 0 | 1 | 0 | [`wz-am-wlo-2022-88`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2022-88?dz=wlochy) |
+| identyfikator jednostki ewidencyjnej w rejestrze „…” (…) potraktowano jako 146517_8 (…) – sprawa urzędu dzielnicy, prawdopodobna literówka | 0 | 0 | 1 | [`pb-st-mz-wl-2022-12092`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2022-12092?dz=wlochy) |
+| nieznany symbol JRWA N w znaku sprawy – nie ustalono rodzaju postępowania | 0 | 1 | 0 | [`ws-am-wlo-zp-w-6732-2021-1`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6732-2021-1?dz=wlochy) |
+| obręb N bez numerów działek | 0 | 1 | 0 | [`ws-am-wlo-zp-w-6730-2021-45`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2021-45?dz=wlochy) |
+| obręb N leży poza dzielnicą Włochy (…) | 0 | 1 | 0 | [`wz-am-wlo-2024-4`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2024-4?dz=wlochy) |
+| obręb w źródle (…) prawdopodobnie błędny – działka N pod adresem Działkowa N leży w obrębie N | 0 | 0 | 1 | [`pb-st-mz-wl-2016-19489`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-19489?dz=wlochy) |
+| obręb w źródle (…) prawdopodobnie błędny – działka N pod adresem Globusowa N leży w obrębie N | 0 | 0 | 1 | [`pb-st-mz-wl-2016-897`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-897?dz=wlochy) |
+| obręb w źródle (…) prawdopodobnie błędny – działka N pod adresem Pograniczna N leży w obrębie N | 0 | 0 | 1 | [`pb-st-mz-wl-2017-35236`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2017-35236?dz=wlochy) |
+| obręb w źródle (…) prawdopodobnie błędny – działka N pod adresem Popularna N leży w obrębie N | 0 | 1 | 0 | [`ws-am-wlo-zp-w-6730-2026-6`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2026-6?dz=wlochy) |
+| obręb w źródle (…) prawdopodobnie błędny – działka N pod adresem Tumska N leży w obrębie N | 0 | 0 | 1 | [`pb-st-mz-wl-2016-29532`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-29532?dz=wlochy) |
+| obręb w źródle (…) prawdopodobnie błędny – działka N pod adresem Urszuli N leży w obrębie N | 0 | 0 | 1 | [`pb-st-mz-wl-2021-53400`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2021-53400?dz=wlochy) |
+| obręb w źródle (…) prawdopodobnie błędny – działka N pod adresem Łuki Małe N leży w obrębie N | 0 | 0 | 1 | [`pb-st-mz-wl-2020-9265`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2020-9265?dz=wlochy) |
+| sprawa obejmuje też działki spoza Włoch – jednostka ewidencyjna 146502_8 (…): N | 0 | 0 | 1 | [`pb-st-mz-wa-2023-34626`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wa-2023-34626?dz=wlochy) |
+| w komórce numeru podano także: AM-ZP-W.N | 0 | 1 | 0 | [`ws-am-wlo-zp-w-6730-2026-23`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-w-6730-2026-23?dz=wlochy) |
+
+## Classification
+
+| Tag | Group | Dzielnica | BAiPP (miasto) | GUNB RWDZ |
+|---|---|---:|---:|---:|
+| Dom jednorodzinny (`jednorodzinny`) | funkcja | 2 | 0 | 208 |
+| Budynek wielorodzinny (`wielorodzinny`) | funkcja | 7 | 85 | 213 |
+| Adaptacja na mieszkanie (`adaptacja-mieszkalna`) | funkcja | 1 | 2 | 13 |
+| Akademik, hostel, hotel (`zamieszkanie-zbiorowe`) | funkcja | 1 | 20 | 20 |
+| Handel, usługi, biura (`uslugi`) | funkcja | 2 | 35 | 162 |
+| Żłobek, przedszkole, szkoła (`oswiata`) | funkcja | 0 | 5 | 8 |
+| Kultura (`kultura`) | funkcja | 0 | 0 | 2 |
+| Zdrowie i opieka (`zdrowie-opieka`) | funkcja | 0 | 2 | 3 |
+| Sport, rekreacja, zieleń (`sport-rekreacja-zielen`) | funkcja | 0 | 2 | 8 |
+| Obiekt sakralny (`kult-religijny`) | funkcja | 0 | 0 | 2 |
+| Sieci: woda, ciepło, prąd, gaz (`infrastruktura`) | funkcja | 1 | 4 | 146 |
+| Instalacje w budynku (gaz, woda, c.o.) (`instalacje-wewnetrzne`) | funkcja | 0 | 0 | 165 |
+| Telekomunikacja (`telekomunikacja`) | funkcja | 0 | 2 | 12 |
+| Drogi i transport (`drogi-transport`) | funkcja | 1 | 3 | 37 |
+| Parking, garaż (`parkingi-garaze`) | funkcja | 2 | 6 | 39 |
+| Reklama (`reklama`) | funkcja | 0 | 0 | 4 |
+| Przemysł, magazyny (`przemysl-magazyny`) | funkcja | 0 | 3 | 88 |
+| Wiata, altana, budynek gospodarczy (`obiekty-pomocnicze`) | funkcja | 0 | 0 | 68 |
+| Winda, dostępność (`windy-dostepnosc`) | funkcja | 0 | 0 | 9 |
+| Nowa budowa (`nowa-budowa`) | roboty | 0 | 52 | 627 |
+| Rozbudowa, nadbudowa, przebudowa (`rozbudowa-przebudowa`) | roboty | 0 | 13 | 227 |
+| Remont, docieplenie (`remont`) | roboty | 0 | 0 | 26 |
+| Zmiana sposobu użytkowania (`zmiana-sposobu-uzytkowania`) | roboty | 2 | 4 | 26 |
+| Zmiana lub umorzenie (`zmiana-decyzji`) | roboty | 11 | 54 | 39 |
+| Legalizacja (`legalizacja`) | roboty | 0 | 0 | 0 |
+| Rozbiórka (`rozbiorka`) | roboty | 0 | 0 | 164 |
+
+* Dzielnica – untagged records: 0; without a "what is built" (funkcja) tag: 1 – [`wz-wlo-2026-58`](https://3-n.github.io/wzsearch/#/wpis/wz-wlo-2026-58?dz=wlochy).
+* BAiPP (miasto) – untagged records: 4 – [`wz-am-wlo-2023-151`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2023-151?dz=wlochy), [`wz-am-wlo-2023-85`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2023-85?dz=wlochy), [`ws-am-wlo-zp-s-6733-2022-2`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-s-6733-2022-2?dz=wlochy), [`wz-am-wlo-2022-34`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2022-34?dz=wlochy); without a "what is built" (funkcja) tag: 6 – [`wz-am-wlo-2023-151`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2023-151?dz=wlochy), [`wz-am-wlo-2023-85`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2023-85?dz=wlochy), [`cp-am-wlo-2022-c2-8`](https://3-n.github.io/wzsearch/#/wpis/cp-am-wlo-2022-c2-8?dz=wlochy), [`ws-am-wlo-zp-s-6733-2022-2`](https://3-n.github.io/wzsearch/#/wpis/ws-am-wlo-zp-s-6733-2022-2?dz=wlochy), [`wz-am-wlo-2022-34`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2022-34?dz=wlochy), [`wz-am-wlo-2021-101`](https://3-n.github.io/wzsearch/#/wpis/wz-am-wlo-2021-101?dz=wlochy).
+* GUNB RWDZ – untagged records: 4 – [`pb-st-mz-wl-2023-15052`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-15052?dz=wlochy), [`pb-st-mz-wl-2016-20496`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-20496?dz=wlochy), [`pb-st-mz-wl-2016-12169`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-12169?dz=wlochy), [`pb-st-mz-wl-2016-3291`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-3291?dz=wlochy); without a "what is built" (funkcja) tag: 32 – [`pb-st-mz-wl-2024-37997`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2024-37997?dz=wlochy), [`pb-st-mz-wa-2024-33371`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wa-2024-33371?dz=wlochy), [`pb-st-mz-wl-2023-6164`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-6164?dz=wlochy), [`pb-st-mz-wl-2023-22918`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-22918?dz=wlochy), [`pb-st-mz-wl-2023-26089`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-26089?dz=wlochy), [`pb-st-mz-wl-2023-19797`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-19797?dz=wlochy), [`pb-st-mz-wl-2023-15052`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-15052?dz=wlochy), [`pb-st-mz-wl-2023-6183`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-6183?dz=wlochy), [`pb-st-mz-wl-2023-4264`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2023-4264?dz=wlochy), [`pb-st-mz-wl-2022-12133`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2022-12133?dz=wlochy), [`pb-pl-mz-2022-28020`](https://3-n.github.io/wzsearch/#/wpis/pb-pl-mz-2022-28020?dz=wlochy), [`pb-st-mz-wl-2022-368`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2022-368?dz=wlochy), [`pb-st-mz-wl-2021-15083`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2021-15083?dz=wlochy), [`pb-st-mz-wl-2021-21734`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2021-21734?dz=wlochy), [`pb-pl-mz-2022-28130`](https://3-n.github.io/wzsearch/#/wpis/pb-pl-mz-2022-28130?dz=wlochy), [`pb-st-mz-wl-2020-41527`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2020-41527?dz=wlochy), [`pb-st-mz-wl-2020-41590`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2020-41590?dz=wlochy), [`pb-st-mz-wl-2020-36009`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2020-36009?dz=wlochy), [`pb-st-mz-wl-2020-9754`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2020-9754?dz=wlochy), [`pb-st-mz-wl-2020-8176`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2020-8176?dz=wlochy), [`pb-st-mz-wl-2020-9265`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2020-9265?dz=wlochy), [`pb-st-mz-wl-2021-43506`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2021-43506?dz=wlochy), [`pb-pl-mz-2020-22423`](https://3-n.github.io/wzsearch/#/wpis/pb-pl-mz-2020-22423?dz=wlochy), [`pb-pl-mz-2020-2895`](https://3-n.github.io/wzsearch/#/wpis/pb-pl-mz-2020-2895?dz=wlochy), [`pb-st-mz-wa-2017-7572`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wa-2017-7572?dz=wlochy), [`pb-pl-mz-2016-21253`](https://3-n.github.io/wzsearch/#/wpis/pb-pl-mz-2016-21253?dz=wlochy), [`pb-st-mz-wl-2016-39665`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-39665?dz=wlochy), [`pb-st-mz-wl-2016-25412`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-25412?dz=wlochy), [`pb-st-mz-wl-2016-20496`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-20496?dz=wlochy), [`pb-st-mz-wl-2016-12163`](https://3-n.github.io/wzsearch/#/wpis/pb-st-mz-wl-2016-12163?dz=wlochy) … and 2 more.
+
+## Street names
+
+* Streets: 213. One spelling per street in `address.street` (the site's street filter lists every spelling separately; `normalize.STREET_CANONICAL` maps 16 streets written in several ways to one, `address.display` keeps the source text).
+* Still written in several ways (add them to `STREET_CANONICAL`): `bennetta`: „Bennetta” 2, „J. G. Bennetta” 2, „G. Bennetta” 1; `flisa`: „Flisa” 2, „M. Flisa” 1.
+
+## Source files and pages
+
+* Layouts: (none) 29, baipp-cp 12, baipp-cp-2020 2, baipp-ws 6, baipp-ws-2020 1, baipp-wz 6, baipp-wz-2020 1, pdf-template-wz 1, rwdz-wnioski 1, rwdz-zgloszenia 2.
+* Template rows skipped (only a pre-printed Lp number): 6.
+* Files linked from more than one page: [REJESTR DECYZJI WZ I_IV 2026 r.pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+I_IV+2026+r.pdf/57582e42-ce20-935e-9e7c-4282d6817261?t=1776937774442).
+* Download errors: `573099e15b` HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+-+ODMOWY+05+2026+r.pdf/469bb059-cebd-4a89-3ce7-0bc5c162cce4?t=1781011520816; `0546aa08fd` HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+05+2026+r.pdf/9b1482f6-9c52-74e9-986d-a3c87889038e?t=1781010644977; `4eb46cbd75` HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+05+2026+r.pdf/ae0d80ea-54dc-7b74-add4-6fda95197957?t=1783596359354; `aa56a863da` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `2ada8ed5e7` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `811a022097` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `24b0ab7f23` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `cf4d3ee91f` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `a94e6656ce` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `850d0c3fb2` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `39f87e9187` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `17e08a521a` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `b231ba4f99` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `c1662969aa` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `2970c79c87` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `ec4a923ecc` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `46fbf8d084` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `0701087e61` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `a3a5c3e383` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `991da372cb` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `303d690f4e` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `8d4aa87ebf` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `2bd7a7b97e` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `60ed375036` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `28c4255f9c` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `105b3212f5` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `79cefbdb20` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `2237eac491` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `ecb3e66efe` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu.
+
+File warnings:
+
+* [REJESTR DECYZJI WZ - ODMOWY 05 2026 r.pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+-+ODMOWY+05+2026+r.pdf/469bb059-cebd-4a89-3ce7-0bc5c162cce4?t=1781011520816): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI WZ 05 2026 r.pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+05+2026+r.pdf/9b1482f6-9c52-74e9-986d-a3c87889038e?t=1781010644977): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ 05 2026 r.pdf](https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+05+2026+r.pdf/ae0d80ea-54dc-7b74-add4-6fda95197957?t=1783596359354): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI CP I_IV 2026.pdf](https://cdn.um.warszawa.pl/documents/45118/16495906/REJESTR+DECYZJI+CP+I_IV+2026.pdf/4369aefb-e503-c42b-a7ed-c610ccc50972?t=1776935849713): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI WZ - ODMOWY I-IV 2026 r.pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+-+ODMOWY+I-IV+2026+r.pdf/373f07bc-3ace-c641-68ad-9267d2cabbf7?t=1776943147652): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI WZ I_IV 2026 r.pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+I_IV+2026+r.pdf/57582e42-ce20-935e-9e7c-4282d6817261?t=1776937774442): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI WZ VI 2026 r.pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+VI+2026+r.pdf/1387beef-d210-44b9-a6a9-81c032f501c6?t=1784009853716): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ I IV 2026 r.pdf](https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+I+IV+2026+r.pdf/f29d929c-a27f-3cbe-d024-1337b2dd3c35?t=1777012139094): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ VI 2026 r..pdf](https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+VI+2026+r..pdf/7e627b82-aef2-9cfd-0700-cfd7569b4c03?t=1783595394271): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI CP I-XII 2025.pdf](https://cdn.um.warszawa.pl/documents/45118/16495906/REJESTR+DECYZJI+CP+I-XII+2025.pdf/5202c611-00b1-bca0-3a92-25c61ec4b1e1?t=1767955236706): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI WZ - ODMOWY I-XII 2025 r.pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+-+ODMOWY+I-XII+2025+r.pdf/4c60c9f9-5739-412b-d70c-5941c39c9848?t=1767955283985): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI WZ I-XII 2025 (1).pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+I-XII+2025+%281%29.pdf/58e4897d-9a33-77ad-3ea9-7bb8c201d8a2?t=1768825432438): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ I-VI 2025 r (1).pdf](https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+I-VI+2025+r+%281%29.pdf/73a8b61a-0c83-c232-968b-fcc14bfac766?t=1777886312956): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI CP I-XII 2024.pdf](https://cdn.um.warszawa.pl/documents/45118/16495906/REJESTR+DECYZJI+CP+I-XII+2024.pdf/fc9234f9-85be-f613-36f1-ab784879ea31?t=1744372107589): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI WZ I-XII 2024.pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+I-XII+2024.pdf/e6337fc5-bd36-f23f-9ad7-dbc1294b40c7?t=1744377003338): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ I-XII    2024.pdf](https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+I-XII++++2024.pdf/2d188f22-f533-0b08-f530-5bbf933b194a?t=1749554732645): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI CP I-XII 2023.pdf](https://cdn.um.warszawa.pl/documents/45118/16495906/REJESTR+DECYZJI+CP+I-XII+2023.pdf/b08fdad7-379d-5e13-78cd-c4080b0e25c3?t=1706277755369): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI WZ I-XII   2023.pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+I-XII+++2023.pdf/5babaa70-63a1-b2ef-5e05-aceb5955b040?t=1722321805990): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR WSZCZĘTYCH POSTĘPOWAŃ WZ i CP I-XII 2023_.pdf](https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+WZ+i+CP+I-XII+2023_.pdf/fc00e23e-aeb7-d142-6b11-f79900127b07?t=1710752467330): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI CP I-XII 2022.pdf](https://cdn.um.warszawa.pl/documents/45118/16495906/REJESTR+DECYZJI+CP+I-XII+2022.pdf/0bd6f34e-17e5-6c5b-5e86-d74064ec5535?t=1674055196639): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI WZ I-XII 2022.pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+I-XII+2022.pdf/468cf384-9c6c-2c1f-6bf5-d0fbd84f9ca2?t=1675236423516): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR WSZCZĘTYCH POSTĘPOWAŃ WZ i CP I-XII 2022.pdf](https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+WZ+i+CP+I-XII+2022.pdf/ffb3f86e-49a7-7194-f23d-157d4d69c8ed?t=1674054338340): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI CP  I - XII 2021 r..pdf](https://cdn.um.warszawa.pl/documents/45118/16495906/REJESTR+DECYZJI+CP++I+-+XII+2021+r..pdf/eabffe09-3be1-a913-df47-d5e44d718a00?t=1642596382244): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR DECYZJI WZ I - XII 2021 r..pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+I+-+XII+2021+r..pdf/0e1d7d95-886c-f403-725e-a382b993f0f1?t=1642597788248): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [REJESTR WSZCZĘTYCH POSTĘPOWAŃ WZ i CP I-XII 2021 r..pdf](https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+WZ+i+CP+I-XII+2021+r..pdf/f6f178ab-4aa9-8d35-0e96-ed5f4e8f4b62?t=1642756949754): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [rejestr_decyzji_cp_ix_-_xii._2020.pdf](https://cdn.um.warszawa.pl/documents/45118/16495906/rejestr_decyzji_cp_ix_-_xii._2020.pdf/0fd2e4ad-f1f9-efeb-f643-06cf46029ff6?t=1634498118546): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [rejestr_decyzji_wz_I-VIII_2020.pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/rejestr_decyzji_wz_I-VIII_2020.pdf/d0aafb50-5507-14f6-8439-1732a8754421?t=1634498118714): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [rejestr_decyzji_wz_IX_-XII_2020.pdf](https://cdn.um.warszawa.pl/documents/45118/16484946/rejestr_decyzji_wz_IX_-XII_2020.pdf/422ffd02-4cdb-9c1f-d86e-555da340ecc7?t=1634498118707): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [rejestr_wnioskow_cp_i_wz_-_od_ix-_xii_2.pdf](https://cdn.um.warszawa.pl/documents/45118/16492610/rejestr_wnioskow_cp_i_wz_-_od_ix-_xii_2.pdf/1396e03e-b129-c828-5042-21f73c161e4d?t=1634498118620): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.

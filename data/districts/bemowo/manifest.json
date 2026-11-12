@@ -1,0 +1,641 @@
+{
+  "generated_at": "2026-10-27T15:55:33Z",
+  "index_url": "https://bemowo.um.warszawa.pl/jawnosc-procesu-inwestycyjnego",
+  "pages": [
+    {
+      "page_id": "bem-jawnosc-procesu-inwestycyjnego",
+      "url": "https://bemowo.um.warszawa.pl/jawnosc-procesu-inwestycyjnego",
+      "title": "Informacja o wszczętych postępowaniach oraz wydanych decyzjach administracyjnych",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Wszczęcia postępowań WZ i LICP",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "b66e268237"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "Informacja o wydanych decyzjach w sprawie warunków zabudowy 2026",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "59c2cdafc6"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "Informacja o wydanych decyzjach w sprawie o ustalenie lokalizacji inwestycji celu publicznego o znaczeniu powiatowym i gminnym 2026",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "c74a518590"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "Wszczęcia postępowań WZ i LICP",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "62e35e994f"
+          ],
+          "period": "2025"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "37fd8ca834"
+          ],
+          "period": "2025"
+        },
+        {
+          "text": "Rejestr decyzji o ustaleniu lokalizacji inwestycji celu publicznego o znaczeniu gminnym i powiatowym",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "e8171142e0"
+          ],
+          "period": "2025"
+        },
+        {
+          "text": "Wszczęcia postępowań WZ i LICP",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "9eda40e469"
+          ],
+          "period": "2024"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "7bde98b5e9"
+          ],
+          "period": "2024"
+        },
+        {
+          "text": "Wszczecia postępowań WZ i LICP stan na 31 grudnia 2023 r.",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "e7079280dc"
+          ],
+          "period": "2023-12"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy stan na 31 grudnia 2023 r.",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "f8ab2633f0"
+          ],
+          "period": "2023-12"
+        },
+        {
+          "text": "Rejestr decyzji o ustaleniu lokalizacji inwestycji celu publicznego o znaczeniu gminnym i powiatowym stan na 31 grudnia 2023 r.",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "50968fe4c4"
+          ],
+          "period": "2023-12"
+        },
+        {
+          "text": "Rejestr decyzji o ustaleniu lokalizacji inwestycji celu publicznego o znaczeniu gminnym i powiatowym stan na 31 grudnia 2022 r.",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "651c7b76b4"
+          ],
+          "period": "2022-12"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy stan na 31 grudnia 2022 r.",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "df4a1248bc"
+          ],
+          "period": "2022-12"
+        },
+        {
+          "text": "Wszczęcia postępowań WZ i LICP stan na 31 grudnia 2022 r.",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "d67d3cbcb1"
+          ],
+          "period": "2022-12"
+        },
+        {
+          "text": "Rejestr decyzji o ustaleniu lokalizacji inwestycji celu publicznego o znaczeniu gminnym i powiatowym stan na 31 grudnia 2021 r.",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "6b85e28e51"
+          ],
+          "period": "2021-12"
+        },
+        {
+          "text": "Rejestr decyzji o ustaleniu lokalizacji inwestycji celu publicznego o znaczeniu krajowym i wojewódzkim stan na 31 grudnia 2021",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "91d586fcdb"
+          ],
+          "period": "2021-12"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy stan na 31 grudnia 2021 r.",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "c92395f2e9"
+          ],
+          "period": "2021-12"
+        },
+        {
+          "text": "Wszczęcia postępowań WZ i LICP stan na 31 grudnia 2021 r.",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "c9a63578f5"
+          ],
+          "period": "2021-12"
+        },
+        {
+          "text": "Wszczęcia postępowań WZ i LICP – listopad 2020 Otwórz w nowej karcie",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "34469bebc6"
+          ],
+          "period": "2020-11"
+        },
+        {
+          "text": "Wszczęcia postępowań WZ i LICP – wrzesień 2020 Otwórz w nowej karcie",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "6f17cb7b8d"
+          ],
+          "period": "2020-09"
+        },
+        {
+          "text": "Wszczęcia postępowań WZ i LICP – grudzień 2020 Otwórz w nowej karcie",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "cbd34d595f"
+          ],
+          "period": "2020-12"
+        },
+        {
+          "text": "Wszczęcia postępowań WZ i LICP – październik 2020 Otwórz w nowej karcie",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "09f86f0d3b"
+          ],
+          "period": "2020-10"
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "pdf": 6
+      }
+    }
+  ],
+  "files": [
+    {
+      "file_id": "b66e268237",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/171708253/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+warunkach+zabudowy+i+ustaleniu+lokalizacji+inwestycji+celu+publicznego+2026.xlsx/33679457-b784-b821-c0d4-a1b016649d60?t=1791886337467",
+      "document_path": "/documents/40444/171708253/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+warunkach+zabudowy+i+ustaleniu+lokalizacji+inwestycji+celu+publicznego+2026.xlsx/33679457-b784-b821-c0d4-a1b016649d60",
+      "filename": "Informacja o wszczętych postępowaniach o warunkach zabudowy i ustaleniu lokalizacji inwestycji celu publicznego 2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/b66e268237.xlsx",
+      "sha256": "71dfa026a33317a74082f7193f242198bd7604da9291d6ddb9df2f6b971cb2a7",
+      "size": 24201,
+      "downloaded_at": "2026-10-27T15:55:34Z",
+      "last_modified": "2026-10-13T10:12:17Z",
+      "history": []
+    },
+    {
+      "file_id": "c74a518590",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/171708253/Informacja+o+wydanych+decyzjach+w+sprawie+o+ustalenie+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+powiatowym+i+gminnym+2026.xlsx/3cdb74f8-e0d4-6d61-66c9-1c52758f50b3?t=1791886337902",
+      "document_path": "/documents/40444/171708253/Informacja+o+wydanych+decyzjach+w+sprawie+o+ustalenie+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+powiatowym+i+gminnym+2026.xlsx/3cdb74f8-e0d4-6d61-66c9-1c52758f50b3",
+      "filename": "Informacja o wydanych decyzjach w sprawie o ustalenie lokalizacji inwestycji celu publicznego o znaczeniu powiatowym i gminnym 2026.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2026",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/c74a518590.xlsx",
+      "sha256": "57a64ebd70028dd6018e5d63029e31959e36e06a857d65da2a50a233bcf51420",
+      "size": 13082,
+      "downloaded_at": "2026-10-27T15:55:34Z",
+      "last_modified": "2026-10-13T10:12:17Z",
+      "history": []
+    },
+    {
+      "file_id": "59c2cdafc6",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/98816918/Informacja+o+wydanych+decyzjach+w+sprawie+warunk%C3%B3w+zabudowy+2024.xlsx/e5262575-7fa2-f139-c575-4b7dc7116343?t=1791886517942",
+      "document_path": "/documents/40444/98816918/Informacja+o+wydanych+decyzjach+w+sprawie+warunk%C3%B3w+zabudowy+2024.xlsx/e5262575-7fa2-f139-c575-4b7dc7116343",
+      "filename": "Informacja o wydanych decyzjach w sprawie warunków zabudowy 2024.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/59c2cdafc6.xlsx",
+      "sha256": "c22eb37ae392d961aa948f2f26d4006fc0cebb529eff4d87f467c415408916c6",
+      "size": 17354,
+      "downloaded_at": "2026-10-27T15:55:35Z",
+      "last_modified": "2026-10-13T10:15:17Z",
+      "history": []
+    },
+    {
+      "file_id": "62e35e994f",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/152303166/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+warunkach+zabudowy+i+ustaleniu+lokalizacji+inwestycji+celu+publicznego+2025.xlsx/f101efa5-a667-f920-2e0d-dd08038d36b8?t=1768479812065",
+      "document_path": "/documents/40444/152303166/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+warunkach+zabudowy+i+ustaleniu+lokalizacji+inwestycji+celu+publicznego+2025.xlsx/f101efa5-a667-f920-2e0d-dd08038d36b8",
+      "filename": "Informacja o wszczętych postępowaniach o warunkach zabudowy i ustaleniu lokalizacji inwestycji celu publicznego 2025.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/62e35e994f.xlsx",
+      "sha256": "b77502768232e7ac6d4d5bfb542723539d6c70eeb76a8ab2abcf1d02e10d840e",
+      "size": 26191,
+      "downloaded_at": "2026-10-27T15:55:36Z",
+      "last_modified": "2026-01-15T12:23:32Z",
+      "history": []
+    },
+    {
+      "file_id": "e8171142e0",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/143498760/Informacja+o+wydanych+decyzjach+w+sprawie+o+ustalenie+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+powiatowym+i+gminnym+2025.xlsx/d7f9f7f1-8584-104e-ad5c-a68978fe4ba6?t=1757576555153",
+      "document_path": "/documents/40444/143498760/Informacja+o+wydanych+decyzjach+w+sprawie+o+ustalenie+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+powiatowym+i+gminnym+2025.xlsx/d7f9f7f1-8584-104e-ad5c-a68978fe4ba6",
+      "filename": "Informacja o wydanych decyzjach w sprawie o ustalenie lokalizacji inwestycji celu publicznego o znaczeniu powiatowym i gminnym 2025.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2025",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/e8171142e0.xlsx",
+      "sha256": "c8f215af8ad1756f2e6f4dcf785f2f3ad22d46189465bf49a5139f918ce3a978",
+      "size": 13325,
+      "downloaded_at": "2026-10-27T15:55:36Z",
+      "last_modified": "2025-09-11T07:42:35Z",
+      "history": []
+    },
+    {
+      "file_id": "37fd8ca834",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/152303166/Informacja+o+wydanych+decyzjach+w+sprawie+warunk%C3%B3w+zabudowy+2025.xlsx/7078fb77-0315-00b1-eb7c-75a9349769d4?t=1768479811648",
+      "document_path": "/documents/40444/152303166/Informacja+o+wydanych+decyzjach+w+sprawie+warunk%C3%B3w+zabudowy+2025.xlsx/7078fb77-0315-00b1-eb7c-75a9349769d4",
+      "filename": "Informacja o wydanych decyzjach w sprawie warunków zabudowy 2025.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/37fd8ca834.xlsx",
+      "sha256": "50a1d0977f43476411661fd46d6d7acfb99d13da9a0864424c664ec66c44f28e",
+      "size": 19401,
+      "downloaded_at": "2026-10-27T15:55:37Z",
+      "last_modified": "2026-01-15T12:23:31Z",
+      "history": []
+    },
+    {
+      "file_id": "9eda40e469",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/123103584/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+warunkach+zabudowy+i+ustaleniu+lokalizacji+inwestycji+celu+publicznego+2024.xlsx/9f32459d-fbde-836c-00e7-b45cbf4b5d63?t=1732788745222",
+      "document_path": "/documents/40444/123103584/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+warunkach+zabudowy+i+ustaleniu+lokalizacji+inwestycji+celu+publicznego+2024.xlsx/9f32459d-fbde-836c-00e7-b45cbf4b5d63",
+      "filename": "Informacja o wszczętych postępowaniach o warunkach zabudowy i ustaleniu lokalizacji inwestycji celu publicznego 2024.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2024",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/9eda40e469.xlsx",
+      "sha256": "954cec627cd5ac0d466b255fe3ad6ff4c952e2bb573869997f4aa836acb37608",
+      "size": 27033,
+      "downloaded_at": "2026-10-27T15:55:37Z",
+      "last_modified": "2024-11-28T10:12:25Z",
+      "history": []
+    },
+    {
+      "file_id": "7bde98b5e9",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/18053331/Informacja+o+wydanych+decyzjach+w+sprawie+o+ustalenie+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+powiatowym+i+gminnym+2024.xlsx/f7eca4af-6386-7eaf-def6-ba79d0f581be?t=1783404685742",
+      "document_path": "/documents/40444/18053331/Informacja+o+wydanych+decyzjach+w+sprawie+o+ustalenie+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+powiatowym+i+gminnym+2024.xlsx/f7eca4af-6386-7eaf-def6-ba79d0f581be",
+      "filename": "Informacja o wydanych decyzjach w sprawie o ustalenie lokalizacji inwestycji celu publicznego o znaczeniu powiatowym i gminnym 2024.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2024",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/7bde98b5e9.xlsx",
+      "sha256": "9d3403827d3f31bfb6e1f02cdb2a2f6f0b8c7c61188f80b38566611683988d98",
+      "size": 14503,
+      "downloaded_at": "2026-10-27T15:55:38Z",
+      "last_modified": "2026-07-07T07:15:35Z",
+      "history": []
+    },
+    {
+      "file_id": "50968fe4c4",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/98815742/rejestr+decyzji+o+ustaleniu+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+gminnym+i+powiatowym+stan+na+31+grudnia+2023+r..xlsx/adb0ba26-c36d-716d-2d29-d7bd2b23c4a4?t=1709023701089",
+      "document_path": "/documents/40444/98815742/rejestr+decyzji+o+ustaleniu+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+gminnym+i+powiatowym+stan+na+31+grudnia+2023+r..xlsx/adb0ba26-c36d-716d-2d29-d7bd2b23c4a4",
+      "filename": "rejestr decyzji o ustaleniu lokalizacji inwestycji celu publicznego o znaczeniu gminnym i powiatowym stan na 31 grudnia 2023 r..xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2023-12",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/50968fe4c4.xlsx",
+      "sha256": "46ff8e1ad9e2253ef1edeb30d29bd4aba9923c8b0744b200c0c837d67a05da58",
+      "size": 15365,
+      "downloaded_at": "2026-10-27T15:55:38Z",
+      "last_modified": "2024-02-27T08:48:21Z",
+      "history": []
+    },
+    {
+      "file_id": "f8ab2633f0",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/98815742/rejestr+decyzji+o+warunkach+zabudowy+stan+na+31+grudnia+2023+r..xlsx/c7a813ca-01da-83a7-fd29-c3981e369943?t=1709023718896",
+      "document_path": "/documents/40444/98815742/rejestr+decyzji+o+warunkach+zabudowy+stan+na+31+grudnia+2023+r..xlsx/c7a813ca-01da-83a7-fd29-c3981e369943",
+      "filename": "rejestr decyzji o warunkach zabudowy stan na 31 grudnia 2023 r..xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-12",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/f8ab2633f0.xlsx",
+      "sha256": "9120e6f3eeb4fe4bf3490b9136f7b10dbf51497a55eb8c063243cfb1e638e8de",
+      "size": 22243,
+      "downloaded_at": "2026-10-27T15:55:39Z",
+      "last_modified": "2024-02-27T08:48:38Z",
+      "history": []
+    },
+    {
+      "file_id": "e7079280dc",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/98816921/wszczecia+postepowan+WZ+i+LICP+stan+na+31+grudnia+2023+r..xlsx/6a136258-e0ea-6f8c-abb4-29a5591235ae?t=1709905870484",
+      "document_path": "/documents/40444/98816921/wszczecia+postepowan+WZ+i+LICP+stan+na+31+grudnia+2023+r..xlsx/6a136258-e0ea-6f8c-abb4-29a5591235ae",
+      "filename": "wszczecia postepowan WZ i LICP stan na 31 grudnia 2023 r..xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023-12",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/e7079280dc.xlsx",
+      "sha256": "2d1f33eeaf031ed119158dddb360ca46233605c0d43afe6e7d53303357542c9b",
+      "size": 28617,
+      "downloaded_at": "2026-10-27T15:55:40Z",
+      "last_modified": "2024-03-08T13:51:10Z",
+      "history": []
+    },
+    {
+      "file_id": "651c7b76b4",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/72732333/rejestr+decyzji+o+ustaleniu+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+gminnym+i+powiatowym+stan+na+31+grudnia+2022+r..xlsx/5cad06a3-a1b8-9a8b-477c-01270e97fedb?t=1677586292594",
+      "document_path": "/documents/40444/72732333/rejestr+decyzji+o+ustaleniu+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+gminnym+i+powiatowym+stan+na+31+grudnia+2022+r..xlsx/5cad06a3-a1b8-9a8b-477c-01270e97fedb",
+      "filename": "rejestr decyzji o ustaleniu lokalizacji inwestycji celu publicznego o znaczeniu gminnym i powiatowym stan na 31 grudnia 2022 r..xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2022-12",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/651c7b76b4.xlsx",
+      "sha256": "ca5f5a67f05879ad1eaef3ab6eab845b04b63abb68e3b000341582e3425ca32f",
+      "size": 14920,
+      "downloaded_at": "2026-10-27T15:55:40Z",
+      "last_modified": "2023-02-28T12:11:32Z",
+      "history": []
+    },
+    {
+      "file_id": "df4a1248bc",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/72732333/rejestr+decyzji+o+warunkach+zabudowy+stan+na+31+grudnia++2022+r..xlsx/5f895ff2-23ed-ca47-e5bf-2332e96a5664?t=1677586311157",
+      "document_path": "/documents/40444/72732333/rejestr+decyzji+o+warunkach+zabudowy+stan+na+31+grudnia++2022+r..xlsx/5f895ff2-23ed-ca47-e5bf-2332e96a5664",
+      "filename": "rejestr decyzji o warunkach zabudowy stan na 31 grudnia  2022 r..xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-12",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/df4a1248bc.xlsx",
+      "sha256": "96720754e483cb8aa88fe72c38fc1a2a7e31e2805462e6bc1bc0ad02127a650d",
+      "size": 25449,
+      "downloaded_at": "2026-10-27T15:55:41Z",
+      "last_modified": "2023-02-28T12:11:51Z",
+      "history": []
+    },
+    {
+      "file_id": "d67d3cbcb1",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/72732333/wszczecia+postepowan+WZ+i+LICP+stan+na+31+grudnia++2022+r..xlsx/6b39de56-cfb5-4f32-af85-acdf709f8ad7?t=1677586332252",
+      "document_path": "/documents/40444/72732333/wszczecia+postepowan+WZ+i+LICP+stan+na+31+grudnia++2022+r..xlsx/6b39de56-cfb5-4f32-af85-acdf709f8ad7",
+      "filename": "wszczecia postepowan WZ i LICP stan na 31 grudnia  2022 r..xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-12",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/d67d3cbcb1.xlsx",
+      "sha256": "465dd80905b729acbe957b1d7c08303377dac7ac66256b391a2fa8f143de79fe",
+      "size": 29199,
+      "downloaded_at": "2026-10-27T15:55:42Z",
+      "last_modified": "2023-02-28T12:12:12Z",
+      "history": []
+    },
+    {
+      "file_id": "6b85e28e51",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/43316811/rejestr+decyzji+o+ustaleniu+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+gminnym+i+powiatowym+stan+na+31+grudnia+2021.xlsx/59dd3cb6-4be7-be0f-2b66-4f0bc8155a6d?t=1643704124634",
+      "document_path": "/documents/40444/43316811/rejestr+decyzji+o+ustaleniu+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+gminnym+i+powiatowym+stan+na+31+grudnia+2021.xlsx/59dd3cb6-4be7-be0f-2b66-4f0bc8155a6d",
+      "filename": "rejestr decyzji o ustaleniu lokalizacji inwestycji celu publicznego o znaczeniu gminnym i powiatowym stan na 31 grudnia 2021.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2021-12",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/6b85e28e51.xlsx",
+      "sha256": "4a0d5b1c7b4f63237db1a43e7331e189553a7a5304336e91af5035cc988010f2",
+      "size": 17015,
+      "downloaded_at": "2026-10-27T15:55:42Z",
+      "last_modified": "2022-02-01T08:28:44Z",
+      "history": []
+    },
+    {
+      "file_id": "91d586fcdb",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/43316811/rejestr+decyzji+o+ustaleniu+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+krajowym+i+wojewodzkim+stan+na+31+grudnia++2021.xlsx/1eb4556a-c474-1d39-bd96-24369fc84e14?t=1643704149519",
+      "document_path": "/documents/40444/43316811/rejestr+decyzji+o+ustaleniu+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+krajowym+i+wojewodzkim+stan+na+31+grudnia++2021.xlsx/1eb4556a-c474-1d39-bd96-24369fc84e14",
+      "filename": "rejestr decyzji o ustaleniu lokalizacji inwestycji celu publicznego o znaczeniu krajowym i wojewodzkim stan na 31 grudnia  2021.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2021-12",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/91d586fcdb.xlsx",
+      "sha256": "d4f23b7ce1198945d43b3b0f5f42a25c19a243597d81552ba37f0a07ff8a582b",
+      "size": 12752,
+      "downloaded_at": "2026-10-27T15:55:43Z",
+      "last_modified": "2022-02-01T08:29:09Z",
+      "history": []
+    },
+    {
+      "file_id": "c92395f2e9",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/43316811/rejestr+decyzji+o+warunkach+zabudowy+stan+na+31+grudnia+2021.xlsx/dde6132b-9d40-8c2f-f02e-4671e7e991c3?t=1643704170764",
+      "document_path": "/documents/40444/43316811/rejestr+decyzji+o+warunkach+zabudowy+stan+na+31+grudnia+2021.xlsx/dde6132b-9d40-8c2f-f02e-4671e7e991c3",
+      "filename": "rejestr decyzji o warunkach zabudowy stan na 31 grudnia 2021.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021-12",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/c92395f2e9.xlsx",
+      "sha256": "34bf2d69da7575ab1a155e23ae0ff0ae107b08cd3a38d7e1098f3f13e1b662e0",
+      "size": 30266,
+      "downloaded_at": "2026-10-27T15:55:43Z",
+      "last_modified": "2022-02-01T08:29:30Z",
+      "history": []
+    },
+    {
+      "file_id": "c9a63578f5",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/43316811/wszczecia+postepowan+WZ+i+LICP+stan+na+31+grudnia+2021.xlsx/2bc25f98-7e20-8a1c-c7ee-99770b3ea22e?t=1643704200249",
+      "document_path": "/documents/40444/43316811/wszczecia+postepowan+WZ+i+LICP+stan+na+31+grudnia+2021.xlsx/2bc25f98-7e20-8a1c-c7ee-99770b3ea22e",
+      "filename": "wszczecia postepowan WZ i LICP stan na 31 grudnia 2021.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2021-12",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/c9a63578f5.xlsx",
+      "sha256": "f7e0ada7a4bb2a30a9187e2436c558e8eb8b62638cb4448440f7aa9e6227758c",
+      "size": 33947,
+      "downloaded_at": "2026-10-27T15:55:44Z",
+      "last_modified": "2022-02-01T08:30:00Z",
+      "history": []
+    },
+    {
+      "file_id": "cbd34d595f",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/18053331/wszczecia-postepowan-WZ-i-LICP_grudzien_2020.xlsx/c1bfb2bb-c682-a397-f0e7-67e815c09c5e?t=1617903968304",
+      "document_path": "/documents/40444/18053331/wszczecia-postepowan-WZ-i-LICP_grudzien_2020.xlsx/c1bfb2bb-c682-a397-f0e7-67e815c09c5e",
+      "filename": "wszczecia-postepowan-WZ-i-LICP_grudzien_2020.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2020-12",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/cbd34d595f.xlsx",
+      "sha256": "1b2f72aa6e066357d357bc35c748c9406e5172ff09258fa070ca59d08df94a5d",
+      "size": 10444,
+      "downloaded_at": "2026-10-27T15:55:45Z",
+      "last_modified": "2021-04-08T17:46:08Z",
+      "history": []
+    },
+    {
+      "file_id": "34469bebc6",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/18053331/wszczecia-postepowan-WZ-i-LICP_listopad_2020.xlsx/b8f8b34a-7f4e-1ac9-612c-6e5a19efd611?t=1617903968504",
+      "document_path": "/documents/40444/18053331/wszczecia-postepowan-WZ-i-LICP_listopad_2020.xlsx/b8f8b34a-7f4e-1ac9-612c-6e5a19efd611",
+      "filename": "wszczecia-postepowan-WZ-i-LICP_listopad_2020.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2020-11",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/34469bebc6.xlsx",
+      "sha256": "88fcb76a92106ab820cf15fbdd52042eb5b6cb9570a2f5d8bb59cfec24185972",
+      "size": 11787,
+      "downloaded_at": "2026-10-27T15:55:45Z",
+      "last_modified": "2021-04-08T17:46:08Z",
+      "history": []
+    },
+    {
+      "file_id": "09f86f0d3b",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/18053331/wszczecia-postepowan-WZ-i-LICP_pazdziernik_2020.xlsx/e214bd19-1f47-f1fe-7ddd-a86fefc94f88?t=1617903968705",
+      "document_path": "/documents/40444/18053331/wszczecia-postepowan-WZ-i-LICP_pazdziernik_2020.xlsx/e214bd19-1f47-f1fe-7ddd-a86fefc94f88",
+      "filename": "wszczecia-postepowan-WZ-i-LICP_pazdziernik_2020.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2020-10",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/09f86f0d3b.xlsx",
+      "sha256": "85a1142aae4e853591a7ccff72b68e87cf978369d578eeb2c5d8b52e21c471cd",
+      "size": 10305,
+      "downloaded_at": "2026-10-27T15:55:46Z",
+      "last_modified": "2021-04-08T17:46:08Z",
+      "history": []
+    },
+    {
+      "file_id": "6f17cb7b8d",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/18053331/wszczecia-postepowan-WZ-i-LICP_wrzesien_2020.xlsx/0ccf7d33-ccdf-273d-bf67-9d3414c347a7?t=1617903968834",
+      "document_path": "/documents/40444/18053331/wszczecia-postepowan-WZ-i-LICP_wrzesien_2020.xlsx/0ccf7d33-ccdf-273d-bf67-9d3414c347a7",
+      "filename": "wszczecia-postepowan-WZ-i-LICP_wrzesien_2020.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2020-09",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/6f17cb7b8d.xlsx",
+      "sha256": "9f4d49c8ddbc54ac93dc8bc23262dde3e5e760b7d078ccc81abda0a556a59333",
+      "size": 14059,
+      "downloaded_at": "2026-10-27T15:55:47Z",
+      "last_modified": "2021-04-08T17:46:08Z",
+      "history": []
+    }
+  ],
+  "district": "bemowo"
+}

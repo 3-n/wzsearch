@@ -1,16 +1,18 @@
-# Deploys site/ as committed (no crawl) to GitHub Pages: on every push to main that touches the site, or by hand.
+# Builds the site from the committed inputs (offline – no crawl, no network) and deploys it to GitHub Pages: on every
+# push to main that touches the site, the data or the pipeline, or by hand.
 #
-# Why separate from "Update data & deploy": the district site (pragapld.um.warszawa.pl) answers GitHub-hosted
-# runners with 403 Forbidden (cloud IP ranges are blocked; the same request from a home connection gets 200), so
-# the scheduled crawl cannot refresh district data in CI. Data can be rebuilt locally (`make data`) and pushed;
-# this workflow then publishes it. Pushes made by the update workflow (GITHUB_TOKEN) do not trigger this one.
+# Build outputs are not committed (docs/plans/all-districts.md §7 #4): `pipeline.city --offline` renders site/data,
+# site/sources and the feeds of all 18 districts from data/ in about a minute. The district sites answer
+# GitHub-hosted runners with 403 Forbidden (cloud IP ranges are blocked), so data is refreshed locally (`make city`)
+# and pushed; this workflow then publishes it. The build must reproduce the committed build stamps (as test.yml
+# checks) – a deploy never publishes data other than what the local refresh produced.
 
 name: Deploy site
 
 on:
   push:
     branches: [main]
-    paths: ["site/**"]
+    paths: ["site/**", "data/**", "pipeline/**", "pyproject.toml", "uv.lock", ".github/workflows/deploy.yml"]
   workflow_dispatch:
 
 permissions:
@@ -25,13 +27,30 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Check out
         uses: actions/checkout@v4
 
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+          enable-cache: true
+
+      - name: Install poppler (pdftotext reads the districts' PDF lists, pipeline/pdftable.py)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+
       - name: Configure GitHub Pages
+        id: pages
         uses: actions/configure-pages@v5
+
+      - name: Build the site from the committed inputs
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}/
+        run: |
+          uv run python -m pipeline.city --offline -q
+          git diff --stat --exit-code -- data/build.json 'data/districts/*/build.json'
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3

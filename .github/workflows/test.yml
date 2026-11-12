@@ -1,5 +1,5 @@
-# Tests for every push and pull request: the Python pipeline (pytest, offline) and the
-# frontend's pure modules (node --test, no dependencies).
+# Tests for every push and pull request: the offline city build (must reproduce the committed build stamps),
+# the Python pipeline (pytest, offline) and the frontend's pure modules (node --test, no dependencies).
 
 name: Tests
 
@@ -27,19 +27,24 @@ jobs:
       - name: Install poppler (pdftotext reads the districts' PDF lists, pipeline/pdftable.py)
         run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
 
-      - name: pytest
-        run: uv run pytest
-
-      - name: Committed site data matches the pipeline (offline rebuild)
-        # The build is deterministic and the caches + RWDZ extracts are committed, so an offline rebuild
-        # must reproduce the committed JSON exactly. CSV, feed and report embed SITE_URL, so they are not
-        # compared; generated_at depends on the JSON only (a SITE_URL change never re-stamps it), and without
-        # SITE_URL the build reuses the base URL of the committed feed. If this fails, run
-        # `make data-offline` and commit.
+      - name: Offline rebuild reproduces the committed build stamps
+        # Build outputs are not committed (plan §7 #4); every shard's build stamp (data/build.json,
+        # data/districts/<slug>/build.json) holds the SHA-256 of its data documents. The build is deterministic
+        # and its inputs are committed, so this Linux rebuild must reproduce the stamps made by the local refresh
+        # (catches platform differences too, e.g. poppler's pdftotext). If it fails, run `make city-offline` and
+        # commit the stamps – or find what makes the two platforms differ.
+        # (`make` exports the public SITE_URL, so the committed reports render identically too)
         run: |
-          uv run python -m pipeline.build --offline -q
-          git diff --stat --exit-code -- site/data/records.json site/data/permits.json site/data/sources.json \
-            site/data/parcels.geojson site/data/parcels-permits.geojson site/sources data/raw data/cache
+          make city-offline
+          git diff --stat --exit-code -- data
+
+      - name: A second rebuild changes nothing
+        run: |
+          make city-offline
+          git diff --stat --exit-code -- data
+
+      - name: pytest (incl. the checks on the real data built above)
+        run: uv run pytest
 
   javascript:
     runs-on: ubuntu-latest

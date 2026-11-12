@@ -2,7 +2,7 @@
 #
 # The schedule is off: pragapld.um.warszawa.pl answers GitHub-hosted runners with 403 Forbidden (cloud IP ranges
 # are blocked; a home connection gets 200), so a run here falls back to the previous district data and stops with
-# exit code 3. Refresh locally instead (`make data`, commit, push – deploy.yml publishes site/). To restore the
+# exit code 3. Refresh locally instead (`make city`, commit data/, push – deploy.yml builds and publishes site/). To restore the
 # schedule (e.g. on a self-hosted runner or once the block is lifted), uncomment the `schedule` block below.
 #
 # 1. crawls the district's monthly pages and the BAiPP (city architecture bureau) lists and downloads
@@ -13,9 +13,11 @@
 #    snapshot is downloaded to the runner, filtered, and only a changed extract is committed,
 # 3. parses, geocodes (from the git-tracked caches; only new lookups hit GUGiK) and exports,
 # 4. runs the test suite against the fresh data,
-# 5. commits changed data back to the repository (nothing is committed when nothing changed –
-#    the build keeps `generated_at` when the data is identical),
+# 5. commits changed inputs, caches, build stamps and reports back to the repository (site/ is built, never
+#    committed; nothing is committed when nothing changed – the build keeps `generated_at` when the data is identical),
 # 6. deploys site/ to GitHub Pages.
+#
+# All 18 districts (`pipeline.city`); while the district sites block cloud runners this mostly refreshes GUNB.
 #
 # One-time setup: Settings → Pages → Build and deployment → Source: "GitHub Actions".
 # If the build fails (exit code 3: the district site is down, or GUNB changed its file format – the
@@ -54,7 +56,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     # a new GUNB snapshot: ~93 MB download + ~20 s filtering; first geocoding of a busy month: a few minutes
-    timeout-minutes: 45
+    timeout-minutes: 90
     steps:
       - name: Check out
         uses: actions/checkout@v4
@@ -81,7 +83,7 @@ jobs:
           args=()
           if [ "$REFRESH" = "true" ]; then args+=(--refresh); fi
           if [ "$REFRESH_MISSES" = "true" ]; then args+=(--refresh-misses); fi
-          uv run python -m pipeline.build "${args[@]}"
+          uv run python -m pipeline.city "${args[@]}"
 
       - name: Test
         run: uv run pytest
@@ -90,7 +92,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data site/data site/sources site/feed.xml
+          git add -A data   # inputs, caches, build stamps and reports only – site/ is built, not committed
           if git diff --cached --quiet; then
             echo "No data changes."
           else

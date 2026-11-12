@@ -1,0 +1,1440 @@
+{
+  "generated_at": "2026-10-27T19:20:53Z",
+  "index_url": "https://bielany.um.warszawa.pl/architektura",
+  "pages": [
+    {
+      "page_id": "bie-lokalizacja_inwestycji_celu_publicznego",
+      "url": "https://bielany.um.warszawa.pl/-/lokalizacja_inwestycji_celu_publicznego",
+      "title": "Rejestr decyzji o lokalizacji inwestycji celu publicznego",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Rejestr decyzji o ustalenie lokalizacji inwestycji celu publicznego 2026",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "9e69814eb1"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "Rejestr decyzji o ustalenie lokalizacji inwestycji celu publicznego 2025",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "0082666753"
+          ],
+          "period": "2026-01"
+        },
+        {
+          "text": "Rejestr decyzji o ustalenie lokalizacji inwestycji celu publicznego 2024",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "1b59335417"
+          ],
+          "period": "2025-01"
+        },
+        {
+          "text": "Rejestr decyzji o lokalizacji inwestycji celu publicznego 2023",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "bbd4c74cf2"
+          ],
+          "period": "2023-12"
+        },
+        {
+          "text": "Rejestr decyzji o lokalizacji inwestycji celu publicznego 2022",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "92b5e8d462"
+          ],
+          "period": "2022-12"
+        },
+        {
+          "text": "Rejestr decyzji o lokalizacji inwestycji celu publicznego 2022 - wersja zgodna z WCAG 2.1",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "12dd6607ba"
+          ],
+          "period": "2022-09"
+        },
+        {
+          "text": "Rejestr decyzji o lokalizacji inwestycji celu publicznego 2021",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "19e5a53a3e"
+          ],
+          "period": "2021-12"
+        },
+        {
+          "text": "Rejestr decyzji o lokalizacji inwestycji celu publicznego 2021 - wersja zgodna z WCAG 2.1",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "d06f6c1aea"
+          ],
+          "period": "2021-12"
+        },
+        {
+          "text": "Rejestr decyzji o lokalizacji inwestycji celu publicznego 2020",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "a158169123"
+          ],
+          "period": "2020-02"
+        },
+        {
+          "text": "Rejestr decyzji o lokalizacji inwestycji celu publicznego 2019",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "a4860ac1d6"
+          ],
+          "period": "2019-02"
+        },
+        {
+          "text": "Rejestr decyzji o lokalizacji inwestycji celu publicznego 2018",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "9d46514a56"
+          ],
+          "period": "2018-02"
+        },
+        {
+          "text": "Rejestr decyzji o lokalizacji inwestycji celu publicznego 2017",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "acf2259538"
+          ],
+          "period": "2017-02"
+        },
+        {
+          "text": "Rejestr decyzji o lokalizacji inwestycji celu publicznego 2016",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "3cda8d77a3"
+          ],
+          "period": "2016"
+        },
+        {
+          "text": "Rejestr decyzji o lokalizacji inwestycji celu publicznego 2015",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "90cb1cadcf"
+          ],
+          "period": "2015"
+        },
+        {
+          "text": "Rejestr decyzji o lokalizacji inwestycji celu publicznego 2014",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "4c3bc8fa72"
+          ],
+          "period": "2014"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "page_id": "bie-warunki_zabudowy",
+      "url": "https://bielany.um.warszawa.pl/-/warunki_zabudowy",
+      "title": "Rejestr decyzji o warunkach zabudowy",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Decyzje o warunkach zabudowy 2026",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "282317c65d"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "Decyzje o warunkach zabudowy 2025",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "efa3fa3908"
+          ],
+          "period": "2026-01"
+        },
+        {
+          "text": "Decyzje o warunkach zabudowy 2024",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "d94cdf5da7"
+          ],
+          "period": "2025-01"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2023",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "6158a7a0a5"
+          ],
+          "period": "2023-12"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2022",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "9ec88c027e"
+          ],
+          "period": "2022-12"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2022 - wersja zgodna z WCAG 2.1",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "52d0b11e0f"
+          ],
+          "period": "2022-09"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2021",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "8f52bc3f12"
+          ],
+          "period": "2021-12"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2021 - wersja zgodna z WCAG 2.1",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "77c3a6de7c"
+          ],
+          "period": "2021-12"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2021 - pozostałe",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "bca759f3e2"
+          ],
+          "period": "2021-12"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2020",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "f6f42fa1aa"
+          ],
+          "period": "2020"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2020 - pozostałe",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "14a0db82fd"
+          ],
+          "period": "2020"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2019",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "9a6d8fa653"
+          ],
+          "period": "2019"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2019 - pozostałe",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "d397459bd1"
+          ],
+          "period": "2019"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2018",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "fa3cb6bfbe"
+          ],
+          "period": "2018"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2018 - pozostałe",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "f957ad871a"
+          ],
+          "period": "2018"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2017",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "d3efde0dcd"
+          ],
+          "period": "2017"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2017 - pozostałe",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "f081b2f7ed"
+          ],
+          "period": "2017"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2016",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "ea403112d5"
+          ],
+          "period": "2016"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2016 - pozostałe",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "6888d4e29d"
+          ],
+          "period": "2016"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2015",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "18dd2cd09a"
+          ],
+          "period": "2015"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2015 - pozostałe",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "0174d8e7d2"
+          ],
+          "period": "2015"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2014",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "afb4ce4ae2"
+          ],
+          "period": "2014"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy 2014 - pozostałe",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "525e38ab95"
+          ],
+          "period": "2014"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "page_id": "bie-wszczete_postepowania",
+      "url": "https://bielany.um.warszawa.pl/-/wszczete_postepowania",
+      "title": "Wnioski o decyzje o warunkach zabudowy oraz o ustaleniu lokalizacji inwestycji celu publicznego",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Rejestr wszczętych postępowań o Ustalenie Lokalizacji Inwestycji Celu Publicznego w roku 2026",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "6f03c09e66"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań o warunkach zabudowy w roku 2026",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "ab85e6756a"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań o warunkach zabudowy w roku 2025",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "777f17887b"
+          ],
+          "period": "2026-01"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań o warunkach zabudowy w roku 2024",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "5c955a1ac7"
+          ],
+          "period": "2025-01"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań o Ustalenie Lokalizacji Inwestycji Celu Publicznego w roku 2024",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "25bba61c27"
+          ],
+          "period": "2025-01"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań o warunkach zabudowy w roku 2023",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "4f121a7929"
+          ],
+          "period": "2023-12"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań o warunkach zabudowy w roku 2022",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "47e4a88ae5"
+          ],
+          "period": "2022-12"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań o warunkach zabudowy w roku 2022 - wersja zgodna z WCAG 2.1",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "03872858d0"
+          ],
+          "period": "2022-09"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań o warunkach zabudowy w roku 2021",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "dfcd3057b3"
+          ],
+          "period": "2021-09"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań o warunkach zabudowy w roku 2021 - wersja zgodna z WCAG 2.1",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "58f42ccf27"
+          ],
+          "period": "2021-12"
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "files": [
+    {
+      "file_id": "0082666753",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/151756058/%282%29+7.01.2026+Rejestr+decyzji+o+ustaleniu+lokalizacji+celu+publicznego.pdf/e184455c-a8a5-8984-4db9-666c57847fc8?t=1767794695881",
+      "document_path": "/documents/41424/151756058/%282%29+7.01.2026+Rejestr+decyzji+o+ustaleniu+lokalizacji+celu+publicznego.pdf/e184455c-a8a5-8984-4db9-666c57847fc8",
+      "filename": "(2) 7.01.2026 Rejestr decyzji o ustaleniu lokalizacji celu publicznego.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2026-01",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/0082666753.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/41424/151756058/%282%29+7.01.2026+Rejestr+decyzji+o+ustaleniu+lokalizacji+celu+publicznego.pdf/e184455c-a8a5-8984-4db9-666c57847fc8?t=1767794695881"
+    },
+    {
+      "file_id": "efa3fa3908",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/151756058/7.01.2026+Rejestr+decyzji+o+Warunkach+zabudowy.pdf/bfa43f60-8e7d-ca51-c0f0-ed11fe846772?t=1767793247288",
+      "document_path": "/documents/41424/151756058/7.01.2026+Rejestr+decyzji+o+Warunkach+zabudowy.pdf/bfa43f60-8e7d-ca51-c0f0-ed11fe846772",
+      "filename": "7.01.2026 Rejestr decyzji o Warunkach zabudowy.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2026-01",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/efa3fa3908.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/41424/151756058/7.01.2026+Rejestr+decyzji+o+Warunkach+zabudowy.pdf/bfa43f60-8e7d-ca51-c0f0-ed11fe846772?t=1767793247288"
+    },
+    {
+      "file_id": "777f17887b",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/151756058/7.01.2026+Rejestr+wniosk%C3%B3w+o+warunki+zabudowy.pdf/c080bf9f-35fb-e448-5069-698ca203e29b?t=1767793247658",
+      "document_path": "/documents/41424/151756058/7.01.2026+Rejestr+wniosk%C3%B3w+o+warunki+zabudowy.pdf/c080bf9f-35fb-e448-5069-698ca203e29b",
+      "filename": "7.01.2026 Rejestr wniosków o warunki zabudowy.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2026-01",
+      "page_ids": [
+        "bie-wszczete_postepowania"
+      ],
+      "local_path": "data/districts/bielany/raw/777f17887b.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/41424/151756058/7.01.2026+Rejestr+wniosk%C3%B3w+o+warunki+zabudowy.pdf/c080bf9f-35fb-e448-5069-698ca203e29b?t=1767793247658"
+    },
+    {
+      "file_id": "9e69814eb1",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/171232747/decyzje+o+ustaleniu+lokalizacji+inwestycji+celu+publicznego.pdf/da13f44d-0e91-52d0-5d1c-756f41722f7c?t=1791358273265",
+      "document_path": "/documents/41424/171232747/decyzje+o+ustaleniu+lokalizacji+inwestycji+celu+publicznego.pdf/da13f44d-0e91-52d0-5d1c-756f41722f7c",
+      "filename": "decyzje o ustaleniu lokalizacji inwestycji celu publicznego.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2026",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/9e69814eb1.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "282317c65d",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/171232747/decyzje+o+warunkach+zabudowy.pdf/2fc1f207-7f92-7ee0-2fc4-85e2f9c70389?t=1791358244391",
+      "document_path": "/documents/41424/171232747/decyzje+o+warunkach+zabudowy.pdf/2fc1f207-7f92-7ee0-2fc4-85e2f9c70389",
+      "filename": "decyzje o warunkach zabudowy.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2026",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/282317c65d.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6f03c09e66",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/171232747/wnioski+o+wydanie+decyzji+o+lokalizacji+inwestycji+celu+publicznego.pdf/0b3848e9-3896-99ce-843c-afe41c27fb25?t=1791358285298",
+      "document_path": "/documents/41424/171232747/wnioski+o+wydanie+decyzji+o+lokalizacji+inwestycji+celu+publicznego.pdf/0b3848e9-3896-99ce-843c-afe41c27fb25",
+      "filename": "wnioski o wydanie decyzji o lokalizacji inwestycji celu publicznego.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2026",
+      "page_ids": [
+        "bie-wszczete_postepowania"
+      ],
+      "local_path": "data/districts/bielany/raw/6f03c09e66.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "ab85e6756a",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/171232747/wnioski+o+wydanie+decyzji+o+warunkach+zabudowy.pdf/1aa81b4e-6804-fe35-6c56-3aa7afa37eb9?t=1791358259501",
+      "document_path": "/documents/41424/171232747/wnioski+o+wydanie+decyzji+o+warunkach+zabudowy.pdf/1aa81b4e-6804-fe35-6c56-3aa7afa37eb9",
+      "filename": "wnioski o wydanie decyzji o warunkach zabudowy.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2026",
+      "page_ids": [
+        "bie-wszczete_postepowania"
+      ],
+      "local_path": "data/districts/bielany/raw/ab85e6756a.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "1b59335417",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/126353688/13.01.2025+r.+Rejestr+decyzji+o+Ustaleniu+Lokalizacji+Inwestycji+Celu+Publicznego+2024.pdf/7b94d407-63ff-d761-8e90-79b8251691a7?t=1736772564622",
+      "document_path": "/documents/41424/126353688/13.01.2025+r.+Rejestr+decyzji+o+Ustaleniu+Lokalizacji+Inwestycji+Celu+Publicznego+2024.pdf/7b94d407-63ff-d761-8e90-79b8251691a7",
+      "filename": "13.01.2025 r. Rejestr decyzji o Ustaleniu Lokalizacji Inwestycji Celu Publicznego 2024.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2025-01",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/1b59335417.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "d94cdf5da7",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/126353688/13.01.2025+r.+Rejestr+decyzji+o+warunkach+zabudowy+2024.pdf/3e1257bc-6d19-ba26-8ef9-ade805217b9b?t=1736772565001",
+      "document_path": "/documents/41424/126353688/13.01.2025+r.+Rejestr+decyzji+o+warunkach+zabudowy+2024.pdf/3e1257bc-6d19-ba26-8ef9-ade805217b9b",
+      "filename": "13.01.2025 r. Rejestr decyzji o warunkach zabudowy 2024.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2025-01",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/d94cdf5da7.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "5c955a1ac7",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/126353688/13.01.2025+r.+Rejestr+wszcz%C4%99tych+post%C4%99powa%C5%84+o++Warunki+Zabudowy.pdf/3c32ba98-8f44-e1ff-c6fd-a5f04b097cb7?t=1736778948319",
+      "document_path": "/documents/41424/126353688/13.01.2025+r.+Rejestr+wszcz%C4%99tych+post%C4%99powa%C5%84+o++Warunki+Zabudowy.pdf/3c32ba98-8f44-e1ff-c6fd-a5f04b097cb7",
+      "filename": "13.01.2025 r. Rejestr wszczętych postępowań o  Warunki Zabudowy.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2025-01",
+      "page_ids": [
+        "bie-wszczete_postepowania"
+      ],
+      "local_path": "data/districts/bielany/raw/5c955a1ac7.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "25bba61c27",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/126353688/13.01.2025+r.+Rejestr+wszcz%C4%99tych+post%C4%99powa%C5%84+o+Ustalenie+Lokalizacji+Inwestycji+Celu+Publicznego+2024.pdf/26c7ecf5-5dca-2a28-3827-2c1284c7f138?t=1736772565697",
+      "document_path": "/documents/41424/126353688/13.01.2025+r.+Rejestr+wszcz%C4%99tych+post%C4%99powa%C5%84+o+Ustalenie+Lokalizacji+Inwestycji+Celu+Publicznego+2024.pdf/26c7ecf5-5dca-2a28-3827-2c1284c7f138",
+      "filename": "13.01.2025 r. Rejestr wszczętych postępowań o Ustalenie Lokalizacji Inwestycji Celu Publicznego 2024.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2025-01",
+      "page_ids": [
+        "bie-wszczete_postepowania"
+      ],
+      "local_path": "data/districts/bielany/raw/25bba61c27.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6158a7a0a5",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2023.12-ca%C5%82o%C5%9B%C4%87+-+decyzje+o+warunkach+zabudowy.pdf/29acf799-2884-313e-9879-72e86b7a44ab?t=1704807433519",
+      "document_path": "/documents/41424/17188990/2023.12-ca%C5%82o%C5%9B%C4%87+-+decyzje+o+warunkach+zabudowy.pdf/29acf799-2884-313e-9879-72e86b7a44ab",
+      "filename": "2023.12-całość - decyzje o warunkach zabudowy.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2023-12",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/6158a7a0a5.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "bbd4c74cf2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17186168/2023.12_ca%C5%82o%C5%9B%C4%87+-+rejestr+decyzji+lokalizacji+inwestycji+celu+publicznego+.pdf/a259df74-aff1-e0a2-66bf-6cf1d3611a1f?t=1704807404665",
+      "document_path": "/documents/41424/17186168/2023.12_ca%C5%82o%C5%9B%C4%87+-+rejestr+decyzji+lokalizacji+inwestycji+celu+publicznego+.pdf/a259df74-aff1-e0a2-66bf-6cf1d3611a1f",
+      "filename": "2023.12_całość - rejestr decyzji lokalizacji inwestycji celu publicznego .pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2023-12",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/bbd4c74cf2.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "4f121a7929",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/26447336/2023.12_ca%C5%82o%C5%9B%C4%87+-+wszcz%C4%99te+post%C4%99powania+o+warunki+zabudowy.pdf/a1e126f9-b450-e505-cc73-e9174bf30808?t=1704807464050",
+      "document_path": "/documents/41424/26447336/2023.12_ca%C5%82o%C5%9B%C4%87+-+wszcz%C4%99te+post%C4%99powania+o+warunki+zabudowy.pdf/a1e126f9-b450-e505-cc73-e9174bf30808",
+      "filename": "2023.12_całość - wszczęte postępowania o warunki zabudowy.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2023-12",
+      "page_ids": [
+        "bie-wszczete_postepowania"
+      ],
+      "local_path": "data/districts/bielany/raw/4f121a7929.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "9ec88c027e",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2022.12+-+decyzje+o+warunkach+zabudowy+.pdf/dd607a20-c185-e233-8485-38f84b07ae63?t=1673271070879",
+      "document_path": "/documents/41424/17188990/2022.12+-+decyzje+o+warunkach+zabudowy+.pdf/dd607a20-c185-e233-8485-38f84b07ae63",
+      "filename": "2022.12 - decyzje o warunkach zabudowy .pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2022-12",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/9ec88c027e.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "92b5e8d462",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17186168/2022.12+-+rejestr+decyzji+lokalizacji+inwestycji+celu+publicznego.pdf/79fd0e93-4755-dd93-a3b0-c1a3d4de88fa?t=1673271010335",
+      "document_path": "/documents/41424/17186168/2022.12+-+rejestr+decyzji+lokalizacji+inwestycji+celu+publicznego.pdf/79fd0e93-4755-dd93-a3b0-c1a3d4de88fa",
+      "filename": "2022.12 - rejestr decyzji lokalizacji inwestycji celu publicznego.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2022-12",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/92b5e8d462.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "47e4a88ae5",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/26447336/2022.12%E2%80%93wszcz%C4%99te+post%C4%99powania+o+warunki+zabudowy.pdf/f4b4a5f1-728b-6c19-a320-ee8cf7a5c317?t=1673270115116",
+      "document_path": "/documents/41424/26447336/2022.12%E2%80%93wszcz%C4%99te+post%C4%99powania+o+warunki+zabudowy.pdf/f4b4a5f1-728b-6c19-a320-ee8cf7a5c317",
+      "filename": "2022.12–wszczęte postępowania o warunki zabudowy.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2022-12",
+      "page_ids": [
+        "bie-wszczete_postepowania"
+      ],
+      "local_path": "data/districts/bielany/raw/47e4a88ae5.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "52d0b11e0f",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2022.09+-+decyzje+o+warunkach+zabudowy.xlsx/eb42fb12-f08b-e645-ecdf-574acf2c6302?t=1665649771081",
+      "document_path": "/documents/41424/17188990/2022.09+-+decyzje+o+warunkach+zabudowy.xlsx/eb42fb12-f08b-e645-ecdf-574acf2c6302",
+      "filename": "2022.09 - decyzje o warunkach zabudowy.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-09",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/52d0b11e0f.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "12dd6607ba",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17186168/2022.09+-+rejestr+decyzji+lokalizacji+inwestycji+celu+publicznego+pg.xlsx/08d500fe-8549-d531-8f17-25356e797301?t=1665649750164",
+      "document_path": "/documents/41424/17186168/2022.09+-+rejestr+decyzji+lokalizacji+inwestycji+celu+publicznego+pg.xlsx/08d500fe-8549-d531-8f17-25356e797301",
+      "filename": "2022.09 - rejestr decyzji lokalizacji inwestycji celu publicznego pg.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2022-09",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/12dd6607ba.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "03872858d0",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/26447336/2022.09+-+wszcz%C4%99te+post%C4%99powania+o+warunki+zabudowy.xlsx/d7dad83f-aa04-e3a0-74cc-1fdeb17eba2b?t=1665649731516",
+      "document_path": "/documents/41424/26447336/2022.09+-+wszcz%C4%99te+post%C4%99powania+o+warunki+zabudowy.xlsx/d7dad83f-aa04-e3a0-74cc-1fdeb17eba2b",
+      "filename": "2022.09 - wszczęte postępowania o warunki zabudowy.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-09",
+      "page_ids": [
+        "bie-wszczete_postepowania"
+      ],
+      "local_path": "data/districts/bielany/raw/03872858d0.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "bca759f3e2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2021.12+-+decyzje+o+warunkach+zabudowy+-+pozosta%C5%82e+.pdf/b096e01c-9539-b391-ee26-72a8770b31be?t=1642416565620",
+      "document_path": "/documents/41424/17188990/2021.12+-+decyzje+o+warunkach+zabudowy+-+pozosta%C5%82e+.pdf/b096e01c-9539-b391-ee26-72a8770b31be",
+      "filename": "2021.12 - decyzje o warunkach zabudowy - pozostałe .pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2021-12",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/bca759f3e2.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "8f52bc3f12",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2021.12+-+decyzje+o+warunkach+zabudowy+.pdf/f873253f-b9d8-8765-f927-cdc9826df407?t=1642416553280",
+      "document_path": "/documents/41424/17188990/2021.12+-+decyzje+o+warunkach+zabudowy+.pdf/f873253f-b9d8-8765-f927-cdc9826df407",
+      "filename": "2021.12 - decyzje o warunkach zabudowy .pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2021-12",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/8f52bc3f12.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "77c3a6de7c",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2021.12+-+decyzje+o+warunkach+zabudowy.xlsx/debb4352-c7c6-53ff-d0bb-42c70f5a454b?t=1642416538276",
+      "document_path": "/documents/41424/17188990/2021.12+-+decyzje+o+warunkach+zabudowy.xlsx/debb4352-c7c6-53ff-d0bb-42c70f5a454b",
+      "filename": "2021.12 - decyzje o warunkach zabudowy.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021-12",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/77c3a6de7c.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "d06f6c1aea",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17186168/2021.12+-+rejestr+decyzji+lokalizacji+inwestycji+celu+publicznego+pg.xlsx/83bd8fac-6eaa-cd05-679f-5bd1b300f4ec?t=1642416480539",
+      "document_path": "/documents/41424/17186168/2021.12+-+rejestr+decyzji+lokalizacji+inwestycji+celu+publicznego+pg.xlsx/83bd8fac-6eaa-cd05-679f-5bd1b300f4ec",
+      "filename": "2021.12 - rejestr decyzji lokalizacji inwestycji celu publicznego pg.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2021-12",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/d06f6c1aea.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "19e5a53a3e",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17186168/2021.12+-+rejestr+decyzji+o+ustaleniu+lokalizacji+celu+publicznego.pdf/8565d8c0-866b-d1ad-26bc-baba1aabcd76?t=1642416496224",
+      "document_path": "/documents/41424/17186168/2021.12+-+rejestr+decyzji+o+ustaleniu+lokalizacji+celu+publicznego.pdf/8565d8c0-866b-d1ad-26bc-baba1aabcd76",
+      "filename": "2021.12 - rejestr decyzji o ustaleniu lokalizacji celu publicznego.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2021-12",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/19e5a53a3e.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "58f42ccf27",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/26447336/2021.12+-+wszcz%C4%99te+post%C4%99powania+o+warunki+zabudowy.xlsx/fead263f-6620-4a89-bcad-7a8fdbf56690?t=1642416353247",
+      "document_path": "/documents/41424/26447336/2021.12+-+wszcz%C4%99te+post%C4%99powania+o+warunki+zabudowy.xlsx/fead263f-6620-4a89-bcad-7a8fdbf56690",
+      "filename": "2021.12 - wszczęte postępowania o warunki zabudowy.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2021-12",
+      "page_ids": [
+        "bie-wszczete_postepowania"
+      ],
+      "local_path": "data/districts/bielany/raw/58f42ccf27.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "dfcd3057b3",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/26447336/2021.09+-+wszcz%C4%99te+post%C4%99powania+o+warunki+zabudowy.pdf/ac264c17-5502-ac05-1f82-ae5e4d38c541?t=1735651901727",
+      "document_path": "/documents/41424/26447336/2021.09+-+wszcz%C4%99te+post%C4%99powania+o+warunki+zabudowy.pdf/ac264c17-5502-ac05-1f82-ae5e4d38c541",
+      "filename": "2021.09 - wszczęte postępowania o warunki zabudowy.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2021-09",
+      "page_ids": [
+        "bie-wszczete_postepowania"
+      ],
+      "local_path": "data/districts/bielany/raw/dfcd3057b3.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "a158169123",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17186168/2-2020-rejestr_decyzji_licp_6.pdf/00971910-d446-3b6f-15e9-68116eb25208?t=1634498103363",
+      "document_path": "/documents/41424/17186168/2-2020-rejestr_decyzji_licp_6.pdf/00971910-d446-3b6f-15e9-68116eb25208",
+      "filename": "2-2020-rejestr_decyzji_licp_6.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2020-02",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/a158169123.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "f6f42fa1aa",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2020_warunki_zabudowy.pdf/ead8d553-415a-977d-599f-11ae9908c79c?t=1634498103173",
+      "document_path": "/documents/41424/17188990/2020_warunki_zabudowy.pdf/ead8d553-415a-977d-599f-11ae9908c79c",
+      "filename": "2020_warunki_zabudowy.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2020",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/f6f42fa1aa.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "14a0db82fd",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2020_warunki_zabudowy_pozostale.pdf/1eb2930f-f61d-254f-d5d7-0a3aebeaec8e?t=1634498103166",
+      "document_path": "/documents/41424/17188990/2020_warunki_zabudowy_pozostale.pdf/1eb2930f-f61d-254f-d5d7-0a3aebeaec8e",
+      "filename": "2020_warunki_zabudowy_pozostale.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2020",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/14a0db82fd.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "a4860ac1d6",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17186168/2_2019_rejestr_lokalizacji_inwestycji_celu__1.pdf/8ded3a3e-c44b-c089-a5d2-f143521564a3?t=1634498103385",
+      "document_path": "/documents/41424/17186168/2_2019_rejestr_lokalizacji_inwestycji_celu__1.pdf/8ded3a3e-c44b-c089-a5d2-f143521564a3",
+      "filename": "2_2019_rejestr_lokalizacji_inwestycji_celu__1.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2019-02",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/a4860ac1d6.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "9a6d8fa653",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2019_warunki_zabudowy.pdf/9c8117e7-78f8-9f79-25c4-9e6f43805d42?t=1634498103185",
+      "document_path": "/documents/41424/17188990/2019_warunki_zabudowy.pdf/9c8117e7-78f8-9f79-25c4-9e6f43805d42",
+      "filename": "2019_warunki_zabudowy.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2019",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/9a6d8fa653.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "d397459bd1",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2019_warunki_zabudowy_pozostale.pdf/88f30480-ec4a-8484-3f66-a4c526cf36b2?t=1634498103179",
+      "document_path": "/documents/41424/17188990/2019_warunki_zabudowy_pozostale.pdf/88f30480-ec4a-8484-3f66-a4c526cf36b2",
+      "filename": "2019_warunki_zabudowy_pozostale.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2019",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/d397459bd1.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "9d46514a56",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17186168/2_2018_lokalizacje_inwestycji_celu_publiczn.pdf/78823d0f-bf86-4805-7366-5649fc3457fb?t=1634498103391",
+      "document_path": "/documents/41424/17186168/2_2018_lokalizacje_inwestycji_celu_publiczn.pdf/78823d0f-bf86-4805-7366-5649fc3457fb",
+      "filename": "2_2018_lokalizacje_inwestycji_celu_publiczn.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2018-02",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/9d46514a56.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "fa3cb6bfbe",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2018_warunki_zabudowy.pdf/39a71b9a-8df4-531c-78e1-253b1eb1b43f?t=1634498103199",
+      "document_path": "/documents/41424/17188990/2018_warunki_zabudowy.pdf/39a71b9a-8df4-531c-78e1-253b1eb1b43f",
+      "filename": "2018_warunki_zabudowy.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2018",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/fa3cb6bfbe.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "f957ad871a",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2018_warunki_zabudowy_pozostale.pdf/82356e63-b853-85c0-a44e-d82d75ada804?t=1634498103193",
+      "document_path": "/documents/41424/17188990/2018_warunki_zabudowy_pozostale.pdf/82356e63-b853-85c0-a44e-d82d75ada804",
+      "filename": "2018_warunki_zabudowy_pozostale.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2018",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/f957ad871a.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "acf2259538",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17186168/2-2017-lokalizacje_inwestycji_celu_publicznego.pdf/99c2efe9-04b9-943c-b6ca-1f584da69925?t=1634498103369",
+      "document_path": "/documents/41424/17186168/2-2017-lokalizacje_inwestycji_celu_publicznego.pdf/99c2efe9-04b9-943c-b6ca-1f584da69925",
+      "filename": "2-2017-lokalizacje_inwestycji_celu_publicznego.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2017-02",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/acf2259538.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "d3efde0dcd",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2017_warunki_zabudowy.pdf/54119c12-7eff-29ee-2e02-eecfbb38ea67?t=1634498103215",
+      "document_path": "/documents/41424/17188990/2017_warunki_zabudowy.pdf/54119c12-7eff-29ee-2e02-eecfbb38ea67",
+      "filename": "2017_warunki_zabudowy.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2017",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/d3efde0dcd.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "f081b2f7ed",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2017_warunki_zabudowy_pozostale.pdf/6cf08dd8-8f7d-ee4e-c5e6-6f4571fde679?t=1634498103208",
+      "document_path": "/documents/41424/17188990/2017_warunki_zabudowy_pozostale.pdf/6cf08dd8-8f7d-ee4e-c5e6-6f4571fde679",
+      "filename": "2017_warunki_zabudowy_pozostale.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2017",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/f081b2f7ed.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "ea403112d5",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2016_warunki_zabudowy.pdf/febf2dcd-2cf0-16ed-19a0-b393e014fc64?t=1634498103233",
+      "document_path": "/documents/41424/17188990/2016_warunki_zabudowy.pdf/febf2dcd-2cf0-16ed-19a0-b393e014fc64",
+      "filename": "2016_warunki_zabudowy.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2016",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/ea403112d5.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6888d4e29d",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2016_warunki_zabudowy_pozostale.pdf/fc1d3cb4-2ae2-e98f-288c-9bd4a319dc24?t=1634498103223",
+      "document_path": "/documents/41424/17188990/2016_warunki_zabudowy_pozostale.pdf/fc1d3cb4-2ae2-e98f-288c-9bd4a319dc24",
+      "filename": "2016_warunki_zabudowy_pozostale.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2016",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/6888d4e29d.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "3cda8d77a3",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17186168/2_-_2016_-rejestr_decyzji_licp.pdf/26c6bb77-18a4-2f7f-2d91-c83a433bf1f3?t=1634498103397",
+      "document_path": "/documents/41424/17186168/2_-_2016_-rejestr_decyzji_licp.pdf/26c6bb77-18a4-2f7f-2d91-c83a433bf1f3",
+      "filename": "2_-_2016_-rejestr_decyzji_licp.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2016",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/3cda8d77a3.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "90cb1cadcf",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17186168/2015+-+rejestr+decyzji+LICP+ca%C5%82o%C5%9B%C4%87.pdf/aa74e5f4-28ff-fbee-e86c-608986d69605?t=1634497641633",
+      "document_path": "/documents/41424/17186168/2015+-+rejestr+decyzji+LICP+ca%C5%82o%C5%9B%C4%87.pdf/aa74e5f4-28ff-fbee-e86c-608986d69605",
+      "filename": "2015 - rejestr decyzji LICP całość.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2015",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/90cb1cadcf.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "18dd2cd09a",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2015_warunki_zabudowy.pdf/c580d5f2-fdd9-8ac5-a8ea-5a23cd8f9259?t=1634498103250",
+      "document_path": "/documents/41424/17188990/2015_warunki_zabudowy.pdf/c580d5f2-fdd9-8ac5-a8ea-5a23cd8f9259",
+      "filename": "2015_warunki_zabudowy.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2015",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/18dd2cd09a.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "0174d8e7d2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2015_warunki_zabudowy_pozostale.pdf/4d2a1687-1b78-c825-af14-081254630c1e?t=1634498103242",
+      "document_path": "/documents/41424/17188990/2015_warunki_zabudowy_pozostale.pdf/4d2a1687-1b78-c825-af14-081254630c1e",
+      "filename": "2015_warunki_zabudowy_pozostale.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2015",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/0174d8e7d2.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "afb4ce4ae2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2014_warunki_zabudowy.pdf/c97df1af-3099-1a07-6db9-78d1d097c985?t=1634498103264",
+      "document_path": "/documents/41424/17188990/2014_warunki_zabudowy.pdf/c97df1af-3099-1a07-6db9-78d1d097c985",
+      "filename": "2014_warunki_zabudowy.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2014",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/afb4ce4ae2.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "525e38ab95",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17188990/2014_warunki_zabudowy_pozostale.pdf/d794e476-0538-4955-21f4-dfd81435e6be?t=1634498103258",
+      "document_path": "/documents/41424/17188990/2014_warunki_zabudowy_pozostale.pdf/d794e476-0538-4955-21f4-dfd81435e6be",
+      "filename": "2014_warunki_zabudowy_pozostale.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2014",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/525e38ab95.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "4c3bc8fa72",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/17186168/cel_publiczny_2014_1.pdf/7ec1949b-ea46-de81-3342-0c3b9e58d801?t=1634498103355",
+      "document_path": "/documents/41424/17186168/cel_publiczny_2014_1.pdf/7ec1949b-ea46-de81-3342-0c3b9e58d801",
+      "filename": "cel_publiczny_2014_1.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2014",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/4c3bc8fa72.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    }
+  ],
+  "district": "bielany"
+}

@@ -34,6 +34,12 @@ a rebuild produces exactly the same data (the JSON/GeoJSON documents), the previ
 is kept and no file is rewritten, so a scheduled build that finds nothing new produces no diff at
 all; a different ``SITE_URL`` alone re-renders only the CSVs, the feed and the report.
 
+The outputs under ``site/data`` and ``site/sources`` are not committed (plan §7 #4: inputs only, CI builds the
+site). What a rebuild needs from the previous build is in the committed **build stamp** next to the inputs
+(``data/build.json``, ``data/districts/<slug>/build.json``): ``generated_at``, the SHA-256 of the data documents
+(``data_sha256`` – the same data on any machine keeps the timestamp; CI checks that its offline build reproduces
+it) and the files that gave records (``files_with_records``, for the "lost file" check).
+
 Exit codes: 0 = built; 1 = nothing could be built (no manifest, or an edited RWDZ extract); 3 = built,
 but the live crawl failed and the previous manifest was used (also: a monthly page came back without
 its file list and its previous version was used), GUNB's file format changed and the committed RWDZ
@@ -240,6 +246,11 @@ class Paths:
         return self.root / "data" / "report.md"
 
     @property
+    def stamp(self) -> Path:
+        """The committed build stamp (module docstring)."""
+        return self.root / "data" / "build.json"
+
+    @property
     def site(self) -> Path:
         return self.root / "site"
 
@@ -367,6 +378,10 @@ class DistrictPaths(Paths):
     @property
     def report(self) -> Path:
         return super().report if self.district.legacy else self.inputs / "report.md"
+
+    @property
+    def stamp(self) -> Path:
+        return super().stamp if self.district.legacy else self.inputs / "build.json"
 
     @property
     def site_data(self) -> Path:
@@ -667,19 +682,42 @@ def parse_sources(manifest: Mapping[str, Any], root: Path) -> tuple[list[dict], 
 
 
 def lost_files(paths: Paths, results: Mapping[str, FileResult]) -> list[str]:
-    """District/BAiPP files that gave records in the last build (``sources.json``) but cannot be read now
-    (no local copy, unreadable workbook): their records would silently disappear, so the build reports them
-    and exits with code 3."""
-    try:
-        previous = json.loads(paths.sources_json.read_text(encoding="utf-8"))
-    except (OSError, ValueError):
-        return []
+    """District/BAiPP files that gave records in the last build (the build stamp, else a local ``sources.json``)
+    but cannot be read now (no local copy, unreadable workbook): their records would silently disappear, so the
+    build reports them and exits with code 3."""
+    stamp = read_stamp(paths.stamp)
+    if stamp is not None:
+        previous = set(stamp.get("files_with_records") or [])
+    else:
+        try:
+            doc = json.loads(paths.sources_json.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return []
+        previous = {f.get("file_id") for f in doc.get("files") or [] if (f.get("parsed_count") or 0) > 0}
     lost = []
-    for f in previous.get("files") or []:
-        res = results.get(f.get("file_id"))
-        if res is not None and res.parsed_count is None and (f.get("parsed_count") or 0) > 0:
-            lost.append(f["file_id"])
+    for file_id in previous:
+        res = results.get(file_id)
+        if res is not None and res.parsed_count is None:
+            lost.append(file_id)
     return sorted(lost)
+
+
+def read_stamp(path: Path) -> dict | None:
+    """The committed build stamp (module docstring), or None."""
+    try:
+        doc = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    return doc if isinstance(doc, dict) else None
+
+
+def data_digest(outputs: Mapping[Path, bytes], data_paths: Iterable[Path], base: Path) -> str:
+    """SHA-256 over the data documents (path relative to the shard + bytes), independent of where it is built."""
+    h = hashlib.sha256()
+    for p in sorted(data_paths, key=lambda q: q.relative_to(base).as_posix()):
+        h.update(p.relative_to(base).as_posix().encode("utf-8") + b"\0")
+        h.update(outputs[p] + b"\0")
+    return h.hexdigest()
 
 
 # =============================================================================
@@ -1721,6 +1759,9 @@ def run_build(
                          package_dir=str(paths.egib_cache))
     if area_index is None:
         area_index = areas_mod.load_areas(str(paths.cache), str(paths.areas_geojson))
+    # the map's outline layer is rendered from the committed cache every time (site/ is not committed)
+    if (paths.cache / areas_mod.cache_name()).is_file():
+        areas_mod.build_areas(str(paths.cache), str(paths.areas_geojson), online=False, log=log.debug)
     # 4b. GUNB cases with the Praga-Południe unit id but a precinct the district does not have, which could not
     #     be placed in the district: probed under the other Warsaw units like the BAiPP rows above
     moved_out = baipp.check_out_of_district_permits(permits, is_pp_obreb=is_pp_obreb, cache_dir=str(paths.cache),
@@ -1808,20 +1849,30 @@ def run_build(
 
     # Keep the previous generated_at when the data did not change (no diff on a no-op rebuild). Only the
     # data documents decide: the CSVs, the feed and the report embed site_url, so a build with another
-    # SITE_URL (CI's Pages URL vs a local "./") re-renders those with the kept timestamp and leaves the
-    # JSON alone (test.yml compares the committed JSON with an offline rebuild).
+    # SITE_URL (CI's Pages URL vs a local "./") re-renders those with the kept timestamp. The committed stamp
+    # holds the timestamp and the data digest (the outputs themselves are not committed); without a stamp the
+    # previous outputs on disk are compared.
     data_paths = (paths.records_json, paths.permits_json, paths.sources_json, paths.parcels_geojson,
                   paths.parcels_permits_geojson, *record_cell_files, *permit_cell_files)
-    previous_at = _read_generated_at(paths.records_json)
+    stamp = read_stamp(paths.stamp)
+    previous_at = (stamp or {}).get("generated_at") or _read_generated_at(paths.records_json)
     outputs = sources_doc = None
     generated_at = previous_at
     if previous_at:
         outputs, sources_doc = render(previous_at)
-        if not all(p.is_file() and p.read_bytes() == outputs[p] for p in data_paths):
+        same = (data_digest(outputs, data_paths, paths.site_data) == stamp.get("data_sha256") if stamp else
+                all(p.is_file() and p.read_bytes() == outputs[p] for p in data_paths))
+        if not same:
             outputs = None
     if outputs is None:
         generated_at = now()
         outputs, sources_doc = render(generated_at)
+    stamp_doc = {
+        "generated_at": generated_at,
+        "data_sha256": data_digest(outputs, data_paths, paths.site_data),
+        "files_with_records": sorted(f["file_id"] for f in sources_doc["files"] if (f.get("parsed_count") or 0) > 0),
+    }
+    outputs[paths.stamp] = dumps_json(stamp_doc, ("files_with_records",))
     written = [p for p, data in outputs.items() if write_atomic(p, data)]
     for p in cells.stale_buckets(paths.site_data, outputs):
         p.unlink()

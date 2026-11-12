@@ -823,6 +823,32 @@ class TestRunBuild:
         assert third.generated_at == NOW and not set(third.written) & set(data)
         assert "https://ex.org/wz/#/wpis/" in project.records_csv.read_text(encoding="utf-8")
 
+    def test_build_stamp_replaces_committed_outputs(self, project):
+        # plan §7 #4: site/ is not committed; a clean checkout (no outputs) rebuilds the same bytes and keeps
+        # generated_at from the committed stamp
+        self._run(project)
+        stamp = json.loads(project.stamp.read_text(encoding="utf-8"))
+        assert stamp["generated_at"] == NOW and len(stamp["data_sha256"]) == 64
+        assert "cccccccccc" in stamp["files_with_records"]
+        # (the fixture project has no areas cache: its areas.geojson is an input, as before the first cache)
+        snapshot = {p: p.read_bytes() for p in project.site.rglob("*") if p.is_file() and p != project.areas_geojson}
+        for p in snapshot:
+            p.unlink()
+        again = self._run(project, now="2099-01-01T00:00:00Z")
+        assert again.generated_at == NOW
+        assert {p: p.read_bytes() for p in snapshot} == snapshot
+        assert project.stamp not in again.written
+
+    def test_build_stamp_with_other_data_gets_a_new_timestamp(self, project):
+        self._run(project)
+        stamp = json.loads(project.stamp.read_text(encoding="utf-8"))
+        project.stamp.write_bytes(build.dumps_json({**stamp, "data_sha256": "0" * 64}, ("files_with_records",)))
+        for p in project.site_data.rglob("*.json"):
+            p.unlink()
+        again = self._run(project, now="2099-01-01T00:00:00Z")
+        assert again.generated_at == "2099-01-01T00:00:00Z" and project.stamp in again.written
+        assert json.loads(project.stamp.read_text(encoding="utf-8"))["data_sha256"] not in ("0" * 64, stamp["data_sha256"])
+
     def test_default_site_url_comes_from_the_committed_feed(self, project, monkeypatch):
         monkeypatch.delenv("SITE_URL", raising=False)
         self._run(project)   # as CI leaves it: absolute links
@@ -915,6 +941,14 @@ class TestManifestStage:
         assert "cannot be read now" in project.report.read_text(encoding="utf-8")
         again = TestRunBuild()._run(project, now="2026-11-13T06:00:00Z")   # still unreadable, nothing gave rows
         assert again.lost_files == [] and again.exit_code == build.EXIT_OK
+
+    def test_lost_files_are_found_without_previous_outputs(self, project):
+        # a clean checkout has the stamp but no site/data/sources.json
+        TestRunBuild()._run(project)
+        project.sources_json.unlink()
+        (project.raw / "cccccccccc.xlsx").write_bytes(b"PK\x03\x04 truncated")
+        result = TestRunBuild()._run(project, now="2026-11-12T06:00:00Z")
+        assert result.exit_code == build.EXIT_STALE and result.lost_files == ["cccccccccc"]
 
 
 # =============================================================================

@@ -1,0 +1,4754 @@
+{
+  "generated_at": "2026-10-27T19:49:02Z",
+  "index_url": "https://wesola.um.warszawa.pl/architektura",
+  "pages": [
+    {
+      "page_id": "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy",
+      "url": "https://wesola.um.warszawa.pl/-/informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy",
+      "title": "Informacje o wszczętych postępowaniach o warunkach zabudowy i ustaleniu lokalizacji inwestycji celu publicznego",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "2+wz+dec.+wrzesie%C5%84+2026.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "eaa4eb991b"
+          ],
+          "period": "2026-09"
+        },
+        {
+          "text": "1+wnioski+wrzesie%C5%84+2026.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "096f7ba793"
+          ],
+          "period": "2026-09"
+        },
+        {
+          "text": "Informacja wnioski sierpień 2026.xlsx (22 KB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "06b922fda6"
+          ],
+          "period": "2026-08"
+        },
+        {
+          "text": "Informacja wnioski lipiec 2026.xlsx (21 KB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "fef30c2e6e"
+          ],
+          "period": "2026-07"
+        },
+        {
+          "text": "Informacja wnioski czerwiec 2026.xlsx (21 KB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "ccd292be10"
+          ],
+          "period": "2026-06"
+        },
+        {
+          "text": "Informacja wnioski maj 2026.xlsx (21 KB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "3ae6c71496"
+          ],
+          "period": "2026-05"
+        },
+        {
+          "text": "Informacja wnioski kwiecien 2026.xlsx (21 KB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "5d44be0069"
+          ],
+          "period": "2026-04"
+        },
+        {
+          "text": "Informacja wnioski marzec 2026 (20,8kB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "9fa6129840"
+          ],
+          "period": "2026-03"
+        },
+        {
+          "text": "Informacja wnioski luty 2026.xlsx (21 KB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "af22ed79d8"
+          ],
+          "period": "2026-02"
+        },
+        {
+          "text": "Informacja wnioski styczeń 2026.xlsx (21 KB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "b00ba1bf32"
+          ],
+          "period": "2026-01"
+        },
+        {
+          "text": "Informacja wnioski grudzień 2025 .xlsx (22 kB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "0afe9abdb8"
+          ],
+          "period": "2025-12"
+        },
+        {
+          "text": "Informacja wnioski listopad 2025 .xlsx (21 kB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "f1093c77d4"
+          ],
+          "period": "2025-11"
+        },
+        {
+          "text": "Informacja wnioski październik 2025 .xlsx (21 kB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "374e2342f5"
+          ],
+          "period": "2025-10"
+        },
+        {
+          "text": "Informacja wnioski wrzesień 2025.xlsx (13 kB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "750cec3490"
+          ],
+          "period": "2025-09"
+        },
+        {
+          "text": "Informacja wnioski sierpień 2025.xlsx (21 kB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "9c74b3140c"
+          ],
+          "period": "2025-08"
+        },
+        {
+          "text": "Informacja wnioski lipiec 2025.xlsx (20 kB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "ee053cbef6"
+          ],
+          "period": "2025-07"
+        },
+        {
+          "text": "Informacja wnioski czerwiec 2025.xlsx (21 kB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "3abbc11d35"
+          ],
+          "period": "2025-06"
+        },
+        {
+          "text": "Informacja wnioski maj 2025.xlsx (23 kB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "185a7f89aa"
+          ],
+          "period": "2025-05"
+        },
+        {
+          "text": "Informacja wnioski kwiecień 2025.xlsx (21 kB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "ccfe80dcb7"
+          ],
+          "period": "2025-04"
+        },
+        {
+          "text": "Informacja wnioski marzec 2025.xlsx (21 kB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "7726004cb2"
+          ],
+          "period": "2025-03"
+        },
+        {
+          "text": "Informacja wnioski luty 2025.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "9b35ec2efd"
+          ],
+          "period": "2025-02"
+        },
+        {
+          "text": "Informacja wnioski styczeń 2025.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "a6c4f96d08"
+          ],
+          "period": "2025-01"
+        },
+        {
+          "text": "Informacja wnioski grudzień 2024.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "674ea8fc8b"
+          ],
+          "period": "2024-12"
+        },
+        {
+          "text": "Informacja+wnioski+pa%C5%BAdziernik+2024.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "a2ddf6e7d1"
+          ],
+          "period": "2024-10"
+        },
+        {
+          "text": "Informacja wnioski wrzesień 2024.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "91aad55640"
+          ],
+          "period": "2024-09"
+        },
+        {
+          "text": "Informacja+wnioski+lipiec+2024.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "c199fb8bd4"
+          ],
+          "period": "2024-07"
+        },
+        {
+          "text": "Informacja+wnioski+czerwiec+2024.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "5451573a57"
+          ],
+          "period": "2024-06"
+        },
+        {
+          "text": "Informacja+wnioski+maj+2024.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "90e1ce1d60"
+          ],
+          "period": "2024-05"
+        },
+        {
+          "text": "Informacja+wnioski+kwiecie%C5%84+2024.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "2cc5036b4a"
+          ],
+          "period": "2024-04"
+        },
+        {
+          "text": "Informacja marzec 2024.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "5b1f2b76b0"
+          ],
+          "period": "2024-03"
+        },
+        {
+          "text": "Informacja luty 2024.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "6c222832e2"
+          ],
+          "period": "2024-02"
+        },
+        {
+          "text": "Informacja styczeń 2024.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "b7ec00a43b"
+          ],
+          "period": "2024-01"
+        },
+        {
+          "text": "Informacja grudzień 2023.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "6693d5caac"
+          ],
+          "period": "2023-12"
+        },
+        {
+          "text": "Informacja listopad 2023.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "89be0d1177"
+          ],
+          "period": "2023-11"
+        },
+        {
+          "text": "Informacja październik 2023.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "5b1b6b4c14"
+          ],
+          "period": "2023-10"
+        },
+        {
+          "text": "Informacja wrzesień 2023.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "860c22def8"
+          ],
+          "period": "2023-09"
+        },
+        {
+          "text": "Informacja sierpień 2023.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "a08cd060d0"
+          ],
+          "period": "2023-08"
+        },
+        {
+          "text": "Informacja lipiec 2023.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "58229bc5ff"
+          ],
+          "period": "2023-07"
+        },
+        {
+          "text": "Informacja czerwiec 2023.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "272698c340"
+          ],
+          "period": "2023-06"
+        },
+        {
+          "text": "Informacja maj 2023.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "53918d0bf2"
+          ],
+          "period": "2023-05"
+        },
+        {
+          "text": "Informacja kwiecień 2023.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "43d256227b"
+          ],
+          "period": "2023-04"
+        },
+        {
+          "text": "Informacja marzec 2023.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "f0e3c0baf9"
+          ],
+          "period": "2023-03"
+        },
+        {
+          "text": "Informacja luty 2023.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "315589cad1"
+          ],
+          "period": "2023-02"
+        },
+        {
+          "text": "Informacja styczeń 2023.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "9d064eead6"
+          ],
+          "period": "2023-01"
+        },
+        {
+          "text": "Informacja grudzień 2022.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "2e7c26aabc"
+          ],
+          "period": "2022-12"
+        },
+        {
+          "text": "Informacja listopad 2022.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "12536aabe7"
+          ],
+          "period": "2022-11"
+        },
+        {
+          "text": "Informacja październik 2022.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "c383b2b022"
+          ],
+          "period": "2022-10"
+        },
+        {
+          "text": "Informacja wrzesień 2022.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "d9a45e5110"
+          ],
+          "period": "2022-09"
+        },
+        {
+          "text": "Informacja sierpień 2022.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "1650d62976"
+          ],
+          "period": "2022-08"
+        },
+        {
+          "text": "Informacja lipiec 2022.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "be5ba04417"
+          ],
+          "period": "2022-07"
+        },
+        {
+          "text": "Informacja czerwiec 2022.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "9514a4fec0"
+          ],
+          "period": "2022-06"
+        },
+        {
+          "text": "Informacja maj 2022.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "c648e6e6bd"
+          ],
+          "period": "2022-05"
+        },
+        {
+          "text": "Informacja kwiecień 2022.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "f0b3ec154c"
+          ],
+          "period": "2022-04"
+        },
+        {
+          "text": "Informacja marzec 2022.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "01532732f2"
+          ],
+          "period": "2022-03"
+        },
+        {
+          "text": "Informacja luty 2022.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "c60c5c4418"
+          ],
+          "period": "2022-02"
+        },
+        {
+          "text": "Informacja styczeń 2022.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "104c783332"
+          ],
+          "period": "2022-01"
+        },
+        {
+          "text": "Informacja grudzień 2021.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "ab56c39259"
+          ],
+          "period": "2021-12"
+        },
+        {
+          "text": "Informacja październik 2021.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "c9f8d959bb"
+          ],
+          "period": "2021-10"
+        },
+        {
+          "text": "Informacja wrzesień 2021.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "b76c74e8d3"
+          ],
+          "period": "2021-09"
+        },
+        {
+          "text": "Informacja sierpień 2021.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "82b2dc3c71"
+          ],
+          "period": "2021-08"
+        },
+        {
+          "text": "Informacja lipiec 2021.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "6f4aacbb62"
+          ],
+          "period": "2021-07"
+        },
+        {
+          "text": "Informacja czerwiec 2021.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "ad39aa50e8"
+          ],
+          "period": "2021-06"
+        },
+        {
+          "text": "Informacja maj 2021.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "ae9981eb9c"
+          ],
+          "period": "2021-05"
+        },
+        {
+          "text": "Informacja kwiecień 2021.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "c9c980b3c2"
+          ],
+          "period": "2021-04"
+        },
+        {
+          "text": "Informacja marzec 2021.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "aaf9248093"
+          ],
+          "period": "2021-03"
+        },
+        {
+          "text": "Informacja luty 2021.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "c0b31c9db1"
+          ],
+          "period": "2021-02"
+        },
+        {
+          "text": "Informacja za okres od września 2020 do stycznia 2021.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "f02e1f887e"
+          ],
+          "period": "2020-09"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "page_id": "wes-informacje-o-wydanych-decyzjach",
+      "url": "https://wesola.um.warszawa.pl/-/informacje-o-wydanych-decyzjach",
+      "title": "Informacje o wydanych decyzjach w sprawie ustalenia lokalizacji inwestycji celu publicznego o znaczeniu powiatowym i gminnym",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Informacja styczeń 2026 (13 KB)",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "29957b9f61"
+          ],
+          "period": "2026-01"
+        },
+        {
+          "text": "Informacja sierpień 2025.xlsx (12 kB)",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "f89fb2a3fe"
+          ],
+          "period": "2025-08"
+        },
+        {
+          "text": "Informacja marzec 2025.xlsx (12 kB)",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "e059b47bd4"
+          ],
+          "period": "2025-03"
+        },
+        {
+          "text": "Informacja grudzień 2024.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "4c9303e73b"
+          ],
+          "period": "2024-12"
+        },
+        {
+          "text": "Informacja wrzesień 2024.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "dd205ae6af"
+          ],
+          "period": "2024-09"
+        },
+        {
+          "text": "Informacja czerwiec 2024.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "7ae01615f9"
+          ],
+          "period": "2024-06"
+        },
+        {
+          "text": "Informacja styczeń 2024.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "5126240c5e"
+          ],
+          "period": "2024-01"
+        },
+        {
+          "text": "Informacja sierpień 2023.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "6f658f0096"
+          ],
+          "period": "2023-08"
+        },
+        {
+          "text": "Informacja lipiec 2023.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "ce86b2255b"
+          ],
+          "period": "2023-07"
+        },
+        {
+          "text": "Informacja czerwiec 2023.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "a2525af8ce"
+          ],
+          "period": "2023-06"
+        },
+        {
+          "text": "Informacja maj 2023.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "a6221fe7ef"
+          ],
+          "period": "2023-05"
+        },
+        {
+          "text": "Informacja kwiecień 2023.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "4532b7ae47"
+          ],
+          "period": "2023-04"
+        },
+        {
+          "text": "Informacja luty 2023.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "155ff147af"
+          ],
+          "period": "2023-02"
+        },
+        {
+          "text": "Informacja styczeń 2023.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "817f31bfb1"
+          ],
+          "period": "2023-01"
+        },
+        {
+          "text": "Informacja październik 2022.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "eb3f23e60c"
+          ],
+          "period": "2022-10"
+        },
+        {
+          "text": "Informacja wrzesień 2022.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "90f064207b"
+          ],
+          "period": "2022-09"
+        },
+        {
+          "text": "Informacja sierpień 2022.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "af4dbaf4be"
+          ],
+          "period": "2022-08"
+        },
+        {
+          "text": "Informacja lipiec 2022.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "06f47a8c79"
+          ],
+          "period": "2022-07"
+        },
+        {
+          "text": "Informacja maj 2022.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "0acd0dc5cc"
+          ],
+          "period": "2022-05"
+        },
+        {
+          "text": "Informacja marzec 2022.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "8a5a154c55"
+          ],
+          "period": "2022-03"
+        },
+        {
+          "text": "Informacja luty 2022.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "5d7d8f13a1"
+          ],
+          "period": "2022-02"
+        },
+        {
+          "text": "Informacja listopad 2021.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "c48a5db1c1"
+          ],
+          "period": "2021-11"
+        },
+        {
+          "text": "Informacja październik 2021.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "7e73bb848c"
+          ],
+          "period": "2021-10"
+        },
+        {
+          "text": "Informacja wrzesień 2021.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "50b30b2a16"
+          ],
+          "period": "2021-09"
+        },
+        {
+          "text": "Informacja sierpień 2021.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "4c6c62c7c1"
+          ],
+          "period": "2021-08"
+        },
+        {
+          "text": "Informacja czerwiec 2021.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "2e3a42dcb7"
+          ],
+          "period": "2021-06"
+        },
+        {
+          "text": "Informacja maj 2021.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "6f43bf8ac7"
+          ],
+          "period": "2021-05"
+        },
+        {
+          "text": "Informacja marzec 2021.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "8fbea35e83"
+          ],
+          "period": "2021-03"
+        },
+        {
+          "text": "Informacja luty 2021.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "9d71f33486"
+          ],
+          "period": "2021-02"
+        },
+        {
+          "text": "Informacja za okres od września 2020 do stycznia 2021.xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "6d9e1eb9b2"
+          ],
+          "period": "2020-09"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "page_id": "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy",
+      "url": "https://wesola.um.warszawa.pl/-/informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy",
+      "title": "Informacje o wydanych decyzjach w sprawie warunków zabudowy",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "2+wz+dec.+wrzesie%C5%84+2026.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "eaa4eb991b"
+          ],
+          "period": "2026-09"
+        },
+        {
+          "text": "1+wnioski+wrzesie%C5%84+2026.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "096f7ba793"
+          ],
+          "period": "2026-09"
+        },
+        {
+          "text": "Informacja decyzje sierpień 2026.xlsx (13 KB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "d1ca341df6"
+          ],
+          "period": "2026-08"
+        },
+        {
+          "text": "Informacja decyzje lipiec 2026.xlsx (13 KB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "ce14f618c5"
+          ],
+          "period": "2026-07"
+        },
+        {
+          "text": "Informacja decyzje czerwiec 2026.xlsx (13 KB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "5f878e91a8"
+          ],
+          "period": "2026-06"
+        },
+        {
+          "text": "Informacja decyzje maj 2026.xlsx (13 KB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "375ddcfcbd"
+          ],
+          "period": "2026-05"
+        },
+        {
+          "text": "Informacja decyzje kwiecien 2026.xlsx (13 KB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "7d04094b84"
+          ],
+          "period": "2026-04"
+        },
+        {
+          "text": "Informacja decyzje marzec 2026.xlsx (13,1 KB)",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "cdbd4eed38"
+          ],
+          "period": "2026-03"
+        },
+        {
+          "text": "Informacja decyzje marzec 2026.xlsx (12,1 KB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "9fa6129840"
+          ],
+          "period": "2026-03"
+        },
+        {
+          "text": "Informacja decyzje styczeń 2026.xlsx (13 KB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "f76e32b198"
+          ],
+          "period": "2026-01"
+        },
+        {
+          "text": "Informacja decyzje grudzień 2025.xlsx (13 KB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "6e284163ba"
+          ],
+          "period": "2025-12"
+        },
+        {
+          "text": "Informacja decyzje listopad 2025.xlsx (11,9 KB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "2a9d7ce057"
+          ],
+          "period": "2025-11"
+        },
+        {
+          "text": "Informacja decyzje październik 2025.xlsx (12 kB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "08b5e8a799"
+          ],
+          "period": "2025-10"
+        },
+        {
+          "text": "Informacja decyzje wrzesień 2025.xlsx (21 kB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "4c7df929dd"
+          ],
+          "period": "2025-09"
+        },
+        {
+          "text": "Informacja decyzje sierpień 2025.xlsx (14 kB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "d8d0f668ba"
+          ],
+          "period": "2025-08"
+        },
+        {
+          "text": "Informacja decyzje lipiec 2025.xlsx (12 kB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "c901d80063"
+          ],
+          "period": "2025-07"
+        },
+        {
+          "text": "Informacja decyzje czerwiec 2025.xlsx (13 kB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "53093de66c"
+          ],
+          "period": "2025-06"
+        },
+        {
+          "text": "Informacja decyzje maj 2025.xlsx (13 kB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "73df4c74aa"
+          ],
+          "period": "2025-05"
+        },
+        {
+          "text": "Informacja decyzje kwiecień 2025.xlsx (12 kB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "2ebaa965a0"
+          ],
+          "period": "2025-04"
+        },
+        {
+          "text": "Informacja decyzje marzec 2025.xlsx (14 kB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "7582098ed5"
+          ],
+          "period": "2025-03"
+        },
+        {
+          "text": "Informacja decyzje luty 2025.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "0b6c1feb72"
+          ],
+          "period": "2025-02"
+        },
+        {
+          "text": "Informacja decyzje styczeń 2025.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "b8a9f51a68"
+          ],
+          "period": "2025-01"
+        },
+        {
+          "text": "Informacja decyzje grudzień 2024.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "0798e543a7"
+          ],
+          "period": "2024-12"
+        },
+        {
+          "text": "Informacja+decyzje+pa%C5%BAdziernik+2024.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "4708eb4fa0"
+          ],
+          "period": "2024-10"
+        },
+        {
+          "text": "Informacja decyzje wrzesień 2024.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "f86dfcf384"
+          ],
+          "period": "2024-09"
+        },
+        {
+          "text": "Informacja+decyzje+sierpie%C5%84+2024.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "d4d14dd447"
+          ],
+          "period": "2024-08"
+        },
+        {
+          "text": "Informacja+decyzje+lipiec+2024.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "7aef657a45"
+          ],
+          "period": "2024-07"
+        },
+        {
+          "text": "Informacja+decyzje+czerwiec+2024.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "072157b224"
+          ],
+          "period": "2024-06"
+        },
+        {
+          "text": "Informacja+decyzje+maj+2024.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "c5cd051071"
+          ],
+          "period": "2024-05"
+        },
+        {
+          "text": "Informacja+decyzje+kwiecie%C5%84+2024.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "fb46cafe21"
+          ],
+          "period": "2024-04"
+        },
+        {
+          "text": "Informacja marzec 2024.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "fbc104eeb1"
+          ],
+          "period": "2024-03"
+        },
+        {
+          "text": "Informacja luty 2024.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "66109f979a"
+          ],
+          "period": "2024-02"
+        },
+        {
+          "text": "Informacja styczeń 2024.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "1a85e2aed0"
+          ],
+          "period": "2024-01"
+        },
+        {
+          "text": "Informacja grudzień 2023.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "f86d5b41d3"
+          ],
+          "period": "2023-12"
+        },
+        {
+          "text": "Informacja listopad 2023.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "6fd148afb2"
+          ],
+          "period": "2023-11"
+        },
+        {
+          "text": "Informacja październik 2023.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "cd0f92a2fb"
+          ],
+          "period": "2023-10"
+        },
+        {
+          "text": "Informacja wrzesień 2023.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "34cf2dd530"
+          ],
+          "period": "2023-09"
+        },
+        {
+          "text": "Informacja sierpień 2023.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "5b398c7541"
+          ],
+          "period": "2023-08"
+        },
+        {
+          "text": "Informacja lipiec 2023.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "e0617acd4c"
+          ],
+          "period": "2023-07"
+        },
+        {
+          "text": "Informacja maj 2023.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "35eb68d76b"
+          ],
+          "period": "2023-05"
+        },
+        {
+          "text": "Informacja kwiecień 2023.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "5626cbec80"
+          ],
+          "period": "2023-04"
+        },
+        {
+          "text": "Informacja marzec 2023.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "6982a653c1"
+          ],
+          "period": "2023-03"
+        },
+        {
+          "text": "Informacja luty 2023.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "f72c5d837f"
+          ],
+          "period": "2023-02"
+        },
+        {
+          "text": "Informacja styczeń 2023.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "71f0e578dd"
+          ],
+          "period": "2023-01"
+        },
+        {
+          "text": "Informacja grudzień 2022.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "93afeea4d6"
+          ],
+          "period": "2022-12"
+        },
+        {
+          "text": "Informacja listopad 2022.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "aa90973265"
+          ],
+          "period": "2022-11"
+        },
+        {
+          "text": "Informacja październik 2022.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "884766adc9"
+          ],
+          "period": "2022-10"
+        },
+        {
+          "text": "Informacja wrzesień 2022.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "7c7d7eb1fc"
+          ],
+          "period": "2022-09"
+        },
+        {
+          "text": "Informacja sierpień 2022.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "db442379e7"
+          ],
+          "period": "2022-08"
+        },
+        {
+          "text": "Informacja lipiec 2022.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "6ddd0ca224"
+          ],
+          "period": "2022-07"
+        },
+        {
+          "text": "Informacja czerwiec 2022.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "c8eda84089"
+          ],
+          "period": "2022-06"
+        },
+        {
+          "text": "Informacja maj 2022.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "df4e27505b"
+          ],
+          "period": "2022-05"
+        },
+        {
+          "text": "Informacja kwiecień 2022.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "02ac298493"
+          ],
+          "period": "2022-04"
+        },
+        {
+          "text": "Informacja marzec 2022.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "b60d9f9a28"
+          ],
+          "period": "2022-03"
+        },
+        {
+          "text": "Informacja luty 2022.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "f2850f1878"
+          ],
+          "period": "2022-02"
+        },
+        {
+          "text": "Informacja styczeń 2022.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "c7e95c3782"
+          ],
+          "period": "2022-01"
+        },
+        {
+          "text": "Informacja grudzień 2021.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "116ca43045"
+          ],
+          "period": "2021-12"
+        },
+        {
+          "text": "Informacja listopad 2021.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "a3cde049dd"
+          ],
+          "period": "2021-11"
+        },
+        {
+          "text": "Informacja październik 2021.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "2522e3f778"
+          ],
+          "period": "2021-10"
+        },
+        {
+          "text": "1+wnioski+pa%C5%BAdziernik+2021.xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "c9f8d959bb"
+          ],
+          "period": "2021-10"
+        },
+        {
+          "text": "Informacja sierpień 2021.xlsx",
+          "category": null,
+          "declared_count": null,
+          "file_ids": [
+            "c8bea0a7ba"
+          ],
+          "period": "2021-08"
+        },
+        {
+          "text": "Informacja lipiec 2021.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "2d3304d641"
+          ],
+          "period": "2021-07"
+        },
+        {
+          "text": "Informacja czerwiec 2021.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "1ca3dcf356"
+          ],
+          "period": "2021-06"
+        },
+        {
+          "text": "Informacja maj 2021.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "9b969f11cd"
+          ],
+          "period": "2021-05"
+        },
+        {
+          "text": "Informacja kwiecień 2021.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "52064a0c2f"
+          ],
+          "period": "2021-04"
+        },
+        {
+          "text": "Informacja marzec 2021.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "3467e1f04a"
+          ],
+          "period": "2021-03"
+        },
+        {
+          "text": "Informacja luty 2021.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "8847661df9"
+          ],
+          "period": "2021-02"
+        },
+        {
+          "text": "Informacja za okres od września 2020 do stycznia 2021.xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "67865bcc22"
+          ],
+          "period": "2020-09"
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "files": [
+    {
+      "file_id": "096f7ba793",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/1+wnioski+wrzesie%C5%84+2026.xlsx/9246e8e9-1462-8235-e468-f69b2d53a9a0?t=1792569396771",
+      "document_path": "/documents/44790/152481354/1+wnioski+wrzesie%C5%84+2026.xlsx/9246e8e9-1462-8235-e468-f69b2d53a9a0",
+      "filename": "1 wnioski wrzesień 2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026-09",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy",
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/096f7ba793.xlsx",
+      "sha256": "f0486db9661e9538ee84661026b847e141f24baf8fcc8e78e5fe3f31f0455114",
+      "size": 21270,
+      "downloaded_at": "2026-10-27T16:08:09Z",
+      "last_modified": "2026-10-21T07:56:36Z",
+      "history": []
+    },
+    {
+      "file_id": "eaa4eb991b",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/2+wz+dec.+wrzesie%C5%84+2026.xlsx/faa0b47b-fa81-7c45-3b27-00d9b500a709?t=1792569397212",
+      "document_path": "/documents/44790/152481354/2+wz+dec.+wrzesie%C5%84+2026.xlsx/faa0b47b-fa81-7c45-3b27-00d9b500a709",
+      "filename": "2 wz dec. wrzesień 2026.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026-09",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy",
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/eaa4eb991b.xlsx",
+      "sha256": "8f9391f11a7cc970e89e6d298d0269b71a9615d76888bc5878d9d02cf4c3f19a",
+      "size": 12704,
+      "downloaded_at": "2026-10-27T16:08:10Z",
+      "last_modified": "2026-10-21T07:56:37Z",
+      "history": []
+    },
+    {
+      "file_id": "06b922fda6",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/1+wnioski+sierpie%C5%84+2026.xlsx/822400e1-bf70-659a-8586-9bac0979865d?t=1789563965143",
+      "document_path": "/documents/44790/152481354/1+wnioski+sierpie%C5%84+2026.xlsx/822400e1-bf70-659a-8586-9bac0979865d",
+      "filename": "1 wnioski sierpień 2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026-08",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/06b922fda6.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/44790/152481354/1+wnioski+sierpie%C5%84+2026.xlsx/822400e1-bf70-659a-8586-9bac0979865d?t=1789563965143"
+    },
+    {
+      "file_id": "d1ca341df6",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/2+wz+dec.+sierpie%C5%84+2026.xlsx/9750582f-0a8d-a1a9-c6eb-17705cdfd0b6?t=1789563992291",
+      "document_path": "/documents/44790/152481354/2+wz+dec.+sierpie%C5%84+2026.xlsx/9750582f-0a8d-a1a9-c6eb-17705cdfd0b6",
+      "filename": "2 wz dec. sierpień 2026.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026-08",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/d1ca341df6.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/44790/152481354/2+wz+dec.+sierpie%C5%84+2026.xlsx/9750582f-0a8d-a1a9-c6eb-17705cdfd0b6?t=1789563992291"
+    },
+    {
+      "file_id": "fef30c2e6e",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/1+wnioski+lipiec+2026.xlsx/f4a43f6c-2c97-e93a-6819-851ae319ad43?t=1787045091822",
+      "document_path": "/documents/44790/152481354/1+wnioski+lipiec+2026.xlsx/f4a43f6c-2c97-e93a-6819-851ae319ad43",
+      "filename": "1 wnioski lipiec 2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026-07",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/fef30c2e6e.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/44790/152481354/1+wnioski+lipiec+2026.xlsx/f4a43f6c-2c97-e93a-6819-851ae319ad43?t=1787045091822"
+    },
+    {
+      "file_id": "ce14f618c5",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/2+wz+dec.+lipiec+2026.xlsx/8d826039-428b-442f-5422-8fe8e20999fd?t=1787045092070",
+      "document_path": "/documents/44790/152481354/2+wz+dec.+lipiec+2026.xlsx/8d826039-428b-442f-5422-8fe8e20999fd",
+      "filename": "2 wz dec. lipiec 2026.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026-07",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/ce14f618c5.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "ccd292be10",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/1+wnioski+czerwiec+2026+%281%29.xlsx/f74c8da5-6278-be79-c11c-91d80ffec56a?t=1787045091456",
+      "document_path": "/documents/44790/152481354/1+wnioski+czerwiec+2026+%281%29.xlsx/f74c8da5-6278-be79-c11c-91d80ffec56a",
+      "filename": "1 wnioski czerwiec 2026 (1).xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026-06",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/ccd292be10.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "5f878e91a8",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/2+wz+dec.+czerwiec+2026.xlsx/0109add0-e9b3-e627-6d25-9063fc8220a7?t=1784901145428",
+      "document_path": "/documents/44790/152481354/2+wz+dec.+czerwiec+2026.xlsx/0109add0-e9b3-e627-6d25-9063fc8220a7",
+      "filename": "2 wz dec. czerwiec 2026.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026-06",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/5f878e91a8.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "3ae6c71496",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/1+wnioski+maj+2026.xlsx/69313b31-f58c-ece9-f405-812d7395026e?t=1784901145146",
+      "document_path": "/documents/44790/152481354/1+wnioski+maj+2026.xlsx/69313b31-f58c-ece9-f405-812d7395026e",
+      "filename": "1 wnioski maj 2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026-05",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/3ae6c71496.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "375ddcfcbd",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/2+wz+dec.+maj+2026.xlsx/52b2b567-db90-c116-e66d-202ff67061d5?t=1784901145679",
+      "document_path": "/documents/44790/152481354/2+wz+dec.+maj+2026.xlsx/52b2b567-db90-c116-e66d-202ff67061d5",
+      "filename": "2 wz dec. maj 2026.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026-05",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/375ddcfcbd.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "5d44be0069",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/wnioski+kwiecie%C5%84+2026+%2821KB%29.xlsx/1bad65db-9635-51de-3c83-59ad74c561ba?t=1778584464443",
+      "document_path": "/documents/44790/152481354/wnioski+kwiecie%C5%84+2026+%2821KB%29.xlsx/1bad65db-9635-51de-3c83-59ad74c561ba",
+      "filename": "wnioski kwiecień 2026 (21KB).xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026-04",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/5d44be0069.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "7d04094b84",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/wz+dec.+kwiecie%C5%84+2026+%2813KB%29.xlsx/ba3b8f04-ae96-1e1b-aa3d-2b3e47b62afe?t=1778584522139",
+      "document_path": "/documents/44790/152481354/wz+dec.+kwiecie%C5%84+2026+%2813KB%29.xlsx/ba3b8f04-ae96-1e1b-aa3d-2b3e47b62afe",
+      "filename": "wz dec. kwiecień 2026 (13KB).xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026-04",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/7d04094b84.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "9fa6129840",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/1+wnioski+marzec+2026.xlsx/1b634b65-7c8d-cfa7-27d2-a4a829a1f2fc?t=1776332595779",
+      "document_path": "/documents/44790/152481354/1+wnioski+marzec+2026.xlsx/1b634b65-7c8d-cfa7-27d2-a4a829a1f2fc",
+      "filename": "1 wnioski marzec 2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026-03",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy",
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/9fa6129840.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "cdbd4eed38",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/3+decyzje+icp+marzec+2026+%2813%2C1+kB%29.xlsx/33753924-cf24-ffed-4a64-83f6aac208e9?t=1776146291446",
+      "document_path": "/documents/44790/152481354/3+decyzje+icp+marzec+2026+%2813%2C1+kB%29.xlsx/33753924-cf24-ffed-4a64-83f6aac208e9",
+      "filename": "3 decyzje icp marzec 2026 (13,1 kB).xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2026-03",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/cdbd4eed38.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "af22ed79d8",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/1+wnioski+luty+2026.xlsx/6da44359-1083-bc0b-9e87-a86081a69542?t=1773413673728",
+      "document_path": "/documents/44790/152481354/1+wnioski+luty+2026.xlsx/6da44359-1083-bc0b-9e87-a86081a69542",
+      "filename": "1 wnioski luty 2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026-02",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/af22ed79d8.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "b00ba1bf32",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/1+wnioski+stycze%C5%84+2026.xlsx/1ac87e5d-9efc-4c51-7d5c-aa2d2a7b9bc6?t=1770978935525",
+      "document_path": "/documents/44790/152481354/1+wnioski+stycze%C5%84+2026.xlsx/1ac87e5d-9efc-4c51-7d5c-aa2d2a7b9bc6",
+      "filename": "1 wnioski styczeń 2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026-01",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/b00ba1bf32.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "f76e32b198",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/2+wz+dec.+stycze%C5%84+2026.xlsx/085c147e-2987-c69a-0de7-877d7e681db4?t=1770979215433",
+      "document_path": "/documents/44790/152481354/2+wz+dec.+stycze%C5%84+2026.xlsx/085c147e-2987-c69a-0de7-877d7e681db4",
+      "filename": "2 wz dec. styczeń 2026.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026-01",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/f76e32b198.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "29957b9f61",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/3+decyzje+icp+stycze%C5%84+2026.xlsx/12a9ca28-0f73-a5c1-2ca9-5e5f8db95f3f?t=1770979403615",
+      "document_path": "/documents/44790/152481354/3+decyzje+icp+stycze%C5%84+2026.xlsx/12a9ca28-0f73-a5c1-2ca9-5e5f8db95f3f",
+      "filename": "3 decyzje icp styczeń 2026.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2026-01",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/29957b9f61.xlsx",
+      "sha256": "82b1c4525f36f690199a38e8f6a405da3df686fd24ab7ab3617600abc122bd86",
+      "size": 12678,
+      "downloaded_at": "2026-10-27T16:08:19Z",
+      "last_modified": "2026-02-13T10:43:23Z",
+      "history": []
+    },
+    {
+      "file_id": "0afe9abdb8",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/1+wnioski+grudzien+2025.xlsx+%2822KB%29.xlsx/f125fcd8-cfd3-bcac-f55e-63dd3da4bd46?t=1768811205763",
+      "document_path": "/documents/44790/152481354/1+wnioski+grudzien+2025.xlsx+%2822KB%29.xlsx/f125fcd8-cfd3-bcac-f55e-63dd3da4bd46",
+      "filename": "1 wnioski grudzien 2025.xlsx (22KB).xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025-12",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/0afe9abdb8.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6e284163ba",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/152481354/2+wz+dec.+grudzie%C5%84+2025.xlsx+%2813KB%29.xlsx/0886e5f5-b7b1-4428-01ab-590a97ceffa8?t=1768811243900",
+      "document_path": "/documents/44790/152481354/2+wz+dec.+grudzie%C5%84+2025.xlsx+%2813KB%29.xlsx/0886e5f5-b7b1-4428-01ab-590a97ceffa8",
+      "filename": "2 wz dec. grudzień 2025.xlsx (13KB).xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025-12",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/6e284163ba.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "f1093c77d4",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/1+wnioski+listopad+2025+%2821%2C2KB%29.xls.xlsx/6baf8235-e40f-59d4-bdbc-d997c71f110b?t=1765890183168",
+      "document_path": "/documents/44790/126726696/1+wnioski+listopad+2025+%2821%2C2KB%29.xls.xlsx/6baf8235-e40f-59d4-bdbc-d997c71f110b",
+      "filename": "1 wnioski listopad 2025 (21,2KB).xls.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025-11",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/f1093c77d4.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "2a9d7ce057",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/2+wz+dec.+listopad+2025+%2811%2C9KB%29.xlsx/1b21c80a-aa18-2c81-f977-a3df3ec9ced5?t=1765890217966",
+      "document_path": "/documents/44790/126726696/2+wz+dec.+listopad+2025+%2811%2C9KB%29.xlsx/1b21c80a-aa18-2c81-f977-a3df3ec9ced5",
+      "filename": "2 wz dec. listopad 2025 (11,9KB).xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025-11",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/2a9d7ce057.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "374e2342f5",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/1+wnioski+pa%C5%BAdziernik+2025.xlsx/223f8b45-f159-b620-8590-ebfe1a6fb80c?t=1763365714132",
+      "document_path": "/documents/44790/126726696/1+wnioski+pa%C5%BAdziernik+2025.xlsx/223f8b45-f159-b620-8590-ebfe1a6fb80c",
+      "filename": "1 wnioski październik 2025.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025-10",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/374e2342f5.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "08b5e8a799",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/2+wz+dec.+pa%C5%BAdziernik+2025.xlsx/356b4618-ddac-8649-f3a4-60b2c2dd496a?t=1763365654984",
+      "document_path": "/documents/44790/126726696/2+wz+dec.+pa%C5%BAdziernik+2025.xlsx/356b4618-ddac-8649-f3a4-60b2c2dd496a",
+      "filename": "2 wz dec. październik 2025.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025-10",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/08b5e8a799.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "750cec3490",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/1+wnioski+wrzesie%C5%84+2025.xlsx/edb8a32f-7519-6e58-0d90-97dd3e53c671?t=1760702528481",
+      "document_path": "/documents/44790/126726696/1+wnioski+wrzesie%C5%84+2025.xlsx/edb8a32f-7519-6e58-0d90-97dd3e53c671",
+      "filename": "1 wnioski wrzesień 2025.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025-09",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/750cec3490.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "4c7df929dd",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/2+wz+dec.+wrzesie%C5%84+2025.xlsx/17410e73-1187-95b5-0d56-9efd985d989c?t=1760702528827",
+      "document_path": "/documents/44790/126726696/2+wz+dec.+wrzesie%C5%84+2025.xlsx/17410e73-1187-95b5-0d56-9efd985d989c",
+      "filename": "2 wz dec. wrzesień 2025.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025-09",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/4c7df929dd.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "9c74b3140c",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/1+wnioski+sierpie%C5%84+2025.xlsx/36b61cf5-714c-e627-7b31-a529475290dc?t=1758194683643",
+      "document_path": "/documents/44790/126726696/1+wnioski+sierpie%C5%84+2025.xlsx/36b61cf5-714c-e627-7b31-a529475290dc",
+      "filename": "1 wnioski sierpień 2025.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025-08",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/9c74b3140c.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "d8d0f668ba",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/2+wz+dec.+sierpie%C5%84+2025.xlsx/9e9f9fbe-b58c-bc4f-66e2-8b12622ca65f?t=1758194683904",
+      "document_path": "/documents/44790/126726696/2+wz+dec.+sierpie%C5%84+2025.xlsx/9e9f9fbe-b58c-bc4f-66e2-8b12622ca65f",
+      "filename": "2 wz dec. sierpień 2025.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025-08",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/d8d0f668ba.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "f89fb2a3fe",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/3+decyzje+icp+sierpie%C5%84+2025.xlsx/a103a1ad-d848-3d4a-aaee-d5c0528766a9?t=1758194683344",
+      "document_path": "/documents/44790/126726696/3+decyzje+icp+sierpie%C5%84+2025.xlsx/a103a1ad-d848-3d4a-aaee-d5c0528766a9",
+      "filename": "3 decyzje icp sierpień 2025.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2025-08",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/f89fb2a3fe.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "ee053cbef6",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/1+wnioski+lipiec+2025.xlsx/038c7df0-52f9-5f71-a6bd-8a9b18cb77b2?t=1755158777052",
+      "document_path": "/documents/44790/126726696/1+wnioski+lipiec+2025.xlsx/038c7df0-52f9-5f71-a6bd-8a9b18cb77b2",
+      "filename": "1 wnioski lipiec 2025.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025-07",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/ee053cbef6.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c901d80063",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/2+wz+dec.+lipiec+2025.xlsx/ae5be831-24e4-0170-6d76-eadfb225db0f?t=1755158777337",
+      "document_path": "/documents/44790/126726696/2+wz+dec.+lipiec+2025.xlsx/ae5be831-24e4-0170-6d76-eadfb225db0f",
+      "filename": "2 wz dec. lipiec 2025.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025-07",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/c901d80063.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "3abbc11d35",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/1+wnioski+czerwiec+2025.xlsx/04145588-0a78-76b3-485e-fabe2923d3e3?t=1752153800650",
+      "document_path": "/documents/44790/126726696/1+wnioski+czerwiec+2025.xlsx/04145588-0a78-76b3-485e-fabe2923d3e3",
+      "filename": "1 wnioski czerwiec 2025.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025-06",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/3abbc11d35.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "53093de66c",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/2+wz+dec.+czerwiec+2025.xlsx/6ff66b7b-6410-f0e4-57fb-f00b66d47ff4?t=1752153801196",
+      "document_path": "/documents/44790/126726696/2+wz+dec.+czerwiec+2025.xlsx/6ff66b7b-6410-f0e4-57fb-f00b66d47ff4",
+      "filename": "2 wz dec. czerwiec 2025.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025-06",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/53093de66c.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "185a7f89aa",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/1+wnioski+maj+2025.xlsx/fa523aa8-0b11-b985-c46c-f040e6bbf593?t=1750077337564",
+      "document_path": "/documents/44790/126726696/1+wnioski+maj+2025.xlsx/fa523aa8-0b11-b985-c46c-f040e6bbf593",
+      "filename": "1 wnioski maj 2025.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025-05",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/185a7f89aa.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "73df4c74aa",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/2+wz+dec.+maj+2025.xlsx/bf919587-6d2f-4a6c-af10-3f741d55b213?t=1750077337902",
+      "document_path": "/documents/44790/126726696/2+wz+dec.+maj+2025.xlsx/bf919587-6d2f-4a6c-af10-3f741d55b213",
+      "filename": "2 wz dec. maj 2025.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025-05",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/73df4c74aa.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "ccfe80dcb7",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/1+wnioski+kwiecie%C5%84+2025.xlsx/d07a16ce-3db4-749a-c61a-5645110dd26c?t=1747722949646",
+      "document_path": "/documents/44790/126726696/1+wnioski+kwiecie%C5%84+2025.xlsx/d07a16ce-3db4-749a-c61a-5645110dd26c",
+      "filename": "1 wnioski kwiecień 2025.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025-04",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/ccfe80dcb7.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "2ebaa965a0",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/2+wz+dec.+kwiecie%C5%84+2025.xlsx/76c47ca7-e83e-dd58-fb2d-82e57ae5b097?t=1747722951072",
+      "document_path": "/documents/44790/126726696/2+wz+dec.+kwiecie%C5%84+2025.xlsx/76c47ca7-e83e-dd58-fb2d-82e57ae5b097",
+      "filename": "2 wz dec. kwiecień 2025.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025-04",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/2ebaa965a0.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "7726004cb2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/1+wnioski+marzec+2025.xlsx/eae8dba8-26ce-1dee-1646-6b4b58b82312?t=1745845971588",
+      "document_path": "/documents/44790/126726696/1+wnioski+marzec+2025.xlsx/eae8dba8-26ce-1dee-1646-6b4b58b82312",
+      "filename": "1 wnioski marzec 2025.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025-03",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/7726004cb2.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "7582098ed5",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/2+wz+dec.+marzec+2025.xlsx/d7b4d6d6-cece-ab2a-50f9-08132c7b8476?t=1745845972364",
+      "document_path": "/documents/44790/126726696/2+wz+dec.+marzec+2025.xlsx/d7b4d6d6-cece-ab2a-50f9-08132c7b8476",
+      "filename": "2 wz dec. marzec 2025.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025-03",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/7582098ed5.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "e059b47bd4",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/3+decyzje+icp+marzec+2025.xlsx/99af91f1-1f66-0606-94d1-1452636587ed?t=1745845972827",
+      "document_path": "/documents/44790/126726696/3+decyzje+icp+marzec+2025.xlsx/99af91f1-1f66-0606-94d1-1452636587ed",
+      "filename": "3 decyzje icp marzec 2025.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2025-03",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/e059b47bd4.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "9b35ec2efd",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/1+wnioski+luty+2025.xlsx/6fb560fb-701d-1914-9200-0d8c5323ae67?t=1742304674734",
+      "document_path": "/documents/44790/126726696/1+wnioski+luty+2025.xlsx/6fb560fb-701d-1914-9200-0d8c5323ae67",
+      "filename": "1 wnioski luty 2025.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025-02",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/9b35ec2efd.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "0b6c1feb72",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/2+wz+dec.+luty+2025.xlsx/5df7ec49-b908-2878-bbb6-c666fa130c01?t=1742304675216",
+      "document_path": "/documents/44790/126726696/2+wz+dec.+luty+2025.xlsx/5df7ec49-b908-2878-bbb6-c666fa130c01",
+      "filename": "2 wz dec. luty 2025.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025-02",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/0b6c1feb72.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "a6c4f96d08",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/1+wnioski+stycze%C5%84+2025.xlsx/d973fd10-4010-9486-a9cb-076548b86d46?t=1739865587029",
+      "document_path": "/documents/44790/126726696/1+wnioski+stycze%C5%84+2025.xlsx/d973fd10-4010-9486-a9cb-076548b86d46",
+      "filename": "1 wnioski styczeń 2025.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025-01",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/a6c4f96d08.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "b8a9f51a68",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/126726696/2+wz+dec.+stycze%C5%84+2025.xlsx/6ca3cca1-f43b-c304-b7e2-bba676e23a23?t=1739865586092",
+      "document_path": "/documents/44790/126726696/2+wz+dec.+stycze%C5%84+2025.xlsx/6ca3cca1-f43b-c304-b7e2-bba676e23a23",
+      "filename": "2 wz dec. styczeń 2025.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025-01",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/b8a9f51a68.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "674ea8fc8b",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/1+wnioski+grudzie%C5%84+2024.xlsx/26c036a3-8757-7a9b-2635-019139dd699d?t=1737456552944",
+      "document_path": "/documents/44790/96159807/1+wnioski+grudzie%C5%84+2024.xlsx/26c036a3-8757-7a9b-2635-019139dd699d",
+      "filename": "1 wnioski grudzień 2024.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2024-12",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/674ea8fc8b.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "0798e543a7",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/2+wz+dec.+grudzie%C5%84+2024.xlsx/1dc7c2e3-2a5f-ea68-b4c4-57613a1fc39e?t=1737456551827",
+      "document_path": "/documents/44790/96159807/2+wz+dec.+grudzie%C5%84+2024.xlsx/1dc7c2e3-2a5f-ea68-b4c4-57613a1fc39e",
+      "filename": "2 wz dec. grudzień 2024.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2024-12",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/0798e543a7.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "4c9303e73b",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/3+decyzje+icp+grudzie%C5%84+2024.xlsx/7a5516e6-aca4-4fd1-bd06-dd5862ffe252?t=1737456552619",
+      "document_path": "/documents/44790/96159807/3+decyzje+icp+grudzie%C5%84+2024.xlsx/7a5516e6-aca4-4fd1-bd06-dd5862ffe252",
+      "filename": "3 decyzje icp grudzień 2024.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2024-12",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/4c9303e73b.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "4708eb4fa0",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+decyzje+pa%C5%BAdziernik+2024.xlsx/b8a0f810-b116-a767-4b65-fa09507c6067?t=1732184683399",
+      "document_path": "/documents/44790/96159807/Informacja+decyzje+pa%C5%BAdziernik+2024.xlsx/b8a0f810-b116-a767-4b65-fa09507c6067",
+      "filename": "Informacja decyzje październik 2024.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2024-10",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/4708eb4fa0.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "a2ddf6e7d1",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+wnioski+pa%C5%BAdziernik+2024.xlsx/ddb92579-63f8-49f2-2a9b-fbf1419384df?t=1732184656472",
+      "document_path": "/documents/44790/96159807/Informacja+wnioski+pa%C5%BAdziernik+2024.xlsx/ddb92579-63f8-49f2-2a9b-fbf1419384df",
+      "filename": "Informacja wnioski październik 2024.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2024-10",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/a2ddf6e7d1.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "dd205ae6af",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+cel+publiczny+wrzesie%C5%84+2024.xlsx/b8f67bba-142c-274b-8d8f-e8b91960836d?t=1729083445071",
+      "document_path": "/documents/44790/96159807/Informacja+cel+publiczny+wrzesie%C5%84+2024.xlsx/b8f67bba-142c-274b-8d8f-e8b91960836d",
+      "filename": "Informacja cel publiczny wrzesień 2024.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2024-09",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/dd205ae6af.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "f86dfcf384",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+decyzje+wrzesie%C5%84+2024.xlsx/34e34d90-18d4-41fa-1f31-f305d79cb4f0?t=1729083455978",
+      "document_path": "/documents/44790/96159807/Informacja+decyzje+wrzesie%C5%84+2024.xlsx/34e34d90-18d4-41fa-1f31-f305d79cb4f0",
+      "filename": "Informacja decyzje wrzesień 2024.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2024-09",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/f86dfcf384.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "91aad55640",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+wnioski+wrzesie%C5%84+2024.xlsx/d2f5d430-1dcf-e74f-313f-557502b823df?t=1729083353946",
+      "document_path": "/documents/44790/96159807/Informacja+wnioski+wrzesie%C5%84+2024.xlsx/d2f5d430-1dcf-e74f-313f-557502b823df",
+      "filename": "Informacja wnioski wrzesień 2024.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2024-09",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/91aad55640.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "d4d14dd447",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+decyzje+sierpie%C5%84+2024.xlsx/8803b44e-2701-b1f0-b935-f12407aca3e6?t=1726663313017",
+      "document_path": "/documents/44790/96159807/Informacja+decyzje+sierpie%C5%84+2024.xlsx/8803b44e-2701-b1f0-b935-f12407aca3e6",
+      "filename": "Informacja decyzje sierpień 2024.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2024-08",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/d4d14dd447.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "7aef657a45",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+decyzje+lipiec+2024.xlsx/e6c5385c-82a8-abef-1bae-e3e3f6bdf508?t=1723631041072",
+      "document_path": "/documents/44790/96159807/Informacja+decyzje+lipiec+2024.xlsx/e6c5385c-82a8-abef-1bae-e3e3f6bdf508",
+      "filename": "Informacja decyzje lipiec 2024.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2024-07",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/7aef657a45.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c199fb8bd4",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+wnioski+lipiec+2024.xlsx/cace7297-f807-9bf3-836e-d9e62d41a1cf?t=1723631041461",
+      "document_path": "/documents/44790/96159807/Informacja+wnioski+lipiec+2024.xlsx/cace7297-f807-9bf3-836e-d9e62d41a1cf",
+      "filename": "Informacja wnioski lipiec 2024.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2024-07",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/c199fb8bd4.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "7ae01615f9",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+cel+publiczny+czerwiec+2024.xlsx/bdfc3c9d-88ee-e3c6-0dfe-b58e13beffa2?t=1721287562689",
+      "document_path": "/documents/44790/96159807/Informacja+cel+publiczny+czerwiec+2024.xlsx/bdfc3c9d-88ee-e3c6-0dfe-b58e13beffa2",
+      "filename": "Informacja cel publiczny czerwiec 2024.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2024-06",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/7ae01615f9.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "072157b224",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+decyzje+czerwiec+2024.xlsx/27e7c42b-2583-7d3b-f880-d75b18cffcdf?t=1721287538722",
+      "document_path": "/documents/44790/96159807/Informacja+decyzje+czerwiec+2024.xlsx/27e7c42b-2583-7d3b-f880-d75b18cffcdf",
+      "filename": "Informacja decyzje czerwiec 2024.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2024-06",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/072157b224.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "5451573a57",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+wnioski+czerwiec+2024.xlsx/8742d1a6-ae37-664b-6e17-e8b48655ef5d?t=1721287512037",
+      "document_path": "/documents/44790/96159807/Informacja+wnioski+czerwiec+2024.xlsx/8742d1a6-ae37-664b-6e17-e8b48655ef5d",
+      "filename": "Informacja wnioski czerwiec 2024.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2024-06",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/5451573a57.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c5cd051071",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+decyzje+maj+2024.xlsx/0a52d656-3e58-8fc4-41c3-9eb269e55817?t=1718716870173",
+      "document_path": "/documents/44790/96159807/Informacja+decyzje+maj+2024.xlsx/0a52d656-3e58-8fc4-41c3-9eb269e55817",
+      "filename": "Informacja decyzje maj 2024.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2024-05",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/c5cd051071.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "90e1ce1d60",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+wnioski+maj+2024.xlsx/a8dda047-8e2d-c1fe-b70f-ca3544adc064?t=1718716907643",
+      "document_path": "/documents/44790/96159807/Informacja+wnioski+maj+2024.xlsx/a8dda047-8e2d-c1fe-b70f-ca3544adc064",
+      "filename": "Informacja wnioski maj 2024.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2024-05",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/90e1ce1d60.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "fb46cafe21",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+decyzje+kwiecie%C5%84+2024.xlsx/51d9649b-44ed-ed1d-cc68-92a22ceab438?t=1715768817861",
+      "document_path": "/documents/44790/96159807/Informacja+decyzje+kwiecie%C5%84+2024.xlsx/51d9649b-44ed-ed1d-cc68-92a22ceab438",
+      "filename": "Informacja decyzje kwiecień 2024.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2024-04",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/fb46cafe21.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "2cc5036b4a",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+wnioski+kwiecie%C5%84+2024.xlsx/56842d27-df04-42d5-0fb1-a865d450d34f?t=1715768878152",
+      "document_path": "/documents/44790/96159807/Informacja+wnioski+kwiecie%C5%84+2024.xlsx/56842d27-df04-42d5-0fb1-a865d450d34f",
+      "filename": "Informacja wnioski kwiecień 2024.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2024-04",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/2cc5036b4a.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "fbc104eeb1",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+decyzje+marzec+2024.xlsx/221baf25-47f4-388d-663e-1483be2c30ff?t=1713254454423",
+      "document_path": "/documents/44790/96159807/Informacja+decyzje+marzec+2024.xlsx/221baf25-47f4-388d-663e-1483be2c30ff",
+      "filename": "Informacja decyzje marzec 2024.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2024-03",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/fbc104eeb1.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "5b1f2b76b0",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+wnioski+marzec+2024.xlsx/3f05a0ec-1a89-d55a-7cb1-d7dbb5ca3804?t=1713254454903",
+      "document_path": "/documents/44790/96159807/Informacja+wnioski+marzec+2024.xlsx/3f05a0ec-1a89-d55a-7cb1-d7dbb5ca3804",
+      "filename": "Informacja wnioski marzec 2024.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2024-03",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/5b1f2b76b0.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "66109f979a",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+decyzje+luty+2024.xlsx/35dfaecf-3693-73b0-70b5-5ee2176cde1e?t=1710746367181",
+      "document_path": "/documents/44790/96159807/Informacja+decyzje+luty+2024.xlsx/35dfaecf-3693-73b0-70b5-5ee2176cde1e",
+      "filename": "Informacja decyzje luty 2024.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2024-02",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/66109f979a.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6c222832e2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+wnioski+luty+2024.xlsx/5135fa13-60b6-c7b6-b12d-b1389f1be2ac?t=1710746367819",
+      "document_path": "/documents/44790/96159807/Informacja+wnioski+luty+2024.xlsx/5135fa13-60b6-c7b6-b12d-b1389f1be2ac",
+      "filename": "Informacja wnioski luty 2024.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2024-02",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/6c222832e2.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "5126240c5e",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+o+wydanych+decyzjach+icp+stycze%C5%84+2024.xlsx/fcc6fbf0-8df8-55b5-2715-d0f9ebbadc9c?t=1707997315964",
+      "document_path": "/documents/44790/96159807/Informacja+o+wydanych+decyzjach+icp+stycze%C5%84+2024.xlsx/fcc6fbf0-8df8-55b5-2715-d0f9ebbadc9c",
+      "filename": "Informacja o wydanych decyzjach icp styczeń 2024.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2024-01",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/5126240c5e.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "1a85e2aed0",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+o+wydanych+decyzjach+stycze%C5%84+2024.xlsx/c1a4bb6b-4095-81e1-cc82-4a0cfb8639d1?t=1707997377190",
+      "document_path": "/documents/44790/96159807/Informacja+o+wydanych+decyzjach+stycze%C5%84+2024.xlsx/c1a4bb6b-4095-81e1-cc82-4a0cfb8639d1",
+      "filename": "Informacja o wydanych decyzjach styczeń 2024.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2024-01",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/1a85e2aed0.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "b7ec00a43b",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/96159807/Informacja+stycze%C5%84+2024.xlsx/0fda1976-9a69-1aca-5565-c9e1cfc6f817?t=1707997427754",
+      "document_path": "/documents/44790/96159807/Informacja+stycze%C5%84+2024.xlsx/0fda1976-9a69-1aca-5565-c9e1cfc6f817",
+      "filename": "Informacja styczeń 2024.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2024-01",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/b7ec00a43b.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6693d5caac",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/1+wnioski+grudzie%C5%84+2023.xlsx/c11fc246-0d50-9169-8242-88edd9efa813?t=1705390153867",
+      "document_path": "/documents/44790/72340651/1+wnioski+grudzie%C5%84+2023.xlsx/c11fc246-0d50-9169-8242-88edd9efa813",
+      "filename": "1 wnioski grudzień 2023.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023-12",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/6693d5caac.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "f86d5b41d3",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/2+wz+dec.+grudzie%C5%84+2023.xlsx/4281bf17-75d0-b180-df1f-97886057c704?t=1705390154215",
+      "document_path": "/documents/44790/72340651/2+wz+dec.+grudzie%C5%84+2023.xlsx/4281bf17-75d0-b180-df1f-97886057c704",
+      "filename": "2 wz dec. grudzień 2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-12",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/f86d5b41d3.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "89be0d1177",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/1+wnioski+listopad+2023.xlsx/e926701f-c8bc-6752-5630-1ae422e6e310?t=1702564031729",
+      "document_path": "/documents/44790/72340651/1+wnioski+listopad+2023.xlsx/e926701f-c8bc-6752-5630-1ae422e6e310",
+      "filename": "1 wnioski listopad 2023.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023-11",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/89be0d1177.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6fd148afb2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/2+wz+dec.+listopad+2023.xlsx/99a1f448-af04-6dbd-7e40-682299cb9a66?t=1702564032502",
+      "document_path": "/documents/44790/72340651/2+wz+dec.+listopad+2023.xlsx/99a1f448-af04-6dbd-7e40-682299cb9a66",
+      "filename": "2 wz dec. listopad 2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-11",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/6fd148afb2.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "5b1b6b4c14",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/1+wnioski+pa%C5%BAdziernik+2023.xlsx/16d4cd51-2461-dba8-d125-3502c4422c57?t=1700035251101",
+      "document_path": "/documents/44790/72340651/1+wnioski+pa%C5%BAdziernik+2023.xlsx/16d4cd51-2461-dba8-d125-3502c4422c57",
+      "filename": "1 wnioski październik 2023.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023-10",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/5b1b6b4c14.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "cd0f92a2fb",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/2+wz+dec.+pa%C5%BAdziernik+2023.xlsx/2c038e75-25bf-9dd9-2ddd-0f5f1a581ad7?t=1700035252607",
+      "document_path": "/documents/44790/72340651/2+wz+dec.+pa%C5%BAdziernik+2023.xlsx/2c038e75-25bf-9dd9-2ddd-0f5f1a581ad7",
+      "filename": "2 wz dec. październik 2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-10",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/cd0f92a2fb.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "860c22def8",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/1+wnioski+wrzesie%C5%84+2023.xlsx/a63846ce-71a2-0f50-8ff7-1553528f4c41?t=1698327440735",
+      "document_path": "/documents/44790/72340651/1+wnioski+wrzesie%C5%84+2023.xlsx/a63846ce-71a2-0f50-8ff7-1553528f4c41",
+      "filename": "1 wnioski wrzesień 2023.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023-09",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/860c22def8.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "34cf2dd530",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/2+wz+dec.+wrzesie%C5%84+2023.xlsx/e50a8763-3fe9-30cc-34ea-8945d132d90c?t=1698327440284",
+      "document_path": "/documents/44790/72340651/2+wz+dec.+wrzesie%C5%84+2023.xlsx/e50a8763-3fe9-30cc-34ea-8945d132d90c",
+      "filename": "2 wz dec. wrzesień 2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-09",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/34cf2dd530.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "a08cd060d0",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/1+wnioski+sierpie%C5%84+2023.xlsx/53652afc-ae9a-a103-5385-711e39715f5e?t=1695042861792",
+      "document_path": "/documents/44790/72340651/1+wnioski+sierpie%C5%84+2023.xlsx/53652afc-ae9a-a103-5385-711e39715f5e",
+      "filename": "1 wnioski sierpień 2023.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023-08",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/a08cd060d0.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "5b398c7541",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/2+wz+dec.+sierpie%C5%84+2023.xlsx/059819b3-4c59-4fcb-0316-cdf06dd4a78f?t=1695042862300",
+      "document_path": "/documents/44790/72340651/2+wz+dec.+sierpie%C5%84+2023.xlsx/059819b3-4c59-4fcb-0316-cdf06dd4a78f",
+      "filename": "2 wz dec. sierpień 2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-08",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/5b398c7541.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6f658f0096",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/3+decyzje+icp+sierpie%C5%84+2023.xlsx/8518b689-9f70-2ce5-591d-5a921fc81114?t=1695042862555",
+      "document_path": "/documents/44790/72340651/3+decyzje+icp+sierpie%C5%84+2023.xlsx/8518b689-9f70-2ce5-591d-5a921fc81114",
+      "filename": "3 decyzje icp sierpień 2023.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2023-08",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/6f658f0096.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "58229bc5ff",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/1+wnioski+lipiec+2023.xlsx/9ee57536-a2f8-de95-6175-d9d130ec09cb?t=1691755886436",
+      "document_path": "/documents/44790/72340651/1+wnioski+lipiec+2023.xlsx/9ee57536-a2f8-de95-6175-d9d130ec09cb",
+      "filename": "1 wnioski lipiec 2023.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023-07",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/58229bc5ff.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "e0617acd4c",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/2+wz+dec.+lipiec+2023.xlsx/78293e72-379f-0a00-5232-d621e7f58391?t=1691755912094",
+      "document_path": "/documents/44790/72340651/2+wz+dec.+lipiec+2023.xlsx/78293e72-379f-0a00-5232-d621e7f58391",
+      "filename": "2 wz dec. lipiec 2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-07",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/e0617acd4c.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "ce86b2255b",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/3+decyzje+icp+lipiec+2023.xlsx/9d13f629-d754-2971-4415-80bd83769ee8?t=1691755941907",
+      "document_path": "/documents/44790/72340651/3+decyzje+icp+lipiec+2023.xlsx/9d13f629-d754-2971-4415-80bd83769ee8",
+      "filename": "3 decyzje icp lipiec 2023.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2023-07",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/ce86b2255b.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "272698c340",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/1+wnioski+czerwiec+2023.xlsx/607a418f-2fd5-45d7-698d-2599cc5d3e6b?t=1689846348185",
+      "document_path": "/documents/44790/72340651/1+wnioski+czerwiec+2023.xlsx/607a418f-2fd5-45d7-698d-2599cc5d3e6b",
+      "filename": "1 wnioski czerwiec 2023.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023-06",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/272698c340.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "a2525af8ce",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/3+decyzje+icp+czerwiec+2023.xlsx/003a06e5-fc91-b5d4-38a6-56188fe80bda?t=1689846381983",
+      "document_path": "/documents/44790/72340651/3+decyzje+icp+czerwiec+2023.xlsx/003a06e5-fc91-b5d4-38a6-56188fe80bda",
+      "filename": "3 decyzje icp czerwiec 2023.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2023-06",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/a2525af8ce.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "53918d0bf2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/1+wnioski+maj+2023.xlsx/ca395e0e-1360-181f-da87-3c2097ff876f?t=1686918595212",
+      "document_path": "/documents/44790/72340651/1+wnioski+maj+2023.xlsx/ca395e0e-1360-181f-da87-3c2097ff876f",
+      "filename": "1 wnioski maj 2023.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023-05",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/53918d0bf2.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "35eb68d76b",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/2+wz+dec.+maj+2023.xlsx/dfdfe545-48eb-f000-6d43-982cddea0951?t=1686918628520",
+      "document_path": "/documents/44790/72340651/2+wz+dec.+maj+2023.xlsx/dfdfe545-48eb-f000-6d43-982cddea0951",
+      "filename": "2 wz dec. maj 2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-05",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/35eb68d76b.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "a6221fe7ef",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/3+decyzje+icp+maj+2023.xlsx/3d1be9b2-6e46-f246-7d4c-af3f902700d4?t=1686918654666",
+      "document_path": "/documents/44790/72340651/3+decyzje+icp+maj+2023.xlsx/3d1be9b2-6e46-f246-7d4c-af3f902700d4",
+      "filename": "3 decyzje icp maj 2023.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2023-05",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/a6221fe7ef.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "43d256227b",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/1+wnioski+kwiecie%C5%84+2023.xlsx/46b815af-993c-71cd-80e0-c5a37368a7a4?t=1684241874298",
+      "document_path": "/documents/44790/72340651/1+wnioski+kwiecie%C5%84+2023.xlsx/46b815af-993c-71cd-80e0-c5a37368a7a4",
+      "filename": "1 wnioski kwiecień 2023.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023-04",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/43d256227b.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "5626cbec80",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/2+wz+dec.+kwiecie%C5%84+2023.xlsx/a4b64863-7fcc-bc48-f2a2-f3087c431120?t=1684241911178",
+      "document_path": "/documents/44790/72340651/2+wz+dec.+kwiecie%C5%84+2023.xlsx/a4b64863-7fcc-bc48-f2a2-f3087c431120",
+      "filename": "2 wz dec. kwiecień 2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-04",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/5626cbec80.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "4532b7ae47",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/3+decyzje+icp+kwiecie%C5%84+2023.xlsx/ffe1005e-8a0a-7afa-47ef-6f813e6390db?t=1684241936992",
+      "document_path": "/documents/44790/72340651/3+decyzje+icp+kwiecie%C5%84+2023.xlsx/ffe1005e-8a0a-7afa-47ef-6f813e6390db",
+      "filename": "3 decyzje icp kwiecień 2023.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2023-04",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/4532b7ae47.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "f0e3c0baf9",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/1+wnioski+marzec+2023.xlsx/cdfdbfb7-19f8-c8ef-9f9f-bdf985e77596?t=1682672994134",
+      "document_path": "/documents/44790/72340651/1+wnioski+marzec+2023.xlsx/cdfdbfb7-19f8-c8ef-9f9f-bdf985e77596",
+      "filename": "1 wnioski marzec 2023.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023-03",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/f0e3c0baf9.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6982a653c1",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/2+wz+dec.+marzec+2023.xlsx/7b331386-348a-5537-a661-4ac3eb804cf0?t=1682673017988",
+      "document_path": "/documents/44790/72340651/2+wz+dec.+marzec+2023.xlsx/7b331386-348a-5537-a661-4ac3eb804cf0",
+      "filename": "2 wz dec. marzec 2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-03",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/6982a653c1.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "315589cad1",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/1+wnioski+luty+2023.xlsx/8f36bbc7-baf4-e53e-040f-7f25716eaa7d?t=1679652474648",
+      "document_path": "/documents/44790/72340651/1+wnioski+luty+2023.xlsx/8f36bbc7-baf4-e53e-040f-7f25716eaa7d",
+      "filename": "1 wnioski luty 2023.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023-02",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/315589cad1.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "f72c5d837f",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/2+wz+dec.+luty+2023.xlsx/3c1d1f32-b8ae-b49e-74c3-58c5dc1ab4f8?t=1679652508255",
+      "document_path": "/documents/44790/72340651/2+wz+dec.+luty+2023.xlsx/3c1d1f32-b8ae-b49e-74c3-58c5dc1ab4f8",
+      "filename": "2 wz dec. luty 2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-02",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/f72c5d837f.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "155ff147af",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/3+decyzje+icp+luty+2023.xlsx/88c9a5f0-8805-383c-0931-03a2953a770d?t=1679652610288",
+      "document_path": "/documents/44790/72340651/3+decyzje+icp+luty+2023.xlsx/88c9a5f0-8805-383c-0931-03a2953a770d",
+      "filename": "3 decyzje icp luty 2023.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2023-02",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/155ff147af.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "9d064eead6",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/1+wnioski+stycze%C5%84+2023.xlsx/40a1fbc2-8a9d-ef0c-82f7-d9e5ee4ef5dd?t=1677162603851",
+      "document_path": "/documents/44790/72340651/1+wnioski+stycze%C5%84+2023.xlsx/40a1fbc2-8a9d-ef0c-82f7-d9e5ee4ef5dd",
+      "filename": "1 wnioski styczeń 2023.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023-01",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/9d064eead6.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "71f0e578dd",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/2+wz+dec.+stycze%C5%84+2023.xlsx/f6285886-2f5f-3b2b-45a6-ef3ede87baca?t=1677162628658",
+      "document_path": "/documents/44790/72340651/2+wz+dec.+stycze%C5%84+2023.xlsx/f6285886-2f5f-3b2b-45a6-ef3ede87baca",
+      "filename": "2 wz dec. styczeń 2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023-01",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/71f0e578dd.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "817f31bfb1",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/72340651/3+decyzje+icp+stycze%C5%84+2023.xlsx/6172c482-f7e1-f623-fbb7-9881a89cbca5?t=1677162666556",
+      "document_path": "/documents/44790/72340651/3+decyzje+icp+stycze%C5%84+2023.xlsx/6172c482-f7e1-f623-fbb7-9881a89cbca5",
+      "filename": "3 decyzje icp styczeń 2023.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2023-01",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/817f31bfb1.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "2e7c26aabc",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/1+wnioski+grudzie%C5%84+2022.xlsx/6c1a4b7e-01b4-780c-077f-7b9fb40ac4ac?t=1674038535643",
+      "document_path": "/documents/44790/49088049/1+wnioski+grudzie%C5%84+2022.xlsx/6c1a4b7e-01b4-780c-077f-7b9fb40ac4ac",
+      "filename": "1 wnioski grudzień 2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-12",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/2e7c26aabc.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "93afeea4d6",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/2+wz+dec.+grudzie%C5%84+2022.xlsx/2b6f1593-5a46-d319-b955-fc965bf09bda?t=1674038563620",
+      "document_path": "/documents/44790/49088049/2+wz+dec.+grudzie%C5%84+2022.xlsx/2b6f1593-5a46-d319-b955-fc965bf09bda",
+      "filename": "2 wz dec. grudzień 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-12",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/93afeea4d6.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "12536aabe7",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/1+wnioski+listopad+2022.xlsx/aa3399d3-b770-eedd-edec-9640837461ba?t=1672303453411",
+      "document_path": "/documents/44790/49088049/1+wnioski+listopad+2022.xlsx/aa3399d3-b770-eedd-edec-9640837461ba",
+      "filename": "1 wnioski listopad 2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-11",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/12536aabe7.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "aa90973265",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/2+wz+dec.+listopad+2022.xlsx/8cb1d2d8-6ccb-923d-71c9-2f73c3bad25b?t=1672302923437",
+      "document_path": "/documents/44790/49088049/2+wz+dec.+listopad+2022.xlsx/8cb1d2d8-6ccb-923d-71c9-2f73c3bad25b",
+      "filename": "2 wz dec. listopad 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-11",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/aa90973265.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c383b2b022",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/1+wnioski+pa%C5%BAdziernik+2022.xlsx/d4c9ad27-2944-0bb8-8665-76db863be96f?t=1667894216167",
+      "document_path": "/documents/44790/49088049/1+wnioski+pa%C5%BAdziernik+2022.xlsx/d4c9ad27-2944-0bb8-8665-76db863be96f",
+      "filename": "1 wnioski październik 2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-10",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/c383b2b022.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "884766adc9",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/2+wz+dec.+pa%C5%BAdziernik+2022.xlsx/60456490-8339-150a-4374-97bb826b5727?t=1667894165625",
+      "document_path": "/documents/44790/49088049/2+wz+dec.+pa%C5%BAdziernik+2022.xlsx/60456490-8339-150a-4374-97bb826b5727",
+      "filename": "2 wz dec. październik 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-10",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/884766adc9.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "eb3f23e60c",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/3+decyzje+icp+pa%C5%BAdziernik+2022.xlsx/4a69a258-ea57-cd4c-21e8-6d8ff9d393d4?t=1667894023336",
+      "document_path": "/documents/44790/49088049/3+decyzje+icp+pa%C5%BAdziernik+2022.xlsx/4a69a258-ea57-cd4c-21e8-6d8ff9d393d4",
+      "filename": "3 decyzje icp październik 2022.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2022-10",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/eb3f23e60c.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "d9a45e5110",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/1+wnioski+wrzesie%C5%84+2022.xlsx/3b0e369b-7fcf-62ae-2a97-2bba1ec01ce1?t=1667894194590",
+      "document_path": "/documents/44790/49088049/1+wnioski+wrzesie%C5%84+2022.xlsx/3b0e369b-7fcf-62ae-2a97-2bba1ec01ce1",
+      "filename": "1 wnioski wrzesień 2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-09",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/d9a45e5110.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "7c7d7eb1fc",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/2+wz+dec.+wrzesie%C5%84+2022.xlsx/fb805542-e548-c0e0-8f5a-95a1388d039e?t=1667894140653",
+      "document_path": "/documents/44790/49088049/2+wz+dec.+wrzesie%C5%84+2022.xlsx/fb805542-e548-c0e0-8f5a-95a1388d039e",
+      "filename": "2 wz dec. wrzesień 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-09",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/7c7d7eb1fc.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "90f064207b",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/3+decyzje+icp+wrzesie%C5%84+2022.xlsx/a096d0b1-7d0b-8498-504b-9c235dcf0702?t=1667893992534",
+      "document_path": "/documents/44790/49088049/3+decyzje+icp+wrzesie%C5%84+2022.xlsx/a096d0b1-7d0b-8498-504b-9c235dcf0702",
+      "filename": "3 decyzje icp wrzesień 2022.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2022-09",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/90f064207b.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "1650d62976",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/1+wnioski+sierpie%C5%84+2022.xlsx/6199a067-b81c-f4ec-7515-4a5217d26ab2?t=1663663924996",
+      "document_path": "/documents/44790/49088049/1+wnioski+sierpie%C5%84+2022.xlsx/6199a067-b81c-f4ec-7515-4a5217d26ab2",
+      "filename": "1 wnioski sierpień 2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-08",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/1650d62976.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "db442379e7",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/2+wz+dec.+sierpie%C5%84+2022.xlsx/41516d73-e8e5-1fc0-4b48-af5a03acc34c?t=1663664017541",
+      "document_path": "/documents/44790/49088049/2+wz+dec.+sierpie%C5%84+2022.xlsx/41516d73-e8e5-1fc0-4b48-af5a03acc34c",
+      "filename": "2 wz dec. sierpień 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-08",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/db442379e7.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "af4dbaf4be",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/3+decyzje+icp+sierpie%C5%84+2022.xlsx/b1e0ae6c-ca3e-57fe-bf21-3b990a8f3729?t=1663664094711",
+      "document_path": "/documents/44790/49088049/3+decyzje+icp+sierpie%C5%84+2022.xlsx/b1e0ae6c-ca3e-57fe-bf21-3b990a8f3729",
+      "filename": "3 decyzje icp sierpień 2022.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2022-08",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/af4dbaf4be.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "be5ba04417",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/1+wnioski+lipiec+2022.xlsx/853c9cf5-cd4b-2ae4-e9e6-75e22c36542f?t=1663663874441",
+      "document_path": "/documents/44790/49088049/1+wnioski+lipiec+2022.xlsx/853c9cf5-cd4b-2ae4-e9e6-75e22c36542f",
+      "filename": "1 wnioski lipiec 2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-07",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/be5ba04417.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6ddd0ca224",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/2+wz+dec.+lipiec+2022.xlsx/7cf9c810-9f4f-cf70-58ba-0377eddb13f6?t=1663663979241",
+      "document_path": "/documents/44790/49088049/2+wz+dec.+lipiec+2022.xlsx/7cf9c810-9f4f-cf70-58ba-0377eddb13f6",
+      "filename": "2 wz dec. lipiec 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-07",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/6ddd0ca224.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "06f47a8c79",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/3+decyzje+icp+lipiec+2022.xlsx/e3d17897-2fb4-7052-1ed8-88bf6006d337?t=1663664061040",
+      "document_path": "/documents/44790/49088049/3+decyzje+icp+lipiec+2022.xlsx/e3d17897-2fb4-7052-1ed8-88bf6006d337",
+      "filename": "3 decyzje icp lipiec 2022.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2022-07",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/06f47a8c79.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "9514a4fec0",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/1+wnioski+czerwiec+2022.xlsx/1efbdbb3-d77b-2845-4847-7016f481225d?t=1657877225470",
+      "document_path": "/documents/44790/49088049/1+wnioski+czerwiec+2022.xlsx/1efbdbb3-d77b-2845-4847-7016f481225d",
+      "filename": "1 wnioski czerwiec 2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-06",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/9514a4fec0.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c8eda84089",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/2+wz+dec.+czerwiec+2022.xlsx/89e28b4d-c5e9-c976-761d-758a5b13bb57?t=1657877251296",
+      "document_path": "/documents/44790/49088049/2+wz+dec.+czerwiec+2022.xlsx/89e28b4d-c5e9-c976-761d-758a5b13bb57",
+      "filename": "2 wz dec. czerwiec 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-06",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/c8eda84089.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c648e6e6bd",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/1+wnioski+maj+2022.xlsx/d8430742-d673-a849-18ba-9199f7427fda?t=1655290176805",
+      "document_path": "/documents/44790/49088049/1+wnioski+maj+2022.xlsx/d8430742-d673-a849-18ba-9199f7427fda",
+      "filename": "1 wnioski maj 2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-05",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/c648e6e6bd.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "df4e27505b",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/2+wz+dec.+maj+2022.xlsx/1f325a8a-c7e5-4709-593c-2f440cfc0a37?t=1655290237465",
+      "document_path": "/documents/44790/49088049/2+wz+dec.+maj+2022.xlsx/1f325a8a-c7e5-4709-593c-2f440cfc0a37",
+      "filename": "2 wz dec. maj 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-05",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/df4e27505b.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "0acd0dc5cc",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/3+decyzje+icp+maj+2022.xlsx/e21556f6-36a7-8536-a4e7-483915727fea?t=1655290287772",
+      "document_path": "/documents/44790/49088049/3+decyzje+icp+maj+2022.xlsx/e21556f6-36a7-8536-a4e7-483915727fea",
+      "filename": "3 decyzje icp maj 2022.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2022-05",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/0acd0dc5cc.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "f0b3ec154c",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/1+wnioski+kwiecie%C5%84+2022.xlsx/0015dd1f-1331-c761-8aa2-a6a910b56468?t=1652793072000",
+      "document_path": "/documents/44790/49088049/1+wnioski+kwiecie%C5%84+2022.xlsx/0015dd1f-1331-c761-8aa2-a6a910b56468",
+      "filename": "1 wnioski kwiecień 2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-04",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/f0b3ec154c.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "02ac298493",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/2+wz+dec.+kwiecie%C5%84+2022.xlsx/60ce94a1-10bf-77f8-6d86-a3f3fd25db08?t=1652793105642",
+      "document_path": "/documents/44790/49088049/2+wz+dec.+kwiecie%C5%84+2022.xlsx/60ce94a1-10bf-77f8-6d86-a3f3fd25db08",
+      "filename": "2 wz dec. kwiecień 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-04",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/02ac298493.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "01532732f2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/1+wnioski+marzec+2022.xlsx/46c4590b-87ed-75b1-002d-f00566141b14?t=1650544470250",
+      "document_path": "/documents/44790/49088049/1+wnioski+marzec+2022.xlsx/46c4590b-87ed-75b1-002d-f00566141b14",
+      "filename": "1 wnioski marzec 2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-03",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/01532732f2.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "b60d9f9a28",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/2+wz+dec.+marzec+2022.xlsx/6a1f0046-dd94-c76f-d808-e15dc7eae948?t=1650544328378",
+      "document_path": "/documents/44790/49088049/2+wz+dec.+marzec+2022.xlsx/6a1f0046-dd94-c76f-d808-e15dc7eae948",
+      "filename": "2 wz dec. marzec 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-03",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/b60d9f9a28.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "8a5a154c55",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/3+decyzje+icp+marzec++2022.xlsx/11864b89-8ffc-ca8d-2f52-30358c382dea?t=1650544497466",
+      "document_path": "/documents/44790/49088049/3+decyzje+icp+marzec++2022.xlsx/11864b89-8ffc-ca8d-2f52-30358c382dea",
+      "filename": "3 decyzje icp marzec  2022.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2022-03",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/8a5a154c55.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c60c5c4418",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/1+wnioski+luty+2022.xlsx/3f94ed1e-91d2-59e3-12f2-a1f6502c47f6?t=1650544351927",
+      "document_path": "/documents/44790/49088049/1+wnioski+luty+2022.xlsx/3f94ed1e-91d2-59e3-12f2-a1f6502c47f6",
+      "filename": "1 wnioski luty 2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-02",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/c60c5c4418.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "f2850f1878",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/2+wz+dec.+luty+2022.xlsx/825e7084-6e5c-3fb6-b380-3cc1731da885?t=1650544351788",
+      "document_path": "/documents/44790/49088049/2+wz+dec.+luty+2022.xlsx/825e7084-6e5c-3fb6-b380-3cc1731da885",
+      "filename": "2 wz dec. luty 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-02",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/f2850f1878.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "5d7d8f13a1",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/3+decyzje+icp+luty++2022.xlsx/95f3fcec-b44b-9f94-518e-bfbb50a92a0d?t=1650544351869",
+      "document_path": "/documents/44790/49088049/3+decyzje+icp+luty++2022.xlsx/95f3fcec-b44b-9f94-518e-bfbb50a92a0d",
+      "filename": "3 decyzje icp luty  2022.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2022-02",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/5d7d8f13a1.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "104c783332",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/1+wnioski+stycze%C5%84+2022.xlsx/05d59d10-76eb-9f73-6710-51bfd18bfd51?t=1650544351974",
+      "document_path": "/documents/44790/49088049/1+wnioski+stycze%C5%84+2022.xlsx/05d59d10-76eb-9f73-6710-51bfd18bfd51",
+      "filename": "1 wnioski styczeń 2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022-01",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/104c783332.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c7e95c3782",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088049/2+wz+dec.++stycze%C5%84+2022.xlsx/b04518a2-b551-61a6-8450-382c0d1f883f?t=1650544351816",
+      "document_path": "/documents/44790/49088049/2+wz+dec.++stycze%C5%84+2022.xlsx/b04518a2-b551-61a6-8450-382c0d1f883f",
+      "filename": "2 wz dec.  styczeń 2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022-01",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/c7e95c3782.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "ab56c39259",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/1+wnioski+grudzie%C5%84+2021.xlsx/20d76f42-17b3-3fc0-aea2-c50cab840557?t=1650544407053",
+      "document_path": "/documents/44790/49088066/1+wnioski+grudzie%C5%84+2021.xlsx/20d76f42-17b3-3fc0-aea2-c50cab840557",
+      "filename": "1 wnioski grudzień 2021.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2021-12",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/ab56c39259.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "116ca43045",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/2+wz+dec.++grudzie%C5%84+2021.xlsx/0ace4b04-5cf3-088a-2d81-98c0db9f39ee?t=1650544435861",
+      "document_path": "/documents/44790/49088066/2+wz+dec.++grudzie%C5%84+2021.xlsx/0ace4b04-5cf3-088a-2d81-98c0db9f39ee",
+      "filename": "2 wz dec.  grudzień 2021.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021-12",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/116ca43045.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "a3cde049dd",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/2+wz+dec.++listopad+2021+nowy+druk.xlsx/d0f3d1fe-cad3-7c57-92ed-e0899d5f2649?t=1650544407162",
+      "document_path": "/documents/44790/49088066/2+wz+dec.++listopad+2021+nowy+druk.xlsx/d0f3d1fe-cad3-7c57-92ed-e0899d5f2649",
+      "filename": "2 wz dec.  listopad 2021 nowy druk.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021-11",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/a3cde049dd.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c48a5db1c1",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/3+decyzje+icp+listopad++2021.xlsx/61199890-1b06-d5c6-881f-f56519b5d112?t=1650544407106",
+      "document_path": "/documents/44790/49088066/3+decyzje+icp+listopad++2021.xlsx/61199890-1b06-d5c6-881f-f56519b5d112",
+      "filename": "3 decyzje icp listopad  2021.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2021-11",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/c48a5db1c1.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c9f8d959bb",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/1+wnioski+pa%C5%BAdziernik+2021.xlsx/18003aca-67ee-c18c-bbd0-03428baab1db?t=1650544407329",
+      "document_path": "/documents/44790/49088066/1+wnioski+pa%C5%BAdziernik+2021.xlsx/18003aca-67ee-c18c-bbd0-03428baab1db",
+      "filename": "1 wnioski październik 2021.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2021-10",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy",
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/c9f8d959bb.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "2522e3f778",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/2+wz+dec.++pa%C5%BAdziernik+2021+nowy+druk.xlsx/1a2f3202-7a02-51df-864d-690c6a8c9423?t=1650544407291",
+      "document_path": "/documents/44790/49088066/2+wz+dec.++pa%C5%BAdziernik+2021+nowy+druk.xlsx/1a2f3202-7a02-51df-864d-690c6a8c9423",
+      "filename": "2 wz dec.  październik 2021 nowy druk.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021-10",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/2522e3f778.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "7e73bb848c",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/3+decyzje+icp+pa%C5%BAdziernik++2021.xlsx/e3ba384c-64cc-3cda-4103-16dd15dacd46?t=1650544407222",
+      "document_path": "/documents/44790/49088066/3+decyzje+icp+pa%C5%BAdziernik++2021.xlsx/e3ba384c-64cc-3cda-4103-16dd15dacd46",
+      "filename": "3 decyzje icp październik  2021.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2021-10",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/7e73bb848c.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "b76c74e8d3",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/1+wnioski+wrzesie%C5%84+2021.xlsx/96e978a6-43f7-ad2e-1927-3b7c75d89cc9?t=1650544407381",
+      "document_path": "/documents/44790/49088066/1+wnioski+wrzesie%C5%84+2021.xlsx/96e978a6-43f7-ad2e-1927-3b7c75d89cc9",
+      "filename": "1 wnioski wrzesień 2021.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2021-09",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/b76c74e8d3.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "50b30b2a16",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/3+decyzje+icp+wrzesie%C5%84+2021.xlsx/8defdefb-9080-33b0-f1a0-c648942086a5?t=1650544407449",
+      "document_path": "/documents/44790/49088066/3+decyzje+icp+wrzesie%C5%84+2021.xlsx/8defdefb-9080-33b0-f1a0-c648942086a5",
+      "filename": "3 decyzje icp wrzesień 2021.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2021-09",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/50b30b2a16.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "4c6c62c7c1",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/Informacja+sierpie%C5%84+2021-dcp.xlsx/8f48874c-b61c-b11a-f200-f3d706426c1a?t=1650544407507",
+      "document_path": "/documents/44790/49088066/Informacja+sierpie%C5%84+2021-dcp.xlsx/8f48874c-b61c-b11a-f200-f3d706426c1a",
+      "filename": "Informacja sierpień 2021-dcp.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2021-08",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/4c6c62c7c1.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c8bea0a7ba",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/Informacja+sierpie%C5%84+2021-dwz.xlsx/f2833bc8-67b3-6560-28c9-b1d5810b5afc?t=1650544407564",
+      "document_path": "/documents/44790/49088066/Informacja+sierpie%C5%84+2021-dwz.xlsx/f2833bc8-67b3-6560-28c9-b1d5810b5afc",
+      "filename": "Informacja sierpień 2021-dwz.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2021-08",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/c8bea0a7ba.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "82b2dc3c71",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/Informacja+sierpie%C5%84+2021.xlsx/99723c23-182a-c77d-2005-02ebb5ff02c1?t=1650544407607",
+      "document_path": "/documents/44790/49088066/Informacja+sierpie%C5%84+2021.xlsx/99723c23-182a-c77d-2005-02ebb5ff02c1",
+      "filename": "Informacja sierpień 2021.xlsx",
+      "ext": "xlsx",
+      "category": null,
+      "period": "2021-08",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/82b2dc3c71.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6f4aacbb62",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/1+wnioski+lipiec+2021+nowy+druk.xlsx/d6b4b0af-77a2-9c2f-c039-1270dba76731?t=1650544407718",
+      "document_path": "/documents/44790/49088066/1+wnioski+lipiec+2021+nowy+druk.xlsx/d6b4b0af-77a2-9c2f-c039-1270dba76731",
+      "filename": "1 wnioski lipiec 2021 nowy druk.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2021-07",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/6f4aacbb62.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "2d3304d641",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/2+wz+dec.++lipiec+2021+nowy+druk.xlsx/648bfaaa-34e3-12bf-f961-ded8f1095721?t=1650544407658",
+      "document_path": "/documents/44790/49088066/2+wz+dec.++lipiec+2021+nowy+druk.xlsx/648bfaaa-34e3-12bf-f961-ded8f1095721",
+      "filename": "2 wz dec.  lipiec 2021 nowy druk.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021-07",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/2d3304d641.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "ad39aa50e8",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/1+wnioski+czerwiec+2021.xlsx/bcad7f46-5052-a239-5b1a-4dc00b965ced?t=1650544407874",
+      "document_path": "/documents/44790/49088066/1+wnioski+czerwiec+2021.xlsx/bcad7f46-5052-a239-5b1a-4dc00b965ced",
+      "filename": "1 wnioski czerwiec 2021.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2021-06",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/ad39aa50e8.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "1ca3dcf356",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/2+wz+czerwiec+2021.xlsx/a614544e-1517-bb21-8c93-de39183b4b74?t=1650544407797",
+      "document_path": "/documents/44790/49088066/2+wz+czerwiec+2021.xlsx/a614544e-1517-bb21-8c93-de39183b4b74",
+      "filename": "2 wz czerwiec 2021.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021-06",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/1ca3dcf356.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "2e3a42dcb7",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/3+icp+czerwiec+2021.xlsx/01cf6200-70d7-12bf-1b37-cdead0552784?t=1650544407943",
+      "document_path": "/documents/44790/49088066/3+icp+czerwiec+2021.xlsx/01cf6200-70d7-12bf-1b37-cdead0552784",
+      "filename": "3 icp czerwiec 2021.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2021-06",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/2e3a42dcb7.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "ae9981eb9c",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/1+wnioski+maj+2021.xlsx/05313516-a226-025b-ef75-3effba09e8ee?t=1650544407999",
+      "document_path": "/documents/44790/49088066/1+wnioski+maj+2021.xlsx/05313516-a226-025b-ef75-3effba09e8ee",
+      "filename": "1 wnioski maj 2021.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2021-05",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/ae9981eb9c.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "9b969f11cd",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/2+wz+maj+2021.xlsx/b6df1166-26a1-c249-beb2-5a3a63f50859?t=1650544417660",
+      "document_path": "/documents/44790/49088066/2+wz+maj+2021.xlsx/b6df1166-26a1-c249-beb2-5a3a63f50859",
+      "filename": "2 wz maj 2021.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021-05",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/9b969f11cd.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6f43bf8ac7",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/3+icp+maj+2021.xlsx/875161b7-2745-9256-81b3-810b7a8c286f?t=1650544417624",
+      "document_path": "/documents/44790/49088066/3+icp+maj+2021.xlsx/875161b7-2745-9256-81b3-810b7a8c286f",
+      "filename": "3 icp maj 2021.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2021-05",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/6f43bf8ac7.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c9c980b3c2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/1+wnioski+kwiecie%C5%84+2021.xlsx/b1b16753-17ca-f3cf-2e9f-dcd92b048c6d?t=1650544408068",
+      "document_path": "/documents/44790/49088066/1+wnioski+kwiecie%C5%84+2021.xlsx/b1b16753-17ca-f3cf-2e9f-dcd92b048c6d",
+      "filename": "1 wnioski kwiecień 2021.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2021-04",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/c9c980b3c2.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "52064a0c2f",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/49088066/2+wz+kwiecie%C5%84+2021.xlsx/3d0364e8-c1d8-d285-c399-5bf7e2bb764b?t=1650544417709",
+      "document_path": "/documents/44790/49088066/2+wz+kwiecie%C5%84+2021.xlsx/3d0364e8-c1d8-d285-c399-5bf7e2bb764b",
+      "filename": "2 wz kwiecień 2021.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021-04",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/52064a0c2f.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "aaf9248093",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/8875848/1_wnioski_marzec_2021_0.xlsx/0d010f86-b8db-7c66-96d0-a647989ac34d?t=1634497741937",
+      "document_path": "/documents/44790/8875848/1_wnioski_marzec_2021_0.xlsx/0d010f86-b8db-7c66-96d0-a647989ac34d",
+      "filename": "1_wnioski_marzec_2021_0.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2021-03",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/aaf9248093.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "3467e1f04a",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/8875848/2_wz_marzec_2021_0.xlsx/054310dd-b638-53ef-fb62-13b9afa56a20?t=1634497741921",
+      "document_path": "/documents/44790/8875848/2_wz_marzec_2021_0.xlsx/054310dd-b638-53ef-fb62-13b9afa56a20",
+      "filename": "2_wz_marzec_2021_0.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021-03",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/3467e1f04a.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "8fbea35e83",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/8875848/3_icp_marzec_2021_0.xlsx/e7a3636c-f7a4-9f3f-11d8-a423285bba59?t=1634497741901",
+      "document_path": "/documents/44790/8875848/3_icp_marzec_2021_0.xlsx/e7a3636c-f7a4-9f3f-11d8-a423285bba59",
+      "filename": "3_icp_marzec_2021_0.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2021-03",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/8fbea35e83.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c0b31c9db1",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/8875848/1_wnioski.xlsx/8ee34845-8765-5c5d-7b7c-7a59aac666a0?t=1634497741944",
+      "document_path": "/documents/44790/8875848/1_wnioski.xlsx/8ee34845-8765-5c5d-7b7c-7a59aac666a0",
+      "filename": "1_wnioski.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2021-02",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/c0b31c9db1.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "8847661df9",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/8875848/2_wz_0.xlsx/edaab345-a7ec-67e1-8141-0a1c672ab2c7?t=1634497741914",
+      "document_path": "/documents/44790/8875848/2_wz_0.xlsx/edaab345-a7ec-67e1-8141-0a1c672ab2c7",
+      "filename": "2_wz_0.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021-02",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/8847661df9.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "9d71f33486",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/8875848/3_icp.xlsx/3271dfb7-7e8b-ce3c-94fb-873619bdeea1?t=1634497741893",
+      "document_path": "/documents/44790/8875848/3_icp.xlsx/3271dfb7-7e8b-ce3c-94fb-873619bdeea1",
+      "filename": "3_icp.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2021-02",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/9d71f33486.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "f02e1f887e",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/8875848/1129_1009zal1.xlsx_wz_icp_wrzesien-styczen_2020-2021.xlsx/0b73f407-5320-0bb2-96ce-1d51447480f2?t=1634497741930",
+      "document_path": "/documents/44790/8875848/1129_1009zal1.xlsx_wz_icp_wrzesien-styczen_2020-2021.xlsx/0b73f407-5320-0bb2-96ce-1d51447480f2",
+      "filename": "1129_1009zal1.xlsx_wz_icp_wrzesien-styczen_2020-2021.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2020-09",
+      "page_ids": [
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/f02e1f887e.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "67865bcc22",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/8875848/1129_1009zal2.xlsx_1_wydane_decyzje_wz_wrzesien-styczen_2020-2021.xlsx/73813fc7-80b6-a64f-9186-f1bcd64e343a?t=1634497741907",
+      "document_path": "/documents/44790/8875848/1129_1009zal2.xlsx_1_wydane_decyzje_wz_wrzesien-styczen_2020-2021.xlsx/73813fc7-80b6-a64f-9186-f1bcd64e343a",
+      "filename": "1129_1009zal2.xlsx_1_wydane_decyzje_wz_wrzesien-styczen_2020-2021.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2020-09",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+      ],
+      "local_path": "data/districts/wesola/raw/67865bcc22.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6d9e1eb9b2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44790/8875848/1129_1009zal3.xlsx_2_wydanie_decyzji_icp_wrzesien-_styczen_2020-2021.xlsx/a83d1e8b-c6df-7f53-cb1e-e9b3e1b6a613?t=1634497741887",
+      "document_path": "/documents/44790/8875848/1129_1009zal3.xlsx_2_wydanie_decyzji_icp_wrzesien-_styczen_2020-2021.xlsx/a83d1e8b-c6df-7f53-cb1e-e9b3e1b6a613",
+      "filename": "1129_1009zal3.xlsx_2_wydanie_decyzji_icp_wrzesien-_styczen_2020-2021.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2020-09",
+      "page_ids": [
+        "wes-informacje-o-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wesola/raw/6d9e1eb9b2.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    }
+  ],
+  "district": "wesola"
+}

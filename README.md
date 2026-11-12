@@ -1,4 +1,8 @@
-# wzSearch – Praga-Południe planning decisions and building permits, searchable
+# wzSearch Warszawa – planning decisions and building permits, searchable
+
+*wzSearch started with Praga-Południe and covers all 18 Warsaw districts on the `feature/all-districts` branch (plan
+and owner decisions: [`docs/plans/all-districts.md`](docs/plans/all-districts.md)). Every district goes through the
+same pipeline; the description below uses Praga-Południe, the first one, as the example.*
 
 What may be built in Praga-Południe (Warsaw), and what has been allowed? The answers are public but scattered over
 three publishers and hundreds of files:
@@ -68,15 +72,18 @@ ids are namespaced per dataset (`wz-2026-15`, `wz-am-2026-95`, `pb-st-mz-pa-2026
 Requirements: [uv](https://docs.astral.sh/uv/) (Python 3.12), optionally Node ≥ 22 for the frontend tests.
 
 ```sh
-make install      # uv sync (+ npm install for the optional browser test)
-make data         # crawl both lists, check GUNB, parse, geocode, write site/data (≈ 2 min when caches are warm)
-make serve        # http://127.0.0.1:8000 (the Node dev server; python3 -m http.server without Node)
+make install        # uv sync (+ npm install for the optional browser test)
+make city-offline   # build the site for all 18 districts from the committed inputs (< 1 min, no network)
+make serve          # http://127.0.0.1:8000 (the Node dev server; python3 -m http.server without Node)
 ```
 
-The repository already contains the downloaded files, the RWDZ extracts and the geocoding caches, so
-`make data-offline` rebuilds the whole site in a few seconds without touching the network. The GUNB ZIPs themselves
-are not committed (`data/cache/rwdz/` is git-ignored): in a fresh clone the first `make data` downloads them
-(~93 MB) whenever GUNB has published a newer nightly file than the committed extracts.
+The repository contains the inputs – every downloaded file, the RWDZ extracts, the geocoding caches and a build
+stamp per district – but **not the built site** (`site/data`, `site/sources`, the feeds): `make city-offline`
+renders it, and CI does the same before every deploy. `make city` refreshes the data first (crawls the district
+offices and BAiPP, checks GUNB, geocodes new parcels; `DISTRICTS=bemowo,wola` limits it). The GUNB ZIPs themselves
+are not committed (`data/cache/rwdz/` is git-ignored): a fresh clone's first `make city` downloads them (~93 MB)
+whenever GUNB has published a newer nightly file than the committed extracts. `make data` / `make data-offline`
+build Praga-Południe alone (its shard is `site/data/` itself).
 
 Other targets: `make test` (pytest + `node --test`), `make e2e` (browser smoke test with the system Chrome),
 `make rwdz` (refresh only the GUNB extracts and print their statistics), `make report` (print the data-quality report).
@@ -146,24 +153,28 @@ CI commits and deploys only on exit code 0.
 2. *Settings → Pages → Build and deployment → Source:* **GitHub Actions**.
 3. Optionally set `REPO_URL` / `ISSUES_URL` in [`site/js/config.js`](site/js/config.js) (shown on the „O projekcie”
    page and, for `ISSUES_URL`, as a „Zgłoś błąd w danych” button under every record).
-4. Push to `main`: [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) publishes `site/` as committed
-   (on every push that touches `site/`, or by hand).
+4. Push to `main`: [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds the site from the committed
+   inputs (`pipeline.city --offline`, about a minute) and publishes `site/` (on every push that touches `site/`,
+   `data/` or `pipeline/`, or by hand). It refuses to deploy if its build does not reproduce the committed build
+   stamps.
 
-**Refreshing data:** run `make data` locally around the 10th of each month (the office publishes the previous
-month's lists then), commit and push. The district site blocks GitHub-hosted runners (HTTP 403 for cloud IP ranges,
-checked 2026-10-26), so the scheduled refresh is switched off. Set the Pages URL once with
-`SITE_URL=https://<user>.github.io/<repo>/ make data-offline`; later local builds keep it.
+**Refreshing data:** run `make city` locally around the 10th of each month (the offices publish the previous
+month's lists then), commit `data/` and push. The district sites block GitHub-hosted runners (HTTP 403 for cloud IP
+ranges, checked 2026-10-26), so the scheduled refresh is switched off. The Makefile sets the public `SITE_URL`
+(`https://3-n.github.io/wzsearch/`) for the permalinks in the committed reports; CI passes the Pages URL.
 
 [`.github/workflows/update.yml`](.github/workflows/update.yml) (manual; its schedule is commented out) crawls, checks GUNB (no secrets needed;
 the ZIPs are downloaded to the runner and never committed – only the small extracts and `data/cache/rwdz.json` are),
-rebuilds, runs the tests, commits changed data back to the repository and deploys `site/`. Permalinks in the CSV
+rebuilds, runs the tests, commits changed inputs back to the repository and deploys `site/`. Permalinks in the CSV
 and the feed use the Pages URL (`SITE_URL`). If the build or the tests fail, nothing is committed or deployed and the
 previous site stays online; GitHub e-mails the repository owner about the failed run.
 [`.github/workflows/test.yml`](.github/workflows/test.yml) runs the tests on every push and pull request and
-checks that the committed site data matches an offline rebuild.
+checks that an offline rebuild on Linux reproduces the committed build stamps (`data/build.json`,
+`data/districts/<slug>/build.json`: the SHA-256 of each shard's data documents) and that a second rebuild changes
+nothing.
 
-Any other static host works too: `SITE_URL=https://example.org/path/ make data` (or `--site-url`), then upload the
-`site/` directory. Without it the downloadable CSVs carry relative permalinks (`./#/wpis/…`); the feed's relative
+Any other static host works too: `SITE_URL=https://example.org/path/ make city-offline` (or `--site-url`), then
+upload the `site/` directory. Without it the downloadable CSVs carry relative permalinks (`./#/wpis/…`); the feed's relative
 links are fine, feed readers resolve them against the feed's own URL.
 
 ## Data quality – what to keep in mind

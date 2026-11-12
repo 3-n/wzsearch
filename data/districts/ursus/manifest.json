@@ -1,0 +1,784 @@
+{
+  "generated_at": "2026-10-27T19:47:27Z",
+  "index_url": "https://ursus.um.warszawa.pl/decyzje-architektoniczne",
+  "pages": [
+    {
+      "page_id": "urs-wykazy-za-rok-2020",
+      "url": "https://ursus.um.warszawa.pl/wykazy-za-rok-2020",
+      "title": "Wykazy za 2020",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Rejestr wydawanych decyzji o warunkach zabudowy",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "b44b34a64e"
+          ],
+          "period": "2020"
+        },
+        {
+          "text": "Rejestr wniosków o wydanie decyzji o ustaleniu lokalizacji inwestycji celu publicznego",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "6fcbc4058d"
+          ],
+          "period": "2020"
+        },
+        {
+          "text": "Rejestr wniosków o warunki zabudowy",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "fb2d5bda82"
+          ],
+          "period": "2020"
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "excluded": 4
+      }
+    },
+    {
+      "page_id": "urs-wykazy-za-rok-2021",
+      "url": "https://ursus.um.warszawa.pl/wykazy-za-rok-2021",
+      "title": "Wykazy za 2021",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Rejestr wydawanych decyzji o warunkach zabudowy",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "27dcd60f91"
+          ],
+          "period": "2021"
+        },
+        {
+          "text": "Rejestr wniosków o wydanie decyzji o ustaleniu lokalizacji inwestycji celu publicznego",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "9ee81cc88e"
+          ],
+          "period": "2021"
+        },
+        {
+          "text": "Rejestr wniosków o warunki zabudowy",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "70e83822da"
+          ],
+          "period": "2021"
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "excluded": 4
+      }
+    },
+    {
+      "page_id": "urs-wykazy-za-rok-2022",
+      "url": "https://ursus.um.warszawa.pl/wykazy-za-rok-2022",
+      "title": "Wykazy za 2022",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Rejestr wydawanych decyzji o warunkach zabudowy",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "a8b1b865db"
+          ],
+          "period": "2022"
+        },
+        {
+          "text": "Rejestr wniosków o wydanie decyzji o ustaleniu lokalizacji inwestycji celu publicznego",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "9d9c248a3f"
+          ],
+          "period": "2022"
+        },
+        {
+          "text": "Rejestr wniosków o warunki zabudowy",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "118948b77c"
+          ],
+          "period": "2022"
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "excluded": 4
+      }
+    },
+    {
+      "page_id": "urs-wykazy-za-rok-2023",
+      "url": "https://ursus.um.warszawa.pl/wykazy-za-rok-2023",
+      "title": "Wykazy za rok 2023",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Rejestr wydawanych decyzji o warunkach zabudowy",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "fdafa18186"
+          ],
+          "period": "2023"
+        },
+        {
+          "text": "Rejestr wniosków o wydanie decyzji o ustaleniu lokalizacji inwestycji celu publicznego",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "2a882dc940"
+          ],
+          "period": "2023"
+        },
+        {
+          "text": "Rejestr wniosków o warunki zabudowy",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "6521eb5a77"
+          ],
+          "period": "2023"
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "excluded": 3
+      }
+    },
+    {
+      "page_id": "urs-wykazy-za-rok-2024",
+      "url": "https://ursus.um.warszawa.pl/wykazy-za-rok-2024",
+      "title": "Wykazy za rok 2024",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Rejestr wydawanych decyzji o warunkach zabudowy",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "eafaee4caa"
+          ],
+          "period": "2024"
+        },
+        {
+          "text": "Rejestr wniosków o wydanie decyzji o ustaleniu lokalizacji inwestycji celu publicznego",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "1c5d1cfa98"
+          ],
+          "period": "2024"
+        },
+        {
+          "text": "Rejestr wniosków o warunki zabudowy",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "79994962f8"
+          ],
+          "period": "2024"
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "excluded": 3
+      }
+    },
+    {
+      "page_id": "urs-wykazy-za-rok-2025",
+      "url": "https://ursus.um.warszawa.pl/wykazy-za-rok-2025",
+      "title": "Wykazy za rok 2025",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Rejestr wydawanych decyzji o warunkach zabudowy",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "23e74b0ee2"
+          ],
+          "period": "2025"
+        },
+        {
+          "text": "Rejestr decyzji o ustaleniu lokalizacji inwestycji celu publicznego",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "4a5836a23a"
+          ],
+          "period": "2025"
+        },
+        {
+          "text": "Rejestr wniosków o wydanie decyzji o ustaleniu lokalizacji inwestycji celu publicznego",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "91899f14e0"
+          ],
+          "period": "2025"
+        },
+        {
+          "text": "Rejestr wniosków o warunki zabudowy",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "053e7804f9"
+          ],
+          "period": "2025"
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "excluded": 3
+      }
+    },
+    {
+      "page_id": "urs-wykazy-za-rok-2026",
+      "url": "https://ursus.um.warszawa.pl/waw/ursus/wykazy-za-rok-2026",
+      "title": "Wykazy za rok 2026",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Rejestr wydawanych decyzji o warunkach zabudowy",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "0f51405641"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "Rejestr decyzji o ustaleniu lokalizacji inwestycji celu publicznego",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "9a68add1d0"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "Rejestr wniosków o wydanie decyzji o ustaleniu lokalizacji inwestycji celu publicznego",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "c033a0c322"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "Rejestr wniosków o warunki zabudowy",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "775e248735"
+          ],
+          "period": "2026"
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "excluded": 4
+      }
+    }
+  ],
+  "files": [
+    {
+      "file_id": "0f51405641",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/171439469/rejestr_dec_wz_2026.xlsx/cc7007d4-98df-fc50-c859-b806707be5b8?t=1791548276077",
+      "document_path": "/documents/49065/171439469/rejestr_dec_wz_2026.xlsx/cc7007d4-98df-fc50-c859-b806707be5b8",
+      "filename": "rejestr_dec_wz_2026.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026",
+      "page_ids": [
+        "urs-wykazy-za-rok-2026"
+      ],
+      "local_path": "data/districts/ursus/raw/0f51405641.xlsx",
+      "sha256": "aa21c0b4f19b24669b501055356d52752ecc5c2e3110a50759d9670f76dcc1b3",
+      "size": 26075,
+      "downloaded_at": "2026-10-27T19:47:27Z",
+      "last_modified": "2026-10-09T12:17:56Z",
+      "history": []
+    },
+    {
+      "file_id": "9a68add1d0",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/171439469/rejestr_decyzji_lcp+2026.xlsx/9dc8d7a4-2718-47b3-b2db-86be38d047da?t=1791548276727",
+      "document_path": "/documents/49065/171439469/rejestr_decyzji_lcp+2026.xlsx/9dc8d7a4-2718-47b3-b2db-86be38d047da",
+      "filename": "rejestr_decyzji_lcp 2026.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2026",
+      "page_ids": [
+        "urs-wykazy-za-rok-2026"
+      ],
+      "local_path": "data/districts/ursus/raw/9a68add1d0.xlsx",
+      "sha256": "3232f1e0f859c3e6ff321bc9b4f5767accb9ba092a8c0bfb8bd28a3f17450e4e",
+      "size": 18886,
+      "downloaded_at": "2026-10-27T19:47:37Z",
+      "last_modified": "2026-10-09T12:17:56Z",
+      "history": []
+    },
+    {
+      "file_id": "c033a0c322",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/171439469/rejestr_wnioskow_lcp_2026.xlsx/0072314d-c326-1b2a-a8b1-a0c2fc1f39a3?t=1791548277776",
+      "document_path": "/documents/49065/171439469/rejestr_wnioskow_lcp_2026.xlsx/0072314d-c326-1b2a-a8b1-a0c2fc1f39a3",
+      "filename": "rejestr_wnioskow_lcp_2026.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2026",
+      "page_ids": [
+        "urs-wykazy-za-rok-2026"
+      ],
+      "local_path": "data/districts/ursus/raw/c033a0c322.xlsx",
+      "sha256": "be7a6edbdd34958539e97f0338f1b2d9a1e578cf257fb3d6f3c4ae22fa04d55e",
+      "size": 16347,
+      "downloaded_at": "2026-10-27T19:47:47Z",
+      "last_modified": "2026-10-09T12:17:57Z",
+      "history": []
+    },
+    {
+      "file_id": "775e248735",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/171439469/rejestr_wnioskow_o_wz_2026.xlsx/9d49fd28-7876-8587-f9b7-482dc981d5ac?t=1791548278472",
+      "document_path": "/documents/49065/171439469/rejestr_wnioskow_o_wz_2026.xlsx/9d49fd28-7876-8587-f9b7-482dc981d5ac",
+      "filename": "rejestr_wnioskow_o_wz_2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026",
+      "page_ids": [
+        "urs-wykazy-za-rok-2026"
+      ],
+      "local_path": "data/districts/ursus/raw/775e248735.xlsx",
+      "sha256": "691ddfc34fb247431a4a46ec2a9784e72f0678f3a76ba92e7cfd8c4a6fd4cc93",
+      "size": 23123,
+      "downloaded_at": "2026-10-27T19:47:57Z",
+      "last_modified": "2026-10-09T12:17:58Z",
+      "history": []
+    },
+    {
+      "file_id": "23e74b0ee2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/152364981/rejestr_dec_wz_2025.xlsx/cd563a68-fa40-9807-ebbc-dfd9866a362d?t=1768564605741",
+      "document_path": "/documents/49065/152364981/rejestr_dec_wz_2025.xlsx/cd563a68-fa40-9807-ebbc-dfd9866a362d",
+      "filename": "rejestr_dec_wz_2025.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2025",
+      "page_ids": [
+        "urs-wykazy-za-rok-2025"
+      ],
+      "local_path": "data/districts/ursus/raw/23e74b0ee2.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/49065/152364981/rejestr_dec_wz_2025.xlsx/cd563a68-fa40-9807-ebbc-dfd9866a362d?t=1768564605741"
+    },
+    {
+      "file_id": "4a5836a23a",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/152364981/rejestr_decyzji_lcp+2025.xlsx/7b066ba6-e74c-ce51-8e74-d560ba434554?t=1768564606071",
+      "document_path": "/documents/49065/152364981/rejestr_decyzji_lcp+2025.xlsx/7b066ba6-e74c-ce51-8e74-d560ba434554",
+      "filename": "rejestr_decyzji_lcp 2025.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2025",
+      "page_ids": [
+        "urs-wykazy-za-rok-2025"
+      ],
+      "local_path": "data/districts/ursus/raw/4a5836a23a.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/49065/152364981/rejestr_decyzji_lcp+2025.xlsx/7b066ba6-e74c-ce51-8e74-d560ba434554?t=1768564606071"
+    },
+    {
+      "file_id": "91899f14e0",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/152364981/rejestr_wnioskow_lcp_2025.xlsx/a8281959-a0d7-4b0e-b819-67bfc09f2073?t=1768564606618",
+      "document_path": "/documents/49065/152364981/rejestr_wnioskow_lcp_2025.xlsx/a8281959-a0d7-4b0e-b819-67bfc09f2073",
+      "filename": "rejestr_wnioskow_lcp_2025.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2025",
+      "page_ids": [
+        "urs-wykazy-za-rok-2025"
+      ],
+      "local_path": "data/districts/ursus/raw/91899f14e0.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/49065/152364981/rejestr_wnioskow_lcp_2025.xlsx/a8281959-a0d7-4b0e-b819-67bfc09f2073?t=1768564606618"
+    },
+    {
+      "file_id": "053e7804f9",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/152364981/rejestr_wnioskow_o_wz_2025.xlsx/fe629f84-e779-5519-5d0b-338cfb5974f7?t=1768564607170",
+      "document_path": "/documents/49065/152364981/rejestr_wnioskow_o_wz_2025.xlsx/fe629f84-e779-5519-5d0b-338cfb5974f7",
+      "filename": "rejestr_wnioskow_o_wz_2025.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2025",
+      "page_ids": [
+        "urs-wykazy-za-rok-2025"
+      ],
+      "local_path": "data/districts/ursus/raw/053e7804f9.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "eafaee4caa",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/125884472/rejestr_dec_wz_2024.xlsx/9d97f52c-e445-0f50-9ac7-06e515c4ab93?t=1735893720937",
+      "document_path": "/documents/49065/125884472/rejestr_dec_wz_2024.xlsx/9d97f52c-e445-0f50-9ac7-06e515c4ab93",
+      "filename": "rejestr_dec_wz_2024.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2024",
+      "page_ids": [
+        "urs-wykazy-za-rok-2024"
+      ],
+      "local_path": "data/districts/ursus/raw/eafaee4caa.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "1c5d1cfa98",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/125884472/rejestr_wnioskow_lcp_2024.xlsx/b7da15be-4948-9f01-c973-5f1ac7ae0c68?t=1735893730310",
+      "document_path": "/documents/49065/125884472/rejestr_wnioskow_lcp_2024.xlsx/b7da15be-4948-9f01-c973-5f1ac7ae0c68",
+      "filename": "rejestr_wnioskow_lcp_2024.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2024",
+      "page_ids": [
+        "urs-wykazy-za-rok-2024"
+      ],
+      "local_path": "data/districts/ursus/raw/1c5d1cfa98.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "79994962f8",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/125884472/rejestr_wnioskow_o_wz_2024.xlsx/29bcca59-2bac-5fbc-bf22-882cdf0a5f0f?t=1735893731973",
+      "document_path": "/documents/49065/125884472/rejestr_wnioskow_o_wz_2024.xlsx/29bcca59-2bac-5fbc-bf22-882cdf0a5f0f",
+      "filename": "rejestr_wnioskow_o_wz_2024.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2024",
+      "page_ids": [
+        "urs-wykazy-za-rok-2024"
+      ],
+      "local_path": "data/districts/ursus/raw/79994962f8.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "fdafa18186",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/95521768/rejestr_dec_wz_2023.xlsx/2c034133-1b1e-0a1b-7a57-c6d95bda8969?t=1704451373179",
+      "document_path": "/documents/49065/95521768/rejestr_dec_wz_2023.xlsx/2c034133-1b1e-0a1b-7a57-c6d95bda8969",
+      "filename": "rejestr_dec_wz_2023.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2023",
+      "page_ids": [
+        "urs-wykazy-za-rok-2023"
+      ],
+      "local_path": "data/districts/ursus/raw/fdafa18186.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "2a882dc940",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/95521768/rejestr_wnioskow_lcp_2023.xlsx/d37a3ab2-c214-5d03-aed1-3853c83da1c8?t=1704451374144",
+      "document_path": "/documents/49065/95521768/rejestr_wnioskow_lcp_2023.xlsx/d37a3ab2-c214-5d03-aed1-3853c83da1c8",
+      "filename": "rejestr_wnioskow_lcp_2023.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2023",
+      "page_ids": [
+        "urs-wykazy-za-rok-2023"
+      ],
+      "local_path": "data/districts/ursus/raw/2a882dc940.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6521eb5a77",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/95521768/rejestr_wnioskow_o_wz_2023.xlsx/b36c6c95-68e3-9c4f-e963-21474c7beb7d?t=1704451374785",
+      "document_path": "/documents/49065/95521768/rejestr_wnioskow_o_wz_2023.xlsx/b36c6c95-68e3-9c4f-e963-21474c7beb7d",
+      "filename": "rejestr_wnioskow_o_wz_2023.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2023",
+      "page_ids": [
+        "urs-wykazy-za-rok-2023"
+      ],
+      "local_path": "data/districts/ursus/raw/6521eb5a77.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "a8b1b865db",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/69766263/rejestr_dec_wz_2022.xlsx/01d2a800-f922-2a96-bea0-c8fe4c909b88?t=1674457649766",
+      "document_path": "/documents/49065/69766263/rejestr_dec_wz_2022.xlsx/01d2a800-f922-2a96-bea0-c8fe4c909b88",
+      "filename": "rejestr_dec_wz_2022.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2022",
+      "page_ids": [
+        "urs-wykazy-za-rok-2022"
+      ],
+      "local_path": "data/districts/ursus/raw/a8b1b865db.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "9d9c248a3f",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/69766263/rejestr_wnioskow_lcp_2022.xlsx/4a566921-517f-8063-2e78-09a64f64c312?t=1674457649518",
+      "document_path": "/documents/49065/69766263/rejestr_wnioskow_lcp_2022.xlsx/4a566921-517f-8063-2e78-09a64f64c312",
+      "filename": "rejestr_wnioskow_lcp_2022.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2022",
+      "page_ids": [
+        "urs-wykazy-za-rok-2022"
+      ],
+      "local_path": "data/districts/ursus/raw/9d9c248a3f.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "118948b77c",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/69251431/rejestr_wnioskow_o_wz_2022.xlsx/2b787d75-541c-ffc5-7ec8-9d18f549af23?t=1673610783300",
+      "document_path": "/documents/49065/69251431/rejestr_wnioskow_o_wz_2022.xlsx/2b787d75-541c-ffc5-7ec8-9d18f549af23",
+      "filename": "rejestr_wnioskow_o_wz_2022.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2022",
+      "page_ids": [
+        "urs-wykazy-za-rok-2022"
+      ],
+      "local_path": "data/districts/ursus/raw/118948b77c.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "27dcd60f91",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/23490229/rejestr_dec_wz_2021+%281%29.xlsx/bf1d6850-7396-a65e-def4-f161dff84b33?t=1646389127697",
+      "document_path": "/documents/49065/23490229/rejestr_dec_wz_2021+%281%29.xlsx/bf1d6850-7396-a65e-def4-f161dff84b33",
+      "filename": "rejestr_dec_wz_2021 (1).xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2021",
+      "page_ids": [
+        "urs-wykazy-za-rok-2021"
+      ],
+      "local_path": "data/districts/ursus/raw/27dcd60f91.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "9ee81cc88e",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/23490229/rejestr_wnioskow_lcp_2021+%281%29.xlsx/327d6893-edde-67cb-3ffd-8116f622636d?t=1646389128569",
+      "document_path": "/documents/49065/23490229/rejestr_wnioskow_lcp_2021+%281%29.xlsx/327d6893-edde-67cb-3ffd-8116f622636d",
+      "filename": "rejestr_wnioskow_lcp_2021 (1).xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2021",
+      "page_ids": [
+        "urs-wykazy-za-rok-2021"
+      ],
+      "local_path": "data/districts/ursus/raw/9ee81cc88e.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "70e83822da",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/23490229/rejestr_wnioskow_o_wz_2021.xlsx/9c92571e-8475-09b7-3402-f32110ddcc13?t=1639748649267",
+      "document_path": "/documents/49065/23490229/rejestr_wnioskow_o_wz_2021.xlsx/9c92571e-8475-09b7-3402-f32110ddcc13",
+      "filename": "rejestr_wnioskow_o_wz_2021.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2021",
+      "page_ids": [
+        "urs-wykazy-za-rok-2021"
+      ],
+      "local_path": "data/districts/ursus/raw/70e83822da.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "b44b34a64e",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/23490226/rejestr_dec_wz_2020.pdf/3a2e12ec-ab63-ce09-56af-839182b6755c?t=1634497793216",
+      "document_path": "/documents/49065/23490226/rejestr_dec_wz_2020.pdf/3a2e12ec-ab63-ce09-56af-839182b6755c",
+      "filename": "rejestr_dec_wz_2020.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2020",
+      "page_ids": [
+        "urs-wykazy-za-rok-2020"
+      ],
+      "local_path": "data/districts/ursus/raw/b44b34a64e.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "6fcbc4058d",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/23490226/rejestr_wnioskow_lcp_2020.pdf/28fcb701-d3d8-5c52-50cf-7bc4aff3ca4c?t=1634497793204",
+      "document_path": "/documents/49065/23490226/rejestr_wnioskow_lcp_2020.pdf/28fcb701-d3d8-5c52-50cf-7bc4aff3ca4c",
+      "filename": "rejestr_wnioskow_lcp_2020.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2020",
+      "page_ids": [
+        "urs-wykazy-za-rok-2020"
+      ],
+      "local_path": "data/districts/ursus/raw/6fcbc4058d.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "fb2d5bda82",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/49065/23490226/rejestr_wnioskow_o_wz_2020.pdf/1faedcf4-6ddf-6563-819d-7c8a65b97b62?t=1634497793189",
+      "document_path": "/documents/49065/23490226/rejestr_wnioskow_o_wz_2020.pdf/1faedcf4-6ddf-6563-819d-7c8a65b97b62",
+      "filename": "rejestr_wnioskow_o_wz_2020.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2020",
+      "page_ids": [
+        "urs-wykazy-za-rok-2020"
+      ],
+      "local_path": "data/districts/ursus/raw/fb2d5bda82.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    }
+  ],
+  "district": "ursus"
+}

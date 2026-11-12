@@ -1,0 +1,930 @@
+{
+  "generated_at": "2026-10-27T21:54:18Z",
+  "index_url": "https://wlochy.um.warszawa.pl/architektura",
+  "pages": [
+    {
+      "page_id": "wlo-inwestycje-celu-publicznego-decyzje",
+      "url": "https://wlochy.um.warszawa.pl/inwestycje-celu-publicznego-decyzje",
+      "title": "Decyzje w sprawie ustalenia lokalizacji inwestycji celu publicznego",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Rejestr decyzji CP I-IV 2026 r.",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "aa56a863da"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "Rejestr decyzji CP I-XII 2024 r.",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "c1662969aa"
+          ],
+          "period": "2024"
+        },
+        {
+          "text": "Rejestr decyzji CP I-XII 2023 r.",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "46fbf8d084"
+          ],
+          "period": "2023"
+        },
+        {
+          "text": "Rejestr decyzji CP I-XII 2022 r.",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "991da372cb"
+          ],
+          "period": "2022"
+        },
+        {
+          "text": "Rejestr decyzji CP I - XII 2021 r.",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "2bd7a7b97e"
+          ],
+          "period": "2021"
+        },
+        {
+          "text": "Rejestr decyzji CP IX-XII 2020",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "105b3212f5"
+          ],
+          "period": "2020"
+        },
+        {
+          "text": "REJESTR DECYZJI CP I-XII 2025",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "850d0c3fb2"
+          ],
+          "period": "2025"
+        },
+        {
+          "text": "Rejestr decyzji CP I-VIII 2020",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "811a022097"
+          ],
+          "period": "2026"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "page_id": "wlo-warunki-zabudowy-decyzje",
+      "url": "https://wlochy.um.warszawa.pl/warunki-zabudowy-decyzje",
+      "title": "Decyzje o warunkach zabudowy",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "REJESTR DECYZJI WZ VII 2026 r.",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "2ea5a8ee1e"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "REJESTR+DECYZJI+WZ+VI+2026+r.pdf",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "24b0ab7f23"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "REJESTR DECYZJI WZ 05 2026",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "0546aa08fd"
+          ],
+          "period": "2026-05"
+        },
+        {
+          "text": "REJESTR DECYZJI WZ - ODMOWY 05 2026",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "573099e15b"
+          ],
+          "period": "2026-05"
+        },
+        {
+          "text": "WZ - decyzje I-IV 2026 r.",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "811a022097"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "DECYZJE WZ ODMOWY I-IV 2026",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "2ada8ed5e7"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "REJESTR DECYZJI WZ I-XII 2025",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "17e08a521a"
+          ],
+          "period": "2025"
+        },
+        {
+          "text": "WZ ODMOWY - decyzje I-XII 2025 r.",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "39f87e9187"
+          ],
+          "period": "2025"
+        },
+        {
+          "text": "WZ - decyzje I-XII 2024 r.",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "2970c79c87"
+          ],
+          "period": "2024"
+        },
+        {
+          "text": "WZ - decyzje I-XII 2023 r.",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "0701087e61"
+          ],
+          "period": "2023"
+        },
+        {
+          "text": "WZ - decyzje I-XII 2022 r.",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "303d690f4e"
+          ],
+          "period": "2022"
+        },
+        {
+          "text": "WZ - decyzje I-XII 2021",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "60ed375036"
+          ],
+          "period": "2021"
+        },
+        {
+          "text": "WZ - decyzje IX-XII 2020",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "2237eac491"
+          ],
+          "period": "2020"
+        },
+        {
+          "text": "WZ - decyzje I-VIII 2020",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "79cefbdb20"
+          ],
+          "period": "2020"
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "before 2020": 10
+      }
+    },
+    {
+      "page_id": "wlo-warunki-zabudowy-wnioski",
+      "url": "https://wlochy.um.warszawa.pl/warunki-zabudowy-wnioski",
+      "title": "Informacje o wnioskach o wydanie warunków zabudowy",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ VI 2026 r.",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "a94e6656ce"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ 05 2026",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "4eb46cbd75"
+          ],
+          "period": "2026-05"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań WZ i CP I-IV 2026 r.",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "cf4d3ee91f"
+          ],
+          "period": "2026"
+        },
+        {
+          "text": "rejestr wszczętych postępowań CP i WZ I-XII 2025",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "b231ba4f99"
+          ],
+          "period": "2025"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań WZ i CP I-XII 2024 r.",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "ec4a923ecc"
+          ],
+          "period": "2024"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań WZ i CP I-XII 2023 r.",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "a3a5c3e383"
+          ],
+          "period": "2023"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań WZ i CP I-XII 2022 r.",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "8d4aa87ebf"
+          ],
+          "period": "2022"
+        },
+        {
+          "text": "Rejestr wszczętych postępowań WZ i CP I - XII 2021",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "28c4255f9c"
+          ],
+          "period": "2021"
+        },
+        {
+          "text": "Rejestr wniosków CP i WZ IX-XII 2020",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "ecb3e66efe"
+          ],
+          "period": "2020"
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "files": [
+    {
+      "file_id": "573099e15b",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+-+ODMOWY+05+2026+r.pdf/469bb059-cebd-4a89-3ce7-0bc5c162cce4?t=1781011520816",
+      "document_path": "/documents/45118/16484946/REJESTR+DECYZJI+WZ+-+ODMOWY+05+2026+r.pdf/469bb059-cebd-4a89-3ce7-0bc5c162cce4",
+      "filename": "REJESTR DECYZJI WZ - ODMOWY 05 2026 r.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2026-05",
+      "page_ids": [
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/573099e15b.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+-+ODMOWY+05+2026+r.pdf/469bb059-cebd-4a89-3ce7-0bc5c162cce4?t=1781011520816"
+    },
+    {
+      "file_id": "0546aa08fd",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+05+2026+r.pdf/9b1482f6-9c52-74e9-986d-a3c87889038e?t=1781010644977",
+      "document_path": "/documents/45118/16484946/REJESTR+DECYZJI+WZ+05+2026+r.pdf/9b1482f6-9c52-74e9-986d-a3c87889038e",
+      "filename": "REJESTR DECYZJI WZ 05 2026 r.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2026-05",
+      "page_ids": [
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/0546aa08fd.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+05+2026+r.pdf/9b1482f6-9c52-74e9-986d-a3c87889038e?t=1781010644977"
+    },
+    {
+      "file_id": "4eb46cbd75",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+05+2026+r.pdf/ae0d80ea-54dc-7b74-add4-6fda95197957?t=1783596359354",
+      "document_path": "/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+05+2026+r.pdf/ae0d80ea-54dc-7b74-add4-6fda95197957",
+      "filename": "REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ 05 2026 r.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2026-05",
+      "page_ids": [
+        "wlo-warunki-zabudowy-wnioski"
+      ],
+      "local_path": "data/districts/wlochy/raw/4eb46cbd75.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+05+2026+r.pdf/ae0d80ea-54dc-7b74-add4-6fda95197957?t=1783596359354"
+    },
+    {
+      "file_id": "aa56a863da",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16495906/REJESTR+DECYZJI+CP+I_IV+2026.pdf/4369aefb-e503-c42b-a7ed-c610ccc50972?t=1776935849713",
+      "document_path": "/documents/45118/16495906/REJESTR+DECYZJI+CP+I_IV+2026.pdf/4369aefb-e503-c42b-a7ed-c610ccc50972",
+      "filename": "REJESTR DECYZJI CP I_IV 2026.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2026",
+      "page_ids": [
+        "wlo-inwestycje-celu-publicznego-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/aa56a863da.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "2ada8ed5e7",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+-+ODMOWY+I-IV+2026+r.pdf/373f07bc-3ace-c641-68ad-9267d2cabbf7?t=1776943147652",
+      "document_path": "/documents/45118/16484946/REJESTR+DECYZJI+WZ+-+ODMOWY+I-IV+2026+r.pdf/373f07bc-3ace-c641-68ad-9267d2cabbf7",
+      "filename": "REJESTR DECYZJI WZ - ODMOWY I-IV 2026 r.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2026",
+      "page_ids": [
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/2ada8ed5e7.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "811a022097",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+I_IV+2026+r.pdf/57582e42-ce20-935e-9e7c-4282d6817261?t=1776937774442",
+      "document_path": "/documents/45118/16484946/REJESTR+DECYZJI+WZ+I_IV+2026+r.pdf/57582e42-ce20-935e-9e7c-4282d6817261",
+      "filename": "REJESTR DECYZJI WZ I_IV 2026 r.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2026",
+      "page_ids": [
+        "wlo-inwestycje-celu-publicznego-decyzje",
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/811a022097.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "24b0ab7f23",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+VI+2026+r.pdf/1387beef-d210-44b9-a6a9-81c032f501c6?t=1784009853716",
+      "document_path": "/documents/45118/16484946/REJESTR+DECYZJI+WZ+VI+2026+r.pdf/1387beef-d210-44b9-a6a9-81c032f501c6",
+      "filename": "REJESTR DECYZJI WZ VI 2026 r.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2026",
+      "page_ids": [
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/24b0ab7f23.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "2ea5a8ee1e",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+VII+2026+r.pdf/b8d1b161-4b1e-fea7-f72f-03c3ae1c0c6a?t=1787217958638",
+      "document_path": "/documents/45118/16484946/REJESTR+DECYZJI+WZ+VII+2026+r.pdf/b8d1b161-4b1e-fea7-f72f-03c3ae1c0c6a",
+      "filename": "REJESTR DECYZJI WZ VII 2026 r.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2026",
+      "page_ids": [
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/2ea5a8ee1e.pdf",
+      "sha256": "3656297b4b82a55e929721e52e8ff23ca3afe96e33db7db6b2337b1197439a80",
+      "size": 228012,
+      "downloaded_at": "2026-10-27T19:22:35Z",
+      "last_modified": "2026-08-20T09:25:58Z",
+      "history": []
+    },
+    {
+      "file_id": "cf4d3ee91f",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+I+IV+2026+r.pdf/f29d929c-a27f-3cbe-d024-1337b2dd3c35?t=1777012139094",
+      "document_path": "/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+I+IV+2026+r.pdf/f29d929c-a27f-3cbe-d024-1337b2dd3c35",
+      "filename": "REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ I IV 2026 r.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2026",
+      "page_ids": [
+        "wlo-warunki-zabudowy-wnioski"
+      ],
+      "local_path": "data/districts/wlochy/raw/cf4d3ee91f.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "a94e6656ce",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+VI+2026+r..pdf/7e627b82-aef2-9cfd-0700-cfd7569b4c03?t=1783595394271",
+      "document_path": "/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+VI+2026+r..pdf/7e627b82-aef2-9cfd-0700-cfd7569b4c03",
+      "filename": "REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ VI 2026 r..pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2026",
+      "page_ids": [
+        "wlo-warunki-zabudowy-wnioski"
+      ],
+      "local_path": "data/districts/wlochy/raw/a94e6656ce.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "850d0c3fb2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16495906/REJESTR+DECYZJI+CP+I-XII+2025.pdf/5202c611-00b1-bca0-3a92-25c61ec4b1e1?t=1767955236706",
+      "document_path": "/documents/45118/16495906/REJESTR+DECYZJI+CP+I-XII+2025.pdf/5202c611-00b1-bca0-3a92-25c61ec4b1e1",
+      "filename": "REJESTR DECYZJI CP I-XII 2025.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2025",
+      "page_ids": [
+        "wlo-inwestycje-celu-publicznego-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/850d0c3fb2.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "39f87e9187",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+-+ODMOWY+I-XII+2025+r.pdf/4c60c9f9-5739-412b-d70c-5941c39c9848?t=1767955283985",
+      "document_path": "/documents/45118/16484946/REJESTR+DECYZJI+WZ+-+ODMOWY+I-XII+2025+r.pdf/4c60c9f9-5739-412b-d70c-5941c39c9848",
+      "filename": "REJESTR DECYZJI WZ - ODMOWY I-XII 2025 r.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2025",
+      "page_ids": [
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/39f87e9187.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "17e08a521a",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+I-XII+2025+%281%29.pdf/58e4897d-9a33-77ad-3ea9-7bb8c201d8a2?t=1768825432438",
+      "document_path": "/documents/45118/16484946/REJESTR+DECYZJI+WZ+I-XII+2025+%281%29.pdf/58e4897d-9a33-77ad-3ea9-7bb8c201d8a2",
+      "filename": "REJESTR DECYZJI WZ I-XII 2025 (1).pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2025",
+      "page_ids": [
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/17e08a521a.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "b231ba4f99",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+I-VI+2025+r+%281%29.pdf/73a8b61a-0c83-c232-968b-fcc14bfac766?t=1777886312956",
+      "document_path": "/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+I-VI+2025+r+%281%29.pdf/73a8b61a-0c83-c232-968b-fcc14bfac766",
+      "filename": "REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ I-VI 2025 r (1).pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2025",
+      "page_ids": [
+        "wlo-warunki-zabudowy-wnioski"
+      ],
+      "local_path": "data/districts/wlochy/raw/b231ba4f99.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "c1662969aa",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16495906/REJESTR+DECYZJI+CP+I-XII+2024.pdf/fc9234f9-85be-f613-36f1-ab784879ea31?t=1744372107589",
+      "document_path": "/documents/45118/16495906/REJESTR+DECYZJI+CP+I-XII+2024.pdf/fc9234f9-85be-f613-36f1-ab784879ea31",
+      "filename": "REJESTR DECYZJI CP I-XII 2024.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2024",
+      "page_ids": [
+        "wlo-inwestycje-celu-publicznego-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/c1662969aa.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "2970c79c87",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+I-XII+2024.pdf/e6337fc5-bd36-f23f-9ad7-dbc1294b40c7?t=1744377003338",
+      "document_path": "/documents/45118/16484946/REJESTR+DECYZJI+WZ+I-XII+2024.pdf/e6337fc5-bd36-f23f-9ad7-dbc1294b40c7",
+      "filename": "REJESTR DECYZJI WZ I-XII 2024.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2024",
+      "page_ids": [
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/2970c79c87.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "ec4a923ecc",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+I-XII++++2024.pdf/2d188f22-f533-0b08-f530-5bbf933b194a?t=1749554732645",
+      "document_path": "/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+I-XII++++2024.pdf/2d188f22-f533-0b08-f530-5bbf933b194a",
+      "filename": "REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ I-XII    2024.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2024",
+      "page_ids": [
+        "wlo-warunki-zabudowy-wnioski"
+      ],
+      "local_path": "data/districts/wlochy/raw/ec4a923ecc.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "46fbf8d084",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16495906/REJESTR+DECYZJI+CP+I-XII+2023.pdf/b08fdad7-379d-5e13-78cd-c4080b0e25c3?t=1706277755369",
+      "document_path": "/documents/45118/16495906/REJESTR+DECYZJI+CP+I-XII+2023.pdf/b08fdad7-379d-5e13-78cd-c4080b0e25c3",
+      "filename": "REJESTR DECYZJI CP I-XII 2023.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2023",
+      "page_ids": [
+        "wlo-inwestycje-celu-publicznego-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/46fbf8d084.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "0701087e61",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+I-XII+++2023.pdf/5babaa70-63a1-b2ef-5e05-aceb5955b040?t=1722321805990",
+      "document_path": "/documents/45118/16484946/REJESTR+DECYZJI+WZ+I-XII+++2023.pdf/5babaa70-63a1-b2ef-5e05-aceb5955b040",
+      "filename": "REJESTR DECYZJI WZ I-XII   2023.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2023",
+      "page_ids": [
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/0701087e61.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "a3a5c3e383",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+WZ+i+CP+I-XII+2023_.pdf/fc00e23e-aeb7-d142-6b11-f79900127b07?t=1710752467330",
+      "document_path": "/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+WZ+i+CP+I-XII+2023_.pdf/fc00e23e-aeb7-d142-6b11-f79900127b07",
+      "filename": "REJESTR WSZCZĘTYCH POSTĘPOWAŃ WZ i CP I-XII 2023_.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2023",
+      "page_ids": [
+        "wlo-warunki-zabudowy-wnioski"
+      ],
+      "local_path": "data/districts/wlochy/raw/a3a5c3e383.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "991da372cb",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16495906/REJESTR+DECYZJI+CP+I-XII+2022.pdf/0bd6f34e-17e5-6c5b-5e86-d74064ec5535?t=1674055196639",
+      "document_path": "/documents/45118/16495906/REJESTR+DECYZJI+CP+I-XII+2022.pdf/0bd6f34e-17e5-6c5b-5e86-d74064ec5535",
+      "filename": "REJESTR DECYZJI CP I-XII 2022.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2022",
+      "page_ids": [
+        "wlo-inwestycje-celu-publicznego-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/991da372cb.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "303d690f4e",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+I-XII+2022.pdf/468cf384-9c6c-2c1f-6bf5-d0fbd84f9ca2?t=1675236423516",
+      "document_path": "/documents/45118/16484946/REJESTR+DECYZJI+WZ+I-XII+2022.pdf/468cf384-9c6c-2c1f-6bf5-d0fbd84f9ca2",
+      "filename": "REJESTR DECYZJI WZ I-XII 2022.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2022",
+      "page_ids": [
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/303d690f4e.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "8d4aa87ebf",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+WZ+i+CP+I-XII+2022.pdf/ffb3f86e-49a7-7194-f23d-157d4d69c8ed?t=1674054338340",
+      "document_path": "/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+WZ+i+CP+I-XII+2022.pdf/ffb3f86e-49a7-7194-f23d-157d4d69c8ed",
+      "filename": "REJESTR WSZCZĘTYCH POSTĘPOWAŃ WZ i CP I-XII 2022.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2022",
+      "page_ids": [
+        "wlo-warunki-zabudowy-wnioski"
+      ],
+      "local_path": "data/districts/wlochy/raw/8d4aa87ebf.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "2bd7a7b97e",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16495906/REJESTR+DECYZJI+CP++I+-+XII+2021+r..pdf/eabffe09-3be1-a913-df47-d5e44d718a00?t=1642596382244",
+      "document_path": "/documents/45118/16495906/REJESTR+DECYZJI+CP++I+-+XII+2021+r..pdf/eabffe09-3be1-a913-df47-d5e44d718a00",
+      "filename": "REJESTR DECYZJI CP  I - XII 2021 r..pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2021",
+      "page_ids": [
+        "wlo-inwestycje-celu-publicznego-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/2bd7a7b97e.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "60ed375036",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+I+-+XII+2021+r..pdf/0e1d7d95-886c-f403-725e-a382b993f0f1?t=1642597788248",
+      "document_path": "/documents/45118/16484946/REJESTR+DECYZJI+WZ+I+-+XII+2021+r..pdf/0e1d7d95-886c-f403-725e-a382b993f0f1",
+      "filename": "REJESTR DECYZJI WZ I - XII 2021 r..pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2021",
+      "page_ids": [
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/60ed375036.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "28c4255f9c",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+WZ+i+CP+I-XII+2021+r..pdf/f6f178ab-4aa9-8d35-0e96-ed5f4e8f4b62?t=1642756949754",
+      "document_path": "/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+WZ+i+CP+I-XII+2021+r..pdf/f6f178ab-4aa9-8d35-0e96-ed5f4e8f4b62",
+      "filename": "REJESTR WSZCZĘTYCH POSTĘPOWAŃ WZ i CP I-XII 2021 r..pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2021",
+      "page_ids": [
+        "wlo-warunki-zabudowy-wnioski"
+      ],
+      "local_path": "data/districts/wlochy/raw/28c4255f9c.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "105b3212f5",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16495906/rejestr_decyzji_cp_ix_-_xii._2020.pdf/0fd2e4ad-f1f9-efeb-f643-06cf46029ff6?t=1634498118546",
+      "document_path": "/documents/45118/16495906/rejestr_decyzji_cp_ix_-_xii._2020.pdf/0fd2e4ad-f1f9-efeb-f643-06cf46029ff6",
+      "filename": "rejestr_decyzji_cp_ix_-_xii._2020.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2020",
+      "page_ids": [
+        "wlo-inwestycje-celu-publicznego-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/105b3212f5.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "79cefbdb20",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/rejestr_decyzji_wz_I-VIII_2020.pdf/d0aafb50-5507-14f6-8439-1732a8754421?t=1634498118714",
+      "document_path": "/documents/45118/16484946/rejestr_decyzji_wz_I-VIII_2020.pdf/d0aafb50-5507-14f6-8439-1732a8754421",
+      "filename": "rejestr_decyzji_wz_I-VIII_2020.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2020",
+      "page_ids": [
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/79cefbdb20.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "2237eac491",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16484946/rejestr_decyzji_wz_IX_-XII_2020.pdf/422ffd02-4cdb-9c1f-d86e-555da340ecc7?t=1634498118707",
+      "document_path": "/documents/45118/16484946/rejestr_decyzji_wz_IX_-XII_2020.pdf/422ffd02-4cdb-9c1f-d86e-555da340ecc7",
+      "filename": "rejestr_decyzji_wz_IX_-XII_2020.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2020",
+      "page_ids": [
+        "wlo-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/wlochy/raw/2237eac491.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
+      "file_id": "ecb3e66efe",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/45118/16492610/rejestr_wnioskow_cp_i_wz_-_od_ix-_xii_2.pdf/1396e03e-b129-c828-5042-21f73c161e4d?t=1634498118620",
+      "document_path": "/documents/45118/16492610/rejestr_wnioskow_cp_i_wz_-_od_ix-_xii_2.pdf/1396e03e-b129-c828-5042-21f73c161e4d",
+      "filename": "rejestr_wnioskow_cp_i_wz_-_od_ix-_xii_2.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2020",
+      "page_ids": [
+        "wlo-warunki-zabudowy-wnioski"
+      ],
+      "local_path": "data/districts/wlochy/raw/ecb3e66efe.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    }
+  ],
+  "district": "wlochy"
+}

@@ -895,9 +895,14 @@ not on `main`.** Everything below is additive; a single-district build (`make da
   `period` guess); pages: `page_id` = `<code>-<slug>`; files no longer linked are kept with
   `removed_from_source_at`; the BAiPP pages/files of the legacy manifest are appended at build time.
 * **ZIP sources** – `parse.parse_source`: every `.xlsx` member is parsed; `sheet` = `"<member> › <sheet>"`.
-* Not committed in the draft (`.gitignore`): `data/districts/`, `data/cache/districts/`, `site/data/d/`,
-  `site/sources/d/`, `site/data/districts.json`, `site/data/warszawa/` – build them with `make city` (see the plan,
-  §4).
+* Committed (owner decision 2026-11-12, plan §7 #4): the inputs – `data/districts/<slug>/` (manifest, raw files,
+  RWDZ extracts, report) and `data/cache/districts/`. **Not committed: every build output** (`site/data/`,
+  `site/sources/`, `site/feed.xml`) – `make city-offline` renders them; CI does before each deploy.
+* **Build stamp** – `data/build.json` (Praga-Południe), `data/districts/<slug>/build.json`:
+  `{generated_at, data_sha256, files_with_records}`. `data_sha256` is the SHA-256 over the shard's data documents
+  (records/permits/sources JSON, parcel GeoJSON, cell buckets; path relative to the shard + bytes). A rebuild that
+  renders the same digest keeps `generated_at`; `files_with_records` replaces the previous `sources.json` in the
+  "lost file" check. test.yml/deploy.yml fail when a Linux rebuild does not reproduce the stamps.
 
 ### Phase 3: source cells out of the record files, the city index (2026-10-27)
 

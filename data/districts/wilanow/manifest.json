@@ -1,0 +1,137 @@
+{
+  "generated_at": "2026-10-27T16:09:52Z",
+  "index_url": "https://wilanow.um.warszawa.pl/-/nowe-procedury-zwiazane-z-jawnoscia-procesu-inwestycyjnego",
+  "pages": [
+    {
+      "page_id": "wil-informacje-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach",
+      "url": "https://wilanow.um.warszawa.pl/-/informacje-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach",
+      "title": "Informacje o wszczętych postępowaniach oraz wydanych decyzjach o warunkach zabudowy i lokalizacji inwestycji celu publicznego w Dzielnicy Wilanów",
+      "period": null,
+      "published_at": null,
+      "summary": null,
+      "index_page": null,
+      "source": "district",
+      "blocks": [
+        {
+          "text": "Informacja o wszczętych postępowaniach o warunkach zabudowy - zał. 1a (99 KB, XLSX)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "e1ffa4dcc3"
+          ],
+          "period": null
+        },
+        {
+          "text": "Informacja o wszczętych postępowaniach o ustaleniu lokalizacji inwestycji celu publicznego - zał. 1b (36 KB, XLSX)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "63d703b3d8"
+          ],
+          "period": null
+        },
+        {
+          "text": "Informacja o wydanych decyzjach w sprawie warunków zabudowy - zał. 2 (43 KB, XLSX)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "7142be8c44"
+          ],
+          "period": null
+        },
+        {
+          "text": "Informacja o wydanych decyzjach w sprawie ustalenia lokalizacji inwestycji celu publicznego o znaczeniu powiatowym i gminnym – zał. 3 (28 KB, XLSX)",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "e95544a78b"
+          ],
+          "period": null
+        }
+      ],
+      "warnings": [],
+      "skipped_attachments": {
+        "pdf": 8
+      }
+    }
+  ],
+  "files": [
+    {
+      "file_id": "e1ffa4dcc3",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44464/76883780/Za%C5%82.+1a+-+Rejestr+wniosk%C3%B3w+o+WZ.xlsx/32372f3f-be24-e956-e0fd-1aaa74344b7d?t=1791805350498",
+      "document_path": "/documents/44464/76883780/Za%C5%82.+1a+-+Rejestr+wniosk%C3%B3w+o+WZ.xlsx/32372f3f-be24-e956-e0fd-1aaa74344b7d",
+      "filename": "Zał. 1a - Rejestr wniosków o WZ.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": null,
+      "page_ids": [
+        "wil-informacje-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wilanow/raw/e1ffa4dcc3.xlsx",
+      "sha256": "78b16fa1f1f98f3c029b0478a4f84bb563cb3749eaa1a6cc1251590e3a0c01eb",
+      "size": 101244,
+      "downloaded_at": "2026-10-27T16:09:52Z",
+      "last_modified": "2026-10-12T11:42:30Z",
+      "history": []
+    },
+    {
+      "file_id": "63d703b3d8",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44464/76883780/Za%C5%82.+1b+-+Rejestr+wniosk%C3%B3w+o+LICP.xlsx/7c2c4170-b3c1-616f-57f2-4045e51946aa?t=1791805350956",
+      "document_path": "/documents/44464/76883780/Za%C5%82.+1b+-+Rejestr+wniosk%C3%B3w+o+LICP.xlsx/7c2c4170-b3c1-616f-57f2-4045e51946aa",
+      "filename": "Zał. 1b - Rejestr wniosków o LICP.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": null,
+      "page_ids": [
+        "wil-informacje-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wilanow/raw/63d703b3d8.xlsx",
+      "sha256": "77322dc6e3a2aed9477d8dbe96700e3ad002821fe3370c9388df74b6b886da85",
+      "size": 36460,
+      "downloaded_at": "2026-10-27T16:09:53Z",
+      "last_modified": "2026-10-12T11:42:30Z",
+      "history": []
+    },
+    {
+      "file_id": "7142be8c44",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44464/76883780/Za%C5%82.+2+-+Rejestr+decyzji+o+WZ.xlsx/421c3ab5-a396-6c55-0fca-79eadeb52dc9?t=1791805351473",
+      "document_path": "/documents/44464/76883780/Za%C5%82.+2+-+Rejestr+decyzji+o+WZ.xlsx/421c3ab5-a396-6c55-0fca-79eadeb52dc9",
+      "filename": "Zał. 2 - Rejestr decyzji o WZ.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": null,
+      "page_ids": [
+        "wil-informacje-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wilanow/raw/7142be8c44.xlsx",
+      "sha256": "d85b2105cb3fe571029799dcf443fefc1b48b32733e35f17c0f403e2a3bede41",
+      "size": 43409,
+      "downloaded_at": "2026-10-27T16:09:53Z",
+      "last_modified": "2026-10-12T11:42:31Z",
+      "history": []
+    },
+    {
+      "file_id": "e95544a78b",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44464/76883780/Za%C5%82.+3+-+Rejestr+decyzji+o+LICP.xlsx/b331675c-b43e-a12b-fd16-b287c69f3f1d?t=1791805351988",
+      "document_path": "/documents/44464/76883780/Za%C5%82.+3+-+Rejestr+decyzji+o+LICP.xlsx/b331675c-b43e-a12b-fd16-b287c69f3f1d",
+      "filename": "Zał. 3 - Rejestr decyzji o LICP.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": null,
+      "page_ids": [
+        "wil-informacje-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wilanow/raw/e95544a78b.xlsx",
+      "sha256": "a02c76b0bf80afb83f3710edba97cf19ffbe8def165a199a54fa9e51722e59ee",
+      "size": 27930,
+      "downloaded_at": "2026-10-27T16:09:54Z",
+      "last_modified": "2026-10-12T11:42:31Z",
+      "history": []
+    }
+  ],
+  "district": "wilanow"
+}

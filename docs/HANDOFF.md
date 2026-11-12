@@ -132,7 +132,8 @@ tests/                   test_*.py (pytest), fixtures/ (real stripped HTML, real
 | Command | What / when | Time |
 |---|---|---|
 | `make install` | `uv sync` + `npm install` (playwright-core only, no browser download) | 1 min |
-| `make data` | full live build: crawl both lists, GUNB conditional GET, parse, geocode new parcels, outputs | ~2 min warm; first run in a fresh clone downloads ~93 MB; a run with thousands of new parcels takes ~15–20 min at the polite rate |
+| `make city` / `make city-offline` | all 18 districts (Praga-Południe included): live refresh / rebuild from the committed inputs; `DISTRICTS=bemowo,wola` limits it; the site itself is never committed (CI renders it) | live: minutes; offline: < 1 min |
+| `make data` | Praga-Południe alone: crawl both lists, GUNB conditional GET, parse, geocode new parcels, outputs | ~2 min warm; first run in a fresh clone downloads ~93 MB; a run with thousands of new parcels takes ~15–20 min at the polite rate |
 | `make data-offline` | rebuild from manifest + committed extracts + caches, no network | seconds |
 | `uv run python -m pipeline.build --skip-crawl` | no crawl/GUNB, but geocodes new parcels online | – |
 | `make rwdz` | refresh only the GUNB extracts and print statistics; then `make data-offline` | ~1 min + download |

@@ -10,11 +10,9 @@ data/cache/rwdz/
 data/cache/egib/
 # ad-hoc QA screenshots (e2e screenshots go to tests/e2e/output/)
 shots/
-# city-wide draft (feature/all-districts): inputs and outputs of the other districts are not committed yet –
-# see docs/plans/all-districts.md §4 (build with `make city`)
-data/districts/
-data/cache/districts/
-site/data/d/
-site/data/warszawa/
-site/sources/d/
-site/data/districts.json
+# Build outputs are not committed (docs/plans/all-districts.md §7 #4): the inputs are (data/manifest.json,
+# data/raw, data/districts/<slug>/, the caches, the build stamps data/**/build.json), and CI rebuilds the site
+# with `make city-offline` before deploying. Locally: `make city` (crawl) or `make city-offline`.
+site/data/
+site/sources/
+site/feed.xml
