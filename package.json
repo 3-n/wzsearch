@@ -2,7 +2,7 @@
   "name": "wzsearch-site",
   "version": "0.1.0",
   "private": true,
-  "description": "Static, build-free browser for Praga-Południe planning decisions (WZ / ULICP / wszczęte postępowania) and building permits (GUNB RWDZ).",
+  "description": "Static, build-free browser for Warsaw planning decisions (all 18 districts) (WZ / ULICP / wszczęte postępowania) and building permits (GUNB RWDZ).",
   "type": "module",
   "license": "MIT",
   "engines": {

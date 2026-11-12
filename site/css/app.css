@@ -334,9 +334,12 @@ input[type="checkbox"] { accent-color: var(--accent); width: 16px; height: 16px;
 .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand__name { font-size: 16px; font-weight: 750; letter-spacing: -0.015em; }
 .brand__sub { font-size: 12px; color: var(--text-3); font-weight: 500; }
-/* District switcher (city-wide deployments, district.js): the district is the scope of the page, next to the brand */
-.topbar__district { flex: none; margin-left: -10px; }
-body[data-district] .brand__sub { display: none; }
+/* Phones only: an invisible copy of the switch's label under "wzSearch" (see the <768 rules) */
+.brand__here { display: none; }
+/* District switcher (city-wide deployments, district.js): the district is the scope of the page, next to the brand
+   ("wzSearch Warszawa" + "Wola ▾") */
+.brandbox { display: flex; align-items: center; gap: 14px; flex: none; }
+.topbar__district { flex: none; }
 .district-switch {
   display: inline-flex; align-items: center; gap: 6px; height: 34px; max-width: 30vw; padding: 0 10px 0 8px;
   border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text);
@@ -375,7 +378,7 @@ body[data-district] .brand__sub { display: none; }
 .topnav a {
   display: inline-flex; align-items: center; height: 34px; padding: 0 12px;
   border-radius: var(--r); text-decoration: none; color: var(--text-2);
-  font-size: 14px; font-weight: 550;
+  font-size: 14px; font-weight: 550; white-space: nowrap;
 }
 .topnav a:hover { color: var(--text); background: var(--surface-sunken); }
 .topnav a[aria-current="page"] { color: var(--text); background: var(--surface); box-shadow: inset 0 0 0 1px var(--border), var(--shadow-1); }
@@ -1503,11 +1506,21 @@ details.src-year:not([open]) { padding-bottom: 6px; border-bottom: 1px solid var
   .topnav .long { display: none; }
   .topnav .short { display: inline; }
   .topbar__note { display: none; }
-  /* Phones: the district name stays under the brand (as in a single-district site); the switch is an icon button */
-  body[data-district] .brand__sub { display: block; }
-  .topbar__district { margin-left: -4px; flex: none; }
-  .district-switch { width: 34px; height: 32px; padding: 0; justify-content: center; gap: 0; }
-  .district-switch__name, .district-switch__caret { display: none; }
+  /* Phones (city-wide site): the switch is the second line under "wzSearch" – "Wola ▾" in place of "Warszawa". The
+     brand link spans both grid rows; .brand__here (an invisible copy of the label) keeps the line's width, and the
+     button sits on top of it in row 2, its tap area enlarged by ::before. */
+  body[data-district] .brandbox { display: grid; grid-template-columns: 36px auto; grid-template-rows: auto auto; gap: 0; }
+  body[data-district] .brand { grid-area: 1 / 1 / 3 / 3; }
+  body[data-district] .brand__sub { display: none; }
+  body[data-district] .brand__here { display: block; visibility: hidden; font-size: 11.5px; font-weight: 600; }
+  body[data-district] .topbar__district { grid-area: 2 / 2 / 3 / 3; align-self: end; justify-self: start; z-index: 1; }
+  .district-switch {
+    position: relative; height: auto; max-width: none; padding: 0; gap: 3px; border: 0; border-radius: 4px;
+    background: none; box-shadow: none; color: var(--text-2); font-size: 11.5px; font-weight: 600; line-height: 1.1;
+  }
+  .district-switch::before { content: ''; position: absolute; inset: -8px -6px -10px; }
+  .district-switch__icon { display: none; }
+  .district-switch__caret { font-size: 9px; }
   .district-dialog { width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; margin: 0; border: 0; border-radius: 0; }
   .district-list { grid-template-columns: 1fr; }
   .explore { display: block; height: auto; }
@@ -1634,7 +1647,16 @@ details.src-year:not([open]) { padding-bottom: 6px; border-bottom: 1px solid var
 }
 @media (max-width: 389.98px) {
   .topnav a { padding: 0 7px; font-size: 13px; }
-  .brand__name, .brand__sub, body[data-district] .brand__sub { display: none; }
+  body:not([data-district]) .brand__name, .brand__sub { display: none; }
+}
+@media (max-width: 349.98px) {
+  /* city-wide: logo + "Praga-/Południe ▾" (the name may take two lines) */
+  body[data-district] .brand__text { display: none; }
+  body[data-district] .brandbox { display: flex; gap: 8px; }
+  body[data-district] .topbar__district { align-self: center; }
+  .district-switch { display: inline-block; max-width: 84px; font-size: 12.5px; line-height: 1.15; text-align: left; }
+  .district-switch__name { white-space: normal; overflow-wrap: anywhere; }
+  .district-switch__caret { margin-left: 3px; }
 }
 /* Below 320 CSS px (e.g. 150 % zoom on a phone): nothing may push the page sideways. */
 @media (max-width: 319.98px) {

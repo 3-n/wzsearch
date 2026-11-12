@@ -2,6 +2,8 @@
  * Render the Open Graph preview image site/img/og.png (1200×630) from the current data:
  * district + neighbourhood outlines (site/data/areas.geojson), every located building permit / notification
  * (permits.json, when present) as a small faint triangle and every located planning record on top.
+ * A city-wide build (site/data/warszawa/) draws the 18 district outlines and every district's located planning
+ * records instead (no permits: 43k triangles would bury them).
  * Uses the system Google Chrome via playwright-core.   Usage: npm run og
  */
 import { existsSync, readFileSync } from 'node:fs';
@@ -10,10 +12,12 @@ import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright-core';
 
 const ROOT = resolve(fileURLToPath(new URL('../..', import.meta.url)));
-const rec = JSON.parse(readFileSync(`${ROOT}/site/data/records.json`, 'utf8'));
-const areas = JSON.parse(readFileSync(`${ROOT}/site/data/areas.geojson`, 'utf8'));
+const CITY = existsSync(`${ROOT}/site/data/warszawa/records.json`) && existsSync(`${ROOT}/site/data/warszawa/areas.geojson`);
+const base = CITY ? `${ROOT}/site/data/warszawa` : `${ROOT}/site/data`;
+const rec = JSON.parse(readFileSync(`${base}/records.json`, 'utf8'));
+const areas = JSON.parse(readFileSync(`${base}/areas.geojson`, 'utf8'));
 const permitsPath = `${ROOT}/site/data/permits.json`;
-const permits = existsSync(permitsPath) ? (JSON.parse(readFileSync(permitsPath, 'utf8')).records || []) : [];
+const permits = !CITY && existsSync(permitsPath) ? (JSON.parse(readFileSync(permitsPath, 'utf8')).records || []) : [];
 const W = 460, H = 440;
 const all = [];
 for (const f of areas.features) for (const ring of f.geometry.type === 'Polygon' ? f.geometry.coordinates : f.geometry.coordinates.flat()) all.push(...ring);
@@ -26,12 +30,17 @@ const P = ([x, y]) => [ox + (x - minX) * kx * s, oy + (maxY - y) * s];
 const path = (rings) => rings.map((r) => 'M' + r.map((p) => P(p).map((v) => v.toFixed(1)).join(',')).join('L') + 'Z').join('');
 let svg = '';
 const ringsOf = (f) => (f.geometry.type === 'Polygon' ? f.geometry.coordinates : f.geometry.coordinates.flat());
-const district = areas.features.find((f) => f.properties.slug === '_district');
-svg += `<path d="${path(ringsOf(district))}" fill="#ffffff"/>`;
-for (const f of areas.features) {
-  if (f.properties.slug !== '_district') svg += `<path d="${path(ringsOf(f))}" fill="none" stroke="#d6d0c4" stroke-width="1.2" stroke-dasharray="4 4"/>`;
+if (CITY) {
+  // every district white with a thin outline; the city's edge is where they end
+  for (const f of areas.features) svg += `<path d="${path(ringsOf(f))}" fill="#ffffff" stroke="#c9c2b4" stroke-width="1" stroke-linejoin="round"/>`;
+} else {
+  const district = areas.features.find((f) => f.properties.slug === '_district');
+  svg += `<path d="${path(ringsOf(district))}" fill="#ffffff"/>`;
+  for (const f of areas.features) {
+    if (f.properties.slug !== '_district') svg += `<path d="${path(ringsOf(f))}" fill="none" stroke="#d6d0c4" stroke-width="1.2" stroke-dasharray="4 4"/>`;
+  }
+  svg += `<path d="${path(ringsOf(district))}" fill="none" stroke="#1b1d22" stroke-width="2.5" stroke-linejoin="round"/>`;
 }
-svg += `<path d="${path(ringsOf(district))}" fill="none" stroke="#1b1d22" stroke-width="2.5" stroke-linejoin="round"/>`;
 const col = { wz: '#4f46e5', cp: '#0d9488', ws: '#d97706', pb: '#86198f', zg: '#116611' };
 // Permits first, small and faint: they show where building happens without hiding the planning records.
 for (const r of permits) {
@@ -45,6 +54,7 @@ for (const r of rec.records) {
   if (r.geo?.lat == null) continue;
   const [x, y] = P([r.geo.lon, r.geo.lat]);
   const c = col[r.kind] || '#6b7280';
+  if (CITY) { svg += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="1.6" fill="${c}" fill-opacity="0.7"/>`; continue; }
   if (r.kind === 'cp') svg += `<rect x="${(x - 4).toFixed(1)}" y="${(y - 4).toFixed(1)}" width="8" height="8" rx="1.5" transform="rotate(45 ${x.toFixed(1)} ${y.toFixed(1)})" fill="${c}" stroke="#fff" stroke-width="1.5"/>`;
   else if (r.kind === 'ws') svg += `<rect x="${(x - 4).toFixed(1)}" y="${(y - 4).toFixed(1)}" width="8" height="8" rx="1.5" fill="${c}" stroke="#fff" stroke-width="1.5"/>`;
   else svg += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4.5" fill="${c}" stroke="#fff" stroke-width="1.5"/>`;
@@ -53,7 +63,9 @@ const n = rec.records.length;
 const m = permits.length;
 /** Polish plural: [one, few (2–4, not 12–14), many]. */
 const pl = (k, [one, few, many]) => (k === 1 ? one : k % 10 >= 2 && k % 10 <= 4 && !(k % 100 >= 12 && k % 100 <= 14) ? few : many);
-const lead = m
+const lead = CITY
+  ? `${n.toLocaleString('pl-PL')} decyzji i wszczęć (WZ, cel publiczny) z 18\u00a0dzielnic oraz pozwolenia na budowę z rejestru GUNB – z mapą, filtrami i linkiem do źródła.`
+  : m
   ? `${n} ${pl(n, ['decyzja', 'decyzje', 'decyzji'])} i ${pl(n, ['wszczęcie', 'wszczęcia', 'wszczęć'])} (WZ, cel publiczny) oraz ${m} ${pl(m, ['pozwolenie', 'pozwolenia', 'pozwoleń'])} na budowę i ${pl(m, ['zgłoszenie', 'zgłoszenia', 'zgłoszeń'])} – z mapą, filtrami i linkiem do źródła.`
   : `${n} ${pl(n, ['wpis', 'wpisy', 'wpisów'])}: decyzje o warunkach zabudowy, lokalizacje celu publicznego i wszczęte postępowania – z mapą, filtrami i linkiem do pliku źródłowego.`;
 const html = `<!doctype html><html lang="pl"><head><meta charset="utf-8"><style>
@@ -69,8 +81,8 @@ p{margin-top:24px;font-size:23px;line-height:1.4;color:#454a54;max-width:560px}
 .card{background:#efece5;border-radius:28px;padding:30px;box-shadow:inset 0 0 0 1px #e4dfd5}
 .pill{position:absolute;right:76px;top:58px;background:#fff;border:1px solid #e4dfd5;border-radius:999px;padding:8px 16px;font-size:16px;font-weight:600;color:#454a54}
 </style></head><body>
-<div class="l"><div class="brand"><svg viewBox="0 0 32 32" width="52" height="52"><rect width="32" height="32" rx="8" fill="#1b1d22"/><path d="M8 8h7v7H8zM17 8h7v7h-7zM8 17h7v7H8z" fill="none" stroke="#f6f4ef" stroke-width="1.7"/><rect x="17" y="17" width="7" height="7" rx="1.2" fill="#e0457b"/></svg><div>wzSearch<small>Praga-Południe · Warszawa · serwis nieoficjalny</small></div></div>
-<h1>Co się planuje na Pradze&#8209;Południe?</h1>
+<div class="l"><div class="brand"><svg viewBox="0 0 32 32" width="52" height="52"><rect width="32" height="32" rx="8" fill="#1b1d22"/><path d="M8 8h7v7H8zM17 8h7v7h-7zM8 17h7v7H8z" fill="none" stroke="#f6f4ef" stroke-width="1.7"/><rect x="17" y="17" width="7" height="7" rx="1.2" fill="#e0457b"/></svg><div>wzSearch<small>${CITY ? 'Warszawa · 18 dzielnic' : 'Praga-Południe · Warszawa'} · serwis nieoficjalny</small></div></div>
+<h1>${CITY ? 'Co się planuje w&nbsp;Warszawie?' : 'Co się planuje na Pradze&#8209;Południe?'}</h1>
 <p>${lead}</p>
 <div class="foot"><span class="k"><span class="d"></span>WZ</span><span class="k"><span class="c"></span>Cel publiczny</span><span class="k"><span class="s"></span>Wszczęcie</span>${m ? '<span class="k"><span class="t"></span>Pozwolenie</span>' : ''}</div></div>
 <div class="r"><div class="card"><svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${svg}</svg></div></div>
@@ -80,4 +92,4 @@ const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, dev
 await page.setContent(html);
 await page.screenshot({ path: `${ROOT}/site/img/og.png` });
 await browser.close();
-console.log('ok', n, m);
+console.log('ok', CITY ? 'city' : 'district', n, m);

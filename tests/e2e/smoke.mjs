@@ -414,7 +414,7 @@ async function desktopSuite(scheme) {
   });
 
   await check('about view: glossary, downloads probed, unofficial disclaimer', async () => {
-    await page.getByRole('navigation', { name: 'Główna nawigacja' }).getByRole('link', { name: 'O projekcie' }).click();
+    await page.getByRole('navigation', { name: 'Główna nawigacja' }).getByRole('link', { name: /^(O projekcie|Info)$/ }).click();   // "Info" on phones
     await page.waitForSelector('.page--about h1');
     assert(await page.locator('.glossary__item').count() >= 3, 'glossary missing');
     await page.waitForFunction(() => !document.querySelector('.download.is-checking'));

@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>wzSearch – decyzje WZ, celu publicznego i pozwolenia na budowę, Praga-Południe</title>
-  <meta name="description" content="Nieoficjalna wyszukiwarka decyzji o warunkach zabudowy, decyzji o lokalizacji inwestycji celu publicznego, wszczętych postępowań i pozwoleń na budowę z Pragi-Południe (Warszawa). Filtry, mapa, eksport CSV i link do źródła przy każdym wpisie.">
+  <title>wzSearch – decyzje WZ, celu publicznego i pozwolenia na budowę, Warszawa</title>
+  <meta name="description" content="Nieoficjalna wyszukiwarka decyzji o warunkach zabudowy, decyzji o lokalizacji inwestycji celu publicznego, wszczętych postępowań i pozwoleń na budowę ze wszystkich dzielnic Warszawy. Filtry, mapa, eksport CSV i link do źródła przy każdym wpisie.">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231b1d22'/%3E%3Cpath d='M8 8h7v7H8zM17 8h7v7h-7zM8 17h7v7H8z' fill='none' stroke='%23f6f4ef' stroke-width='1.7'/%3E%3Crect x='17' y='17' width='7' height='7' rx='1.2' fill='%23e0457b'/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="wzSearch">
-  <meta property="og:title" content="wzSearch – co się planuje na Pradze-Południe?">
-  <meta property="og:description" content="Wszystkie decyzje o warunkach zabudowy, lokalizacji celu publicznego, wszczęte postępowania i pozwolenia na budowę z Pragi-Południe – z wyszukiwarką, mapą i linkiem do źródła. Serwis nieoficjalny.">
+  <meta property="og:title" content="wzSearch – co się planuje w Warszawie?">
+  <meta property="og:description" content="Wszystkie decyzje o warunkach zabudowy, lokalizacji celu publicznego, wszczęte postępowania i pozwolenia na budowę z 18 dzielnic Warszawy – z wyszukiwarką, mapą i linkiem do źródła. Serwis nieoficjalny.">
   <meta property="og:image" content="img/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="wzSearch – mapa decyzji planistycznych i pozwoleń na budowę Pragi-Południe">
+  <meta property="og:image:alt" content="wzSearch – mapa decyzji planistycznych i pozwoleń na budowę w Warszawie">
   <meta property="og:locale" content="pl_PL">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="alternate" type="application/atom+xml" title="wzSearch – nowe wpisy (Praga-Południe)" href="feed.xml">
@@ -114,21 +114,23 @@
   </script>
   <a class="skip-link" href="#main">Przejdź do treści</a>
   <header class="topbar">
-    <a class="brand" href="#/" aria-label="wzSearch Praga-Południe – strona główna">
+    <div class="brandbox">
+    <a class="brand" href="#/" aria-label="wzSearch Warszawa – strona główna">
       <svg class="brand__logo" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false">
         <rect width="32" height="32" rx="8" class="brand__bg"/>
         <path d="M8 8h7v7H8zM17 8h7v7h-7zM8 17h7v7H8z" fill="none" class="brand__fg" stroke-width="1.7"/>
         <rect x="17" y="17" width="7" height="7" rx="1.2" class="brand__accent"/>
       </svg>
-      <span class="brand__text"><span class="brand__name">wzSearch</span> <span class="brand__sub">Praga-Południe</span></span>
+      <span class="brand__text"><span class="brand__name">wzSearch</span> <span class="brand__sub">Warszawa</span><span class="brand__here" aria-hidden="true"></span></span>
     </a>
     <div class="topbar__district" id="district-switch" hidden></div>
+    </div>
     <nav class="topnav" aria-label="Główna nawigacja">
       <a href="#/" data-nav="explore" aria-current="page"><span>Przeglądaj</span></a>
       <a href="#/zrodla" data-nav="sources"><span class="long">Źródła danych</span><span class="short">Źródła</span></a>
-      <a href="#/o-projekcie" data-nav="about"><span>O projekcie</span></a>
+      <a href="#/o-projekcie" data-nav="about"><span class="long">O projekcie</span><span class="short">Info</span></a>
     </nav>
-    <p class="topbar__note" title="Serwis nieoficjalny – dane z publikacji Urzędu Dzielnicy Praga-Południe, Urzędu m.st. Warszawy i GUNB">
+    <p class="topbar__note" title="Serwis nieoficjalny – dane z publikacji urzędów dzielnic, Urzędu m.st. Warszawy i GUNB">
       <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.01"/></svg>
       <span class="topbar__note-long">Serwis nieoficjalny – dane z publikacji urzędów i rejestru GUNB</span>
       <span class="topbar__note-short">Serwis nieoficjalny</span>
@@ -169,7 +171,7 @@
     <section id="view-about" class="view view--page" aria-label="O projekcie" hidden></section>
   </main>
   <noscript>
-    <div class="page"><h1 class="page__title">Włącz JavaScript</h1><p class="lead">Wyszukiwarka działa w przeglądarce i wymaga JavaScriptu. Oryginalne pliki znajdziesz na <a href="https://pragapld.um.warszawa.pl/informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych">stronie Urzędu Dzielnicy Praga-Południe</a>.</p></div>
+    <div class="page"><h1 class="page__title">Włącz JavaScript</h1><p class="lead">Wyszukiwarka działa w przeglądarce i wymaga JavaScriptu. Oryginalne pliki publikują urzędy dzielnic, np. <a href="https://pragapld.um.warszawa.pl/informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych">Urząd Dzielnicy Praga-Południe</a>.</p></div>
   </noscript>
   <script defer src="vendor/leaflet/leaflet.js"></script>
   <script defer src="vendor/markercluster/leaflet.markercluster.js"></script>

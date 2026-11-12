@@ -438,11 +438,15 @@ async function chooseDistrict() {
   });
 }
 
-/** Header, title and feed link of the current district (the static HTML names Praga-Południe). */
+/** Header, title and feed link of the current district. The brand is "wzSearch Warszawa" on a city-wide site (the
+ * district is in the switcher) and "wzSearch <district>" on a single-district one. */
 function renderDistrictChrome() {
   const d = currentDistrict();
-  document.querySelector('.brand__sub')?.replaceChildren(d.name);
-  document.querySelector('.brand')?.setAttribute('aria-label', `wzSearch ${d.name} – strona główna`);
+  const brand = isCity() ? 'Warszawa' : d.name;
+  document.querySelector('.brand__sub')?.replaceChildren(brand);
+  // phones show the switch under "wzSearch"; this invisible copy of its label keeps that line's width (app.css)
+  document.querySelector('.brand__here')?.replaceChildren(isCity() ? `${d.name} ▾` : '');
+  document.querySelector('.brand')?.setAttribute('aria-label', `wzSearch ${brand} – strona główna`);
   document.title = baseTitle();
   const feed = document.querySelector('link[rel="alternate"][type="application/atom+xml"]');
   if (feed && isCity() && !feedPath()) feed.remove();   // the city has no feed yet

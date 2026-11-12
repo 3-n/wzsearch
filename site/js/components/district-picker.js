@@ -2,8 +2,7 @@
  * District switcher (docs/plans/all-districts.md §1.1): the district is the scope of the whole page, not one more
  * facet. A button next to the brand names the current district and opens a native <dialog> (focus handling and
  * Escape come with it; on phones it is a full-screen sheet) listing the 18 districts and, at the bottom, "Cała
- * Warszawa" (the planning records of every district – no permits; plan §1.3). Picking one remembers it and
- * reloads the page on the same view with `dz=<slug>` (filters that only make sense inside one district – street,
+ * Warszawa" (the planning records of every district – no permits; plan §1.3). Picking one reloads the page on the same view with `dz=<slug>` (filters that only make sense inside one district – street,
  * neighbourhood, map area, "near me", file – are dropped).
  */
 import { h } from '../dom.js';
