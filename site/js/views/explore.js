@@ -64,9 +64,10 @@ const SORT_OPTIONS = [
  *   index: object, getState: () => object,
  *   navigate: (patch: object, opts?: object) => void,
  *   openRecord: (id: string) => void,
- *   permits: {state: () => string, retry: () => void},
+ *   permits: {state: () => string, retry: () => void, offer?: object|null},
  * }} ctx
- *   permits.state(): 'idle' | 'loading' | 'loaded' | 'error' of the lazily loaded permits layer (main.js)
+ *   permits.state(): 'idle' | 'loading' | 'loaded' | 'error' of the lazily loaded permits layer (main.js);
+ *   permits.offer: "Cała Warszawa" only – {sizeBytes, blocked (phones), pickDistrict} (filters-panel.js)
  */
 export function createExplore(section, ctx) {
   const { index } = ctx;
@@ -126,6 +127,7 @@ export function createExplore(section, ctx) {
     onShowResults: () => closeDrawer({ toResults: true }),
     onPickCenter: () => pickCenter(),
     onRetryPermits: () => ctx.permits.retry(),
+    permitsOffer: ctx.permits.offer || null,
   });
   // A named region; role=dialog while it is the drawer/sheet (<aside> may not take that role).
   const filtersPane = h('div', { class: 'pane pane--filters', id: 'filters', role: 'region', 'aria-labelledby': 'filters-title' }, panel.el);
@@ -719,7 +721,7 @@ export function createExplore(section, ctx) {
     const zg = missing.includes('zg') ? optInCount('zg') : 0;
     // With no results the empty state offers the same switch among its suggestions; a failed register: no offer.
     const show = !promoHidden && covers && (pb > 0 || zg > 0) && !permitsPending() && results.length > 0
-      && ctx.permits.state() !== 'error';
+      && ctx.permits.state() !== 'error' && ctx.permits.state() !== 'unavailable';
     promoEl.hidden = !show;
     if (!show) return;
     // Before loading only register totals are known: next to a search they are not shown as if they matched.

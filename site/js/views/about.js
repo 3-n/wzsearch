@@ -168,7 +168,7 @@ export function renderAbout(host, index) {
     h('header', { class: 'page__head' },
       h('p', { class: 'eyebrow' }, 'O projekcie'),
       h('h1', { class: 'page__title', tabindex: '-1' }, `Co się planuje ${D().locative.replace(/-/g, '\u2011')}?`),
-      h('p', { class: 'lead' }, `wzSearch zbiera w jednym miejscu wszystkie decyzje o warunkach zabudowy, decyzje o lokalizacji inwestycji celu publicznego i informacje o wszczętych postępowaniach z ${D().genitive} – z zestawień ${isCityMode() ? 'urzędów dzielnic' : 'Urzędu Dzielnicy'} i z ogólnomiejskich zestawień Biura Architektury – a na życzenie także pozwolenia na budowę i zgłoszenia z rejestru GUNB${isCityMode() ? ' (w widokach dzielnic)' : ''}. `,
+      h('p', { class: 'lead' }, `wzSearch zbiera w jednym miejscu wszystkie decyzje o warunkach zabudowy, decyzje o lokalizacji inwestycji celu publicznego i informacje o wszczętych postępowaniach z ${D().genitive} – z zestawień ${isCityMode() ? 'urzędów dzielnic' : 'Urzędu Dzielnicy'} i z ogólnomiejskich zestawień Biura Architektury – a na życzenie także pozwolenia na budowę i zgłoszenia z rejestru GUNB${isCityMode() ? ' (dla całej Warszawy – na komputerze; na telefonie w widokach dzielnic)' : ''}. `,
         'Możesz je przeszukiwać, filtrować, oglądać na mapie i pobierać – a przy każdym wpisie jest link do oryginalnego pliku.'),
       h('p', { class: 'notice notice--unofficial' }, icon('info', { size: 18 }),
         h('span', null, h('strong', null, `${unofficial(D())}. `), 'Projekt obywatelski, niezwiązany z Urzędem m.st. Warszawy. Wiążące są wyłącznie dokumenty urzędowe – ',

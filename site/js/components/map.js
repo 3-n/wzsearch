@@ -171,7 +171,10 @@ export function createMap(el, cfg) {
     spiderfyOnMaxZoom: false,
     zoomToBoundsOnClick: false,
     maxClusterRadius: (z) => (z >= 16 ? 28 : 44),
+    // markers are added in slices of ≤ 60 ms (the plugin's default, 200 ms, made one long task out of the 43k
+    // permits of "Cała Warszawa")
     chunkedLoading: true,
+    chunkInterval: 60,
     animate: !prefersReducedMotion(),
     iconCreateFunction(c) {
       const kids = c.getAllChildMarkers();

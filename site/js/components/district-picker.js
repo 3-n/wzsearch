@@ -2,7 +2,7 @@
  * District switcher (docs/plans/all-districts.md §1.1): the district is the scope of the whole page, not one more
  * facet. A button next to the brand names the current district and opens a native <dialog> (focus handling and
  * Escape come with it; on phones it is a full-screen sheet) listing the 18 districts and, at the bottom, "Cała
- * Warszawa" (the planning records of every district – no permits; plan §1.3). Picking one reloads the page on the same view with `dz=<slug>` (filters that only make sense inside one district – street,
+ * Warszawa" (the planning records of every district; its permits on request, desktop only – plan §7 #3). Picking one reloads the page on the same view with `dz=<slug>` (filters that only make sense inside one district – street,
  * neighbourhood, map area, "near me", file – are dropped).
  */
 import { h } from '../dom.js';
@@ -53,7 +53,7 @@ export function mountDistrictPicker(slot, { hrefFor, city = null }) {
       },
       h('span', { class: 'district-list__name' }, city.name),
       h('span', { class: 'district-list__meta' }, planning ? plural(planning, PLANNING) : ''),
-      h('span', { class: 'district-list__note' }, 'Wszystkie dzielnice naraz – bez pozwoleń na budowę; wpis otwiera się w swojej dzielnicy'))));
+      h('span', { class: 'district-list__note' }, 'Wszystkie dzielnice naraz – pozwolenia na budowę na życzenie (na komputerze); wpis otwiera się w swojej dzielnicy'))));
   }
 
   const titleId = 'district-dialog-title';

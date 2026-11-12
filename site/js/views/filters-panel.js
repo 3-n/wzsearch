@@ -6,7 +6,7 @@
  */
 import { h, replaceChildren } from '../dom.js';
 import { icon, kindGlyph } from '../icons.js';
-import { formatNumber, formatMonth, formatMonthShort, formatDistance, monthRange, formatMonthRange, plural, WPIS } from '../format.js';
+import { formatBytes, formatNumber, formatMonth, formatMonthShort, formatDistance, monthRange, formatMonthRange, plural, WPIS } from '../format.js';
 import { NEAR_RADII, resolvePeriod, hasActiveFilters, availableOptions, sameSplit } from '../filters.js';
 import { fold } from '../search.js';
 import { KIND_EXPLAINERS, APPLICANT_LABELS, unofficial, TAG_GROUP_LABELS } from '../copy.js';
@@ -78,7 +78,10 @@ const LIST_FACETS = [
  *   onLocate: () => void, onPickPoint: () => void,
  *   onClose: () => void, onShowResults: () => void,
  *   onRetryPermits?: () => void,
+ *   permitsOffer?: {sizeBytes: number|null, blocked: boolean, pickDistrict: () => void}|null,
  * }} ctx
+ *   permitsOffer: "Cała Warszawa" only (plan §7 #3) – the opt-in names the download; on phones (`blocked`) the
+ *   permit kinds are disabled and the visitor is sent to a district
  */
 export function createFiltersPanel(ctx) {
   const { index } = ctx;
@@ -117,13 +120,32 @@ export function createFiltersPanel(ctx) {
   const baseKinds = index.kindCodes.filter((k) => !OPT_IN_KINDS.includes(k));
   const optKinds = index.kindCodes.filter((k) => OPT_IN_KINDS.includes(k));
   const permitsStatus = h('p', { class: 'kinds-status', role: 'status' });
+  const offer = ctx.permitsOffer || null;
+  const size = offer?.sizeBytes ? ` (ok. ${formatBytes(offer.sizeBytes)})` : '';
+  const optInHint = offer && !offer.blocked
+    ? `domyślnie ukryte – zaznaczenie wczytuje sprawy z całej Warszawy${size}`
+    : 'domyślnie ukryte – zaznacz, aby pokazać';
   const kindRows = [
     baseKinds.map(kindRow),
-    optKinds.length ? h('div', { class: 'kinds-optin' },
+    optKinds.length ? h('div', { class: ['kinds-optin', offer?.blocked && 'kinds-optin--blocked'] },
       h('p', { class: 'kinds-optin__title' }, icon('crane', { size: 14 }), 'Rejestr budowlany GUNB'),
-      h('p', { class: 'kinds-optin__hint' }, 'domyślnie ukryte – zaznacz, aby pokazać'),
-      optKinds.map(kindRow), permitsStatus) : null,
+      offer?.blocked ? null : h('p', { class: 'kinds-optin__hint' }, optInHint),
+      optKinds.map(kindRow),
+      offer?.blocked ? h('p', { class: 'kinds-optin__blocked' },
+        `Pozwolenia na budowę z całej Warszawy${size} wczytujemy tylko na komputerze. Na telefonie są w widoku każdej dzielnicy. `,
+        // the filters sheet is modal (the top bar is inert under it): close it, then open the district picker
+        h('button', { type: 'button', class: 'btn btn--link btn--xs', onClick: () => { ctx.onClose?.(); setTimeout(() => offer.pickDistrict(), 0); } }, 'Wybierz dzielnicę')) : null,
+      permitsStatus) : null,
   ];
+  if (offer?.blocked) {
+    for (const k of optKinds) {
+      const ref = refs.kinds.get(k);
+      if (!ref) continue;
+      ref.input.disabled = true;
+      ref.row.classList.add('is-blocked');
+      ref.row.querySelector('.opt__only')?.remove();
+    }
+  }
   const kindsReset = h('button', {
     type: 'button', class: 'btn btn--link btn--xs fgroup__reset', hidden: true, onClick: () => ctx.onPatch({ kinds: [...DEFAULT_KINDS] }),
   }, 'Domyślne');

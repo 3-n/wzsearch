@@ -903,6 +903,14 @@ not on `main`.** Everything below is additive; a single-district build (`make da
   (records/permits/sources JSON, parcel GeoJSON, cell buckets; path relative to the shard + bytes). A rebuild that
   renders the same digest keeps `generated_at`; `files_with_records` replaces the previous `sources.json` in the
   "lost file" check. test.yml/deploy.yml fail when a Linux rebuild does not reproduce the stamps.
+* **City permits** (plan §7 #3) – `site/data/warszawa/permits.json`: every district's GUNB cases (43,564; ≈ 4.2 MB
+  gzip) in the shape of `city_index.lite_permit`: id, kind, date (period only without one), number, applicant(+type),
+  investment, tags, dataset, issuer, outcome, `address {display, street, number}`, `parcels [{number, obreb}]`,
+  `geo {lat, lon (5 decimals), method, conflict?}`, `permit {register_id, scope, category}`, `area` = `district` =
+  the district's slug. The city's `records.json` then lists the pb/zg kinds, the scope/category dictionaries, their
+  counts and `permits_download: {bytes_gzip}`. The frontend never prefetches it: a desktop visitor's switch loads it
+  (the panel names the size); on phones the permit kinds are disabled with a way to a district. A permit's detail
+  opens in its district.
 * **Failed crawls** (plan §7 #5) – a crawl that fails writes `crawl_failed: {at, error}` into the previous (kept)
   manifest; the next successful crawl writes a fresh manifest without it. `sources.json` carries `crawl_failed` and
   `stale_pages` (pages that came back without their file list) only when present – the district tab of the sources

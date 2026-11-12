@@ -13,13 +13,15 @@ are. Nothing is fetched and nothing is timestamped anew: ``generated_at`` is the
 * ``sources.json`` – no pages or files (those stay per district); ``districts`` says where each district's data
   came from and when it was built.
 * ``areas.geojson`` – the districts' outlines (OSM) as the city's areas.
-
-GUNB permits (43k cases) stay per district (plan §1.3).
+* ``permits.json`` – the GUNB cases of every district (~43k) in a slimmer shape still (:func:`lite_permit`, ≈ 3.5 MB
+  gzip): loaded only when a desktop visitor switches building permits on in "Cała Warszawa" (plan §7 #3; phones are
+  sent to a district). ``records.json`` names its gzip size (``permits_download``) for the opt-in.
 """
 
 from __future__ import annotations
 
 import argparse
+import gzip
 import json
 import logging
 import sys
@@ -35,6 +37,7 @@ log = logging.getLogger("wzsearch.city_index")
 CITY_SLUG = "warszawa"
 CITY_DIR = Path("site") / "data" / CITY_SLUG
 PLANNING_KINDS = ("wz", "cp", "ws")
+PERMIT_KINDS = ("pb", "zg")
 #: The city as the page names it (district.js reads these like a district's).
 CITY_NAMES = {"name": "Cała Warszawa", "genitive": "Warszawy", "locative": "w Warszawie", "instrumental": "Warszawą"}
 
@@ -74,6 +77,40 @@ def lite_record(record: dict[str, Any], slug: str) -> dict[str, Any]:
     return out
 
 
+#: The fields of a permit kept in the city's permits.json: what the list, the map, the facets and the search use. The
+#: detail opens in the record's district (sources, related records, the GUNB fields are there).
+_PERMIT_KEEP = ("id", "kind", "date", "period", "number", "applicant", "applicant_type", "investment", "tags",
+                "dataset", "issuer", "outcome")
+_PERMIT_FIELDS = ("register_id", "scope", "category")   # case_sign (0.4 MB gzip) stays in the district
+
+
+def lite_permit(record: dict[str, Any], slug: str) -> dict[str, Any]:
+    """The city-index shape of a GUNB case of district ``slug``: :data:`_PERMIT_KEEP`, ``period`` only without a
+    date, the address as displayed (street and number for the street facet), parcels as number + precinct (search),
+    ``geo`` as a point (5 decimals) with its method, ``permit`` without the labels the dictionaries repeat."""
+    out: dict[str, Any] = {}
+    for key in _PERMIT_KEEP:
+        value = record.get(key)
+        if value in (None, "", []) or (key == "period" and record.get("date")):
+            continue
+        out[key] = value
+    address = {k: v for k in ("display", "street", "number") if (v := (record.get("address") or {}).get(k))}
+    if address:
+        out["address"] = address
+    if parcels := [{"number": p["number"], "obreb": p["obreb"]} for p in record.get("parcels") or []
+                   if p.get("number") and p.get("obreb")]:
+        out["parcels"] = parcels
+    geo = record.get("geo") or {}
+    if geo.get("lat") is not None and geo.get("lon") is not None:
+        out["geo"] = {"lat": round(geo["lat"], 5), "lon": round(geo["lon"], 5), "method": geo.get("method"),
+                      **({"conflict": True} if geo.get("conflict") else {})}
+    if permit := {k: v for k in _PERMIT_FIELDS if (v := (record.get("permit") or {}).get(k))}:
+        out["permit"] = permit
+    out["area"] = slug
+    out["district"] = slug
+    return out
+
+
 def _outline(slug: str, root: Path) -> dict | None:
     """The district's OSM outline from its shard's areas.geojson, as an area feature of the city."""
     try:
@@ -91,6 +128,8 @@ def _outline(slug: str, root: Path) -> dict | None:
 def build_city_index(root: Path = PROJECT_ROOT) -> dict[Path, bytes] | None:
     """``{path: bytes}`` of the city index, or None when no district shard exists yet."""
     records: list[dict] = []
+    permits: list[dict] = []
+    permit_meta: dict[str, Any] = {}
     shards: list[dict] = []
     meta: dict[str, Any] = {}
     outlines: list[dict] = []
@@ -110,18 +149,29 @@ def build_city_index(root: Path = PROJECT_ROOT) -> dict[Path, bytes] | None:
             stamps.append(doc["generated_at"])
         if outline := _outline(d.slug, root):
             outlines.append(outline)
+        try:
+            permits_doc = json.loads(DistrictPaths(root, slug=d.slug).permits_json.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        permits += [lite_permit(r, d.slug) for r in permits_doc.get("records") or []
+                    if r.get("kind") in PERMIT_KINDS]
+        permit_meta = permit_meta or doc
     if not shards:
         return None
     generated_at = max(stamps) if stamps else None
     records.sort(key=lambda r: (r.get("date") or r.get("period") or "", r["id"]), reverse=True)
-    by_kind = Counter(r["kind"] for r in records)
+    permits.sort(key=lambda r: (r.get("date") or r.get("period") or "", r["id"]), reverse=True)
+    by_kind = Counter(r["kind"] for r in (*records, *permits))
+    permits_bytes = dumps_json({"generated_at": generated_at, "city": True, "count": len(permits),
+                                "records": permits}, ("records",))
     datasets = meta.get("datasets") or {}
     issuers = meta.get("issuers") or {}
     records_doc = {
         "generated_at": generated_at,
         "city": True,
         "count": len(records),
-        "kinds": {k: v for k, v in (meta.get("kinds") or {}).items() if k in PLANNING_KINDS},
+        "kinds": {k: v for k, v in (meta.get("kinds") or {}).items()
+                  if k in PLANNING_KINDS or (permits and k in PERMIT_KINDS)},
         "tags": meta.get("tags") or {},
         "areas": {s["slug"]: {"label": s["name"]} for s in sorted(shards, key=lambda s: s["name"])},
         "datasets": {
@@ -129,12 +179,19 @@ def build_city_index(root: Path = PROJECT_ROOT) -> dict[Path, bytes] | None:
                          "description": "Zestawienia urzędów dzielnic: wszczęte postępowania oraz wydane decyzje WZ "
                                         "i CP (zarządzenie nr 1129/2020 Prezydenta m.st. Warszawy)."},
             **({"baipp": datasets["baipp"]} if "baipp" in datasets else {}),
+            **({"rwdz": {**datasets["rwdz"], "description": (
+                "Krajowy rejestr wniosków i decyzji o pozwoleniu na budowę lub rozbiórkę oraz części zgłoszeń (art. 82b "
+                "Prawa budowlanego), prowadzony przez Główny Urząd Nadzoru Budowlanego i udostępniany co noc jako "
+                "otwarte dane (CC0 1.0). Tu: sprawy z działkami w 18 dzielnicach Warszawy, wpisane do rejestru od "
+                "2016 r.; każda sprawa otwiera się w swojej dzielnicy.")}} if permits and "rwdz" in datasets else {}),
         },
         "issuers": {**issuers, "district": {"label": "Urząd dzielnicy (Wydział Architektury i Budownictwa)"}},
         "outcomes": meta.get("outcomes") or {},
-        "permit_scopes": {},
-        "permit_categories": {},
-        "counts_by_kind": {k: by_kind.get(k, 0) for k in PLANNING_KINDS},
+        "permit_scopes": (permit_meta.get("permit_scopes") or {}) if permits else {},
+        "permit_categories": (permit_meta.get("permit_categories") or {}) if permits else {},
+        "counts_by_kind": {k: by_kind.get(k, 0) for k in (*PLANNING_KINDS, *(PERMIT_KINDS if permits else ()))},
+        # the opt-in names the download (plan §7 #3: desktop only, on request)
+        **({"permits_download": {"bytes_gzip": len(gzip.compress(permits_bytes, 9, mtime=0))}} if permits else {}),
         "records": records,
     }
     if "baipp" in records_doc["datasets"]:
@@ -154,6 +211,7 @@ def build_city_index(root: Path = PROJECT_ROOT) -> dict[Path, bytes] | None:
         out / "records.json": dumps_json(records_doc, ("records",)),
         out / "sources.json": dumps_json(sources_doc, ("districts",)),
         out / "areas.geojson": dumps_json(areas_doc, ("features",)),
+        **({out / "permits.json": permits_bytes} if permits else {}),
     }
 
 
@@ -196,7 +254,7 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
-__all__ = ["CITY_DIR", "CITY_SLUG", "build_city_index", "city_entry", "lite_record", "write_city_index"]
+__all__ = ["CITY_DIR", "CITY_SLUG", "build_city_index", "city_entry", "lite_permit", "lite_record", "write_city_index"]
 
 if __name__ == "__main__":
     sys.exit(main())

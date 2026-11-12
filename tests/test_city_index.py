@@ -91,3 +91,45 @@ def test_city_index_is_assembled_from_the_shards_on_disk(tmp_path):
     assert index["city"]["counts_by_kind"] == {"wz": 1, "cp": 1, "ws": 0}
     assert index["city"]["bbox"] == [21.98765, 52.12346, 21.98765, 52.12346]
     assert "city" not in districts_index(tmp_path, ["praga-poludnie"])   # a single-district build lists no city
+
+
+def _permit(rid, kind="pb", **extra):
+    return _record(rid, kind, dataset="rwdz", issuer="other", filed_date="2026-08-01",
+                   permit={"register_id": "ST-MZ-WW/WNIOSEK/1/2026", "case_sign": "RPW/1/2026", "scope": "budowa",
+                           "scope_label": "budowa nowego obiektu", "category": "I", "category_label": "domy",
+                           "single_family": True, "cubature": None, "state": None}, **extra)
+
+
+def test_lite_permit_keeps_what_the_list_map_facets_and_search_use():
+    lite = city_index.lite_permit(_permit("pb-st-mz-ww-2026-1"), "wawer")
+    assert lite == {
+        "id": "pb-st-mz-ww-2026-1", "kind": "pb", "date": "2026-09-01", "number": "N/pb-st-mz-ww-2026-1",
+        "applicant": "osoba fizyczna", "applicant_type": "person", "investment": "Budowa domu",
+        "tags": ["jednorodzinny"], "dataset": "rwdz", "issuer": "other",
+        "address": {"display": "Lipowa 5", "street": "Lipowa", "number": "5"},
+        "parcels": [{"number": "1/2", "obreb": "3-01-01"}, {"number": "3", "obreb": "3-01-01"}],
+        "geo": {"lat": 52.12346, "lon": 21.98765, "method": "parcel"},
+        "permit": {"register_id": "ST-MZ-WW/WNIOSEK/1/2026", "scope": "budowa", "category": "I"},
+        "area": "wawer", "district": "wawer",
+    }
+    assert city_index.lite_permit(_permit("pb-2", date=None), "wawer")["period"] == "2026-09"
+
+
+def test_city_permits_are_assembled_from_the_shards(tmp_path):
+    # plan §7 #3: the city's permits, loaded on request on desktop; records.json names the download
+    _shard(tmp_path, "praga-poludnie", [_record("wz-2026-1")], "2026-10-01T00:00:00Z")
+    _shard(tmp_path, "wawer", [_record("wz-waw-2026-1")], "2026-10-02T00:00:00Z")
+    for slug, permits in (("praga-poludnie", [_permit("pb-st-1"), _permit("zg-1", kind="zg")]),
+                          ("wawer", [_permit("pb-st-2", date="2026-10-01")])):
+        DistrictPaths(tmp_path, slug=slug).permits_json.write_text(json.dumps({"records": permits}), encoding="utf-8")
+    outputs = city_index.build_city_index(tmp_path)
+    out = tmp_path / city_index.CITY_DIR
+    permits_doc = json.loads(outputs[out / "permits.json"])
+    assert [(r["id"], r["district"]) for r in permits_doc["records"]] == [
+        ("pb-st-2", "wawer"), ("zg-1", "praga-poludnie"), ("pb-st-1", "praga-poludnie")]
+    records_doc = json.loads(outputs[out / "records.json"])
+    assert list(records_doc["kinds"]) == ["wz", "cp", "ws", "pb", "zg"]
+    assert records_doc["counts_by_kind"] == {"wz": 2, "cp": 0, "ws": 0, "pb": 2, "zg": 1}
+    assert "rwdz" in records_doc["datasets"] and "18 dzielnicach" in records_doc["datasets"]["rwdz"]["description"]
+    assert 0 < records_doc["permits_download"]["bytes_gzip"] < len(outputs[out / "permits.json"])
+    assert {r["id"] for r in records_doc["records"]} == {"wz-2026-1", "wz-waw-2026-1"}   # planning only

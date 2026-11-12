@@ -250,7 +250,7 @@ function ensurePermits(reason) {
   document.body.dataset.permits = 'loading';
   explore.permitsStateChanged();
   rerenderDetail();
-  permitsPromise = loadPermits(dataBase()).then(async ({ doc, parcels }) => {
+  permitsPromise = loadPermits(dataBase(), { parcels: !isCityMode() }).then(async ({ doc, parcels }) => {
     // Search documents are built in slices (no long task), then merged in one go.
     const prepared = await prepareEntries(doc?.records, index.dicts);
     const added = addPermits(index, doc, prepared);
@@ -293,7 +293,8 @@ function hasPermitsLayer() {
 }
 
 function schedulePrefetch() {
-  if (!hasPermitsLayer() || !idlePrefetchAllowed(navigator.connection, { smallScreen: isMobile() })) return;
+  // "Cała Warszawa": the city's permits (~4 MB) only on request (plan §7 #3)
+  if (isCityMode() || !hasPermitsLayer() || !idlePrefetchAllowed(navigator.connection, { smallScreen: isMobile() })) return;
   const run = () => { if (permitsState === 'idle') ensurePermits('idle'); };
   setTimeout(() => {
     if ('requestIdleCallback' in window) window.requestIdleCallback(run, { timeout: 4000 });
@@ -480,10 +481,16 @@ async function boot() {
   document.body.classList.remove('is-loading');
   renderDistrictChrome();
   if (isCity() && !getState().unknown) navigate({}, { replace: true });   // a link without dz=… gets its district
-  if (!hasPermitsLayer()) {
+  // "Cała Warszawa" (plan §7 #3): the city's permits load on desktop when switched on (the panel names the size);
+  // phones are sent to a district instead
+  const cityPermits = isCityMode() && hasPermitsLayer();
+  if (!hasPermitsLayer() || (cityPermits && isMobile())) {
     permitsState = 'unavailable';
     document.body.dataset.permits = 'unavailable';
   }
+  const permitsOffer = cityPermits
+    ? { sizeBytes: index.meta.permitsDownload, blocked: isMobile(), pickDistrict: () => document.querySelector('.district-switch')?.click() }
+    : null;
   renderBanner();
   // A stale or hand-edited link opened cold: clean its filters before the first render (no history entry).
   const first = getState();
@@ -491,7 +498,7 @@ async function boot() {
   if (clean !== first.filters) navigate({ filters: clean }, { replace: true });
   explore = createExplore(els.explore, {
     index, getState, navigate, openRecord,
-    permits: { state: () => permitsState, retry: () => ensurePermits('retry') },
+    permits: { state: () => permitsState, retry: () => ensurePermits('retry'), offer: permitsOffer },
   });
   subscribe((s, p, m) => onState(s, p, m));
   onState(getState(), null, { source: 'init' });

@@ -321,8 +321,10 @@ or street; sizes gzipped):
   records, 1.9 MB gzip): the last row of the district switcher; the neighbourhood facet lists districts, cards show
   the district, the map draws district outlines and no parcels; the Sources page lists the districts; About and the
   disclaimers name "urzędy dzielnic". A record opens **in its district** (its sources, related records and permits
-  are there) – Back returns to the city list. Permits city-wide (§1.3) are not built: 9.8 MB gzip even without the
-  cells, far over the 5 MB desktop budget.
+  are there) – Back returns to the city list. Permits city-wide (§1.3) were not built in the draft: 9.8 MB gzip even
+  without the cells. *Built 2026-11-12 (§7 #3): a slimmer shape (`city_index.lite_permit`) is 4.2 MB gzip; loaded on a
+  desktop visitor's request (2.6 s locally, longest task 238 ms, then ≤ 75 ms map slices – the marker cluster adds in
+  60 ms chunks), phones get "wybierz dzielnicę".*
 * *Cross-shard `related` via `idx` buckets* – not built: a parcel id belongs to one cadastral unit, so a relation can
   cross districts only through records whose parcels lie in two districts – rare (border roads); `compute_related`
   stays per district. Revisit with a city-wide pass if it matters.

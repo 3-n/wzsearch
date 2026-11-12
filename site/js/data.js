@@ -200,6 +200,8 @@ export function buildIndex(recordsDoc, sourcesDoc, prepared = null) {
       // the last crawl of the district's own lists failed / left pages without files (plan §7 #5; sources view)
       crawlFailed: sourcesDoc?.crawl_failed && typeof sourcesDoc.crawl_failed === 'object' ? sourcesDoc.crawl_failed : null,
       stalePages: Array.isArray(sourcesDoc?.stale_pages) ? sourcesDoc.stale_pages.map(String) : [],
+      // "Cała Warszawa": gzip size of the city's permits.json, named by the opt-in (plan §7 #3)
+      permitsDownload: Number.isFinite(recordsDoc?.permits_download?.bytes_gzip) ? recordsDoc.permits_download.bytes_gzip : null,
       count: 0,
     },
     dicts,
@@ -471,10 +473,10 @@ export async function loadGeo(name, base = 'data/') {
  * outlines (optional). Both requests start together.
  * @returns {Promise<{doc: object, parcels: object|null}>}
  */
-export async function loadPermits(base = 'data/') {
+export async function loadPermits(base = 'data/', { parcels: withParcels = true } = {}) {
   const [doc, parcels] = await Promise.all([
     fetchJson(`${base}permits.json`),
-    loadGeo('parcels-permits.geojson', base),
+    withParcels ? loadGeo('parcels-permits.geojson', base) : null,   // the city has no parcel outlines
   ]);
   return { doc, parcels };
 }
