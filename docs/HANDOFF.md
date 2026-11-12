@@ -8,13 +8,13 @@ monthly data refresh. It is a map and a playbook; the details live in the docume
 
 ## 0. Branch `feature/all-districts` (2026-10-27/28) – read this first when continuing the city-wide work
 
-**Status 2026-11-12:** the owner's decisions are in the plan (§7) and stage 1 is built on the branch (bare links →
-Praga-Południe, "wzSearch Warszawa", inputs-only commits + CI build with build stamps, failure policy, city permits on
-desktop, district inboxes, "niepełne dane", letters drafted, `npm run e2e:city`). Next: a fresh `make city`, the
-owner's local look, then merge + push on the owner's go (deploy.yml builds the site; the first deploy removes nothing
-the owner has not seen – `site/` is rebuilt from `data/`).
+**Status 2026-11-12:** stage 1 is live – merged to `main` (fast-forward, e972008) and deployed by deploy.yml after
+the owner's fresh `make city` and local look. Built: bare links → Praga-Południe, "wzSearch Warszawa", inputs-only
+commits + CI build with build stamps, failure policy, city permits on desktop, district inboxes, "niepełne dane",
+letters drafted (not sent), `npm run e2e:city`. Next: the owner sends the letters (docs/outreach/); later stages per
+the plan (§7). The history below is how the branch got here.
 
-All 18 Warsaw districts on a local branch (not pushed, not merged, not deployed): every
+All 18 Warsaw districts (built on the branch 27–28 X, launched 12 XI): every
 district's lists parsed (six PDF-only districts via poppler's `pdftotext`, Ursus's own registers) and geocoded
 (parcels from GUGiK's county package, `pipeline/egib.py`), 18,248 planning records + 43,564 GUNB cases, per-district
 data shards, source cells in bucket files, and the "Cała Warszawa" planning index (phase 3).
@@ -101,7 +101,7 @@ data/                    manifest.json, raw/ (downloaded .xlsx + rwdz/ extracts)
 tests/                   test_*.py (pytest), fixtures/ (real stripped HTML, real workbooks, real GUNB lines,
                          site-data/ = a small fixture site used by e2e), js/*.test.mjs (node --test), e2e/ (smoke.mjs,
                          server.mjs, og-image.mjs; screenshots → tests/e2e/output/, git-ignored)
-.github/workflows/       test.yml (every push/PR), update.yml (scheduled refresh + Pages deploy)
+.github/workflows/       test.yml (every push/PR), deploy.yml (builds site/ from data/, Pages), update.yml (manual refresh)
 ```
 
 ## 4. Invariants – do not break these
