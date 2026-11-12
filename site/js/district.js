@@ -12,6 +12,7 @@
  * Pure helpers plus one module-level "current district" that the views read for their copy.
  */
 import { MAP_CENTER, MAP_ZOOM } from './config.js';
+import { formatMonth, formatNumber } from './format.js';
 
 export const DEFAULT_SLUG = 'praga-poludnie';
 export const CITY_SLUG = 'warszawa';
@@ -163,4 +164,21 @@ export function districtTotals(d) {
   const planning = (c.wz || 0) + (c.cp || 0) + (c.ws || 0);
   const permits = (c.pb || 0) + (c.zg || 0);
   return { planning, permits };
+}
+
+/**
+ * "Niepełne dane" (plan §7): what a district's own lists lack, from districts.json → `gaps` (pipeline/district_index.py)
+ * – files the city's server refused to hand out, or a newest list long ago. Pure; null when nothing is missing.
+ */
+export function districtGapNote(d) {
+  const g = d?.gaps;
+  if (!g || typeof g !== 'object') return null;
+  const parts = [];
+  if (g.missing_files > 0) {
+    const y = Array.isArray(g.missing_years) && g.missing_years.length ? g.missing_years : null;
+    const years = y ? ` (${y[0] === y[y.length - 1] ? y[0] : `${y[0]}–${y[y.length - 1]}`})` : '';
+    parts.push(`brak ${formatNumber(g.missing_files)} z ${formatNumber(g.files)} plików urzędu${years} – serwer miasta odmówił ich pobrania, ponowimy`);
+  }
+  if (g.newest_list) parts.push(`najnowsza lista na stronie urzędu: ${formatMonth(g.newest_list)}`);
+  return parts.length ? `Niepełne dane: ${parts.join('; ')}` : null;
 }

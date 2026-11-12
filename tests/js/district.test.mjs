@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  CITY_SLUG, DEFAULT_SLUG, LEGACY, areaWords, cityEntry, currentDistrict, dataBase, districtFromHash, districtOf,
+  CITY_SLUG, DEFAULT_SLUG, LEGACY, areaWords, districtGapNote, cityEntry, currentDistrict, dataBase, districtFromHash, districtOf,
   districtTotals, feedPath, isCity, isCityMode, mapStart, recordIdFromHash, resolveDistrict, setDistrict,
 } from '../../site/js/district.js';
 import { carryFilters } from '../../site/js/filters.js';
@@ -130,4 +130,14 @@ test('filters tied to one district do not carry over; CSV files are named after 
   const day = new Date('2026-10-23T12:00:00Z');
   assert.equal(csvFileName(day), 'wzsearch-praga-poludnie-2026-10-23.csv');
   assert.equal(csvFileName(day, 'warszawa'), 'wzsearch-warszawa-2026-10-23.csv');
+});
+
+test('"niepełne dane": refused files and a stale newest list', () => {
+  assert.equal(districtGapNote({}), null);
+  assert.equal(districtGapNote({ gaps: null }), null);
+  assert.equal(districtGapNote({ gaps: { missing_files: 158, files: 161, missing_years: ['2020', '2026'], newest_list: null } }),
+    'Niepełne dane: brak 158 z 161 plików urzędu (2020–2026) – serwer miasta odmówił ich pobrania, ponowimy');
+  assert.match(districtGapNote({ gaps: { missing_files: 7, files: 204, missing_years: ['2023'] } }), /\(2023\) –/);
+  assert.equal(districtGapNote({ gaps: { missing_files: 0, files: 17, missing_years: [], newest_list: '2024-01' } }),
+    'Niepełne dane: najnowsza lista na stronie urzędu: styczeń 2024');
 });

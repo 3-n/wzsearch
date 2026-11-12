@@ -133,3 +133,25 @@ def test_city_permits_are_assembled_from_the_shards(tmp_path):
     assert "rwdz" in records_doc["datasets"] and "18 dzielnicach" in records_doc["datasets"]["rwdz"]["description"]
     assert 0 < records_doc["permits_download"]["bytes_gzip"] < len(outputs[out / "permits.json"])
     assert {r["id"] for r in records_doc["records"]} == {"wz-2026-1", "wz-waw-2026-1"}   # planning only
+
+
+def test_list_gaps_name_refused_files_and_stale_lists(tmp_path):
+    # "niepełne dane" (plan §7): in-scope files without a local copy, and a newest list over a year before the build
+    from pipeline.district_index import list_gaps
+    paths = DistrictPaths(tmp_path, slug="wola")
+    paths.raw.mkdir(parents=True)
+    (paths.raw / "kept.pdf").write_bytes(b"%PDF")
+    files = [
+        {"file_id": "a", "period": "2026-09", "sha256": "x"},
+        {"file_id": "b", "period": "2023", "sha256": None, "error": "403"},
+        {"file_id": "c", "period": "2026", "sha256": None, "error": "403", "local_path": "data/districts/wola/raw/kept.pdf"},
+        {"file_id": "d", "period": "2018", "sha256": None, "error": "403"},   # before the scope: not counted
+        {"file_id": "e", "period": "2025-01", "source": "baipp", "sha256": None, "error": "403"},
+    ]
+    paths.manifest.write_text(json.dumps({"files": files}), encoding="utf-8")
+    assert list_gaps(tmp_path, "wola", "2026-10-27T00:00:00Z") == {
+        "missing_files": 1, "files": 3, "missing_years": ["2023"], "newest_list": None}
+    files = [{"file_id": "a", "period": "2024-01", "sha256": "x"}]
+    paths.manifest.write_text(json.dumps({"files": files}), encoding="utf-8")
+    assert list_gaps(tmp_path, "wola", "2026-10-27T00:00:00Z")["newest_list"] == "2024-01"
+    assert list_gaps(tmp_path, "wola", "2025-01-27T00:00:00Z") is None

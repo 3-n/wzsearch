@@ -8,7 +8,7 @@
 import { h } from '../dom.js';
 import { icon } from '../icons.js';
 import { formatNumber, plural } from '../format.js';
-import { allDistricts, currentDistrict, districtTotals } from '../district.js';
+import { allDistricts, currentDistrict, districtGapNote, districtTotals } from '../district.js';
 
 const PLANNING = ['decyzja lub wszczęcie', 'decyzje lub wszczęcia', 'decyzji lub wszczęć'];
 
@@ -29,16 +29,18 @@ export function mountDistrictPicker(slot, { hrefFor, city = null }) {
     const meta = d.available
       ? [planning ? plural(planning, PLANNING) : null, permits ? `${formatNumber(permits)} pozw. i zgł.` : null].filter(Boolean).join(' · ')
       : 'dane w przygotowaniu';
+    const gap = districtGapNote(d);
     return h('li', { class: 'district-list__item' },
       h('a', {
-        class: ['district-list__link', isCurrent && 'is-current', d.status !== 'enabled' && 'is-partial'],
+        class: ['district-list__link', isCurrent && 'is-current', (d.status !== 'enabled' || gap) && 'is-partial'],
         href: hrefFor(d.slug),
         'aria-current': isCurrent ? 'true' : null,
         onClick: (e) => pick(e, d.slug),
       },
       h('span', { class: 'district-list__name' }, d.name),
       h('span', { class: 'district-list__meta' }, meta),
-      d.status !== 'enabled' ? h('span', { class: 'district-list__note' }, 'Listy urzędu dzielnicy w przygotowaniu') : null));
+      d.status !== 'enabled' ? h('span', { class: 'district-list__note' }, 'Listy urzędu dzielnicy w przygotowaniu')
+        : gap ? h('span', { class: 'district-list__note' }, gap) : null));
   });
 
   if (city) {
