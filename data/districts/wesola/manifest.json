@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T19:49:02Z",
+  "generated_at": "2026-11-12T06:55:39Z",
   "index_url": "https://wesola.um.warszawa.pl/architektura",
   "pages": [
     {
@@ -13,16 +13,7 @@
       "source": "district",
       "blocks": [
         {
-          "text": "2+wz+dec.+wrzesie%C5%84+2026.xlsx",
-          "category": "wz",
-          "declared_count": null,
-          "file_ids": [
-            "eaa4eb991b"
-          ],
-          "period": "2026-09"
-        },
-        {
-          "text": "1+wnioski+wrzesie%C5%84+2026.xlsx",
+          "text": "Informacja wnioski wrzesień 2026.xlsx (22 KB)",
           "category": "ws",
           "declared_count": null,
           "file_ids": [
@@ -912,20 +903,11 @@
       "source": "district",
       "blocks": [
         {
-          "text": "2+wz+dec.+wrzesie%C5%84+2026.xlsx",
+          "text": "Informacja decyzje wrzesień 2026.xlsx (13 KB)",
           "category": "wz",
           "declared_count": null,
           "file_ids": [
             "eaa4eb991b"
-          ],
-          "period": "2026-09"
-        },
-        {
-          "text": "1+wnioski+wrzesie%C5%84+2026.xlsx",
-          "category": "ws",
-          "declared_count": null,
-          "file_ids": [
-            "096f7ba793"
           ],
           "period": "2026-09"
         },
@@ -1538,8 +1520,7 @@
       "category": "ws",
       "period": "2026-09",
       "page_ids": [
-        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy",
-        "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
+        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/096f7ba793.xlsx",
       "sha256": "f0486db9661e9538ee84661026b847e141f24baf8fcc8e78e5fe3f31f0455114",
@@ -1558,7 +1539,6 @@
       "category": "wz",
       "period": "2026-09",
       "page_ids": [
-        "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy",
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/eaa4eb991b.xlsx",

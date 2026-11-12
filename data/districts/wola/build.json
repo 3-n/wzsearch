@@ -1,6 +1,6 @@
 {
-"generated_at":"2026-10-27T22:21:52Z",
-"data_sha256":"c1f3fac97be4a0389bfc6fda8d7b10f0ae1a198e40e39e744b04bd154cab7b80",
+"generated_at":"2026-11-12T06:56:35Z",
+"data_sha256":"5ff80563314f321a3dec9d8aa6841ef8c6e8a42abf2c8bc3a9eee3da6b654095",
 "files_with_records":[
 "0b7aa99ca0",
 "0d0f7d3d62",
@@ -27,6 +27,7 @@
 "930fbeef4e",
 "9519a3d880",
 "a765e3a480",
+"aac2fe4f4a",
 "b5fdcca9bd",
 "b65486632c",
 "bd4dd6ed78",
@@ -38,6 +39,7 @@
 "d4e8ff1d7f",
 "da7da0bfca",
 "dc4ddc50f4",
+"e425c58486",
 "e8a03cd9a9",
 "fa570fcd89",
 "rwdz-wnioski",

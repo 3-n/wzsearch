@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T03:34:03Z",
+  "generated_at": "2026-11-12T06:46:40Z",
   "index_url": "https://pragapld.um.warszawa.pl/informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych",
   "pages": [
     {
@@ -2651,38 +2651,38 @@
       "source": "baipp",
       "blocks": [
         {
-          "text": "1. Informacja o wszczętych postępowaniach o warunkach zabudowy i ustaleniu lokalizacji inwestycji celu publicznego IX.2026 (xls, 37 kB)",
+          "text": "1. Informacja o wszczętych postępowaniach o warunkach zabudowy i ustaleniu lokalizacji inwestycji celu publicznego X.2026 (xls, 39 kB)",
           "category": "ws",
           "declared_count": null,
           "file_ids": [
-            "37a76419da"
+            "aac2fe4f4a"
           ],
           "series": null
         },
         {
-          "text": "2. Informacja o wydanych decyzjach w sprawie warunków zabudowy IX.2026 (xls, 31 kB)",
+          "text": "2. Informacja o wydanych decyzjach w sprawie warunków zabudowy X.2026 (xls, 32 kB)",
           "category": "wz",
           "declared_count": null,
           "file_ids": [
-            "fa570fcd89"
+            "e425c58486"
           ],
           "series": null
         },
         {
-          "text": "3. Informacja o wydanych decyzjach w spr. ust. lokalizacji inwestycji celu publ. o znaczeniu powiatowym i gminnym IX.2026 (xls, 17 kB)",
+          "text": "3. Informacja o wydanych decyzjach w spr. ust. lokalizacji inwestycji celu publ. o znaczeniu powiatowym i gminnym X.2026 (xls, 18 kB)",
           "category": "cp",
           "declared_count": null,
           "file_ids": [
-            "4741ae2bdf"
+            "a18f215831"
           ],
           "series": "c2"
         },
         {
-          "text": "4. Informacja o wydanych decyzjach w spr. ust. lokalizacji inwestycji celu publ. o znaczeniu krajowym i wojewódzkim IX.2026 (xls, 17 kB)",
+          "text": "4. Informacja o wydanych decyzjach w spr. ust. lokalizacji inwestycji celu publ. o znaczeniu krajowym i wojewódzkim X.2026 (xls, 17 kB)",
           "category": "cp",
           "declared_count": null,
           "file_ids": [
-            "9c9d87d327"
+            "8df7eecf21"
           ],
           "series": "c1"
         }
@@ -6349,6 +6349,27 @@
       "downloaded_at": "2026-10-23T03:34:04Z",
       "last_modified": "2026-10-12T09:48:11Z",
       "history": [],
+      "series": null,
+      "removed_from_source_at": "2026-11-12"
+    },
+    {
+      "file_id": "aac2fe4f4a",
+      "source": "baipp",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wszcz%C4%99tych_post%C4%99powaniach_o_WZ_LICP_X_2026+%2B.xlsx/13712e56-4b63-a2e6-3363-5daf98175dc8?t=1794226315093",
+      "document_path": "/documents/12025039/173779387/informacja_o_wszcz%C4%99tych_post%C4%99powaniach_o_WZ_LICP_X_2026+%2B.xlsx/13712e56-4b63-a2e6-3363-5daf98175dc8",
+      "filename": "informacja_o_wszczętych_postępowaniach_o_WZ_LICP_X_2026 +.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026",
+      "page_ids": [
+        "postepowania-i-decyzje"
+      ],
+      "local_path": "data/raw/aac2fe4f4a.xlsx",
+      "sha256": "151695f133166522c920587e2eee8a51f50e859a11c00373367acb94ec83e50f",
+      "size": 39780,
+      "downloaded_at": "2026-11-12T06:46:41Z",
+      "last_modified": "2026-11-09T12:11:55Z",
+      "history": [],
       "series": null
     },
     {
@@ -6368,6 +6389,27 @@
       "size": 31021,
       "downloaded_at": "2026-10-23T03:34:04Z",
       "last_modified": "2026-10-12T09:48:10Z",
+      "history": [],
+      "series": null,
+      "removed_from_source_at": "2026-11-12"
+    },
+    {
+      "file_id": "e425c58486",
+      "source": "baipp",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_WZ_X_2026+%2B.xlsx/c03ab73b-eeab-e946-f4b2-bcc6a3181170?t=1794226314841",
+      "document_path": "/documents/12025039/173779387/informacja_o_wydanych_decyzjach_WZ_X_2026+%2B.xlsx/c03ab73b-eeab-e946-f4b2-bcc6a3181170",
+      "filename": "informacja_o_wydanych_decyzjach_WZ_X_2026 +.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026",
+      "page_ids": [
+        "postepowania-i-decyzje"
+      ],
+      "local_path": "data/raw/e425c58486.xlsx",
+      "sha256": "93934adc710b0854bce502e3fe85e28c934f42ef6b9a7425c73c0376229fd5b8",
+      "size": 32421,
+      "downloaded_at": "2026-11-12T06:46:51Z",
+      "last_modified": "2026-11-09T12:11:54Z",
       "history": [],
       "series": null
     },
@@ -6389,7 +6431,29 @@
       "downloaded_at": "2026-10-23T03:34:05Z",
       "last_modified": "2026-10-12T09:48:11Z",
       "history": [],
-      "series": "c1"
+      "series": "c1",
+      "removed_from_source_at": "2026-11-12"
+    },
+    {
+      "file_id": "8df7eecf21",
+      "source": "baipp",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_woj%C3%B3dzkim_X_2026%2B.xlsx/2bdca5a3-f93b-a6ec-d25f-d6aa76579389?t=1794226314259",
+      "document_path": "/documents/12025039/173779387/informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_woj%C3%B3dzkim_X_2026%2B.xlsx/2bdca5a3-f93b-a6ec-d25f-d6aa76579389",
+      "filename": "informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_wojódzkim_X_2026+.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2026",
+      "page_ids": [
+        "postepowania-i-decyzje"
+      ],
+      "local_path": "data/raw/8df7eecf21.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "series": "c1",
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_woj%C3%B3dzkim_X_2026%2B.xlsx/2bdca5a3-f93b-a6ec-d25f-d6aa76579389?t=1794226314259"
     },
     {
       "file_id": "4741ae2bdf",
@@ -6409,7 +6473,29 @@
       "downloaded_at": "2026-10-23T03:34:06Z",
       "last_modified": "2026-10-12T09:48:10Z",
       "history": [],
-      "series": "c2"
+      "series": "c2",
+      "removed_from_source_at": "2026-11-12"
+    },
+    {
+      "file_id": "a18f215831",
+      "source": "baipp",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym+_i_gminnym_X_2026%2B.xlsx/e0d771ec-dd75-b9be-a638-bd80fc8a8d6a?t=1794226314560",
+      "document_path": "/documents/12025039/173779387/informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym+_i_gminnym_X_2026%2B.xlsx/e0d771ec-dd75-b9be-a638-bd80fc8a8d6a",
+      "filename": "informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym _i_gminnym_X_2026+.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2026",
+      "page_ids": [
+        "postepowania-i-decyzje"
+      ],
+      "local_path": "data/raw/a18f215831.xlsx",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "series": "c2",
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym+_i_gminnym_X_2026%2B.xlsx/e0d771ec-dd75-b9be-a638-bd80fc8a8d6a?t=1794226314560"
     },
     {
       "file_id": "7349917c1f",
@@ -6429,7 +6515,8 @@
       "downloaded_at": "2026-10-23T03:34:06Z",
       "last_modified": "2026-01-14T11:19:43Z",
       "history": [],
-      "series": null
+      "series": null,
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/12025039/152228831/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_25.xlsx/ec2f3679-1303-b07d-d372-2b59bbad3874?t=1768389583052"
     },
     {
       "file_id": "62bd84cf3b",
@@ -6449,7 +6536,8 @@
       "downloaded_at": "2026-10-23T03:34:07Z",
       "last_modified": "2026-01-14T11:19:43Z",
       "history": [],
-      "series": "c1"
+      "series": "c1",
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "3b7f9d6f99",
@@ -6469,7 +6557,8 @@
       "downloaded_at": "2026-10-23T03:34:07Z",
       "last_modified": "2026-01-14T11:19:42Z",
       "history": [],
-      "series": "c2"
+      "series": "c2",
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "e8a03cd9a9",
@@ -6489,7 +6578,8 @@
       "downloaded_at": "2026-10-23T03:34:08Z",
       "last_modified": "2026-01-14T11:19:42Z",
       "history": [],
-      "series": null
+      "series": null,
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "c3eb081a44",
@@ -6509,7 +6599,8 @@
       "downloaded_at": "2026-10-23T03:34:08Z",
       "last_modified": "2025-01-14T16:23:44Z",
       "history": [],
-      "series": null
+      "series": null,
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "754e271735",
@@ -6529,7 +6620,8 @@
       "downloaded_at": "2026-10-23T03:34:09Z",
       "last_modified": "2025-01-14T16:23:44Z",
       "history": [],
-      "series": "c1"
+      "series": "c1",
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "8f83cf64eb",
@@ -6549,7 +6641,8 @@
       "downloaded_at": "2026-10-23T03:34:10Z",
       "last_modified": "2025-01-14T16:23:43Z",
       "history": [],
-      "series": "c2"
+      "series": "c2",
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "6774d0478d",
@@ -6569,7 +6662,8 @@
       "downloaded_at": "2026-10-23T03:34:10Z",
       "last_modified": "2025-01-13T10:19:36Z",
       "history": [],
-      "series": null
+      "series": null,
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "3e84585827",
@@ -6589,7 +6683,8 @@
       "downloaded_at": "2026-10-23T03:34:11Z",
       "last_modified": "2024-01-15T09:31:31Z",
       "history": [],
-      "series": "c1"
+      "series": "c1",
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "a9a20fa57d",
@@ -6609,7 +6704,8 @@
       "downloaded_at": "2026-10-23T03:34:11Z",
       "last_modified": "2024-01-15T09:31:29Z",
       "history": [],
-      "series": "c2"
+      "series": "c2",
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "da7da0bfca",
@@ -6629,7 +6725,8 @@
       "downloaded_at": "2026-10-23T03:34:12Z",
       "last_modified": "2024-01-15T09:31:30Z",
       "history": [],
-      "series": null
+      "series": null,
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "832bd8237b",
@@ -6649,7 +6746,8 @@
       "downloaded_at": "2026-10-23T03:34:13Z",
       "last_modified": "2024-01-15T09:31:30Z",
       "history": [],
-      "series": null
+      "series": null,
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "b65486632c",
@@ -6669,7 +6767,8 @@
       "downloaded_at": "2026-10-23T03:34:13Z",
       "last_modified": "2023-01-13T13:29:13Z",
       "history": [],
-      "series": null
+      "series": null,
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "10f399e85c",
@@ -6689,7 +6788,8 @@
       "downloaded_at": "2026-10-23T03:34:14Z",
       "last_modified": "2023-01-13T13:29:14Z",
       "history": [],
-      "series": "c2"
+      "series": "c2",
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "46c3206dfa",
@@ -6709,7 +6809,8 @@
       "downloaded_at": "2026-10-23T03:34:14Z",
       "last_modified": "2023-01-13T13:29:13Z",
       "history": [],
-      "series": "c1"
+      "series": "c1",
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "bd4dd6ed78",
@@ -6729,7 +6830,8 @@
       "downloaded_at": "2026-10-23T03:34:15Z",
       "last_modified": "2023-01-13T13:29:13Z",
       "history": [],
-      "series": null
+      "series": null,
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "508b5298d6",
@@ -6749,7 +6851,8 @@
       "downloaded_at": "2026-10-23T03:34:15Z",
       "last_modified": "2022-01-14T16:40:43Z",
       "history": [],
-      "series": "c2"
+      "series": "c2",
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "4c11c59898",
@@ -6769,7 +6872,8 @@
       "downloaded_at": "2026-10-23T03:34:16Z",
       "last_modified": "2022-01-14T16:40:43Z",
       "history": [],
-      "series": null
+      "series": null,
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "c6d56452ea",
@@ -6789,7 +6893,8 @@
       "downloaded_at": "2026-10-23T03:34:17Z",
       "last_modified": "2022-01-14T16:40:43Z",
       "history": [],
-      "series": null
+      "series": null,
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "020cc57e6f",
@@ -6809,7 +6914,8 @@
       "downloaded_at": "2026-10-23T03:34:17Z",
       "last_modified": "2022-01-14T16:40:43Z",
       "history": [],
-      "series": "c1"
+      "series": "c1",
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "c72152adf9",
@@ -6829,7 +6935,8 @@
       "downloaded_at": "2026-10-23T03:34:18Z",
       "last_modified": "2021-04-21T07:39:25Z",
       "history": [],
-      "series": "c2"
+      "series": "c2",
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "8051b61e17",
@@ -6849,7 +6956,8 @@
       "downloaded_at": "2026-10-23T03:34:18Z",
       "last_modified": "2021-04-21T07:39:25Z",
       "history": [],
-      "series": "c1"
+      "series": "c1",
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "8f6cecf83d",
@@ -6869,7 +6977,8 @@
       "downloaded_at": "2026-10-23T03:34:19Z",
       "last_modified": "2021-04-21T07:39:25Z",
       "history": [],
-      "series": null
+      "series": null,
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "b5fdcca9bd",
@@ -6889,7 +6998,8 @@
       "downloaded_at": "2026-10-23T03:34:19Z",
       "last_modified": "2021-04-21T07:39:25Z",
       "history": [],
-      "series": null
+      "series": null,
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     }
   ]
 }

@@ -1,16 +1,16 @@
 # wzSearch – data-quality report
 
-Generated `2026-10-27T22:21:05Z` by `pipeline/build.py` from the district's [source index](https://ochota.um.warszawa.pl/warunki-zabudowy), the [BAiPP lists](https://architektura.um.warszawa.pl/postepowania-i-decyzje) and GUNB's [RWDZ register](https://wyszukiwarka.gunb.gov.pl/pobranie.html). Regenerated on every build; do not edit.
+Generated `2026-11-12T06:49:07Z` by `pipeline/build.py` from the district's [source index](https://ochota.um.warszawa.pl/warunki-zabudowy), the [BAiPP lists](https://architektura.um.warszawa.pl/postepowania-i-decyzje) and GUNB's [RWDZ register](https://wyszukiwarka.gunb.gov.pl/pobranie.html). Regenerated on every build; do not edit.
 
 ## Totals
 
-* Records per dataset: Dzielnica 196, BAiPP (miasto) 35, GUNB RWDZ 1133 – `records.json` 231, `permits.json` 1133.
+* Records per dataset: Dzielnica 196, BAiPP (miasto) 36, GUNB RWDZ 1133 – `records.json` 232, `permits.json` 1133.
 * Monthly pages: **1** (– → –); source files: **3** (3 with rows, 0 empty templates, 0 unreadable/missing).
-* Workbook data rows kept (district + BAiPP): **232** → records after merging duplicates: **231** (WZ 116, CP 41, Wszczęcie 74).
+* Workbook data rows kept (district + BAiPP): **236** → records after merging duplicates: **232** (WZ 116, CP 41, Wszczęcie 75).
 * Building permits and notifications (RWDZ): **1133** (Pozwolenie 1096, Zgłoszenie 37).
-* Records listed in more than one source row: 1 ([`ws-och-6730-2025-5`](https://3-n.github.io/wzsearch/#/wpis/ws-och-6730-2025-5?dz=ochota)).
-* Procedure (WZ vs public purpose, incl. initiated proceedings): cp 72, null 1, wz 158.
-* Applicants (WZ/ULICP): natural persons 31, organisations 197, unknown 3.
+* Records listed in more than one source row: 4 ([`ws-am-och-zp-w-6733-2026-1`](https://3-n.github.io/wzsearch/#/wpis/ws-am-och-zp-w-6733-2026-1?dz=ochota), [`ws-am-och-zp-w-6730-2026-12`](https://3-n.github.io/wzsearch/#/wpis/ws-am-och-zp-w-6730-2026-12?dz=ochota), [`ws-am-och-zp-w-6733-2025-3`](https://3-n.github.io/wzsearch/#/wpis/ws-am-och-zp-w-6733-2025-3?dz=ochota), [`ws-och-6730-2025-5`](https://3-n.github.io/wzsearch/#/wpis/ws-och-6730-2025-5?dz=ochota)).
+* Procedure (WZ vs public purpose, incl. initiated proceedings): cp 72, null 1, wz 159.
+* Applicants (WZ/ULICP): natural persons 31, organisations 198, unknown 3.
 
 WZ/ULICP records per year (decision / initiation date):
 
@@ -24,8 +24,8 @@ WZ/ULICP records per year (decision / initiation date):
 | 2023 | 25 | 6 | 10 | 41 |
 | 2024 | 8 | 2 | 7 | 17 |
 | 2025 | 6 | 7 | 9 | 22 |
-| 2026 | 4 | 7 | 16 | 27 |
-| **all** | **116** | **41** | **74** | **231** |
+| 2026 | 4 | 7 | 17 | 28 |
+| **all** | **116** | **41** | **75** | **232** |
 
 ## Declared vs parsed counts
 
@@ -54,10 +54,14 @@ Biuro Architektury i Planowania Przestrzennego publishes the same three lists fo
 
 | Page | Year | List | File | City-wide rows | Praga-Południe rows | Records |
 |---|---|---|---|---:|---:|---:|
-| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | WZ | [informacja_o_wydanych_decyzjach_WZ_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wydanych_decyzjach_WZ_IX_2026+%2B.xlsx/1d75d6d6-239a-2dc1-843b-70184b23709c?t=1791798490945) | 101 | 0 | 0 |
-| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | wszczęte | [informacja_o_wszczętych_postępowaniach_o_WZ_LICP_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wszcz%C4%99tych_post%C4%99powaniach_o_WZ_LICP_IX_2026+%2B.xlsx/289a1962-288a-3179-aabf-643286f2a106?t=1791798491258) | 85 | 3 | 3 |
-| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | ULICP C2 | [informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym _i_gminnym_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym+_i_gminnym_IX_2026+%2B.xlsx/7dbca2ea-686b-0157-caa3-134d35570f6b?t=1791798490447) | 6 | 1 | 1 |
-| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | ULICP C1 | [informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_wojódzkim_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_woj%C3%B3dzkim_IX_2026+%2B.xlsx/fae00082-7a3e-6cb0-d96c-6a3104611a81?t=1791798491576) | 5 | 1 | 1 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | WZ | [informacja_o_wydanych_decyzjach_WZ_X_2026 +.xlsx](https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_WZ_X_2026+%2B.xlsx/c03ab73b-eeab-e946-f4b2-bcc6a3181170?t=1794226314841) | 108 | 0 | 0 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | WZ | [informacja_o_wydanych_decyzjach_WZ_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wydanych_decyzjach_WZ_IX_2026+%2B.xlsx/1d75d6d6-239a-2dc1-843b-70184b23709c?t=1791798490945) (no longer linked since 2026-11-12) | 101 | 0 | 0 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | wszczęte | [informacja_o_wszczętych_postępowaniach_o_WZ_LICP_X_2026 +.xlsx](https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wszcz%C4%99tych_post%C4%99powaniach_o_WZ_LICP_X_2026+%2B.xlsx/13712e56-4b63-a2e6-3363-5daf98175dc8?t=1794226315093) | 107 | 4 | 4 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | wszczęte | [informacja_o_wszczętych_postępowaniach_o_WZ_LICP_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wszcz%C4%99tych_post%C4%99powaniach_o_WZ_LICP_IX_2026+%2B.xlsx/289a1962-288a-3179-aabf-643286f2a106?t=1791798491258) (no longer linked since 2026-11-12) | 85 | 3 | 3 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | ULICP C2 | [informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym _i_gminnym_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym+_i_gminnym_IX_2026+%2B.xlsx/7dbca2ea-686b-0157-caa3-134d35570f6b?t=1791798490447) (no longer linked since 2026-11-12) | 6 | 1 | 1 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | ULICP C2 | [informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym _i_gminnym_X_2026+.xlsx](https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym+_i_gminnym_X_2026%2B.xlsx/e0d771ec-dd75-b9be-a638-bd80fc8a8d6a?t=1794226314560) | – | – | 0 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | ULICP C1 | [informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_wojódzkim_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_woj%C3%B3dzkim_IX_2026+%2B.xlsx/fae00082-7a3e-6cb0-d96c-6a3104611a81?t=1791798491576) (no longer linked since 2026-11-12) | 5 | 1 | 1 |
+| [Informacja o wszczętych postępowaniach i wydanych decyzjach administracyjnych](https://architektura.um.warszawa.pl/postepowania-i-decyzje) | 2026 | ULICP C1 | [informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_wojódzkim_X_2026+.xlsx](https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_woj%C3%B3dzkim_X_2026%2B.xlsx/2bdca5a3-f93b-a6ec-d25f-d6aa76579389?t=1794226314259) | – | – | 0 |
 | [Informacja o wszczętych postępowaniach i wydanych decyzjach (2025 r.)](https://architektura.um.warszawa.pl/-/rejestry25) | 2025 | WZ | [informacja o wydanych decyzjach_wz_XII_25 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach_wz_XII_25+%2B.xlsx/cb763523-543a-dc26-c549-da9e662d76c8?t=1768389582758) | 125 | 1 | 1 |
 | [Informacja o wszczętych postępowaniach i wydanych decyzjach (2025 r.)](https://architektura.um.warszawa.pl/-/rejestry25) | 2025 | wszczęte | [informacja o wszczętych postępowaniach o wz,licp_XII_25.xlsx](https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_25.xlsx/ec2f3679-1303-b07d-d372-2b59bbad3874?t=1768389583052) | 94 | 1 | 1 |
 | [Informacja o wszczętych postępowaniach i wydanych decyzjach (2025 r.)](https://architektura.um.warszawa.pl/-/rejestry25) | 2025 | ULICP C2 | [informacja o wydanych decyzjach ws. ustalenia_licp_pow-gm_XII_25 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_25+%2B.xlsx/b7892448-d604-fd62-1991-5e616a15c926?t=1768389582390) | 10 | 1 | 1 |
@@ -83,8 +87,8 @@ Biuro Architektury i Planowania Przestrzennego publishes the same three lists fo
 | [Informacja o wszczętych postępowaniach i wydanych decyzjach (sierpień - grudzień 2020 r.)](https://architektura.um.warszawa.pl/-/rejestry2020) | 2020 | ULICP C2 | [informacja_dec._licp_pow_gmi_sierpien-grudzien_20.xlsx](https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_dec._licp_pow_gmi_sierpien-grudzien_20.xlsx/3f2da765-50ac-0efc-c47e-a02063a0d05c?t=1634497931200) | 6 | 0 | 0 |
 | [Informacja o wszczętych postępowaniach i wydanych decyzjach (sierpień - grudzień 2020 r.)](https://architektura.um.warszawa.pl/-/rejestry2020) | 2020 | ULICP C1 | [informacja_decyzje_licp_kraj_woj_sierpien-_grudzien_20.xlsx](https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_decyzje_licp_kraj_woj_sierpien-_grudzien_20.xlsx/9fdd4da2-0828-b9a3-089e-f2c4d2dc2d37?t=1634497931193) | 6 | 0 | 0 |
 
-* Records: 35 (WZ 17, CP 6, Wszczęcie 12); decision outcomes: Ustalenie (decyzja pozytywna) 9, Odmowa 1, Umorzenie postępowania 9, Przeniesienie decyzji 2, Wygaśnięcie decyzji 2.
-* Listed in more than one snapshot / yearly file: 0.
+* Records: 36 (WZ 17, CP 6, Wszczęcie 13); decision outcomes: Ustalenie (decyzja pozytywna) 9, Odmowa 1, Umorzenie postępowania 9, Przeniesienie decyzji 2, Wygaśnięcie decyzji 2.
+* Listed in more than one snapshot / yearly file: 3 ([`ws-am-och-zp-w-6733-2026-1`](https://3-n.github.io/wzsearch/#/wpis/ws-am-och-zp-w-6733-2026-1?dz=ochota), [`ws-am-och-zp-w-6730-2026-12`](https://3-n.github.io/wzsearch/#/wpis/ws-am-och-zp-w-6730-2026-12?dz=ochota), [`ws-am-och-zp-w-6733-2025-3`](https://3-n.github.io/wzsearch/#/wpis/ws-am-och-zp-w-6733-2025-3?dz=ochota)).
 
 ## GUNB RWDZ (building permits and notifications)
 
@@ -134,7 +138,7 @@ Register rows of the district office (*Prezydent Miasta Warszawa - Praga Płd.*)
 `related` links records that share a cadastral parcel or a street + house number, across all three datasets. A shared parcel is not necessarily the same project (a large housing-estate parcel carries many unrelated renovations).
 
 * Dzielnica: 119 of 196 records relate to at least one permit or notification.
-* BAiPP (miasto): 25 of 35 records relate to at least one permit or notification.
+* BAiPP (miasto): 25 of 36 records relate to at least one permit or notification.
 * GUNB RWDZ: 180 of 1133 permits/notifications relate to a WZ/ULICP record.
 * WZ decisions (not refused/discontinued) followed by a building permit on the same parcel: 29 of 97 (median 309 days to the first such permit).
 * CP decisions (not refused/discontinued) followed by a building permit on the same parcel: 22 of 40 (median 422 days to the first such permit).
@@ -144,20 +148,20 @@ Register rows of the district office (*Prezydent Miasta Warszawa - Praga Płd.*)
 
 | Method | Dzielnica | BAiPP (miasto) | GUNB RWDZ |
 |---|---:|---:|---:|
-| parcel (ULDK centroid) | 186 (94.9%) | 34 (97.1%) | 1067 (94.2%) |
+| parcel (ULDK centroid) | 186 (94.9%) | 35 (97.2%) | 1067 (94.2%) |
 | address point (UUG) | 5 (2.6%) | 0 (0.0%) | 45 (4.0%) |
-| street / crossing (approximate) | 3 (1.5%) | 1 (2.9%) | 10 (0.9%) |
+| street / crossing (approximate) | 3 (1.5%) | 1 (2.8%) | 10 (0.9%) |
 | not located | 2 (1.0%) | 0 (0.0%) | 11 (1.0%) |
-| **located** | **194** (**99.0%**) | **35** (**100.0%**) | **1122** (**99.0%**) |
+| **located** | **194** (**99.0%**) | **36** (**100.0%**) | **1122** (**99.0%**) |
 
 * Unique parcel ids (all datasets): 1186; found in ULDK 1044 (88.0%), missing 142, lookup errors 0.
 * Of these, looked up in GUGiK's county parcel package instead of ULDK (same land register, see `pipeline/egib.py`): 1186.
-* Records with parcels: 1355 – all found 1229, some 43, none 83.
+* Records with parcels: 1356 – all found 1230, some 43, none 83.
 * Precinct of the source corrected by the parcel under the exact address (ULDK GetParcelByXY; a warning on the record): 21.
 * Address vs parcel conflicts (> 300 m; parcel point kept): 8, of which the address lies on a parcel of another precinct (`geo.conflict`): 6; parcels > 1 km apart: 0; point moved onto the largest parcel (centroid on none of them): 62; point from the parcels in the district only (others lie in a neighbouring district): 0; points discarded outside the district: 1.
 * Parcel ids ULDK does not know (first 20): `146506_8.0202.10/5`, `146506_8.0206.5/7`, `146506_8.0120.9`, `146506_8.0318.5/2`, `146506_8.0204.29/8`, `146506_8.0203.2`, `146506_8.0203.02`, `146506_8.0203.04`, `146506_8.0203.63`, `146506_8.0203.64`, `146506_8.0204.10/5`, `146506_8.0202.12/12`, `146506_8.0202.12/5`, `146506_8.0202.12/6`, `146506_8.0202.91/6`, `146506_8.0202.92`, `146506_8.0106.12/12`, `146506_8.0106.12/5`, `146506_8.0106.12/6`, `146506_8.0205.56/1`.
 * Records per MSI area (Dzielnica): (none) 2, filtry 69, rakowiec 3, stara-ochota 107, szczesliwice 15.
-* Records per MSI area (BAiPP (miasto)): filtry 8, rakowiec 3, stara-ochota 22, szczesliwice 2.
+* Records per MSI area (BAiPP (miasto)): filtry 8, rakowiec 3, stara-ochota 22, szczesliwice 3.
 * Records per MSI area (GUNB RWDZ): (none) 11, filtry 197, rakowiec 197, stara-ochota 388, szczesliwice 340.
 
 Dzielnica records without a location (2):
@@ -250,7 +254,7 @@ Location notes:
 | Tag | Group | Dzielnica | BAiPP (miasto) | GUNB RWDZ |
 |---|---|---:|---:|---:|
 | Dom jednorodzinny (`jednorodzinny`) | funkcja | 6 | 0 | 57 |
-| Budynek wielorodzinny (`wielorodzinny`) | funkcja | 17 | 13 | 417 |
+| Budynek wielorodzinny (`wielorodzinny`) | funkcja | 17 | 14 | 417 |
 | Adaptacja na mieszkanie (`adaptacja-mieszkalna`) | funkcja | 9 | 0 | 11 |
 | Akademik, hostel, hotel (`zamieszkanie-zbiorowe`) | funkcja | 0 | 5 | 20 |
 | Handel, usługi, biura (`uslugi`) | funkcja | 26 | 8 | 168 |
@@ -268,7 +272,7 @@ Location notes:
 | Przemysł, magazyny (`przemysl-magazyny`) | funkcja | 2 | 0 | 22 |
 | Wiata, altana, budynek gospodarczy (`obiekty-pomocnicze`) | funkcja | 1 | 0 | 27 |
 | Winda, dostępność (`windy-dostepnosc`) | funkcja | 2 | 1 | 19 |
-| Nowa budowa (`nowa-budowa`) | roboty | 66 | 10 | 263 |
+| Nowa budowa (`nowa-budowa`) | roboty | 66 | 11 | 263 |
 | Rozbudowa, nadbudowa, przebudowa (`rozbudowa-przebudowa`) | roboty | 62 | 9 | 508 |
 | Remont, docieplenie (`remont`) | roboty | 3 | 0 | 277 |
 | Zmiana sposobu użytkowania (`zmiana-sposobu-uzytkowania`) | roboty | 42 | 6 | 47 |
@@ -287,6 +291,13 @@ Location notes:
 
 ## Source files and pages
 
-* Layouts: baipp-cp 12, baipp-cp-2020 2, baipp-ws 6, baipp-ws-2020 1, baipp-wz 6, baipp-wz-2020 1, pdf-template-cp 1, pdf-template-ws 1, pdf-template-wz 1, rwdz-wnioski 1, rwdz-zgloszenia 2.
+* Layouts: (none) 2, baipp-cp 12, baipp-cp-2020 2, baipp-ws 7, baipp-ws-2020 1, baipp-wz 7, baipp-wz-2020 1, pdf-template-cp 1, pdf-template-ws 1, pdf-template-wz 1, rwdz-wnioski 1, rwdz-zgloszenia 2.
 * Template rows skipped (only a pre-printed Lp number): 31.
 * Files linked from more than one page: none.
+* Download errors: `8df7eecf21` HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_woj%C3%B3dzkim_X_2026%2B.xlsx/2bdca5a3-f93b-a6ec-d25f-d6aa76579389?t=1794226314259; `a18f215831` HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym+_i_gminnym_X_2026%2B.xlsx/e0d771ec-dd75-b9be-a638-bd80fc8a8d6a?t=1794226314560; `7349917c1f` HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/12025039/152228831/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_25.xlsx/ec2f3679-1303-b07d-d372-2b59bbad3874?t=1768389583052; `62bd84cf3b` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `3b7f9d6f99` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `e8a03cd9a9` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `c3eb081a44` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `754e271735` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `8f83cf64eb` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `6774d0478d` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `3e84585827` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `a9a20fa57d` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `da7da0bfca` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `832bd8237b` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `b65486632c` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `10f399e85c` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `46c3206dfa` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `bd4dd6ed78` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `508b5298d6` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `4c11c59898` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `c6d56452ea` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `020cc57e6f` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `c72152adf9` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `8051b61e17` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `8f6cecf83d` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu; `b5fdcca9bd` HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu.
+* Files no longer linked by the source (kept as snapshots): [informacja_o_wszczętych_postępowaniach_o_WZ_LICP_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wszcz%C4%99tych_post%C4%99powaniach_o_WZ_LICP_IX_2026+%2B.xlsx/289a1962-288a-3179-aabf-643286f2a106?t=1791798491258) since 2026-11-12, [informacja_o_wydanych_decyzjach_WZ_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wydanych_decyzjach_WZ_IX_2026+%2B.xlsx/1d75d6d6-239a-2dc1-843b-70184b23709c?t=1791798490945) since 2026-11-12, [informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_wojódzkim_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_woj%C3%B3dzkim_IX_2026+%2B.xlsx/fae00082-7a3e-6cb0-d96c-6a3104611a81?t=1791798491576) since 2026-11-12, [informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym _i_gminnym_IX_2026 +.xlsx](https://architektura.um.warszawa.pl/documents/12025039/171613001/informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym+_i_gminnym_IX_2026+%2B.xlsx/7dbca2ea-686b-0157-caa3-134d35570f6b?t=1791798490447) since 2026-11-12.
+
+File warnings:
+
+* [informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_wojódzkim_X_2026+.xlsx](https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_woj%C3%B3dzkim_X_2026%2B.xlsx/2bdca5a3-f93b-a6ec-d25f-d6aa76579389?t=1794226314259): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.
+* [informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym _i_gminnym_X_2026+.xlsx](https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym+_i_gminnym_X_2026%2B.xlsx/e0d771ec-dd75-b9be-a638-bd80fc8a8d6a?t=1794226314560): Brak lokalnej kopii pliku (nie udało się go pobrać) – pozycje nieodczytane.

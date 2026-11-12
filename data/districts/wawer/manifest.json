@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T16:07:26Z",
+  "generated_at": "2026-11-12T06:55:27Z",
   "index_url": "https://wawer.um.warszawa.pl/dokumenty-budowlane",
   "pages": [
     {
@@ -256,6 +256,33 @@
           "period": "2026-09"
         },
         {
+          "text": "Rejestr decyzji - cel publiczny (październik), 11KB, .xlsx",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "cd856194aa"
+          ],
+          "period": "2026-10"
+        },
+        {
+          "text": "Wszczęcia WZ (październik), 16 KB, .xlsx",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "d43383319c"
+          ],
+          "period": "2026-10"
+        },
+        {
+          "text": "Rejestr decyzji o warunkach zabudowy (październik), 16 KB, .xlsx",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "22845a81cb"
+          ],
+          "period": "2026-10"
+        },
+        {
           "text": "Rejestr decyzji - cel publiczny (115 KB, .zip)",
           "category": "cp",
           "declared_count": null,
@@ -411,12 +438,69 @@
       ],
       "warnings": [],
       "skipped_attachments": {
-        "excluded": 15,
+        "excluded": 16,
         "pdf": 2
       }
     }
   ],
   "files": [
+    {
+      "file_id": "cd856194aa",
+      "source": "district",
+      "url": "https://wawer.um.warszawa.pl/documents/47611/153849751/decyzje_CP_10_2026_1129_1009zal3.xlsx/1c669546-346d-5a4e-2d80-d9966ed00e19?t=1794231781641",
+      "document_path": "/documents/47611/153849751/decyzje_CP_10_2026_1129_1009zal3.xlsx/1c669546-346d-5a4e-2d80-d9966ed00e19",
+      "filename": "decyzje_CP_10_2026_1129_1009zal3.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2026-10",
+      "page_ids": [
+        "waw-dokumenty-budowlane"
+      ],
+      "local_path": "data/districts/wawer/raw/cd856194aa.xlsx",
+      "sha256": "b6ce92f8cae15cfbc7e143590dcd27ce4d0b6833154496e76dc74c638fd24355",
+      "size": 11425,
+      "downloaded_at": "2026-11-12T06:55:28Z",
+      "last_modified": "2026-11-09T13:43:01Z",
+      "history": []
+    },
+    {
+      "file_id": "22845a81cb",
+      "source": "district",
+      "url": "https://wawer.um.warszawa.pl/documents/47611/153849751/decyzje_WZ_10_2026_1129_1009zal2.xlsx/199867a1-2061-73e5-e85f-9bdb42b25b04?t=1794231783048",
+      "document_path": "/documents/47611/153849751/decyzje_WZ_10_2026_1129_1009zal2.xlsx/199867a1-2061-73e5-e85f-9bdb42b25b04",
+      "filename": "decyzje_WZ_10_2026_1129_1009zal2.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026-10",
+      "page_ids": [
+        "waw-dokumenty-budowlane"
+      ],
+      "local_path": "data/districts/wawer/raw/22845a81cb.xlsx",
+      "sha256": "bca8fe211def9a1d155c4abe04307911966efbe4ad2122240a8055b67c7686c9",
+      "size": 16178,
+      "downloaded_at": "2026-11-12T06:55:29Z",
+      "last_modified": "2026-11-09T13:43:03Z",
+      "history": []
+    },
+    {
+      "file_id": "d43383319c",
+      "source": "district",
+      "url": "https://wawer.um.warszawa.pl/documents/47611/153849751/wszcz%C4%99cia_WZ%2C+CP_10_2026_1129_1009zal1.xlsx/4142f47a-141d-aea8-ce24-b39d59256312?t=1794231783608",
+      "document_path": "/documents/47611/153849751/wszcz%C4%99cia_WZ%2C+CP_10_2026_1129_1009zal1.xlsx/4142f47a-141d-aea8-ce24-b39d59256312",
+      "filename": "wszczęcia_WZ, CP_10_2026_1129_1009zal1.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026-10",
+      "page_ids": [
+        "waw-dokumenty-budowlane"
+      ],
+      "local_path": "data/districts/wawer/raw/d43383319c.xlsx",
+      "sha256": "1ab36cf8875fc1799e658f837d6c2ae19116cd2459e57b92338996d4a083a487",
+      "size": 16712,
+      "downloaded_at": "2026-11-12T06:55:29Z",
+      "last_modified": "2026-11-09T13:43:03Z",
+      "history": []
+    },
     {
       "file_id": "6c87ff8281",
       "source": "district",

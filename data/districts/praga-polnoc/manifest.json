@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T16:01:50Z",
+  "generated_at": "2026-11-12T06:49:09Z",
   "index_url": "https://pragapn.um.warszawa.pl/-/ogloszenia-2",
   "pages": [
     {
@@ -12,6 +12,33 @@
       "index_page": null,
       "source": "district",
       "blocks": [
+        {
+          "text": "Informacja o wydanych decyzjach o warunkach zabudowy - Październik 2026 r.",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "7f2f5b8bf9"
+          ],
+          "period": "2026-10"
+        },
+        {
+          "text": "Informacja o wydanych decyzjach w sprawie ustalenia lokalizacji inwestycji celu publicznego o znaczeniu powiatowym i gminnym - Październik 2026 r.",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "45eb1cb4c9"
+          ],
+          "period": "2026-10"
+        },
+        {
+          "text": "informacja o wszczętych postępowaniach w sprawie ustalenia warunków zabudowy i ustalenia inwestycji celu publicznego - Październik 2026 r.",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "30f435a567"
+          ],
+          "period": "2026-10"
+        },
         {
           "text": "Informacja o wydanych decyzjach o warunkach zabudowy - Wrzesień 2026 r.",
           "category": "wz",
@@ -1361,6 +1388,63 @@
     }
   ],
   "files": [
+    {
+      "file_id": "7f2f5b8bf9",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/42475/25625033/decyzje+wz+pa%C5%BAdziernik+2026.xlsx/a48414de-9bc8-7f34-0c66-f3ce16da5493?t=1794229963309",
+      "document_path": "/documents/42475/25625033/decyzje+wz+pa%C5%BAdziernik+2026.xlsx/a48414de-9bc8-7f34-0c66-f3ce16da5493",
+      "filename": "decyzje wz październik 2026.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026-10",
+      "page_ids": [
+        "ppn-ogloszenia-2"
+      ],
+      "local_path": "data/districts/praga-polnoc/raw/7f2f5b8bf9.xlsx",
+      "sha256": "f64db26adc4ba4394621b217ac90b4a9d39525d10c09ec912e1eccd9b4922cb2",
+      "size": 12693,
+      "downloaded_at": "2026-11-12T06:49:09Z",
+      "last_modified": "2026-11-09T13:12:43Z",
+      "history": []
+    },
+    {
+      "file_id": "30f435a567",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/42475/25625033/pa%C5%BAdziernik+2026.xlsx/40452fcd-5f28-777b-25db-d6acb495d61d?t=1794229927244",
+      "document_path": "/documents/42475/25625033/pa%C5%BAdziernik+2026.xlsx/40452fcd-5f28-777b-25db-d6acb495d61d",
+      "filename": "październik 2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026-10",
+      "page_ids": [
+        "ppn-ogloszenia-2"
+      ],
+      "local_path": "data/districts/praga-polnoc/raw/30f435a567.xlsx",
+      "sha256": "0bcba3514b5f3c825de8fc2f543ba052ca5dfcad66640e874ac0b17379a26842",
+      "size": 20251,
+      "downloaded_at": "2026-11-12T06:49:19Z",
+      "last_modified": "2026-11-09T13:12:07Z",
+      "history": []
+    },
+    {
+      "file_id": "45eb1cb4c9",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/42475/25625033/pa%C5%BAdziernik+icp+2026.xlsx/768be76c-18dc-1c6a-3e21-95cc630b2141?t=1794230022732",
+      "document_path": "/documents/42475/25625033/pa%C5%BAdziernik+icp+2026.xlsx/768be76c-18dc-1c6a-3e21-95cc630b2141",
+      "filename": "październik icp 2026.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2026-10",
+      "page_ids": [
+        "ppn-ogloszenia-2"
+      ],
+      "local_path": "data/districts/praga-polnoc/raw/45eb1cb4c9.xlsx",
+      "sha256": "11f46a8fd85c76d4dd5b78c9016ef26a96f4c4610c32fc2cff66fc140da5f2bf",
+      "size": 12643,
+      "downloaded_at": "2026-11-12T06:49:29Z",
+      "last_modified": "2026-11-09T13:13:42Z",
+      "history": []
+    },
     {
       "file_id": "7b4da4f5df",
       "source": "district",

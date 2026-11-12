@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T19:20:29Z",
+  "generated_at": "2026-11-12T06:47:59Z",
   "index_url": "https://bialoleka.um.warszawa.pl/decyzje-architektoniczne",
   "pages": [
     {
@@ -74,108 +74,12 @@
             "e58d832554"
           ],
           "period": "2020"
-        },
-        {
-          "text": "Cel publiczny decyzje 2019 (100 KB, PDF)",
-          "category": "cp",
-          "declared_count": null,
-          "file_ids": [
-            "f5fe73ef65"
-          ],
-          "period": "2019"
-        },
-        {
-          "text": "Cel publiczny decyzje 2018 (103 KB, PDF)",
-          "category": "cp",
-          "declared_count": null,
-          "file_ids": [
-            "11b02593eb"
-          ],
-          "period": "2018"
-        },
-        {
-          "text": "Cel publiczny decyzje 2017 (97 KB, PDF)",
-          "category": "cp",
-          "declared_count": null,
-          "file_ids": [
-            "56c6cf2cee"
-          ],
-          "period": "2017"
-        },
-        {
-          "text": "Cel publiczny decyzje 2016 (102 KB, PDF)",
-          "category": "cp",
-          "declared_count": null,
-          "file_ids": [
-            "708e78ffca"
-          ],
-          "period": "2016"
-        },
-        {
-          "text": "Cel publiczny decyzje 2015 (110 KB, PDF)",
-          "category": "cp",
-          "declared_count": null,
-          "file_ids": [
-            "16ddd8c95d"
-          ],
-          "period": "2015"
-        },
-        {
-          "text": "Cel publiczny decyzje 2014 (272 KB, PDF)",
-          "category": "cp",
-          "declared_count": null,
-          "file_ids": [
-            "0d000e08b2"
-          ],
-          "period": "2014"
-        },
-        {
-          "text": "Cel publiczny decyzje 2013 (323 KB, PDF)",
-          "category": "cp",
-          "declared_count": null,
-          "file_ids": [
-            "9fc4ee7657"
-          ],
-          "period": "2013"
-        },
-        {
-          "text": "Cel publiczny decyzje 2012 (432 KB, PDF)",
-          "category": "cp",
-          "declared_count": null,
-          "file_ids": [
-            "3b35c30681"
-          ],
-          "period": "2012"
-        },
-        {
-          "text": "Cel publiczny decyzje 2011 (331 KB, PDF)",
-          "category": "cp",
-          "declared_count": null,
-          "file_ids": [
-            "77144b847d"
-          ],
-          "period": "2011"
-        },
-        {
-          "text": "Cel publiczny decyzje 2010 (254 KB, PDF)",
-          "category": "cp",
-          "declared_count": null,
-          "file_ids": [
-            "c9f0c3fb24"
-          ],
-          "period": "2010"
-        },
-        {
-          "text": "Cel publiczny decyzje 2009 (158 KB, PDF)",
-          "category": "cp",
-          "declared_count": null,
-          "file_ids": [
-            "441f66f41f"
-          ],
-          "period": "2009"
         }
       ],
-      "warnings": []
+      "warnings": [],
+      "skipped_attachments": {
+        "before 2020": 11
+      }
     },
     {
       "page_id": "bia-warunki-zabudowy-decyzje",
@@ -251,42 +155,6 @@
           "period": "2020"
         },
         {
-          "text": "Warunki zabudowy decyzje 2019 (153 KB, PDF)",
-          "category": "wz",
-          "declared_count": null,
-          "file_ids": [
-            "3997c04d91"
-          ],
-          "period": "2019"
-        },
-        {
-          "text": "Warunki zabudowy decyzje 2018 (152 KB, PDF)",
-          "category": "wz",
-          "declared_count": null,
-          "file_ids": [
-            "9a1cf7727c"
-          ],
-          "period": "2018"
-        },
-        {
-          "text": "Warunki zabudowy decyzje 2017 (158 KB, PDF)",
-          "category": "wz",
-          "declared_count": null,
-          "file_ids": [
-            "fbe97abc18"
-          ],
-          "period": "2017"
-        },
-        {
-          "text": "Warunki zabudowy decyzje 2016 (152 KB, PDF)",
-          "category": "wz",
-          "declared_count": null,
-          "file_ids": [
-            "f0b0efe308"
-          ],
-          "period": "2016"
-        },
-        {
           "text": "Warunki zabudowy decyzje 2015 (2023 KB, PDF)",
           "category": "wz",
           "declared_count": null,
@@ -294,54 +162,12 @@
             "8bfdbe20c1"
           ],
           "period": "2023"
-        },
-        {
-          "text": "Warunki zabudowy decyzje 2014 (417 KB, PDF)",
-          "category": "wz",
-          "declared_count": null,
-          "file_ids": [
-            "385d46347e"
-          ],
-          "period": "2014"
-        },
-        {
-          "text": "Warunki zabudowy decyzje 2013 (523 KB, PDF)",
-          "category": "wz",
-          "declared_count": null,
-          "file_ids": [
-            "a5b29e3191"
-          ],
-          "period": "2013"
-        },
-        {
-          "text": "Warunki zabudowy decyzje 2012 (548 KB, PDF)",
-          "category": "wz",
-          "declared_count": null,
-          "file_ids": [
-            "c7a4e37998"
-          ],
-          "period": "2012"
-        },
-        {
-          "text": "Warunki zabudowy decyzje 2011 (432 KB, PDF)",
-          "category": "wz",
-          "declared_count": null,
-          "file_ids": [
-            "35c0e57885"
-          ],
-          "period": "2011"
-        },
-        {
-          "text": "Warunki zabudowy decyzje 2010 (431 KB, PDF)",
-          "category": "wz",
-          "declared_count": null,
-          "file_ids": [
-            "43f6d1d5d2"
-          ],
-          "period": "2010"
         }
       ],
-      "warnings": []
+      "warnings": [],
+      "skipped_attachments": {
+        "before 2020": 9
+      }
     },
     {
       "page_id": "bia-warunki-zabudowy-wnioski",
@@ -415,18 +241,12 @@
             "110312a63a"
           ],
           "period": "2020"
-        },
-        {
-          "text": "warunki zabudowy - wnioski 2019 (130 KB, XLSX)",
-          "category": "ws",
-          "declared_count": null,
-          "file_ids": [
-            "15bb0dbf5e"
-          ],
-          "period": "2019"
         }
       ],
-      "warnings": []
+      "warnings": [],
+      "skipped_attachments": {
+        "before 2020": 1
+      }
     }
   ],
   "files": [
@@ -482,12 +302,11 @@
         "bia-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/bialoleka/raw/ab9bfafebe.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/40771/0/wnioski+WZ+%283%29.pdf/cd7e550c-67b1-4c3a-e351-b2b6749a5c57?t=1791357189945"
+      "sha256": "eeff66fac171bf25f873242acfbd28e8ed44c3859dcb270df7dbd8077d724cae",
+      "size": 147043,
+      "downloaded_at": "2026-10-27T19:22:35Z",
+      "last_modified": "2026-10-07T07:13:09Z",
+      "history": []
     },
     {
       "file_id": "eebc674a7d",
@@ -527,7 +346,7 @@
       "downloaded_at": null,
       "last_modified": null,
       "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/40771/32974619/WZIOSKI+WZ+12.2025.pdf/4d7e6d11-7701-2873-ff42-36bae7c5c94c?t=1768225276524"
     },
     {
       "file_id": "6767788d24",
@@ -862,426 +681,6 @@
         "bia-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/bialoleka/raw/110312a63a.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "15bb0dbf5e",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/7c3ad6631ffa2c60e1106f756bb8436aec3038bb.xlsx/8da77f26-e8b8-3614-11cf-b01a87bfcd1c?t=1634500012476",
-      "document_path": "/documents/40771/2139864/7c3ad6631ffa2c60e1106f756bb8436aec3038bb.xlsx/8da77f26-e8b8-3614-11cf-b01a87bfcd1c",
-      "filename": "7c3ad6631ffa2c60e1106f756bb8436aec3038bb.xlsx",
-      "ext": "xlsx",
-      "category": "ws",
-      "period": "2019",
-      "page_ids": [
-        "bia-warunki-zabudowy-wnioski"
-      ],
-      "local_path": "data/districts/bialoleka/raw/15bb0dbf5e.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "f5fe73ef65",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/licp2019.pdf/002fa275-5e1f-67c8-47fb-009f09dd285d?t=1634500019820",
-      "document_path": "/documents/40771/2139864/licp2019.pdf/002fa275-5e1f-67c8-47fb-009f09dd285d",
-      "filename": "licp2019.pdf",
-      "ext": "pdf",
-      "category": "cp",
-      "period": "2019",
-      "page_ids": [
-        "bia-inwestycje-celu-publicznego-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/f5fe73ef65.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "3997c04d91",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/wz2019.pdf/38953c04-216c-5f5d-5ce6-82370416a389?t=1634500019938",
-      "document_path": "/documents/40771/2139864/wz2019.pdf/38953c04-216c-5f5d-5ce6-82370416a389",
-      "filename": "wz2019.pdf",
-      "ext": "pdf",
-      "category": "wz",
-      "period": "2019",
-      "page_ids": [
-        "bia-warunki-zabudowy-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/3997c04d91.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "11b02593eb",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/licp2018.pdf/a71a2c80-c169-e430-ee88-b3e36d66c24a?t=1634500019832",
-      "document_path": "/documents/40771/2139864/licp2018.pdf/a71a2c80-c169-e430-ee88-b3e36d66c24a",
-      "filename": "licp2018.pdf",
-      "ext": "pdf",
-      "category": "cp",
-      "period": "2018",
-      "page_ids": [
-        "bia-inwestycje-celu-publicznego-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/11b02593eb.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "9a1cf7727c",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/wz2018.pdf/2c2b5979-9836-0b5f-40c1-b263ecf2289d?t=1634500019948",
-      "document_path": "/documents/40771/2139864/wz2018.pdf/2c2b5979-9836-0b5f-40c1-b263ecf2289d",
-      "filename": "wz2018.pdf",
-      "ext": "pdf",
-      "category": "wz",
-      "period": "2018",
-      "page_ids": [
-        "bia-warunki-zabudowy-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/9a1cf7727c.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "56c6cf2cee",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/licp2017.pdf/b192d001-f0d0-38b2-3a52-3997a5f296ca?t=1634500019843",
-      "document_path": "/documents/40771/2139864/licp2017.pdf/b192d001-f0d0-38b2-3a52-3997a5f296ca",
-      "filename": "licp2017.pdf",
-      "ext": "pdf",
-      "category": "cp",
-      "period": "2017",
-      "page_ids": [
-        "bia-inwestycje-celu-publicznego-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/56c6cf2cee.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "fbe97abc18",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/wz2017.pdf/e4050c4e-cb95-cf0e-baf7-8f942cac2c41?t=1634500019958",
-      "document_path": "/documents/40771/2139864/wz2017.pdf/e4050c4e-cb95-cf0e-baf7-8f942cac2c41",
-      "filename": "wz2017.pdf",
-      "ext": "pdf",
-      "category": "wz",
-      "period": "2017",
-      "page_ids": [
-        "bia-warunki-zabudowy-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/fbe97abc18.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "708e78ffca",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/licp2016.pdf/97dd586c-097c-b14d-b0b0-12d4c2ad0b0d?t=1634500019853",
-      "document_path": "/documents/40771/2139864/licp2016.pdf/97dd586c-097c-b14d-b0b0-12d4c2ad0b0d",
-      "filename": "licp2016.pdf",
-      "ext": "pdf",
-      "category": "cp",
-      "period": "2016",
-      "page_ids": [
-        "bia-inwestycje-celu-publicznego-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/708e78ffca.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "f0b0efe308",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/wz2016.pdf/23220701-155b-e938-832e-cb9797b77e3a?t=1634500019967",
-      "document_path": "/documents/40771/2139864/wz2016.pdf/23220701-155b-e938-832e-cb9797b77e3a",
-      "filename": "wz2016.pdf",
-      "ext": "pdf",
-      "category": "wz",
-      "period": "2016",
-      "page_ids": [
-        "bia-warunki-zabudowy-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/f0b0efe308.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "16ddd8c95d",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/licp2015.pdf/9b47a33a-05ad-1d6a-9e61-cdb643c5d065?t=1634500019865",
-      "document_path": "/documents/40771/2139864/licp2015.pdf/9b47a33a-05ad-1d6a-9e61-cdb643c5d065",
-      "filename": "licp2015.pdf",
-      "ext": "pdf",
-      "category": "cp",
-      "period": "2015",
-      "page_ids": [
-        "bia-inwestycje-celu-publicznego-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/16ddd8c95d.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "0d000e08b2",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/licp2014.pdf/23221b87-6e72-9472-6a44-9101c599c54a?t=1634500019929",
-      "document_path": "/documents/40771/2139864/licp2014.pdf/23221b87-6e72-9472-6a44-9101c599c54a",
-      "filename": "licp2014.pdf",
-      "ext": "pdf",
-      "category": "cp",
-      "period": "2014",
-      "page_ids": [
-        "bia-inwestycje-celu-publicznego-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/0d000e08b2.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "385d46347e",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/wz2014.pdf/245d9535-f465-4510-fcd4-4299b8bed5a7?t=1634500019989",
-      "document_path": "/documents/40771/2139864/wz2014.pdf/245d9535-f465-4510-fcd4-4299b8bed5a7",
-      "filename": "wz2014.pdf",
-      "ext": "pdf",
-      "category": "wz",
-      "period": "2014",
-      "page_ids": [
-        "bia-warunki-zabudowy-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/385d46347e.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "9fc4ee7657",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/licp2013.pdf/a380afb8-b95c-bd5f-66ed-8ed4beb5e7c8?t=1634500019918",
-      "document_path": "/documents/40771/2139864/licp2013.pdf/a380afb8-b95c-bd5f-66ed-8ed4beb5e7c8",
-      "filename": "licp2013.pdf",
-      "ext": "pdf",
-      "category": "cp",
-      "period": "2013",
-      "page_ids": [
-        "bia-inwestycje-celu-publicznego-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/9fc4ee7657.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "a5b29e3191",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/wz2013.pdf/0887148e-b71a-bf26-1b71-e604d845a578?t=1634500020045",
-      "document_path": "/documents/40771/2139864/wz2013.pdf/0887148e-b71a-bf26-1b71-e604d845a578",
-      "filename": "wz2013.pdf",
-      "ext": "pdf",
-      "category": "wz",
-      "period": "2013",
-      "page_ids": [
-        "bia-warunki-zabudowy-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/a5b29e3191.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "3b35c30681",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/licp2012.pdf/d3c5a91f-377f-96e9-9a54-1e2de0d30180?t=1634500019908",
-      "document_path": "/documents/40771/2139864/licp2012.pdf/d3c5a91f-377f-96e9-9a54-1e2de0d30180",
-      "filename": "licp2012.pdf",
-      "ext": "pdf",
-      "category": "cp",
-      "period": "2012",
-      "page_ids": [
-        "bia-inwestycje-celu-publicznego-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/3b35c30681.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "c7a4e37998",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/wz2012.pdf/b3690647-5c1c-352e-c6f5-9bbd979a5404?t=1634500020001",
-      "document_path": "/documents/40771/2139864/wz2012.pdf/b3690647-5c1c-352e-c6f5-9bbd979a5404",
-      "filename": "wz2012.pdf",
-      "ext": "pdf",
-      "category": "wz",
-      "period": "2012",
-      "page_ids": [
-        "bia-warunki-zabudowy-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/c7a4e37998.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "77144b847d",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/licp2011.pdf/65ab6f5d-783f-84e4-aa8f-09eecfcefe79?t=1634500019895",
-      "document_path": "/documents/40771/2139864/licp2011.pdf/65ab6f5d-783f-84e4-aa8f-09eecfcefe79",
-      "filename": "licp2011.pdf",
-      "ext": "pdf",
-      "category": "cp",
-      "period": "2011",
-      "page_ids": [
-        "bia-inwestycje-celu-publicznego-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/77144b847d.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "35c0e57885",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/wz2011.pdf/bf07d3e3-af43-4ada-2aff-bdafaa641bd3?t=1634500020033",
-      "document_path": "/documents/40771/2139864/wz2011.pdf/bf07d3e3-af43-4ada-2aff-bdafaa641bd3",
-      "filename": "wz2011.pdf",
-      "ext": "pdf",
-      "category": "wz",
-      "period": "2011",
-      "page_ids": [
-        "bia-warunki-zabudowy-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/35c0e57885.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "c9f0c3fb24",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/licp2010.pdf/defa1c9d-cece-801b-8cb4-3d34ce752076?t=1634500019886",
-      "document_path": "/documents/40771/2139864/licp2010.pdf/defa1c9d-cece-801b-8cb4-3d34ce752076",
-      "filename": "licp2010.pdf",
-      "ext": "pdf",
-      "category": "cp",
-      "period": "2010",
-      "page_ids": [
-        "bia-inwestycje-celu-publicznego-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/c9f0c3fb24.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "43f6d1d5d2",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/wz2010.pdf/4d322dee-e168-7dbc-aeef-fb807b39263c?t=1634500020021",
-      "document_path": "/documents/40771/2139864/wz2010.pdf/4d322dee-e168-7dbc-aeef-fb807b39263c",
-      "filename": "wz2010.pdf",
-      "ext": "pdf",
-      "category": "wz",
-      "period": "2010",
-      "page_ids": [
-        "bia-warunki-zabudowy-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/43f6d1d5d2.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
-    },
-    {
-      "file_id": "441f66f41f",
-      "source": "district",
-      "url": "https://cdn.um.warszawa.pl/documents/40771/2139864/licp2009.pdf/29b5d8ec-9c8f-d46c-c967-a74d397e0895?t=1634500019876",
-      "document_path": "/documents/40771/2139864/licp2009.pdf/29b5d8ec-9c8f-d46c-c967-a74d397e0895",
-      "filename": "licp2009.pdf",
-      "ext": "pdf",
-      "category": "cp",
-      "period": "2009",
-      "page_ids": [
-        "bia-inwestycje-celu-publicznego-decyzje"
-      ],
-      "local_path": "data/districts/bialoleka/raw/441f66f41f.pdf",
       "sha256": null,
       "size": null,
       "downloaded_at": null,

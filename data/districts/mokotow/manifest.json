@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T19:06:08Z",
+  "generated_at": "2026-11-12T06:48:55Z",
   "index_url": "https://mokotow.um.warszawa.pl/wykazy-i-informacje-o-decyzjach",
   "pages": [
     {
@@ -1935,19 +1935,11 @@
             "9bb0c41878"
           ],
           "period": "2020-12"
-        },
-        {
-          "text": "Rejestr decyzji rok 2018",
-          "category": null,
-          "declared_count": null,
-          "file_ids": [
-            "b2e9361d2a"
-          ],
-          "period": "2018"
         }
       ],
       "warnings": [],
       "skipped_attachments": {
+        "before 2020": 1,
         "xls": 2
       }
     },
@@ -1961,6 +1953,15 @@
       "index_page": null,
       "source": "district",
       "blocks": [
+        {
+          "text": "Rejestr wniosków WZ październik 2026 (PDF; 42 KB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "a39f37ef69"
+          ],
+          "period": "2026-10"
+        },
         {
           "text": "Rejestr wniosków WZ i WZ70 wrzesień 2026 (PDF; 48 KB)",
           "category": "ws",
@@ -1994,6 +1995,15 @@
           "declared_count": null,
           "file_ids": [
             "b0bb423d17"
+          ],
+          "period": "2026-08"
+        },
+        {
+          "text": "Rejestr wniosków CP sierpień 2026 uzupełnienie z 04.11.2026 (PDF; 43 KB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "2cbb00ac4b"
           ],
           "period": "2026-08"
         },
@@ -2104,6 +2114,24 @@
             "de00260c4d"
           ],
           "period": "2026-01"
+        },
+        {
+          "text": "Rejestr decyzji WZ październik 2026 (PDF; 45 KB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "52912cbe92"
+          ],
+          "period": "2026-10"
+        },
+        {
+          "text": "Rejestr decyzji CP październik 2026 (PDF; 41 KB)",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "db495ebd08"
+          ],
+          "period": "2026-10"
         },
         {
           "text": "Rejestr decyzji WZ wrzesień 2026 (PDF; 39 KB)",
@@ -2246,6 +2274,63 @@
   ],
   "files": [
     {
+      "file_id": "db495ebd08",
+      "source": "district",
+      "url": "https://mokotow.um.warszawa.pl/documents/41751/153431513/rejestr+decyzji+CP_10_2026.pdf/ab0ea0d3-3132-c1f2-e07f-5264031d9f7b?t=1793880928912",
+      "document_path": "/documents/41751/153431513/rejestr+decyzji+CP_10_2026.pdf/ab0ea0d3-3132-c1f2-e07f-5264031d9f7b",
+      "filename": "rejestr decyzji CP_10_2026.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2026-10",
+      "page_ids": [
+        "mok-wykazy-i-informacje-o-decyzjach"
+      ],
+      "local_path": "data/districts/mokotow/raw/db495ebd08.pdf",
+      "sha256": "df78af66c0dd81ed853daeca99ced8282588d58f0d9f43be131a7e48ee112f0c",
+      "size": 41439,
+      "downloaded_at": "2026-11-12T06:48:56Z",
+      "last_modified": "2026-11-05T12:15:28Z",
+      "history": []
+    },
+    {
+      "file_id": "52912cbe92",
+      "source": "district",
+      "url": "https://mokotow.um.warszawa.pl/documents/41751/153431513/rejestr+decyzji+WZ_10_2026.pdf/91f2303a-f473-0bc3-0ef1-73afdd6b5ca2?t=1793880929204",
+      "document_path": "/documents/41751/153431513/rejestr+decyzji+WZ_10_2026.pdf/91f2303a-f473-0bc3-0ef1-73afdd6b5ca2",
+      "filename": "rejestr decyzji WZ_10_2026.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2026-10",
+      "page_ids": [
+        "mok-wykazy-i-informacje-o-decyzjach"
+      ],
+      "local_path": "data/districts/mokotow/raw/52912cbe92.pdf",
+      "sha256": "a65c41d9651a56cc6254b0592582c2e1846ab23f01afed6f011ac70feb337078",
+      "size": 45076,
+      "downloaded_at": "2026-11-12T06:48:56Z",
+      "last_modified": "2026-11-05T12:15:29Z",
+      "history": []
+    },
+    {
+      "file_id": "a39f37ef69",
+      "source": "district",
+      "url": "https://mokotow.um.warszawa.pl/documents/41751/152156002/rejestr+wniosk%C3%B3w_WZ_10_2026.pdf/427006b6-d8be-9185-fedf-6bea17240b29?t=1793880712223",
+      "document_path": "/documents/41751/152156002/rejestr+wniosk%C3%B3w_WZ_10_2026.pdf/427006b6-d8be-9185-fedf-6bea17240b29",
+      "filename": "rejestr wniosków_WZ_10_2026.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2026-10",
+      "page_ids": [
+        "mok-wykazy-i-informacje-o-decyzjach"
+      ],
+      "local_path": "data/districts/mokotow/raw/a39f37ef69.pdf",
+      "sha256": "f0ac88e97462d0b1dd3e6d96ff78981e7a190c8f32c180afa040a18a5ed66611",
+      "size": 42806,
+      "downloaded_at": "2026-11-12T06:48:57Z",
+      "last_modified": "2026-11-05T12:11:52Z",
+      "history": []
+    },
+    {
       "file_id": "ba30e2e59d",
       "source": "district",
       "url": "https://mokotow.um.warszawa.pl/documents/41751/153431513/rejestr+decyzji+WZ_09_2026.pdf/9b53619c-b56a-9b57-86ad-523f8bd1f67d?t=1791183301616",
@@ -2357,6 +2442,25 @@
       "size": 40987,
       "downloaded_at": "2026-10-27T19:06:11Z",
       "last_modified": "2026-09-04T08:24:15Z",
+      "history": []
+    },
+    {
+      "file_id": "2cbb00ac4b",
+      "source": "district",
+      "url": "https://mokotow.um.warszawa.pl/documents/41751/152156002/rejestr+wniosk%C3%B3w+CP_08_2026_uzupe%C5%82nienie.pdf/2a891c17-2c83-0b38-9a81-f8e0b27f75fa?t=1793880864534",
+      "document_path": "/documents/41751/152156002/rejestr+wniosk%C3%B3w+CP_08_2026_uzupe%C5%82nienie.pdf/2a891c17-2c83-0b38-9a81-f8e0b27f75fa",
+      "filename": "rejestr wniosków CP_08_2026_uzupełnienie.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2026-08",
+      "page_ids": [
+        "mok-wykazy-i-informacje-o-decyzjach"
+      ],
+      "local_path": "data/districts/mokotow/raw/2cbb00ac4b.pdf",
+      "sha256": "d0db45dba79b26b80e7709a9f5129b6c0b90f18476143ba47d5f24dfb891aa81",
+      "size": 43914,
+      "downloaded_at": "2026-11-12T06:48:58Z",
+      "last_modified": "2026-11-05T12:14:24Z",
       "history": []
     },
     {
@@ -6860,25 +6964,6 @@
       "size": 14356,
       "downloaded_at": "2026-10-27T19:08:52Z",
       "last_modified": "2021-05-24T07:09:14Z",
-      "history": []
-    },
-    {
-      "file_id": "b2e9361d2a",
-      "source": "district",
-      "url": "https://mokotow.um.warszawa.pl/documents/41751/11551918/REJESTR_DECYZJI_WZIZT_2018.xlsx/f7594718-0cb6-7a49-8055-b0e4252c3677?t=1618995915331",
-      "document_path": "/documents/41751/11551918/REJESTR_DECYZJI_WZIZT_2018.xlsx/f7594718-0cb6-7a49-8055-b0e4252c3677",
-      "filename": "REJESTR_DECYZJI_WZIZT_2018.xlsx",
-      "ext": "xlsx",
-      "category": null,
-      "period": "2018",
-      "page_ids": [
-        "mok-archiwum-informacje-o-wydanych-decyzjach-o-warunkach-zabudowy-i-zagospodarowania-terenu"
-      ],
-      "local_path": "data/districts/mokotow/raw/b2e9361d2a.xlsx",
-      "sha256": "9144487d897225c23ba314c1580ff4ff974658da3be8c35a531ef89aec008287",
-      "size": 37027,
-      "downloaded_at": "2026-10-27T19:08:53Z",
-      "last_modified": "2021-05-24T06:37:13Z",
       "history": []
     }
   ],
