@@ -12,6 +12,7 @@
     "test": "node --test 'tests/js/*.test.mjs'",
     "e2e": "node tests/e2e/smoke.mjs",
     "e2e:real": "node tests/e2e/smoke.mjs --data=site",
+    "e2e:city": "node tests/e2e/city.mjs",
     "serve": "node tests/e2e/server.mjs --port=8000",
     "og": "node tests/e2e/og-image.mjs"
   },

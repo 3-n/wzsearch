@@ -85,7 +85,8 @@ are not committed (`data/cache/rwdz/` is git-ignored): a fresh clone's first `ma
 whenever GUNB has published a newer nightly file than the committed extracts. `make data` / `make data-offline`
 build Praga-Południe alone (its shard is `site/data/` itself).
 
-Other targets: `make test` (pytest + `node --test`), `make e2e` (browser smoke test with the system Chrome),
+Other targets: `make test` (pytest + `node --test`), `make e2e` (browser smoke test with the system Chrome;
+`npm run e2e:city` checks the city-wide behaviour against the real build),
 `make rwdz` (refresh only the GUNB extracts and print their statistics), `make report` (print the data-quality report).
 
 ## Sources
