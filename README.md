@@ -160,7 +160,7 @@ CI commits and deploys only on exit code 0.
    stamps.
 
 **Refreshing data:** run `make city` locally around the 10th of each month (the offices publish the previous
-month's lists then), commit `data/` and push. The district sites block GitHub-hosted runners (HTTP 403 for cloud IP
+month's lists then), commit `data/` and push – step by step in [`docs/HANDOFF.md` §7](docs/HANDOFF.md#7-monthly-data-refresh--checklist). The district sites block GitHub-hosted runners (HTTP 403 for cloud IP
 ranges, checked 2026-10-26), so the scheduled refresh is switched off. The Makefile sets the public `SITE_URL`
 (`https://3-n.github.io/wzsearch/`) for the permalinks in the committed reports; CI passes the Pages URL.
 

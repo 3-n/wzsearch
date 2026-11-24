@@ -36,8 +36,9 @@ Praga-Południe's output byte-identical unless a change is meant for it (`make d
 
 ## 1. Where things stand
 
-**Status:** feature-complete MVP, verified on real data, not yet published. Not a git repository yet (no commits);
-no GitHub repo exists. Everything runs locally.
+**Status (updated 2026-11-25):** live on GitHub Pages (https://3-n.github.io/wzsearch/) – all 18 districts since
+2026-11-12 (§0). The table below is the Praga-Południe MVP snapshot of 2026-10-23; city-wide numbers are in §0 and
+`uv run python scripts/city_summary.py`. Data is refreshed locally and published by pushing `data/` – see §7.
 
 | | |
 |---|---|
@@ -168,22 +169,62 @@ WebKit for the e2e group: `npx playwright-core install webkit` (installs into `~
   runs one group. Fixture data lives in `tests/fixtures/site-data/` (small, partly synthetic, clearly labelled).
 * After any data-affecting change: offline rebuild → "no changes" (or an explained diff), then `npm run e2e:real`.
 
-## 7. Operating the data (monthly cycle)
+## 7. Monthly data refresh – checklist
 
-`update.yml` runs daily at 06:00 UTC on the 9th–16th (the office publishes around the 10th) and weekly otherwise:
-crawl → GUNB check → build → tests → commit changed data → deploy `site/`. After a run with new data, skim
-`data/report.md`:
+The refresh runs **locally**: the district sites answer GitHub-hosted runners with 403 (cloud IP ranges are blocked),
+so `update.yml`'s schedule is off. Only `data/` is committed (inputs, caches, build stamps, reports); CI renders
+`site/` from it on push (`deploy.yml`). **Push to `main` = deploy** – push only when the data looks right.
 
-* **Warnings / new typos.** New street misspellings → add to `STREET_TYPOS` (or `STREET_CANONICAL` for variants of
-  one street) in `pipeline/normalize.py`, rebuild offline, check the street filter.
-* **"Category/count not detected"** on a monthly page → a new heading wording; extend the detection in `crawl.py`.
-* **New spreadsheet layout** → see playbook 8.1.
-* **RWDZ review list** ("unkept cases with Praga-Południe signs") → check each in ULDK; confirmed register errors go
-  into `rwdz.UNIT_FIXES` with a comment (never automatic).
-* **Exit 3 in CI** → nothing was deployed; the previous site stays. Look at the run log: district site down (retry
-  later), a maintenance page (retry), a lost file (check the source page by hand), or a GUNB format change (adapt
-  `rwdz.py`, the header check fails loudly by design).
-* **Numbers that never appear in any list** (report section) are worth asking the office about (`BACKLOG.md` §2).
+**When:** around the 10th of the month (the offices publish the previous month's lists then). Missing a month is
+harmless – the next run picks up everything since.
+
+### 7.1 Before
+- [ ] `git status` clean, on `main`, `git pull` done.
+- [ ] `make install` if `uv.lock` / `package-lock.json` changed since the last run.
+- [ ] Home connection (not a VPN / cloud host – those get 403 too).
+
+### 7.2 Refresh
+- [ ] `make city` – crawls all 18 districts + BAiPP, one conditional GET per GUNB ZIP, geocodes new parcels, builds.
+      Minutes when warm; a fresh clone first downloads the GUNB ZIPs (~93 MB, git-ignored).
+      `DISTRICTS=bemowo,wola make city` limits it (e.g. to retry the ones that failed).
+- [ ] Note the **exit code** (`echo $?`):
+  - **0** – fine. Up to 3 districts may have failed and kept their previous data; the log says
+    "… kept its previous data: …" for each, and their sources page shows the failed download. OK to publish.
+  - **3** – more than 3 districts failed, or GUNB changed its file format. **Do not commit or push.** District sites
+    down / maintenance page → retry later (hours, not minutes). GUNB format → adapt `pipeline/rwdz.py` (the header
+    check fails loudly by design).
+  - **1** – nothing could be built (e.g. an edited committed RWDZ extract). Investigate; `git checkout data` resets.
+- [ ] **Never work around a 403** (no other User-Agent, no browser cache-warming): slow down, retry later, or ask
+      the publisher (`docs/outreach/`).
+
+### 7.3 Check
+- [ ] `git diff --stat -- data` – a plausible size: new `raw/` files for the new month, small report/stamp diffs. No
+      diff at all = nothing new was published (fine; nothing to push).
+- [ ] `make test` passes.
+- [ ] Skim the reports – `data/report.md` (Praga-Południe) and `data/districts/<slug>/report.md` for districts with a
+      diff:
+  - **"Declared vs parsed counts"** mismatch or **"Category/count not detected"** → new heading wording; extend the
+    detection in `crawl.py`.
+  - **New spreadsheet / PDF layout** (file with 0 parsed rows, "unreadable") → playbook 8.1.
+  - **New street misspellings** in the warnings → `STREET_TYPOS` / `STREET_CANONICAL` in `pipeline/normalize.py`,
+    then `make city-offline`.
+  - **RWDZ review list** ("unkept cases with … signs") → check each in ULDK; confirmed register errors go into
+    `rwdz.UNIT_FIXES` with a comment (never automatic).
+  - **Numbers that never appear in any list** → worth asking the office (`BACKLOG.md` §2); not a blocker.
+- [ ] Look at it: `make serve` → http://127.0.0.1:8000 – the new month appears for a couple of districts and in
+      "Cała Warszawa"; optionally `npm run e2e:city` (real build) last.
+- [ ] If you changed pipeline code while fixing something: `make city-offline` must leave `git diff -- data`
+      unchanged on a second run (this is what `test.yml` / `deploy.yml` check on Linux).
+
+### 7.4 Publish
+- [ ] `git add data` (only `data/` – plus any code fix, as a separate commit).
+- [ ] `git commit -m "Data: fresh crawl (YYYY-MM-DD)"`, then `git push`.
+- [ ] Watch **Actions → Deploy site**: it rebuilds offline and refuses to deploy if its build stamps differ from the
+      committed ones. Red run → the previous site stays online; fix, then push again (or *Run workflow*).
+- [ ] Open https://3-n.github.io/wzsearch/ and check the "Źródła" page shows the new download date.
+
+`update.yml` (manual, *Actions → Update data & deploy*) does the same in CI, but while the district sites block cloud
+runners it can only refresh GUNB – use it only on a self-hosted runner or once the block is lifted.
 
 ## 8. Playbooks for common changes
 
@@ -230,9 +271,10 @@ Router in `site/js/main.js`, hash parsing in `site/js/url.js`, view module in `s
 parcels). Attribution must stay visible. Marker shapes/colours per kind: `site/js/components/map.js` + CSS tokens.
 
 ### 8.9 Publishing
-GitHub Pages: README "Deploying to GitHub Pages" (create repo, Pages source "GitHub Actions", allow Actions to push,
-fill `REPO_URL`/`ISSUES_URL`, run "Update data & deploy" once). Other hosts: `SITE_URL=https://… make data`, upload
-`site/`. Make `og:image` absolute once the URL is known. Deployed size ≈ 19 MB (`site/`), far below Pages limits.
+Live on GitHub Pages (Pages source "GitHub Actions"). Every push to `main` that touches `site/`, `data/` or
+`pipeline/` is a deploy: `deploy.yml` runs `pipeline.city --offline` and publishes `site/` – push only on the owner's
+go. Data updates: §7. Still open: `REPO_URL` / `ISSUES_URL` in `site/js/config.js` are empty (the "Zgłoś błąd w
+danych" button stays hidden until set). Other hosts: `SITE_URL=https://… make city-offline`, upload `site/`.
 
 ## 9. If the owner flips a decision (from `BACKLOG.md` §1)
 
@@ -255,7 +297,7 @@ fill `REPO_URL`/`ISSUES_URL`, run "Update data & deploy" once). Other hosts: `SI
 
 Roughly in order of value for residents; details and evidence in `BACKLOG.md` §3.
 
-1. **Publish** (owner): repo, Pages, `config.js` links, absolute `og:image`.
+1. **Finish publishing** (owner): `config.js` links (`REPO_URL`, `ISSUES_URL`), absolute `og:image`.
 2. **Local plans (MPZP) layer** – Saska Kępa has many permits but few WZ because it is covered by local plans; a plan
    boundary layer (city WMS) would explain where WZ applies at all.
 3. **Project timeline** – sharpen `related` for permits: rank permits filed after the WZ date, similar investment
