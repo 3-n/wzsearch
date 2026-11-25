@@ -179,6 +179,13 @@ GUNB (RWDZ register)
   "Jana Jeziorańskiego" instead of "Nowaka-Jeziorańskiego" in 19 rows; the download page says the separator is "#"
   (it is ";").
 
+GUNB / Wojewoda Mazowiecki
+- 📮 The voivode's building permits have almost stopped reaching GUNB's RWDZ since 2024 (2,780 rows for 2022
+  applications → 24 for 2026; details and the Frontex example in §3 "City-wide draft"). Worth asking GUNB / the
+  Mazowiecki Urząd Wojewódzki whether the register is fed differently now, or where the decisions are published.
+- 📮 RWDZ case ST-MZ-WA/WNIOSEK/50600/2020 (permit 226/MOK/2023) lists its parcels in obręb 0115; they are in
+  1-07-16 (§3). Report to the issuing office for correction.
+
 General
 - 📮 Nobody in Warsaw publishes these lists as open data (CSV on dane.gov.pl), unlike e.g. Gliwice or Zabrze.
   Worth a formal request.
@@ -286,6 +293,31 @@ City-wide draft
   the first full geocoding (27 X); kept in each shard's `areas.geojson`.
 - 🟢 Targówek elides house numbers ("ul. Oliwska …") – the street is now kept and located street-level: 88% → 98%
   of its planning records on the map. A retry of the CDN-refused files on 27 X evening: still 403 (3 requests).
+- 🟠 **Permits issued by the Wojewoda Mazowiecki are (nearly) missing since 2024** – a gap in the source, not in the
+  crawl. GUNB's `wynik_mazowieckie` rows with organ "Wojewoda Mazowiecki" per application year: 2022 2,780 · 2023 265
+  · 2024 29 · 2025 20 · 2026 24 (Mokotów's office over the same years: 431 · 368 · 392 · 246 · 146). The voivode
+  decides the big ones – railways, national roads, state and international buildings. Found 25 XI 2026: the new
+  **Frontex headquarters** (ul. Racławicka, Mokotów, obręb 1-01-15, around parcel 5/7; permit by the voivode in 2026,
+  press: tvp.info/95542270) is in none of the three GUNB files – searched by name, parcel and all Mokotów office
+  buildings; only its 2023 heating-line notification (`zg-pl-mz-2023-2816`, also the voivode) is there. Next:
+  research a second source for voivode decisions (Mazowiecki Urząd Wojewódzki – BIP announcements / lists of issued
+  permits), with its own dataset key per playbook 8.6; meanwhile say on the About/Sources page that permits issued
+  by the voivode may be missing.
+- 🟠 **GUNB register error placed a permit 5 km off: `pb-st-mz-wa-2020-50600`** (226/MOK/2023, Budimex
+  Nieruchomości, apartment complex, Aleja Polski Walczącej). Its 17 parcel rows say obręb 0115 (Racławicka area);
+  only 6 of the numbers exist there (unrelated parcels), while obręb **1-07-16** (near Czerniakowska, where the new
+  street is) holds 12 of them plus children of two more (2/x, 7/x). The address check could not catch it – the new
+  street is not in UUG yet, and the address has no house number. Fixes: (a) a confirmed per-record obręb correction
+  next to `rwdz.UNIT_FIXES` (with a comment and a `warnings[]` entry, never silent); (b) a general check – flag
+  `geo.conflict` when most of a case's parcels are missing from the stated obręb but exist together in another one.
+- 🟠 **Białołęka's PDF lists parse badly once the CDN serves them** (25 XI 2026). The crawl downloaded 21 files the
+  CDN had refused before, and records jumped 920 → 6,582: 2,322 of them carried zero-width spaces inside words
+  ("Wyrzykowskie​go"), 3,807 had no date, ids were mangled (`ws-bia-n-k2-23332-232023-10-09`). Deployed by
+  mistake (the checks compared counts and ran tests, but did not sample record contents), then reverted to the
+  12 XI data (`data/districts/bialoleka/` from 7d706ae). Next: fix `pipeline/pdftable.py` for these files (strip
+  U+200B before splitting, the column layout of the new files), add one of them as a test fixture. **Until then, a
+  live `make city` brings the broken records back** – restore Białołęka after the refresh, or run the refresh with
+  `DISTRICTS=` listing the other 17. Checklist lesson (HANDOFF §7.3): big count jumps need a look at sample records.
 
 ## 4. Handled during the build (🟢)
 

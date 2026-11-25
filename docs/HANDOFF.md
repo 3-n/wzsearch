@@ -200,6 +200,11 @@ harmless – the next run picks up everything since.
 ### 7.3 Check
 - [ ] `git diff --stat -- data` – a plausible size: new `raw/` files for the new month, small report/stamp diffs. No
       diff at all = nothing new was published (fine; nothing to push).
+- [ ] Compare record counts per district with the last run (the "`records.json` N" line in each report). For a
+      big jump, open a few of the new records (`site/data/d/<slug>/records.json`): dates set, no stray characters,
+      sane ids. More records is not automatically good news – Białołęka's 920 → 6,582 on 2026-11-25 was a parser
+      failure (`BACKLOG.md` §3), and **until that is fixed, restore Białołęka after a live run**
+      (`git checkout HEAD -- data/districts/bialoleka`).
 - [ ] `make test` passes.
 - [ ] Skim the reports – `data/report.md` (Praga-Południe) and `data/districts/<slug>/report.md` for districts with a
       diff:
