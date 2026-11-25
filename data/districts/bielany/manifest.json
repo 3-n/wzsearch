@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:48:25Z",
+  "generated_at": "2026-11-25T00:15:18Z",
   "index_url": "https://bielany.um.warszawa.pl/architektura",
   "pages": [
     {
@@ -17,9 +17,9 @@
           "category": "cp",
           "declared_count": null,
           "file_ids": [
-            "9e69814eb1"
+            "4c67dc1fa0"
           ],
-          "period": "2026"
+          "period": "2026-11"
         },
         {
           "text": "Rejestr decyzji o ustalenie lokalizacji inwestycji celu publicznego 2025",
@@ -114,9 +114,9 @@
           "category": "wz",
           "declared_count": null,
           "file_ids": [
-            "282317c65d"
+            "14582acda7"
           ],
-          "period": "2026"
+          "period": "2026-11"
         },
         {
           "text": "Decyzje o warunkach zabudowy 2025",
@@ -229,18 +229,18 @@
           "category": "ws",
           "declared_count": null,
           "file_ids": [
-            "6f03c09e66"
+            "e829fad5ea"
           ],
-          "period": "2026"
+          "period": "2026-11"
         },
         {
           "text": "Rejestr wszczętych postępowań o warunkach zabudowy w roku 2026",
           "category": "ws",
           "declared_count": null,
           "file_ids": [
-            "ab85e6756a"
+            "3f3566c6e2"
           ],
-          "period": "2026"
+          "period": "2026-11"
         },
         {
           "text": "Rejestr wszczętych postępowań o warunkach zabudowy w roku 2025",
@@ -320,6 +320,86 @@
   ],
   "files": [
     {
+      "file_id": "4c67dc1fa0",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/173963764/10.11.2026+r.+decyzje+o+ustaleniu+lokalizacji+inwestycji+celu+publicznego.pdf/8b24f369-9f07-6d68-e2bd-8dbe2db12b7d?t=1794494610433",
+      "document_path": "/documents/41424/173963764/10.11.2026+r.+decyzje+o+ustaleniu+lokalizacji+inwestycji+celu+publicznego.pdf/8b24f369-9f07-6d68-e2bd-8dbe2db12b7d",
+      "filename": "10.11.2026 r. decyzje o ustaleniu lokalizacji inwestycji celu publicznego.pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2026-11",
+      "page_ids": [
+        "bie-lokalizacja_inwestycji_celu_publicznego"
+      ],
+      "local_path": "data/districts/bielany/raw/4c67dc1fa0.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/41424/173963764/10.11.2026+r.+decyzje+o+ustaleniu+lokalizacji+inwestycji+celu+publicznego.pdf/8b24f369-9f07-6d68-e2bd-8dbe2db12b7d?t=1794494610433"
+    },
+    {
+      "file_id": "14582acda7",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/173963764/10.11.2026+r.+decyzje+o+warunkach+zabudowy.pdf/764a3ef2-2e7e-6078-ed66-d85349e9a071?t=1794494610672",
+      "document_path": "/documents/41424/173963764/10.11.2026+r.+decyzje+o+warunkach+zabudowy.pdf/764a3ef2-2e7e-6078-ed66-d85349e9a071",
+      "filename": "10.11.2026 r. decyzje o warunkach zabudowy.pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2026-11",
+      "page_ids": [
+        "bie-warunki_zabudowy"
+      ],
+      "local_path": "data/districts/bielany/raw/14582acda7.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/41424/173963764/10.11.2026+r.+decyzje+o+warunkach+zabudowy.pdf/764a3ef2-2e7e-6078-ed66-d85349e9a071?t=1794494610672"
+    },
+    {
+      "file_id": "e829fad5ea",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/173963764/10.11.2026+r.+wnioski+o+ustalenie+lokalizacji+inwestycji+celu+publicznego.pdf/c91232ba-296f-8bab-691e-f3a57be6e96c?t=1794494610894",
+      "document_path": "/documents/41424/173963764/10.11.2026+r.+wnioski+o+ustalenie+lokalizacji+inwestycji+celu+publicznego.pdf/c91232ba-296f-8bab-691e-f3a57be6e96c",
+      "filename": "10.11.2026 r. wnioski o ustalenie lokalizacji inwestycji celu publicznego.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2026-11",
+      "page_ids": [
+        "bie-wszczete_postepowania"
+      ],
+      "local_path": "data/districts/bielany/raw/e829fad5ea.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/41424/173963764/10.11.2026+r.+wnioski+o+ustalenie+lokalizacji+inwestycji+celu+publicznego.pdf/c91232ba-296f-8bab-691e-f3a57be6e96c?t=1794494610894"
+    },
+    {
+      "file_id": "3f3566c6e2",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/41424/173963764/10.11.2026+r.+wnioski+o+warunki+zabudowy.pdf/f698d8bb-ca8d-9714-52ad-76898d602c74?t=1794494611144",
+      "document_path": "/documents/41424/173963764/10.11.2026+r.+wnioski+o+warunki+zabudowy.pdf/f698d8bb-ca8d-9714-52ad-76898d602c74",
+      "filename": "10.11.2026 r. wnioski o warunki zabudowy.pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2026-11",
+      "page_ids": [
+        "bie-wszczete_postepowania"
+      ],
+      "local_path": "data/districts/bielany/raw/3f3566c6e2.pdf",
+      "sha256": null,
+      "size": null,
+      "downloaded_at": null,
+      "last_modified": null,
+      "history": [],
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+    },
+    {
       "file_id": "0082666753",
       "source": "district",
       "url": "https://cdn.um.warszawa.pl/documents/41424/151756058/%282%29+7.01.2026+Rejestr+decyzji+o+ustaleniu+lokalizacji+celu+publicznego.pdf/e184455c-a8a5-8984-4db9-666c57847fc8?t=1767794695881",
@@ -337,7 +417,7 @@
       "downloaded_at": null,
       "last_modified": null,
       "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/41424/151756058/%282%29+7.01.2026+Rejestr+decyzji+o+ustaleniu+lokalizacji+celu+publicznego.pdf/e184455c-a8a5-8984-4db9-666c57847fc8?t=1767794695881"
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "efa3fa3908",
@@ -357,7 +437,7 @@
       "downloaded_at": null,
       "last_modified": null,
       "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/41424/151756058/7.01.2026+Rejestr+decyzji+o+Warunkach+zabudowy.pdf/bfa43f60-8e7d-ca51-c0f0-ed11fe846772?t=1767793247288"
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "777f17887b",
@@ -377,7 +457,7 @@
       "downloaded_at": null,
       "last_modified": null,
       "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/41424/151756058/7.01.2026+Rejestr+wniosk%C3%B3w+o+warunki+zabudowy.pdf/c080bf9f-35fb-e448-5069-698ca203e29b?t=1767793247658"
+      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
       "file_id": "9e69814eb1",
@@ -397,6 +477,7 @@
       "downloaded_at": null,
       "last_modified": null,
       "history": [],
+      "removed_from_source_at": "2026-11-25",
       "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
@@ -416,7 +497,8 @@
       "size": 272613,
       "downloaded_at": "2026-10-27T19:22:35Z",
       "last_modified": "2026-10-07T07:30:44Z",
-      "history": []
+      "history": [],
+      "removed_from_source_at": "2026-11-25"
     },
     {
       "file_id": "6f03c09e66",
@@ -436,6 +518,7 @@
       "downloaded_at": null,
       "last_modified": null,
       "history": [],
+      "removed_from_source_at": "2026-11-25",
       "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {
@@ -456,6 +539,7 @@
       "downloaded_at": null,
       "last_modified": null,
       "history": [],
+      "removed_from_source_at": "2026-11-25",
       "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
     },
     {

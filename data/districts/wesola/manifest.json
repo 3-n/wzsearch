@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:55:39Z",
+  "generated_at": "2026-11-25T00:18:09Z",
   "index_url": "https://wesola.um.warszawa.pl/architektura",
   "pages": [
     {
@@ -1561,12 +1561,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/06b922fda6.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/44790/152481354/1+wnioski+sierpie%C5%84+2026.xlsx/822400e1-bf70-659a-8586-9bac0979865d?t=1789563965143"
+      "sha256": "f24e279e66bb373d80761c774666308e7d9444f088ab4beccd669142c21ddba0",
+      "size": 22037,
+      "downloaded_at": "2026-11-25T00:18:09Z",
+      "last_modified": "2026-09-16T13:06:05Z",
+      "history": []
     },
     {
       "file_id": "d1ca341df6",
@@ -1581,12 +1580,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/d1ca341df6.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/44790/152481354/2+wz+dec.+sierpie%C5%84+2026.xlsx/9750582f-0a8d-a1a9-c6eb-17705cdfd0b6?t=1789563992291"
+      "sha256": "d370ab15e9ab0afa62d954c45a732d87dba28535a44c042df2b5eb1033c19b67",
+      "size": 12584,
+      "downloaded_at": "2026-11-25T00:18:19Z",
+      "last_modified": "2026-09-16T13:06:32Z",
+      "history": []
     },
     {
       "file_id": "fef30c2e6e",
@@ -1601,12 +1599,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/fef30c2e6e.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/44790/152481354/1+wnioski+lipiec+2026.xlsx/f4a43f6c-2c97-e93a-6819-851ae319ad43?t=1787045091822"
+      "sha256": "6d476ad51a21b70cf4c011809ec6efb077e4b57d0a92173afdff84beb90badac",
+      "size": 20806,
+      "downloaded_at": "2026-11-25T00:18:29Z",
+      "last_modified": "2026-08-18T09:24:51Z",
+      "history": []
     },
     {
       "file_id": "ce14f618c5",
@@ -1621,12 +1618,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/ce14f618c5.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "cd2f63cff36fadf34e6120c152a96912cd40588495c7d9e94fe4773a18c94b58",
+      "size": 12572,
+      "downloaded_at": "2026-11-25T00:18:39Z",
+      "last_modified": "2026-08-18T09:24:52Z",
+      "history": []
     },
     {
       "file_id": "ccd292be10",
@@ -1641,12 +1637,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/ccd292be10.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "6aa00e47bf80dce0634d15891733403866717901727f619faedc30b752902e9f",
+      "size": 21445,
+      "downloaded_at": "2026-11-25T00:18:49Z",
+      "last_modified": "2026-08-18T09:24:51Z",
+      "history": []
     },
     {
       "file_id": "5f878e91a8",
@@ -1661,12 +1656,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/5f878e91a8.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "8faea5fba9f59815108cb861d2152a69efb5daca56fa6e41ecf38f24afef664a",
+      "size": 13117,
+      "downloaded_at": "2026-11-25T00:18:59Z",
+      "last_modified": "2026-07-24T13:52:25Z",
+      "history": []
     },
     {
       "file_id": "3ae6c71496",
@@ -1681,12 +1675,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/3ae6c71496.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "e58d2330a7acdb45798e27cc0096323a9b38d0591811bf6ba0c67dc96710fdf3",
+      "size": 20731,
+      "downloaded_at": "2026-11-25T00:19:09Z",
+      "last_modified": "2026-07-24T13:52:25Z",
+      "history": []
     },
     {
       "file_id": "375ddcfcbd",
@@ -1701,12 +1694,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/375ddcfcbd.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "d1c46b97041077c076d19ea500d6a198c10c1126c9f21ce6310603f51cbae679",
+      "size": 12695,
+      "downloaded_at": "2026-11-25T00:19:19Z",
+      "last_modified": "2026-07-24T13:52:25Z",
+      "history": []
     },
     {
       "file_id": "5d44be0069",
@@ -1721,12 +1713,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/5d44be0069.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "e4aaebef113b5f8d4fec77093fd41eab496e2051bcc764ff2a8db724f96b5b42",
+      "size": 20946,
+      "downloaded_at": "2026-11-25T00:19:29Z",
+      "last_modified": "2026-05-12T11:14:24Z",
+      "history": []
     },
     {
       "file_id": "7d04094b84",
@@ -1741,12 +1732,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/7d04094b84.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "360d191a2d42057f257386b6a466bfba3f6a227c3742484ff895f6e7da2812f8",
+      "size": 12586,
+      "downloaded_at": "2026-11-25T00:19:39Z",
+      "last_modified": "2026-05-12T11:15:22Z",
+      "history": []
     },
     {
       "file_id": "9fa6129840",
@@ -1762,12 +1752,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/9fa6129840.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "dc582004e979ee53f72db8c470c71af9d1e40ff06a1186661c1b881d4f88ffc3",
+      "size": 21248,
+      "downloaded_at": "2026-11-25T00:19:49Z",
+      "last_modified": "2026-04-16T09:43:15Z",
+      "history": []
     },
     {
       "file_id": "cdbd4eed38",
@@ -1782,12 +1771,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/cdbd4eed38.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "55cb85a76785bc6ae7e53f4972b4ceae4a7e61b33caefba4fc71d26d6c43e788",
+      "size": 12928,
+      "downloaded_at": "2026-11-25T00:19:59Z",
+      "last_modified": "2026-04-14T05:58:11Z",
+      "history": []
     },
     {
       "file_id": "af22ed79d8",
@@ -1802,12 +1790,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/af22ed79d8.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "d2a87e9a8200dcfe730bae0c3068c21691bae2edc9b1c848a23ab28e4a036b05",
+      "size": 21259,
+      "downloaded_at": "2026-11-25T00:20:09Z",
+      "last_modified": "2026-03-13T14:54:33Z",
+      "history": []
     },
     {
       "file_id": "b00ba1bf32",
@@ -1822,12 +1809,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/b00ba1bf32.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "a9a5815f61366c86ddcc7e0ed5d32c5de7ddf1efc95d63bdd77f25f2c59cf7be",
+      "size": 21162,
+      "downloaded_at": "2026-11-25T00:20:19Z",
+      "last_modified": "2026-02-13T10:35:35Z",
+      "history": []
     },
     {
       "file_id": "f76e32b198",
@@ -1842,12 +1828,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/f76e32b198.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "67f9739e850da7ce4b4cf8e69e68f46405fbb02a4971e9613d65f50e09403720",
+      "size": 12810,
+      "downloaded_at": "2026-11-25T00:20:29Z",
+      "last_modified": "2026-02-13T10:40:15Z",
+      "history": []
     },
     {
       "file_id": "29957b9f61",
@@ -1881,12 +1866,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/0afe9abdb8.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "cfc35cc338838c17bd8094ba4a42a8f2b1f24416dd455e8dca0bd1b38b402918",
+      "size": 21757,
+      "downloaded_at": "2026-11-25T00:20:39Z",
+      "last_modified": "2026-01-19T08:26:45Z",
+      "history": []
     },
     {
       "file_id": "6e284163ba",
@@ -1901,12 +1885,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/6e284163ba.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "89cc6a2e122680815ae52a4aaa0744cd96291b79e9c78b1c0fb4ea6a0e1d61cb",
+      "size": 12930,
+      "downloaded_at": "2026-11-25T00:20:49Z",
+      "last_modified": "2026-01-19T08:27:23Z",
+      "history": []
     },
     {
       "file_id": "f1093c77d4",
@@ -1921,12 +1904,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/f1093c77d4.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "43cc53b86fcefc39d92fcb789aec273ec9c13cb32a1d7d84ae41a3bfac88c946",
+      "size": 21757,
+      "downloaded_at": "2026-11-25T00:20:59Z",
+      "last_modified": "2025-12-16T13:03:03Z",
+      "history": []
     },
     {
       "file_id": "2a9d7ce057",
@@ -1941,12 +1923,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/2a9d7ce057.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "fcabba8603c8cf4b729bbb0837e1409e3bb4d234a23cf60608795c4a81589f77",
+      "size": 12189,
+      "downloaded_at": "2026-11-25T00:21:09Z",
+      "last_modified": "2025-12-16T13:03:37Z",
+      "history": []
     },
     {
       "file_id": "374e2342f5",
@@ -1961,12 +1942,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/374e2342f5.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "619c7d7334855ee87e0cc869427bc719818ba5b078ba9facdd6aedf62559d60b",
+      "size": 20713,
+      "downloaded_at": "2026-11-25T00:21:19Z",
+      "last_modified": "2025-11-17T07:48:34Z",
+      "history": []
     },
     {
       "file_id": "08b5e8a799",
@@ -1981,12 +1961,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/08b5e8a799.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "ecc74bc228b4dc411f77b6e186ca4ec05723bf0a52d32b3a6322e49f23d1c2b0",
+      "size": 12551,
+      "downloaded_at": "2026-11-25T00:21:29Z",
+      "last_modified": "2025-11-17T07:47:34Z",
+      "history": []
     },
     {
       "file_id": "750cec3490",
@@ -2001,12 +1980,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/750cec3490.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "68d3d597202b8525563f26c2842a20ef436cbfa8781b40733ef5fde34493fd1b",
+      "size": 20496,
+      "downloaded_at": "2026-11-25T00:21:40Z",
+      "last_modified": "2025-10-17T12:02:08Z",
+      "history": []
     },
     {
       "file_id": "4c7df929dd",
@@ -2021,12 +1999,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/4c7df929dd.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "288c880229a7312bf03476c767fd5aec303ee6ad12b1328c88a1bb0ff5ecfbe9",
+      "size": 12868,
+      "downloaded_at": "2026-11-25T00:21:50Z",
+      "last_modified": "2025-10-17T12:02:08Z",
+      "history": []
     },
     {
       "file_id": "9c74b3140c",
@@ -2041,12 +2018,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/9c74b3140c.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "8814da033e302170e49190699ddda61a1cf27cfacb5b9f10113223e1025771b9",
+      "size": 20553,
+      "downloaded_at": "2026-11-25T00:22:00Z",
+      "last_modified": "2025-09-18T11:24:43Z",
+      "history": []
     },
     {
       "file_id": "d8d0f668ba",
@@ -2061,12 +2037,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/d8d0f668ba.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "2cf9c542e5072ed77028deafb3a4e8571ad257ee4b5ce3a2322abdaa4860f018",
+      "size": 13579,
+      "downloaded_at": "2026-11-25T00:22:10Z",
+      "last_modified": "2025-09-18T11:24:43Z",
+      "history": []
     },
     {
       "file_id": "f89fb2a3fe",
@@ -2081,12 +2056,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/f89fb2a3fe.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "5e882bd5f0df60a8cda1b328c0e473316f31db3f29ff631d66bd210a6c0ff706",
+      "size": 12249,
+      "downloaded_at": "2026-11-25T00:22:20Z",
+      "last_modified": "2025-09-18T11:24:43Z",
+      "history": []
     },
     {
       "file_id": "ee053cbef6",
@@ -2101,12 +2075,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/ee053cbef6.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "48148c62b8d68fd5818bbd5b8da9bf7aa3fae0c44fe2a21bb2064b115d4e3f81",
+      "size": 20347,
+      "downloaded_at": "2026-11-25T00:22:30Z",
+      "last_modified": "2025-08-14T08:06:17Z",
+      "history": []
     },
     {
       "file_id": "c901d80063",
@@ -2121,12 +2094,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/c901d80063.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "b3d413b4090634ada7c36e9044059f6aabb63ed14b11b86b5d4ce0df855a3a66",
+      "size": 12157,
+      "downloaded_at": "2026-11-25T00:22:40Z",
+      "last_modified": "2025-08-14T08:06:17Z",
+      "history": []
     },
     {
       "file_id": "3abbc11d35",
@@ -2141,12 +2113,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/3abbc11d35.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "191c99610715d29705ce7f7c0ee5b277014bd56bb0869767237ac56847c67229",
+      "size": 20649,
+      "downloaded_at": "2026-11-25T00:22:50Z",
+      "last_modified": "2025-07-10T13:23:20Z",
+      "history": []
     },
     {
       "file_id": "53093de66c",
@@ -2161,12 +2132,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/53093de66c.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "25c50ce3d9b02f02e520066de72d740e2f1891f8e364ab0c58da3ad7c66a0b1b",
+      "size": 12683,
+      "downloaded_at": "2026-11-25T00:23:00Z",
+      "last_modified": "2025-07-10T13:23:21Z",
+      "history": []
     },
     {
       "file_id": "185a7f89aa",
@@ -2181,12 +2151,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/185a7f89aa.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "5c01acbc85a7ddba515665a107c840e0039b49ed2027724bbb9c79d2e011e01b",
+      "size": 20612,
+      "downloaded_at": "2026-11-25T00:23:10Z",
+      "last_modified": "2025-06-16T12:35:37Z",
+      "history": []
     },
     {
       "file_id": "73df4c74aa",
@@ -2201,12 +2170,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/73df4c74aa.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "331cc8fceb812577801d96130f551b450bff26ab7efb2274277283e767a1d9b1",
+      "size": 12407,
+      "downloaded_at": "2026-11-25T00:23:20Z",
+      "last_modified": "2025-06-16T12:35:37Z",
+      "history": []
     },
     {
       "file_id": "ccfe80dcb7",
@@ -2221,12 +2189,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/ccfe80dcb7.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "2d2f522a835b30931f22b9b476c8c422056a2333d166f7756a07cee2d919615c",
+      "size": 20538,
+      "downloaded_at": "2026-11-25T00:23:30Z",
+      "last_modified": "2025-05-20T06:35:49Z",
+      "history": []
     },
     {
       "file_id": "2ebaa965a0",
@@ -2241,12 +2208,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/2ebaa965a0.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "9854ceefa483524b2dbd3c496ad823db8128747593ee9eb0e2c4bb30cf6558ac",
+      "size": 11916,
+      "downloaded_at": "2026-11-25T00:23:40Z",
+      "last_modified": "2025-05-20T06:35:51Z",
+      "history": []
     },
     {
       "file_id": "7726004cb2",
@@ -2261,12 +2227,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/7726004cb2.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "3269d87284cd7ae79e41805432f21b745ac46ebc1bc889fbdc662a51567b12a4",
+      "size": 20863,
+      "downloaded_at": "2026-11-25T00:23:50Z",
+      "last_modified": "2025-04-28T13:12:51Z",
+      "history": []
     },
     {
       "file_id": "7582098ed5",
@@ -2281,12 +2246,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/7582098ed5.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "df0c9d3f4be9ca51d4927c60bc39220e957f47d557f1afa819edc59cf0a0780e",
+      "size": 13540,
+      "downloaded_at": "2026-11-25T00:24:00Z",
+      "last_modified": "2025-04-28T13:12:52Z",
+      "history": []
     },
     {
       "file_id": "e059b47bd4",
@@ -2301,12 +2265,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/e059b47bd4.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "8006accdbd535a129db9ee4edc1e6ac7bbf2a723181dcfb96cf57f3b6bd81b6e",
+      "size": 12234,
+      "downloaded_at": "2026-11-25T00:24:10Z",
+      "last_modified": "2025-04-28T13:12:52Z",
+      "history": []
     },
     {
       "file_id": "9b35ec2efd",
@@ -2321,12 +2284,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/9b35ec2efd.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "a65e5cde3f6277b237bc1cdb926405cb6aed895cb2f760b73181b1a1437e9227",
+      "size": 20601,
+      "downloaded_at": "2026-11-25T00:24:20Z",
+      "last_modified": "2025-03-18T13:31:14Z",
+      "history": []
     },
     {
       "file_id": "0b6c1feb72",
@@ -2341,12 +2303,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/0b6c1feb72.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "03fb5d965c03a7e6bbb622c4dcbf9e91b69d92395ba89a968c689188e7d37f1e",
+      "size": 11968,
+      "downloaded_at": "2026-11-25T00:24:30Z",
+      "last_modified": "2025-03-18T13:31:15Z",
+      "history": []
     },
     {
       "file_id": "a6c4f96d08",
@@ -2361,12 +2322,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/a6c4f96d08.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "9541987db8497bf0a538bab8946c0301835c429bb0736dd7b90733533ac86b99",
+      "size": 20100,
+      "downloaded_at": "2026-11-25T00:24:40Z",
+      "last_modified": "2025-02-18T07:59:47Z",
+      "history": []
     },
     {
       "file_id": "b8a9f51a68",
@@ -2381,12 +2341,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/b8a9f51a68.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "fd770c247479b7ae054ee339b19bbe63482f249541315432b5b1b0e6d8cd1587",
+      "size": 12511,
+      "downloaded_at": "2026-11-25T00:24:50Z",
+      "last_modified": "2025-02-18T07:59:46Z",
+      "history": []
     },
     {
       "file_id": "674ea8fc8b",
@@ -2401,12 +2360,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/674ea8fc8b.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "1c7d85e54ffb8ac72a9b2913bce1622943db0ab3675413369c92ef3d25b6e45b",
+      "size": 20731,
+      "downloaded_at": "2026-11-25T00:25:01Z",
+      "last_modified": "2025-01-21T10:49:12Z",
+      "history": []
     },
     {
       "file_id": "0798e543a7",
@@ -2421,12 +2379,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/0798e543a7.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "e8f4d408f943a82405871a826042d03144ea47fa7fd7b67e2749b7d8f7c75549",
+      "size": 12682,
+      "downloaded_at": "2026-11-25T00:25:11Z",
+      "last_modified": "2025-01-21T10:49:11Z",
+      "history": []
     },
     {
       "file_id": "4c9303e73b",
@@ -2441,12 +2398,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/4c9303e73b.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "5215504b9f63989bf8e22e6e7fefcf7b53c67526c287749208e7d9c960b9866c",
+      "size": 12063,
+      "downloaded_at": "2026-11-25T00:25:21Z",
+      "last_modified": "2025-01-21T10:49:12Z",
+      "history": []
     },
     {
       "file_id": "4708eb4fa0",
@@ -2461,12 +2417,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/4708eb4fa0.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "02192537e518008ec5800e78411d4fa74c87e9320d533e2a862a326892081ea9",
+      "size": 12609,
+      "downloaded_at": "2026-11-25T00:25:31Z",
+      "last_modified": "2024-11-21T10:24:43Z",
+      "history": []
     },
     {
       "file_id": "a2ddf6e7d1",
@@ -2481,12 +2436,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/a2ddf6e7d1.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "76ffb680a9d8c9e19c49077edf2f7781b2fe0c0b2e41a1b5a622c75416ff6b3b",
+      "size": 20704,
+      "downloaded_at": "2026-11-25T00:25:41Z",
+      "last_modified": "2024-11-21T10:24:16Z",
+      "history": []
     },
     {
       "file_id": "dd205ae6af",
@@ -2501,12 +2455,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/dd205ae6af.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "5f38579d7c810bf88c509f0766b8ffc69774e5c2d0eeb52197660f12d92ffb50",
+      "size": 12298,
+      "downloaded_at": "2026-11-25T00:25:51Z",
+      "last_modified": "2024-10-16T12:57:25Z",
+      "history": []
     },
     {
       "file_id": "f86dfcf384",
@@ -2521,12 +2474,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/f86dfcf384.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "2547006251998060aac2c97fe14471a92604ae7fc54edd68bd07237901f84cdb",
+      "size": 12640,
+      "downloaded_at": "2026-11-25T00:26:01Z",
+      "last_modified": "2024-10-16T12:57:35Z",
+      "history": []
     },
     {
       "file_id": "91aad55640",
@@ -2541,12 +2493,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/91aad55640.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "0233ac162e522835569b2d50a3ffc5d12546b0d1adbf1358a1703432846c3464",
+      "size": 20414,
+      "downloaded_at": "2026-11-25T00:26:11Z",
+      "last_modified": "2024-10-16T12:55:53Z",
+      "history": []
     },
     {
       "file_id": "d4d14dd447",
@@ -2561,12 +2512,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/d4d14dd447.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "e0f51bd5e37672ce10866600e02506518c37ffedf54564330a1ac235fa3ab927",
+      "size": 12325,
+      "downloaded_at": "2026-11-25T00:26:21Z",
+      "last_modified": "2024-09-18T12:41:53Z",
+      "history": []
     },
     {
       "file_id": "7aef657a45",
@@ -2581,12 +2531,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/7aef657a45.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "1e523cd5bac9617e736730244f089e4b9a93d921ad3b06bce95e808207075339",
+      "size": 13298,
+      "downloaded_at": "2026-11-25T00:26:31Z",
+      "last_modified": "2024-08-14T10:24:01Z",
+      "history": []
     },
     {
       "file_id": "c199fb8bd4",
@@ -2601,12 +2550,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/c199fb8bd4.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "cb0ec47bbd2531219cc241ad9b602c0a79daca231e028e4d0c71ab946f7b1ebf",
+      "size": 20641,
+      "downloaded_at": "2026-11-25T00:26:41Z",
+      "last_modified": "2024-08-14T10:24:01Z",
+      "history": []
     },
     {
       "file_id": "7ae01615f9",
@@ -2621,12 +2569,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/7ae01615f9.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "41905bb9a7e5be1a21aef83a609efcc786d6f0148a02ceaef27af0c852448f29",
+      "size": 12367,
+      "downloaded_at": "2026-11-25T00:26:51Z",
+      "last_modified": "2024-07-18T07:26:02Z",
+      "history": []
     },
     {
       "file_id": "072157b224",
@@ -2641,12 +2588,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/072157b224.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "4883f35e5718dbd216234b89c9005c6cc1a1fa96df5b0294bad3c37fdcbe7898",
+      "size": 12390,
+      "downloaded_at": "2026-11-25T00:27:01Z",
+      "last_modified": "2024-07-18T07:25:38Z",
+      "history": []
     },
     {
       "file_id": "5451573a57",
@@ -2661,12 +2607,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/5451573a57.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "5375b22a2c514441a406a97634bfba470277c05395eac6d07c70a84029ce628e",
+      "size": 20416,
+      "downloaded_at": "2026-11-25T00:27:11Z",
+      "last_modified": "2024-07-18T07:25:12Z",
+      "history": []
     },
     {
       "file_id": "c5cd051071",
@@ -2681,12 +2626,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/c5cd051071.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "64261f93877e7a4344c2618ddb325be5efbb3bba8a7cf950075e06f0f9edb84d",
+      "size": 12148,
+      "downloaded_at": "2026-11-25T00:27:21Z",
+      "last_modified": "2024-06-18T13:21:10Z",
+      "history": []
     },
     {
       "file_id": "90e1ce1d60",
@@ -2701,12 +2645,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/90e1ce1d60.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "7252be4d5a4a91d72fffa26cfb3a26a9f50bb129a42edaea02b43236f8bd3bcc",
+      "size": 20646,
+      "downloaded_at": "2026-11-25T00:27:31Z",
+      "last_modified": "2024-06-18T13:21:47Z",
+      "history": []
     },
     {
       "file_id": "fb46cafe21",
@@ -2721,12 +2664,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/fb46cafe21.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "fad8d6c1fee3e72ef23aefbb91a6c652df47ef74aff8e906c28993800115545f",
+      "size": 12300,
+      "downloaded_at": "2026-11-25T00:27:41Z",
+      "last_modified": "2024-05-15T10:26:57Z",
+      "history": []
     },
     {
       "file_id": "2cc5036b4a",
@@ -2741,12 +2683,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/2cc5036b4a.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "cc63ee4946684b8acf01fa479b81099834e82181762d0ebf256a79e7c378b35e",
+      "size": 21440,
+      "downloaded_at": "2026-11-25T00:27:51Z",
+      "last_modified": "2024-05-15T10:27:58Z",
+      "history": []
     },
     {
       "file_id": "fbc104eeb1",
@@ -2761,12 +2702,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/fbc104eeb1.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "9e4a869b56fb48663159e4135603c9a5bc63ff12bfe4f1fe88708d03960a5638",
+      "size": 12331,
+      "downloaded_at": "2026-11-25T00:28:01Z",
+      "last_modified": "2024-04-16T08:00:54Z",
+      "history": []
     },
     {
       "file_id": "5b1f2b76b0",
@@ -2781,12 +2721,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/5b1f2b76b0.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "09080ea7d61575be404d03526db434dda1c325306e652aa169c466b75363f30c",
+      "size": 20096,
+      "downloaded_at": "2026-11-25T00:28:11Z",
+      "last_modified": "2024-04-16T08:00:54Z",
+      "history": []
     },
     {
       "file_id": "66109f979a",
@@ -2801,12 +2740,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/66109f979a.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "e2b8c47322943ad01d5dce9bbfd02d98c6be60c6c8e01246554bb0a329b9088b",
+      "size": 12158,
+      "downloaded_at": "2026-11-25T00:28:22Z",
+      "last_modified": "2024-03-18T07:19:27Z",
+      "history": []
     },
     {
       "file_id": "6c222832e2",
@@ -2821,12 +2759,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/6c222832e2.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "8e424deec010ffc00afe0f519de3599673661c7c26402f19a14213aa6affe16c",
+      "size": 20032,
+      "downloaded_at": "2026-11-25T00:28:32Z",
+      "last_modified": "2024-03-18T07:19:27Z",
+      "history": []
     },
     {
       "file_id": "5126240c5e",
@@ -2841,12 +2778,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/5126240c5e.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "8a1b560e2eaef15c34e43ef45508aca570caca2c0515a188ebf2835c2b612ffe",
+      "size": 12104,
+      "downloaded_at": "2026-11-25T00:28:42Z",
+      "last_modified": "2024-02-15T11:41:55Z",
+      "history": []
     },
     {
       "file_id": "1a85e2aed0",
@@ -2861,12 +2797,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/1a85e2aed0.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "8c1ff1e7346caae155a0ea7e0ddfcb121a61b91b3e7acd062e755a2c5e44395e",
+      "size": 12539,
+      "downloaded_at": "2026-11-25T00:28:52Z",
+      "last_modified": "2024-02-15T11:42:57Z",
+      "history": []
     },
     {
       "file_id": "b7ec00a43b",
@@ -2881,12 +2816,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/b7ec00a43b.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "679c046c362699d4fbe1146e9919272e3f086790f8e34637dd8478b43f399a9d",
+      "size": 20012,
+      "downloaded_at": "2026-11-25T00:29:02Z",
+      "last_modified": "2024-02-15T11:43:47Z",
+      "history": []
     },
     {
       "file_id": "6693d5caac",
@@ -2901,12 +2835,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/6693d5caac.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "c0bb24f66975f8bbd571b60562a6f8a1eee284f81783ab8e6d23fcdc473d65c8",
+      "size": 19679,
+      "downloaded_at": "2026-11-25T00:29:12Z",
+      "last_modified": "2024-01-16T07:29:13Z",
+      "history": []
     },
     {
       "file_id": "f86d5b41d3",
@@ -2921,12 +2854,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/f86d5b41d3.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "294da3a9881bfe89caf6f25c23ffdf7df7f8957885f59d288c757ccb75368d43",
+      "size": 11991,
+      "downloaded_at": "2026-11-25T00:29:22Z",
+      "last_modified": "2024-01-16T07:29:14Z",
+      "history": []
     },
     {
       "file_id": "89be0d1177",
@@ -2941,12 +2873,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/89be0d1177.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "d68d803332d83fe403153c77ef4d74a0e059fc978d60e9324e8682fb613bbf77",
+      "size": 19868,
+      "downloaded_at": "2026-11-25T00:29:32Z",
+      "last_modified": "2023-12-14T14:27:11Z",
+      "history": []
     },
     {
       "file_id": "6fd148afb2",
@@ -2961,12 +2892,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/6fd148afb2.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "a3c1991950bb706853dc6c1db77008221093c204c00a3efa15e5904f7cd32938",
+      "size": 12280,
+      "downloaded_at": "2026-11-25T00:29:42Z",
+      "last_modified": "2023-12-14T14:27:12Z",
+      "history": []
     },
     {
       "file_id": "5b1b6b4c14",
@@ -2981,12 +2911,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/5b1b6b4c14.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "4142be17ac3e489503540101a56918733c86a9a3f8083ea3b648151144079647",
+      "size": 19747,
+      "downloaded_at": "2026-11-25T00:29:52Z",
+      "last_modified": "2023-11-15T08:00:51Z",
+      "history": []
     },
     {
       "file_id": "cd0f92a2fb",
@@ -3001,12 +2930,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/cd0f92a2fb.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "0cc529531579ae641bb697da4e076b1c528da6f1225b2c9efd7199ec7f1ef5b5",
+      "size": 12304,
+      "downloaded_at": "2026-11-25T00:30:02Z",
+      "last_modified": "2023-11-15T08:00:52Z",
+      "history": []
     },
     {
       "file_id": "860c22def8",
@@ -3021,12 +2949,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/860c22def8.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "c8c8f0bc75e3427e0a006c86a936dd08ea1efadb3d162f38f3351155af885882",
+      "size": 20053,
+      "downloaded_at": "2026-11-25T00:30:12Z",
+      "last_modified": "2023-10-26T13:37:20Z",
+      "history": []
     },
     {
       "file_id": "34cf2dd530",
@@ -3041,12 +2968,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/34cf2dd530.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "bed1a954a71ee9d9718ddd5679b738eaa5a9194ae77a81b5ee838865262d9467",
+      "size": 12272,
+      "downloaded_at": "2026-11-25T00:30:22Z",
+      "last_modified": "2023-10-26T13:37:20Z",
+      "history": []
     },
     {
       "file_id": "a08cd060d0",
@@ -3061,12 +2987,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/a08cd060d0.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "e44535c898b7a28fcad6febbe8bec332cecdecae18598d54ecd054f1cefc6173",
+      "size": 19674,
+      "downloaded_at": "2026-11-25T00:30:32Z",
+      "last_modified": "2023-09-18T13:14:21Z",
+      "history": []
     },
     {
       "file_id": "5b398c7541",
@@ -3081,12 +3006,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/5b398c7541.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "ef231370b6b9f9472e0f40dc74326093299d1d9316147fd25fdcb23a4a2e1ded",
+      "size": 12642,
+      "downloaded_at": "2026-11-25T00:30:42Z",
+      "last_modified": "2023-09-18T13:14:22Z",
+      "history": []
     },
     {
       "file_id": "6f658f0096",
@@ -3101,12 +3025,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/6f658f0096.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "b0a7b338a65016e5a7860bf805ffec1c96d4165a95788b0840d4b2134e7abaa7",
+      "size": 12107,
+      "downloaded_at": "2026-11-25T00:30:52Z",
+      "last_modified": "2023-09-18T13:14:22Z",
+      "history": []
     },
     {
       "file_id": "58229bc5ff",
@@ -3121,12 +3044,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/58229bc5ff.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "c32d0042eeacc6b347d5c1c619280fd34ef19fd848011a6266f592a960a82299",
+      "size": 19685,
+      "downloaded_at": "2026-11-25T00:31:02Z",
+      "last_modified": "2023-08-11T12:11:26Z",
+      "history": []
     },
     {
       "file_id": "e0617acd4c",
@@ -3141,12 +3063,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/e0617acd4c.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "81d5d1b7859b62d302205ff001526268719963c5f0a2903e453326882cc5c2eb",
+      "size": 12204,
+      "downloaded_at": "2026-11-25T00:31:12Z",
+      "last_modified": "2023-08-11T12:11:52Z",
+      "history": []
     },
     {
       "file_id": "ce86b2255b",
@@ -3161,12 +3082,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/ce86b2255b.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "beb61a7c6fe1d6e5d587eaab16aad4819ad72bf200c2b0883cce24cd279ce7b0",
+      "size": 12081,
+      "downloaded_at": "2026-11-25T00:31:22Z",
+      "last_modified": "2023-08-11T12:12:21Z",
+      "history": []
     },
     {
       "file_id": "272698c340",
@@ -3181,12 +3101,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/272698c340.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "1952dedfa50992423d16b3420ec1d55af9bdd5fceb98e591839e4233d9e91760",
+      "size": 20125,
+      "downloaded_at": "2026-11-25T00:31:33Z",
+      "last_modified": "2023-07-20T09:45:48Z",
+      "history": []
     },
     {
       "file_id": "a2525af8ce",
@@ -3201,12 +3120,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/a2525af8ce.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "b3bd98333ea77d0f58798d7791d43d33d2b2134c4ebc6c8e4eff85fcfdf32b22",
+      "size": 12147,
+      "downloaded_at": "2026-11-25T00:31:43Z",
+      "last_modified": "2023-07-20T09:46:21Z",
+      "history": []
     },
     {
       "file_id": "53918d0bf2",
@@ -3221,12 +3139,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/53918d0bf2.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "4354bee06e6e3599a1b067b9a36e51af77f6f6662c10b1ebd9a6b49b6206c021",
+      "size": 19885,
+      "downloaded_at": "2026-11-25T00:31:53Z",
+      "last_modified": "2023-06-16T12:29:55Z",
+      "history": []
     },
     {
       "file_id": "35eb68d76b",
@@ -3241,12 +3158,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/35eb68d76b.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "b8b1e917473e456bd808535addeccf562d37a75b2b1df147ea466e35b18a2e1d",
+      "size": 12193,
+      "downloaded_at": "2026-11-25T00:32:03Z",
+      "last_modified": "2023-06-16T12:30:28Z",
+      "history": []
     },
     {
       "file_id": "a6221fe7ef",
@@ -3261,12 +3177,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/a6221fe7ef.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "1b2992e81f223e2ad388be272b43617fa9fe26e2e11598146550aac6292efd49",
+      "size": 12218,
+      "downloaded_at": "2026-11-25T00:32:13Z",
+      "last_modified": "2023-06-16T12:30:54Z",
+      "history": []
     },
     {
       "file_id": "43d256227b",
@@ -3281,12 +3196,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/43d256227b.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "0796284e078af24541048e1149c3f3b81c14942a1ea4019afc31d1be042a1cae",
+      "size": 20113,
+      "downloaded_at": "2026-11-25T00:32:23Z",
+      "last_modified": "2023-05-16T12:57:54Z",
+      "history": []
     },
     {
       "file_id": "5626cbec80",
@@ -3301,12 +3215,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/5626cbec80.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "dab56034d1d730b5c1067693d2b7742321d2cda251860ea3c5170c1a520deeef",
+      "size": 12130,
+      "downloaded_at": "2026-11-25T00:32:33Z",
+      "last_modified": "2023-05-16T12:58:31Z",
+      "history": []
     },
     {
       "file_id": "4532b7ae47",
@@ -3321,12 +3234,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/4532b7ae47.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "ec2d93c0ceb9ae1c8c331e6adcd221e506f022a95b8032c946d5889bd3a73650",
+      "size": 12096,
+      "downloaded_at": "2026-11-25T00:32:43Z",
+      "last_modified": "2023-05-16T12:58:56Z",
+      "history": []
     },
     {
       "file_id": "f0e3c0baf9",
@@ -3341,12 +3253,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/f0e3c0baf9.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "6b1f3383668e06998469301405a0c8332230ba30ff72efecbe2525b6c964c190",
+      "size": 19663,
+      "downloaded_at": "2026-11-25T00:32:53Z",
+      "last_modified": "2023-04-28T09:09:54Z",
+      "history": []
     },
     {
       "file_id": "6982a653c1",
@@ -3361,12 +3272,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/6982a653c1.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "dfc2f3da5357334a44af0f0489d392b00b8003c4ff84a8ead79aed9fd04393dd",
+      "size": 12198,
+      "downloaded_at": "2026-11-25T00:33:03Z",
+      "last_modified": "2023-04-28T09:10:17Z",
+      "history": []
     },
     {
       "file_id": "315589cad1",
@@ -3381,12 +3291,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/315589cad1.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "4f59c33a923d59cdf0cd21b445120df02952ea4477ef6706095e1a0b4d368da8",
+      "size": 19755,
+      "downloaded_at": "2026-11-25T00:33:13Z",
+      "last_modified": "2023-03-24T10:07:54Z",
+      "history": []
     },
     {
       "file_id": "f72c5d837f",
@@ -3401,12 +3310,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/f72c5d837f.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "3ea2abea9e67b42c2d6d30360b8cc4cd3ea73f9e8d8400f6fa2f8be93a5637f1",
+      "size": 12012,
+      "downloaded_at": "2026-11-25T00:33:23Z",
+      "last_modified": "2023-03-24T10:08:28Z",
+      "history": []
     },
     {
       "file_id": "155ff147af",
@@ -3421,12 +3329,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/155ff147af.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "987073d5a9d3be34eb24d374d4edf1075d0ad8e101924850ba1ba44b090070a6",
+      "size": 12055,
+      "downloaded_at": "2026-11-25T00:33:33Z",
+      "last_modified": "2023-03-24T10:10:10Z",
+      "history": []
     },
     {
       "file_id": "9d064eead6",
@@ -3441,12 +3348,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/9d064eead6.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "269776f5c4f8f0156b0266dd2a35b9f7885a1fc8997bf9a368a24aa5ef9e4d73",
+      "size": 19458,
+      "downloaded_at": "2026-11-25T00:33:43Z",
+      "last_modified": "2023-02-23T14:30:03Z",
+      "history": []
     },
     {
       "file_id": "71f0e578dd",
@@ -3461,12 +3367,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/71f0e578dd.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "ae3888f80b161143b2923d7ed6072c80d627b75ae5a8008a271d7b6f9c1445c8",
+      "size": 12484,
+      "downloaded_at": "2026-11-25T00:33:53Z",
+      "last_modified": "2023-02-23T14:30:28Z",
+      "history": []
     },
     {
       "file_id": "817f31bfb1",
@@ -3481,12 +3386,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/817f31bfb1.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "d7e11f6effea8ffa5b0b3f97923f50d770b7c64b2e4d321a93e0b13bb1128df0",
+      "size": 12455,
+      "downloaded_at": "2026-11-25T00:34:03Z",
+      "last_modified": "2023-02-23T14:31:06Z",
+      "history": []
     },
     {
       "file_id": "2e7c26aabc",
@@ -3501,12 +3405,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/2e7c26aabc.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "428115c740b9993eb002555306ddcef0dd3c8228738d829b8388ef2850f394ff",
+      "size": 19970,
+      "downloaded_at": "2026-11-25T00:34:13Z",
+      "last_modified": "2023-01-18T10:42:15Z",
+      "history": []
     },
     {
       "file_id": "93afeea4d6",
@@ -3521,12 +3424,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/93afeea4d6.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "93ed0174aa7fb7973dac3b80a29e0caa7c3b9e7b01ab190b2d1aeee97c5c6dbd",
+      "size": 12896,
+      "downloaded_at": "2026-11-25T00:34:23Z",
+      "last_modified": "2023-01-18T10:42:43Z",
+      "history": []
     },
     {
       "file_id": "12536aabe7",
@@ -3541,12 +3443,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/12536aabe7.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "077c63a6b59f7041d0b60116b6abb902524af11274e1e4aa311527dacd74b355",
+      "size": 19898,
+      "downloaded_at": "2026-11-25T00:34:33Z",
+      "last_modified": "2022-12-29T08:44:13Z",
+      "history": []
     },
     {
       "file_id": "aa90973265",
@@ -3561,12 +3462,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/aa90973265.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "a05e4c8d3d4f33d336d4a2743e8957db058d35381b867c1577256b6f9695a95d",
+      "size": 12668,
+      "downloaded_at": "2026-11-25T00:34:43Z",
+      "last_modified": "2022-12-29T08:35:23Z",
+      "history": []
     },
     {
       "file_id": "c383b2b022",
@@ -3581,12 +3481,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/c383b2b022.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "ed24d567afddbd87cd6c2f9938bb216a138c42bbaa354631aac9161222ac4bd9",
+      "size": 20571,
+      "downloaded_at": "2026-11-25T00:34:54Z",
+      "last_modified": "2022-11-08T07:56:56Z",
+      "history": []
     },
     {
       "file_id": "884766adc9",
@@ -3601,12 +3500,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/884766adc9.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "a39d148bb55ce014ffca2d1b534cee1a1ca8d5f1e640a289455398d5f770fa63",
+      "size": 12656,
+      "downloaded_at": "2026-11-25T00:35:04Z",
+      "last_modified": "2022-11-08T07:56:05Z",
+      "history": []
     },
     {
       "file_id": "eb3f23e60c",
@@ -3621,12 +3519,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/eb3f23e60c.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "a1223d12eb2c50f031a808557ae05c0ba310f57b047df07e328a7a88e2638802",
+      "size": 12634,
+      "downloaded_at": "2026-11-25T00:35:14Z",
+      "last_modified": "2022-11-08T07:53:43Z",
+      "history": []
     },
     {
       "file_id": "d9a45e5110",
@@ -3641,12 +3538,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/d9a45e5110.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "cfc947486af862326e2e17e38f47391011216f59b87dd8937c400348749a8627",
+      "size": 19990,
+      "downloaded_at": "2026-11-25T00:35:24Z",
+      "last_modified": "2022-11-08T07:56:34Z",
+      "history": []
     },
     {
       "file_id": "7c7d7eb1fc",
@@ -3661,12 +3557,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/7c7d7eb1fc.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "f931d77e6472a8ae5dfa2bb1554e4ab036c8fc6e5e8dfcb4a02ec216accb923b",
+      "size": 12809,
+      "downloaded_at": "2026-11-25T00:35:34Z",
+      "last_modified": "2022-11-08T07:55:40Z",
+      "history": []
     },
     {
       "file_id": "90f064207b",
@@ -3681,12 +3576,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/90f064207b.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "d0124b136e068f872f9cd4e67269812a70c886aa93e3a85e368714853d503fe5",
+      "size": 12371,
+      "downloaded_at": "2026-11-25T00:35:44Z",
+      "last_modified": "2022-11-08T07:53:12Z",
+      "history": []
     },
     {
       "file_id": "1650d62976",
@@ -3701,12 +3595,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/1650d62976.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "5d78183e8ee8c2449c5b81018efac7630fa03a48e0f9d7ee98d4f984e471bc16",
+      "size": 21569,
+      "downloaded_at": "2026-11-25T00:35:54Z",
+      "last_modified": "2022-09-20T08:52:04Z",
+      "history": []
     },
     {
       "file_id": "db442379e7",
@@ -3721,12 +3614,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/db442379e7.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "298eea3d17cf8383b55dc25dce5c4b7be7864c522ff1fb10103cdf7780d75f36",
+      "size": 12669,
+      "downloaded_at": "2026-11-25T00:36:04Z",
+      "last_modified": "2022-09-20T08:53:37Z",
+      "history": []
     },
     {
       "file_id": "af4dbaf4be",
@@ -3741,12 +3633,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/af4dbaf4be.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "e5bfa6d36c34a8371c339295dee6af1081f69ca34e84c154aaff0c7701830e69",
+      "size": 13068,
+      "downloaded_at": "2026-11-25T00:36:14Z",
+      "last_modified": "2022-09-20T08:54:54Z",
+      "history": []
     },
     {
       "file_id": "be5ba04417",
@@ -3761,12 +3652,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/be5ba04417.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "34a4dc6ff2019e7b50f025516c6796396be7c8183e2259eb971e0e64a010b76f",
+      "size": 20791,
+      "downloaded_at": "2026-11-25T00:36:24Z",
+      "last_modified": "2022-09-20T08:51:14Z",
+      "history": []
     },
     {
       "file_id": "6ddd0ca224",
@@ -3781,12 +3671,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/6ddd0ca224.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "a2c79df495d9ae9ce0dc88bc67b6290b1fb4ed64f8db36927176dfca6e59c721",
+      "size": 12619,
+      "downloaded_at": "2026-11-25T00:36:34Z",
+      "last_modified": "2022-09-20T08:52:59Z",
+      "history": []
     },
     {
       "file_id": "06f47a8c79",
@@ -3801,12 +3690,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/06f47a8c79.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "05190602671c0fa58847ae5c522a924afae3940a469332f284f4fd59acb73055",
+      "size": 12493,
+      "downloaded_at": "2026-11-25T00:36:44Z",
+      "last_modified": "2022-09-20T08:54:21Z",
+      "history": []
     },
     {
       "file_id": "9514a4fec0",
@@ -3821,12 +3709,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/9514a4fec0.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "e02eb85dd1244a02b4c35d253e369df26700f926a2e89237a447e34a61a89792",
+      "size": 20811,
+      "downloaded_at": "2026-11-25T00:36:54Z",
+      "last_modified": "2022-07-15T09:27:05Z",
+      "history": []
     },
     {
       "file_id": "c8eda84089",
@@ -3841,12 +3728,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/c8eda84089.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "bc994a656eed48a4f1715524cd26950f17152bb2305c4d988858264de05651ce",
+      "size": 12714,
+      "downloaded_at": "2026-11-25T00:37:04Z",
+      "last_modified": "2022-07-15T09:27:31Z",
+      "history": []
     },
     {
       "file_id": "c648e6e6bd",
@@ -3861,12 +3747,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/c648e6e6bd.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "1315c8b38209f60c6a66600b33537d6bfdad83e4d65c71885732c4d868b1754d",
+      "size": 20066,
+      "downloaded_at": "2026-11-25T00:37:14Z",
+      "last_modified": "2022-06-15T10:49:36Z",
+      "history": []
     },
     {
       "file_id": "df4e27505b",
@@ -3881,12 +3766,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/df4e27505b.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "59565cec953f46b51d746cb4ab4a10c0da21fe70022fd8c5fcbe4efc1f871a6e",
+      "size": 12258,
+      "downloaded_at": "2026-11-25T00:37:24Z",
+      "last_modified": "2022-06-15T10:50:37Z",
+      "history": []
     },
     {
       "file_id": "0acd0dc5cc",
@@ -3901,12 +3785,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/0acd0dc5cc.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "517f65e67ec29647a04b7eb4a322b249bd4b88cf980416db3591cf0f66fab7e3",
+      "size": 12066,
+      "downloaded_at": "2026-11-25T00:37:34Z",
+      "last_modified": "2022-06-15T10:51:27Z",
+      "history": []
     },
     {
       "file_id": "f0b3ec154c",
@@ -3921,12 +3804,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/f0b3ec154c.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "8c6b18f4e9e9a3ed1c92dba9eac13c4a5d51378aa37e31fe87214ec3cc2d8d8e",
+      "size": 19626,
+      "downloaded_at": "2026-11-25T00:37:44Z",
+      "last_modified": "2022-05-17T13:11:12Z",
+      "history": []
     },
     {
       "file_id": "02ac298493",
@@ -3941,12 +3823,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/02ac298493.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "4fe503ae50f921551b0a3c528a5b957ec987387c5cb99d7b43e2a0d32ad80525",
+      "size": 12841,
+      "downloaded_at": "2026-11-25T00:37:54Z",
+      "last_modified": "2022-05-17T13:11:45Z",
+      "history": []
     },
     {
       "file_id": "01532732f2",
@@ -3961,12 +3842,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/01532732f2.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "ec4608585dc6ff84f96fb5c64d4b1a20819e261c7b1c4caf361bc745c2abe3ba",
+      "size": 20226,
+      "downloaded_at": "2026-11-25T00:38:05Z",
+      "last_modified": "2022-04-21T12:34:30Z",
+      "history": []
     },
     {
       "file_id": "b60d9f9a28",
@@ -3981,12 +3861,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/b60d9f9a28.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "6bd69e507de7b1370577950fbedeeb3b15532a36bb00feba10756bf0e0a1e06e",
+      "size": 12929,
+      "downloaded_at": "2026-11-25T00:38:15Z",
+      "last_modified": "2022-04-21T12:32:08Z",
+      "history": []
     },
     {
       "file_id": "8a5a154c55",
@@ -4001,12 +3880,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/8a5a154c55.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "ec2a82f66dd7b389310bbc55f8f5148fb0f5c1097d00be83c912828f0117c300",
+      "size": 12602,
+      "downloaded_at": "2026-11-25T00:38:25Z",
+      "last_modified": "2022-04-21T12:34:57Z",
+      "history": []
     },
     {
       "file_id": "c60c5c4418",
@@ -4021,12 +3899,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/c60c5c4418.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "30b6a04353abd81ba9bbe4744cfa2f1161be87a59bb52cae3cc11d272a0644eb",
+      "size": 20226,
+      "downloaded_at": "2026-11-25T00:38:35Z",
+      "last_modified": "2022-04-21T12:32:31Z",
+      "history": []
     },
     {
       "file_id": "f2850f1878",
@@ -4041,12 +3918,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/f2850f1878.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "679306654871bc06c5ac4e3fcd2d1cccea854acc724c07157b6360c57f1004d2",
+      "size": 12732,
+      "downloaded_at": "2026-11-25T00:38:45Z",
+      "last_modified": "2022-04-21T12:32:31Z",
+      "history": []
     },
     {
       "file_id": "5d7d8f13a1",
@@ -4061,12 +3937,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/5d7d8f13a1.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "c7716a4ad10ae689885a73af6f2723ca68b1eeab2cecf5d119026dc535fdc717",
+      "size": 12200,
+      "downloaded_at": "2026-11-25T00:38:55Z",
+      "last_modified": "2022-04-21T12:32:31Z",
+      "history": []
     },
     {
       "file_id": "104c783332",
@@ -4081,12 +3956,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/104c783332.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "77115549a6ccb73513c59bf6fa7a5fcfafc044645ae3b8015ce5fcc047f48b45",
+      "size": 19640,
+      "downloaded_at": "2026-11-25T00:39:05Z",
+      "last_modified": "2022-04-21T12:32:31Z",
+      "history": []
     },
     {
       "file_id": "c7e95c3782",
@@ -4101,12 +3975,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/c7e95c3782.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "d94fd1c73f4dc628e986c0b101fba11b41bc596095b60e6df991e3e3aee28981",
+      "size": 12179,
+      "downloaded_at": "2026-11-25T00:39:15Z",
+      "last_modified": "2022-04-21T12:32:31Z",
+      "history": []
     },
     {
       "file_id": "ab56c39259",
@@ -4121,12 +3994,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/ab56c39259.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "ba7fcb1d61f27c6f769285a6cd391741e642fffcf82f6661f94cce456adde420",
+      "size": 21002,
+      "downloaded_at": "2026-11-25T00:39:25Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "116ca43045",
@@ -4141,12 +4013,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/116ca43045.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "48279d6bfa697300a47370b8d747030a8497198daad8e2bbdebc41539ebdeae0",
+      "size": 12915,
+      "downloaded_at": "2026-11-25T00:39:35Z",
+      "last_modified": "2022-04-21T12:33:55Z",
+      "history": []
     },
     {
       "file_id": "a3cde049dd",
@@ -4161,12 +4032,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/a3cde049dd.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "92f3e57993aca1de5d7bf9aca33e5abd22313bf3939fd1c0c769463940201ad5",
+      "size": 12115,
+      "downloaded_at": "2026-11-25T00:39:45Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "c48a5db1c1",
@@ -4181,12 +4051,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/c48a5db1c1.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "c3817ca1e75ed8a049c21d0e8adada567a28b8b52696f7a63c574bb4d4c328de",
+      "size": 12192,
+      "downloaded_at": "2026-11-25T00:39:55Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "c9f8d959bb",
@@ -4202,12 +4071,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/c9f8d959bb.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "87b9200a12f8b33972b060ca9738e06573cf7678709ddb54d586baaa079c9012",
+      "size": 20512,
+      "downloaded_at": "2026-11-25T00:40:05Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "2522e3f778",
@@ -4222,12 +4090,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/2522e3f778.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "34c18af689154493e7f256e70b34dd668e375d0719d5cd59e8c49a261a1135ca",
+      "size": 12652,
+      "downloaded_at": "2026-11-25T00:40:15Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "7e73bb848c",
@@ -4242,12 +4109,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/7e73bb848c.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "9a804a782d4ae6ab328eba327c92015dcf52800fa9165f1c5d5c72045f5b03df",
+      "size": 12191,
+      "downloaded_at": "2026-11-25T00:40:25Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "b76c74e8d3",
@@ -4262,12 +4128,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/b76c74e8d3.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "c924ad57964c511834da3b1bea95e6abf3139c800f10c640f9d2fb20874c9ad8",
+      "size": 20187,
+      "downloaded_at": "2026-11-25T00:40:35Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "50b30b2a16",
@@ -4282,12 +4147,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/50b30b2a16.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "fb865bc4c8627bb405c920bf41d04ee9f4b3747f42f2883c2eb3f773d3b2f52a",
+      "size": 12775,
+      "downloaded_at": "2026-11-25T00:40:45Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "4c6c62c7c1",
@@ -4302,12 +4166,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/4c6c62c7c1.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "baa51ad1866250c11804277123bb57b54f1667b951ed9c07ddfdebc4033ca416",
+      "size": 13107,
+      "downloaded_at": "2026-11-25T00:40:56Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "c8bea0a7ba",
@@ -4322,12 +4185,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/c8bea0a7ba.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "bab50f0ad82abe2d3c9ae435724f7cbd24b14ef9986543c6cdac75189b2810ad",
+      "size": 13220,
+      "downloaded_at": "2026-11-25T00:41:06Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "82b2dc3c71",
@@ -4342,12 +4204,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/82b2dc3c71.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "7c94107dec0b3a0ab56591e6a9aa173cf132713a820c730c3e868cb36a2b0f42",
+      "size": 19878,
+      "downloaded_at": "2026-11-25T00:41:16Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "6f4aacbb62",
@@ -4362,12 +4223,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/6f4aacbb62.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "380366f05b73209cfe8994400b8ecd808535f9d4b105385e414ff75bd7a7d756",
+      "size": 21142,
+      "downloaded_at": "2026-11-25T00:41:26Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "2d3304d641",
@@ -4382,12 +4242,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/2d3304d641.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "15e75287a436e202e13ba889a0c2304ee1057ddc54b071b67f8c3fac5b263747",
+      "size": 12487,
+      "downloaded_at": "2026-11-25T00:41:36Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "ad39aa50e8",
@@ -4402,12 +4261,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/ad39aa50e8.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "77fdd2b18856e4ca7e198f9c39d9265c114a61519435791b5b17d74754732204",
+      "size": 11318,
+      "downloaded_at": "2026-11-25T00:41:46Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "1ca3dcf356",
@@ -4422,12 +4280,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/1ca3dcf356.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "cdc8d2ff1e07d30e057c68d83a7e279881cec25d315f1e861b3103424391bc5f",
+      "size": 12033,
+      "downloaded_at": "2026-11-25T00:41:56Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "2e3a42dcb7",
@@ -4442,12 +4299,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/2e3a42dcb7.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "5b9bc0eb1877ed1d14c5f999d12bc31f2f2caf0017c06b58a9eb2f8161320fce",
+      "size": 11136,
+      "downloaded_at": "2026-11-25T00:42:06Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "ae9981eb9c",
@@ -4462,12 +4318,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/ae9981eb9c.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "c604e9d7d8d6f49a281debb8b6785e5ab70c22992f0c2fa29181332596ee0873",
+      "size": 10959,
+      "downloaded_at": "2026-11-25T00:42:16Z",
+      "last_modified": "2022-04-21T12:33:27Z",
+      "history": []
     },
     {
       "file_id": "9b969f11cd",
@@ -4482,12 +4337,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/9b969f11cd.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "51ffb5503d503c4bde95b077607aac8e414022006e09d38d0290924a5c14c27c",
+      "size": 11293,
+      "downloaded_at": "2026-11-25T00:42:26Z",
+      "last_modified": "2022-04-21T12:33:37Z",
+      "history": []
     },
     {
       "file_id": "6f43bf8ac7",
@@ -4502,12 +4356,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/6f43bf8ac7.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "93fc7847535917f1e56b510f1585570e182b08b4683e0e8b63c692e80faa56b1",
+      "size": 10860,
+      "downloaded_at": "2026-11-25T00:42:36Z",
+      "last_modified": "2022-04-21T12:33:37Z",
+      "history": []
     },
     {
       "file_id": "c9c980b3c2",
@@ -4522,12 +4375,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/c9c980b3c2.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "157fff4f2712adca5891c9384fc12427a1dfa72fe61696555673481036972cd9",
+      "size": 11260,
+      "downloaded_at": "2026-11-25T00:42:46Z",
+      "last_modified": "2022-04-21T12:33:28Z",
+      "history": []
     },
     {
       "file_id": "52064a0c2f",
@@ -4542,12 +4394,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/52064a0c2f.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "19eb969bce88dc01f098a6aa0083f817f7bc05d696ef45415702b969e502f3f9",
+      "size": 10880,
+      "downloaded_at": "2026-11-25T00:42:56Z",
+      "last_modified": "2022-04-21T12:33:37Z",
+      "history": []
     },
     {
       "file_id": "aaf9248093",
@@ -4562,12 +4413,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/aaf9248093.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "597db99f73e5e2aa663359425498039d37b637e0cc7d374de1eea30e96f857e1",
+      "size": 10683,
+      "downloaded_at": "2026-11-25T00:43:06Z",
+      "last_modified": "2021-04-27T09:11:58Z",
+      "history": []
     },
     {
       "file_id": "3467e1f04a",
@@ -4582,12 +4432,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/3467e1f04a.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "28e22cfa89546795bb7d92bcbe759d092c8f334e67951261328b01d00f8daaae",
+      "size": 11793,
+      "downloaded_at": "2026-11-25T00:43:16Z",
+      "last_modified": "2021-04-27T09:13:50Z",
+      "history": []
     },
     {
       "file_id": "8fbea35e83",
@@ -4602,12 +4451,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/8fbea35e83.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "d9486439255fe92983123075566c8b69bf0cd5376439794fdac00e72e582b874",
+      "size": 11095,
+      "downloaded_at": "2026-11-25T00:43:26Z",
+      "last_modified": "2021-04-27T09:16:14Z",
+      "history": []
     },
     {
       "file_id": "c0b31c9db1",
@@ -4622,12 +4470,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/c0b31c9db1.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "441c89c5d2d28e8b83a2cafd481201abb722dfda7744299a61097e9d94d53f2b",
+      "size": 10990,
+      "downloaded_at": "2026-11-25T00:43:36Z",
+      "last_modified": "2021-04-27T09:11:58Z",
+      "history": []
     },
     {
       "file_id": "8847661df9",
@@ -4642,12 +4489,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/8847661df9.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "ddc960da4c62eb5ba3dbf47566c443c60315c7eee0ce3a7550b3f211282d83de",
+      "size": 11127,
+      "downloaded_at": "2026-11-25T00:43:46Z",
+      "last_modified": "2021-04-27T09:13:50Z",
+      "history": []
     },
     {
       "file_id": "9d71f33486",
@@ -4662,12 +4508,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/9d71f33486.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "61c3f6fdbe93ef46cd3609a99ba13822bb0f4a1e853208faab7eaf7764f01956",
+      "size": 11082,
+      "downloaded_at": "2026-11-25T00:43:56Z",
+      "last_modified": "2021-04-27T09:16:14Z",
+      "history": []
     },
     {
       "file_id": "f02e1f887e",
@@ -4682,12 +4527,11 @@
         "wes-informacje-o-wszczetych-postepowaniach-o-warunkach-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/f02e1f887e.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "71aafef62422a9690c282d9ee4f895a23d0a4ab53a0233cb850263e897c4513f",
+      "size": 14518,
+      "downloaded_at": "2026-11-25T00:44:06Z",
+      "last_modified": "2021-04-27T09:11:58Z",
+      "history": []
     },
     {
       "file_id": "67865bcc22",
@@ -4702,12 +4546,11 @@
         "wes-informacje-o-wydanych-decyzjach-w-sprawie-warunkow-zabudowy"
       ],
       "local_path": "data/districts/wesola/raw/67865bcc22.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "c80320719f78876228258e6ca856b9f26606db485f2fcb8b7696a25e98b35123",
+      "size": 14505,
+      "downloaded_at": "2026-11-25T00:44:16Z",
+      "last_modified": "2021-04-27T09:13:50Z",
+      "history": []
     },
     {
       "file_id": "6d9e1eb9b2",
@@ -4722,12 +4565,11 @@
         "wes-informacje-o-wydanych-decyzjach"
       ],
       "local_path": "data/districts/wesola/raw/6d9e1eb9b2.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "c26a05b2ce1d1a211732b3a382afddb417f92cf82fcf34ed91de00a1a6fb1b7a",
+      "size": 14916,
+      "downloaded_at": "2026-11-25T00:44:27Z",
+      "last_modified": "2021-04-27T09:16:14Z",
+      "history": []
     }
   ],
   "district": "wesola"

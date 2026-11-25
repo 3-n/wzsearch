@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:55:21Z",
+  "generated_at": "2026-11-25T00:17:47Z",
   "index_url": "https://ursynow.um.warszawa.pl/-/rejestr-wnioskow-decyzji",
   "pages": [
     {
@@ -12,6 +12,33 @@
       "index_page": null,
       "source": "district",
       "blocks": [
+        {
+          "text": "Wszczęte postępowania 10.2026",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "12ea4bef6c"
+          ],
+          "period": "2026-10"
+        },
+        {
+          "text": "Wydane decyzje ULICP 10.2026",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "a10e22aa55"
+          ],
+          "period": "2026-10"
+        },
+        {
+          "text": "Wydane decyzje WZ 10.2026",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "b98ced3f93"
+          ],
+          "period": "2026-10"
+        },
         {
           "text": "Wszczęte postępowania 09.2026",
           "category": "ws",
@@ -1784,6 +1811,63 @@
     }
   ],
   "files": [
+    {
+      "file_id": "12ea4bef6c",
+      "source": "district",
+      "url": "https://ursynow.um.warszawa.pl/documents/47940/173957639/Wszcz%C4%99te+post%C4%99powania+10.2026.xlsx/70589b27-02b2-8ce1-c6fe-d89d95b18f6d?t=1794489303806",
+      "document_path": "/documents/47940/173957639/Wszcz%C4%99te+post%C4%99powania+10.2026.xlsx/70589b27-02b2-8ce1-c6fe-d89d95b18f6d",
+      "filename": "Wszczęte postępowania 10.2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026-10",
+      "page_ids": [
+        "urn-rejestr-wnioskow-decyzji"
+      ],
+      "local_path": "data/districts/ursynow/raw/12ea4bef6c.xlsx",
+      "sha256": "1dcc9eefa8f50848987ce7ea7906a0bdec726de0d6a38224715e865016220390",
+      "size": 23091,
+      "downloaded_at": "2026-11-25T00:17:48Z",
+      "last_modified": "2026-11-12T13:15:03Z",
+      "history": []
+    },
+    {
+      "file_id": "a10e22aa55",
+      "source": "district",
+      "url": "https://ursynow.um.warszawa.pl/documents/47940/173957639/Wydane+decyzje+ULICP+10.2026.xlsx/4c31f9b1-ca3e-67b6-a473-cdf09ccd448b?t=1794489303507",
+      "document_path": "/documents/47940/173957639/Wydane+decyzje+ULICP+10.2026.xlsx/4c31f9b1-ca3e-67b6-a473-cdf09ccd448b",
+      "filename": "Wydane decyzje ULICP 10.2026.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2026-10",
+      "page_ids": [
+        "urn-rejestr-wnioskow-decyzji"
+      ],
+      "local_path": "data/districts/ursynow/raw/a10e22aa55.xlsx",
+      "sha256": "f6dbf6b1840e2781e505342e4b2809285c6414779f8fb26c225a9bf003c178b4",
+      "size": 12808,
+      "downloaded_at": "2026-11-25T00:17:49Z",
+      "last_modified": "2026-11-12T13:15:03Z",
+      "history": []
+    },
+    {
+      "file_id": "b98ced3f93",
+      "source": "district",
+      "url": "https://ursynow.um.warszawa.pl/documents/47940/173957639/Wydane+decyzje+WZ+10.2026.xlsx/104441c0-6137-2813-078c-f7358540b90a?t=1794489303154",
+      "document_path": "/documents/47940/173957639/Wydane+decyzje+WZ+10.2026.xlsx/104441c0-6137-2813-078c-f7358540b90a",
+      "filename": "Wydane decyzje WZ 10.2026.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026-10",
+      "page_ids": [
+        "urn-rejestr-wnioskow-decyzji"
+      ],
+      "local_path": "data/districts/ursynow/raw/b98ced3f93.xlsx",
+      "sha256": "25f87404e3c5a798d03f8d81acb27a24dc6a62518c52b29059f4f80b867a0b43",
+      "size": 13726,
+      "downloaded_at": "2026-11-25T00:17:49Z",
+      "last_modified": "2026-11-12T13:15:03Z",
+      "history": []
+    },
     {
       "file_id": "e6b246d234",
       "source": "district",

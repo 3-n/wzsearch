@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:56:01Z",
+  "generated_at": "2026-11-25T00:45:01Z",
   "index_url": "https://wilanow.um.warszawa.pl/-/nowe-procedury-zwiazane-z-jawnoscia-procesu-inwestycyjnego",
   "pages": [
     {
@@ -13,11 +13,11 @@
       "source": "district",
       "blocks": [
         {
-          "text": "Informacja o wszczętych postępowaniach o warunkach zabudowy - zał. 1a (99 KB, XLSX)",
+          "text": "Informacja o wszczętych postępowaniach o warunkach zabudowy - zał. 1a (100 KB, XLSX)",
           "category": "ws",
           "declared_count": null,
           "file_ids": [
-            "e1ffa4dcc3"
+            "d188b33d43"
           ],
           "period": null
         },
@@ -26,16 +26,16 @@
           "category": "ws",
           "declared_count": null,
           "file_ids": [
-            "63d703b3d8"
+            "2f62b4b172"
           ],
           "period": null
         },
         {
-          "text": "Informacja o wydanych decyzjach w sprawie warunków zabudowy - zał. 2 (43 KB, XLSX)",
+          "text": "Informacja o wydanych decyzjach w sprawie warunków zabudowy - zał. 2 (45 KB, XLSX)",
           "category": "wz",
           "declared_count": null,
           "file_ids": [
-            "7142be8c44"
+            "5ef3c8d118"
           ],
           "period": null
         },
@@ -44,7 +44,7 @@
           "category": "cp",
           "declared_count": null,
           "file_ids": [
-            "e95544a78b"
+            "159656df8c"
           ],
           "period": null
         }
@@ -56,6 +56,25 @@
     }
   ],
   "files": [
+    {
+      "file_id": "d188b33d43",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44464/76883780/Za%C5%82.+1a+-+Rejestr+wniosk%C3%B3w+o+WZ.xlsx/10408ec5-2249-c4c1-4073-d70d0f63897f?t=1794813578341",
+      "document_path": "/documents/44464/76883780/Za%C5%82.+1a+-+Rejestr+wniosk%C3%B3w+o+WZ.xlsx/10408ec5-2249-c4c1-4073-d70d0f63897f",
+      "filename": "Zał. 1a - Rejestr wniosków o WZ.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": null,
+      "page_ids": [
+        "wil-informacje-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wilanow/raw/d188b33d43.xlsx",
+      "sha256": "afb287091c26c1c1e2b54c31c1fe39aab6011f7f68868bb74bd0c0597afb6534",
+      "size": 101428,
+      "downloaded_at": "2026-11-25T00:45:01Z",
+      "last_modified": "2026-11-16T07:19:38Z",
+      "history": []
+    },
     {
       "file_id": "e1ffa4dcc3",
       "source": "district",
@@ -73,6 +92,26 @@
       "size": 101244,
       "downloaded_at": "2026-10-27T16:09:52Z",
       "last_modified": "2026-10-12T11:42:30Z",
+      "history": [],
+      "removed_from_source_at": "2026-11-25"
+    },
+    {
+      "file_id": "2f62b4b172",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44464/76883780/Za%C5%82.+1b+-+Rejestr+wniosk%C3%B3w+o+LICP.xlsx/5e4ada4c-eee0-461c-aa5a-0540426c629c?t=1794813578882",
+      "document_path": "/documents/44464/76883780/Za%C5%82.+1b+-+Rejestr+wniosk%C3%B3w+o+LICP.xlsx/5e4ada4c-eee0-461c-aa5a-0540426c629c",
+      "filename": "Zał. 1b - Rejestr wniosków o LICP.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": null,
+      "page_ids": [
+        "wil-informacje-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wilanow/raw/2f62b4b172.xlsx",
+      "sha256": "b79a42cbdcd99884647a96f98b7473ec04b390ac8da3a80aee8c9a76b3c8d9f2",
+      "size": 36540,
+      "downloaded_at": "2026-11-25T00:45:11Z",
+      "last_modified": "2026-11-16T07:19:38Z",
       "history": []
     },
     {
@@ -92,6 +131,26 @@
       "size": 36460,
       "downloaded_at": "2026-10-27T16:09:53Z",
       "last_modified": "2026-10-12T11:42:30Z",
+      "history": [],
+      "removed_from_source_at": "2026-11-25"
+    },
+    {
+      "file_id": "5ef3c8d118",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44464/76883780/Za%C5%82.+2+-+Rejestr+decyzji+o+WZ.xlsx/7a148f0a-9c19-91ca-f6b4-4273356414a8?t=1794813579398",
+      "document_path": "/documents/44464/76883780/Za%C5%82.+2+-+Rejestr+decyzji+o+WZ.xlsx/7a148f0a-9c19-91ca-f6b4-4273356414a8",
+      "filename": "Zał. 2 - Rejestr decyzji o WZ.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": null,
+      "page_ids": [
+        "wil-informacje-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wilanow/raw/5ef3c8d118.xlsx",
+      "sha256": "5feddd4f6dc5684d2c69b1dcb4acbffc9309e87aa7bd189666ea28547b8e09de",
+      "size": 45138,
+      "downloaded_at": "2026-11-25T00:45:21Z",
+      "last_modified": "2026-11-16T07:19:39Z",
       "history": []
     },
     {
@@ -111,6 +170,26 @@
       "size": 43409,
       "downloaded_at": "2026-10-27T16:09:53Z",
       "last_modified": "2026-10-12T11:42:31Z",
+      "history": [],
+      "removed_from_source_at": "2026-11-25"
+    },
+    {
+      "file_id": "159656df8c",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/44464/76883780/Za%C5%82.+3+-+Rejestr+decyzji+o+LICP.xlsx/0eefd1cb-225c-799c-a5da-7c4f6440112e?t=1794813580140",
+      "document_path": "/documents/44464/76883780/Za%C5%82.+3+-+Rejestr+decyzji+o+LICP.xlsx/0eefd1cb-225c-799c-a5da-7c4f6440112e",
+      "filename": "Zał. 3 - Rejestr decyzji o LICP.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": null,
+      "page_ids": [
+        "wil-informacje-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach"
+      ],
+      "local_path": "data/districts/wilanow/raw/159656df8c.xlsx",
+      "sha256": "0183961c4d26e714bce10f17d7dfd7b806f192437cc2083277718c38716998cc",
+      "size": 28056,
+      "downloaded_at": "2026-11-25T00:45:31Z",
+      "last_modified": "2026-11-16T07:19:40Z",
       "history": []
     },
     {
@@ -130,7 +209,8 @@
       "size": 27930,
       "downloaded_at": "2026-10-27T16:09:54Z",
       "last_modified": "2026-10-12T11:42:31Z",
-      "history": []
+      "history": [],
+      "removed_from_source_at": "2026-11-25"
     }
   ],
   "district": "wilanow"

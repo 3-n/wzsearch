@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:46:40Z",
+  "generated_at": "2026-11-24T23:53:41Z",
   "index_url": "https://pragapld.um.warszawa.pl/informacja-o-wszczetych-postepowaniach-oraz-wydanych-decyzjach-administracyjnych",
   "pages": [
     {
@@ -6447,13 +6447,12 @@
         "postepowania-i-decyzje"
       ],
       "local_path": "data/raw/8df7eecf21.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
+      "sha256": "901b889c2a8db5af99a6508fac0e5f95ca4b7e0fc5c69343024f121db1dee6f1",
+      "size": 16732,
+      "downloaded_at": "2026-11-24T23:53:41Z",
+      "last_modified": "2026-11-09T12:11:54Z",
       "history": [],
-      "series": "c1",
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_o_ustaleniu_LICP_o_znaczeniu_krajowym_i_woj%C3%B3dzkim_X_2026%2B.xlsx/2bdca5a3-f93b-a6ec-d25f-d6aa76579389?t=1794226314259"
+      "series": "c1"
     },
     {
       "file_id": "4741ae2bdf",
@@ -6489,18 +6488,17 @@
         "postepowania-i-decyzje"
       ],
       "local_path": "data/raw/a18f215831.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
+      "sha256": "6f1ccc97c437bd42f47bad501c71ffebdd460d00b3b40e8ff82575d78da9ea8e",
+      "size": 17541,
+      "downloaded_at": "2026-11-24T23:53:51Z",
+      "last_modified": "2026-11-09T12:11:54Z",
       "history": [],
-      "series": "c2",
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/12025039/173779387/informacja_o_wydanych_decyzjach_ustalenie_LICP_o_znaczeniu_powiatowym+_i_gminnym_X_2026%2B.xlsx/e0d771ec-dd75-b9be-a638-bd80fc8a8d6a?t=1794226314560"
+      "series": "c2"
     },
     {
       "file_id": "7349917c1f",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_25.xlsx/ec2f3679-1303-b07d-d372-2b59bbad3874?t=1768389583052",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/152228831/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_25.xlsx/ec2f3679-1303-b07d-d372-2b59bbad3874?t=1768389583052",
       "document_path": "/documents/12025039/152228831/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_25.xlsx/ec2f3679-1303-b07d-d372-2b59bbad3874",
       "filename": "informacja o wszczętych postępowaniach o wz,licp_XII_25.xlsx",
       "ext": "xlsx",
@@ -6512,16 +6510,21 @@
       "local_path": "data/raw/7349917c1f.xlsx",
       "sha256": "43a07d39eefe8eb0bdca674a0b97db7279e756b3290d6426fff5ee14e503be61",
       "size": 37295,
-      "downloaded_at": "2026-10-23T03:34:06Z",
+      "downloaded_at": "2026-11-24T23:54:01Z",
       "last_modified": "2026-01-14T11:19:43Z",
-      "history": [],
-      "series": null,
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/12025039/152228831/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_25.xlsx/ec2f3679-1303-b07d-d372-2b59bbad3874?t=1768389583052"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_25.xlsx/ec2f3679-1303-b07d-d372-2b59bbad3874?t=1768389583052",
+          "sha256": "43a07d39eefe8eb0bdca674a0b97db7279e756b3290d6426fff5ee14e503be61",
+          "downloaded_at": "2026-10-23T03:34:06Z"
+        }
+      ],
+      "series": null
     },
     {
       "file_id": "62bd84cf3b",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_25+%2B.xlsx/2da6e58f-949a-53ac-753b-1c4c5ea66ec1?t=1768389583415",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_25+%2B.xlsx/2da6e58f-949a-53ac-753b-1c4c5ea66ec1?t=1768389583415",
       "document_path": "/documents/12025039/152228831/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_25+%2B.xlsx/2da6e58f-949a-53ac-753b-1c4c5ea66ec1",
       "filename": "informacja o wydanych decyzjach ws. ustalenia_licp_kraj-woj_XII_25 +.xlsx",
       "ext": "xlsx",
@@ -6533,16 +6536,21 @@
       "local_path": "data/raw/62bd84cf3b.xlsx",
       "sha256": "51de5ee605cd5c0621655b77f1a8616903d1005c09f818646d6c5b5d8cf4ea9b",
       "size": 16239,
-      "downloaded_at": "2026-10-23T03:34:07Z",
+      "downloaded_at": "2026-11-24T23:54:11Z",
       "last_modified": "2026-01-14T11:19:43Z",
-      "history": [],
-      "series": "c1",
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_25+%2B.xlsx/2da6e58f-949a-53ac-753b-1c4c5ea66ec1?t=1768389583415",
+          "sha256": "51de5ee605cd5c0621655b77f1a8616903d1005c09f818646d6c5b5d8cf4ea9b",
+          "downloaded_at": "2026-10-23T03:34:07Z"
+        }
+      ],
+      "series": "c1"
     },
     {
       "file_id": "3b7f9d6f99",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_25+%2B.xlsx/b7892448-d604-fd62-1991-5e616a15c926?t=1768389582390",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_25+%2B.xlsx/b7892448-d604-fd62-1991-5e616a15c926?t=1768389582390",
       "document_path": "/documents/12025039/152228831/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_25+%2B.xlsx/b7892448-d604-fd62-1991-5e616a15c926",
       "filename": "informacja o wydanych decyzjach ws. ustalenia_licp_pow-gm_XII_25 +.xlsx",
       "ext": "xlsx",
@@ -6554,16 +6562,21 @@
       "local_path": "data/raw/3b7f9d6f99.xlsx",
       "sha256": "f1741c51c5abd5c2a729adfc69ec795b7eac88c0d3c9ab53772aeb66522211dc",
       "size": 17812,
-      "downloaded_at": "2026-10-23T03:34:07Z",
+      "downloaded_at": "2026-11-24T23:54:21Z",
       "last_modified": "2026-01-14T11:19:42Z",
-      "history": [],
-      "series": "c2",
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_25+%2B.xlsx/b7892448-d604-fd62-1991-5e616a15c926?t=1768389582390",
+          "sha256": "f1741c51c5abd5c2a729adfc69ec795b7eac88c0d3c9ab53772aeb66522211dc",
+          "downloaded_at": "2026-10-23T03:34:07Z"
+        }
+      ],
+      "series": "c2"
     },
     {
       "file_id": "e8a03cd9a9",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach_wz_XII_25+%2B.xlsx/cb763523-543a-dc26-c549-da9e662d76c8?t=1768389582758",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach_wz_XII_25+%2B.xlsx/cb763523-543a-dc26-c549-da9e662d76c8?t=1768389582758",
       "document_path": "/documents/12025039/152228831/informacja+o+wydanych+decyzjach_wz_XII_25+%2B.xlsx/cb763523-543a-dc26-c549-da9e662d76c8",
       "filename": "informacja o wydanych decyzjach_wz_XII_25 +.xlsx",
       "ext": "xlsx",
@@ -6575,16 +6588,21 @@
       "local_path": "data/raw/e8a03cd9a9.xlsx",
       "sha256": "8ba6f27eb8a2369d107c41229e617e34cbec76bfd924ec2e2c7847a1b613b378",
       "size": 35804,
-      "downloaded_at": "2026-10-23T03:34:08Z",
+      "downloaded_at": "2026-11-24T23:54:31Z",
       "last_modified": "2026-01-14T11:19:42Z",
-      "history": [],
-      "series": null,
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/152228831/informacja+o+wydanych+decyzjach_wz_XII_25+%2B.xlsx/cb763523-543a-dc26-c549-da9e662d76c8?t=1768389582758",
+          "sha256": "8ba6f27eb8a2369d107c41229e617e34cbec76bfd924ec2e2c7847a1b613b378",
+          "downloaded_at": "2026-10-23T03:34:08Z"
+        }
+      ],
+      "series": null
     },
     {
       "file_id": "c3eb081a44",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/126431210/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_24.xlsx/4a5a7f4b-0273-862c-797a-49db36efa218?t=1736871824094",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/126431210/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_24.xlsx/4a5a7f4b-0273-862c-797a-49db36efa218?t=1736871824094",
       "document_path": "/documents/12025039/126431210/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_24.xlsx/4a5a7f4b-0273-862c-797a-49db36efa218",
       "filename": "informacja o wszczętych postępowaniach o wz,licp_XII_24.xlsx",
       "ext": "xlsx",
@@ -6596,16 +6614,21 @@
       "local_path": "data/raw/c3eb081a44.xlsx",
       "sha256": "8d3a96fadc90b2227573e8b77d784f2f40218352cd888e11ceeb3843c35c124c",
       "size": 32654,
-      "downloaded_at": "2026-10-23T03:34:08Z",
+      "downloaded_at": "2026-11-24T23:54:41Z",
       "last_modified": "2025-01-14T16:23:44Z",
-      "history": [],
-      "series": null,
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/126431210/informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_24.xlsx/4a5a7f4b-0273-862c-797a-49db36efa218?t=1736871824094",
+          "sha256": "8d3a96fadc90b2227573e8b77d784f2f40218352cd888e11ceeb3843c35c124c",
+          "downloaded_at": "2026-10-23T03:34:08Z"
+        }
+      ],
+      "series": null
     },
     {
       "file_id": "754e271735",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/126431210/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_24.xlsx/fbe4067e-4dd1-3f6b-3609-d0761c8c2cf4?t=1736871824369",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/126431210/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_24.xlsx/fbe4067e-4dd1-3f6b-3609-d0761c8c2cf4?t=1736871824369",
       "document_path": "/documents/12025039/126431210/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_24.xlsx/fbe4067e-4dd1-3f6b-3609-d0761c8c2cf4",
       "filename": "informacja o wydanych decyzjach ws. ustalenia_licp_kraj-woj_XII_24.xlsx",
       "ext": "xlsx",
@@ -6617,16 +6640,21 @@
       "local_path": "data/raw/754e271735.xlsx",
       "sha256": "c338f3e4dd0b1b53299cec72bf5b3951fbc13d4e91f7e8cf512fe14eda10f101",
       "size": 12232,
-      "downloaded_at": "2026-10-23T03:34:09Z",
+      "downloaded_at": "2026-11-24T23:54:51Z",
       "last_modified": "2025-01-14T16:23:44Z",
-      "history": [],
-      "series": "c1",
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/126431210/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_24.xlsx/fbe4067e-4dd1-3f6b-3609-d0761c8c2cf4?t=1736871824369",
+          "sha256": "c338f3e4dd0b1b53299cec72bf5b3951fbc13d4e91f7e8cf512fe14eda10f101",
+          "downloaded_at": "2026-10-23T03:34:09Z"
+        }
+      ],
+      "series": "c1"
     },
     {
       "file_id": "8f83cf64eb",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/126431210/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_24.xlsx/fcefbea9-393b-e177-186c-d7656b49a71b?t=1736871823203",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/126431210/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_24.xlsx/fcefbea9-393b-e177-186c-d7656b49a71b?t=1736871823203",
       "document_path": "/documents/12025039/126431210/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_24.xlsx/fcefbea9-393b-e177-186c-d7656b49a71b",
       "filename": "informacja o wydanych decyzjach ws. ustalenia_licp_pow-gm_XII_24.xlsx",
       "ext": "xlsx",
@@ -6638,16 +6666,21 @@
       "local_path": "data/raw/8f83cf64eb.xlsx",
       "sha256": "1369e985d97b94f02894af420a4bebeb99f58c957c640f846d34f9f17b2a21e9",
       "size": 16728,
-      "downloaded_at": "2026-10-23T03:34:10Z",
+      "downloaded_at": "2026-11-24T23:55:01Z",
       "last_modified": "2025-01-14T16:23:43Z",
-      "history": [],
-      "series": "c2",
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/126431210/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_24.xlsx/fcefbea9-393b-e177-186c-d7656b49a71b?t=1736871823203",
+          "sha256": "1369e985d97b94f02894af420a4bebeb99f58c957c640f846d34f9f17b2a21e9",
+          "downloaded_at": "2026-10-23T03:34:10Z"
+        }
+      ],
+      "series": "c2"
     },
     {
       "file_id": "6774d0478d",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/126236715/ok+informacja+o+wydanych+decyzjach_wz_XII_24.xlsx/15e07f89-83f4-cfca-59c1-6d57315fa265?t=1736763576457",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/126236715/ok+informacja+o+wydanych+decyzjach_wz_XII_24.xlsx/15e07f89-83f4-cfca-59c1-6d57315fa265?t=1736763576457",
       "document_path": "/documents/12025039/126236715/ok+informacja+o+wydanych+decyzjach_wz_XII_24.xlsx/15e07f89-83f4-cfca-59c1-6d57315fa265",
       "filename": "ok informacja o wydanych decyzjach_wz_XII_24.xlsx",
       "ext": "xlsx",
@@ -6659,16 +6692,21 @@
       "local_path": "data/raw/6774d0478d.xlsx",
       "sha256": "b395df2340175e43dcaefb2fe24cd67e4f742ff5b24fc5cdf96f30b1dc7700a3",
       "size": 35157,
-      "downloaded_at": "2026-10-23T03:34:10Z",
+      "downloaded_at": "2026-11-24T23:55:11Z",
       "last_modified": "2025-01-13T10:19:36Z",
-      "history": [],
-      "series": null,
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/126236715/ok+informacja+o+wydanych+decyzjach_wz_XII_24.xlsx/15e07f89-83f4-cfca-59c1-6d57315fa265?t=1736763576457",
+          "sha256": "b395df2340175e43dcaefb2fe24cd67e4f742ff5b24fc5cdf96f30b1dc7700a3",
+          "downloaded_at": "2026-10-23T03:34:10Z"
+        }
+      ],
+      "series": null
     },
     {
       "file_id": "3e84585827",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/96120640/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_23%2B.xlsx/1f343061-c89e-1e20-13e4-6292d3ed2a7a?t=1705311091046",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/96120640/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_23%2B.xlsx/1f343061-c89e-1e20-13e4-6292d3ed2a7a?t=1705311091046",
       "document_path": "/documents/12025039/96120640/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_23%2B.xlsx/1f343061-c89e-1e20-13e4-6292d3ed2a7a",
       "filename": "informacja o wydanych decyzjach ws. ustalenia_licp_kraj-woj_XII_23+.xlsx",
       "ext": "xlsx",
@@ -6680,16 +6718,21 @@
       "local_path": "data/raw/3e84585827.xlsx",
       "sha256": "259fbb0295d0d8d53c4e050c507f35d639a09267be067e61de7c38de3055224c",
       "size": 12186,
-      "downloaded_at": "2026-10-23T03:34:11Z",
+      "downloaded_at": "2026-11-24T23:55:21Z",
       "last_modified": "2024-01-15T09:31:31Z",
-      "history": [],
-      "series": "c1",
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/96120640/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_XII_23%2B.xlsx/1f343061-c89e-1e20-13e4-6292d3ed2a7a?t=1705311091046",
+          "sha256": "259fbb0295d0d8d53c4e050c507f35d639a09267be067e61de7c38de3055224c",
+          "downloaded_at": "2026-10-23T03:34:11Z"
+        }
+      ],
+      "series": "c1"
     },
     {
       "file_id": "a9a20fa57d",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/96120640/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_23%2B.xlsx/4a9fa06d-a879-922c-3526-ed698e82fa05?t=1705311089886",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/96120640/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_23%2B.xlsx/4a9fa06d-a879-922c-3526-ed698e82fa05?t=1705311089886",
       "document_path": "/documents/12025039/96120640/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_23%2B.xlsx/4a9fa06d-a879-922c-3526-ed698e82fa05",
       "filename": "informacja o wydanych decyzjach ws. ustalenia_licp_pow-gm_XII_23+.xlsx",
       "ext": "xlsx",
@@ -6701,16 +6744,21 @@
       "local_path": "data/raw/a9a20fa57d.xlsx",
       "sha256": "6e85581af3d1c54dc98804deb47420d001b08dacbc2e72f8539bb23c042ea579",
       "size": 15812,
-      "downloaded_at": "2026-10-23T03:34:11Z",
+      "downloaded_at": "2026-11-24T23:55:31Z",
       "last_modified": "2024-01-15T09:31:29Z",
-      "history": [],
-      "series": "c2",
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/96120640/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_pow-gm_XII_23%2B.xlsx/4a9fa06d-a879-922c-3526-ed698e82fa05?t=1705311089886",
+          "sha256": "6e85581af3d1c54dc98804deb47420d001b08dacbc2e72f8539bb23c042ea579",
+          "downloaded_at": "2026-10-23T03:34:11Z"
+        }
+      ],
+      "series": "c2"
     },
     {
       "file_id": "da7da0bfca",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/96120640/informacja+o+wydanych+decyzjach_wz_XII_23+%2B.xlsx/23cbd9fa-abb7-248d-4b9e-106e78a8cf5a?t=1705311090486",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/96120640/informacja+o+wydanych+decyzjach_wz_XII_23+%2B.xlsx/23cbd9fa-abb7-248d-4b9e-106e78a8cf5a?t=1705311090486",
       "document_path": "/documents/12025039/96120640/informacja+o+wydanych+decyzjach_wz_XII_23+%2B.xlsx/23cbd9fa-abb7-248d-4b9e-106e78a8cf5a",
       "filename": "informacja o wydanych decyzjach_wz_XII_23 +.xlsx",
       "ext": "xlsx",
@@ -6722,16 +6770,21 @@
       "local_path": "data/raw/da7da0bfca.xlsx",
       "sha256": "e85c1ac60a732910a8abacbee1d89527f254a7a5fbc1d2f78fed02ed0116518c",
       "size": 35097,
-      "downloaded_at": "2026-10-23T03:34:12Z",
+      "downloaded_at": "2026-11-24T23:55:41Z",
       "last_modified": "2024-01-15T09:31:30Z",
-      "history": [],
-      "series": null,
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/96120640/informacja+o+wydanych+decyzjach_wz_XII_23+%2B.xlsx/23cbd9fa-abb7-248d-4b9e-106e78a8cf5a?t=1705311090486",
+          "sha256": "e85c1ac60a732910a8abacbee1d89527f254a7a5fbc1d2f78fed02ed0116518c",
+          "downloaded_at": "2026-10-23T03:34:12Z"
+        }
+      ],
+      "series": null
     },
     {
       "file_id": "832bd8237b",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/96120640/ok+informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_23%2B.xlsx/d4c09d57-96e8-cca9-48a1-384eab9dca3a?t=1705311090763",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/96120640/ok+informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_23%2B.xlsx/d4c09d57-96e8-cca9-48a1-384eab9dca3a?t=1705311090763",
       "document_path": "/documents/12025039/96120640/ok+informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_23%2B.xlsx/d4c09d57-96e8-cca9-48a1-384eab9dca3a",
       "filename": "ok informacja o wszczętych postępowaniach o wz,licp_XII_23+.xlsx",
       "ext": "xlsx",
@@ -6743,16 +6796,21 @@
       "local_path": "data/raw/832bd8237b.xlsx",
       "sha256": "d68889a3e3b7f7f7cec3ac78ff207675803507d8b1401e9c71fb6cb4ec1ee329",
       "size": 34654,
-      "downloaded_at": "2026-10-23T03:34:13Z",
+      "downloaded_at": "2026-11-24T23:55:51Z",
       "last_modified": "2024-01-15T09:31:30Z",
-      "history": [],
-      "series": null,
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/96120640/ok+informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_XII_23%2B.xlsx/d4c09d57-96e8-cca9-48a1-384eab9dca3a?t=1705311090763",
+          "sha256": "d68889a3e3b7f7f7cec3ac78ff207675803507d8b1401e9c71fb6cb4ec1ee329",
+          "downloaded_at": "2026-10-23T03:34:13Z"
+        }
+      ],
+      "series": null
     },
     {
       "file_id": "b65486632c",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/69259400/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_I-XII_22.xlsx/23b3f50f-30ef-0cf0-7614-bcb5800f6b3d?t=1673616553796",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/69259400/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_I-XII_22.xlsx/23b3f50f-30ef-0cf0-7614-bcb5800f6b3d?t=1673616553796",
       "document_path": "/documents/12025039/69259400/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_I-XII_22.xlsx/23b3f50f-30ef-0cf0-7614-bcb5800f6b3d",
       "filename": "Informacja o wszczętych postępowaniach o wz,licp_I-XII_22.xlsx",
       "ext": "xlsx",
@@ -6764,16 +6822,21 @@
       "local_path": "data/raw/b65486632c.xlsx",
       "sha256": "417d27de3b8e6d5a0a2346ce0a195e336cf78c027b43d4ebef16b41250d999fe",
       "size": 32890,
-      "downloaded_at": "2026-10-23T03:34:13Z",
+      "downloaded_at": "2026-11-24T23:56:01Z",
       "last_modified": "2023-01-13T13:29:13Z",
-      "history": [],
-      "series": null,
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/69259400/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+wz%2Clicp_I-XII_22.xlsx/23b3f50f-30ef-0cf0-7614-bcb5800f6b3d?t=1673616553796",
+          "sha256": "417d27de3b8e6d5a0a2346ce0a195e336cf78c027b43d4ebef16b41250d999fe",
+          "downloaded_at": "2026-10-23T03:34:13Z"
+        }
+      ],
+      "series": null
     },
     {
       "file_id": "10f399e85c",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/69259400/informacja+o+wydanych+decyzjach+ws.+ustalenia+_licp+pow-gm_I-XII_22.xlsx/a2e32ee9-3456-a724-ccf5-1c28d663d01d?t=1673616554019",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/69259400/informacja+o+wydanych+decyzjach+ws.+ustalenia+_licp+pow-gm_I-XII_22.xlsx/a2e32ee9-3456-a724-ccf5-1c28d663d01d?t=1673616554019",
       "document_path": "/documents/12025039/69259400/informacja+o+wydanych+decyzjach+ws.+ustalenia+_licp+pow-gm_I-XII_22.xlsx/a2e32ee9-3456-a724-ccf5-1c28d663d01d",
       "filename": "informacja o wydanych decyzjach ws. ustalenia _licp pow-gm_I-XII_22.xlsx",
       "ext": "xlsx",
@@ -6785,16 +6848,21 @@
       "local_path": "data/raw/10f399e85c.xlsx",
       "sha256": "cdb7e0c834281a1fcac3d483647967ff1d8d3973dcaa3b684c6f6ab8547d3e87",
       "size": 14854,
-      "downloaded_at": "2026-10-23T03:34:14Z",
+      "downloaded_at": "2026-11-24T23:56:11Z",
       "last_modified": "2023-01-13T13:29:14Z",
-      "history": [],
-      "series": "c2",
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/69259400/informacja+o+wydanych+decyzjach+ws.+ustalenia+_licp+pow-gm_I-XII_22.xlsx/a2e32ee9-3456-a724-ccf5-1c28d663d01d?t=1673616554019",
+          "sha256": "cdb7e0c834281a1fcac3d483647967ff1d8d3973dcaa3b684c6f6ab8547d3e87",
+          "downloaded_at": "2026-10-23T03:34:14Z"
+        }
+      ],
+      "series": "c2"
     },
     {
       "file_id": "46c3206dfa",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/69259400/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_I-XII_22.xlsx/4f9bfce6-cf90-180e-4f7d-8554d2bced70?t=1673616553272",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/69259400/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_I-XII_22.xlsx/4f9bfce6-cf90-180e-4f7d-8554d2bced70?t=1673616553272",
       "document_path": "/documents/12025039/69259400/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_I-XII_22.xlsx/4f9bfce6-cf90-180e-4f7d-8554d2bced70",
       "filename": "informacja o wydanych decyzjach ws. ustalenia_licp_kraj-woj_I-XII_22.xlsx",
       "ext": "xlsx",
@@ -6806,16 +6874,21 @@
       "local_path": "data/raw/46c3206dfa.xlsx",
       "sha256": "f69feeb326820b2ad0e5b94aaa07d3fa66e607c2b63a43a4e5e7be75049dd361",
       "size": 13153,
-      "downloaded_at": "2026-10-23T03:34:14Z",
+      "downloaded_at": "2026-11-24T23:56:21Z",
       "last_modified": "2023-01-13T13:29:13Z",
-      "history": [],
-      "series": "c1",
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/69259400/informacja+o+wydanych+decyzjach+ws.+ustalenia_licp_kraj-woj_I-XII_22.xlsx/4f9bfce6-cf90-180e-4f7d-8554d2bced70?t=1673616553272",
+          "sha256": "f69feeb326820b2ad0e5b94aaa07d3fa66e607c2b63a43a4e5e7be75049dd361",
+          "downloaded_at": "2026-10-23T03:34:14Z"
+        }
+      ],
+      "series": "c1"
     },
     {
       "file_id": "bd4dd6ed78",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/69259400/informacja+o+wydanych+decyzjach_wz_I-XII_22.xlsx/5eb2c695-6228-1b14-4418-9dad94c8db7e?t=1673616553587",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/69259400/informacja+o+wydanych+decyzjach_wz_I-XII_22.xlsx/5eb2c695-6228-1b14-4418-9dad94c8db7e?t=1673616553587",
       "document_path": "/documents/12025039/69259400/informacja+o+wydanych+decyzjach_wz_I-XII_22.xlsx/5eb2c695-6228-1b14-4418-9dad94c8db7e",
       "filename": "informacja o wydanych decyzjach_wz_I-XII_22.xlsx",
       "ext": "xlsx",
@@ -6827,16 +6900,21 @@
       "local_path": "data/raw/bd4dd6ed78.xlsx",
       "sha256": "5f5e61f750f53e4b6db36e8d3f3a862f8aeb93c5fb685dbf956df836d8cd9945",
       "size": 37304,
-      "downloaded_at": "2026-10-23T03:34:15Z",
+      "downloaded_at": "2026-11-24T23:56:31Z",
       "last_modified": "2023-01-13T13:29:13Z",
-      "history": [],
-      "series": null,
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/69259400/informacja+o+wydanych+decyzjach_wz_I-XII_22.xlsx/5eb2c695-6228-1b14-4418-9dad94c8db7e?t=1673616553587",
+          "sha256": "5f5e61f750f53e4b6db36e8d3f3a862f8aeb93c5fb685dbf956df836d8cd9945",
+          "downloaded_at": "2026-10-23T03:34:15Z"
+        }
+      ],
+      "series": null
     },
     {
       "file_id": "508b5298d6",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/41736355/informacja_decyzje_licp_pow-gm_I-XII_21%2B.xlsx/c806117d-5072-c7f1-eef6-28d643a83cad?t=1642178443512",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/41736355/informacja_decyzje_licp_pow-gm_I-XII_21%2B.xlsx/c806117d-5072-c7f1-eef6-28d643a83cad?t=1642178443512",
       "document_path": "/documents/12025039/41736355/informacja_decyzje_licp_pow-gm_I-XII_21%2B.xlsx/c806117d-5072-c7f1-eef6-28d643a83cad",
       "filename": "informacja_decyzje_licp_pow-gm_I-XII_21+.xlsx",
       "ext": "xlsx",
@@ -6848,16 +6926,21 @@
       "local_path": "data/raw/508b5298d6.xlsx",
       "sha256": "f51994559539af0a1a3c2ed6ebe1e307613a395dfe291d70ef870ffbeb9489a9",
       "size": 15498,
-      "downloaded_at": "2026-10-23T03:34:15Z",
+      "downloaded_at": "2026-11-24T23:56:42Z",
       "last_modified": "2022-01-14T16:40:43Z",
-      "history": [],
-      "series": "c2",
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/41736355/informacja_decyzje_licp_pow-gm_I-XII_21%2B.xlsx/c806117d-5072-c7f1-eef6-28d643a83cad?t=1642178443512",
+          "sha256": "f51994559539af0a1a3c2ed6ebe1e307613a395dfe291d70ef870ffbeb9489a9",
+          "downloaded_at": "2026-10-23T03:34:15Z"
+        }
+      ],
+      "series": "c2"
     },
     {
       "file_id": "4c11c59898",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/41736355/informacja_decyzje_wz_I_XII_21%2B.xlsx/41a174fa-5a5b-2212-5eae-c0bc4d4b2a40?t=1642178443708",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/41736355/informacja_decyzje_wz_I_XII_21%2B.xlsx/41a174fa-5a5b-2212-5eae-c0bc4d4b2a40?t=1642178443708",
       "document_path": "/documents/12025039/41736355/informacja_decyzje_wz_I_XII_21%2B.xlsx/41a174fa-5a5b-2212-5eae-c0bc4d4b2a40",
       "filename": "informacja_decyzje_wz_I_XII_21+.xlsx",
       "ext": "xlsx",
@@ -6869,16 +6952,21 @@
       "local_path": "data/raw/4c11c59898.xlsx",
       "sha256": "3bdeacfb37344e1e6745cd310cf5db4078d1b3efb3687688248e70834a0ef2cc",
       "size": 33935,
-      "downloaded_at": "2026-10-23T03:34:16Z",
+      "downloaded_at": "2026-11-24T23:56:52Z",
       "last_modified": "2022-01-14T16:40:43Z",
-      "history": [],
-      "series": null,
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/41736355/informacja_decyzje_wz_I_XII_21%2B.xlsx/41a174fa-5a5b-2212-5eae-c0bc4d4b2a40?t=1642178443708",
+          "sha256": "3bdeacfb37344e1e6745cd310cf5db4078d1b3efb3687688248e70834a0ef2cc",
+          "downloaded_at": "2026-10-23T03:34:16Z"
+        }
+      ],
+      "series": null
     },
     {
       "file_id": "c6d56452ea",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/41736355/informacja_wnioski_wz+_licp_I-XII_21.xlsx/c32bf907-1784-ec79-c5c1-5a61265b8bf2?t=1642178443050",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/41736355/informacja_wnioski_wz+_licp_I-XII_21.xlsx/c32bf907-1784-ec79-c5c1-5a61265b8bf2?t=1642178443050",
       "document_path": "/documents/12025039/41736355/informacja_wnioski_wz+_licp_I-XII_21.xlsx/c32bf907-1784-ec79-c5c1-5a61265b8bf2",
       "filename": "informacja_wnioski_wz _licp_I-XII_21.xlsx",
       "ext": "xlsx",
@@ -6890,16 +6978,21 @@
       "local_path": "data/raw/c6d56452ea.xlsx",
       "sha256": "2292932c440e101440a74e1a5f050587294aa5d534275785084b36e7fd8e353c",
       "size": 32148,
-      "downloaded_at": "2026-10-23T03:34:17Z",
+      "downloaded_at": "2026-11-24T23:57:02Z",
       "last_modified": "2022-01-14T16:40:43Z",
-      "history": [],
-      "series": null,
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/41736355/informacja_wnioski_wz+_licp_I-XII_21.xlsx/c32bf907-1784-ec79-c5c1-5a61265b8bf2?t=1642178443050",
+          "sha256": "2292932c440e101440a74e1a5f050587294aa5d534275785084b36e7fd8e353c",
+          "downloaded_at": "2026-10-23T03:34:17Z"
+        }
+      ],
+      "series": null
     },
     {
       "file_id": "020cc57e6f",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/41736355/informacje_decyzje_licp_kraj-woj_I-XII_21%2B.xlsx/599f76bc-3169-c175-6511-f5f75a015c5e?t=1642178443291",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/41736355/informacje_decyzje_licp_kraj-woj_I-XII_21%2B.xlsx/599f76bc-3169-c175-6511-f5f75a015c5e?t=1642178443291",
       "document_path": "/documents/12025039/41736355/informacje_decyzje_licp_kraj-woj_I-XII_21%2B.xlsx/599f76bc-3169-c175-6511-f5f75a015c5e",
       "filename": "informacje_decyzje_licp_kraj-woj_I-XII_21+.xlsx",
       "ext": "xlsx",
@@ -6911,16 +7004,21 @@
       "local_path": "data/raw/020cc57e6f.xlsx",
       "sha256": "7cf1e1d1ee6afe1cc3c0bfd12ec406b89d09178f4ff1375344d2cb30cfa9f897",
       "size": 13140,
-      "downloaded_at": "2026-10-23T03:34:17Z",
+      "downloaded_at": "2026-11-24T23:57:12Z",
       "last_modified": "2022-01-14T16:40:43Z",
-      "history": [],
-      "series": "c1",
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/41736355/informacje_decyzje_licp_kraj-woj_I-XII_21%2B.xlsx/599f76bc-3169-c175-6511-f5f75a015c5e?t=1642178443291",
+          "sha256": "7cf1e1d1ee6afe1cc3c0bfd12ec406b89d09178f4ff1375344d2cb30cfa9f897",
+          "downloaded_at": "2026-10-23T03:34:17Z"
+        }
+      ],
+      "series": "c1"
     },
     {
       "file_id": "c72152adf9",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_dec._licp_pow_gmi_sierpien-grudzien_20.xlsx/3f2da765-50ac-0efc-c47e-a02063a0d05c?t=1634497931200",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/19717181/informacja_dec._licp_pow_gmi_sierpien-grudzien_20.xlsx/3f2da765-50ac-0efc-c47e-a02063a0d05c?t=1634497931200",
       "document_path": "/documents/12025039/19717181/informacja_dec._licp_pow_gmi_sierpien-grudzien_20.xlsx/3f2da765-50ac-0efc-c47e-a02063a0d05c",
       "filename": "informacja_dec._licp_pow_gmi_sierpien-grudzien_20.xlsx",
       "ext": "xlsx",
@@ -6932,16 +7030,21 @@
       "local_path": "data/raw/c72152adf9.xlsx",
       "sha256": "b0ba489601a683cdc1f83cab4450bc1480849f1ac317460910506e743d9a7675",
       "size": 12334,
-      "downloaded_at": "2026-10-23T03:34:18Z",
+      "downloaded_at": "2026-11-24T23:57:22Z",
       "last_modified": "2021-04-21T07:39:25Z",
-      "history": [],
-      "series": "c2",
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_dec._licp_pow_gmi_sierpien-grudzien_20.xlsx/3f2da765-50ac-0efc-c47e-a02063a0d05c?t=1634497931200",
+          "sha256": "b0ba489601a683cdc1f83cab4450bc1480849f1ac317460910506e743d9a7675",
+          "downloaded_at": "2026-10-23T03:34:18Z"
+        }
+      ],
+      "series": "c2"
     },
     {
       "file_id": "8051b61e17",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_decyzje_licp_kraj_woj_sierpien-_grudzien_20.xlsx/9fdd4da2-0828-b9a3-089e-f2c4d2dc2d37?t=1634497931193",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/19717181/informacja_decyzje_licp_kraj_woj_sierpien-_grudzien_20.xlsx/9fdd4da2-0828-b9a3-089e-f2c4d2dc2d37?t=1634497931193",
       "document_path": "/documents/12025039/19717181/informacja_decyzje_licp_kraj_woj_sierpien-_grudzien_20.xlsx/9fdd4da2-0828-b9a3-089e-f2c4d2dc2d37",
       "filename": "informacja_decyzje_licp_kraj_woj_sierpien-_grudzien_20.xlsx",
       "ext": "xlsx",
@@ -6953,16 +7056,21 @@
       "local_path": "data/raw/8051b61e17.xlsx",
       "sha256": "e0449f062829516fd42af6441955effdbfb6c5366296fa47d21a4bb9d60ffce9",
       "size": 12135,
-      "downloaded_at": "2026-10-23T03:34:18Z",
+      "downloaded_at": "2026-11-24T23:57:32Z",
       "last_modified": "2021-04-21T07:39:25Z",
-      "history": [],
-      "series": "c1",
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_decyzje_licp_kraj_woj_sierpien-_grudzien_20.xlsx/9fdd4da2-0828-b9a3-089e-f2c4d2dc2d37?t=1634497931193",
+          "sha256": "e0449f062829516fd42af6441955effdbfb6c5366296fa47d21a4bb9d60ffce9",
+          "downloaded_at": "2026-10-23T03:34:18Z"
+        }
+      ],
+      "series": "c1"
     },
     {
       "file_id": "8f6cecf83d",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_decyzje_wz_sierpien-grudzien_20.xlsx/d2a2aadb-492a-ceb6-4250-685e7ddfe11c?t=1634497931206",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/19717181/informacja_decyzje_wz_sierpien-grudzien_20.xlsx/d2a2aadb-492a-ceb6-4250-685e7ddfe11c?t=1634497931206",
       "document_path": "/documents/12025039/19717181/informacja_decyzje_wz_sierpien-grudzien_20.xlsx/d2a2aadb-492a-ceb6-4250-685e7ddfe11c",
       "filename": "informacja_decyzje_wz_sierpien-grudzien_20.xlsx",
       "ext": "xlsx",
@@ -6974,16 +7082,21 @@
       "local_path": "data/raw/8f6cecf83d.xlsx",
       "sha256": "aeb63f9d20d67dc309c1325f1f1aa0b7aed106909e8352774f60bea67b592147",
       "size": 22210,
-      "downloaded_at": "2026-10-23T03:34:19Z",
+      "downloaded_at": "2026-11-24T23:57:42Z",
       "last_modified": "2021-04-21T07:39:25Z",
-      "history": [],
-      "series": null,
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_decyzje_wz_sierpien-grudzien_20.xlsx/d2a2aadb-492a-ceb6-4250-685e7ddfe11c?t=1634497931206",
+          "sha256": "aeb63f9d20d67dc309c1325f1f1aa0b7aed106909e8352774f60bea67b592147",
+          "downloaded_at": "2026-10-23T03:34:19Z"
+        }
+      ],
+      "series": null
     },
     {
       "file_id": "b5fdcca9bd",
       "source": "baipp",
-      "url": "https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_wnioski_wz__licp__sierpien-grudzien_20.xlsx/efa0401d-4ae2-aec3-d6b6-536680e2e35f?t=1634497931212",
+      "url": "https://cdn.um.warszawa.pl/documents/12025039/19717181/informacja_wnioski_wz__licp__sierpien-grudzien_20.xlsx/efa0401d-4ae2-aec3-d6b6-536680e2e35f?t=1634497931212",
       "document_path": "/documents/12025039/19717181/informacja_wnioski_wz__licp__sierpien-grudzien_20.xlsx/efa0401d-4ae2-aec3-d6b6-536680e2e35f",
       "filename": "informacja_wnioski_wz__licp__sierpien-grudzien_20.xlsx",
       "ext": "xlsx",
@@ -6995,11 +7108,16 @@
       "local_path": "data/raw/b5fdcca9bd.xlsx",
       "sha256": "7bd38bfd4553dd1cce77e15aa6a639e506700c30f6abce091f9659f061789e83",
       "size": 18630,
-      "downloaded_at": "2026-10-23T03:34:19Z",
+      "downloaded_at": "2026-11-24T23:57:52Z",
       "last_modified": "2021-04-21T07:39:25Z",
-      "history": [],
-      "series": null,
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "history": [
+        {
+          "url": "https://architektura.um.warszawa.pl/documents/12025039/19717181/informacja_wnioski_wz__licp__sierpien-grudzien_20.xlsx/efa0401d-4ae2-aec3-d6b6-536680e2e35f?t=1634497931212",
+          "sha256": "7bd38bfd4553dd1cce77e15aa6a639e506700c30f6abce091f9659f061789e83",
+          "downloaded_at": "2026-10-23T03:34:19Z"
+        }
+      ],
+      "series": null
     }
   ]
 }

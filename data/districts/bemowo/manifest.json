@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:47:44Z",
+  "generated_at": "2026-11-25T00:08:46Z",
   "index_url": "https://bemowo.um.warszawa.pl/jawnosc-procesu-inwestycyjnego",
   "pages": [
     {
@@ -17,7 +17,7 @@
           "category": "ws",
           "declared_count": null,
           "file_ids": [
-            "b66e268237"
+            "15b2765a2b"
           ],
           "period": "2026"
         },
@@ -26,7 +26,7 @@
           "category": "wz",
           "declared_count": null,
           "file_ids": [
-            "2ce1032e4b"
+            "25503c1d57"
           ],
           "period": "2026"
         },
@@ -35,7 +35,7 @@
           "category": "cp",
           "declared_count": null,
           "file_ids": [
-            "c74a518590"
+            "90e5d6311f"
           ],
           "period": "2026"
         },
@@ -219,6 +219,25 @@
   ],
   "files": [
     {
+      "file_id": "15b2765a2b",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/174175540/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+warunkach+zabudowy+i+ustaleniu+lokalizacji+inwestycji+celu+publicznego+2026.xlsx/3934b975-8b03-1247-51e3-2b84896c7997?t=1794906722245",
+      "document_path": "/documents/40444/174175540/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+warunkach+zabudowy+i+ustaleniu+lokalizacji+inwestycji+celu+publicznego+2026.xlsx/3934b975-8b03-1247-51e3-2b84896c7997",
+      "filename": "Informacja o wszczętych postępowaniach o warunkach zabudowy i ustaleniu lokalizacji inwestycji celu publicznego 2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/15b2765a2b.xlsx",
+      "sha256": "eac4787aae219229c44bdc531916fd6cae08c0462fb62e3075605ee6dc83a0e0",
+      "size": 24693,
+      "downloaded_at": "2026-11-25T00:08:46Z",
+      "last_modified": "2026-11-17T09:12:02Z",
+      "history": []
+    },
+    {
       "file_id": "b66e268237",
       "source": "district",
       "url": "https://bemowo.um.warszawa.pl/documents/40444/171708253/Informacja+o+wszcz%C4%99tych+post%C4%99powaniach+o+warunkach+zabudowy+i+ustaleniu+lokalizacji+inwestycji+celu+publicznego+2026.xlsx/33679457-b784-b821-c0d4-a1b016649d60?t=1791886337467",
@@ -235,6 +254,26 @@
       "size": 24201,
       "downloaded_at": "2026-10-27T15:55:34Z",
       "last_modified": "2026-10-13T10:12:17Z",
+      "history": [],
+      "removed_from_source_at": "2026-11-25"
+    },
+    {
+      "file_id": "90e5d6311f",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/174175540/Informacja+o+wydanych+decyzjach+w+sprawie+o+ustalenie+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+powiatowym+i+gminnym+2026.xlsx/e8689e3c-818e-ecb0-f5ee-79c697a341a1?t=1794906722583",
+      "document_path": "/documents/40444/174175540/Informacja+o+wydanych+decyzjach+w+sprawie+o+ustalenie+lokalizacji+inwestycji+celu+publicznego+o+znaczeniu+powiatowym+i+gminnym+2026.xlsx/e8689e3c-818e-ecb0-f5ee-79c697a341a1",
+      "filename": "Informacja o wydanych decyzjach w sprawie o ustalenie lokalizacji inwestycji celu publicznego o znaczeniu powiatowym i gminnym 2026.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2026",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/90e5d6311f.xlsx",
+      "sha256": "a00b18e2282a8edc88dbcc6ebfd70c88909e6b99d705ec914df845ae24ea9ad6",
+      "size": 13158,
+      "downloaded_at": "2026-11-25T00:08:47Z",
+      "last_modified": "2026-11-17T09:12:02Z",
       "history": []
     },
     {
@@ -254,7 +293,8 @@
       "size": 13082,
       "downloaded_at": "2026-10-27T15:55:34Z",
       "last_modified": "2026-10-13T10:12:17Z",
-      "history": []
+      "history": [],
+      "removed_from_source_at": "2026-11-25"
     },
     {
       "file_id": "59c2cdafc6",
@@ -293,6 +333,26 @@
       "size": 17192,
       "downloaded_at": "2026-11-12T06:47:45Z",
       "last_modified": "2026-10-29T09:29:56Z",
+      "history": [],
+      "removed_from_source_at": "2026-11-25"
+    },
+    {
+      "file_id": "25503c1d57",
+      "source": "district",
+      "url": "https://bemowo.um.warszawa.pl/documents/40444/174175540/Informacja+o+wydanych+decyzjach+w+sprawie+warunk%C3%B3w+zabudowy+2026.xlsx/06d79593-91c1-fd6d-9ed4-78a8d018e66b?t=1794906722821",
+      "document_path": "/documents/40444/174175540/Informacja+o+wydanych+decyzjach+w+sprawie+warunk%C3%B3w+zabudowy+2026.xlsx/06d79593-91c1-fd6d-9ed4-78a8d018e66b",
+      "filename": "Informacja o wydanych decyzjach w sprawie warunków zabudowy 2026.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026",
+      "page_ids": [
+        "bem-jawnosc-procesu-inwestycyjnego"
+      ],
+      "local_path": "data/districts/bemowo/raw/25503c1d57.xlsx",
+      "sha256": "1a3edc53199fce6ae8075bdd70b9c09ee0780a1678908e504e3067cc2a758e87",
+      "size": 17699,
+      "downloaded_at": "2026-11-25T00:08:48Z",
+      "last_modified": "2026-11-17T09:12:02Z",
       "history": []
     },
     {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:49:55Z",
+  "generated_at": "2026-11-25T00:16:20Z",
   "index_url": "https://ursus.um.warszawa.pl/decyzje-architektoniczne",
   "pages": [
     {
@@ -606,12 +606,11 @@
         "urs-wykazy-za-rok-2024"
       ],
       "local_path": "data/districts/ursus/raw/79994962f8.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/49065/125884472/rejestr_wnioskow_o_wz_2024.xlsx/29bcca59-2bac-5fbc-bf22-882cdf0a5f0f?t=1735893731973"
+      "sha256": "3f89621a5b239fc617ea04587a964dd4c315c5bb458e4aeb1985b6944b16921a",
+      "size": 21180,
+      "downloaded_at": "2026-11-25T00:16:20Z",
+      "last_modified": "2025-01-03T08:42:11Z",
+      "history": []
     },
     {
       "file_id": "fdafa18186",
@@ -721,12 +720,11 @@
         "urs-wykazy-za-rok-2022"
       ],
       "local_path": "data/districts/ursus/raw/118948b77c.xlsx",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/49065/69251431/rejestr_wnioskow_o_wz_2022.xlsx/2b787d75-541c-ffc5-7ec8-9d18f549af23?t=1673610783300"
+      "sha256": "80c6110396f7f1d6945bd30060a19bc322a4fecc187d88bc0636146f6fd96ada",
+      "size": 20978,
+      "downloaded_at": "2026-11-25T00:16:30Z",
+      "last_modified": "2023-01-13T11:53:03Z",
+      "history": []
     },
     {
       "file_id": "27dcd60f91",
@@ -798,12 +796,11 @@
         "urs-wykazy-za-rok-2020"
       ],
       "local_path": "data/districts/ursus/raw/b44b34a64e.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/49065/23490226/rejestr_dec_wz_2020.pdf/3a2e12ec-ab63-ce09-56af-839182b6755c?t=1634497793216"
+      "sha256": "58089b51c3653cf17909da1fdbc3f238c77d45d9068ba44aef48793e67aff6ec",
+      "size": 321537,
+      "downloaded_at": "2026-11-25T00:16:40Z",
+      "last_modified": "2021-05-19T12:46:52Z",
+      "history": []
     },
     {
       "file_id": "6fcbc4058d",
@@ -818,12 +815,11 @@
         "urs-wykazy-za-rok-2020"
       ],
       "local_path": "data/districts/ursus/raw/6fcbc4058d.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/49065/23490226/rejestr_wnioskow_lcp_2020.pdf/28fcb701-d3d8-5c52-50cf-7bc4aff3ca4c?t=1634497793204"
+      "sha256": "199cbe2032efc66108caae8c2adcd0b34c719ca5c85d968bf9e7c049822ec05c",
+      "size": 361920,
+      "downloaded_at": "2026-11-25T00:16:50Z",
+      "last_modified": "2021-05-19T12:46:52Z",
+      "history": []
     },
     {
       "file_id": "fb2d5bda82",
@@ -838,12 +834,11 @@
         "urs-wykazy-za-rok-2020"
       ],
       "local_path": "data/districts/ursus/raw/fb2d5bda82.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/49065/23490226/rejestr_wnioskow_o_wz_2020.pdf/1faedcf4-6ddf-6563-819d-7c8a65b97b62?t=1634497793189"
+      "sha256": "00ac32c68d4d0a67e6d054ca0b99001eda248124be5b646e2cfa14dbd5f501c2",
+      "size": 613937,
+      "downloaded_at": "2026-11-25T00:17:00Z",
+      "last_modified": "2021-05-19T12:46:52Z",
+      "history": []
     }
   ],
   "district": "ursus"

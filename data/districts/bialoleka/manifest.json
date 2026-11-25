@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:47:59Z",
+  "generated_at": "2026-11-25T00:08:57Z",
   "index_url": "https://bialoleka.um.warszawa.pl/decyzje-architektoniczne",
   "pages": [
     {
@@ -13,11 +13,11 @@
       "source": "district",
       "blocks": [
         {
-          "text": "Cel publiczny decyzje 2026 (56,4 KB, PDF)",
+          "text": "Cel publiczny decyzje 2026 (57 KB, PDF)",
           "category": "cp",
           "declared_count": null,
           "file_ids": [
-            "65ee665378"
+            "b6fa36bf43"
           ],
           "period": "2026"
         },
@@ -92,11 +92,11 @@
       "source": "district",
       "blocks": [
         {
-          "text": "Warunki zabudowy decyzje 2026 (143 KB, PDF)",
+          "text": "Warunki zabudowy decyzje 2026 (175 KB, PDF)",
           "category": "wz",
           "declared_count": null,
           "file_ids": [
-            "3d759ce296"
+            "85719230c0"
           ],
           "period": "2026"
         },
@@ -180,11 +180,11 @@
       "source": "district",
       "blocks": [
         {
-          "text": "warunki zabudowy - wnioski 2026 (143 KB, PDF)",
+          "text": "warunki zabudowy - wnioski 2026 (149 KB, PDF)",
           "category": "ws",
           "declared_count": null,
           "file_ids": [
-            "ab9bfafebe"
+            "eeb4fb84de"
           ],
           "period": "2026"
         },
@@ -251,6 +251,44 @@
   ],
   "files": [
     {
+      "file_id": "b6fa36bf43",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/40771/0/DECYZJE+CP+%281%29.pdf/995a49bd-e9a3-6ecf-4e2e-abae855a55a0?t=1794483946376",
+      "document_path": "/documents/40771/0/DECYZJE+CP+%281%29.pdf/995a49bd-e9a3-6ecf-4e2e-abae855a55a0",
+      "filename": "DECYZJE CP (1).pdf",
+      "ext": "pdf",
+      "category": "cp",
+      "period": "2026",
+      "page_ids": [
+        "bia-inwestycje-celu-publicznego-decyzje"
+      ],
+      "local_path": "data/districts/bialoleka/raw/b6fa36bf43.pdf",
+      "sha256": "4717d93e5fadcbd838de9f5b5122907a8fe84cf4e55ebf170b36a42bb9fe22ff",
+      "size": 58383,
+      "downloaded_at": "2026-11-25T00:08:57Z",
+      "last_modified": "2026-11-12T11:45:46Z",
+      "history": []
+    },
+    {
+      "file_id": "85719230c0",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/40771/0/DECYZJE+WZ+%281%29.pdf/1284526f-94e7-63f1-4299-bf679c2091bf?t=1794483926417",
+      "document_path": "/documents/40771/0/DECYZJE+WZ+%281%29.pdf/1284526f-94e7-63f1-4299-bf679c2091bf",
+      "filename": "DECYZJE WZ (1).pdf",
+      "ext": "pdf",
+      "category": "wz",
+      "period": "2026",
+      "page_ids": [
+        "bia-warunki-zabudowy-decyzje"
+      ],
+      "local_path": "data/districts/bialoleka/raw/85719230c0.pdf",
+      "sha256": "5e681ff491d506d0392b2a1f698b67df36163426565c5350c12a3fde78bad163",
+      "size": 179924,
+      "downloaded_at": "2026-11-25T00:09:07Z",
+      "last_modified": "2026-11-12T11:45:26Z",
+      "history": []
+    },
+    {
       "file_id": "65ee665378",
       "source": "district",
       "url": "https://cdn.um.warszawa.pl/documents/40771/0/Decyzje+CP+%283%29.pdf/2422e7fb-8724-01ce-5b09-0bf3044a21e1?t=1791360996211",
@@ -268,6 +306,7 @@
       "downloaded_at": null,
       "last_modified": null,
       "history": [],
+      "removed_from_source_at": "2026-11-25",
       "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/40771/0/Decyzje+CP+%283%29.pdf/2422e7fb-8724-01ce-5b09-0bf3044a21e1?t=1791360996211"
     },
     {
@@ -287,6 +326,26 @@
       "size": 147187,
       "downloaded_at": "2026-10-27T19:05:04Z",
       "last_modified": "2026-10-07T08:06:55Z",
+      "history": [],
+      "removed_from_source_at": "2026-11-25"
+    },
+    {
+      "file_id": "eeb4fb84de",
+      "source": "district",
+      "url": "https://cdn.um.warszawa.pl/documents/40771/0/WNIOSKI+WZ+%281%29.pdf/74ff622d-0bd9-8c99-5478-995ea6e86c89?t=1794483818576",
+      "document_path": "/documents/40771/0/WNIOSKI+WZ+%281%29.pdf/74ff622d-0bd9-8c99-5478-995ea6e86c89",
+      "filename": "WNIOSKI WZ (1).pdf",
+      "ext": "pdf",
+      "category": "ws",
+      "period": "2026",
+      "page_ids": [
+        "bia-warunki-zabudowy-wnioski"
+      ],
+      "local_path": "data/districts/bialoleka/raw/eeb4fb84de.pdf",
+      "sha256": "739e4723ac08a47a6d90f10fcd44d5510345c5a0951698a4f9306a73026bd9d2",
+      "size": 153123,
+      "downloaded_at": "2026-11-25T00:09:27Z",
+      "last_modified": "2026-11-12T11:43:38Z",
       "history": []
     },
     {
@@ -306,7 +365,8 @@
       "size": 147043,
       "downloaded_at": "2026-10-27T19:22:35Z",
       "last_modified": "2026-10-07T07:13:09Z",
-      "history": []
+      "history": [],
+      "removed_from_source_at": "2026-11-25"
     },
     {
       "file_id": "eebc674a7d",
@@ -321,12 +381,11 @@
         "bia-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/bialoleka/raw/eebc674a7d.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/40771/32974611/DECYZJE+WZ+12.2025.pdf/909571fe-a26b-1fcc-bbcc-651a6279aa7f?t=1768225410162"
+      "sha256": "289039a2ec0802481ddc7ce24101c5d6f39a4b2e2fe39b22b47c8fdff965897d",
+      "size": 130925,
+      "downloaded_at": "2026-11-25T00:09:37Z",
+      "last_modified": "2026-01-12T13:43:30Z",
+      "history": []
     },
     {
       "file_id": "1b34fe78ed",
@@ -341,12 +400,11 @@
         "bia-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/bialoleka/raw/1b34fe78ed.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/40771/32974619/WZIOSKI+WZ+12.2025.pdf/4d7e6d11-7701-2873-ff42-36bae7c5c94c?t=1768225276524"
+      "sha256": "663cfb804a22983ed2d56c9642c0456ace61f0d53ba275c8bf6814e1c8e061cb",
+      "size": 223950,
+      "downloaded_at": "2026-11-25T00:09:47Z",
+      "last_modified": "2026-01-12T13:41:16Z",
+      "history": []
     },
     {
       "file_id": "6767788d24",
@@ -361,12 +419,11 @@
         "bia-inwestycje-celu-publicznego-decyzje"
       ],
       "local_path": "data/districts/bialoleka/raw/6767788d24.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "0893927f1d87b1d03372153a370161f330703b4d89583f194cd78667a64ba521",
+      "size": 68072,
+      "downloaded_at": "2026-11-25T00:09:57Z",
+      "last_modified": "2026-02-04T15:12:49Z",
+      "history": []
     },
     {
       "file_id": "ea4513ddd2",
@@ -381,12 +438,11 @@
         "bia-inwestycje-celu-publicznego-decyzje"
       ],
       "local_path": "data/districts/bialoleka/raw/ea4513ddd2.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "bc73e0c530884ebfc1a032dc2d24909744ea12df4788e354565c76741cc97f20",
+      "size": 55553,
+      "downloaded_at": "2026-11-25T00:10:07Z",
+      "last_modified": "2025-01-02T08:03:51Z",
+      "history": []
     },
     {
       "file_id": "c8a3893ef0",
@@ -401,12 +457,11 @@
         "bia-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/bialoleka/raw/c8a3893ef0.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "cb28da3b95a89d3046c4f3b77ddd7251717598c2d231a082a827bebfee8ff3aa",
+      "size": 136417,
+      "downloaded_at": "2026-11-25T00:10:17Z",
+      "last_modified": "2025-01-02T08:03:52Z",
+      "history": []
     },
     {
       "file_id": "e33e509cc9",
@@ -421,12 +476,11 @@
         "bia-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/bialoleka/raw/e33e509cc9.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "a7e51bf029679dd1d973b492aa51bd21b236bbdbd55023e3e2a8e23b72429600",
+      "size": 163463,
+      "downloaded_at": "2026-11-25T00:10:27Z",
+      "last_modified": "2025-12-15T15:56:14Z",
+      "history": []
     },
     {
       "file_id": "8b6f896e0a",
@@ -446,7 +500,7 @@
       "downloaded_at": null,
       "last_modified": null,
       "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/40771/32974611/DECYZJE+CP+2023.pdf/e95509dc-eacc-f447-549e-60f5bfc3175b?t=1705489208918"
     },
     {
       "file_id": "ebcdbc77a7",
@@ -461,12 +515,11 @@
         "bia-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/bialoleka/raw/ebcdbc77a7.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "a2ce46878611b0970791778b555c9ddf1cbd1aacb08060d1d07fee96a82e3a5a",
+      "size": 1747187,
+      "downloaded_at": "2026-11-25T00:10:47Z",
+      "last_modified": "2024-01-17T11:00:09Z",
+      "history": []
     },
     {
       "file_id": "25d3b4d79e",
@@ -481,12 +534,11 @@
         "bia-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/bialoleka/raw/25d3b4d79e.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "ae7eb6b53bf2bba8f5a57296d111fd4058e6818aed47bbe5592a99c817d2eb72",
+      "size": 2567965,
+      "downloaded_at": "2026-11-25T00:10:57Z",
+      "last_modified": "2024-01-17T10:59:46Z",
+      "history": []
     },
     {
       "file_id": "8bfdbe20c1",
@@ -501,12 +553,11 @@
         "bia-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/bialoleka/raw/8bfdbe20c1.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "86acfe3608ade924731bfd71b03be47ad267cbaa27e9f689fc82283d3aed0488",
+      "size": 207079,
+      "downloaded_at": "2026-11-25T00:11:08Z",
+      "last_modified": "2021-03-02T10:09:50Z",
+      "history": []
     },
     {
       "file_id": "19d688fd7a",
@@ -521,12 +572,11 @@
         "bia-inwestycje-celu-publicznego-decyzje"
       ],
       "local_path": "data/districts/bialoleka/raw/19d688fd7a.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "698fd92e1696f2fa55e791f1d277bba174754c6ddee1e8decb2fe0499bc8d7d0",
+      "size": 433222,
+      "downloaded_at": "2026-11-25T00:11:18Z",
+      "last_modified": "2023-01-02T08:59:38Z",
+      "history": []
     },
     {
       "file_id": "1028efd855",
@@ -541,12 +591,11 @@
         "bia-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/bialoleka/raw/1028efd855.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "f43f50abf03f510e10947f10677f8de7f1bd36650197a0f52d0d6743fa7157fb",
+      "size": 1714799,
+      "downloaded_at": "2026-11-25T00:11:28Z",
+      "last_modified": "2023-10-19T07:15:44Z",
+      "history": []
     },
     {
       "file_id": "a7c832ab8d",
@@ -561,12 +610,11 @@
         "bia-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/bialoleka/raw/a7c832ab8d.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "8213af41c0c102d44e50a67b26e753838cce1167eef575b2bf24c6f94f2b0cee",
+      "size": 1509230,
+      "downloaded_at": "2026-11-25T00:11:38Z",
+      "last_modified": "2023-01-02T08:58:37Z",
+      "history": []
     },
     {
       "file_id": "4b211b4821",
@@ -581,12 +629,11 @@
         "bia-inwestycje-celu-publicznego-decyzje"
       ],
       "local_path": "data/districts/bialoleka/raw/4b211b4821.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "c50ff1768925a75068b87e2da426f305cc1064c726892f04a33befe258ab5be4",
+      "size": 438618,
+      "downloaded_at": "2026-11-25T00:11:48Z",
+      "last_modified": "2022-01-03T11:33:15Z",
+      "history": []
     },
     {
       "file_id": "533910591d",
@@ -601,12 +648,11 @@
         "bia-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/bialoleka/raw/533910591d.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "f28b4f2d3ca7d0956ebf0beac39f9ec97f0aaec3a29f5dc5533a3cf9cea3b6d1",
+      "size": 2056635,
+      "downloaded_at": "2026-11-25T00:11:58Z",
+      "last_modified": "2022-01-03T11:33:39Z",
+      "history": []
     },
     {
       "file_id": "64f318db4c",
@@ -621,12 +667,11 @@
         "bia-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/bialoleka/raw/64f318db4c.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "79ff4fa8c3d888e2ca5a0377646df419864470bdb39380c5b46878c6f368a72a",
+      "size": 267135,
+      "downloaded_at": "2026-11-25T00:12:08Z",
+      "last_modified": "2022-01-03T11:31:53Z",
+      "history": []
     },
     {
       "file_id": "e58d832554",
@@ -641,12 +686,11 @@
         "bia-inwestycje-celu-publicznego-decyzje"
       ],
       "local_path": "data/districts/bialoleka/raw/e58d832554.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "93283f4825a17b3bd81da297a05cf5edafdb18c86a78ab2a6d12ca9445671ece",
+      "size": 431654,
+      "downloaded_at": "2026-11-25T00:12:18Z",
+      "last_modified": "2021-10-01T13:18:40Z",
+      "history": []
     },
     {
       "file_id": "65726f3b30",
@@ -661,12 +705,11 @@
         "bia-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/bialoleka/raw/65726f3b30.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "5c558e112b1076afea1bd555ca8ba39a7d756b19b186571ece0a69a413477976",
+      "size": 1674551,
+      "downloaded_at": "2026-11-25T00:12:28Z",
+      "last_modified": "2021-10-01T13:18:40Z",
+      "history": []
     },
     {
       "file_id": "110312a63a",
@@ -681,12 +724,11 @@
         "bia-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/bialoleka/raw/110312a63a.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "9902143e3e77b517c876d4880422de475ef14da21950dad7d04b9881def4bbeb",
+      "size": 246037,
+      "downloaded_at": "2026-11-25T00:12:38Z",
+      "last_modified": "2021-10-01T13:19:01Z",
+      "history": []
     }
   ],
   "district": "bialoleka"

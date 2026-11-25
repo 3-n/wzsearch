@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:56:06Z",
+  "generated_at": "2026-11-25T00:45:37Z",
   "index_url": "https://wlochy.um.warszawa.pl/architektura",
   "pages": [
     {
@@ -338,12 +338,11 @@
         "wlo-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/573099e15b.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+-+ODMOWY+05+2026+r.pdf/469bb059-cebd-4a89-3ce7-0bc5c162cce4?t=1781011520816"
+      "sha256": "6ce415aa192ed0f1490d844f16e650fb135421438301e93659f4bb892a727d7c",
+      "size": 204110,
+      "downloaded_at": "2026-11-25T00:45:41Z",
+      "last_modified": "2026-06-09T13:25:20Z",
+      "history": []
     },
     {
       "file_id": "0546aa08fd",
@@ -358,12 +357,11 @@
         "wlo-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/0546aa08fd.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/45118/16484946/REJESTR+DECYZJI+WZ+05+2026+r.pdf/9b1482f6-9c52-74e9-986d-a3c87889038e?t=1781010644977"
+      "sha256": "244ad1590f2608178f1dc3865893642dec994ad2950f1485fea22dc589ff5d1e",
+      "size": 219368,
+      "downloaded_at": "2026-11-25T00:45:51Z",
+      "last_modified": "2026-06-09T13:10:44Z",
+      "history": []
     },
     {
       "file_id": "4eb46cbd75",
@@ -378,12 +376,11 @@
         "wlo-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/wlochy/raw/4eb46cbd75.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: 403 Client Error: Forbidden for url: https://cdn.um.warszawa.pl/documents/45118/16492610/REJESTR+WSZCZ%C4%98TYCH+POST%C4%98POWA%C5%83+CP+i+WZ+05+2026+r.pdf/ae0d80ea-54dc-7b74-add4-6fda95197957?t=1783596359354"
+      "sha256": "aff66f00b9496375c1bb69f4bfb1277d45ff0eb5ec3f8cf395da50dd460fbc6b",
+      "size": 213987,
+      "downloaded_at": "2026-11-25T00:46:01Z",
+      "last_modified": "2026-07-09T11:25:59Z",
+      "history": []
     },
     {
       "file_id": "aa56a863da",
@@ -398,12 +395,11 @@
         "wlo-inwestycje-celu-publicznego-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/aa56a863da.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "a22e5a8c9baeb8e7aceafdbea57e872e2ad870c19f780ec750b8a0e6532dd784",
+      "size": 203590,
+      "downloaded_at": "2026-11-25T00:46:11Z",
+      "last_modified": "2026-04-23T09:17:29Z",
+      "history": []
     },
     {
       "file_id": "2ada8ed5e7",
@@ -418,12 +414,11 @@
         "wlo-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/2ada8ed5e7.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "560699c2fae0b0512b4eaf233842be421c9904c561be15569fee79d6f533e42f",
+      "size": 225454,
+      "downloaded_at": "2026-11-25T00:46:21Z",
+      "last_modified": "2026-04-23T11:19:07Z",
+      "history": []
     },
     {
       "file_id": "811a022097",
@@ -439,12 +434,11 @@
         "wlo-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/811a022097.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "8e626892f0857b016bacea446845a348c0c2a5f25f879aaa8f82d12e59f59f09",
+      "size": 248753,
+      "downloaded_at": "2026-11-25T00:46:31Z",
+      "last_modified": "2026-04-23T09:49:34Z",
+      "history": []
     },
     {
       "file_id": "24b0ab7f23",
@@ -459,12 +453,11 @@
         "wlo-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/24b0ab7f23.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "5b0ea393337f094b68c40949ac7dee45ebefbde13182f8dd4b585666f9a49885",
+      "size": 221470,
+      "downloaded_at": "2026-11-25T00:46:41Z",
+      "last_modified": "2026-07-14T06:17:33Z",
+      "history": []
     },
     {
       "file_id": "2ea5a8ee1e",
@@ -498,12 +491,11 @@
         "wlo-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/wlochy/raw/cf4d3ee91f.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "b6823cf5a9ab49ac98a0dea7ae07ea69ad4c663e2764ddf2ccc753b929cb8900",
+      "size": 548869,
+      "downloaded_at": "2026-11-25T00:46:51Z",
+      "last_modified": "2026-04-24T06:28:59Z",
+      "history": []
     },
     {
       "file_id": "a94e6656ce",
@@ -518,12 +510,11 @@
         "wlo-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/wlochy/raw/a94e6656ce.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "98bae2ad28833239b46d610818d572ac5c888fc485a9011ea04313780eaff0d7",
+      "size": 213960,
+      "downloaded_at": "2026-11-25T00:47:01Z",
+      "last_modified": "2026-07-09T11:09:54Z",
+      "history": []
     },
     {
       "file_id": "850d0c3fb2",
@@ -538,12 +529,11 @@
         "wlo-inwestycje-celu-publicznego-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/850d0c3fb2.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "70633fe32a866fcd4d46b84a102b0ef585bf5cbb7039daaae4e9eeb556e4824e",
+      "size": 446102,
+      "downloaded_at": "2026-11-25T00:47:11Z",
+      "last_modified": "2026-01-09T10:40:36Z",
+      "history": []
     },
     {
       "file_id": "39f87e9187",
@@ -558,12 +548,11 @@
         "wlo-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/39f87e9187.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "8b712589d49904392155e42a7fb8b364b83761865a5e7c123173cdae0b77849d",
+      "size": 458682,
+      "downloaded_at": "2026-11-25T00:47:21Z",
+      "last_modified": "2026-01-09T10:41:23Z",
+      "history": []
     },
     {
       "file_id": "17e08a521a",
@@ -578,12 +567,11 @@
         "wlo-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/17e08a521a.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "db56d6513a4deb30f2ccfe4e5cc7702dec08e9eacaf46891c3ec67056c0c997b",
+      "size": 583406,
+      "downloaded_at": "2026-11-25T00:47:32Z",
+      "last_modified": "2026-01-19T12:23:52Z",
+      "history": []
     },
     {
       "file_id": "b231ba4f99",
@@ -598,12 +586,11 @@
         "wlo-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/wlochy/raw/b231ba4f99.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "66917fda469fb8eef6b2a86351e6ec70e83883f74b7919152bb26a6bd4bc4cc7",
+      "size": 347236,
+      "downloaded_at": "2026-11-25T00:47:42Z",
+      "last_modified": "2026-05-04T09:18:32Z",
+      "history": []
     },
     {
       "file_id": "c1662969aa",
@@ -618,12 +605,11 @@
         "wlo-inwestycje-celu-publicznego-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/c1662969aa.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "9f4d6ff29f872975b5d64ab795ecaf0690d467b528dc0b3b4b4ad3aab3382c99",
+      "size": 168243,
+      "downloaded_at": "2026-11-25T00:47:52Z",
+      "last_modified": "2025-04-11T11:48:27Z",
+      "history": []
     },
     {
       "file_id": "2970c79c87",
@@ -638,12 +624,11 @@
         "wlo-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/2970c79c87.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "581019044c5236d2355f1b2f7ca1ff4b3864a36aea22ae2fb894777f55cc2255",
+      "size": 237977,
+      "downloaded_at": "2026-11-25T00:48:02Z",
+      "last_modified": "2025-04-11T13:10:03Z",
+      "history": []
     },
     {
       "file_id": "ec4a923ecc",
@@ -658,12 +643,11 @@
         "wlo-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/wlochy/raw/ec4a923ecc.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "0234a4619411ff2b15b063911f159039148fc2aace56116a0170f7c8e2ba2fc6",
+      "size": 245039,
+      "downloaded_at": "2026-11-25T00:48:12Z",
+      "last_modified": "2025-06-10T11:25:32Z",
+      "history": []
     },
     {
       "file_id": "46fbf8d084",
@@ -678,12 +662,11 @@
         "wlo-inwestycje-celu-publicznego-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/46fbf8d084.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "e82c323d4b1be210337c9721818d8b0262289ddf966772e72f14ad3c22c01126",
+      "size": 178192,
+      "downloaded_at": "2026-11-25T00:48:22Z",
+      "last_modified": "2024-01-26T14:02:35Z",
+      "history": []
     },
     {
       "file_id": "0701087e61",
@@ -698,12 +681,11 @@
         "wlo-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/0701087e61.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "4e39a0555355fa7589136ab634ba5856375beb95b308cccc4b6fa667debd6730",
+      "size": 344348,
+      "downloaded_at": "2026-11-25T00:48:32Z",
+      "last_modified": "2024-07-30T06:43:25Z",
+      "history": []
     },
     {
       "file_id": "a3a5c3e383",
@@ -718,12 +700,11 @@
         "wlo-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/wlochy/raw/a3a5c3e383.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "1a271043b0ab93f7b901fc84532f2eac3b64c262461ba893e665dacb113bd4ff",
+      "size": 380248,
+      "downloaded_at": "2026-11-25T00:48:42Z",
+      "last_modified": "2024-03-18T09:01:07Z",
+      "history": []
     },
     {
       "file_id": "991da372cb",
@@ -738,12 +719,11 @@
         "wlo-inwestycje-celu-publicznego-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/991da372cb.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "a3e88e7d8278af69beee0016cd10349b9f07794e5c1a768c75a4bf9a48c1546e",
+      "size": 169503,
+      "downloaded_at": "2026-11-25T00:48:52Z",
+      "last_modified": "2023-01-18T15:19:56Z",
+      "history": []
     },
     {
       "file_id": "303d690f4e",
@@ -758,12 +738,11 @@
         "wlo-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/303d690f4e.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "75b4a00e48e4e5a8c730bb64f6a6522b89e0784781c6f9a06104239df88e98c5",
+      "size": 334733,
+      "downloaded_at": "2026-11-25T00:49:02Z",
+      "last_modified": "2023-02-01T07:27:03Z",
+      "history": []
     },
     {
       "file_id": "8d4aa87ebf",
@@ -778,12 +757,11 @@
         "wlo-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/wlochy/raw/8d4aa87ebf.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "9c3df198fe981bd3c90fc671fd88c3a060cb44ee3d8b69125c9c2e20427afd14",
+      "size": 328120,
+      "downloaded_at": "2026-11-25T00:49:12Z",
+      "last_modified": "2023-01-18T15:05:38Z",
+      "history": []
     },
     {
       "file_id": "2bd7a7b97e",
@@ -798,12 +776,11 @@
         "wlo-inwestycje-celu-publicznego-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/2bd7a7b97e.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "64a55117cee9edc56c800333ade4f38421eff9e5047d59f72aa49b796135d07b",
+      "size": 487116,
+      "downloaded_at": "2026-11-25T00:49:22Z",
+      "last_modified": "2022-01-19T12:46:22Z",
+      "history": []
     },
     {
       "file_id": "60ed375036",
@@ -818,12 +795,11 @@
         "wlo-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/60ed375036.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "65660716175b5b548e5265699b1ff565e93f40764dd9cec84b908f23b00f7fd4",
+      "size": 616717,
+      "downloaded_at": "2026-11-25T00:49:32Z",
+      "last_modified": "2022-01-19T13:09:48Z",
+      "history": []
     },
     {
       "file_id": "28c4255f9c",
@@ -838,12 +814,11 @@
         "wlo-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/wlochy/raw/28c4255f9c.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "cf890642176cb44d068e61a73760355bc0e75fdd7a765e3df896c2e91b66e196",
+      "size": 595377,
+      "downloaded_at": "2026-11-25T00:49:42Z",
+      "last_modified": "2022-01-21T09:22:29Z",
+      "history": []
     },
     {
       "file_id": "105b3212f5",
@@ -858,12 +833,11 @@
         "wlo-inwestycje-celu-publicznego-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/105b3212f5.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "a741ac7608fcad8f177538ff8df61eb0bf0d3393d51ad5191ededb16480890a1",
+      "size": 444612,
+      "downloaded_at": "2026-11-25T00:49:52Z",
+      "last_modified": "2021-03-04T13:35:54Z",
+      "history": []
     },
     {
       "file_id": "79cefbdb20",
@@ -878,12 +852,11 @@
         "wlo-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/79cefbdb20.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "ffb9689ef0cf9f203a3a8f17c64b130b657d73cfce50d5056f3d82911c1c7452",
+      "size": 797165,
+      "downloaded_at": "2026-11-25T00:50:02Z",
+      "last_modified": "2021-03-04T12:27:35Z",
+      "history": []
     },
     {
       "file_id": "2237eac491",
@@ -898,12 +871,11 @@
         "wlo-warunki-zabudowy-decyzje"
       ],
       "local_path": "data/districts/wlochy/raw/2237eac491.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "9584b69e99cb5de686897d01c16a2ff7214c9ffce3c26a299761d38f757b84c7",
+      "size": 500433,
+      "downloaded_at": "2026-11-25T00:50:12Z",
+      "last_modified": "2021-03-04T12:27:35Z",
+      "history": []
     },
     {
       "file_id": "ecb3e66efe",
@@ -918,12 +890,11 @@
         "wlo-warunki-zabudowy-wnioski"
       ],
       "local_path": "data/districts/wlochy/raw/ecb3e66efe.pdf",
-      "sha256": null,
-      "size": null,
-      "downloaded_at": null,
-      "last_modified": null,
-      "history": [],
-      "error": "HTTPError: cdn.um.warszawa.pl odmówił pobierania (403) – ponowimy przy następnym pobieraniu"
+      "sha256": "9ca9c627539583c98c4985720192f04d690862a28eaaad8100caf5ebb883f0fd",
+      "size": 495551,
+      "downloaded_at": "2026-11-25T00:50:22Z",
+      "last_modified": "2021-09-15T09:11:02Z",
+      "history": []
     }
   ],
   "district": "wlochy"

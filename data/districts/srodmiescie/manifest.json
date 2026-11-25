@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T06:49:42Z",
+  "generated_at": "2026-11-25T00:16:04Z",
   "index_url": "https://srodmiescie.um.warszawa.pl/wszczete-postepowania-i-wydane-decyzje",
   "pages": [
     {
@@ -34,6 +34,15 @@
       "index_page": null,
       "source": "district",
       "blocks": [
+        {
+          "text": "październik (plik xlsx 14 KB)",
+          "category": "cp",
+          "declared_count": null,
+          "file_ids": [
+            "750ca7f051"
+          ],
+          "period": "2026-10"
+        },
         {
           "text": "kwiecień (plik xlsx 13 KB)",
           "category": "cp",
@@ -515,6 +524,15 @@
       "index_page": null,
       "source": "district",
       "blocks": [
+        {
+          "text": "październik (plik xlsx 14 KB)",
+          "category": "wz",
+          "declared_count": null,
+          "file_ids": [
+            "5e06669109"
+          ],
+          "period": "2026-10"
+        },
         {
           "text": "wrzesień (plik xlsx 13 KB)",
           "category": "wz",
@@ -1186,6 +1204,15 @@
       "source": "district",
       "blocks": [
         {
+          "text": "październik (plik xlsx 22 KB)",
+          "category": "ws",
+          "declared_count": null,
+          "file_ids": [
+            "8de8b9da15"
+          ],
+          "period": "2026-10"
+        },
+        {
           "text": "wrzesień (plik xlsx 22 KB)",
           "category": "ws",
           "declared_count": null,
@@ -1838,6 +1865,63 @@
     }
   ],
   "files": [
+    {
+      "file_id": "750ca7f051",
+      "source": "district",
+      "url": "https://srodmiescie.um.warszawa.pl/documents/50705/153982246/10_DECYZJE_CP_G_P_2026.xlsx/7c781076-05e9-5c8b-858a-fb902f11e240?t=1794478178609",
+      "document_path": "/documents/50705/153982246/10_DECYZJE_CP_G_P_2026.xlsx/7c781076-05e9-5c8b-858a-fb902f11e240",
+      "filename": "10_DECYZJE_CP_G_P_2026.xlsx",
+      "ext": "xlsx",
+      "category": "cp",
+      "period": "2026-10",
+      "page_ids": [
+        "srd-decyzje-cel-publiczny-powiat"
+      ],
+      "local_path": "data/districts/srodmiescie/raw/750ca7f051.xlsx",
+      "sha256": "2f7e84076e1c0346ec73873f2651455ff94e337624cb4f9a7cfb545aa4882187",
+      "size": 12422,
+      "downloaded_at": "2026-11-25T00:16:04Z",
+      "last_modified": "2026-11-12T10:09:38Z",
+      "history": []
+    },
+    {
+      "file_id": "5e06669109",
+      "source": "district",
+      "url": "https://srodmiescie.um.warszawa.pl/documents/50705/153982243/10_DECYZJE_WZ_2026.xlsx/d5f94c1d-15c4-96ba-76a0-f163cf5db332?t=1794478196792",
+      "document_path": "/documents/50705/153982243/10_DECYZJE_WZ_2026.xlsx/d5f94c1d-15c4-96ba-76a0-f163cf5db332",
+      "filename": "10_DECYZJE_WZ_2026.xlsx",
+      "ext": "xlsx",
+      "category": "wz",
+      "period": "2026-10",
+      "page_ids": [
+        "srd-decyzje-warunki-zabudowy"
+      ],
+      "local_path": "data/districts/srodmiescie/raw/5e06669109.xlsx",
+      "sha256": "640c0f198c12f8d497dda118f3caf1f6690617b5cfe9066b28821d53cc265f6b",
+      "size": 12163,
+      "downloaded_at": "2026-11-25T00:16:05Z",
+      "last_modified": "2026-11-12T10:09:56Z",
+      "history": []
+    },
+    {
+      "file_id": "8de8b9da15",
+      "source": "district",
+      "url": "https://srodmiescie.um.warszawa.pl/documents/50705/153982252/10_WSZCZETE_2026.xlsx/06bc036c-ce57-70bc-c734-9de7a526d60c?t=1794478145651",
+      "document_path": "/documents/50705/153982252/10_WSZCZETE_2026.xlsx/06bc036c-ce57-70bc-c734-9de7a526d60c",
+      "filename": "10_WSZCZETE_2026.xlsx",
+      "ext": "xlsx",
+      "category": "ws",
+      "period": "2026-10",
+      "page_ids": [
+        "srd-wszczete-postepowania"
+      ],
+      "local_path": "data/districts/srodmiescie/raw/8de8b9da15.xlsx",
+      "sha256": "92620e792c69177d6261b8626a6fc086e2bdf2b91552ca702e6583b6fc2d145e",
+      "size": 20203,
+      "downloaded_at": "2026-11-25T00:16:05Z",
+      "last_modified": "2026-11-12T10:09:05Z",
+      "history": []
+    },
     {
       "file_id": "96d43e8801",
       "source": "district",
