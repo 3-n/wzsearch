@@ -310,22 +310,36 @@ City-wide draft
   street is not in UUG yet, and the address has no house number. Fixes: (a) a confirmed per-record obręb correction
   next to `rwdz.UNIT_FIXES` (with a comment and a `warnings[]` entry, never silent); (b) a general check – flag
   `geo.conflict` when most of a case's parcels are missing from the stated obręb but exist together in another one.
-- 🟠 **Białołęka's PDF lists parse badly once the CDN serves them** (25 XI 2026). The crawl downloaded 21 files the
-  CDN had refused before, and records jumped 920 → 6,582: 2,322 of them carried zero-width spaces inside words
-  ("Wyrzykowskie​go"), 3,807 had no date, ids were mangled (`ws-bia-n-k2-23332-232023-10-09`). Deployed by
-  mistake (the checks compared counts and ran tests, but did not sample record contents), then reverted to the
-  12 XI data (`data/districts/bialoleka/` from 7d706ae). Next: fix `pipeline/pdftable.py` for these files (strip
-  U+200B before splitting, the column layout of the new files), add one of them as a test fixture. **Until then, a
-  live `make city` brings the broken records back** – restore Białołęka after the refresh, or run the refresh with
-  `DISTRICTS=` listing the other 17. Checklist lesson (HANDOFF §7.3): big count jumps need a look at sample records.
-- 🟠 **Włochy's PDF registers parse badly too** (25 XI 2026, same cause: files first served by the CDN that night).
-  Records 157 → 2,357, of which 917 numbered but without a date, the address glued into the investment text
-  ("ul. Radarowa kilu bryłach nadziemnych…"), and 270 fragments of wrapped lines (no number, no date); multi-line
-  cells wrap above *and* below the row's baseline in these PDFs (e.g. `REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ I-VI
-  2025`). Reverted to the 12 XI data like Białołęka. Fix in `pipeline/pdftable.py` (group wrapped lines to the
-  numbered row by vertical band, column bounds from the header), fixture from one of these PDFs. **Restore Włochy
-  after a live run** until then. Also: cancelled rows (`ANULOWANO` in the number column) become empty records –
-  count them as a documented skip instead.
+- 🟢 ~~**Białołęka's PDF lists parse badly once the CDN serves them**~~ (found and fixed 25 XI 2026). The crawl
+  fetched 21 files the CDN had refused before; records jumped 920 → 6,582 with zero-width spaces in words, 3,807
+  without a date and mangled ids – deployed by mistake, reverted, then fixed in `pipeline/pdftable.py`: Białołęka
+  922 → 6,113 good records (every one live before kept, same number and date). The yearly lists are the case
+  system's "Raport Erwin 2.0" printed by a browser (Chrome, `Skia/PDF`), which (unlike Excel) breaks words
+  anywhere in a narrow column, marks break points with U+200B, splits rows across pages and top-aligns the part
+  left on a page. Now: U+200B stripped; "Decyzja"/"Wniosek" read as stacked number / date / outcome cells; words
+  mended at line breaks from GUNB word frequencies (`pipeline/data/words.tsv`, regenerated only by
+  `scripts/wordlist.py`); a cell never reaches past its neighbours' anchors; the end of a split row is carried
+  back; Lp numbers that wrap ("10" / "0") and dates that wrap ("2025-01-0" / "7") are rejoined. All of it applies
+  only to browser-printed files – the other PDF districts parse byte-identically (checked over all 236 files).
+  Fixtures: `tests/fixtures/districts/bialoleka-*.pdf`.
+- 🟢 ~~**Włochy's PDF registers parse badly too**~~ (fixed 25 XI 2026): 157 → 2,359 records. Its registers of
+  initiated proceedings are Excel printed without a numbering row, so they went the report path, which assumed
+  top-aligned cells: now the header takes in label lines just above "Lp." and ends at the first clear gap, centred
+  cells are cut like a template's, and column starts of centred text ("1"/"10"/"100", case numbers of different
+  lengths) are one column. CP templates: "wydania data (rrrr-mm-dd)" / "(rrrr-mm-dd)" labels are the date.
+- 🟠 Włochy, what is left: `rejestr_decyzji_wz_I-VIII_2020.pdf` (79cefbdb20, ~116 decisions) numbers its columns
+  without "Organ wydający decyzję", so Lp and the office share a column and the rows are not found – the file now
+  yields no records (a merged-row guard skips "several decision numbers in one cell") instead of one wrong one; a
+  general "unnumbered column" rule changed 43 other files, so it needs a narrower idea. About 20 rows of
+  `REJESTR DECYZJI WZ I-XII 2023` have description words among the parcels (centred lines starting left of the
+  column edge; assigning whole word runs fixed it but broke Mokotów's tightly packed columns). 16 `ANULOWANO` /
+  3 `ANULACJA` rows are records without a date or description – count them as a documented skip instead.
+- 🟠 Białołęka, what is left: a decision number broken at a line inside a description stays split ("decyzji 21
+  6/B/2022" – only letters are mended); a word too rare in GUNB's register stays split ("P RZYJMOWANYCH").
+- 🟠 Possible improvements seen while testing, deliberately not applied (they would change the other districts'
+  output): the strict cell split (a cell never past its neighbours' anchors) fixes rows in Ochota and Targówek
+  templates (empty cells filled, merged applicants separated) but moves lines in Mokotów's mixed-alignment tables
+  the wrong way; worth a per-district look.
 - 🟠 **Ursus: 94 empty records live since 12 XI 2026.** `rejestr_dec_wz_2021 (1).xlsx` (file 27dcd60f91, 80 rows)
   has a layout the parser does not recognise: number and date in one cell ("1/U/2021 07.01.2021"), headers
   "office 2016" / "Kolumna6", outcome words in the last column ("umarzam", "dec. ustalająca"); every row becomes a
