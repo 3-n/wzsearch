@@ -4,9 +4,15 @@ Fixtures are real lists (27 X 2026): Mokotów's applications of IX 2026 and thre
 case-system's other layouts (VIII 2026: a two-row header; IV 2025: an export with "Wynik", "Działka" and "Obręb"
 columns; X 2025: a number cell that starts with "Nr"), Targówek's CP decisions I–VI 2026 and Włochy's WZ
 decisions of VII 2026 (the Excel template printed to PDF; Włochy left the Lp number out of its last four rows).
+Added 25 XI 2026: Białołęka's yearly lists printed by a browser from the case system ("Raport Erwin 2.0") – CP
+decisions 2022 (pages 3–4 of the file, cut with poppler's pdfseparate/pdfunite: zero-width break hints, stacked
+"Decyzja" cells, rows split across a page break) and CP decisions 2020 (pages 1–2: words broken without hints) –,
+Białołęka's WZ applications 2025 (the whole report: Lp numbers that wrap from 100 on) and Włochy's register of
+initiated proceedings VI 2026 (Excel without a numbering row: centred cells, centred Lp and case numbers).
 Reading them needs poppler's ``pdftotext``.
 """
 
+import re
 import shutil
 from pathlib import Path
 
@@ -225,3 +231,95 @@ def test_missing_pdftotext_is_reported(monkeypatch, tmp_path):
     monkeypatch.setattr(pt, "PDFTOTEXT", "pdftotext-that-does-not-exist")
     with pytest.raises(pt.PdfUnavailable):
         pt.read_words(pdf)
+
+
+# ------------------------------------------------------------------ browser-printed lists (Białołęka) and Włochy
+
+
+@pytest.mark.parametrize("pieces,joined", [
+    (["Budowa czterech", "bud", "owie budynku"], "Budowa czterech budowie budynku"),     # a word broken anywhere
+    (["Z", "AGOSPODAROWANIEM TERENU"], "ZAGOSPODAROWANIEM TERENU"),                    # case-insensitive
+    (["budynków", "mieszkalnych"], "budynków mieszkalnych"),                            # two words stay two
+    (["wraz z rozbudową", "do", "budowy"], "wraz z rozbudową do budowy"),              # "dobudowy" is rarer than "do"
+    (["obr. 4-01-", "24"], "obr. 4-01-24"),                                             # a hyphen ends the line
+    (["usługowo-", "mieszkalnego"], "usługowo-mieszkalnego"),
+])
+def test_browser_broken_words_are_mended_from_the_word_list(pieces, joined):
+    assert pt._join_lines(pieces, mend=True) == joined
+
+
+def test_lines_are_joined_with_spaces_in_other_pdfs():
+    assert pt._join_lines(["bud", "owie"], mend=False) == "bud owie"
+
+
+def test_strict_split_keeps_each_cell_between_its_neighbours_anchors():
+    # Białołęka WZ 2022, page 1: descriptions twice as tall as the other cells, centred on their Lp lines and
+    # touching each other – one block over five rows. Centring alone could give one tall group to the middle
+    # anchor and leave the rows either side empty.
+    tops = [209, 221, 234, 246, 259, 271, 286, 299, 311, 323, 336, 348, 361, 373, 386, 401, 413, 426, 438, 450, 463,
+            475, 488, 500, 512, 525, 540, 552, 565, 577, 590, 602, 614, 627, 639, 654, 667, 679, 692, 704, 717, 729,
+            741, 754, 766, 779]
+    owners = pt._split_block(tops, [240, 336, 463, 590, 717], strict=True)
+    assert [owners.count(k) for k in range(5)] == [6, 9, 11, 9, 11]
+    assert owners == sorted(owners)
+
+
+@pytest.mark.parametrize("specific,label,expected", [
+    ("wydania data (rrrr-mm-dd)", "Nr decyzji i data jej › wydania data (rrrr-mm-dd)", "date"),   # Włochy CP 2021
+    ("(rrrr-mm-dd)", "Nr decyzji i data jej wydania data › (rrrr-mm-dd)", "date"),                # Włochy CP 2020
+    ("Numer nr", "Numer nr", "number"),                                                         # Włochy WZ 2020
+    ("Wnioskodaw ca", "Wnioskodaw ca", "applicant"),                                           # a broken label
+])
+def test_pdf_header_labels(specific, label, expected):
+    assert pt._field(specific, label) == (expected, True)
+
+
+@needs_poppler
+def test_browser_printed_yearly_list():
+    r = pt.parse_pdf(FIX / "bialoleka-cp-2022-p3-4.pdf")
+    rows = {x["cells"]["number"].split("\n")[0]: x["cells"] for x in r["rows"]}
+    # in Lp order, as printed (the office numbered some decisions out of order)
+    assert list(rows) == [f"{n}/CP/2022" for n in (*range(14, 28), 29, 33, 32)]
+    assert all(c["date"] and c["number"].endswith(("Pozytywna", "Odmowna", "Umarzająca")) for c in rows.values())
+    assert not any("\u200b" in str(c) for c in rows.values())
+    # touching three-line "number / date / outcome" cells, cut where they belong
+    assert rows["20/CP/2022"]["date"] == "2022-02-10" and rows["21/CP/2022"]["date"] == "2022-02-10"
+    # row 21 was split by the page break: its applicant's last line and a parcel stay with it
+    assert rows["21/CP/2022"]["applicant"] == "POLSKA SPÓŁKA GAZOWNICTWA SP.Z.O.O PSG"
+    assert rows["22/CP/2022"]["applicant"] == "Miejskie Przedsiębiorstwo Wodociągów i Kanalizacji S.A. MPWIK S.A."
+    assert rows["22/CP/2022"]["investment"] == "Budowa kanalizacji ściekowej wraz z odcinkami sieci do granic ulic"
+
+
+@needs_poppler
+def test_browser_printed_list_without_break_hints():
+    r = pt.parse_pdf(FIX / "bialoleka-cp-2020.pdf")
+    assert r["kind"] == "cp" and r["warnings"] == []
+    first = r["rows"][0]["cells"]
+    assert first["number"] == "1/CP/2020\nPozytywna" and first["date"] == "2020-01-10"
+    assert first["investment"] == "BUDOWA KONTENEROWEJ STACJI TRANSFORMATOROWEJ."
+    assert first["parcels"] == "36/1 obr. 4-16-13" and first["address"] == "Ruskowy Bród"
+
+
+@needs_poppler
+def test_report_with_lp_numbers_wrapping_in_a_narrow_column():
+    r = pt.parse_pdf(FIX / "bialoleka-ws-2025.pdf")
+    assert r["warnings"] == []
+    assert [int(x["cells"]["lp"]) for x in r["rows"]] == list(range(1, 578))     # "10" / "0", across page breaks
+    assert all(re.fullmatch(r"\d{4}-\d{2}-\d{2}", x["cells"]["date"]) for x in r["rows"])   # "2025-01-0" / "7"
+    assert r["rows"][100]["cells"] == {
+        "lp": "101", "number": "K2/5807/25", "date": "2025-03-19", "applicant": "osoba fizyczna",
+        "investment": "Zmiana treści decyzji nr 319/B/2018 dotyczącej budowy budynku mieszkalnego jednorodzinnego "
+                      "z garażem",
+        "address": "Dwusieczna / Piwoniowa", "parcels": "20/1 obr. 4-17-05"}
+
+
+@needs_poppler
+def test_excel_register_without_numbering_row_has_centred_cells():
+    r = pt.parse_pdf(FIX / "wlochy-ws-2026-06.pdf")
+    assert r["kind"] == "ws" and r["warnings"] == []
+    assert [x["cells"]["lp"] for x in r["rows"]] == [str(n) for n in range(1, 11)]
+    assert all(x["cells"]["number"].startswith("UD-XVI-WAB-RU.") and x["cells"]["date"] for x in r["rows"])
+    second = r["rows"][1]["cells"]
+    assert second["number"] == "UD-XVI-WAB-RU.6733.14.2026.SKA" and second["date"] == "18.06.2026"
+    assert second["investment"].startswith("ustalenie lokalizacji celu publicznego polegajacego na budowie")
+    assert second["parcels"] == "12/1, 12/2, 12/3 oraz cz. 45 z obrębu 2-04-01"
