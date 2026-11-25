@@ -1019,6 +1019,12 @@ def unchanged_crawl(monkeypatch):
 
 
 class TestRwdzStage:
+    @pytest.fixture(autouse=True)
+    def _geocoding_clock(self, monkeypatch):
+        # Geocoding retries cached misses after MISS_TTL_DAYS by the real clock; the fixture misses are stamped NOW,
+        # so without this the "online" runs below start re-asking for them 30 days after NOW.
+        monkeypatch.setattr(gc, "_now", lambda: gc._parse_iso(NOW))
+
     def _offline(self, paths, now=NOW):
         return build.run_build(paths, crawl=False, online=False, site_url="./", now=lambda: now)
 
