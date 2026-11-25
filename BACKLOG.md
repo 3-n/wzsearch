@@ -318,6 +318,20 @@ City-wide draft
   U+200B before splitting, the column layout of the new files), add one of them as a test fixture. **Until then, a
   live `make city` brings the broken records back** – restore Białołęka after the refresh, or run the refresh with
   `DISTRICTS=` listing the other 17. Checklist lesson (HANDOFF §7.3): big count jumps need a look at sample records.
+- 🟠 **Włochy's PDF registers parse badly too** (25 XI 2026, same cause: files first served by the CDN that night).
+  Records 157 → 2,357, of which 917 numbered but without a date, the address glued into the investment text
+  ("ul. Radarowa kilu bryłach nadziemnych…"), and 270 fragments of wrapped lines (no number, no date); multi-line
+  cells wrap above *and* below the row's baseline in these PDFs (e.g. `REJESTR WSZCZĘTYCH POSTĘPOWAŃ CP i WZ I-VI
+  2025`). Reverted to the 12 XI data like Białołęka. Fix in `pipeline/pdftable.py` (group wrapped lines to the
+  numbered row by vertical band, column bounds from the header), fixture from one of these PDFs. **Restore Włochy
+  after a live run** until then. Also: cancelled rows (`ANULOWANO` in the number column) become empty records –
+  count them as a documented skip instead.
+- 🟠 **Ursus: 94 empty records live since 12 XI 2026.** `rejestr_dec_wz_2021 (1).xlsx` (file 27dcd60f91, 80 rows)
+  has a layout the parser does not recognise: number and date in one cell ("1/U/2021 07.01.2021"), headers
+  "office 2016" / "Kolumna6", outcome words in the last column ("umarzam", "dec. ustalająca"); every row becomes a
+  record with no number, date, investment or address. File 4a5836a23a adds 14 more. Not reverted – the 12 XI data
+  had the same 94, and the 25 XI crawl added ~250 good Ursus records. Fix: a layout for this register in
+  `pipeline/parse.py` (split "number date" cells), and never emit a record whose every field is empty (count it).
 
 ## 4. Handled during the build (🟢)
 
